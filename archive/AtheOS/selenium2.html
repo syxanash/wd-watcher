@@ -1,0 +1,151 @@
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A place in nowhere to be found">
+		<meta name="keywords" content="personal, cyberpunk, vaporwave, programming, art">
+		<meta name="author" content="al1-ce">
+		<title> AtheOS </title>
+		<link rel="icon" href="/assets/images/logo.gif">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="/web/js/lib/jquery.iframetracker.min.js"></script>
+		<script src="/web/js/atheos.js"></script>
+        <!-- <script src="https://api.backendless.com/sdk/js/latest/backendless.min.js"></script>
+		<script src="/web/js/backendless.js"></script> -->
+		
+		<link rel="stylesheet" type="text/css" href="/web/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/web/css/oc-style.css">
+		
+		<script>
+			if (/Mobi|Android/i.test(navigator.userAgent)) {
+				window.open('/web/html/mobile.html', '_self');
+			}
+			
+			// var theme = getCurrentTheme();
+			
+			// $('head').append('<link rel="stylesheet" type="text/css" href="/web/css/theme-new.css">');
+			// $('head').append('<link rel="stylesheet" type="text/css" href="/web/css/theme-old.css">');
+		</script>
+	<link rel="stylesheet" type="text/css" href="/web/css/theme-void.css"></head>
+	
+	<body>
+		<div id="loader" style="display:none;">
+			<h1 class="glitch" data-text="AtheOS">AtheOS</h1>
+			<h2 class="glitch" data-text="time waits for noone">time waits for noone</h2>
+		</div>
+		<audio id="snd-boot">
+						<source src="/assets/sounds/bootup.ogg" type="audio/ogg">
+		</audio>
+		<audio id="snd-loaded">
+						<source src="/assets/sounds/loaded.ogg" type="audio/ogg">
+		</audio>
+
+		<script src="/web/js/atheos-boot.js"></script>
+
+		<div id="scanlines"></div>
+		
+		<div id="infobar">
+			<div id="infomenu">Win: 1</div>
+			<div id="infopath">[ C:/ユーザー/al1-ce/プロジェクトの頽廃/ ]</div>
+		</div>
+		
+		<div id="page" style="background-image: url(&quot;/assets/images/backgrounds/ocback6.gif&quot;);">
+			<script src="/web/js/atheos-styling.js"></script>
+		<div class="icon-line" id="icon-line-0"><div class="dLink" id="dLink-About"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-about.png' );"></div>
+    About
+</button></div><div class="dLink" id="dLink-Blog"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-blog.png' );"></div>
+    Blog
+</button></div><div class="dLink" id="dLink-Login"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-login.png' );"></div>
+    Login
+</button></div><div class="dLink" id="dLink-Chat"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-prog.png' );"></div>
+    Chat
+</button></div><div class="dLink" id="dLink-Music"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-fsnd.png' );"></div>
+    Music
+</button></div><div class="dLink" id="dLink-Todo"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-ftxt.png' );"></div>
+    Todo
+</button></div><div class="dLink" id="dLink-Bash"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-bat.png' );"></div>
+    Bash
+</button></div></div> <!-- LINE 0 --><div class="icon-line" id="icon-line-1"><div class="dLink"></div></div> <!-- LINE 1 --><div class="icon-line" id="icon-line-2"><div class="dLink" id="dLink-Guest"><button class="button" ondblclick="window.open('http://pub49.bravenet.com/guestbook/4164040818/', '_blank')">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-guest.png');">
+        <img src="assets/images/oc-img/link.png">
+    </div>
+    Guest
+</button></div><div class="dLink" id="dLink-Mail"><button class="button" ondblclick="window.open('mailto:alice_beyond@list.ru', '_blank')">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-mail.png');">
+        <img src="assets/images/oc-img/link.png">
+    </div>
+    Mail
+</button></div><div class="dLink" id="dLink-Talk"><button class="button" ondblclick="window.open('https://discord.gg/X34tg9UQcd', '_blank')">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-discor.png');">
+        <img src="assets/images/oc-img/link.png">
+    </div>
+    Talk
+</button></div></div> <!-- LINE 2 --><div class="icon-line" id="icon-line-3"><div class="dLink"></div></div> <!-- LINE 3 --><div class="icon-line" id="icon-line-4"><div class="dLink" id="dLink-Backs"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-fopen.png' );"></div>
+    Backs
+</button></div><div class="dLink" id="dLink-Cats"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/caticon.png' );"></div>
+    Cats
+</button></div><div class="dLink" id="dLink-js++"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-jspp.png' );"></div>
+    js++
+</button></div></div> <!-- LINE 4 --><div class="icon-line" id="icon-line-5"><div class="dLink"></div></div> <!-- LINE 5 --><div class="icon-line" id="icon-line-6"><div class="dLink" id="dLink-AWD"><button class="button" ondblclick="window.open('https://github.com/syxanash/awesome-web-desktops', '_blank')">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-awd.png');">
+        <img src="assets/images/oc-img/link.png">
+    </div>
+    AWD
+</button></div><div class="dLink" id="dLink-ttools"><button class="button" ondblclick="window.open('https://tinytools.directory/', '_blank')">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-tinytools.png');">
+        <img src="assets/images/oc-img/link.png">
+    </div>
+    ttools
+</button></div></div> <!-- LINE 6 --><div class="icon-line" id="icon-line-7"><div class="dLink"></div></div> <!-- LINE 7 --><div class="icon-line" id="icon-line-8"><div class="dLink" id="dLink-Option"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-bat.png' );"></div>
+    Option
+</button></div><div class="dLink" id="dLink-Log"><button class="button">
+    <div class="dIcon" style="background-image: url('/assets/images/oc-img/l-blog.png' );"></div>
+    Log
+</button></div></div> <!-- LINE 8 --><div class="window ui-draggable ui-draggable-handle" id="win-id-0" data-pos-x="200" data-pos-y="135" data-size-w="400" data-size-h="360" style="position: absolute; top: 18%; left: 25%; display: inline-block; z-index: 50;"><div class="win-bar"> 
+    <button class="win-close button"></button>
+    <button class="win-full button"></button>
+    <button class="win-min button"></button>
+    <button class="win-upd button"></button>
+    <div class="win-text">127.0.0.1:8080/release-notes/</div>
+</div>
+<div class="win-content">
+    <iframe class="win-frame" id="win-frame-id-" src="/web/html/release-notes.html?id=0"></iframe>
+</div>
+<div class="resizer"></div></div></div> <!-- END OF PAGE -->
+		
+		
+		<!-------------------------------------TECH-------------------------------------------->
+		<audio id="snd-st-d-0" loop="">
+						<source src="/assets/sounds/mystory.ogg" type="audio/ogg">
+		</audio>
+		<audio id="snd-st-d-1" loop="">
+						<source src="/assets/sounds/mystory_d1.ogg" type="audio/ogg">
+		</audio>
+		<audio id="snd-st-d-2" loop="">
+						<source src="/assets/sounds/mystory_d2.ogg" type="audio/ogg">
+		</audio>
+		<audio id="snd-st-d-3" loop="">
+						<source src="/assets/sounds/mystory_d3.ogg" type="audio/ogg">
+		</audio>
+
+		<script>
+			document.getElementById("snd-st-d-0").volume = 0.15;
+			document.getElementById("snd-st-d-1").volume = 0.15;
+			document.getElementById("snd-st-d-2").volume = 0.15;
+			document.getElementById("snd-st-d-3").volume = 0.15;
+		</script>
+	
+
+<div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;" type="text" value="" id="focus_retriever" readonly="true"></div></body></html>

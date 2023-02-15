@@ -1,0 +1,1149 @@
+<html><head>
+    <meta charset="UTF-8">
+    <title>itzrex</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+		<script src="lib/jqscribble/jquery.jqscribble.js" type="text/javascript"></script>
+		<script src="lib/jqscribble/jqscribble.extrabrushes.js" type="text/javascript"></script>
+		<script src="lib/codemirror/codemirror.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="lib/codemirror/codemirror.css">
+		<script src="lib/codemirror/javascript.js" type="text/javascript"></script>
+		<script src="lib/codemirror/xml.js" type="text/javascript"></script>
+		<script src="lib/codemirror/css.js" type="text/javascript"></script>
+		<script src="lib/codemirror/htmlmixed.js" type="text/javascript"></script>
+		<script src="lib/codemirror/autorefresh.js" type="text/javascript"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+  </head>
+  <body>
+    <div class="content grow">
+      <div class="window-container">
+          <div class="window window-drag ui-draggable" id="58bcd561-7708-2a31-4960-f4fe9e29b9e3" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Snake.exe</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="snake-container">
+      <canvas id="vova" width="300" height="200"></canvas>
+      <div class="snake-controls">
+        <button class="snake-start">Start</button>
+        <div class="grow"></div>
+        <input type="text" class="snake-score" readonly="">
+      </div>
+    </div>
+  
+            </div>
+          </div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="577a676e-dfd8-578c-a079-0acf97753a93" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Terminal.exe</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="console-container">
+      <div class="console-body">
+        &gt;/ Awaiting instructions...
+      </div>
+      <div class="console-input-container">
+        <div class="console-prefix">&gt;/</div>
+        <input class="console-input" placeholder="Enter command here"></div>
+      </div>
+    </div>
+  
+            <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+          
+      
+          <div class="window window-drag ui-draggable" id="045a9fbd-0778-b74e-7e80-3a3a6e0dccd6" style="
+            display:none;
+            width:280px;
+            height:330px;
+            min-width:280px;
+            min-height:330px;
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">About.exe</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="about-box">
+      <div class="app-tabs">
+        <button class="tab-control active" data-target=".about-content" data-group="about">About</button>
+        <button class="tab-control" data-target=".credit-content" data-group="about">Credits</button>
+        <button class="tab-control" data-target=".changelog-content" data-group="about">Changelog</button>
+      </div>
+      <div class="tab-item about-content" data-group="about">
+        <img class="about-pic" src="images/os_icon.png">
+        <div class="os-name">
+          <span>RexOS</span>
+          <sub>v0.4.4.4</sub>
+        </div>
+        <small>Copyright 2019, do not steal pls</small>
+        <br><br>
+        <small>Rex is cool, but Arthur is cooler.</small>
+      </div>
+      <div class="tab-item credit-content" style="display:none;" data-group="about">
+        <b class="os-bold">RexOS is powered by the community.</b>
+        <br><br>
+        Icons are made by <a target="_blank" href="https://www.flaticon.com/authors/smashicons">Smashicons</a><br>
+        Watermelon doge is from <a target="_blank" href="https://www.reddit.com/r/aww/comments/4uol12/nomf/">Reddit</a><br>
+        RXPaint is implemented with <a target="_blank" href="https://github.com/jimdoescode/jqScribble">jqScribble</a><br>
+        Code files are Codemirror <a target="_blank" href="https://codemirror.net/">instances</a><br>
+        Copy button is powered by <a target="_blank" href="https://clipboardjs.com/">Clipboard.js</a><br>
+        RexOS is hosted on <a target="_blank" href="https://neocities.org/">Neocities</a><br>
+        Some photos and art by <a target="_blank" href="https://kmdr.dev/">my boyfriend</a>
+      </div>
+      <div class="tab-item changelog-content" style="display:none;" data-group="about">
+        <b>0.4.4.4</b>
+        <ul>
+          <li>improved the Discord window thing</li>
+        </ul>
+        <b>0.4.4.3</b>
+        <ul>
+          <li>added more buttons</li>
+        </ul>
+        <b>0.4.4.2</b>
+        <ul>
+          <li>modified the Discord window to request data only upon being opened to improve performance (will make it pretty later)</li>
+        </ul>
+        <b>0.4.4.1</b>
+        <ul>
+          <li>added the Socials folder (experimental)</li>
+          <li>added the Discord file to the Socials folder</li>
+          <li>added the copy button for the Discord window</li>
+        </ul>
+        <b>0.4.4</b>
+        <ul>
+          <li>added window minimization animations (may be very buggy)</li>
+          <li>added the Operating systems folder</li>
+          <li>moved the alternatives list to the Operating systems folder</li>
+          <li>added some buttons to the start menu (more to come)</li>
+          <li>various CSS adjustments</li>
+          <li>added tracking to more window states</li>
+        </ul>
+        <b>0.4.3.1</b>
+        <ul>
+          <li>fixed a bug where the browser window wouldn't focus when a webpage was interacted with</li>
+        </ul>
+        <b>0.4.3</b>
+        <ul>
+          <li>added animation for window minimization</li>
+        </ul>
+        <b>0.4.2</b>
+        <ul class="mb-15">
+          <li>implemented changelog</li>
+          <li>added window focusing</li>
+          <li>set terminal to reset on close</li>
+          <li>added more terminal commands</li>
+        </ul>
+      </div>
+    </div>
+  
+            </div>
+          </div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="51f8b3ef-b6ae-feb2-582d-4b7b6b81ac97" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">to-do.txt</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow padwrapper" contenteditable="true" "="">
+              
+    <strike>Kiss boyfriend</strike>
+    <strike>Hire more gnomes</strike>
+    <strike>Fix image sizes in windows</strike>
+    <strike>Fix windows being stretched (mostly on text)</strike>
+    <strike>Add a secret password folder</strike>
+    <strike>Add a drawing program</strike>
+    <strike>Add folders</strike>
+    <strike>Add a music player</strike>
+    <strike>Add a browser</strike>
+    <strike>Make a website</strike>
+    <strike>Add a virus</strike>
+    <strike>Add a changelog to my website</strike>
+    <strike>Make my website better</strike>
+    <strike>Repair the browser</strike>
+    <strike>Fix typing in text files</strike>
+    <strike>Add a console</strike>
+    <strike>Move credits to a tab/section in the About.exe</strike>
+    <strike>Add a proper changelog tracker.</strike>
+    <strike>Add a links section in the about window</strike>
+    Make files sortable<br>
+    Add a context menu<br>
+    Add ability to drag all selected files at once<br>
+    Add ability to change wallpaper<br>
+    Add ability to rename files<br>
+    Repair the drawing program<br>
+    Repair the music player<br>
+    Add a pause/restart/control buttons to snake.<br>
+    Add open in new window button for browser links.<br>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="2994787c-af1d-4f9d-0d0c-fd46a336016d" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">kitty.jpg</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="images/files/kitty.jpg"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="29201c18-0183-86e6-fb4b-1c4100941154" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">neocities.png</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="images/files/neocities.png"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="a7479310-249b-a07b-aa67-60c773d11837" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Cute animals</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="folder">
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="kitty" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/jpg.svg">
+        </div>
+        <div class="file-name">
+          kitty.jpg
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="doge_with_glasses" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/jpg.svg">
+        </div>
+        <div class="file-name">
+          doge_with_glasses.jpg
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="another_kitty" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/jpg.svg">
+        </div>
+        <div class="file-name">
+          another_kitty.jpg
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="doggo" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/jpg.svg">
+        </div>
+        <div class="file-name">
+          doggo.jpg
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="samuel_l_kitty" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/jpg.svg">
+        </div>
+        <div class="file-name">
+          samuel_l_kitty.jpg
+        </div>
+      </div>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="dceed6fa-5258-a07b-8a1a-d736eb7c1ce2" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">doge_with_glasses.jpg</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="https://files.source.dog/dump/garbage/pics/C08rn5pUcAAMAOW.jpg"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="8346c57a-90d3-22ee-15bd-aee5b072a931" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">another_kitty.jpg</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="https://files.source.dog/dump/garbage/pics/1464281205_prft-5.jpeg"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="a87f8fcd-caf7-080e-694c-6c0aa59ec19c" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">doggo.jpg</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="https://files.source.dog/dump/garbage/pics/tumblr_nsr5ioUS041qzezhmo1_1280.jpg"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="ae74b5a6-1652-4610-a945-a4f0290805cd" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">samuel_l_kitty.jpg</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="https://files.source.dog/dump/garbage/pics/vRLDk.jpg"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="0c078539-8e80-ced4-f01c-df4b5e686ac4" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Socials</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="folder">
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="discordfile" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/discord.png">
+        </div>
+        <div class="file-name">
+          Discord
+        </div>
+      </div>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window window-drag ui-draggable" id="6f4f0a6e-8ee0-f324-9cb0-f9f978190607" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Discord</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="discordbox"></div>
+  
+            </div>
+          </div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="f8eda366-c356-ac5a-b9ec-439918d9c72f" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Website</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="folder">
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="htmlfile" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/html.png">
+        </div>
+        <div class="file-name">
+          index.html
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="neocities" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/png.svg">
+        </div>
+        <div class="file-name">
+          neocities.png
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="notfoundfile" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/html.png">
+        </div>
+        <div class="file-name">
+          not_found.html
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="cssfile" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/css.png">
+        </div>
+        <div class="file-name">
+          style.css
+        </div>
+      </div>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="f8a91b67-dc82-8dd9-518b-fd03721975e9" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Operating systems</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="folder">
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="otheros" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/folder.png">
+        </div>
+        <div class="file-name">
+          Other
+        </div>
+      </div>
+      <div class="file file-drag action-shortcut pointer ui-draggable ui-draggable-handle" data-shortcut="gopalos" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/iso.png">
+        </div>
+        <div class="file-name">
+          GopalOS.iso
+        </div>
+      </div>
+      <div class="file file-drag action-shortcut pointer ui-draggable ui-draggable-handle" data-shortcut="bazpc" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/iso.png">
+        </div>
+        <div class="file-name">
+          baz's PC.iso
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="alternatives" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/txt.svg">
+        </div>
+        <div class="file-name">
+          credits.txt
+        </div>
+      </div>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="3d2774a1-aaae-3454-2aa0-52d89c3c03ef" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">credits.txt</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow padwrapper" contenteditable="true" "="">
+              
+    https://cerebraldatabank.neocities.org/<br>
+    https://niceware.neocities.org/<br>
+    <small>To be updated</small>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="0187380b-91b8-759a-bd43-fb841c22c2a8" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Other</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="folder">
+      <div class="file file-drag action-shortcut pointer ui-draggable ui-draggable-handle" data-shortcut="aaronos" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/iso.png">
+        </div>
+        <div class="file-name">
+          AaronOS.iso
+        </div>
+      </div>
+      <div class="file file-drag action-shortcut pointer ui-draggable ui-draggable-handle" data-shortcut="windows93os" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/iso.png">
+        </div>
+        <div class="file-name">
+          WINDOWS93.iso
+        </div>
+      </div>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="61ec9909-ebe2-4380-9131-0a747de6dcfd" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">index.html</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div id="cdm2" class="cdm"><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="false" autocapitalize="false" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 245px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>32</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code" role="presentation"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div></div></div></div></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="47f557ab-098f-7b76-076e-029cf7ffef8b" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">style.css</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div id="cdm3" class="cdm"><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="false" autocapitalize="false" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 93px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>9</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code" role="presentation"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div></div></div></div></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="898cfcc0-35d8-c719-2c63-91f9a10c7d5d" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">not_found.html</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div id="cdm4" class="cdm"><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="false" autocapitalize="false" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 88px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>13</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code" role="presentation"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div></div></div></div></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="6a9e80f9-317d-a46e-8977-3b385933347a" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Secret stuff</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="folder">
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="secrets" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/txt.svg">
+        </div>
+        <div class="file-name">
+          secret.txt
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="password" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/txt.svg">
+        </div>
+        <div class="file-name">
+          password.txt
+        </div>
+      </div>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="a7d7799d-ff8f-ab36-32fa-ef793d3b2a17" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">secret.txt</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow padwrapper" contenteditable="true" "="">
+              
+    This is a secret file! Go on, shoo, get outta here!
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="ab146ef4-435c-44cc-9630-8a5fe890c7e5" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">password.txt</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow padwrapper" contenteditable="true" "="">
+              
+    username: rexizcool<br>
+    password: coolhax0r123
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="c7b5471a-58c6-9503-0f6d-ae3f6c8d9adb" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">boobison.png</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="center-image"><img src="images/files/boobison.png"></div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="da8a3fad-ecaf-077d-104c-278a3b86065a" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">shark_bait.mp3</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2304602789/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=none/track=2304819500/transparent=true/" seamless=""><a href="http://demonsrunamok.bandcamp.com/album/no-peace-in-hell-12">No Peace In Hell 12&quot; by GET THE SHOT</a></iframe>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+          <div class="window window-drag ui-draggable" id="fb1ee8d3-af15-9faf-5dd1-a1f3efb6f4a2" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Sweeper.exe</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="sweeper-container">
+      <div id="sweeper-table"><table><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr><tr><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td><td width="20" height="20" style="background-color: gray;"></td></tr></table></div>
+      <div class="sweeper-controls">
+        <button id="start-sweeper">Start</button>
+      </div>
+    </div>
+  
+            </div>
+          </div>
+      
+          <div class="window window-drag ui-draggable" id="7c39549d-f66a-19fe-24c1-e5479db3b0c6" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">RXPaint.exe</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="paint-container">
+      <ul class="colors">
+        <li class="set-color set-green" data-color="#69af00"></li>
+        <li class="set-color set-blue" data-color="#2780E3"></li>
+        <li class="set-color set-cyan" data-color="#42f4f4"></li>
+        <li class="set-color set-red" data-color="#d60a2c"></li>
+        <li class="set-color set-yellow" data-color="#d6ba0a"></li>
+        <li class="set-color set-orange" data-color="#d6580a"></li>
+        <li class="set-color set-purple" data-color="#9c0ad6"></li>
+        <li class="set-color set-white" data-color="#fff"></li>
+        <li class="set-color set-black" data-color="#000"></li>
+        <li class="jscribble-clear">✕</li>
+        <li class="jscribble-basicbrush">✎</li>
+        <li class="jscribble-linebrush">—</li>
+      </ul>
+      <div id="jscribble"><canvas width="500" height="400"></canvas></div>
+    </div>
+  
+            </div>
+          </div>
+      
+          <div class="window resizable window-drag ui-draggable ui-resizable" id="a49e0829-ea41-a1c7-6730-b66e6a11c023" style="
+            display:none;
+            
+            
+            
+            
+            ">
+            <div class="window-header ui-draggable-handle">
+              <div class="header-name">Browser.exe</div>
+              <div class="grow"></div>
+              <button class="minimize-window">-</button>
+              <button class="maximize-window">+</button>
+              <button class="close-window">X</button>
+            </div>
+            <div class="window-body grow " "="">
+              
+    <div class="browser_window">
+      <div class="browser_bar">
+        <button id="back" class="browser_button">&lt;</button>
+        <button id="forward" class="browser_button">&gt;</button>
+        <input id="browser_address" class="b_address" type="text" value="https://itzrex.neocities.org/website/">
+        <button id="search" class="browser_button">Search</button>
+      </div>
+      <iframe class="browser_page" id="b_page" src="/website/index.html"></iframe>
+    </div>
+  
+            </div>
+          <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div></div>
+      
+      <div class="window virus_window" id="v1" style="display:none;">
+        <div class="window-header">
+          <div class="header-name">virus.exe</div>
+          <div class="grow"></div>
+          <button class="minimize-window">-</button>
+          <button class="maximize-window">+</button>
+          <button class="close-window">X</button>
+        </div>
+        <div class="window-body grow">
+          <div class="virus_msg">
+            This is a virus, are you<br>
+            sure you want to run it?
+            <div class="virus_btn">
+              <button class="start_virus">No</button>
+              <button class="start_virus">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+      
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="browser" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/www.png">
+        </div>
+        <div class="file-name">
+          Browser.exe
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="terminal" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/coding.png">
+        </div>
+        <div class="file-name">
+          Terminal.exe
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="rxpaint" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/sketchbook.png">
+        </div>
+        <div class="file-name">
+          RXPaint.exe
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="snake" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/snake.png">
+        </div>
+        <div class="file-name">
+          Snake.exe
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="sweeper" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/bomb.png">
+        </div>
+        <div class="file-name">
+          Sweeper.exe
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="about" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/about.png">
+        </div>
+        <div class="file-name">
+          About.exe
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="socialfolder" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/folder.png">
+        </div>
+        <div class="file-name">
+          Socials
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="secretfolder" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/folder.png">
+        </div>
+        <div class="file-name">
+          Secret stuff
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="animalfolder" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/folder.png">
+        </div>
+        <div class="file-name">
+          Cute animals
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="webfolder" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/folder.png">
+        </div>
+        <div class="file-name">
+          Website
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="osfolder" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/folder.png">
+        </div>
+        <div class="file-name">
+          Operating systems
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="to_do" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/txt.svg">
+        </div>
+        <div class="file-name">
+          to-do.txt
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="boobison" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/png.svg">
+        </div>
+        <div class="file-name">
+          boobison.png
+        </div>
+      </div>
+      <div class="file file-drag action-file pointer ui-draggable ui-draggable-handle" data-window="sharkbait" style="position: relative;">
+        <div class="file-icon">
+          <img src="images/icons/mp3.png">
+        </div>
+        <div class="file-name">
+          shark<br>_bait.mp3
+        </div>
+      </div>
+      
+      <div class="file action-shortcut pointer virus_launcher" data-shortcut="virusshortcut">
+        <div class="file-icon">
+          <img src="images/icons/rad.png">
+        </div>
+        <div class="file-name">
+          virus.exe
+        </div>
+      </div>
+      
+      <div class="selection file-selected"></div>
+    </div>
+    
+    <div class="hotbar">
+      <div class="start-menu">
+        <div class="start-menu-flex">
+          <div class="strip"></div>
+          <div class="start-menu-content">
+            <div class="other-links">
+              <a href="https://neocities.org/" title="Neocities"><img src="https://anlucas.neocities.org/neocities_button.gif" alt="Neocities"></a>
+              <a href="http://xillmisa.neocities.org" title="xillmisa's Snippets"><img src="https://dann.neocities.org/now/xillmisa.gif" alt="xillmisa's Snippets"></a>
+              <a href="https://punchy.neocities.org" title="RAINBOW REALM!"><img src="https://punchy.neocities.org/punchycrack.gif" alt="RAINBOW REALM!"></a>
+              <a href="https://encounters-ltd.neocities.org/" title="there's something out there"><img src="https://encounters-ltd.neocities.org/e-ltd%20button.png" alt="there's something out there"></a>
+              <a href="https://sporuli.neocities.org/" title="Spirouly main page. "><img src="https://sporuli.neocities.org/sidebar/spirouly_but.gif" alt="Spirouly main page. "></a>
+              <a href="https://soups.neocities.org/" title="Soups.Soups"><img src="https://soups.neocities.org/soups_btn_2.png" alt="Soups.Soups"></a>
+              <a href="https://threec2002.neocities.org/" title="特攝之家"><img src="https://threec2002.neocities.org/pic/link/new_mic.gif" alt="特攝之家" width="88px"></a>
+              <a href="https://bullwinkles-corner.neocities.org/" title="enter the zone"><img src="https://bullwinkles-corner.neocities.org/img/bc-button.png" title="enter the zone"></a>
+              <a href="https://kumaclick.neocities.org/" title="Kumaclick"><img src="https://kumaclick.neocities.org/images/banner.gif" alt="Kumaclick"></a>
+              <a href="https://dann.neocities.org/" title="Dannarchy"><img src="https://dann.neocities.org/d_now.gif" alt="Dannarchy"></a>
+              <a href="https://cerebraldatabank.neocities.org/" title="CerebralDatabank"><img src="images/buttons/cdb-88x31.png" alt="CerebralDatabank"></a>
+              <a href="https://battyville.neocities.org/" title="Battyville"><img src="https://battyville.neocities.org/bv88x31prp.gif" alt="Battyville"></a>
+              <a href="https://xxxwastebinxxx.neocities.org" title="*.~xXx_wastebin_xXx~.* "><img src="https://xxxwastebinxxx.neocities.org/88x31/wastebin-light.png" alt="wastebitch"></a>
+              <a href="https://lizghul.neocities.org/" title="Lair of the Lizard Ghost"><img src="https://lizghul.neocities.org/buttons/lizghul-88x31.gif" alt="Lair of the Lizard Ghost"></a>
+              <a href="https://kakashi.neocities.org/" title="Spirited Beginning"><img src="https://kakashi.neocities.org/p/kakashi%20button.gif" alt="Spirited Beginning"></a>
+              <a href="https://googol.neocities.org/" title="Googol"><img src="https://googol.neocities.org/googol_thumb.gif" alt="Googol"></a>
+            </div>
+            <div class="my-link">
+              <a href="https://itzrex.neocities.org/"><img src="https://itzrex.neocities.org/images/button.gif"></a>
+              <button class="copy-me" data-clipboard-text="<a href=&quot;https://itzrex.neocities.org/&quot;><img src=&quot;https://itzrex.neocities.org/images/button.gif&quot;></a>">Copy mine</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="start">Start</button>
+      <span class="vertical-divider ml-5 mr-5"></span>
+      <div class="grow">
+        <ul class="hotbar-windows">
+        <li class="58bcd561-7708-2a31-4960-f4fe9e29b9e3" style="display:none;">Snake.exe</li>
+      
+        <li class="577a676e-dfd8-578c-a079-0acf97753a93" style="display:none;">Terminal.exe</li>
+      
+        <li class="045a9fbd-0778-b74e-7e80-3a3a6e0dccd6" style="display:none;">About.exe</li>
+      
+        <li class="51f8b3ef-b6ae-feb2-582d-4b7b6b81ac97" style="display:none;">to-do.txt</li>
+      
+        <li class="2994787c-af1d-4f9d-0d0c-fd46a336016d" style="display:none;">kitty.jpg</li>
+      
+        <li class="29201c18-0183-86e6-fb4b-1c4100941154" style="display:none;">neocities.png</li>
+      
+        <li class="a7479310-249b-a07b-aa67-60c773d11837" style="display:none;">Cute animals</li>
+      
+        <li class="dceed6fa-5258-a07b-8a1a-d736eb7c1ce2" style="display:none;">doge_with_glasses.jpg</li>
+      
+        <li class="8346c57a-90d3-22ee-15bd-aee5b072a931" style="display:none;">another_kitty.jpg</li>
+      
+        <li class="a87f8fcd-caf7-080e-694c-6c0aa59ec19c" style="display:none;">doggo.jpg</li>
+      
+        <li class="ae74b5a6-1652-4610-a945-a4f0290805cd" style="display:none;">samuel_l_kitty.jpg</li>
+      
+        <li class="0c078539-8e80-ced4-f01c-df4b5e686ac4" style="display:none;">Socials</li>
+      
+        <li class="6f4f0a6e-8ee0-f324-9cb0-f9f978190607" style="display:none;">Discord</li>
+      
+        <li class="f8eda366-c356-ac5a-b9ec-439918d9c72f" style="display:none;">Website</li>
+      
+        <li class="f8a91b67-dc82-8dd9-518b-fd03721975e9" style="display:none;">Operating systems</li>
+      
+        <li class="3d2774a1-aaae-3454-2aa0-52d89c3c03ef" style="display:none;">credits.txt</li>
+      
+        <li class="0187380b-91b8-759a-bd43-fb841c22c2a8" style="display:none;">Other</li>
+      
+        <li class="61ec9909-ebe2-4380-9131-0a747de6dcfd" style="display:none;">index.html</li>
+      
+        <li class="47f557ab-098f-7b76-076e-029cf7ffef8b" style="display:none;">style.css</li>
+      
+        <li class="898cfcc0-35d8-c719-2c63-91f9a10c7d5d" style="display:none;">not_found.html</li>
+      
+        <li class="6a9e80f9-317d-a46e-8977-3b385933347a" style="display:none;">Secret stuff</li>
+      
+        <li class="a7d7799d-ff8f-ab36-32fa-ef793d3b2a17" style="display:none;">secret.txt</li>
+      
+        <li class="ab146ef4-435c-44cc-9630-8a5fe890c7e5" style="display:none;">password.txt</li>
+      
+        <li class="c7b5471a-58c6-9503-0f6d-ae3f6c8d9adb" style="display:none;">boobison.png</li>
+      
+        <li class="da8a3fad-ecaf-077d-104c-278a3b86065a" style="display:none;">shark_bait.mp3</li>
+      
+        <li class="fb1ee8d3-af15-9faf-5dd1-a1f3efb6f4a2" style="display:none;">Sweeper.exe</li>
+      
+        <li class="7c39549d-f66a-19fe-24c1-e5479db3b0c6" style="display:none;">RXPaint.exe</li>
+      
+        <li class="a49e0829-ea41-a1c7-6730-b66e6a11c023" style="display:none;">Browser.exe</li>
+      </ul>
+      </div>
+      <span class="vertical-divider mr-5"></span>
+      <button id="time">6:29 PM</button>
+    </div>
+    <script src="lib/clipboard.min.js" charset="utf-8"></script>
+    <script src="script.js" charset="utf-8"></script>
+  
+
+</body></html>

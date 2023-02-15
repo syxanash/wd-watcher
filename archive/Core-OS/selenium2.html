@@ -1,0 +1,555 @@
+<html lang="en" class="js"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="title" content="Core OS">
+    <meta name="description" content="I am a Service Engineer by trade but a web developer at heart. I studied earning a Bachelor Degree with a major in Web Development. I'm based in Hamilton New-Zealand, I'm currently looking for an entry into the web industy">
+    <meta name="keywords" content="web, coreos, web design, web developer, web design in hamilton nz, service engineer, hamilton, nz, job search">
+    <meta name="author" content="Timothy Howard">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="CoreOS | Timothy. H">
+    <meta property="og:url" content="http://www.coreos.io">
+    <meta property="og:site_name" content="CoreOS">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.coreos.io/img/fav/android-chrome-512x512.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href="img/fav/site.webmanifest">
+    <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#686666">
+
+    <title>CoreOS | Timothy. H</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="css/root.css">
+    <link rel="stylesheet" type="text/css" href="css/assets-base/base-page.css">
+    <link rel="stylesheet" type="text/css" href="css/assets-base/bgStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/assets-win/assets-git.css">
+    <link rel="stylesheet" type="text/css" href="css/assets-win/window-hover.css">
+    <link rel="stylesheet" type="text/css" href="css/assets-win/console.css">
+
+
+    <script>
+        document.documentElement.className = 'js';
+    </script>
+
+</head>
+
+<body class="loaded">
+    <div class="loading">
+    </div>
+
+
+    <!-- Menu Right Click-->
+    <div class="dropdown-menu dropdown-menu-sm" id="context-menu">
+
+        <div id="dropDownButtons" class="btn-group-vertical">
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="zoom-out btn btn-secondary"><i class="bi bi-zoom-out"></i></button>
+                <button type="button" class="zoom-init btn btn-secondary">View</button>
+                <button type="button" class="zoom btn btn-secondary"><i class="bi bi-zoom-in"></i></button>
+            </div>
+
+            <button id="btnRefresh" type="button" class="btn btn-secondary">Refresh</button>
+
+            <!-- Default dropend button -->
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Toggle Apps</button>
+                <ul class="dropdown-menu">
+                    <p class="divider">Toggle App</p>
+                    <div id="togApp"><button class="btn-secondary">terminal [OFF]</button><button class="btn-secondary">projects [OFF]</button><button class="btn-secondary">Adobe XD Prototypes [OFF]</button><button class="btn-secondary">career [OFF]</button><button class="btn-secondary">repos [OFF]</button><button class="btn-secondary">intern [OFF]</button><button class="btn-secondary">isan [OFF]</button><button class="btn-secondary">temp [OFF]</button></div>
+
+
+                </ul>
+            </div>
+
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Settings</button>
+                <ul class="dropdown-menu">
+                    <div id="win-toggle"></div>
+                    <button id="" type="button" class="btn btn-secondary"><s>InProgress</s></button>
+                </ul>
+            </div>
+
+
+            <button type="button" class="btn btn-secondary" onclick="pickImage()">Handy Tips?</button>
+        </div>
+
+        <!-- conMenu Collapse-->
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn-secondary btnSocial"><a href="https://www.facebook.com/torero.yato/" target="_blank" rel="noopener">Facebook</a></button>
+                    <button type="button" class="btn-secondary btnSocial"><a href="https://codepen.io/timhow38" target="_blank" rel="noopener">CodePen</a></button>
+                    <button type="button" class="btn-secondary btnSocial"><a href="http://www.linkedin.com/in/timhow20" target="_blank" rel="noopener">Linkedin</a></button>
+                </div>
+            </div>
+        </div>
+        <button class="dropdown-item context-sep" style="text-align: center;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <i class="bi bi-chevron-bar-contract"></i>
+    </button>
+
+    </div>
+    <!-- Body Wrapper-->
+    <div class="body-sub">
+        <!-- Animation Loader-->
+        <div id="loader-wrapper">
+            <div id="loader">
+                <div id="background">
+                    <!-- create progress bar -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Containment -->
+        <div class="pages-stack">
+
+            <!-- Audio Player -->
+            <div class="page" id="page-home">
+                <div id="containment-wrapper">
+                    <div class="content">
+                        <svg class="scene" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
+              <path d="M -84.52,-81.13 C -94.62,-73.4 -88.88,-59.55 -90.33,-48.91 -89.29,27.31 -89.61,103.5 -88.33,179.8 -85.99,416.1 -81.32,888.9 -81.32,888.9 -81.32,888.9 974.5,888.7 1587,891.9 1559.0079952502547,709.1530771068299 1508.2110320259937,631.0612704641438 1450.2110320259937,520.0612704641438 1409.2110320259937,424.76127046414376 1434.9804151852702,280.062590744954 1387.2733807844038,187 1352.808552788736,120.8995599063966 1288.382894422528,65.03433950475551 1230.3321352285932,11.940558469459415 1192.109513638124,-22.833747636375488 1105.6446856424566,-80.91229442391943 1105.6446856424566,-80.91229442391943 1105.6446856424566,-80.91229442391943 914.5,-77.77 848.2,-80.17 537.6,-80.84 227,-81.38 -83.6,-81.6 -83.91,-81.44 -84.21,-81.29 -84.52,-81.13 Z" pathdata:id="M -84.52,-81.13 C -94.62,-73.4 -88.88,-59.55 -90.33,-48.91 -89.29,27.31 -89.61,103.5 -88.33,179.8 -85.99,416.1 -81.32,888.9 -81.32,888.9 -81.32,888.9 974.5,888.7 1587,891.9 1576,704.7 1517,625.7 1459,514.7 1418,419.4 1430,288.5 1382,187 1349,116.3 1296,54.47 1240,0.3429 1205,-33.51 1120,-83.59 1120,-83.59 1120,-83.59 914.5,-77.77 848.2,-80.17 537.6,-80.84 227,-81.38 -83.6,-81.6 -83.91,-81.44 -84.21,-81.29 -84.52,-81.13 Z"></path>
+              <path d="M 665.2,-83.08 C 413.7,-81.89 162.2,-82.43 -89.29,-81.61 -90.35,164.3 -85.06,410.2 -84.09,656.1 -83.37,733.7 -82.64,811.3 -81.92,888.9 442.4,889.8 966.7,890.7 1491,891.6 1253,747.5 1416.8176456982721,429.4831321081406 1285.8846877209662,245.440761549798 1226.9249129345826,163.235934524164 1107.101903874495,141.97884165658732 1043.1072672363105,64.4338322528617 1009.1099489172183,24.310670539176495 973,-76.01 973,-76.01 973,-76.01 706.6,-83.67 665.2,-83.08 Z" pathdata:id="M 665.2,-83.08 C 413.7,-81.89 162.2,-82.43 -89.29,-81.61 -90.35,164.3 -85.06,410.2 -84.09,656.1 -83.37,733.7 -82.64,811.3 -81.92,888.9 442.4,889.8 966.7,890.7 1491,891.6 1253,747.5 1349,460.4 1243,260.6 1199,176.6 1145,96.92 1083,24.95 1050,-12.63 973,-76.01 973,-76.01 973,-76.01 706.6,-83.67 665.2,-83.08 Z"></path>
+              <path d="M -85.01,-74.02 C -92.39,-66.64 -85.37,-55.79 -87.81,-46.91 -86.65,265.1 -84.66,577.2 -83.18,889.2 317.2,888.3 717.5,885.8 1118,890.4 1152,890.6 1187,890.9 1221,890 1219,768.3 1194.396725206204,653.0851309033183 1164.6465067883582,537.055916912785 1137.8962883705124,429.9287771548415 1122.4157201893345,315.2522052832973 1060.4157201893345,225.91244539553853 1001.9415720189335,143.82187809869617 942.821615997281,121.84615731980473 885.0661359201879,67.99102641648643 813.3419440662176,0.36643915252054526 772.2,-78.96 772.2,-78.96 772.2,-78.96 222.1,-81.07 -85.01,-74.02 Z" pathdata:id="M -85.01,-74.02 C -92.39,-66.64 -85.37,-55.79 -87.81,-46.91 -86.65,265.1 -84.66,577.2 -83.18,889.2 317.2,888.3 717.5,885.8 1118,890.4 1152,890.6 1187,890.9 1221,890 1219,768.3 1175,659.3 1150,544.3 1128,438.4 1143,312.6 1081,227.1 1004,121.1 925.8,114.8 851.3,54.73 762,-17.34 772.2,-78.96 772.2,-78.96 772.2,-78.96 222.1,-81.07 -85.01,-74.02 Z"></path>
+              <path d="M -92.42,-79.11 C -89.97,243.8 -87.52,566.7 -85.07,889.6 201.8,889.9 488.7,889.9 775.5,895.6 880.4,896.9 985.4220321280953,893.9871575247246 1089.9229451483475,892.4914383498163 1063.9971461166056,773.6316212504456 1037.1255708693598,651.9327628038035 976.1607877163037,544.9823631489111 946.7336758240556,495.9113014523871 914.7578197517181,448.2671803409628 882.1041667439007,401.2129565564665 820.9784817933498,314.3041095179434 742.227796750118,252.0236872321747 666.2958332560993,177.42597033889032 583.1126711681271,98.0761815559194 496.4857305830273,12.255770604125056 386.8130137824238,-23.423464644098853 328.6411531468387,-45.665114173871956 233.04320809117218,-81.39738014987275 233.04320809117218,-81.39738014987275 233.04320809117218,-81.39738014987275 9.82,-84.94 -92.42,-79.11 Z" pathdata:id="M -92.42,-79.11 C -89.97,243.8 -87.52,566.7 -85.07,889.6 201.8,889.9 488.7,889.9 775.5,895.6 880.4,896.9 1063,889.5 1063,889.5 1063,889.5 1081,768.2 997.4,608.7 958.5,534.8 969.9,436.8 918.5,370.8 848.4,280.8 717,260.3 629.9,186.5 552.6,121.2 491.5,38.73 426.3,-38.61 412.9,-54.44 387.9,-87.47 387.9,-87.47 387.9,-87.47 9.82,-84.94 -92.42,-79.11 Z"></path>
+              <path d="M -88.6,95.54 C -90.38,166.1 -88.23,236.7 -88.68,307.4 L -86.19,890 C 229.7,890.2 939.8,892.4 939.8,892.4 855.3452413262579,766.9092592874637 830.8547586737421,639.5028207454745 721.4,519.4 634.8182719503957,424.42780073336894 526.5126533304243,360.74885912277233 428.8845602305679,281.6730191886489 332.763209474677,203.90083135750675 251.51206859744931,102.47811025308985 140.0092592874637,49.081481425072624 70.66375418344072,15.916510089946932 -24.82,24.2 -85.28,0.03 Z" pathdata:id="M -88.6,95.54 C -90.38,166.1 -88.23,236.7 -88.68,307.4 L -86.19,890 C 229.7,890.2 939.8,892.4 939.8,892.4 906.9,734.7 779.3,676 721.4,519.4 676.8,398.8 566.5,307.1 458.9,236.6 355.2,168.7 220.3,165.7 107.8,113.5 40.05,82.12 -24.82,24.2 -85.28,0.03 Z"></path>
+              <path d="M -95.69,252.3 -87.65,890.4 698.1,892 C 698.1,892 574.7993092833841,604.2648639559196 460.8437423152522,504.5229234588679 307.94118219752403,369.6486773671111 131.4,466.5 -95.69,252.3 Z" pathdata:id="M -95.69,252.3 -87.65,890.4 698.1,892 C 698.1,892 569.8,587.1 448.9,482.7 299.7,353.9 131.4,466.5 -95.69,252.3 Z"></path>
+              <path d="M -85.59,444.4 -85.59,890.6 489.2172753428696,895.6 C 489.2172753428696,895.6 437.10245928558356,745.112745429893 382.340139385039,690.4344970916148 257.83581719968885,565.5752194639397 57.98,629.2 -85.59,444.4 Z" pathdata:id="M -85.59,444.4 -85.59,890.6 546.9,895.6 C 546.9,895.6 517.4,695.4 339.9,593.4 187.7,505.9 57.98,629.2 -85.59,444.4 Z"></path>
+            </svg>
+                    </div>
+                    <nav id="taskbar-nav" class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+                        <div class="container-fluid">
+                            <div class="btn-group dropup">
+                                <button type="button" class="taskbtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="img/icons/desktop/sm/Desktop_Folder_2.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                                </button>
+                                <ul class="dropdown-menu nav-menu-drop" style="">
+                                    <li>
+                                        <div class="nav-menu-title">
+                                            <div class="text"><button id="goFS" type="button" class="btn btn-secondary">Fullscreen [OFF]</button></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <div class="nav-menu-title">
+                                            <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                            <div class="text"><a href="#"><s>InProgress</s></a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="nav-menu-title">
+                                            <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                            <div class="text"><a href="#"><s>InProgress</s></a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="nav-menu-title">
+                                            <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                            <div class="text"><a href="#"><s>InProgress</s></a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <div class="nav-menu-title">
+                                            <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                            <div class="text"><a href="#"><s>InProgress</s></a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+
+                            <div class="collapse navbar-collapse" id="navbarsExample02">
+                                <ul id="task-windows" class="navbar-nav me-auto">
+
+                                    <!--<li class="nav-item minWindow">
+                                        <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br>
+                                    </li>-->
+
+                                </ul>
+                                <!--
+                                    <form>
+                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                                </form>
+                                -->
+
+                            </div>
+                        </div>
+                    </nav>
+
+
+
+
+                    <div id="icon-container">
+                        <div class="container noti-box">
+                            <div class="row noti-head">
+                                <div class="col-sm">
+                                    <h4 id="noti-title">
+                                        Hello World!
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row noti-mid">
+                                <div class="col-sm">
+                                    <p id="noti-text">
+                                        Welcome I'm Tim and this is my always under construction portfolio! Press the next button for <strong>Tips and Tricks!</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row noti-btn">
+                                <div class="col-sm">
+                                    <button onclick="pickImage()">
+                                    <!-- add image -->
+                                    <img src="img/icons/desktop/sm/Play_Green.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="icon-images">
+                            <img id="image" src="/img/images/noti/noti-01.png">
+                        </div>
+                    </div>
+
+                    <!--<div id="chartdiv"></div>-->
+                    <!-- Desktop Drag -Icons -->
+                    <div id="desktop-icons"></div>
+
+                    <!-- Windows Applications-->
+                    <div id="draggable-js-intern" class="win-prop box-lg-miro application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                <div class="text">Design Factory -2020</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed" style="display: none; pointer-events: none;"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise" style="display: none; pointer-events: none;"><i class="bi bi-arrows-fullscreen"></i></div>
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+
+                            </div>
+                        </div>
+                        <div class="form">
+                            <iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_koshvM8=/?moveToViewport=-69,-65551,180020,106812" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                    <div id="draggable-js-isan" class="win-prop box-sm-resize application-non-drag isan-prop ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="behind-isan"></div>
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                <div class="text">ISAN Starmap</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed" style="display: none; pointer-events: none;"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise" style="display: none; pointer-events: none;"><i class="bi bi-arrows-fullscreen"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form isan-form">
+
+                            <div class="row isan-prop position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <kbd class="d-inline-block mb-2 text-primary">Data Visualization</kbd>
+                                    <h3 class="mb-0">ISAN Starmap</h3>
+                                    <div class="mb-1 text-muted">Nov 12</div>
+                                    <p class="card-text mb-auto">Under development by the Collective, ISAN uses in-game station transmitters as reference points, in order to calculate your relative position. This is the private home of that project.</p>
+                                    <a href="https://isan.to" target="blank_"><img class="bd-placeholder-img lazyload isan-img" width="300" height="250" src="/img/images/applications/isan-starmap/isan.png" alt="..."></a>
+
+                                    <a href="https://www.frozenbyte.com/2021/07/starbase-early-access-out-now/" target="blank_"><img class="isan-img2" width="300" height="250" src="/img/images/applications/isan-starmap/isan-02.png" alt="..."></a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--
+                    <div id="draggable-js-collective" class="win-prop box-sm-resize application-non-drag isan-prop">
+                        <div class="behind-isan"></div>
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                <div class="text">Collective <strong>Inactive</strong></div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed" style="display: none; pointer-events: none;"><i class="bi bi-fullscreen-exit" style="display: none; pointer-events: none;"></i></div>
+                                <div id="maximise" type="button" class="btn maximise" style="display: none; pointer-events: none;"><i class="bi bi-arrows-fullscreen" style="display: none; pointer-events: none;"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form isan-form">
+
+
+
+                            <div class="row isan-prop position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <kbd class="d-inline-block mb-2 text-primary">Landing Page</kbd>
+                                    <h3 class="mb-0">Collective Hub</h3>
+                                    <div class="mb-1 text-muted">Nov 12</div>
+                                    <p class="card-text mb-auto">Under development by the Collective, ISAN uses in-game station transmitters as reference points, in order to calculate your relative position. This is the private home of that project.</p>
+                                    <a href="https://collective-inactive.web.app/" target="blank_"><img class="bd-placeholder-img lazyload isan-img" width="300" height="250" src="/img/images/applications/sb-collective/profileIcon.png" alt="..."></a>
+
+                                    <a href="https://wiki.starbasegame.com/index.php/Collective" target="blank_"><img class="isan-img2" width="300" height="250" src="/img/icons/applications/collective-logo.png" alt="..."></a>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                -->
+                    <div id="draggable-js-temp" class="win-prop box-sm-resize application-non-drag isan-prop ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="behind-isan"></div>
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                <div class="text">Collective <strong>Inactive</strong></div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed" style="display: none; pointer-events: none;"><i class="bi bi-fullscreen-exit" style="display: none; pointer-events: none;"></i></div>
+                                <div id="maximise" type="button" class="btn maximise" style="display: none; pointer-events: none;"><i class="bi bi-arrows-fullscreen" style="display: none; pointer-events: none;"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form isan-form">
+
+
+
+                            <div class="row isan-prop position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <kbd class="d-inline-block mb-2 text-primary">Landing Page</kbd>
+                                    <h3 class="mb-0">Collective Hub</h3>
+                                    <div class="mb-1 text-muted">Nov 12</div>
+                                    <p class="card-text mb-auto">Under development by the Collective, ISAN uses in-game station transmitters as reference points, in order to calculate your relative position. This is the private home of that project.</p>
+                                    <a href="https://collective-inactive.web.app/" target="blank_"><img class="bd-placeholder-img lazyload isan-img" width="300" height="250" src="/img/images/applications/sb-collective/profileIcon.png" alt="..."></a>
+
+                                    <a href="https://wiki.starbasegame.com/index.php/Collective" target="blank_"><img class="isan-img2" width="300" height="250" src="/img/icons/applications/collective-logo.png" alt="..."></a>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div id="draggable-js-adobexd" class="win-prop box-sm-resize application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
+                                <div class="text">Adobe XD Prototypes</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise"><i class="bi bi-arrows-fullscreen"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form sub-folder" id="sub-folder-1">
+
+                        </div>
+                    </div>
+
+                    <div id="draggable-js-career" class="win-prop box-sm-resize application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Handbag_LightBlue.png" alt="Card image cap"></div>
+                                <div class="text">Career</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+
+                                <div id="windowed" type="button" class="btn windowed"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise"><i class="bi bi-arrows-fullscreen"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <ul class="list-group">
+                                <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-success" href="https://github.com/timhow38" target="_blank">
+                  Github Profile
+                  <span class="badge badge-primary badge-pill">ACTIVE</span>
+                </a>
+                                <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-success" href="https://www.linkedin.com/in/timhow20/" target="_blank">
+                  LinkedIn Profile
+                  <span class="badge badge-primary badge-pill">ACTIVE</span>
+                </a>
+                                <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-success" href="/img/images/applications/CareerImage/Timothy Howard CV July 2021.pdf" target="_blank">
+                  Resume [.pdf]
+                  <span class="badge badge-primary badge-pill">29-08-21</span>
+                </a>
+                                <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger" href="https://codepen.io/timhow38" target="_blank">
+                  CodePen Profile
+                  <span class="badge badge-primary badge-pill">INACTIVE</span>
+                </a>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="draggable-JS-terminal" class="win-prop box-lg-resize-term application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Chip_Green.png" alt="Card image cap"></div>
+                                <div class="text">Terminal</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise"><i class="bi bi-arrows-fullscreen"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8 term-border">
+                                <div id="terminal">
+
+
+                                    <div class="print"><strong>[CoreCLI]</strong> - Exploring WebCli Possibilities.<br>Type "help" for more information.
+                                    </div>
+                                    <div id="cli" type="text" inputmode="search"><span class="label"></span><span class="prompt"><span class="cursor">&nbsp;</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 terminal-right">
+                                <div id="dbgHide" class="container" style="text-align: center; margin-top: 8em;">
+                                    <img class="icon-main-02" src="../img/images/vector-img/desktop/fontAwesome/construction.svg" width="30" height="30" alt="">
+
+                                </div>
+
+                                <div id="debugDiv"></div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="draggable-js-projects" class="win-prop box-sm-resize application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Notes_Purple.png" alt="Card image cap"></div>
+                                <div class="text">Projects</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise"><i class="bi bi-arrows-fullscreen"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form sub-folder" id="sub-folder-0">
+
+                        <div id="app-icon-Adobe XD Prototypes" class="desk-prop" style="left: 20px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">Adobe XD</p></div></div></div><div id="app-icon-intern" class="desk-prop ui-draggable ui-draggable-handle" style="left: 115px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">Design Factory</p></div></div></div><div id="app-icon-isan" class="desk-prop ui-draggable ui-draggable-handle" style="left: 210px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">ISAN Starmap</p></div></div></div><div id="app-icon-temp" class="desk-prop ui-draggable ui-draggable-handle" style="left: 305px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">C-SB Inactive</p></div></div></div></div>
+                    </div>
+                    <div id="draggable-js-repos" class="win-prop box-lg-resize application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
+                        <div class="header">
+                            <div class="sub-menu-title">
+                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Hammer_Yellow.png" alt="Card image cap"></div>
+                                <div class="text">Repos Github - Public</div>
+                            </div>
+                            <div class="buttons">
+                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
+                                <div id="windowed" type="button" class="btn windowed"><i class="bi bi-fullscreen-exit"></i></div>
+                                <div id="maximise" type="button" class="btn maximise"><i class="bi bi-arrows-fullscreen"></i></div>
+
+                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="form sub-folder" id="sub-folder-0">
+                            <div class="win-prop-scroll col-12">
+                                <ul class="projects-ul" target="_blank">
+                                <li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/getoneshot-webpack">getoneshot-webpack<p class="projects-lang">JavaScript<p class="projects-desc"></p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/antELOpe">antELOpe<p class="projects-lang">JavaScript<p class="projects-desc"></p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/portfolio-thumbs">portfolio-thumbs<p class="projects-lang"> <p class="projects-desc">Portfolio Overview</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/sot-mapping">sot-mapping<p class="projects-lang">Python<p class="projects-desc"></p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/UI-UX-Projects-Part-02">UI-UX-Projects-Part-02<p class="projects-lang"> <p class="projects-desc">Various Projects created while studying. Part 02</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/UI-UX-Projects-Part-01">UI-UX-Projects-Part-01<p class="projects-lang"> <p class="projects-desc">Various Projects created while studying.</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/AdobeXD-Resources">AdobeXD-Resources<p class="projects-lang"> <p class="projects-desc"></p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/DFNZ701-Design-Factory">DFNZ701-Design-Factory<p class="projects-lang"> <p class="projects-desc"></p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/Resume-WebApplication">Resume-WebApplication<p class="projects-lang">JavaScript<p class="projects-desc">[Resume] - [WebApplications]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/COMP709-P3-NZ-APP">COMP709-P3-NZ-APP<p class="projects-lang">Java<p class="projects-desc">[Wintec] - [MobileApplications] - [Client: Wintec]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/COMP709-P2-MobileApps">COMP709-P2-MobileApps<p class="projects-lang">Java<p class="projects-desc">[Wintec] - [MobileApplications] - [AssignmentsP2]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/COMP709-P1-MobileApps">COMP709-P1-MobileApps<p class="projects-lang">Java<p class="projects-desc">[Wintec] - [MobileApplications] - [AssignmentsP1]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/Collective-PublicWebsite">Collective-PublicWebsite<p class="projects-lang">JavaScript<p class="projects-desc">[Collective] - [WebApplications] - [Client: Collective]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/INFO708-Data-Visualization">INFO708-Data-Visualization<p class="projects-lang">CSS<p class="projects-desc">[Wintec] - [DataVisualization] - [AssignmentsP1]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/COMP710-Website-BossCuts-P2">COMP710-Website-BossCuts-P2<p class="projects-lang">JavaScript<p class="projects-desc">[Wintec] - [WebApplications] - [Client: BossCuts]</p></p></a></li><li class="projects-li"><a class="projects-a" href="https://github.com/timhow38/COMP710-Website-BossCuts-P1">COMP710-Website-BossCuts-P1<p class="projects-lang">PHP<p class="projects-desc">[Wintec] - [WebApplications] - [Client: BossCuts]</p></p></a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                <div id="app-icon-terminal" class="desk-prop ui-draggable ui-draggable-handle" style="left: 20px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Chip_Green.png" alt="Card image cap"><div class="card-body"><p class="card-text">Terminal</p></div></div></div><div id="app-icon-projects" class="desk-prop ui-draggable ui-draggable-handle" style="left: 20px; top: 150px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Notes_Purple.png" alt="Card image cap"><div class="card-body"><p class="card-text">Projects</p></div></div></div><div id="app-icon-career" class="desk-prop ui-draggable ui-draggable-handle" style="left: 20px; top: 250px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Handbag_LightBlue.png" alt="Card image cap"><div class="card-body"><p class="card-text">Career</p></div></div></div><div id="app-icon-repos" class="desk-prop ui-draggable ui-draggable-handle" style="left: 20px; top: 350px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Hammer_Yellow.png" alt="Card image cap"><div class="card-body"><p class="card-text">Repos</p></div></div></div></div>
+
+            </div>
+
+
+
+            <script src="js/vendor/jquery-1.12.4.js"></script>
+            <script src="js/vendor/jquery-ui.js"></script>
+
+            <script src="js/anime.min.js"></script>
+            <script src="js/bgScript.js"></script>
+
+
+
+            <script src="js/assets-win/functions.js"></script>
+            <script src="/js/assets-api/gitAPI-02.js"></script>
+            <script src="js/assets-win/console.js"></script>
+            <script src="js/assets-noti/script-noti.js"></script>
+            <script src="js/assets-win/window-controller.js" defer=""></script>
+            <script src="js/assets-win/console-commands.js"></script>
+            <script src="js/vendor/lazysizes.min.js" async=""></script>
+            <script src="js/assets-win/taskbar.js"></script>
+
+            <script>
+                window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+            </script>
+            <!-- Script Loader  -->
+            <script>
+                document.body.classList.add('js-loading');
+                //check how long it takes to load the page
+                window.onload = function() {
+                    var loadTime = (new Date()).getTime() - window.performance.timing.navigationStart;
+                    console.log('Page loaded in ' + loadTime + ' ms.');
+                };
+                //on load add class "loaded" to body
+                window.onload = function() {
+                    document.body.classList.add('loaded');
+                    document.body.classList.remove('js-loading');
+
+                };
+                //fullscreen page
+            </script>
+
+            
+
+            <script></script>
+        </div>
+
+
+
+</div></body></html>

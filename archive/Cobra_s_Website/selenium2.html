@@ -1,0 +1,819 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.         This makes it easier to make new pages for your site. -->
+      <!-- <script src="http://www.w3schools.com/lib/w3data.js"></script> -->
+      <title>Cobra!'s Retro Room</title>
+      <script>
+        function getLang()
+        {
+          var langs = navigator.languages;
+          for (let c = 0; c < langs.length; c++) { 
+            console.log(langs[c]);
+            if (langs[c].includes("sco")) return "sco";
+            else if (langs[c].includes("nap")) return "nap";
+            else if (langs[c].includes("gd")) return "gd";
+            else if (langs[c].includes("it")) return "it";
+            else if (langs[c].includes("en")) return "en";
+          }
+          return "sco";
+        }
+        if (typeof(Storage) !== "undefined") {
+            sessionStorage.getItem('lang');
+            if (sessionStorage.lang) 
+            {
+              document.documentElement.lang = sessionStorage.lang;
+            }
+            else document.documentElement.lang = getLang();
+            console.log("check");
+        } 
+        else document.documentElement.lang = getLang();
+        console.log(document.documentElement.lang);
+        document.documentElement.setAttribute('lang', document.documentElement.lang);
+        /* switch(document.documentElement.lang)
+          {
+            case "gd":
+              document.title = "An Làrach-lìn aig Cobra!";
+              break;
+            case "nap":
+              document.title = "O situ web d' Cobra!";
+              break;
+            case "it":
+              document.title = "Il sito web di Cobra!";
+              break;
+            case "en":
+              document.title = "Cobra!'s Website";
+              break;
+          }*/
+          function removeCookies() {
+            var res = document.cookie;
+            var multiple = res.split(";");
+            for(var i = 0; i < multiple.length; i++) {
+               var key = multiple[i].split("=");
+               document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+            }
+         }
+         removeCookies();
+     </script>
+     <script>
+      console.log(/ap/.test(navigator.userAgent));
+      if (/wap/.test(navigator.userAgent)) {
+        document.location = "index.wml";
+      }
+      else if (screen.width < 800) {
+        document.location = "index.m.html";
+      }
+      </script>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <!--[if lte IE 7]><link href="/oldschoolstyle.css" rel="stylesheet" type="text/css" media="all"/><![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="RSS feed (Scots)" href="rss.sco.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS feed (Gàidhlig)" href="rss.gd.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS feed (English)" href="rss.en.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS feed (Italiano)" href="rss.it.xml">
+    <!-- script src="https://netescape.neocities.org/script.js"></script-->
+    <script data-goatcounter="https://cobradile.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+    <style>
+    :root {
+      --bgimg: url('');
+      --bgcolor: #8c8c94;
+      --myborder: #8c8c94 inset 5px;
+      --padding: 5px; 
+      --pcolor: black;
+      --mywidth: 200px;
+      --myheight: 185px;
+      --borderradius: 0px;
+      --fontfamily: 'orbitron';
+      --titlesize: 15px;
+      --h1color: black;
+      --h1margin: 2px;
+      --textfamily: 'orbitron';
+      --textsize: 15px;
+      --mylinkcolor: blue;
+      --textmargin: 2px;
+    }
+    </style>
+    <script src="/beat.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://yesterwebring.neocities.org/yesterweb-min.css"><style>@font-face {
+  font-family: "Yesterweb Monster";
+  src: url("https://cloudflare-ipfs.com/ipfs/QmaKT1nHC9JM5xmz7cRuRcB8jrkRjxdPsLaLnyzEta3e8R/MonsterFriendFore.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Yesterweb Nova Square";
+  src: url("https://cloudflare-ipfs.com/ipfs/QmaKT1nHC9JM5xmz7cRuRcB8jrkRjxdPsLaLnyzEta3e8R/NovaSquare.woff") format("woff");
+}
+
+.yw-widget-full:not(.yw-raw) {
+  display: block;
+  width: 190px;
+  margin: 0;
+  border: 3px double limegreen;
+  padding: 16px;
+  background-color: black;
+  background-image: url("https://cloudflare-ipfs.com/ipfs/QmaKT1nHC9JM5xmz7cRuRcB8jrkRjxdPsLaLnyzEta3e8R/gridnew.gif");
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.yw-widget-full:not(.yw-raw) a {
+  color: limegreen;
+  text-decoration: none;
+}
+
+.yw-widget-full:not(.yw-raw) .yw-content {
+  width: 150px;
+}
+
+.yw-widget-full:not(.yw-raw) .yw-title {
+  margin: 0 -8px 0 -5px;
+  font-family: "Yesterweb Monster", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+
+.yw-widget-full:not(.yw-raw) .yw-nav,
+.yw-widget-full:not(.yw-raw) .yw-error {
+  margin-bottom: 0;
+}
+
+.yw-widget-full:not(.yw-raw) .yw-spinner {
+  height: 32px;
+  margin-top: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://cloudflare-ipfs.com/ipfs/QmaKT1nHC9JM5xmz7cRuRcB8jrkRjxdPsLaLnyzEta3e8R/loading.gif");
+}
+
+.yw-widget-mini:not(.yw-raw) {
+  display: block;
+  width: 160px;
+  margin: 1em 0 1em 0;
+  padding: 5px;
+  background-color: #a9ff21;
+  color: black;
+  text-align: center;
+  font-family: "Yesterweb Nova Square", sans-serif;
+}
+
+.yw-widget-mini:not(.yw-raw) a {
+  color: #0000ff;
+  font-size: 14px;
+}
+
+.yw-widget-mini:not(.yw-raw) .yw-title {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.yw-widget-mini:not(.yw-raw) .yw-content {
+  margin: 4px 0 4px 0;
+}
+
+.yw-widget-text:not(.yw-raw) {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.yw-widget-text:not(.yw-raw) a {
+  color: limegreen;
+  text-decoration: none;
+}</style></head>
+  <body id="hamepage" style="background: url(&quot;images/backgrounds/bg-1.gif&quot;) center center / 100% 100% black;">
+  <!--<div id="ooter">
+  <div id="middle">-->
+  <div id="home">
+  <div id="swatchTime">@813.08</div>
+    <div id="menu">
+    <div style="background: url('images/backgrounds/menuwindaetap.png') transparent; width:194px; height: 43px; background-repeat: no-repeat;"></div>
+    <div id="imenu">
+    <script src="menu.js">
+    </script><div class="menuLink"><a href="index.en.html" target="content"><img alt="" src="images/icons/22.png"><span>Home</span></a></div><div class="menuLink"><a href="about.html" target="content"><img alt="" src="images/icons/48.png"><span>About Me</span></a></div><div class="menuLink"><a href="reviews.html" target="content"><img alt="" src="images/icons/24.png"><span>Reviews</span></a></div><div class="menuLink"><a href="airtins.html" target="content"><img alt="" src="images/icons/15.png"><span>Links</span></a></div><div class="menuLink"><a href="webgardens.html" target="content"><img alt="" src="images/icons/15.png"><span>Web Gardens</span></a></div><div class="menuLink"><a href="surveys.html" target="content"><img alt="" src="images/icons/30.png"><span>Surveys</span></a></div><div class="menuLink"><a href="shrines" target="content"><img alt="" src="images/icons/4.png"><span>Shrines</span></a></div><div class="menuLink"><a href="https://cobradile.123guestbook.com/" target="content"><img alt="" src="images/icons/44.png"><span>Guest­book</span></a></div><div class="menuLink"><a href="diaries.html" target="content"><img alt="" src="images/icons/43.png"><span>Articles</span></a></div><div class="menuLink"><a href="webstuff.html" target="content"><img alt="" src="images/icons/15.png"><span>Web Stuff I use</span></a></div><div class="menuLink"><a href="gamedevtools.html" target="content"><img alt="" src="images/icons/15.png"><span>Useful Game Dev Tools</span></a></div><br><br><div class="menuLink"><a href="gemini://cobradile.pollux.casa/index.en.gmi" target="content"><img alt="" src="images/icons/87.png"><span>Gemini Capsule</span></a></div><div class="menuLink"><a href="gopher://dimension.sh:70/1/~cobradilegu/en" target="content"><img alt="" src="images/icons/87.png"><span>Gopher­hole</span></a></div><div class="menuLink"><a href="finger://cobradile@finger.farm" target="content"><img alt="" src="images/icons/87.png"><span>Finger Plan</span></a></div><div class="menuLink"><a href="index.wml" target="content"><img alt="" src="images/icons/87.png"><span>WAP Site</span></a></div><div class="menuLink"><a href="spartan://tilde.team/~cobradile/index.en.gmi" target="content"><img alt="" src="images/icons/87.png"><span>Spartan Capsule</span></a></div><div class="menuLink"><a href="https://stormplay.neocities.org/" target="content"><img alt="" src="images/icons/87.png"><span>Stormplay Website</span></a></div><div class="menuLink"><a href="https://sco.wikipedia.org/wiki/Uiser:Cobra_3000" target="content"><img alt="" src="images/icons/87.png"><span>Wikipedia Account</span></a></div><div class="menuLink"><a href="https://ytmnd.com/users/Cobradile" target="content"><img alt="" src="images/icons/87.png"><span>YTMND Account</span></a></div><div class="menuLink"><a href="https://letterboxd.com/Cobradile/" target="content"><img alt="" src="images/icons/87.png"><span>Letter­boxd Account</span></a></div>
+    <noscript>
+      <div class="menuLink"><a href="index.sco.html" target="content"><img alt="" src="images/icons/22.png"><span>Hame</span></a></div>
+      <div class="menuLink"><a href="aboot.html" target="content"><img alt="" src="images/icons/48.png"><span>Aboot</span></a></div>
+      <div class="menuLink"><a href="reviews.html" target="content"><img alt="" src="images/icons/24.png"><span>Reviews</span></a></div>
+      <div class="menuLink"><a href="diaries.html" target="content"><img alt="" src="images/icons/43.png"><span>Diaries an Jurnals</span></a></div>
+      <!-- <li><a target="content">Ma Collection</a></li>' -->
+      <div class="menuLink"><a href="portfolio.html" target="content"><img alt="" src="images/icons/67.png"><span>Gemms an Demos a'v duin</span></a></div>
+      <div class="menuLink"><a href="webstuff.html" target="content"><img alt="" src="images/icons/15.png"><span>Web Stuff I use</span></a></div>
+      <div class="menuLink"><a href="gamedevtools.html" target="content"><img alt="" src="images/icons/15.png"><span>Uisefae Gemm Dev Tuils</span></a></div>
+      <div class="menuLink"><a href="airtins.html" target="content"><img alt="" src="images/icons/15.png"><span>Airtins</span></a></div>
+      <div class="menuLink"><a href="webgardens.html" target="content"><img alt="" src="images/icons/87.png"><span>Web Gairdens</span></a></div>
+      <div class="menuLink"><a href="shrines" target="content"><img alt="" src="images/icons/4.png"><span>Shrines</span></a></div>
+      <div class="menuLink"><a href="contact.html" target="content"><img alt="" src="images/icons/26.png"><span>Contack Iz</span></a></div>
+      <br><br>
+      <div class="menuLink"><a href="gemini://cobradile.cities.yesterweb.org/" target="content"><img alt="" src="images/icons/87.png"><span>Gemini Capsule</span></a></div>
+      <div class="menuLink"><a href="gopher://dimension.sh:70/1/~cobradile/" target="content"><img alt="" src="images/icons/87.png"><span>Gopher&shy;hole</span></a></div>
+      <div class="menuLink"><a href="finger://cobradile@finger.farm" target="content"><img alt="" src="images/icons/87.png"><span>Finger Plan</span></a></div>
+      <div class="menuLink"><a href="index.wml" target="content"><img alt="" src="images/icons/87.png"><span>WAP Site</span></a></div>
+      <div class="menuLink"><a href="spartan://tilde.team/~cobradile/" target="content"><img alt="" src="images/icons/87.png"><span>Spartan Capsule</span></a></div>
+      <div class="menuLink"><a href="https://stormplay.neocities.org/" target="content"><img alt="" src="images/icons/87.png"><span>Stormplay Wabsite</span></a></div>
+      <div class="menuLink"><a href="https://sco.wikipedia.org/wiki/Uiser:Cobra_3000" target="content"><img alt="" src="images/icons/87.png"><span>Wikipedia Accoont</span></a></div>
+      <div class="menuLink"><a href="https://ytmnd.com/users/Cobradile" target="content"><img alt="" src="images/icons/87.png"><span>YTMND Accoont</span></a></div>
+      <div class="menuLink"><a href="https://letterboxd.com/Cobradile/" target="content"><img alt="" src="images/icons/87.png"><span>Letter&shy;boxd Accoont</span></a></div>
+      <br>
+      <!-- <a href="guestbook.html" target="content">Guestbook</a><br><br> -->
+    </noscript>
+    </div>
+    <div style="background: url('images/backgrounds/menuwindaebottom.png') transparent; width:194px; height: 21px; background-repeat: no-repeat;"></div>
+    </div><br><br><br><br>
+    <div class="yw-widget-full yw-widget" data-yw-url="https://cobradile.neocities.org/" data-yw-ready="true"><div class="yw-body">
+  <h4 class="yw-title">Yesterweb Ring</h4>
+  <div class="yw-content"><p class="yw-notice">
+  This site, <strong><a class="yw-site-name" href="https://cobradile.neocities.org">Cobradile’s Personal Website</a></strong>, is keeping the old web alive.
+  Thanks, <strong class="yw-site-owner">Cobra!</strong>!
+</p>
+<p class="yw-nav">
+  <a class="yw-link-next yw-link" href="https://kingposs.com/">[Next]</a>
+  <a class="yw-link-prev yw-link" href="https://covid2009.neocities.org/">[Prev]</a>
+  <a class="yw-link-rand yw-link" href="https://sien.neocities.org/">[Rand]</a>
+  <br>
+  <a class="yw-link-home yw-link" href="https://yesterweb.org/webring/members.html">[Members]</a>
+</p></div>
+</div></div>
+    <!-- ring-css site="https://cobradile.neocities.org/"></ring-css -->
+    <div id="contentWindow">
+        <div style="background: url('images/backgrounds/contentwindaetap.png') transparent; width:700px; height: 115px; background-repeat: no-repeat;"></div>
+        <div id="content">
+          <script>
+          document.write('<iframe title="Content Window" id="contentframe" name="content" src="');
+            switch(document.documentElement.lang)
+            {
+              case "gd":
+                document.write('index.gd.html">Feumaidh tu brabhsair-lìn le iframes</iframe>');
+                break;
+              case "nap":
+               document.write('index.nap.html">Hai bisogno di un navigatore web che costiene i iframe</iframe>');
+                break;
+              case "it":
+                document.write('index.it.html">Hai bisogno di un navigatore web che costiene i iframe</iframe>');
+                break;
+              case "en":
+                document.write('index.en.html">You\'ll need a browser that supports iframes</iframe>');
+                break;
+              default:
+                document.write('index.sco.html">Ye\'r needin tae upgrade tae a brouser thit supports iframes</iframe>');
+                break;
+            }
+          </script><iframe title="Content Window" id="contentframe" name="content" src="index.en.html">You'll need a browser that supports iframes</iframe>
+          <noscript>
+            <iframe title="Content Windae" id="contentframe" name="content" src="index.sco.html"></iframe>
+          </noscript>
+        </div>
+        <div style="background: url('images/backgrounds/contentwindaebottom.png') transparent; width:700px; height: 57px; background-repeat: no-repeat;"></div>
+        <script>
+        // Make the DIV element draggable:
+        //dragElement(document.getElementById("menu"));
+        dragElement(document.getElementById("contentWindow"));
+        
+        function dragElement(elmnt) {
+          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+          if (document.getElementById(elmnt.id + "header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+          } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+          }
+        
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+          }
+        
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+          }
+        
+          function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+        </script>
+    </div>
+    </div>
+    <!-- Geekring widget #2 - Fancy banner (you can chose .png .gif or .jpg fc95a865-6eba-41d3-89ae-f237fef09a2d -->
+    <!-- <img alt="" src="http://geekring.net/banner/geek_1.gif" alt="geekring.net nvigation" usemap="#geekringmap">
+     <map name="geekringmap">
+         <area shape="rect" coords="9,28,111,53" alt="Previous geekring site" href="http://geekring.net/site/NUMBER/previous">
+         <area shape="rect" coords="248,28,350,53" alt="Random geekring site" href="http://geekring.net/site/NUMBER/random">
+         <area shape="rect" coords="490,28,592,53" alt="Next geekring site" href="http://geekring.net/site/NUMBER/next">
+         <area shape="rect" coords="465,6,566,22" alt="Main geekring site" href="http://geekring.net/">
+     </map> -->
+    <div class="buttons">
+        <script src="https://nuthead.neocities.org/ring/ring.js"></script><a href="https://linkyblog.neocities.org"><img src="https://nuthead.neocities.org/ring/prev.png" alt="Prev"></a><a href="https://nuthead.neocities.org/ring/"><img src="https://nuthead.neocities.org/ring/logo32.png"></a><a href="https://cdps.neocities.org"><img src="https://nuthead.neocities.org/ring/next.png" alt="Next"></a> 
+        <script src="https://yesterwebring.neocities.org/script-min.js"></script>
+        <script src="https://yesterweb.org/js/widget.js"></script>
+        <div style="display: flex; flex-direction: column; gap: 1px; width: 81px; margin: 1em auto; align-items: center; background-color: #1e1e1e;">
+          <a href="https://itawebring.altervista.org/" target="_blank"><img src="https://itawebring.altervista.org/buttons/itawr.png" style="image-rendering: pixelated" alt="aniello"></a>
+          <span style="display: flex; gap: 5px;">
+            <a href="https://itawebring.altervista.org/anello?d=prev&amp;url=https://cobradile.neocities.org/" target="_blank"><img src="https://itawebring.altervista.org/buttons/gtoL.png" style="image-rendering: pixelated" alt="back"></a>
+            <a href="https://itawebring.altervista.org/anello?d=rand" target="_blank"><img src="https://itawebring.altervista.org/buttons/gtoN.png" style="image-rendering: pixelated" alt="casuale"></a>
+            <a href="https://itawebring.altervista.org/anello?d=next&amp;url=https://cobradile.neocities.org/" target="_blank"><img src="https://itawebring.altervista.org/buttons/gtoR.png" style="image-rendering: pixelated" alt="succesivo"></a>
+          </span>
+        </div>
+        <table style="background-color: white;">
+        	<tbody><tr>
+        		<td colspan="3">This site is a member of Retroweb Ring.</td>
+        	</tr>
+        	<tr>
+        		<td><a href="https://webri.ng/webring/retroweb/previous?index=4">Previous Site</a></td>
+        		<td><a href="https://webri.ng/webring/retroweb/random">Random Site</a></td>
+        		<td><a href="https://webri.ng/webring/retroweb/next?index=4">Next Site</a></td>
+        	</tr>
+        </tbody></table>
+      <script src="buttons.js"></script><div class="buttons">
+<a href="guestbook.html" target="content"><img src="images/buttons/guestbook.gif" height="31" alt="Sign ma guestbook!"></a>
+<a href="mailto:cobradile@disroot.org"><img src="images/buttons/email-icon.gif" height="31" alt="Send iz an email!"></a>
+<a href="javascript:createBookmark(location.href, document.title);"><img alt="" src="images/buttons/bookmark2.gif"></a>
+<a id="mail" href="mailto:example@example.com?Subject=Check%20out%20this%20RAAAADDDD%20SITE%21&amp;Body=https%3A//cobradile.neocities.org/" title="Send tae a mate"><img alt="" src="images/buttons/sendit2.gif"></a>
+<a href="gemini://cobradile.pollux.casa/" target="_blank"><img alt="" height="31" src="images/buttons/gemini.png"></a>
+<a href="https://neocities.org/site/cobradile" target="_blank"><img alt="" src="images/buttons/profile.png"></a>
+<a href="https://twitter.com/Cobradile94" target="content"><img alt="" src="images/buttons/twitter.gif"></a>
+<a href="https://www.youtube.com/channel/UCYmkKsBZg-7iJ1V6oplwipw" target="content"><img alt="" src="images/buttons/ytbutton.gif"></a>
+<a href="https://glasgow.social/@Cobradile" target="content"><img alt="" src="images/buttons/mastodon.gif"></a>
+<br>
+<img alt="" src="images/buttons/sashi-neocities.gif"><!--Credit tae joshuaalto.com! -->
+<img alt="" src="images/buttons/discord-no-way-2.gif">
+<img alt="" src="images/buttons/b2.png">
+<br>
+<a href="http://www.mabsland.com/Adoption.html"><img src="images/Censor_14c.gif" height="31" alt="Ratit 14"></a>
+<a href="https://yesterweb.org/no-to-web3/index.html"><img src="images/buttons/saynotoweb3.gif" height="31" alt="Say naw tae web3!"></a>
+<img alt="" src="images/buttons/antiNFT.gif">
+<img alt="" src="images/buttons/nocookie.gif">
+<img alt="" src="images/buttons/seedyourtorrents.gif">
+<img alt="" src="images/buttons/floopy.png">
+<img alt="" src="images/buttons/best_viewed.gif">
+<img alt="" src="images/buttons/twopaws.png">
+<img alt="" src="images/buttons/3dot5mmfc-button.gif">
+<img alt="" src="images/buttons/code-editor_button_2_green.png">
+<img alt="" src="images/buttons/css2.gif">
+<br>
+<!-- <a href="https://www.gimp.org/" target="_blank"><img alt="" src="images/buttons/GraphicaByGimp.gif"></a>-->
+<marquee scrollamount="5">
+<a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="content"><img alt="" height="31" src="images/buttons/532.gif"></a>
+<img alt="" src="images/buttons/iwishicouldgobackintime.gif">
+<a href="https://zapatopi.net/metrictime/" target="_blank"><img alt="" src="https://zapatopi.net/metrictime/mtbut.jpg"></a><a>
+<img alt="" src="images/buttons/ofp_s1.gif">
+<img alt="" src="images/buttons/128.gif">
+<img alt="" src="images/buttons/32.gif">
+<img alt="" src="images/buttons/ps1powerline.png">
+<img alt="" src="images/buttons/msdos.gif">
+<img alt="" src="images/buttons/amiga2.gif">
+<img alt="" src="images/buttons/gameboy_colour_stamp.gif">
+<img alt="" src="images/buttons/gbaaaa.png">
+<img alt="" src="images/buttons/imissxp.gif">
+<img alt="" src="images/buttons/win98_891.gif">
+</a><a href="https://www.eff.org/deeplinks/2021/03/google-testing-its-controversial-new-ad-targeting-tech-millions-browsers-heres"><img alt="" src="images/buttons/95.gif"></a>
+<img alt="" src="images/buttons/a_87.gif">
+<img alt="" src="images/buttons/y2k.gif">
+<img alt="" src="images/buttons/2020SUCKS.png">
+<img alt="" height="31" src="images/buttons/fuckrascists.png">
+
+<img alt="" src="images/buttons/u3.gif">
+<img alt="" src="images/buttons/158.png">
+<img alt="" src="images/buttons/159.png">
+<img alt="" src="images/buttons/b5.gif">
+
+<img alt="" src="images/buttons/helpme.png">
+<img alt="" src="images/buttons/sucks2.gif">
+<img alt="" src="images/buttons/butnow.png">
+</marquee>
+</div>
+<marquee scrollamount="3">
+<img alt="" src="images/badges/xp.gif">
+<img alt="" src="images/badges/windows.gif">
+<img alt="" src="images/badges/wap.gif">
+<img alt="" src="images/badges/wakeupneo.png">
+<img alt="" src="images/badges/unicode_unicode.png">
+<img alt="" src="images/badges/ubuntulinux_copy.gif">
+<img alt="" src="images/badges/tons.png">
+<img alt="" src="images/badges/thunderbird.gif">
+<img alt="" src="images/badges/thegimp.png">
+<img alt="" src="images/badges/steam.gif">
+<img alt="" src="images/badges/spongebob.gif">
+<img alt="" src="images/badges/sony.png">
+<img alt="" src="images/badges/sonic.gif">
+<img alt="" src="images/badges/slacker100.gif">
+<img alt="" src="images/badges/simpsons_copy1.gif">
+<img alt="" src="images/badges/scwriter.gif">
+<img alt="" src="images/badges/sane50.gif">
+<img alt="" src="images/badges/sabotage2.gif">
+<img alt="" src="images/badges/rss.gif">
+<img alt="" src="images/badges/riaa.gif">
+<img alt="" src="images/badges/rhcp.gif">
+<img alt="" src="images/badges/religion0.gif">
+<img alt="" src="images/badges/relevant.gif">
+<img alt="" src="images/badges/rancid.gif">
+<img alt="" src="images/badges/ramones.gif">
+<img alt="" src="images/badges/punkinsidebutton.gif">
+<img alt="" src="images/badges/ps2n64.png">
+<img alt="" src="images/badges/prochoice.gif">
+<img alt="" src="images/badges/pngimages.png">
+<img alt="" src="images/badges/playstation.gif">
+<img alt="" src="images/badges/pana.png">
+<img alt="" src="images/badges/otaku.gif">
+<img alt="" src="images/badges/original100.gif">
+<img alt="" src="images/badges/nvidia.gif">
+<img alt="" src="images/badges/NoSwPatents_80x15.png">
+<img alt="" src="images/badges/nirvana.gif">
+<img alt="" src="images/badges/nintendo.gif">
+<img alt="" src="images/badges/nightcoder.gif">
+<img alt="" src="images/badges/netscape.gif">
+<img alt="" src="images/badges/msn2.gif">
+<img alt="" src="images/badges/msingle.gif">
+<img alt="" src="images/badges/Mozillabetter-80x15.gif">
+<img alt="" src="images/badges/movies.gif">
+<img alt="" src="images/badges/meh100.png">
+<img alt="" src="images/badges/mean_people.gif">
+<img alt="" src="images/badges/mcdonalds.gif">
+<img alt="" src="images/badges/maketradefair.png">
+<img alt="" src="images/badges/loveani.gif">
+<img alt="" src="images/badges/Linux-80x15.png">
+<img alt="" src="images/badges/limewire.gif">
+<img alt="" src="images/badges/life50.gif">
+<img alt="" src="images/badges/leo1.gif">
+<img alt="" src="images/badges/leftwing.gif">
+<img alt="" src="images/badges/ipodbutton.gif">
+<img alt="" src="images/badges/infp.gif">
+<img alt="" src="images/badges/indymedia.png">
+<img alt="" src="images/badges/icon_scotland_80x15.gif">
+<img alt="" src="images/badges/ita.gif">
+<img alt="" src="images/badges/imood.gif">
+<img alt="" src="images/badges/ibook.gif">
+<img alt="" src="eimages/badges/host.gif">
+<img alt="" src="images/badges/greasemonkey.png">
+<img alt="" src="images/badges/give_blood.gif">
+<img alt="" src="images/badges/geek.gif">
+<img alt="" src="images/badges/futurama_copy1.gif">
+<img alt="" src="images/badges/fucknazis.gif">
+<img alt="" src="images/badges/fuckgender.png">
+<img alt="" src="images/badges/freetibet_copy2.gif">
+<img alt="" src="images/badges/firefox_copy3.png">
+<img alt="" src="images/badges/euroblog.gif">
+<img alt="" src="images/badges/equality.gif">
+<img alt="" src="images/badges/endtorture.png">
+<img alt="" src="images/badges/email.gif">
+
+      <noscript>
+      <a href="guestbook.html" target="content"><img src="images/buttons/guestbook.gif" height="31" alt="Sign ma guestbook!"></a>
+      <a href="mailto:cobradile@disroot.org"><img src="images/buttons/email-icon.gif" height="31" alt="Send iz an email!"></a>
+      <a href="javascript:createBookmark(location.href, document.title);"><img alt="" src="images/buttons/bookmark2.gif"></a>
+      <a id="mail" href="mailto:example@example.scot?Subject=Gie%20this%20smashin%20site%20a%20swatch%21&Body=https%3A//cobradile.neocities.org/" title="Send tae a mate"><img alt="" src="images/buttons/sendit2.gif"></a>
+      <a href="gemini://cobradile.cities.yesterweb.org/" target="_blank"><img alt="" height=31 src="images/buttons/gemini.png"></a>
+      <a href="https://neocities.org/site/cobradile" target="_blank"><img alt="" src="images/buttons/profile.png"></a>
+      <a href="https://twitter.com/Cobradile94" target="content"><img alt="" src="images/buttons/twitter.gif"></a>
+      <a href="https://www.youtube.com/channel/UCYmkKsBZg-7iJ1V6oplwipw" target="content"><img alt="" src="images/buttons/ytbutton.gif"></a>
+      <a href="https://glasgow.social/@Cobradile" target="content"><img alt="" src="images/buttons/mastodon.gif"></a>
+      <br>
+      <img alt="" src="images/buttons/discord-no-way-2.gif">
+      <img alt="" src="images/buttons/b2.png">
+      <br>
+      <a href="http://www.mabsland.com/Adoption.html"><img src="images/Censor_14c.gif" height="31" alt="Ratit 14"></a>
+      <a href="https://yesterweb.org/no-to-web3/index.html"><img src="images/buttons/saynotoweb3.gif" height="31" alt="Say naw tae web3!"></a>
+      <img alt="" src="images/buttons/antiNFT.gif">
+      <img alt="" src="images/buttons/nocookie.gif">
+      <img alt="" src="images/buttons/seedyourtorrents.gif">
+      <img alt="" src="images/buttons/floopy.png">
+      <img alt="" src="images/buttons/best_viewed.gif">
+      <img alt="" src="images/buttons/twopaws.png">
+      <img alt="" src="images/buttons/3dot5mmfc-button.gif">
+      <img alt="" src="images/buttons/code-editor_button_2_green.png">
+      <img alt="" src="images/buttons/css2.gif">
+    <!-- <a href="https://www.gimp.org/" target="_blank"><img alt="" src="images/buttons/GraphicaByGimp.gif"></a>-->
+    <img alt="" height=31 src="images/buttons/532.gif">
+    <img alt="" src="images/buttons/iwishicouldgobackintime.gif">
+    <img alt="" src="images/buttons/ofp_s1.gif">
+    <img alt="" src="images/buttons/128.gif">
+    <img alt="" src="images/buttons/32.gif">
+    <img alt="" src="images/buttons/msdos.gif">
+    <img alt="" src="images/buttons/amiga2.gif">
+    <img alt="" src="images/buttons/gameboy_colour_stamp.gif">
+    <img alt="" src="images/buttons/gbaaaa.png">
+    <img alt="" src="images/buttons/imissxp.gif">
+    <img alt="" src="images/buttons/win98_891.gif">
+    <a href="https://www.eff.org/deeplinks/2021/03/google-testing-its-controversial-new-ad-targeting-tech-millions-browsers-heres"><img alt="" src="images/buttons/95.gif"></a>
+    <img alt="" src="images/buttons/a_87.gif">
+    <img alt="" src="images/buttons/y2k.gif">
+    <img alt="" src="images/buttons/2020SUCKS.png">
+    <img alt="" height=31 src="images/buttons/fuckrascists.png">
+    
+    <img alt="" src="images/buttons/u3.gif">
+    <img alt="" src="images/buttons/158.png">
+    <img alt="" src="images/buttons/159.png">
+    <img alt="" src="images/buttons/b5.gif">
+    
+    <img alt="" src="images/buttons/helpme.png">
+    <img alt="" src="images/buttons/sucks2.gif">
+    <img alt="" src="images/buttons/butnow.png">
+    <img alt="" src="images/badges/xp.gif">
+    <img alt="" src="images/badges/windows.gif" >
+    <img alt="" src="images/badges/wap.gif">
+    <img alt="" src="images/badges/wakeupneo.png" >
+    <img alt="" src="images/badges/unicode_unicode.png">
+    <img alt="" src="images/badges/ubuntulinux_copy.gif" >
+    <img alt="" src="images/badges/tons.png">
+    <img alt="" src="images/badges/thunderbird.gif" >
+    <img alt="" src="images/badges/thegimp.png">
+    <img alt="" src="images/badges/steam.gif" >
+    <img alt="" src="images/badges/spongebob.gif">
+    <img alt="" src="images/badges/sony.png" >
+    <img alt="" src="images/badges/sonic.gif">
+    <img alt="" src="images/badges/slacker100.gif" >
+    <img alt="" src="images/badges/simpsons_copy1.gif">
+    <img alt="" src="images/badges/scwriter.gif" >
+    <img alt="" src="images/badges/sane50.gif">
+    <img alt="" src="images/badges/sabotage2.gif" >
+    <img alt="" src="images/badges/rss.gif">
+    <img alt="" src="images/badges/riaa.gif" >
+    <img alt="" src="images/badges/rhcp.gif">
+    <img alt="" src="images/badges/religion0.gif" >
+    <img alt="" src="images/badges/relevant.gif">
+    <img alt="" src="images/badges/rancid.gif" >
+    <img alt="" src="images/badges/ramones.gif">
+    <img alt="" src="images/badges/punkinsidebutton.gif" >
+    <img alt="" src="images/badges/ps2n64.png">
+    <img alt="" src="images/badges/prochoice.gif" >
+    <img alt="" src="images/badges/pngimages.png">
+    <img alt="" src="images/badges/playstation.gif" >
+    <img alt="" src="images/badges/pana.png">
+    <img alt="" src="images/badges/otaku.gif" >
+    <img alt="" src="images/badges/original100.gif">
+    <img alt="" src="images/badges/nvidia.gif" >
+    <img alt="" src="images/badges/NoSwPatents_80x15.png">
+    <img alt="" src="images/badges/nirvana.gif" >
+    <img alt="" src="images/badges/nintendo.gif">
+    <img alt="" src="images/badges/nightcoder.gif" >
+    <img alt="" src="images/badges/netscape.gif">
+    <img alt="" src="images/badges/msn2.gif" >
+    <img alt="" src="images/badges/msingle.gif">
+    <img alt="" src="images/badges/Mozillabetter-80x15.gif" >
+    <img alt="" src="images/badges/movies.gif">
+    <img alt="" src="images/badges/meh100.png" >
+    <img alt="" src="images/badges/mean_people.gif">
+    <img alt="" src="images/badges/mcdonalds.gif" >
+    <img alt="" src="images/badges/maketradefair.png">
+    <img alt="" src="images/badges/loveani.gif" >
+    <img alt="" src="images/badges/Linux-80x15.png">
+    <img alt="" src="images/badges/limewire.gif" >
+    <img alt="" src="images/badges/life50.gif">
+    <img alt="" src="images/badges/leo1.gif" >
+    <img alt="" src="images/badges/leftwing.gif">
+    <img alt="" src="images/badges/ipodbutton.gif" >
+    <img alt="" src="images/badges/infp.gif">
+    <img alt="" src="images/badges/indymedia.png" >
+    <img alt="" src="images/badges/icon_scotland_80x15.gif">
+    <img alt="" src="images/badges/ita.gif" >
+    <img alt="" src="images/badges/imood.gif" >
+    <img alt="" src="images/badges/ibook.gif" >
+    <img alt="" src="eimages/badges/host.gif">
+    <img alt="" src="images/badges/greasemonkey.png" >
+    <img alt="" src="images/badges/give_blood.gif">
+    <img alt="" src="images/badges/geek.gif" >
+    <img alt="" src="images/badges/futurama_copy1.gif">
+    <img alt="" src="images/badges/fucknazis.gif" >
+    <img alt="" src="images/badges/fuckgender.png">
+    <img alt="" src="images/badges/freetibet_copy2.gif" >
+    <img alt="" src="images/badges/firefox_copy3.png">
+    <img alt="" src="images/badges/euroblog.gif" >
+    <img alt="" src="images/badges/equality.gif">
+    <img alt="" src="images/badges/endtorture.png" >
+    <img alt="" src="images/badges/email.gif">
+    <img alt="" src="images/badges/eblow.gif" >
+    <img alt="" src="images/badges/dreamcast.gif">
+    <img alt="" src="images/badges/digital_freedom.png" >
+    <img alt="" src="images/badges/depressed80x15.png">
+    <img alt="" src="images/badges/cokepepsi.png" >
+    <img alt="" src="images/badges/clever.gif">
+    <img alt="" src="images/badges/button_vsds_frodo.png" >
+    <img alt="" src="images/badges/ytj.png" >
+    <img alt="" src="images/badges/but_anime.gif">
+    <img alt="" src="images/badges/bprodigy.png" >
+    <img alt="" src="images/badges/blender_bouton.png">
+    <img alt="" src="images/badges/ban.ea.png" >
+    <img alt="" src="images/badges/august.gif">
+    <!-- img src="images/badges/asseenontv.gif" alt="" -->
+    <img alt="" src="images/badges/asexual.png">
+    <img alt="" src="images/badges/anarch_communism.png" >
+    <img alt="" src="images/badges/aimoff.gif">
+    <img alt="" src="images/badges/addict.gif" >
+    <img alt="" src="images/badges/50stupid.gif">
+    <img alt="" src="images/badges/1andonly.gif" >
+    <!-- <address>
+    Webmaster: <a href="mailto:cobradabest@scotlandmail.com">Cobra!</a><br> 
+    </address> -->
+    <!--</div>
+    </div>-->
+    <!-- a href='https://www.counter12.com'><img alt="" src='https://www.counter12.com/img-zxc7xa1bx443W8a3-10.gif' height=25 border='0' alt='contador de acesso grátis'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=zxc7xa1bx443W8a3'></script><br -->
+    <h2 id="hotline"><a href="https://hotlinewebring.club/cobradile/previous">❮</a> <img alt="" src="images/phone.gif" height=31> <a href="https://hotlinewebring.club/">Hotline Webring</a> <img alt="" src="images/phone.gif" height=31> <a href="https://hotlinewebring.club/cobradile/next">❯</a></h2>
+    <span style="background-color: silver;"><a href='https://webring.dinhe.net/prev/cobradile.neocities.org'>Previous</a> Retronaut Webring <a href='https://webring.dinhe.net/next/cobradile.neocities.org'>Next</a></span>
+    </noscript>
+    
+    <!-- center>
+    <SCRIPT LANGUAGE="JavaScript">
+    if (navigator.appVersion.indexOf('MSIE 3') == -1)
+        document.write('<SCRIPT LANGUAGE="JavaScript1.1" SRC="https://ourspace.neocities.org/ring.js"><\/SCRIPT>');
+    else
+        document.write('<CENTER><IFRAME FRAMEBORDER=0 WIDTH="100" HEIGHT="50" MARGINHEIGHT=0 MARGINWIDTH=0 SCROLLING=no SRC="https://ourspace.neocities.org/ring.html"><\/IFRAME><\/CENTER>');
+    </SCRIPT>
+    </center -->
+    <span style="bottom: 0px; left: 15px; position: fixed;">
+    <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE>
+    <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+    <script type="text/javascript">
+    MRP.insert({
+    'url':'https://icecast.auzziejay.com/stream',
+    'lang':'it',
+    'codec':'mp3',
+    'volume':100,
+    'autoplay':false,
+    'buffering':1,
+    'title':'Yesterweb Radio',
+    'welcome':'Walcome tae ma site!',
+    'wmode':'transparent',
+    'skin':'tiny',
+    'width':130,
+    'height':60
+    });
+    </script>
+    <ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+    <select id="language" onchange="sessionStorage.setItem('lang', this.value); location.reload();" style="visibility: visible;">
+        <option selected="" hidden="">Language</option>
+        <option value="sco">Scots</option>
+        <option value="gd">Gàidhlig</option>
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="nap">Napulitano</option>
+    </select>
+    <input type="button" onclick="ChangeBG()" value="Change Background" id="btn1" style="visibility: visible;">  
+    <input type="button" onclick="ChangeBG2()" value="Too Distractring?" id="btn2" style="visibility: visible;">  
+    <!-- <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/767599/t/5"></script> -->
+    <!--ブログ・スイッチコード/-->
+    <script src="http://www.blog-switch.com/widgets/85026/7986423758.js"></script>
+    <!-- <div style="width: 160px; text-align: center; margin: 0 auto; font-size: 10px;"><a href="http://www.blog-switch.com/widget/85026" target="_blank">ブログ・スイッチ</a></div>
+    ブログ・スイッチコード/-->
+    </span>
+    <audio id="tenPastNine1">
+      <source src="audio/tenpastnine1.ogg" type="audio/ogg">
+      <source src="audio/tenpastnine1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="tenPastNine2">
+      <source src="audio/tenpastnine2.ogg" type="audio/ogg">
+      <source src="audio/tenpastnine2.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+    function createBookmark(sURL,sTitle) {
+     if (document.all && window.external) {
+      window.external.AddFavorite (sURL,sTitle);
+     }
+     else if (window.sidebar) { 
+       window.sidebar.addPanel(sTitle,sURL,'');
+     } 
+     else {
+      alert (''
+       +'Cannot programmatically add bookmarks!\n'
+       +'Please press Ctrl+D to bookmark this page.'
+      );
+     }
+    }
+
+    function ChangeBG()
+    {
+      // <![CDATA[
+      var image_array = new Array();
+          image_array[0] = "images/backgrounds/bg-1.gif";
+          image_array[1] = "images/backgrounds/bg-2.gif";
+          image_array[2] = "images/backgrounds/bg-3.gif";
+          image_array[3] = "images/backgrounds/bg-4.gif";
+          image_array[4] = "images/backggrounds/bg-5.gif";
+          image_array[5] = "images/backgrounds/bg-6.gif";
+          image_array[6] = "images/backgrounds/bg-7.gif";
+          image_array[7] = "images/backgrounds/backgrun.png";
+      
+          var randNum = Math.floor(Math.random() * image_array.length)
+          var rand_path = image_array[randNum];
+      
+          document.getElementById('hamepage').style.background = 'url('+rand_path+') black';
+          if (randNum < 7)
+          {
+            document.getElementById('hamepage').style.backgroundSize = '100% 100%';
+            document.getElementById('hamepage').style.backgroundPosition = 'center';
+          }
+      // ]]>
+    }
+    function ChangeBG2()   
+    {  
+        var image_array = new Array();
+        image_array[0] = "images/backgrounds/bg-4.gif";
+        image_array[1] = "images/backgrounds/backgrun.png";
+        var randNum = Math.floor(Math.random() * image_array.length)
+        var rand_path = image_array[randNum];
+    
+        document.getElementById('hamepage').style.background = 'url('+rand_path+') black';
+        if (randNum < 1)
+        {
+          document.getElementById('hamepage').style.backgroundSize = '100% 100%';
+          document.getElementById('hamepage').style.backgroundPosition = 'center';
+        }
+    }  
+    
+    switch(document.documentElement.lang)
+          {
+            case "gd":
+              document.getElementById('language').options[0].innerHTML = "C&agrave;nan";
+              document.getElementById('btn1').value = "Mùth a' chùl-ionad";
+              document.getElementById('btn2').value = "Cus buairidh?";
+              break;w
+            case "it":
+              document.getElementById('language').options[0].innerHTML = "Lingua";
+              document.getElementById('btn1').value = 'Cambiare Sfondo';
+              document.getElementById('btn2').value = 'Troppo Disturbo?';
+              break;
+            case "en":
+              document.getElementById('language').options[0].innerHTML = "Language";
+              document.getElementById('btn1').value = 'Change Background';
+              document.getElementById('btn2').value = 'Too Distractring?';
+              document.getElementById('mail').href = "mailto:example@example.com?Subject=Check%20out%20this%20RAAAADDDD%20SITE%21&Body=https%3A//cobradile.neocities.org/";
+              break;
+            //default:
+            //  document.getElementById('btn1').value = 'Chynge Backgrun';
+            //  document.getElementById('btn2').value = 'Ower Distractin?';
+            //  break;
+          }
+    document.getElementById('language').style.visibility = 'visible';
+    document.getElementById('btn1').style.visibility = 'visible';
+    document.getElementById('btn2').style.visibility = 'visible';
+    document.getElementById('btn2').style.visibility = 'visible';
+    ChangeBG();
+    </script>
+    <script>
+       isItTenPastNine();
+       function isItTenPastNine()
+       {
+        var today = new Date();
+        const Hour = 60 * 60 * 1000;
+        var interval = 0;
+        var hour = today.getHours();
+        var minutes = today.getMinutes();
+        console.log(String(hour).padStart(2, '0') + ":" + String(minutes).padStart(2, '0'));
+        if (hour == 9 || hour == 21)
+        {
+          if (minutes == 10)
+          {
+            itsTenPastNine();
+            interval = 43200000
+            return;
+          }
+          else if (minutes < 10) interval =  600000
+        }
+        else if (minutes == 0)
+        {
+          if (hours > 9) interval =  Hour * (21 - hour)
+          else if (hours >= 0) interval = Hour * (9 - hour)   
+        }
+        else
+        {
+          interval = Hour - (minutes * 60 + today.getSeconds()) * 1000 - today.getMilliseconds();
+        }
+        console.log("It is not 10 past 9. :(");
+        clearInterval(isItTenPastNine);
+        if (interval > 0)
+        {
+          setInterval(isItTenPastNine, interval);
+          console.log("I'll check again in " + Math.round(interval / 60000) + " minutes");
+        }
+       }
+       function itsTenPastNine()
+       {
+         //console.log("tenPastNine" + (Math.floor(Math.random() * 2) + 1));
+         document.getElementById("tenPastNine1").play();
+         alert("It's 10 past 9!");
+       }
+       </script>
+    <!-- script src="christmas.js" language="javascript" type="text/javascript"></script -->
+  
+
+</marquee></div></body></html>

@@ -1,0 +1,373 @@
+<html lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head>
+		<meta charset="UTF-8">
+		<title>Mac OS 8.1</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/platinum.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/screensavers.css">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1BJP9VGF0J"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+			    dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-1BJP9VGF0J');
+		</script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+	</head>
+
+	<body>
+		<noscript>
+			<p><em>This page requires JavaScript.</em></p>
+		</noscript>
+		<div id="boot" class="modal hidden">
+			<button class="command_button boot-button close-button" id="boot-button">
+				<img src="img/mac.png">
+				<br>
+				Boot
+			</button>
+		</div>
+		<div id="sadmac" class="modal hidden">
+			<img src="img/sadmac.png">
+		</div>
+		<div id="shutdown" class="modal hidden">
+			<div id="shutdown-confirm" class="system-window shutdown content noscroll text-center">
+				<div class="inner">
+					<p style="font-weight: normal;">You may now switch off your Macintosh safely.</p>
+					<br>
+					<button id="shutdown_button" class="command_button right-button close-button">
+						OK
+					</button>
+				</div>
+			</div>
+		</div>
+		<nav>
+			<div class="nav-wrapper">
+				<ul class="nav-list">
+					<li id="apple-logo">
+						<img src="img/apple.png">
+						<ul id="apple-menu" class="menu command_button">
+							<li id="menu-about"><img src="img/mac.png" width="16" alt="About">About</li>
+						</ul>
+					</li>
+					<li>
+						File
+						<ul class="menu command_button">
+							<li id="menu-controls">
+								<img src="img/controls.png" width="16" alt="Cause an error">
+								Controls
+							</li>
+							<hr>
+							<li id="menu-errorWindow">
+								<img src="img/bomb.png" width="16" alt="Cause an error">
+								Cause an error
+							</li>
+							<li id="menu-sadmac">
+								<img src="img/bomb.png" width="16" alt="Cause a crash">
+								Cause a crash
+							</li>
+						</ul>
+					</li>
+					<li>
+						Edit
+						<ul class="menu command_button">
+							<li class="disabled noimg">Copy</li>
+							<li class="disabled noimg">Paste</li>
+						</ul>
+					</li>
+					<li>
+						View
+						<ul class="menu command_button">
+							<li id="resetIcons" class="noimg">Clean Up</li>
+							<li id="sortIcons" class="noimg">Arrange By Name</li>
+						</ul>
+					</li>
+					<li>
+						Special
+						<ul class="menu command_button">
+							<li id="menu-shutdown" class="noimg">Shutdown</li>
+						</ul>
+					</li>
+					<li>
+						Help
+						<ul class="menu command_button">
+							<li class="disabled"><img src="img/about.png" width="16" alt="About">There is no help</li>
+						</ul>
+					</li>
+					<li id="macoslogo" class="nav-list">
+						<img src="img/macos.svg" alt="MacOS">
+						<ul id="application-switcher" class="menu"><li id="appmenu-internet"><img src="img/netscape.png">Netscape</li></ul>
+					</li>
+					<li id="time" class="time text-center timeText">11:37:44 AM</li>
+				</ul>
+			</div>
+		</nav>
+		<div id="icon-holder" title="Desktop">
+			<div class="icon draggable-icon ui-widget-content ui-draggable ui-draggable-handle" id="icon-internet">
+				<img src="img/netscape.png" alt="Internet">
+				<h2>Internet</h2>
+			</div>
+			<div class="icon draggable-icon ui-widget-content ui-draggable ui-draggable-handle" id="icon-about">
+				<img src="img/about.png" alt="About">
+				<h2>About</h2>
+			</div>
+		</div>
+		<div id="about" class="content resizable draggable-window hidden ui-draggable" data-window-icon="img/about.png" data-window-name="About">
+			<div class="control-box close-box">
+				<a class="control-box-inner"></a>
+			</div>
+			<h1 class="titlebar noright ui-draggable-handle"><span>About</span></h1>
+			<div class="inner ui-resizable">
+				<div class="icon">
+					<img src="img/about.png" alt="Macintosh Computer">
+				</div>
+				<ul>
+					<li style="text-align: left;">
+						<h1>About RobbieByrd.com</h1>
+						<p>
+							This is my website, and I like it a lot.
+						</p>
+						<p>
+							Based on
+							<b><a href="https://github.com/robbiebyrd/platinum" target="_blank">Platinum</a></b>
+							by
+							<b><a href="https://github.com/robbiebyrd" target="_blank">Me!!!</a></b>.
+						</p>
+						<p>
+							Based on
+							<b><a href="https://github.com/npjg/classic.css" target="_blank">New Dawn</a></b>
+							by
+							<b><a href="https://github.com/npjg" target="_blank">Nathanael Gentry</a></b>.
+						</p>
+						<p>
+							Based on
+							<b><a href="https://github.com/ticky/classic-scrollbars" target="_blank">Scrollbars of the Classic Mac OS</a></b>
+							by
+							<b><a href="https://github.com/ticky" target="_blank">Jessica Stokes (@ticky)</a></b>.
+						</p>
+						<hr>
+						<p><b>New Dawn</b> and <b>Platinum</b> License</p>
+						<p>
+							MIT License <br>
+							Copyright (c) 2019 Nathanael Gentry
+							<br>
+							<br>
+							Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+						</p>
+						<p>
+							The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+							<br>
+							<br>
+							THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+						</p>
+						<p>Apple maintains the copyright on the background patterns, icons and interface components. Some UI elements are from Netscape Navigator, and are the intellectual property of Yahoo and/or Microsoft (I think, I'm not really sure).</p>
+					</li>
+				</ul>
+				<button class="command_button boot-button">Close</button>
+			<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+		</div>
+
+		<div id="internet" class="content resizable draggable-window ui-draggable" data-window-icon="img/netscape.png" data-window-name="Netscape">
+			<div class="control-box close-box">
+				<a class="control-box-inner"></a>
+			</div>
+			<div class="control-box zoom-box">
+				<div class="control-box-inner">
+					<div class="zoom-box-inner"></div>
+				</div>
+			</div>
+			<div class="control-box window-collapse">
+				<div class="control-box-inner">
+					<div class="window-collapse-inner"></div>
+				</div>
+			</div>
+			<h1 class="titlebar ui-draggable-handle"><span>Netscape Navigator 3.04</span></h1>
+			<div id="netscape_toolbar">
+				<div class="toolbar_buttons">
+					<div class="home_button toolbar_button favorite" data-url="http://robbiebyrd.com/homepage">
+						<h6>Home</h6>
+					</div>
+					<div class="back_button toolbar_button">
+						<h6>Back</h6>
+					</div>
+					<div class="forward_button toolbar_button">
+						<h6>Forward</h6>
+					</div>
+					<div class="toolbar_button spacer"></div>
+
+					<div class="logo toolbar_button">
+						<img class="" src="img/netscape.png">
+					</div>
+				</div>
+				<div class="toolbar_location">
+					<div class="location_label">
+						<label>Location :</label>
+					</div>
+					<div class="location_input">
+						<input type="url">
+					</div>
+					<div class="location_go">
+						<button class="command_button go_button">GO</button>
+					</div>
+				</div>
+				<div class="toolbar_favorites">
+					<button class="command_button favorite" data-url="http://robbiebyrd.com/homepage">Homepage</button>
+					<button class="command_button favorite" data-url="http://robbiebyrd.com/links">Links</button>
+					<button class="command_button favorite" data-url="http://www.aol.com">America Online!</button>
+				</div>
+			</div>
+			<div class="inner ui-resizable">
+				<div class="inner-content"><h1>My Blog</h1>
+<hr>
+<h2>KeepingHistory.org website is live!</h2>
+<h6>Created October 10, 2022 at 11:20 AM CT</h6><p>The website for my project <a href="https://keepinghistory.org">Keeping History</a> is now live! </p><p>See our projects on Github:</p><ul><li><a href="https://github.com/Keeping-History/historycommons">HistoryCommons.org</a> - Reviving the now defunct HistoryCommons.org website.</li><li><a href="https://github.com/Keeping-History/savery">Savery Engine</a> - A tool to rapidly annotate and enhance multimedia from an easy-to-use interface.</li><li><a href="https://github.com/Keeping-History/stirling">Stirling Engine</a> - Tool for media conversion and compression, data analysis, metadata enhancement, stream packaging and archival; extensible through plugins.</li><li><a href="https://github.com/Keeping-History/ecu">ECU</a> - The orchestration engine for running multiple Stirling Engine jobs.</li></ul>
+
+<h2>Introducing KeepingHistory.org</h2>
+<h6>Created July 11, 2022 at 10:39 PM CT, Updated October 10, 2022 at 11:15 AM CT</h6><p>When I first started my project <a href="https://911realtime.org">The 9/11 Realtime Experience</a>, I had no idea what I was getting myself into. I had almost none of the required expertise and skills to undertake the immense work of collecting, cataloging, indexing, scraping and converting nearly 2 terabytes of video and audio data. </p><p>Over time, I had to learn these skills through trial and error. What I learned was that there is a huge barrier to using multimedia to tell stories. It’s even harder to catalog, collect and store all that immense data. It’s damned near impossible to add any kind of real context to this media without a team of humans watching, tagging and clicking.</p><p>Today, I’d like to introduce my follow-up project to The 9/11 Realtime Experience: KeepingHistory.org. It’s coming soon.</p><p>The project’s goal is to make it easy for educators and archivists to upload, convert, analyze and serve from a simple, web-based interface. Initially, we will be targeting our application to a select number of researchers, educators and media archivists. Our eventual goal is to provide an open-source product  that can be launched in just a few clicks on a cloud platform (our first alpha product will be docker-based).</p><p>To that end, we’ll be releasing phases of the project over the coming months, in various stages of development. Our first project, the Stirling Engine, provides media conversion and compression, data analysis, metadata enhancement, stream packaging and archival, and is extensible through plugins.</p><p>The <a href="https://github.com/Keeping-History/stirling-engine">Stirling Engine</a> is meant to be a lightweight, efficient way to process incoming media files. The engine's main responsibilities are to:</p><ul><li>Receive a JSON file with job options</li><li>Normalize uploaded media</li><li>Extract data from the media</li><li>Re-encode the media using modern, stream-ready standards</li><li>Analyze extracted data for additional data enhancements</li><li>Package media and metadata in a standard, open format</li><li>Enable plugins to read source media or the output of other plugins for independent processing</li></ul><p>Currently, we’re using a tuned version of ffmpeg and a lot of fancy work in the background to optimize our video conversion and extraction. We provide a set of default encoder options for standard settings (4K, HD, SD, etc.), but you’re free to provide your own. In fact, using our JSON job schema, you can pass most parameters directly to ffmpeg—or any post-processing application.</p><p>Some of the experiments we’ve been running in house include plugins using machine learning for object detection, speaker recognition and facial identification. These plugins store the output of their processing, and can even improve their models and re-process data to improve accuracy.</p><p>The next phase of our product will be the annotator, the <a href="https://github.com/Keeping-History/savery">Savery Engine</a>. And, after that, we’ll roll out our SDK for building interactive multimedia applications.</p><p>We also plan to provide consulting services for institutions that may want to implement the technology through a separate entity.</p><hr></div>
+			<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+			<div class="netscape_footer">
+				<label>http://robbiebyrd.com/homepage</label>
+			</div>
+		</div>
+
+		<div id="controls" class="content noscroll draggable-window text-center hidden ui-draggable" data-window-icon="img/controls.png" data-window-name="Controls">
+			<div class="control-box close-box">
+				<a class="control-box-inner"></a>
+			</div>
+			<h1 class="titlebar noright ui-draggable-handle"><span>Controls</span></h1>
+			<div class="inner">
+				<div id="controls-inner">
+					<button class="command_button">«</button>
+					<button class="command_button">‹</button>
+					<button class="command_button">Play</button>
+					<button class="command_button">Pause</button>
+					<button class="command_button" data-skip="30">
+						›
+					</button>
+					<button class="command_button" data-skip="300">
+						»
+					</button>
+					<hr>
+					<label>H: </label><input> <label>M: </label><input> <label>S: </label><input>
+					<select>
+						<option>AM</option>
+						<option>PM</option>
+					</select>
+					<button class="command_button">GO</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="errorWindow" class="system-window alert error content noscroll text-center hidden" style="width: 20%;">
+			<div class="inner">
+				<p style="font-weight: normal;">Application Error.</p>
+				<br>
+				<p>
+					The application program "Internet Explorer" could not be opened, because it might be damaged or not work on this type of computer.
+				</p>
+				<button class="command_button right-button close-button">
+					OK
+				</button>
+			</div>
+		</div>
+		<div id="audio-holder">
+			<audio id="sound_boot" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/boot.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+			<audio id="sound_window_close" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/window_close.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+			<audio id="sound_window_collapse" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/window_collapse.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+			<audio id="sound_window_expand" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/window_expand.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+			<audio id="sound_window_open" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/window_open.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+			<audio id="sound_window_stopmoving" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/window_stopmoving.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+			<audio id="sound_window_moving" class="handsoff hidden" preload="auto">
+				<source src="rsrc/ui/window_moving.mp3" type="audio/mpeg">
+				Your browser does not support the HTML audio element.
+			</audio>
+		</div>
+		<div class="screensaver hidden">
+			<div class="toaster t1 p6"></div>
+			<div class="toaster t3 p7"></div>
+			<div class="toast tst1 p8"></div>
+			<div class="toaster t3 p9"></div>
+			<div class="toaster t1 p11"></div>
+			<div class="toaster t3 p12"></div>
+			<div class="toaster t2 p13"></div>
+			<div class="toast tst3 p14"></div>
+			<div class="toast tst2 p16"></div>
+			<div class="toaster t1 p17"></div>
+			<div class="toast tst2 p19"></div>
+			<div class="toast tst3 p20"></div>
+			<div class="toaster t2 p21"></div>
+			<div class="toast tst1 p24"></div>
+			<div class="toaster t1 p22"></div>
+			<div class="toast tst2 p26"></div>
+			<div class="toaster t1 p28"></div>
+			<div class="toast tst2 p30"></div>
+			<div class="toaster t2 p31"></div>
+			<div class="toaster t1 p32"></div>
+			<div class="toast tst3 p33"></div>
+
+			<div class="toaster t4 p27"></div>
+			<div class="toaster t4 p10"></div>
+			<div class="toaster t4 p25"></div>
+			<div class="toaster t4 p29"></div>
+
+			<div class="toaster t5 p15"></div>
+			<div class="toaster t5 p18"></div>
+			<div class="toaster t5 p22"></div>
+
+			<div class="toaster t6 p6"></div>
+			<div class="toaster t6 p11"></div>
+			<div class="toaster t6 p15"></div>
+			<div class="toaster t6 p19"></div>
+			<div class="toaster t6 p23"></div>
+
+			<div class="toast tst4 p10"></div>
+			<div class="toast tst4 p23"></div>
+			<div class="toast tst4 p15"></div>
+			<div class="toaster t7 p7"></div>
+			<div class="toaster t7 p12"></div>
+			<div class="toaster t7 p16"></div>
+			<div class="toaster t7 p20"></div>
+			<div class="toaster t7 p24"></div>
+
+			<div class="toaster t8 p8"></div>
+			<div class="toaster t8 p13"></div>
+			<div class="toaster t8 p17"></div>
+			<div class="toaster t8 p25"></div>
+
+			<div class="toaster t9 p14"></div>
+			<div class="toaster t9 p18"></div>
+			<div class="toaster t9 p21"></div>
+			<div class="toaster t9 p26"></div>
+		</div>
+		<script src="js/platinum.js"></script>
+		<script src="js/drawdown.js"></script>
+		<script src="js/data.js"></script>
+		<script src="js/main.js"></script>
+	
+
+</body></html>

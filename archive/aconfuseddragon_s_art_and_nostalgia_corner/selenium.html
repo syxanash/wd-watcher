@@ -1,0 +1,195 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1720, initial-scale=1.0, minimum-scale=0.465">
+    <title>aconfuseddragon's art and nostalgia corner</title>
+
+    <link href="/style1.css" rel="stylesheet" type="text/css" media="all">
+    
+    <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      m = checkTime(m);
+      document.getElementById('txt').innerHTML =
+      h + ":" + m;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+  </head>
+  
+  <body onload="startTime()">
+    
+    <div id="welcome">
+        <h1><p>aconfuseddragon's</p></h1>
+        <br>
+        <div class="welcome-text">
+          <a href="index.html"><img src="assets/title-gif.gif" title="Home"> </a>
+        </div>
+    </div>
+    
+    
+    <div class="itemIconContainer">
+      <div class="itemIcon">
+        <a href="index.html"><img src="assets/home.png" title="~ Home ~"> </a>
+      </div>
+      <div class="itemIcon">
+        <a href="gallery.html"><img src="assets/art.png" title="Gallery"> </a>
+      </div>
+      <div class="itemIcon">
+        <a href="diy-projects.html"><img src="assets/diy.png" title="Projects I designed that you can make!"> </a>
+      </div>
+      <div class="itemIcon">
+        <a href="mailto: aconfuseddragon@gmail.com"><img src="assets/email.png" title="aconfuseddragon@gmail.com"> </a>
+      </div>
+      <div class="itemIcon">
+        <a href="https://aconfuseddragon.itch.io/"><img src="assets/games.png"> </a>
+      </div>
+      <div class="itemIcon">
+        <a href="misc.html"><img src="assets/misc.png" title="Inspirations + Cool Stuff"> </a>
+      </div>
+      <div class="itemIcon">
+        <img src="assets/music.png">
+      </div>
+    </div>
+    
+    
+    <div id="links">
+      <h0>✬ <a href="https://aconfuseddragon.bigcartel.com">&lt; Store - Closed &gt;</a> ✬</h0>
+      <br>
+      <br>
+      <h0>✲  ˚ . <a href="https://twitter.com/aconfuseddragon">&lt; Twitter &gt;</a> . ˚  ✲</h0>
+      <br>
+      <br>
+      <h0> ⋆ ✧ .  ⊹ <a href="https://aconfuseddragon.neocities.org/gallery.html">&lt; My Art &gt;</a> ⊹  . ✧ ⋆ </h0>
+      <br>
+      <br>
+      <h0>★ ＊ ˚ ⋆ . <a href="https://aconfuseddragon.itch.io/">&lt; My Games &gt;</a> . ⋆ ˚ ＊ ★</h0>
+      <br>
+      <br>
+      <h0>⭒     .  ⊹ ☆     ⭑   . ✦ <a href="https://www.instagram.com/aconfuseddragon/">&lt; Instagram &gt;</a> ✦ .   ⭑     ☆ ⊹  .    ⭒</h0>
+      <div id="leaf"></div>
+    </div>
+    
+    <div id="water-png-box">
+      <div id="water-div">
+        <div id="water-png">
+        </div>
+      </div>
+    </div>
+    <div id="water-box">
+      <div id="water">
+      </div>
+    </div>
+    <div id="beach-box">
+      <div id="beach">
+      </div>
+    </div>
+    
+    <div id="Windows-box">
+      <div id="Windows">
+      </div>
+    </div>
+    
+    <div id="weather-box">
+      <div id="weather-div">
+        <div id="weather-png">
+        </div>
+      </div>
+    </div>
+    
+    <div id="computer-box">
+      <div id="computer">
+        <img src="assets/computer.gif" width="400" onclick="window.open('https://win95.ajf.me/', '_blank');">
+      </div>
+    </div>
+    
+    <div id="computer-2-box">
+      <div id="computer-2">
+      </div>
+    </div>
+    
+    <div id="sakura-left">
+    </div>
+    <div id="sakura-right">
+    </div>
+    
+    <div id="nostalgia-box">
+      <div id="lego-island-div">
+        <div id="lego-island">  <!-- don't need to make css for very inside -->
+          <img src="./nostalgia/lego-island.jpg" width="174">
+        </div>
+      </div>
+      <div id="pipes-div">
+        <div id="pipes">
+          <img src="./nostalgia/pipes.gif" height="262" onclick="window.open('https://www.screensaversplanet.com/screensavers/themes/classic', '_blank');">
+        </div>
+      </div>
+      <div id="freddi-div">
+        <div id="freddi">
+          <img src="./nostalgia/freddi.jpg" width="384px" onclick="window.open('https://store.steampowered.com/app/294540/Freddi_Fish_3_The_Case_of_the_Stolen_Conch_Shell/', '_blank');">
+        </div>
+      </div>
+      <div id="miniclip-div">
+        <div id="miniclip">
+          <img src="./nostalgia/miniclip.jpg" width="354px">
+        </div>
+      </div>
+      <div id="pinball-div">
+        <div id="pinball">
+          <img src="./nostalgia/pinball.gif" height="198px" onclick="window.open('https://en.wikipedia.org/wiki/Full_Tilt!_Pinball', '_blank');">
+        </div>
+      </div>
+      <div id="leap-div">
+        <div id="leap">
+          <img src="./nostalgia/leap.jpg" height="128px">
+        </div>
+      </div>
+      <div id="lego-div">
+        <div id="lego">
+          <img src="./nostalgia/lego.jpg" height="376px">
+        </div>
+      </div>
+      <div id="kidpix-div">
+        <div id="kidpix">
+          <img src="./nostalgia/kidpix.png" height="376px">
+        </div>
+      </div>
+      <div id="bionacle-div">
+        <div id="bionacle">
+          <img src="./nostalgia/bionacle.jpg" width="302px" onclick="window.open('https://bionicle.fandom.com/wiki/Mata_Nui_Online_Game', '_blank');">
+        </div>
+      </div>
+      <div id="tonka-div">
+        <div id="tonka">
+          <img src="./nostalgia/tonka.png" height="242px" onclick="window.open('https://tonka.fandom.com/wiki/List_of_Video_Games', '_blank');">
+        </div>
+      </div>
+      <div id="solitare-div">
+        <div id="solitare">
+          <img src="./nostalgia/solitare.gif" height="200px">
+        </div>
+      </div>
+    </div>
+    
+    <div id="stem-left">
+    </div>
+    <div id="stem-right">
+    </div>
+
+  <div id="txt">11:28</div>
+  <div id="footer">
+    <img src="./assets/bottombar.png">
+  </div>
+  <div id="footer-right">
+    
+  </div>
+    
+  
+  
+
+</body></html>

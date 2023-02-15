@@ -1,0 +1,255 @@
+<html><head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>baz's PC</title>
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="ajax_bs.js"></script>
+  </head>
+  <body>
+    
+    <img src="urhc2.png" id="urhc">
+    <img src="glitchy.gif" id="nwlogo">
+    
+    <div id="dskcnt">
+      <div class="dsktp" onclick="vis('main')">
+        <img src="ico/fcom.png" class="ico"><br>
+        <span class="menu">main</span>
+      </div>
+      <div class="dsktp" onclick="vis('about')">
+        <img src="ico/text.png" class="ico"><br>
+        <span class="menu">about</span>
+      </div>
+      <div class="dsktp" onclick="vis('bitsy')">
+        <img src="ico/joys.png" class="ico"><br>
+        <span class="menu">bitsies</span>
+      </div>
+      <div class="dsktp" onclick="vis('butn')">
+        <img src="ico/webw.png" class="ico"><br>
+        <span class="menu">links</span>
+      </div>
+    </div>
+    
+    <div id="clipBox">
+      <img id="clipBubble" src="clip bubble.png">
+      <img id="clipPy" src="clippy.gif">
+      <div id="clipText">Have you tried clicking on those icons up there? They open new windows!<br>
+        <span onclick="vis('clipBox')"><img class="clipButts" src="clip button.png"></span> yes, I have<br>
+        <span id="clipVisBox" onclick="setVis('clipBox')"><img class="clipButts" src="clip uncheck.png"></span> please stay away
+      </div>
+      
+    </div>
+    
+    <div class="box closed" id="main">
+      <div class="top" id="mainh">
+        <div class="toptxt">main - File Explorer</div>
+        <div class="ex" onclick="vis('main')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        <table class="folder">
+          <tbody><tr>
+            <td><span onclick="vis('fzines')" class="file"><img src="ico/fclo.png" class="ico"></span></td>
+            <td><span onclick="vis('updates')" class="file"><img src="ico/text.png" class="ico"></span></td>
+            <td><span onclick="vis('pronouns')" class="file"><img src="ico/text.png" class="ico"></span></td>
+            <td><span onclick="vis('twiary')" class="file"><img src="ico/help.png" class="ico"></span></td>
+            <td><span onclick="opnSplat()" class="file"><img src="ico/img1.png" class="ico"></span></td>
+          </tr>
+          <tr>
+            <th><span onclick="vis('fzines')" class="file">zines</span></th>
+            <th><span onclick="vis('updates')" class="file">updates</span></th>
+            <th><span onclick="vis('pronouns')" class="file">pronouns</span></th>
+            <th><span onclick="vis('twiary')" class="file">twiary</span></th>
+            <th><span onclick="opnSplat()" class="file">splats</span></th>
+          </tr>
+          <tr>
+            <td><span onclick="opnAqua()" class="file"><img src="ico/aqua.png" class="ico"></span></td>
+          </tr>
+          <tr>
+            <th><span onclick="opnAqua()" class="file">NOTVRS</span></th>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+    
+    <div class="box" id="about">
+      <div class="top" id="abouth">
+        <div class="toptxt">about - Notepad</div>
+        <div class="ex" onclick="vis('about')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        hey! it's basile, baz, toroid/al, woomy, etc. my pronouns are a/am and *e/h*. I have a section on here explaining them <span onclick="vis('pronouns')" class="fakeA">here</span>. if that's a bit too much, then just refer to me by my name, or other non-professional nouns. do not use they, he, or she.<br>welcome to my little neocities website! this is where I keep my old bitsy games and various little web-based experiments. feel free to look around.
+      </div>
+    </div>
+    
+    <div class="box closed" id="bitsy">
+      <div class="top" id="bitsyh">  
+        <div class="toptxt">BitsyBrowse</div>
+        <div class="ex" onclick="vis('bitsy')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        <span style="font-size: 12px;">note: if you see <img src="warning.gif" class="warn" title="warning symbol!" alt="warning symbol!">, hover over it to check for content warnings for that bitsy</span>
+        <ul>
+          <li><span class="fakeA" id="award" onclick="opnBit(this.id, 'award')">award</span>: the only bitsy award that should exist - 1 room</li>
+          <li><span class="fakeA" id="the_flower_forest" onclick="opnBit(this.id, 'the flower forest')">the flower forest</span>: pick some flowers for your friend - 4 rooms</li>
+          <li><span class="fakeA" id="summoned" onclick="opnBit(this.id, 'summoned')">summoned</span> <img src="warning.gif" class="warn" title="warning for animal death, regular death" alt="warning for animal death, regular death">: didn't expect to find anyone down here... - 2 rooms</li>
+          <li><span class="fakeA" id="hotel_n" onclick="opnBit(this.id, 'hotel ℕ')">hotel ℕ</span>: gotta get to your hotel room for the night - 1 room(!)</li>
+          <li><span class="fakeA" id="cat_noir" onclick="opnBit(this.id, 'cat noir')">cat noir</span>: made for a secret-santa type bitsy jam. you're a catboy spy, and must pick an outfit to go to a party undercover in - 2 rooms</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="box closed" id="butn">
+      <div class="top flashy" id="butnh">
+        <div class="toptxt "><div class="marquee">ADVERTISEMENT - Win FREE Access To ALL These GREAT Websites!! Click Here!</div></div>
+        <div class="ex" onclick="vis('butn')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        <a href="https://elekk.xyz/@woomy" target="_blank" title="social media for weirdos" rel="me">elekk.xyz</a><br>
+        <a href="https://birdcafe.tumblr.com/" target="_blank" title="old aesthetic I don't use">tumblr</a><br>
+        <a href="https://open.spotify.com/user/piiiiiii?si=coJwdoPIQxqOMCJ_udAQdw" target="_blank" title="I have a couple of playlists for things...">spotify</a><br>
+        <a href="https://ko-fi.com/toroidal" target="_blank" title="please don't pay me I don't need money atm"><strike>kofi</strike></a><br><br>
+        <!-- buttons -->
+        <a href="https://elekk.xyz/@woomy" target="_blank"><img src="butt/nf.gif" title="I'm back again, and about time too" alt="I'm back again, and about time too"></a><a href="https://neocities.org" target="_blank"><img src="butt/nc.png" title="hosted by Neocities!" alt="hosted by Neocities!"></a>
+        <a href="http://users3.smartgb.com/g/g.php?a=s&amp;i=g36-23442-d5" target="_blank"><img src="butt/gb.gif" title="sign my guestbook from 2014, lol" alt="sign my guestbook from 2014, lol"></a><img src="butt/wb.png" title="new laptop, still don't like windows" alt="new laptop, still don't like windows">
+        <img src="butt/dm.gif" title="You were diagnosed with GAY" alt="You were diagnosed with GAY"><img src="butt/sn.gif" title="apocalypse posadist accelerationism to reach inkopolis in 10 years" alt="apocalypse posadist accelerationism to reach inkopolis in 10 years"><br>
+        <div style="width: 185px; height: 60px" align="center">
+          <a href="https://emreed.net/LowTech_Directory.html"><img src="https://emreed.net/LTW.bmp" style="width:125px;"></a>
+          <table style="padding:0; margin:0;font-size:10px;position: relative; top:-60px; font-weight: bold; ">
+            <tbody><tr align="center">
+              <td style="width:50px;"><a href="http://www.femicom.org/sozai/">&lt;&lt;<br>FEMICOM<br>Sozai Collection</a></td>
+              <td style="width: 50px;"><a href="https://emreed.net/LowTech_Directory.html" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+              <td style="width:50px;"><a href="https://irradiate.space/">&gt;&gt;<br>Irradiate<br>Space</a></td>
+            </tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+    
+    <div class="box closed" id="gamer">
+      <div class="top" id="gamerh">
+        <div class="toptxt" id="gmrhd">BitsyBrowse</div>
+        <div class="popper" onmouseenter="popout('gamer')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('gamer')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content hasFrame" id="bxgmr">
+        <iframe id="gameFrame"></iframe>
+      </div>
+    </div>
+    
+    <div class="box closed" id="splat">
+      <div class="top" id="splath">
+        <div class="toptxt">keep track of my sick splats</div>
+        <div class="popper" onmouseenter="popout('splat')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('splat')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content hasFrame" id="bxspl">
+        add me! ~ <b>SW-2999-4414-7390</b>
+        <iframe id="splFrame" allowfullscreen="" sandbox="allow-top-navigation allow-scripts"></iframe>
+      </div>
+    </div>
+    
+    <div class="box closed" id="twiary">
+      <div class="top" id="twiaryh">
+        <div class="toptxt">Twine Diary</div>
+        <div class="ex" onclick="vis('twiary')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content" id="fT">
+      2019<br>
+      &gt; feb<br>
+      &gt;&gt; <span class="fakeA" id="190207" onclick="opnTwi(this.id)">07</span><br>
+      &gt;&gt; <span class="fakeA" id="190208" onclick="opnTwi(this.id)">08</span><br>
+      &gt;&gt; <span class="fakeA" id="190218" onclick="opnTwi(this.id)">18</span><br>
+      &gt;&gt; <span class="fakeA" id="190220" onclick="opnTwi(this.id)">20</span><br>
+      &gt;&gt; <span class="fakeA" id="190223" onclick="opnTwi(this.id)">23</span><br>
+      &gt;&gt; <span class="fakeA" id="190224" onclick="opnTwi(this.id)">24</span><br>
+      &gt;&gt; <span class="fakeA" id="190228" onclick="opnTwi(this.id)">28</span><br>
+      &gt; mar<br>
+      &gt;&gt; <span class="fakeA" id="190306" onclick="opnTwi(this.id)">06</span><br>
+      &gt;&gt; <span class="fakeA" id="190313" onclick="opnTwi(this.id)">13</span><br>
+      &gt;&gt; <span class="fakeA" id="190321" onclick="opnTwi(this.id)">21</span><br>
+      &gt; sep<br>
+      &gt;&gt; <span class="fakeA" id="190911" onclick="opnTwi(this.id)">11</span><br>
+      &gt;&gt; <span class="fakeA" id="190913" onclick="opnTwi(this.id)">13</span>
+      </div>
+    </div>
+    
+    <div class="box closed" id="twiney">
+      <div class="top" id="twineyh">
+        <div class="toptxt" id="twihd">Twine Diary</div>
+        <div class="popper" onmouseenter="popout('twiney')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('twiney')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content hasFrame" id="bxtwi">
+        <iframe id="twiFrame"></iframe>
+      </div>
+    </div>
+    
+    <div class="box closed" id="fzines">
+      <div class="top" id="fzinesh">
+        <div class="toptxt">zines - File Explorer</div>
+        <div class="ex" onclick="vis('fzines')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        zines coming soon... :3c
+      </div>
+    </div>
+    
+    <div class="box closed" id="aqua">
+      <div class="top" id="aquah">
+        <div class="toptxt">AquariumFREE.exe</div>
+        <div class="popper" onmouseenter="popout('aqua')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('aqua')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content hasFrame" id="bxgmr">
+        <iframe id="aquaFrame"></iframe>
+      </div>
+    </div>
+    
+    <div class="box text" id="updates">
+      <div class="top" id="updatesh">
+        <div class="toptxt">updates - Notepad</div>
+        <div class="popper" onmouseenter="popout('updates')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('updates')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        <div id="updFill" class="bulleted"><p class="bullet">2021</p><p class="bullet">apr 14th - something that I've wanted for a long time now: persistent windows across refreshes! now, when you move, open, or close windows, these changes will stick around when you refresh the page, or when you leave the page and come back later! this uses your browser's local storage, so no info gets sent to me or anywhere else, in case you were worried.</p><p class="bullet">apr 11th - more background tweaks. the titles of bitsy games actually show up in their window headers now, and these text files are handled via ajax instead of secret iframes. more fixes to come!</p><p class="bullet">apr 2nd - added a bitsy from a game-jam-secret-santa-thing that I had on my itch.io page for a while now but not on here with the rest.</p><p class="bullet">mar 31st - moving everything properly to an offline backup, minor tweaks in the background. welcome back :&gt;</p><p class="bullet">2020</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
+      </div>
+    </div>
+
+    <div class="box text closed" id="pronouns">
+      <div class="top" id="pronounsh">
+        <div class="toptxt">pronouns - Notepad</div>
+        <div class="popper" onmouseenter="popout('pronouns')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('pronouns')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content">
+        <div id="proFill">my primary set of pronouns is a/am/air/airs/amself. if you haven't heard of them before, that's because I made them up myself, based on some old "regional nominative pronoun" (they only found the first one, a, likely the others never existed) that was found in a 14th century text. I thought it would be funny to have a set that was mostly made up of other words, so it wouldn't be spellchecked out but would completely fuck with grammar checks. My other set of pronouns, *e/h*/h*s/h*s/h*self, really only work when used in text-based communication. I found them online, they were made as a half-joke for some 90s chat software. they're also called splat pronouns, a name much easier to look up. feel free to replace the asterisks with whatever other unicode symbols work for the platform/you think are cool, although try to avoid emoji or anything else that would be rendered in color. a few that I think would be cool include ꙮ, ‽, or ⌂. get creative!</div>
+      </div>
+    </div>
+    
+    <!-- 
+    box template
+    
+    <div class="box" id="_">
+      <div class="top" id="_h">
+        <div class="toptxt"></div>
+        if contain iframe: <div class="popper" onmouseenter="popout('_')" aria-hidden="true">&#8599;</div>
+        <div class="ex" onclick="vis('_')" aria-hidden="true">&#x2715;</div>
+      </div>
+      <div class="content">
+      </div>
+    </div>
+    
+    -->
+    <!-- yeah this looks ugly as sin putting this here. but otherwise the script runs before the divs exist -->
+    <script>
+      window.onload = function() {
+        checkVis();
+        checkPos();
+        if (!localStorage.getItem("about")) setDefaultLocal();
+      }
+      var boxes = document.getElementsByClassName("box");
+      for (i in boxes) dragElement(boxes[i]);
+    </script>
+  
+</body></html>

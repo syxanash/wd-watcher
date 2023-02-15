@@ -1,0 +1,483 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ytOS/2014</title>
+<link type="text/css" href="js/jquery-window-5.03/css/jquery.window.css" rel="stylesheet">
+<link type="text/css" href="js/jquery-window-5.03/css/jquery-ui.css" rel="stylesheet">
+<link type="text/css" href="ytOS-main.css" rel="stylesheet">
+<link rel="image_src" href="images/background.gif">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+<script src="js/jquery-window-5.03/jquery.window.min.js"></script>
+<script src="js/dm.js"></script>
+
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+	d = new Date();
+	nday   = d.getDay();
+	nmonth = d.getMonth();
+	ndate  = d.getDate();
+	nyear = d.getYear();
+	nhour  = d.getHours();
+	nmin   = d.getMinutes();
+	nsec   = d.getSeconds();
+	
+	if(nyear<1000) nyear=nyear+1900;
+	
+	if(nhour ==  0) {ap = " AM";nhour = 12;} 
+	else if(nhour <= 11) {ap = " AM";} 
+	else if(nhour == 12) {ap = " PM";} 
+	else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+	
+	if(nmin <= 9) {nmin = "0" +nmin;}
+	if(nsec <= 9) {nsec = "0" +nsec;}
+	
+	
+	document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+	setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+
+<script>
+$(function() {
+    $("#news,#biography,#calendar,#interweb,#chat,#albums,#musicvideos,#socialmedia,#collaborators,#skifree,#minesweeper").draggable();
+});
+
+  function openURL(url, nw) {
+	  if(nw==false) {
+		  $.window.prepare({
+			dock: 'bottom',
+			dockArea: $('#desktop')
+		  });
+		  
+		  $("#desktop").window({
+		   icon: "images/interweb.gif",
+		   title: "Interweb: " + url,
+		   url: url,
+		   bookmarkable: false,
+		   width: 550,
+		   checkBoundary: true
+			});
+	  } else {
+		  window.open(url,'_blank');
+	  }
+   }
+   
+  function openBio() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/biography.gif",
+	   title: "Biography",
+	   url: "biography.php",
+	   bookmarkable: false,
+	   width: 400,
+	   checkBoundary: true
+		});
+   }
+   
+   function openNews() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/news.gif",
+	   title: "News",
+	   url: "news.php",
+	   bookmarkable: false,
+	   width: 500,
+	   checkBoundary: true,
+	   x: 135,
+	   y: 50
+		});
+   }
+   
+   function openCalendar() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/calendar.gif",
+	   title: "Calendar",
+	   url: "calendar.php",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 500
+		});
+   }
+   
+   function openSM() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/socialmedia.gif",
+	   title: "Social Media",
+	   //url: "socialmedia.php",
+	   content: $("#sm").html(),
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 450
+		});
+   }
+   
+   function openSkifree() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/skifree.gif",
+	   title: "Skifree",
+	   url: "skifree/index.html",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 550,
+	   height: 420
+		});
+   }
+   
+   function openAlbums() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/albums.gif",
+	   title: "Albums",
+	   url: "albums.php",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 450
+		});
+   }
+   
+   function openChat() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/chat.gif",
+	   title: "Chat",
+	   url: "irc/index.php",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 550,
+	   height: 400,
+	   x: 137,
+	   y: 37
+		});
+   }
+   
+   function openVideos() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/musicvideos.gif",
+	   title: "Music Videos",
+	   content: $("#videos").html(),
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 420
+		});
+   }
+   
+   function openVideo(id) {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/musicvideos.gif",
+	   title: "Video Player",
+	   url: "http://www.youtube.com/v/" + id + "?hl=en_US&amp;version=3&amp;rel=0",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 640,
+	   height: 390
+		});
+   }
+   
+   function openCollaborators() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/collaborators.gif",
+	   title: "Collaborators",
+	   url: "collaborators.php",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   width: 450
+		});
+   }
+   
+   function openMS() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/minesweeper.gif",
+	   title: "Minesweeper",
+	   url: "ms/index.php",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   maximizable: false,
+	   resizable: true,
+	   height: 280,
+	   width: 180
+		});
+   }
+   
+   function openInterweb() {
+	  $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "images/interweb.gif",
+	   title: "Interweb",
+	   url: "http://www.excite.com",
+	   bookmarkable: false,
+	   checkBoundary: true,
+	   height: 500,
+	   width: 650
+		});
+   }
+   
+   function openSoundcloud() {
+	   $.window.prepare({
+		dock: 'bottom',
+		dockArea: $('#desktop')
+	  });
+	  
+	  $("#desktop").window({
+	   icon: "http://www.soundcloud.com/favicon.ico",
+	   title: "Soundcloud Player",
+	   url: "soundcloud.php",
+	   checkBoundary: true,
+	   x: 400,
+	   y: 250,
+	   height: 300,
+	   width: 425,
+	   closable: false,
+	   bookmarkable: false,
+	   resizeable: false,
+	   maximizable: false
+		});
+   }   
+   
+</script>
+
+</head>
+
+<body leftmargin="0" topmargin="0">
+<div id="titlebar">
+	<table width="100%" border="0" cellspacing="0" cellpadding="4">
+		<tbody><tr>
+			<td align="left">ytOS/2014</td>
+			<td align="center"><span id="status">STC IS THE GREATEST</span></td>
+			<td align="right" width="300px"><div id="clockbox">Wednesday, February 15, 2023 11:25:46 AM</div></td>
+		</tr>
+	</tbody></table>
+</div>
+
+<div id="loadscreen"></div>
+
+<div id="desktop"> <br>
+	<br>
+	<table border="0" align="left" cellpadding="4" cellspacing="2">
+		<tbody><tr>
+			<td align="center" valign="middle"><div id="news" class="desktopicon ui-draggable" ondblclick="openNews();" style="position: relative;"><img src="images/news.gif" width="32" height="32" border="0"><br>
+News<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="biography" class="desktopicon ui-draggable" ondblclick="openBio();" style="position: relative;"><img src="images/biography.gif" width="32" height="32" border="0"><br>
+Biography<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="calendar" class="desktopicon ui-draggable" ondblclick="openCalendar();" style="position: relative;"><img src="images/calendar.gif" width="32" height="32" border="0"><br>
+Calendar<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="interweb" class="desktopicon ui-draggable" ondblclick="openInterweb();" style="position: relative;"><img src="images/interweb.gif" width="32" height="32" border="0"><br>
+Interweb<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="chat" class="desktopicon ui-draggable" ondblclick="openChat();" style="position: relative;"><img src="images/chat.gif" width="32" height="32" border="0"><br>
+Chat<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="albums" class="desktopicon ui-draggable" ondblclick="openAlbums();" style="position: relative;"><img src="images/albums.gif" width="32" height="32" border="0"><br>
+Albums<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="musicvideos" class="desktopicon ui-draggable" ondblclick="openVideos();" style="position: relative;"><img src="images/musicvideos.gif" width="32" height="32" border="0"><br>
+Music Videos<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="socialmedia" class="desktopicon ui-draggable" ondblclick="openSM();" style="position: relative;"><img src="images/socialmedia.gif" width="32" height="32" border="0"><br>
+Social Media<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="collaborators" class="desktopicon ui-draggable" ondblclick="openCollaborators();" style="position: relative;"><img src="images/collaborators.gif" width="32" height="32" border="0"><br>
+Collaborators<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="skifree" class="desktopicon ui-draggable" ondblclick="openSkifree();" style="position: relative;"><img src="images/skifree.gif" width="32" height="32" border="0"><br>
+Skifree<br></div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="minesweeper" class="desktopicon ui-draggable" ondblclick="openMS();" style="position: relative;"><img src="images/minesweeper.gif" width="32" height="32" border="0"><br>
+Minesweeper<br></div></td>
+		</tr>
+	</tbody></table>
+<img src="images/background.wallpaper.gif" name="wallpaper" width="481" height="225" id="wallpaper"> </div>
+	
+<div id="videos" style="display:none;">
+
+<table width="100%" border="0" align="left" cellpadding="4" cellspacing="2">
+		<tbody><tr>
+        				<td align="center" valign="middle"><div id="video1" ondblclick="openVideo('dhebl9oD5Lc');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/dhebl9oD5Lc/1.jpg" width="60" height="45" border="0"><br>ytcracker - the link</div></td>
+            			<td align="center" valign="middle"><div id="video2" ondblclick="openVideo('7YoDt-MxhHg');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/7YoDt-MxhHg/1.jpg" width="60" height="45" border="0"><br>ytcracker - antisec</div></td>
+            			<td align="center" valign="middle"><div id="video3" ondblclick="openVideo('q6dJtScSnxM');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/q6dJtScSnxM/1.jpg" width="60" height="45" border="0"><br>ytcracker - LOL MONEY (original)</div></td>
+            
+</tr><tr>
+			<td align="center" valign="middle"><div id="video4" ondblclick="openVideo('ycdxjXwuNsg');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/ycdxjXwuNsg/1.jpg" width="60" height="45" border="0"><br>ytcracker - surgerunner (live in sf)</div></td>
+            			<td align="center" valign="middle"><div id="video5" ondblclick="openVideo('mgc93C178lc');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/mgc93C178lc/1.jpg" width="60" height="45" border="0"><br>spamtec - where im from</div></td>
+            			<td align="center" valign="middle"><div id="video6" ondblclick="openVideo('3gg4taww4no');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/3gg4taww4no/1.jpg" width="60" height="45" border="0"><br>ytcracker - meganerd (live in LA)</div></td>
+            
+</tr><tr>
+			<td align="center" valign="middle"><div id="video7" ondblclick="openVideo('3zvGRNu08B4');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/3zvGRNu08B4/1.jpg" width="60" height="45" border="0"><br>ytcracker - warez loder</div></td>
+            			<td align="center" valign="middle"><div id="video8" ondblclick="openVideo('o5z5v2VvQ7s');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/o5z5v2VvQ7s/1.jpg" width="60" height="45" border="0"><br>ytcracker - i am a pirate (live in chicago)</div></td>
+            			<td align="center" valign="middle"><div id="video9" ondblclick="openVideo('Cf_XhKE4R_o');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/Cf_XhKE4R_o/1.jpg" width="60" height="45" border="0"><br>ytcracker - take a knee</div></td>
+            
+</tr><tr>
+			<td align="center" valign="middle"><div id="video10" ondblclick="openVideo('ieDBrlKnaAM');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/ieDBrlKnaAM/1.jpg" width="60" height="45" border="0"><br>ytcracker - on my starship</div></td>
+            			<td align="center" valign="middle"><div id="video11" ondblclick="openVideo('D-VbA5H2gjo');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/D-VbA5H2gjo/1.jpg" width="60" height="45" border="0"><br>ytcracker - nes (fan made)</div></td>
+            			<td align="center" valign="middle"><div id="video12" ondblclick="openVideo('UCyFdGOdiUw');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/UCyFdGOdiUw/1.jpg" width="60" height="45" border="0"><br>ytcracker - introducing neals</div></td>
+            
+</tr><tr>
+			<td align="center" valign="middle"><div id="video13" ondblclick="openVideo('7vkRTV2LnyY');" class="ui-draggable" style="position: relative;"><img src="http://img.youtube.com/vi/7vkRTV2LnyY/1.jpg" width="60" height="45" border="0"><br>ytcracker - welcome to san secuestro</div></td>
+            <td>&nbsp;</td><td>&nbsp;</td>		</tr>
+        </tbody></table>
+		
+<script>
+$(function() {
+	$("#video1").draggable();
+$("#video2").draggable();
+$("#video3").draggable();
+$("#video4").draggable();
+$("#video5").draggable();
+$("#video6").draggable();
+$("#video7").draggable();
+$("#video8").draggable();
+$("#video9").draggable();
+$("#video10").draggable();
+$("#video11").draggable();
+$("#video12").draggable();
+$("#video13").draggable();
+});
+</script>
+</div>
+
+<div id="sm" style="display:none;">
+<table width="100%" border="0" align="left" cellpadding="4" cellspacing="2">
+		<tbody><tr>
+			<td align="center" valign="middle"><div id="sm1" ondblclick="openURL('http://www.twitter.com/realytcracker',true);" class="ui-draggable" style="position: relative;"><img src="https://i.imgur.com/7tVYAeF.jpg" width="32" height="32" border="0"><br>twitter</div></td>
+			<td align="center" valign="middle"><div id="sm2" ondblclick="openURL('http://www.facebook.com/ytcracker',true);" class="ui-draggable" style="position: relative;"><img src="https://www.facebook.com/favicon.ico" width="32" height="32" border="0"><br>facebook</div></td>
+			<td align="center" valign="middle"><div id="sm3" ondblclick="openURL('http://www.digitalgangster.com/5um',true);" class="ui-draggable" style="position: relative;"><img src="http://digitalgangster.com/favicon.ico" width="32" height="32" border="0"><br>digitalgangster</div></td>
+			<td align="center" valign="middle"><div id="sm4" ondblclick="openURL('http://www.soundcloud.com/ytcracker',true);" class="ui-draggable" style="position: relative;"><img src="http://soundcloud.com/favicon.ico" width="32" height="32" border="0"><br>soundcloud</div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="sm5" ondblclick="openURL('http://ytcracker.bandcamp.com',true);" class="ui-draggable" style="position: relative;"><img src="http://s0.bcbits.com/img/bc_favicon.ico" width="32" height="32" border="0"><br>bandcamp</div></td>
+			<td align="center" valign="middle"><div id="sm6" ondblclick="openURL('http://www.instagram.com/y7cracker',true);" class="ui-draggable" style="position: relative;"><img src="https://www.instagram.com/favicon.ico" width="32" height="32" border="0"><br>instagram</div></td>
+			<td align="center" valign="middle"><div id="sm7" ondblclick="openURL('http://www.hitbox.tv/ytcracker',true);" class="ui-draggable" style="position: relative;"><img src="http://www.hitbox.tv/favicon.ico" width="32" height="32" border="0"><br>hitbox</div></td>
+			<td align="center" valign="middle"><div id="sm8" ondblclick="openURL('http://steamcommunity.com/id/ytcracker',true);" class="ui-draggable" style="position: relative;"><img src="http://steamcommunity.com/favicon.ico" width="32" height="32" border="0"><br>steam</div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="sm9" ondblclick="openURL('http://rapgenius.com/artists/Ytcracker',true);" class="ui-draggable" style="position: relative;"><img src="http://rapgenius.com/favicon.ico" width="32" height="32" border="0"><br>rapgenius</div></td>
+			<td align="center" valign="middle"><div id="sm10" ondblclick="openURL('http://youtube.com/user/realytcracker',true);" class="ui-draggable" style="position: relative;"><img src="http://s.ytimg.com/yts/img/favicon-vfldLzJxy.ico" width="32" height="32" border="0"><br>realytcracker @ youtube</div></td>
+			<td align="center" valign="middle"><div id="sm11" ondblclick="openURL('http://youtube.com/user/nerdysouth',true);" class="ui-draggable" style="position: relative;"><img src="http://s.ytimg.com/yts/img/favicon-vfldLzJxy.ico" width="32" height="32" border="0"><br>nerdysouth @ youtube</div></td>
+			<td align="center" valign="middle"><div id="sm12" ondblclick="openURL('http://www.reddit.com/user/freshleycrusher',true);" class="ui-draggable" style="position: relative;"><img src="http://www.redditstatic.com/favicon.ico" width="32" height="32" border="0"><br>reddit</div></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle"><div id="sm13" ondblclick="openURL('http://en.wikipedia.org/wiki/YTCracker',true);" class="ui-draggable" style="position: relative;"><img src="https://en.wikipedia.org/static/favicon/wikipedia.ico" width="32" height="32" border="0"><br>wikipedia</div></td>
+			<td align="center" valign="middle"><div id="sm14" ondblclick="openURL('http://mixlr.com/ytcracker/',true);" class="ui-draggable" style="position: relative;"><img src="http://mixlr.com/favicon.ico" width="32" height="32" border="0"><br>mixlr</div></td>
+			<td align="center" valign="middle"><div id="sm15" ondblclick="openURL('http://twitch.tv/ytcracker/',true);" class="ui-draggable" style="position: relative;"><img src="http://twitch.tv/favicon.ico" width="32" height="32" border="0"><br>twitch</div></td>
+			<td align="center" valign="middle"><div id="sm16" ondblclick="openURL('https://www.patreon.com/ytcracker',true);" class="ui-draggable" style="position: relative;"><img src="https://i.imgur.com/0ZF5lgI.jpg" width="32" height="32" border="0"><br>patreon</div></td>
+		</tr>
+        </tbody></table>
+		
+<script>
+$(function() {
+	$("#sm1").draggable();
+$("#sm2").draggable();
+$("#sm3").draggable();
+$("#sm4").draggable();
+$("#sm5").draggable();
+$("#sm6").draggable();
+$("#sm7").draggable();
+$("#sm8").draggable();
+$("#sm9").draggable();
+$("#sm10").draggable();
+$("#sm11").draggable();
+$("#sm12").draggable();
+$("#sm13").draggable();
+$("#sm14").draggable();
+$("#sm15").draggable();
+$("#sm16").draggable();
+});
+</script>
+</div>
+
+<script>
+var statcounter = 0;
+function rStatus() {
+	var statusline = new Array(
+		"BEST VIEWED IN GOOGLE CHROME",
+		"DOUBLE CLICK ICONS TO OPEN",
+		"CLICK AND DRAG ICONS AROUND FOR FUN",
+		"PLAY SKIFREE AND MINESWEEPER",
+		"LIVE LIKE IT IS 1996",
+		"STC IS THE GREATEST"
+		);
+	document.getElementById('status').innerHTML = statusline[statcounter];
+	statcounter++;
+	if(statcounter>=6) statcounter = 0;
+}
+
+setTimeout("document.getElementById('loadscreen').style.display = 'none';",3000);
+//setTimeout("openChat();",4000);
+setTimeout("openNews();",4000);
+setTimeout("openSoundcloud()",4500);
+setInterval("rStatus()",5000);
+</script>
+
+
+</body></html>

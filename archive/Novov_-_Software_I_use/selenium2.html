@@ -1,0 +1,511 @@
+<html lang="en"><head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Novov - Software I use</title>
+	<meta name="author" content="Novov">
+	<meta name="description" content="This page has programs, web apps, and software-related stuff that I use. Most are cross-platform, easy to use, and free or cheap.">
+	<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/images/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="/images/faviconati.png">
+	<link rel="stylesheet" href="/styles/main.css?v3">
+	<link rel="stylesheet" href="/styles/liked/software.css?v3">
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			document.body.classList.remove("nojs");
+			setClock();
+		});
+		
+		window.addEventListener("dragstart",function(event) {
+			//firefox hates the draggable attribute
+			event.preventDefault();
+		});
+		
+		window.addEventListener("resize",function(event) {
+			windows = document.getElementsByClassName("window");
+			for(var i = 0; i < windows.length; i++) { windows[i].removeAttribute("style"); }
+		});
+		
+		function setClock() {
+			var clock = document.getElementsByClassName("time")[0],
+			    date = new Date(Date.now()),
+			    hours = ((date.getHours() >= 13) ? date.getHours() - 12 : date.getHours()),
+			    minutes = ((date.getMinutes() > 9) ? date.getMinutes() : "0" + date.getMinutes());
+			
+			clock.innerHTML = hours + ":" + minutes + ((date.getHours() >= 13) ? " PM" : " AM");
+			setTimeout(setClock, 2500); //accurate enough
+		}
+		
+		function closeWindow(button) { button.parentNode.parentNode.classList.add("closed"); }
+		
+		function collapseWindow(button) { 
+			var article = button.parentNode.parentNode;
+
+			if(article.classList.contains("collapsed")) {
+				article.classList.remove("collapsed");
+				article.style.removeProperty("margin-bottom");
+			}
+			else {
+				var margin = parseInt(window.getComputedStyle(article).marginBottom),
+				    height = article.scrollHeight;
+				
+				article.classList.add("collapsed");
+				article.style.marginBottom = ((height + margin) - article.scrollHeight) + "px";
+			}
+		}
+		
+		function moveWindow(bar) {
+			if(event.button != 0) { return; }
+			
+			var article = bar.parentNode.parentNode,
+				startY = event.pageY, 
+				startX = event.pageX, 
+				withinY = startY - (article.getBoundingClientRect().y + window.scrollY),
+				withinX = startX - article.getBoundingClientRect().x,  //compute position within window
+				drag = document.createElement("div");
+			
+			drag.style.height = article.scrollHeight + "px";
+			drag.style.width = article.scrollWidth + "px";
+			drag.id = "drag";
+			document.body.classList.add("noselect");			
+			
+			document.onmousemove = function(event) {
+				if(!document.getElementById("drag")) { document.getElementsByTagName("main")[0].appendChild(drag); }
+				drag.style.top = (event.pageY - withinY) + "px";
+				drag.style.left = (event.pageX - withinX) + "px";
+			};
+			
+			document.onmouseup = function(event) {
+				article.style.top = (parseInt(article.style.top) || 0) + (event.pageY - startY) + "px";
+				article.style.left = (parseInt(article.style.left) || 0) + (event.pageX - startX) + "px";
+				
+				if(document.getElementById("drag")) { document.getElementsByTagName("main")[0].removeChild(drag); }
+				document.body.classList.remove("noselect");
+				document.onmousemove = null;
+				document.onmouseup = null;
+			};
+		}
+		
+		function focusWindow(article) {
+			var windows = document.getElementsByClassName("window"),
+			    maxz = 14;
+			
+			for(var i = 0; i < windows.length; i++) {
+				var thisz = parseInt(windows[i].style.zIndex);
+				if(thisz > maxz) { maxz = thisz; }
+			}
+			
+			article.style.zIndex = maxz + 1;
+	 	}
+	 	
+	 	function selectWindow(id) {
+		 	var article = document.getElementById(id);
+		 	focusWindow(article);
+		 	if(article.classList.contains("closed")) { article.classList.remove("closed"); }
+		 	if(article.classList.contains("collapsed")) { collapseWindow(article); } //uncollapse
+	 	}
+	 	
+	 	function openNav(id,item) {
+		 	var nav = document.getElementById(id),
+		 	    xpos = item.getBoundingClientRect().x,
+		 	    children = nav.getElementsByTagName("a");
+		 	
+		 	item.classList.add("selected");
+		 	nav.classList.remove("hidden");
+		 	nav.style.left = (id === "apps") ? (xpos - 55) + "px" : xpos + "px";
+		 	document.body.classList.add("noselect");
+				
+			for(var i = 0; i < children.length; i++) {
+				var child = children[i];
+				console.log(child.tagName);
+				child.onmouseover = function(event) { event.currentTarget.classList.add("selected"); };
+				child.onmouseout = function(event) { event.currentTarget.classList.remove("selected"); };
+				child.onmouseup = function(event) { event.currentTarget.click(); };
+			}
+			
+			document.onmouseup = function(event) {
+				item.classList.remove("selected");
+				nav.classList.add("hidden");
+				
+				document.body.classList.remove("noselect");
+				document.onmouseup = null;
+			};
+		}
+	</script>
+</head>
+<body class="softwarePage novov">
+	<header id="top" class="menuHeading">
+ 		<ul>
+	 		<li onmousedown="openNav('apple',this)" class="apple">
+	 			<img draggable="false" alt="Main Menu" src="/images/liked/software/logo.png">
+	 		</li>
+			<li onmousedown="openNav('software',this)">Software</li> 
+			<li onmousedown="openNav('articles',this)">Articles</li>
+		</ul>
+		<div class="right">
+			<span class="time">6:26 PM</span>
+			<img class="divider" alt="" src="/images/liked/software/divider.jpg">
+			<span onmousedown="openNav('apps',this)" class="switcher">
+				<img draggable="false" class="app" alt="" src="/images/liked/software/software.png">
+				Software I use
+			</span>
+		</div>
+		<nav id="apple" class="menu hidden">
+			<a href="/index.html">Novov Homepage</a>
+			<hr>
+			<a href="https://neocities.org">Neocities</a>
+		</nav>
+		<nav id="software" class="menu hidden">
+			<a onclick="selectWindow('svgomg')">SVGOMG</a>
+			<a onclick="selectWindow('itch')">itch.io</a>
+			<a onclick="selectWindow('affinity')">Affinity Suite</a>
+			<a onclick="selectWindow('xlate')">Xlate</a>
+			<a onclick="selectWindow('alternativeto')">AlternativeTo</a>
+			<a onclick="selectWindow('twine')">Twine</a>
+			<a onclick="selectWindow('everytimezone')">Every Time Zone</a>
+			<a onclick="selectWindow('analyzemywriting')">Analyze My Writing</a>
+			<a onclick="selectWindow('magicavoxel')">MagicaVoxel</a>
+			<a onclick="selectWindow('cyberchef')">CyberChef</a>
+			<a onclick="selectWindow('fontdrop')">FontDrop</a>
+			<a onclick="selectWindow('brew')">Homebrew</a>
+			<hr>
+			<a onclick="selectWindow('about')">About</a>
+		</nav>
+		<nav id="articles" class="menu hidden">
+			<a onclick="selectWindow('painting')">Digital painter rundown</a>
+			<a onclick="selectWindow('tools')">Interesting unheard of developer tools</a>
+		</nav>
+		<nav id="apps" class="menu hidden">
+			<a class="gray">Hide Software I use</a>
+			<a class="gray">Hide Others</a>
+			<a class="gray">Show All</a>
+			<hr>
+			<a href="/jukebox.html"><img draggable="false" alt="" src="/images/liked/software/jukebox.png">Music I like</a>
+			<a href="/design.html"><img draggable="false" alt="" src="/images/liked/software/design.png">Design I like</a>
+			<a class="checked"><img draggable="false" alt="" src="/images/liked/software/software.png">Software I use</a>
+			<a href="/gallery/index.html"><img draggable="false" alt="" src="/images/liked/software/gallery.png">Art I like</a>
+		</nav>
+	</header>
+	<main>
+		<article id="about" class="window" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+						About
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<h1 class="left">Software I use</h1>
+				<p>
+					This page has programs, web apps, and software-related stuff that I use. Most are cross-platform, easy to use, and free or cheap.
+				</p>
+			</section>
+		</article>
+		<article id="svgomg" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/svgomg.jpg"> 
+					SVGOMG
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/svgomg.jpg"> 
+					<a href="https://jakearchibald.github.io/svgomg/" class="price">Free</a>
+					<h3>SVGOMG </h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> Jake Archibald</p>
+				</div>
+				<p>
+					Like graphic design or vector art? This is an online GUI for the popular "SVGO" tool that allows you to optimise .SVG files.
+				</p>
+			</section>
+		</article>
+		<article id="itch" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/itch.png"> 
+					itch.io
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<a href="https://itch.io" class="price">Free (some items paid)</a>
+					<img class="icon app" alt="" src="/images/liked/software/apps/itch.png"> 
+					<h3>itch.io</h3>
+					<p class="info"><b>Type:</b> Online games store</p>
+					<p class="info"><b>Developer:</b> itch</p>
+				</div>
+				
+				<p>
+					More of a repository or store than an actual app, it has lots of neat little experimental games. A lot of indie creators that went on to become the Next Big Thing™ released stuff here first.
+				</p>
+			</section>
+		</article>		
+		<article id="affinity" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/affinity.png"> Affinity Suite
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<a href="https://affinity.serif.com" class="price">US$50 each</a>
+					<img class="icon app" alt="" src="/images/liked/software/apps/affinity.png"> 
+					<h3>Affinity Suite</h3>
+					<p class="info"><b>Type:</b> Cross-platform applications</p>
+					<p class="info"><b>Developer:</b> Serif Europe</p>
+				</div>
+				<p>
+					In my opinion, Adobe's monopoly on creative applications is extremely detrimental. Serif creates one of the best alternatives, for a much cheaper price. Although their apps don't quite have the extensive feature set of the Creative Cloud, they've still pretty great.
+				</p>
+			</section>
+		</article>
+		<article id="xlate" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/xlate.png"> Xlate
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/xlate.png"> 
+					<a href="https://paulschou.com/tools/xlate/" class="price">Free</a>
+					<h3>Xlate</h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> Paul Schou</p>
+				</div>
+				<p class="break">
+					JEQG4ZLWMVZCA4DSMV2GK3TEMVSCA5DPEBRGKIDBEBZXA6JAMFZSAYJANNUWILBAMJ2XIICJEBQWY53BPFZSA5DIN52WO2BAMNZHS4DUN5TXEYLQNB4SA53BOMQHA4TFOR2HSIDDN5XWYLRALBWGC5DFEBSG6ZLTNYTXIIDDN5WWKIDJNYQGQYLOMR4SAZLYMNSXA5DJNZTSA5DIMUQG6ZDEEBAVERZMEBRHK5BANF2CO4ZAON2GS3DMFYXC4IDQOJSXI5DZEBRW633MFY
+				</p>
+			</section>
+		</article>
+		<article id="alternativeto" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/alternativeto.png"> AlternativeTo
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/alternativeto.png"> 
+					<a href="https://alternativeto.net" class="price">Free</a>
+					<h3>AlternativeTo</h3>
+					<p class="info"><b>Type:</b> Website about apps</p>
+					<p class="info"><b>Creator:</b> 27 Kilobyte AB</p>
+				</div>
+				<p>
+					A great tool for finding <s>alternatives to</s> competitors or replacements for everyday apps you use.
+				</p>
+			</section>
+		</article>
+		<article id="twine" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/twine.png"> Twine
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/twine.png"> 
+					<a href="https://twinery.org" class="price">Free</a>
+					<h3>Twine</h3>
+					<p class="info"><b>Type:</b> Web and desktop app</p>
+					<p class="info"><b>Developer:</b> Interactive Fiction Technology Foundation</p>
+				</div>
+				<p>
+					A neat little app for composing interactive fiction (think <i>Choose Your Own Adventure</i> books that you read as a kid). For the more programatically-inclined, the look and functionality can be improved using JavaScript.
+				</p>
+			</section>
+		</article>
+		<article id="everytimezone" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/everytimezone.png"> Every Time Zone
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/everytimezone.png"> 
+					<a href="https://everytimezone.com" class="price">Free</a>
+					<h3>Every Time Zone</h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> Slash7 LLC</p>
+				</div>
+				<p>
+					The best way of working out time zones. Used to be littered with less intrusive popups, but it's still pretty good.
+				</p>
+			</section>
+		</article>
+		<article id="analysemywriting" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/analysemywriting.png">Analyze My Writing
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<a href="http://www.analyzemywriting.com" class="price">Free</a>
+					<img class="icon app" alt="" src="/images/liked/software/apps/analysemywriting.png"> 
+					<h3>Analyze My Writing</h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> ???</p>
+				</div>
+				<p>
+					Work out how advanced your writing is. Are you worse than you think you are? (Oh, by the way, this description is apparently at a third grade level in terms of complexity. Ouch.) 
+				</p>
+			</section>
+		</article>
+		<article id="magicavoxel" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/magicavoxel.png"> MagicaVoxel
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/magicavoxel.png"> 
+					<a class="price" href="http://ephtracy.github.io/index.html?page=mv_main">Free</a>
+					<h3>MagicaVoxel</h3>
+					<p class="info"><b>Type:</b> Cross-platform application</p>
+					<p class="info"><b>Developer:</b> ephtracy</p>
+				</div>
+				<p>
+					The most commonly used <i>voxel</i> model editor - i.e. based on three-dimensional cubes. Similar, but distinct, is <a href="https://spritestack.io/">SpriteStack</a>, which is instead based on stacked two-dimensional pixel art, and <a href="https://chemikhazi.itch.io/sprytile">SpryTile</a> and <a href="http://www.crocotile3d.com">CrocoTile</a>, which instead use pixel art as a basis to build proper 3D models.
+				</p>
+			</section>
+		</article>
+		<article id="tools" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/document.png">Post
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame white"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/document.png"> 
+					<a class="price" href="https://www.reddit.com/r/gamedev/comments/6w89uu/">Visit</a>
+					<h3>Interesting unheard of developer tools</h3>
+					<p class="info"><b>Type:</b> Reddit post</p>
+					<p class="info"><b>Creator:</b> Multiple</p>
+				</div>
+				<p>
+					A bunch of neat tools for game development - obviously, I haven't used all of them, but I can attest that some are good.
+				</p>
+			</section>
+		</article>
+		<article id="cyberchef" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/cyberchef.png"> CyberChef
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/cyberchef.png"> 
+					<a class="price" href="https://gchq.github.io/CyberChef/">Free</a>
+					<h3>CyberChef</h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> Open-source</p>
+				</div>
+				<p>
+					A secure tool to do a bunch of common data-related programming tasks.
+				</p>
+			</section>
+		</article>
+		<article id="fontdrop" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/fontdrop.jpg"> FontDrop
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/fontdrop.jpg">
+					<a class="price" href="https://fontdrop.info">Free</a>
+					<h3>FontDrop</h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> Viktor and Clemens Nübel</p>
+				</div>
+				<p>
+					Upload a font and check its OpenType features, language support, specimens, and other metadata. Then <a href="https://fontdrop.info/#/compare"> compare</a> it with other font files. Works offline once the page is loaded.
+				</p>
+			</section>
+		</article>
+		<article id="brew" class="window half" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<button onclick="closeWindow(this)" class="quit"></button>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/apps/doodad.png"> Doodad.dev
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame"> 
+				<div class="subframe">
+					<img class="icon app" alt="" src="/images/liked/software/apps/doodad.png"> 
+					<a class="price" href="https://doodad.dev">Free</a>
+					<h3>Doodad.dev</h3>
+					<p class="info"><b>Type:</b> Web app</p>
+					<p class="info"><b>Developer:</b> Nathaniel</p>
+				</div>
+				<p>
+					A website with tools for generating creative and efficient web graphical elements. Currently includes an image dithering tool and a pattern generator.
+				</p>
+			</section>
+		</article>
+		<article id="copyright" class="window copyright" onmousedown="focusWindow(this)">
+			<section class="bar">
+				<a class="quit" href="#quit"></a>
+				<div class="stripes" onmousedown="moveWindow(this)"><p class="title">
+					<img class="icon fav" alt="" src="/images/liked/software/copyright.png"> Copyright Info
+				</p></div>
+				<button onclick="collapseWindow(this)" class="collapse"></button>
+			</section>
+			<section class="frame white"> 
+				<p>
+					Interface and graphic design elements derived from <a href="https://en.wikipedia.org/wiki/Mac_OS_9">Mac OS 9</a>. © Mac OS 9 graphics copyright 1999-2001 Apple Inc. "macOS" is a trademark of Apple Inc. Original graphics copyright 2020-2021 Novov. Website, application, and software icons and trademarked language property of respective parties.
+				</p>
+			</section>
+		</article>	
+	</main>
+	<footer class="desktop">
+		<a class="folder" href="/index.html">
+			<img class="icon" alt="" src="/images/liked/software/home.png">
+			<span class="label">Novov Homepage</span>
+		</a>
+		<a class="folder" href="#top">
+			<img class="icon" alt="" src="/images/liked/software/top.png">
+			<span class="label">Back to top</span>
+		</a>
+		<a class="folder" href="#copyright">
+			<img class="icon" alt="" src="/images/liked/software/copyright.png">
+			<span class="label">Copyright Info</span>
+		</a>
+	    <!------>
+	</footer>
+
+</body></html>

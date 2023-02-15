@@ -1,0 +1,30 @@
+<html><head>
+  <title>TAWS</title>
+  <script language="javascript" src="../JS/Helper.js" type="text/javascript" charset="UTF-8"></script>
+  <script language="javascript" type="text/javascript">
+  
+    function GetBackgroundPicSize() {
+      var screenSize = GetScreenSize();
+      if (screenSize.Width / screenSize.Height > 1600 / 900) {
+        return 'height="' + screenSize.Height + '"';
+      }
+      else {
+        return 'width="' + screenSize.Width + '"';
+      }
+    }
+
+    function BootOnload() {
+      setTimeout("location = 'Empty.html';", 3000);
+    }
+
+  </script>
+  </head>
+  <body onload="BootOnload()" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" bgcolor="#000000">
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+          <script>document.write('<td valign="middle" align="center" height="' + GetScreenSize().Height + '"><img src="../Images/BootAmiga34.png" ' + GetBackgroundPicSize() + ' alt="" /></td>');</script><td valign="middle" align="center" height="600"><img src="../Images/BootAmiga34.png" width="800" alt=""></td>
+      </tr>
+    </tbody></table>
+  
+
+</body></html>

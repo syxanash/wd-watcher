@@ -1,0 +1,357 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WE=LINK</title>
+<script src="https://hm.baidu.com/hm.js?9d0cb4a31de64c5e3c74baf4798bf865"></script><script src="jquery.min.js"></script><script src="archive.js"></script><style>
+    * {
+        margin: 0;
+        padding: 0;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+        vertical-align: baseline;
+        list-style: none;
+    }
+    @font-face {
+        font-family: 'MonumentExtended-Regular';
+        src: url('MonumentExtended-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'MonumentExtended-Regular';
+        src: url('MonumentExtended-Black.otf') format('opentype');
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    html, body {
+        text-rendering: optimizeLegibility;
+        -webkit-text-size-adjust: 100%;
+        width:100%;
+        -webkit-font-smoothing: antialiased;
+        font-weight: normal;
+        line-height: 1;
+        min-height: 100vh;
+        background: white;
+        font-family:"MonumentExtended-Regular",sans-serif;
+        font-size: 16px;
+    }
+
+
+    main{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+
+    #content{
+        width: 100vw;
+        border: none;
+        flex: 1;
+    }
+
+    .menu{
+        display: flex;
+        justify-content:flex-end;
+        padding: 5px;
+        align-content: center;
+        background: #888;
+        position: relative;
+        z-index: 999999999;
+    }
+
+
+    .menu-nav>ul{
+        display: flex;
+        align-content: center;
+    }
+    .menu-nav>ul>li{
+        padding: 0 1rem;
+        position: relative;
+
+    }
+    .menu-nav>ul>li span{
+        border: black 2px solid;
+        border-radius: 50%;
+        padding: 0 1rem;
+        cursor: pointer;
+    }
+    .menu-nav>ul>li>ul{
+        position: absolute;
+        display: none;
+        background: #888;
+        right: 0;
+    }
+
+    .menu-nav>ul>li>ul>li{
+        padding:.5rem;
+        white-space: nowrap;
+        text-align: right;
+    }
+    .menu-nav>ul>li:hover ul{
+        display: block;
+    }
+
+    .about-box{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(20px);
+    }
+    .about-box.show{
+        display: flex;
+    }
+
+    .about-box .content-text{
+        width: 50vw;
+        max-width: 1024px;
+        height: 70vh;
+        overflow: auto;
+        background:#888;
+        padding: 2rem;
+        line-height: 1.8;
+    }
+
+    .about-box .content-text p{
+        padding-bottom: 1rem;
+    }
+
+    .close{
+        padding-bottom: 2rem;
+        text-decoration: underline;
+        cursor: pointer;
+        color: blue;
+    }
+    @media screen and (max-width: 800px){
+        html, body{
+            font-size: 12px;
+            display: none;
+        }
+        .menu{
+            justify-content:center;
+        }
+        .about-box .content-text{
+            width: 80%;
+        }
+    }
+
+</style><script>
+    if(window.innerWidth<800){
+        window.location.href = 'http://we-link.chronusartcenter.org/sideways';
+    }
+
+</script></head>
+
+
+
+
+
+
+<body style="">
+    <script>
+    $(document).ready(function() {
+        $('.open-box').click(function () {
+            $('.about-box').addClass('show');
+        })
+        $('.close').click(function () {
+            $('.about-box').removeClass('show');
+        })
+
+        $('.menu-nav li a').click(function (e) {
+            e.preventDefault();
+            var url = $(this).attr('href')
+            $("#content").attr('src',url);
+        })
+
+        $(document).on('click','.menu-nav li a',function(e){
+            e.preventDefault();
+            var url = $(this).attr('href')
+            $("#content").attr('src',url);
+        })
+
+    })
+</script>
+<script>
+    // Settings
+    if(window.innerWidth>800){
+        var myDate = new Date();
+        var h=myDate.getHours();
+        var assetsPath = './exonemo/assets';
+        if(h == 7){
+            var ex_mode = 'SUNRISE'
+        }else if(h==16){
+            var ex_mode = 'SUNSET'
+        }
+    }
+</script>
+<script>
+    if(window.innerWidth>800) {
+        var new_element = document.createElement('script');
+        new_element.setAttribute('type', 'text/javascript');
+        new_element.setAttribute('src', './exonemo/exonemo.js');
+        document.body.appendChild(new_element);
+    }
+</script>
+<script>
+    $(document).ready(()=>{
+        if($(window).width()>800) {
+            var myDate = new Date();
+            var h = myDate.getHours();
+            var m = myDate.getMinutes();
+            if (h == 7 || h == 16) {
+                if (m > 0 && m < 60) {
+                    setTimeout(function () {
+                        ex_start();
+                    }, 10000);
+                }
+            }
+        }
+    })
+</script>
+<main>
+    <header class="menu">
+
+        <div class="menu-nav">
+            <ul>
+                <li class="o-p">
+                    <span>Archive</span>
+                    <ul class="archive">
+                    <li><a href="http://we-link.chronusartcenter.org/teneasypieces/">Ten Easy Pieces 十个小品</a></li><li><a href="http://we-link.chronusartcenter.org/sideways">SIDEWAYS 辺</a></li></ul>
+                </li>
+                <li class="open-box">
+                    <span>About</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="about-box">
+        <div class="content-text">
+
+            <p>新时线媒体艺术中心（CAC）<br>
+                新时线媒体艺术中心（CAC）成立于2013年，系国内首家致力于媒体艺术之展示、研究/创作及学术交流的非营利性艺术机构。 CAC位于上海M50创意园区，拥有800多平方米的多功能空间。CAC通过展览、驻留、奖学金、讲座、工作坊及相关文献的梳理与出版，为媒体艺术在全球语境中的论述、生产及传播开拓了一个多样化且富有活力的平台。<br>
+                CAC以批判地介入不断改变进而重塑当代经验的媒体技术来推动艺术创新及文化认知，回应当下媒体社会中即刻生发的挑战与机遇，并将日益迫近的后人本（post-human）现实及其所昭示的社会与政治蕴意带入公众意识。
+            </p>
+            <br>
+            <p>
+                邮箱:
+                info@chronusartcenter.org<br>
+
+                网站:
+                <a href="http://www.chronusartcenter.org" target="_blank">http://www.chronusartcenter.org</a><br>
+
+                微信号:
+                chronusartcenter<br>
+
+                新浪微博:
+                新时线媒体艺术中心CAC<br>
+
+                Facebook:
+                Chronus Art Center (CAC)<br>
+
+                Instagram:
+                chronus_art_center<br>
+
+                地址:
+                上海市普陀区莫干山路50号18号楼<br>
+
+            </p>
+            <br>
+            <p>
+                WE=LINK：辺  团队名单<br><br>
+
+                项目构思、策展人：张尕<br>
+                项目总监：毕昕<br>
+                展览制作：曹达旭<br>
+                展览空间设计：曹达旭<br>
+                画册主编：曹佳敏<br>
+                编辑与翻译：曹佳敏、毕昕<br>
+                网站设计：北鸥<br>
+                技术支持：维塔斯·扬卡乌什卡斯、北鸥<br>
+                公共项目策划：毕昕、曹佳敏<br>
+                平面设计：奚若兰、伍彦燕<br>
+                项目助理：吕一超，柳宇琪、姚佳雯<br>
+                实习生：季燕双、郝浛佁<br>
+
+                媒体合作：MANA新媒体艺术平台
+            </p>
+            <p>
+                Chronus Art Center (CAC)<br>
+
+                Established in 2013, Chronus Art Center (CAC) is China's first nonprofit art organization dedicated to the presentation, research / creation and scholarship of media art. CAC with its exhibitions, residency-oriented fellowships, lectures and workshop programs and through its archiving and publishing initiatives, creates a multifaceted and vibrant platform for the discourse, production and dissemination of media art in a global context. CAC is positioned to advance artistic innovation and cultural awareness by critically engaging with media technologies that are transforming and reshaping contemporary experiences.<br>
+
+                CAC brings to the public awareness of the impending post-human reality and the resulting social and political implications by accentuating the dynamic synergy of art and science as a response to the challenges and opportunities that contemporary media society has given rise to.
+            </p>
+            <br>
+            <p>
+                E-mail:
+                info@chronusartcenter.org<br>
+
+                Website:
+                <a href="http://www.chronusartcenter.org" target="_blank">http://www.chronusartcenter.org</a><br>
+
+                Wechat:
+                chronusartcenter<br>
+
+                Sina weibo:
+                新时线媒体艺术中心CAC<br>
+
+                Facebook:
+                Chronus Art Center (CAC)<br>
+
+                Instagram:
+                chronus_art_center<br>
+
+                ADDRESS
+                Bldg18, NO.50 Moganshan Rd, Shanghai
+                <br>
+
+            </p>
+            <br>
+            <p>
+                WE=LINK: Sideways team<br><br>
+
+                Concept and Curator: ZHANG Ga<br>
+                Project Director: BI Xin<br>
+                Exhibition Production: CAO Daxu<br>
+                Exhibition Design: CAO Daxu<br>
+                Booklet Editor: CAO Jiamin<br>
+                Editorial and Translation: CAO Jiamin, BI Xin<br>
+                Website Design: Beio<br>
+                Technical Support: Vytas Jankauskas, Beio<br>
+                Public Programs: BI Xin, CAO Jiamin<br>
+                Graphic Design: Ruolan Una XI, WU Yanyan<br>
+                Project Assistance: Monica LV, LIU Yuqi, YAO Jiawen<br>
+                Intern: JI YANshuang, HAO Hanyi<br>
+                Media Partner: MANA<br>
+            </p>
+
+            <div class="close">{CLOSE}</div>
+        </div>
+    </div>
+    <iframe src="sideways/index.html" id="content"></iframe>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9d0cb4a31de64c5e3c74baf4798bf865";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</main>
+
+
+</body></html>
