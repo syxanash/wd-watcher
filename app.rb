@@ -45,6 +45,7 @@ websites_object.each_with_index do |website_obj, index|
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.manage.window.resize_to(1792, 1120)
     driver.get website_obj['url']
+    sleep(1)
     source = driver.page_source
     driver.quit
 
@@ -70,6 +71,7 @@ websites_object.each_with_index do |website_obj, index|
         driver = Selenium::WebDriver.for :chrome, options: options
         driver.manage.window.resize_to(1792, 1120)
         driver.navigate.to website_obj['url']
+        sleep(1)
         driver.save_screenshot("#{directory_name}/screenshot.png")
         driver.quit
       end
