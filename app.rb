@@ -7,6 +7,7 @@ require 'fileutils'
 
 PERCENTAGE_OF_SIMILARITY = 80
 
+# https://stackoverflow.com/a/10823131
 def sanitize_filename(filename)
   # Split the name when finding a period which is preceded by some
   # character, and is followed by some character other than a period,
