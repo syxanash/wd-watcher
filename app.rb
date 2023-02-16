@@ -5,7 +5,7 @@ require 'colorize'
 require 'fuzzystringmatch'
 require 'fileutils'
 
-PERCENTAGE_OF_SIMILARITY = 80
+PERCENTAGE_OF_SIMILARITY = 70
 
 # https://stackoverflow.com/a/10823131
 def sanitize_filename(filename)
