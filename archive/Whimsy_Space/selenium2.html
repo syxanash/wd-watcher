@@ -1012,7 +1012,28 @@ site-url {
     left: -100%;
   }
 }
-</style><style></style></head>
+</style><style>/* Desktop background */
+body > explorer {
+    background-color: #9a37be;
+    background-image: url(https://whimsy.space/cdn/i1ZXUd1QOAtGrfki9hIVfZ9M_SjUUYV1A1h-kduDnYg);
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+/* System folders background */
+explorer[path^="/System/"]::before {
+  background-image: url('https://whimsy.space/cdn/8U1Bq78AONPu5yEtPCf5Q8DV6eLTrEXe8jeUB0g9QGQ');
+  opacity: 0.25;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+</style></head>
   <body>
     <script>
       ;(function(PACKAGE) {
@@ -2600,6 +2621,6 @@ site-url {
     }
   }
 });
-    </script><div id="modal"></div><frame-guard></frame-guard><explorer path="/"></explorer><version><span> ZineOS v0.420.950a ⌊ALPHA⌉</span></version><site-url>https://whimsy.space</site-url><button class="home">🏡 Start</button><achievement class="display"><icon>💼</icon><h2>Achievement Unlocked</h2><p>Oh no, my files!</p><audio preload="auto" src="https://cdn.glitch.com/294e834f-223f-4792-9323-5b1fa8d0402b/unlock2.mp3" autoplay=""></audio></achievement>
+    </script><div id="modal"></div><frame-guard></frame-guard><explorer path="/"><folder draggable="true" path="/System/"><icon></icon><label>System</label></folder><file draggable="true" path="/My Briefcase" type="application/briefcase"><icon></icon><label>My Briefcase</label></file><file draggable="true" path="/feedback.exe" type="application/exe"><icon></icon><label>feedback.exe</label></file></explorer><version><span> ZineOS v0.420.950a ⌊ALPHA⌉</span></version><site-url>https://whimsy.space</site-url><button class="home">🏡 Start</button><achievement class="display"><icon>💼</icon><h2>Achievement Unlocked</h2><p>Oh no, my files!</p><audio preload="auto" src="https://cdn.glitch.com/294e834f-223f-4792-9323-5b1fa8d0402b/unlock2.mp3" autoplay=""></audio></achievement>
   
 </body></html>

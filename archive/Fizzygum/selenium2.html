@@ -15,7 +15,7 @@
 			  to {transform: rotate(360deg);}
 			}
 		</style>
-	<script src="js/libs/coffee-script_2.0.3.js" async=""></script><script src="js/pre-compiled.js" async=""></script></head>
+	<script src="js/libs/coffee-script_2.0.3.js" async=""></script><script src="js/pre-compiled.js" async=""></script><script src="js/coffeescript-sources/Class_coffeSource.js" async=""></script><script src="js/coffeescript-sources/Mixin_coffeSource.js" async=""></script><script src="js/src/loading-and-compiling-coffeescript-sources-min.js" async=""></script><script src="js/src/logging-div-min.js" async=""></script><script src="js/src/dependencies-finding-min.js" async=""></script></head>
 
 	<!-- the style below is for disabling any browser selection on
 	the DOM of the page, we don't want any of that, see
@@ -24,9 +24,9 @@
 	https://medium.com/jsdownunder/locking-body-scroll-for-all-devices-22def9615177 -->
 	<body bgcolor="#f4f3f4" style="margin: 0px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: fixed;">
 
-		<img src="./icons/splashScreenFakeDesktop.png" srcset="./icons/splashScreenFakeDesktop@2x.png 2x" style="position: absolute; left: 0px; top: 0px;width: 175px; height: 431px;" id="splashScreenFakeDesktop">
+		
 
-		<img src="./icons/spinner.svg" class="centeredSpinner" id="spinner">
+		
 
 		<!-- note that the width and height of the
 		canvas below are ignored in case the WorldMorph
@@ -37,7 +37,7 @@
 		<div id="background" style="position: absolute; left: 0px; top: 0px; width: 1; height: 1;">
 		</div>
 
-		<canvas id="world" tabindex="1" style="position: absolute; left: 0px; top: 0px; outline: none; width: 1px; height: 1px;" width="1" height="1">
+		<canvas id="world" tabindex="1" style="position: absolute; left: 0px; top: 0px; outline: none; width: 1792px; height: 1120px;" width="3584" height="2240">
 			<p>Your browser doesn't support canvas.</p>
 		</canvas>
 

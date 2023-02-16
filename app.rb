@@ -5,7 +5,7 @@ require 'colorize'
 require 'fuzzystringmatch'
 require 'fileutils'
 
-PERCENTAGE_OF_SIMILARITY = 70
+SIMILARITY_THRESHOLD = 70
 
 # https://stackoverflow.com/a/10823131
 def sanitize_filename(filename)
@@ -64,7 +64,7 @@ websites_object.each_with_index do |website_obj, index|
       first_file = File.read("#{directory_name}/selenium.html")
       second_file = File.read("#{directory_name}/selenium2.html")
 
-      if jarow.getDistance(first_file, second_file).to_f * 100 < PERCENTAGE_OF_SIMILARITY
+      if jarow.getDistance(first_file, second_file).to_f * 100 < SIMILARITY_THRESHOLD
         puts ''
         puts '[?] Found differences in:'.yellow
         puts website_obj['url']
