@@ -85,6 +85,23 @@ websites_object.each_with_index do |website_obj, index|
   end
 end
 
+Dir.chdir('archive') do
+  website_folders = Dir.glob('*')
+
+  if website_folders.size > websites_object.size
+    object_directory_names = websites_object.map { |item| sanitize_filename(item['name']) }
+
+    different_folders = website_folders - object_directory_names
+
+    different_folders.each do |folder_to_remove|
+      puts "[X] Removed #{folder_to_remove}".cyan
+      FileUtils.rm_rf(folder_to_remove)
+    end
+  end
+end
+
+puts "All Done."
+
 #https://imagemagick.org/script/command-line-options.php#metric
 #compare 1.png 2.png -metric FUZZ null:
 
