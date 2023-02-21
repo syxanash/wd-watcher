@@ -50,31 +50,24 @@ websites_object.each_with_index do |website_obj, index|
     source = driver.page_source
     driver.quit
 
-    if File.exist? "#{directory_name}/selenium.html"
-      FileUtils.cp("#{directory_name}/selenium.html", "#{directory_name}/selenium2.html")
+    if File.exist? "#{directory_name}/recent.html"
+      FileUtils.cp("#{directory_name}/recent.html", "#{directory_name}/previous.html")
     else
       first_scan = true
       puts 'Initialized.'.yellow
     end
 
-    File.write("#{directory_name}/selenium.html", source)
+    File.write("#{directory_name}/recent.html", source)
 
     if !first_scan
       print 'Comparing...'.light_blue
-      first_file = File.read("#{directory_name}/selenium.html")
-      second_file = File.read("#{directory_name}/selenium2.html")
+      first_file = File.read("#{directory_name}/recent.html")
+      second_file = File.read("#{directory_name}/previous.html")
 
       if jarow.getDistance(first_file, second_file).to_f * 100 < SIMILARITY_THRESHOLD
         puts ''
         puts '[?] Found differences in:'.yellow
         puts website_obj['url']
-
-        driver = Selenium::WebDriver.for :chrome, options: options
-        driver.manage.window.resize_to(1792, 1120)
-        driver.navigate.to website_obj['url']
-        sleep(1)
-        driver.save_screenshot("#{directory_name}/screenshot.png")
-        driver.quit
       end
     end
     puts 'Done.'
@@ -100,14 +93,14 @@ Dir.chdir('archive') do
   end
 end
 
-puts "All Done."
+puts 'All Done.'
 
 #https://imagemagick.org/script/command-line-options.php#metric
 #compare 1.png 2.png -metric FUZZ null:
 
 #   if !first_scan
 #     first_file = "#{directory_name}/selenium.png"
-#     second_file = "#{directory_name}/selenium2.png"
+#     second_file = "#{directory_name}/previous.png"
 
 #     comparison = `compare #{first_file} #{second_file} -metric FUZZ null: 2>&1`
 
