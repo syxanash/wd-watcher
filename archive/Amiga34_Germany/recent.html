@@ -1,0 +1,232 @@
+<html><head>
+	<title>TAWS</title>
+	<meta http-equiv="content-type" content="text/html; charset=Windows-1252">
+	<meta name="author" content="Michael Rupp">
+	<meta name="description" content="Amiga34 Germany - Oktober 2019 - Celebrating 34 years of creativity, innovation and fun">
+	<meta name="keywords" content="Amiga34 Germany,Oktober 2019,Amiga,Amiga34,Amiga Computer,Commodore Amiga,Amiga Computing,Amiga-Event,Amiga-Celebration,Amiga-Jubiläum">
+	<meta name="robots" content="index, nofollow">
+	<meta name="expires" content="0">
+
+	<script language="javascript" src="../JS/Dev.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="../JS/Helper.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" type="text/javascript">
+
+		var m_lastClickedImg = null;
+		var m_title = null;
+		var m_menuText = "Copyright &copy; 2000-2018 Michael Rupp, All Rights Reserved.";
+		var m_isStartupMenuText = true;
+		var m_doubleClickIndexer = false;
+		var m_doubleClickTimeout = 500; // in Millisekunden
+		var m_ChipRam = 4; // in MB
+		var m_OtherRam = 128; // in MB
+		var m_menuTextTimeoutHandler = null;
+		var m_contentStack = new Array();
+		var m_amiga32Stack = new Array();
+
+		function GetMenuText() {
+			return m_menuText;
+		}
+
+		function GetTitle() {
+			return m_title;
+		}
+
+		function GetEventName() {
+			return "Amiga34";
+		}
+
+		function SetStandardMenuText(immediate) {
+			var osVersion = 4.1;
+			var freeChipRam = m_ChipRam - (osVersion / 15) - (Math.random() / 100);
+			var freeOtherRam = m_OtherRam - (osVersion / 15) - (Math.random() / 100);
+			var menutext = StringFormat("Amiga Workbench&nbsp;&nbsp;{0} Chip-RAM&nbsp;&nbsp;{1} sonstiges RAM", FormatNumber(freeChipRam * 1024 * 1024, 1), FormatNumber(freeOtherRam * 1024 * 1024, 1));
+			if (immediate) {
+				SetMenuText(menutext);
+			}
+			else {
+				m_menuTextTimeoutHandler = setTimeout('SetMenuText("' + menutext + '")', 1000);
+			}
+		}
+
+		function SetMenuText(text) {
+			m_menuText = text;
+			FrameMenu.location = "Menu.html";
+			if (m_menuTextTimeoutHandler != null) {
+				clearTimeout(m_menuTextTimeoutHandler);
+				m_menuTextTimeoutHandler = null;
+			}
+		}
+
+		function ClearDoubleClickIndexer() {
+			m_doubleClickIndexer = false;
+		}
+
+		function CloserClick(frame) {
+			switch (frame) {
+				case 'Amiga32':
+					if (m_lastClickedImg != null) {
+						UnselectIcon(m_lastClickedImg);
+						m_lastClickedImg = null;
+					}
+					m_amiga32Stack.pop();
+					if (m_amiga32Stack.length > 0) {
+						FrameAmiga32.location = m_amiga32Stack[m_amiga32Stack.length - 1];
+					}
+					else {
+						FrameAmiga32.location = "EmptyAmiga32.html";
+					}
+					break;
+				case 'Content':
+					m_contentStack.pop();
+					if (m_contentStack.length > 0) {
+						var o = m_contentStack[m_contentStack.length - 1];
+						m_title = o.title;
+						SetMenuText("MultiView");
+						FrameTop.location = "FrameTop.html";
+						FrameContent.location = "../" + GetEventName() + "/" + o.url;
+						return;
+					}
+					else {
+						SetStandardMenuText(true);
+						FrameTop.location = "EmptyFrameTop.html";
+						FrameLeft.location = "EmptyFrameLeft.html";
+						FrameContent.location = "EmptyContent.html";
+						FrameRight.location = "EmptyFrameRight.html";
+						FrameBottom.location = "EmptyFrameBottom.html";
+					}
+					break;
+			}
+			SetStandardMenuText();
+		}
+
+		function IconOnClick(el, url, title) {
+			m_title = title;
+			if (m_lastClickedImg != el) {
+				m_doubleClickIndexer = false;
+			}
+			var name = PathGetFilenameWithoutExtension(el.src);
+			var path = PathGetParentDirecory(el.src) + "/";
+			if (StringEndsWith(name, "Sel")) {
+				if (m_doubleClickIndexer) {
+					if (url) {
+						if (!StringStartsWith(url.toLowerCase(), "http")) {
+							SetMenuText("MultiView");
+							FrameTop.location = "FrameTop.html";
+							FrameLeft.location = "FrameLeft.html";
+							FrameContent.location = "../" + GetEventName() + "/" + url;
+							FrameRight.location = "FrameRight.html";
+							FrameBottom.location = "FrameBottom.html";
+							m_contentStack.push({ url: url, title: title });
+						}
+						else {
+							var win = window.open(url, '_blank');
+							win.focus();
+						}
+					}
+					else {
+						var url = el.id.substr(4) + ".html";
+						FrameAmiga32.location = url;
+						m_amiga32Stack = ArrayRemove(m_amiga32Stack, url);
+						m_amiga32Stack.push(url);
+						SetStandardMenuText();
+					}
+				}
+			}
+			else {
+				SelectIcon(el);
+				if (m_lastClickedImg != null) {
+					UnselectIcon(m_lastClickedImg);
+				}
+				if (m_isStartupMenuText) {
+					m_isStartupMenuText = false;
+					SetStandardMenuText(true);
+				}
+			}
+			m_lastClickedImg = el;
+			m_doubleClickIndexer = true;
+			setTimeout("ClearDoubleClickIndexer()", m_doubleClickTimeout);
+		}
+
+		function SelectIcon(el) {
+			var name = PathGetFilenameWithoutExtension(el.src);
+			var path = PathGetParentDirecory(el.src) + "/";
+			if (!StringEndsWith(name, "Sel")) {
+				el.src = path + name + "Sel.png";
+			}
+		}
+
+		function UnselectIcon(el) {
+			var name = PathGetFilenameWithoutExtension(el.src);
+			var path = PathGetParentDirecory(el.src) + "/";
+			if (StringEndsWith(name, "Sel")) {
+				el.src = path + name.substr(0, name.length - 3) + ".png";
+			}
+		}
+
+		function SelectGadget(el) {
+			var name = PathGetFilenameWithoutExtension(el.src);
+			var path = PathGetParentDirecory(el.src) + "/";
+			if (StringEndsWith(name, "Act")) {
+				el.src = path + name.substr(0, name.length - 3) + "Sel.png";
+			}
+		}
+
+		function UnselectGadget(el) {
+			var name = PathGetFilenameWithoutExtension(el.src);
+			var path = PathGetParentDirecory(el.src) + "/";
+			if (StringEndsWith(name, "Sel")) {
+				el.src = path + name.substr(0, name.length - 3) + "Act.png";
+			}
+		}
+
+		function SelectHorizSlider(el, doc, isRoot) {
+			SelectGadget(el);
+			SelectGadget(doc.getElementById("HorizSliderLeft"));
+			SelectGadget(doc.getElementById("HorizSliderRight"));
+			if (isRoot) {
+				SelectGadget(doc.getElementById(el.id == "HorizSliderLeftRoot" ? "HorizSlider" : "HorizSliderLeftRoot"));
+			}
+		}
+
+		function UnselectHorizSlider(el, doc, isRoot) {
+			UnselectGadget(el);
+			UnselectGadget(doc.getElementById("HorizSliderLeft"));
+			UnselectGadget(doc.getElementById("HorizSliderRight"));
+			if (isRoot) {
+				UnselectGadget(doc.getElementById(el.id == "HorizSliderLeftRoot" ? "HorizSlider" : "HorizSliderLeftRoot"));
+			}
+		}
+
+		function SelectVertSlider(el, doc) {
+			SelectGadget(el);
+			SelectGadget(doc.getElementById("VertSliderTop"));
+			SelectGadget(doc.getElementById("VertSliderBottom"));
+		}
+
+		function UnselectVertSlider(el, doc) {
+			UnselectGadget(el);
+			UnselectGadget(doc.getElementById("VertSliderTop"));
+			UnselectGadget(doc.getElementById("VertSliderBottom"));
+		}
+
+	</script>
+</head>
+<frameset rows="31, *" border="0" frameboder="0">
+  <frame noresize="" scrolling="no" name="FrameMenu" src="Menu.html">
+    <frameset cols="100, 390, 760, *" border="0" frameboder="0">
+      <frame noresize="" scrolling="no" src="Workbench.html">
+      <frame noresize="" scrolling="no" name="FrameAmiga32" src="EmptyAmiga32.html">
+        <frameset rows="41, *, 40" border="0" frameboder="0" nore="">
+          <frame noresize="" scrolling="no" name="FrameTop" src="EmptyFrameTop.html">
+            <frameset cols="8, *, 24" border="0" frameboder="0">
+              <frame noresize="" scrolling="no" name="FrameLeft" src="EmptyFrameLeft.html">
+              <frame noresize="" name="FrameContent" src="EmptyContent.html">
+              <frame noresize="" scrolling="no" name="FrameRight" src="EmptyFrameRight.html">
+            </frameset>
+          <frame name="FrameBottom" noresize="" scrolling="no" src="EmptyFrameBottom.html">
+        </frameset>
+      <frame noresize="" scrolling="no" src="Background.html">
+    </frameset>
+</frameset>
+
+</html>
