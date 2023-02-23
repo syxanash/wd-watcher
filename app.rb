@@ -54,7 +54,7 @@ websites_object.each_with_index do |website_obj, index|
       FileUtils.cp("#{directory_name}/recent.html", "#{directory_name}/previous.html")
     else
       first_scan = true
-      puts 'Initialized.'.yellow
+      print 'Initialized.'.yellow
     end
 
     File.write("#{directory_name}/recent.html", source)
