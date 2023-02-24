@@ -25,6 +25,7 @@ def sanitize_filename(filename)
 end
 
 websites_object = JSON.parse(RestClient.get('https://raw.githubusercontent.com/syxanash/syxanash.github.io/development/src/resources/remote-desktops.json'))
+ignore_list = JSON.parse(File.read('ignore_list.json'))
 jarow = FuzzyStringMatch::JaroWinkler.create(:native)
 
 websites_object.each_with_index do |website_obj, index|
@@ -36,6 +37,8 @@ websites_object.each_with_index do |website_obj, index|
     FileUtils.mkdir_p(directory_name)
   end
 
+  next if ignore_list.include?(sanitize_filename(website_obj['name']))
+
   begin
     print "[#{index + 1}/#{websites_object.size}]".yellow
     print " Scanning #{website_obj['name']}...".blue
@@ -45,7 +48,12 @@ websites_object.each_with_index do |website_obj, index|
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.manage.window.resize_to(1792, 1120)
+    driver.manage.timeouts.implicit_wait = 20
+    driver.manage.timeouts.script_timeout = 20
+    driver.manage.timeouts.page_load = 20
+
     driver.get website_obj['url']
+
     sleep(8)
     source = driver.page_source
     driver.quit
