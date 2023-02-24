@@ -1,0 +1,2230 @@
+<html lang="en-GB"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>VirusvAV</title>
+
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body style="background: url(&quot;/images/wallpapers/2.jpg&quot;) 0% 0% / cover;">
+        <div>
+            <div class="menu-bar">
+                <nav>
+                    <ul>
+                        <li><a href="/" class="open-menu" data-window="menu" aria-label="Open Menu"><i class="fa fa-dot-circle-o"></i>VirusAV</a></li>
+                        <li><a href="/music" data-window="music" aria-label="Music">Music</a></li>
+                        <li><a href="/videos" data-window="videos" aria-label="Videos">Videos</a></li>
+                        <li><a href="/images" data-window="images" aria-label="Images">Images</a></li>
+                        <!-- <li><a href="/blog" data-window="blog" aria-label="Blog">Blog</a></li> -->
+                        <li><a href="/games" data-window="games" aria-label="Games">Games</a></li>
+                        <li><a href="/projects" data-window="projects" aria-label="Projects">Projects</a></li>
+                    </ul>
+                </nav>
+                <ul class="task-bar">
+                    <ul class="launcher-controls">
+                        <li><span class="toggle-visibility action" data-window="terminal" data-control="terminal" aria-label="Show/hide terminal"><i class="fa fa-terminal"></i></span></li>
+                        <li class="separator"></li>
+                        <li><span class="toggle-visibility action" data-window="steam" data-control="steam" aria-label="Show/hide steam library"><i class="fa fa-steam"></i></span></li>
+                        <li class="separator"></li>
+                        <li><span class="toggle-visibility action" data-window="media-player" data-control="media-player" aria-label="Show/hide media player"><i class="fa fa-headphones"></i></span></li>
+                        <li class="separator"></li>
+                    </ul>
+                    <ul class="media-player-controls">
+                        <li><span class="action" data-control="skip-previous" aria-label="Skip to previous media"><i class="fa fa-fast-backward fa-volume-up"></i></span></li>
+                        <li><span class="action" data-control="rewind" aria-label="Rewind media"><i class="fa fa-backward fa-volume-up"></i></span></li>
+                        <li><span class="action" data-control="play" aria-label="Play/pause media"><i class="fa fa-play fa-volume-up"></i></span></li>
+                        <li><span class="action" data-control="fast-forward" aria-label="Fast-forward media"><i class="fa fa-forward fa-volume-up"></i></span></li>
+                        <li><span class="action" data-control="skip-next" aria-label="Skip to next media"><i class="fa fa-fast-forward fa-volume-up"></i></span></li>
+                        <li><span class="action" data-control="stop" aria-label="Stop media"><i class="fa fa-stop fa-volume-up"></i></span></li>
+                        <li class="separator"></li>
+                        <li>
+                            <span class="action" data-control="volume" aria-label="Alter volume">
+                                <i class="fa volume-icon fa-volume-up"></i>
+                                <em>100%</em>
+                            </span>
+                            <span class="menu-bar-volume-slider hide">
+                                <i class="fa fa-volume-down"></i>
+                                <div id="menu-bar-volume" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+                                <i class="fa fa-volume-up"></i>
+                            </span>
+                        </li>
+                    </ul>
+                    <ul class="system-controls">
+                        <li class="separator"></li>
+                        <li><span class="action" data-control="network" aria-label="Open network controls"><i class="fa fa-wifi"></i></span></li>
+                        <li class="separator"></li>
+                        <li><span class="action" data-control="search" aria-label="Search"><i class="fa fa-search"></i></span></li>
+                        <li class="separator"></li>
+                        <li><span class="action" data-control="profile" aria-label="Open profile"><i class="fa fa-user-circle-o"></i></span></li>
+                        <li class="separator"></li>
+                        <li><span class="action" data-control="sidebar" aria-label="Open sidebar"><i class="fa fa-tasks"></i></span></li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="desktop resize-container">
+
+                <div class="menu hide">
+                    <nav>
+                        <ul>
+                            <!-- <li><a href="/" aria-label="">Browser</a></li> -->
+                            <!-- <li><a href="/" data-window="drum-machine" data-init="drumMachine" aria-label="Drum Machine">Drum Machine</a></li> -->
+                            <!-- <li><a href="/" aria-label="">Feeder</a></li> -->
+                            <!-- <li><a href="/" aria-label="">Image Editor</a></li> -->
+                            <!-- <li><a href="/" aria-label="">Mail Reader</a></li> -->
+                            <!-- <li><a href="/" aria-label="">Matlaber</a></li> -->
+                            <li><a href="/" data-window="media-player" data-init="mediaPlayer" aria-label="Media Player">Media Player</a></li>
+                            <!-- <li><a href="/" aria-label="">Minesweeper</a></li> -->
+                            <!-- <li><a href="/" aria-label="">Processor</a></li> -->
+                            <!-- <li><a href="/" aria-label="">Sequencer</a></li> -->
+                            <li><a href="/" data-window="text-editor" data-init="textEditor" aria-label="Text Editor">Text Editor</a></li>
+                            <li class="separator"></li>
+                            <li><a href="/about" data-window="about" aria-label="About VirusAV">About VirusAV</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="window file-browser resize-drag hide" data-window="music" data-x="345" data-y="20" style="z-index: 1;">
+                    <div class="header">
+                        <div class="title"><a href="/music" aria-label="Music">Music</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="music"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="https://www.virusav.com/music/artists" data-type="folder" aria-label="Artists"><i class="fa fa-folder-o"></i>Artists</a>
+                            </li>
+                            <li>
+                                <a href="https://www.virusav.com/music/netlabel" data-type="folder" aria-label="Netlabel"><i class="fa fa-folder-o"></i>Netlabel</a>
+                            </li>
+                            <li>
+                                <a href="https://www.virusav.com/music/podcast" data-type="folder" aria-label="Podcast"><i class="fa fa-folder-o"></i>Podcast</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="window file-browser resize-drag hide" data-window="videos" data-x="535" data-y="225" style="z-index: 2;">
+                    <div class="header">
+                        <div class="title"><a href="/videos" aria-label="Videos">Videos</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="videos"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="/videos/visuals" data-type="folder" aria-label="Visuals"><i class="fa fa-folder-o"></i>Visuals</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="window resize-drag hide" data-window="images" data-x="435" data-y="125" style="z-index: 3;">
+                    <div class="header">
+                        <div class="title"><a href="/images" aria-label="Images">Images</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="images"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content"></div>
+                </div>
+
+                <!-- <div class="window resize-drag hide" data-window="blog" data-x="20" data-y="20">
+                    <div class="header">
+                        <div class="title"><a href="/blog" aria-label="Blog">Blog</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="blog"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <article>
+                                    <figure>
+                                        <picture>
+                                            <img src="https://picsum.photos/600/600/?random" loading="lazy">
+                                        </picture>
+                                        <h2>Saturday Morning Rant #38365864251</h2>
+                                    </figure>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <figure>
+                                        <picture>
+                                            <img src="https://picsum.photos/600/600/?random" loading="lazy">
+                                        </picture>
+                                    </figure>
+                                    <div>
+                                        <h2>Saturday Morning Rant #38365864251</h2>
+                                        <div class="author">Posted by <a href="http://www.virusav.com/keito" rel="author">Keito</a> on <time pubdate datetime="2011-08-28" title="August 28th, 2011">8/28/11</time></div>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <figure>
+                                        <picture>
+                                            <img src="https://picsum.photos/600/600/?random" loading="lazy">
+                                        </picture>
+                                    </figure>
+                                    <div>
+                                        <h2>Saturday Morning Rant #38365864251</h2>
+                                        <div class="author">Posted by <a href="http://www.virusav.com/keito" rel="author">Keito</a> on <time pubdate datetime="2011-08-28" title="August 28th, 2011">8/28/11</time></div>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="handle"></div>
+                </div> -->
+
+                <div class="window resize-drag hide" data-window="games" data-x="480" data-y="275" style="z-index: 4;">
+                    <div class="header">
+                        <div class="title"><a href="/games" aria-label="Games">Games</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="games"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content"></div>
+                </div>
+
+                <div class="window resize-drag hide" data-window="projects" data-x="55" data-y="275" style="z-index: 5;">
+                    <div class="header">
+                        <div class="title"><a href="/projects" aria-label="Projects">Projects</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="projects"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content"></div>
+                </div>
+
+                <div class="window resize-drag hide" data-window="steam" data-x="815" data-y="20" id="steam" style="z-index: 6;">
+                    <div class="header">
+                        <div class="title"><a href="/steam" aria-label="Steam Library">Steam Library</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="steam"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <ul></ul>
+                    </div>
+                </div>
+
+                <div class="window dropdown hide" data-window="terminal" data-x="820" data-y="20" style="transform: translate(-50%, -110%); opacity: 1; transition: transform 250ms ease 0s;">
+                    <div class="header">
+                        <div class="title"><i class="fa fa-terminal"></i> Terminal</div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="terminal"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="history"></div>
+                        <div class="current">
+                            <form id="run">
+                                <span class="ps1"><span class="user">anon</span>@<span class="hostname">virusav</span>: <span class="wd">~/</span></span>
+                                <input type="text" name="command" id="command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                            </form>
+                        </div>
+                        <canvas id="matrix" width="750" height="275"></canvas>
+                    </div>
+                </div>
+
+                <div class="window resize-drag hide" data-window="media-player" data-x="20" data-y="20" style="z-index: 7;">
+                    <div class="header">
+                        <div class="title">Media Player</div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="media-player"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="interface-section">
+                            <aside>
+                                <div class="navigator">
+                                    <ul>
+                                        <li class="title">Library</li>
+                                        <li data-panel-content="browse" class="active">Browse</li>
+                                        <li data-panel-content="artists">Artists</li>
+                                        <li data-panel-content="songs">Songs</li>
+                                        <li data-panel-content="albums">Albums</li>
+                                        <li data-panel-content="podcast">Podcast</li>
+                                        <li data-panel-content="netlabel">Netlabel</li>
+                                        <li class="separator"></li>
+                                        <li class="title">Services</li>
+                                        <li data-panel-content="soundcloud">Soundcloud</li>
+                                        <li data-panel-content="bandcamp">Bandcamp</li>
+                                        <li data-panel-content="spotify">Spotify Playlists</li>
+                                        <li class="separator"></li>
+                                        <li class="title">Playlists</li>
+                                        <li data-panel-content="queue">Current Playlist</li>
+                                        <li class="separator"></li>
+                                        <li class="title">Recommendations</li>
+                                        <li data-panel-content="queue">Favourites Feed</li>
+                                    </ul>
+                                </div>
+                                <div class="artwork">
+                                    <span class="toggle-artwork-size"><i class="fa fa-chevron-up"></i></span>
+                                    <img src="/images/folder.jpg" loading="lazy" alt="Keito - Dirty Bomb" width="" height="">
+                                </div>
+                                <div class="track-details">
+                                    <div class="artist">Keito</div>
+                                    <div class="title">Dirty Bomb</div>
+                                </div>
+                            </aside>
+                            <div class="panels-container">
+                                <div class="panel-header">
+                                    <div class="title">Keito</div>
+                                    <input type="text" name="music-search" placeholder="Search..." id="music-search">
+                                    <span class="reset-music-search"><i class="fa fa-window-close-o"></i></span>
+                                </div>
+                                <div class="browse panel with-banner">
+                                    <div class="banner">
+                                        <img src="/images/banners/banner.jpg" loading="lazy">
+                                        <span>Banner Here</span>
+                                    </div>
+                                </div>
+                                <div class="artists panel hide">
+                                    <ul class="listing">
+                                        <li><img src="https://www.virusav.com/music/artists/Keito/Keito.jpg" loading="lazy"></li>
+                                        <li><img src="https://www.virusav.com/music/artists/Chewy/Chewy.jpg" loading="lazy"></li>
+                                        <li><img src="https://www.virusav.com/music/artists/Sci_Fi_Guy/Sci_Fi_Guy.jpg" loading="lazy"></li>
+                                        <li><img src="https://www.virusav.com/music/artists/Kerouac/Kerouac.jpg" loading="lazy"></li>
+                                    </ul>
+                                </div>
+                                <div class="artist panel with-banner profile-banner hide">
+                                    <div class="banner fade-out">
+                                        <img src="/images/banners/banner2.jpg" loading="lazy">
+                                        <span>Keito</span>
+                                    </div>
+                                    <ul class="catalog">
+                                        <li>
+                                            <div class="listing-overview">
+                                                <ul class="listing">
+                                                    <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet001_-_Matt_B_and_Keito_-_Oy_Fatty/folder.jpg" loading="lazy"></a></li>
+                                                </ul>
+                                                <div class="listing-information">
+                                                    <div class="listing-year">2014</div>
+                                                    <div class="listing-title">Oy Fatty</div>
+                                                </div>
+                                            </div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="sort" data-sort="number">#</th>
+                                                        <th class="sort" data-sort="title">Title</th>
+                                                        <th class="sort" data-sort="length">Length</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list">
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>
+                                                            <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Dirty Bomb/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-type="file" aria-label="Keito - Dirty Bomb"><span class="title">Dirty Bomb</span></a>
+                                                        </td>
+                                                        <td><span class="length">4:46</span></td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-download"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-file-archive-o"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <div class="listing-overview">
+                                                <ul class="listing">
+                                                    <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet001_-_Matt_B_and_Keito_-_Oy_Fatty/folder.jpg" loading="lazy"></a></li>
+                                                </ul>
+                                                <div class="listing-information">
+                                                    <div class="listing-year">2014</div>
+                                                    <div class="listing-title">Oy Fatty</div>
+                                                </div>
+                                            </div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="sort" data-sort="number">#</th>
+                                                        <th class="sort" data-sort="title">Title</th>
+                                                        <th class="sort" data-sort="length">Length</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list">
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>
+                                                            <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Dirty Bomb/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-type="file" aria-label="Keito - Dirty Bomb"><span class="title">Dirty Bomb</span></a>
+                                                        </td>
+                                                        <td><span class="length">4:46</span></td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-download"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-file-archive-o"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="songs panel hide" id="songs">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="sort" data-sort="title">Title</th>
+                                                <th class="sort" data-sort="artist">Artist</th>
+                                                <th class="sort" data-sort="album">Album</th>
+                                                <th class="sort" data-sort="year">Year</th>
+                                                <th class="sort" data-sort="length">Length</th>
+                                                <th class="sort" data-sort="genre">Genre</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="list"><tr>
+                                                <td>
+                                                    <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Dirty Bomb/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-type="file" aria-label="Keito - Dirty Bomb"><span class="title">Dirty Bomb</span></a>
+                                                </td>
+                                                <td><span class="artist">Keito</span></td>
+                                                <td><span class="album">Muon</span></td>
+                                                <td><span class="year">2016</span></td>
+                                                <td><span class="length">4:46</span></td>
+                                                <td><span class="genre">Electronic</span></td>
+                                                <td>
+                                                    <ul>
+                                                        <li><a href="#"><i class="fa fa-download"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-file-archive-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr><tr>
+                                                <td>
+                                                    <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Kojima/Keito_-_Kojima.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Kojima/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Kojima/Keito_-_Kojima.mp3" data-type="file" aria-label="Keito - Kojima"><span class="title">Kojima</span></a>
+                                                </td>
+                                                <td><span class="artist">Keito</span></td>
+                                                <td><span class="album">Muon</span></td>
+                                                <td><span class="year">2016</span></td>
+                                                <td><span class="length">5:32</span></td>
+                                                <td><span class="genre">Electronic</span></td>
+                                                <td>
+                                                    <ul>
+                                                        <li><a href="#"><i class="fa fa-download"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-file-archive-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr><tr>
+                                                <td>
+                                                    <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Chiller/Keito_-_Chiller.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Chiller/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Chiller/Keito_-_Chiller.mp3" data-type="file" aria-label="Keito - Chiller"><span class="title">Chiller</span></a>
+                                                </td>
+                                                <td><span class="artist">Keito</span></td>
+                                                <td><span class="album">Muon</span></td>
+                                                <td><span class="year">2016</span></td>
+                                                <td><span class="length">5:32</span></td>
+                                                <td><span class="genre">Electronic</span></td>
+                                                <td>
+                                                    <ul>
+                                                        <li><a href="#"><i class="fa fa-download"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-file-archive-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                                <div class="albums panel hide">
+                                    <ul class="listing">
+                                        <li><a href="#"><img src="/images/albums/muon.jpg" loading="lazy"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="podcast panel hide">
+                                    <ul class="listing">
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV001_-_Keito/VirusAV001_-_Keito.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV002_-_Liam_Hardman/VirusAV002_-_Liam_Hardman.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV003_-_Death_On_The_Balcony/VirusAV003_-_Death_On_The_Balcony.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV004_-_Xpander/VirusAV004_-_Xpander.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV005_-_Olly_Hillier/VirusAV005_-_Olly_Hillier.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV006_-_Dave_James/VirusAV006_-_Dave_James.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV007_-_Broken_Hooker_Deejays/VirusAV007_-_Broken_Hooker_Deejays.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV008_-_Dan_Tait/VirusAV008_-_Dan_Tait.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV009_-_Joe_Morris/VirusAV009_-_Joe_Morris.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV010_-_Samuel_Lamont/VirusAV010_-_Samuel_Lamont.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV011_-_Jonathan_Harris/VirusAV011_-_Jonathan_Harris.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV012_-_Bobby_ODonnell/VirusAV012_-_Bobby_ODonnell.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV013_-_Lonan/VirusAV013_-_Lonan.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV014_-_Ben_Mono/VirusAV014_-_Ben_Mono.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV015_-_Cassette_Jam/VirusAV015_-_Cassette_Jam.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV016_-_Dave_Sweeten/VirusAV016_-_Dave_Sweeten.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV017_-_T-Boy/VirusAV017_-_T-Boy.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV018_-_Annie_Errez/VirusAV018_-_Annie_Errez.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV019_-_Liam_Hardman/VirusAV019_-_Liam_Hardman.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV020_-_Dave_James/VirusAV020_-_Dave_James.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV021_-_Makai/VirusAV021_-_Makai.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV022_-_Caroline_Banx/VirusAV022_-_Caroline_Banx.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV023_-_Christian_Maiden/VirusAV023_-_Christian_Maiden.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV024_-_Matt_Cooper/VirusAV024_-_Matt_Cooper.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV025_-_Scott_Broadhead/VirusAV025_-_Scott_Broadhead.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV026_-_James_Pollard/VirusAV026_-_James_Pollard.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV027_-_Olly_Hillier/VirusAV027_-_Olly_Hillier.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV028_-_Fifties/VirusAV028_-_Fifties.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV029_-_PornoGlitch/VirusAV029_-_PornoGlitch.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV030_-_Levan/VirusAV030_-_Levan.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV031_-_Stafa/VirusAV031_-_Stafa.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV032_-_Matt_Long/VirusAV032_-_Matt_Long.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV033_-_M.B.A.H/VirusAV033_-_M.B.A.H.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV034_-_Isaac_Owen/VirusAV034_-_Isaac_Owen.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV035_-_voRr/VirusAV035_-_voRr.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV036_-_Glitch/VirusAV036_-_Glitch.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV037_-_Guy_Hornsby/VirusAV037_-_Guy_Hornsby.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV038_-_Chewy/VirusAV038_-_Chewy.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV039_-_Jedeye/VirusAV039_-_Jedeye.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV040_-_Chris_Kitchen/VirusAV040_-_Chris_Kitchen.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV041_-_People_Get_Real/VirusAV041_-_People_Get_Real.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV042_-_Reset/VirusAV042_-_Reset.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV043_-_Dave_James/VirusAV043_-_Dave_James.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV044_-_Le_Jockey/VirusAV044_-_Le_Jockey.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV045_-_Antoine_Caesar/VirusAV045_-_Antoine_Caesar.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV046_-_Ignorant_Fairy/VirusAV046_-_Ignorant_Fairy.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV047_-_Spektre/VirusAV047_-_Spektre.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV048_-_Laura_Heath/VirusAV048_-_Laura_Heath.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV049_-_Monty/VirusAV049_-_Monty.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV050_-_Spektre/VirusAV050_-_Spektre.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV051_-_Laura_Jones/VirusAV051_-_Laura_Jones.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV052_-_Esque/VirusAV052_-_Esque.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV053_-_Dave_James/VirusAV053_-_Dave_James.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV054_-_Samuel_Lamont/VirusAV054_-_Samuel_Lamont.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV055_-_Liam_Hardman/VirusAV055_-_Liam_Hardman.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV056_-_Guy_Hornsby/VirusAV056_-_Guy_Hornsby.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV057_-_Caroline_Banx/VirusAV057_-_Caroline_Banx.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV058_-_Made_For_Radio/VirusAV058_-_Made_For_Radio.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV059_-_Burnski/VirusAV059_-_Burnski.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV060_-_Deej/VirusAV060_-_Deej.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV061_-_Stefano_Greppi/VirusAV061_-_Stefano_Greppi.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV062_-_Tony_Marsh_Soundsystem/VirusAV062_-_Tony_Marsh_Soundsystem.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV063_-_Levan_And_Jerico/VirusAV063_-_Levan_And_Jerico.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV064_-_Levan_And_Jerico/VirusAV064_-_Levan_And_Jerico.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV065_-_Below_Bangkok/VirusAV065_-_Below_Bangkok.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV066_-_Below_Bangkok/VirusAV066_-_Below_Bangkok.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV067_-_Makai/VirusAV067_-_Makai.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV068_-_Le_Jockey/VirusAV068_-_Le_Jockey.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV069_-_Kiano/VirusAV069_-_Kiano.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV070_-_Arthur_Barr/VirusAV070_-_Arthur_Barr.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV071_-_Spektre/VirusAV071_-_Spektre.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV072_-_Da_Funk/VirusAV072_-_Da_Funk.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV073_-_Jashari_Amor/VirusAV073_-_Jashari_Amor.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV074_-_Errol_Brown/VirusAV074_-_Errol_Brown.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV075_-_Mr_Bit/VirusAV075_-_Mr_Bit.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV076_-_Olly_Hillier/VirusAV076_-_Olly_Hillier.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV077_-_Jeff_Quest/VirusAV077_-_Jeff_Quest.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV078_-_Fryer/VirusAV078_-_Fryer.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV079_-_Laura_Heath/VirusAV079_-_Laura_Heath.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV080_-_Eve_Falcon/VirusAV080_-_Eve_Falcon.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV081_-_Deep_Goa/VirusAV081_-_Deep_Goa.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV082_-_Jeff_Quest/VirusAV082_-_Jeff_Quest.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV083_-_Tom_Yuung/VirusAV083_-_Tom_Yuung.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV084_-_Massio/VirusAV084_-_Massio.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV085_-_Liam_Hardman/VirusAV085_-_Liam_Hardman.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV086_-_Below_Bangkok/VirusAV086_-_Below_Bangkok.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV087_-_Massio/VirusAV087_-_Massio.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV088_-_Keito/VirusAV088_-_Keito.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV089_-_Fifties/VirusAV089_-_Fifties.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV090_-_Martyn_Lee/VirusAV090_-_Martyn_Lee.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV091_-_Samuel_Lamont/VirusAV091_-_Samuel_Lamont.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV092_-_Toni_Jarvis/VirusAV092_-_Toni_Jarvis.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV093_-_Audialist/VirusAV093_-_Audialist.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV094_-_Kerouac/VirusAV094_-_Kerouac.png" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/podcast/VirusAV095_-_Dave_Sweeten/VirusAV095_-_Dave_Sweeten.png" loading="lazy"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="netlabel panel hide">
+                                    <ul class="listing">
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet001_-_Matt_B_and_Keito_-_Oy_Fatty/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet002_-_Keito_-_Smoothie/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet003_-_Sci_Fi_Guy_-_Waterfall/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet004_-_Sci_Fi_Guy_-_Epoch/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet005_-_Kerouac_-_Satori/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet006_-_Kerouac_-_Lucid/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet007_-_Kerouac_-_Reckoner/folder.jpg" loading="lazy"></a></li>
+                                        <li><a href="#"><img src="https://www.virusav.com/music/netlabel/VirusAVNet008_-_Kerouac_-_Naropa/folder.jpg" loading="lazy"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="soundcloud panel hide"></div>
+                                <div class="bandcamp panel hide"></div>
+                                <div class="spotify panel hide"></div>
+                            </div>
+                            <div class="bars hide">
+                                <span class="overdrive-mode-on"><i class="fa fa-arrows-alt"></i></span>
+                                <span class="overdrive-mode-off"><i class="fa fa-times-rectangle"></i></span>
+                                <div><canvas id="barsCanvas"></canvas></div>
+                            </div>
+                            <div class="butterchurn hide">
+                                <span class="overdrive-mode-on"><i class="fa fa-arrows-alt"></i></span>
+                                <span class="overdrive-mode-off"><i class="fa fa-times-rectangle"></i></span>
+                                <div><canvas id="butterchurnCanvas"></canvas></div>
+                            </div>
+                        </div>
+                        <ul class="control-section">
+                            <li class="seeker clock">
+                                <div id="seek" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span></div>
+                                <div id="clock">
+                                    <span class="current">0:00</span>
+                                    <span>/</span>
+                                    <span class="duration">0:00</span>
+                                </div>
+                            </li>
+                            <li class="non-seeker">
+                                <ul class="controls">
+                                    <li class="visual-selector">
+                                        <ul>
+                                            <li><span data-visual="artwork" class="active"><i class="fa fa-film"></i></span></li>
+                                            <li><span data-visual="bars"><i class="fa fa-bar-chart"></i></span></li>
+                                            <li><span data-visual="butterchurn"><i class="fa fa-eye"></i></span></li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="action" data-control="skip-previous" aria-label="Skip to previous media"><i class="fa fa-step-backward"></i></span></li>
+                                    <li><span class="action play" data-control="play" aria-label="Play/pause media"><i class="fa fa-play"></i></span></li>
+                                    <li><span class="action" data-control="skip-next" aria-label="Skip to next media"><i class="fa fa-step-forward"></i></span></li>
+                                    <li class="volume-controls">
+                                        <i class="fa fa-volume-down"></i>
+                                        <div id="volume" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+                                        <i class="fa fa-volume-up"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <audio id="audio" crossorigin="anonymous"></audio>
+                    </div>
+                </div>
+
+                <div class="window resize-drag hide" data-window="text-editor" data-x="0" data-y="0" style="z-index: 8;">
+                    <div class="header">
+                        <div class="title">Text Editor</div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="text-editor"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <textarea id="text-editor" name="text-editor"></textarea>
+                    </div>
+                </div>
+
+                <div class="window resize-drag hide" data-window="drum-machine" data-x="0" data-y="0" style="z-index: 9;">
+                    <div class="header">
+                        <div class="title">Drum Machine</div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="drum-machine"><i class="fa fa-window-minimize"></i></span></li>
+                            <li class="small"><span class="toggle-size"><i class="fa fa-compress"></i></span></li>
+                            <li class="full"><span class="toggle-size"><i class="fa fa-expand"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content seq-ui">
+                        <div id="drum-machine">
+                            <div class="drum-machine-section" id="drum-machine-metronome"></div>
+                            <div class="drum-machine-section" id="drum-machine-transport"></div>
+                            <div class="drum-machine-section" id="drum-machine-sequencer"></div>
+                            <div class="drum-machine-section" id="r-bottom"></div>
+                            <div class="drum-machine-section" id="drum-machine-presets"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="window about hide" data-window="about" data-x="535" data-y="225" style="z-index: 10;">
+                    <div class="header">
+                        <div class="title"><a href="/about" aria-label="About VirusAV">-- About VirusAV --</a></div>
+                        <ul>
+                            <li><span class="toggle-visibility" data-window="about"><i class="fa fa-close"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="sections">
+                            <section data-section="overview">
+                                <div class="system-name">VirusAV OS</div>
+                                <div class="system-version">4.0</div>
+                                <div class="system-author">Written by Keito</div>
+                                <div class="system-legal">Ⓐ🄯</div>
+                            </section>
+                            <section data-section="system-information" class="hide">
+                                System information
+                            </section>
+                            <section data-section="credits" class="hide">
+                                Credits
+                            </section>
+                        </div>
+                        <ul class="btn-group">
+                            <li data-section="overview" class="active">Overview</li>
+                            <li data-section="system-information">System Information</li>
+                            <li data-section="credits">Credits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="settings">
+                    <section>
+                        <div class="title">Settings</div>
+                        <ul>
+                            <li>
+                                <label>Terminal Dropdown</label>
+                                <select name="terminal.dropdown">
+                                    <option value="1">Enabled</option>
+                                    <option value="0">Disabled</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>Desktop Background</label>
+                                <select name="desktop.background">
+                                    <option value="plain">Plain</option>
+                                    <option value="intense">Intense</option>
+                                    <option value="hexa">Hexa</option>
+                                    <option value="animated">Animated</option>
+                                    <option value="unsplash-1">Unsplash #1</option>
+                                    <option value="unsplash-2">Unsplash #2</option>
+                                    <option value="unsplash-3">Unsplash #3</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </section>
+                </aside>
+
+                <div class="search hide" data-window="search">
+                    <input type="text" id="search" placeholder="What are you looking for?...">
+                    <div class="results">
+                        <ul></ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/js/vendor/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/lodash.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/interact.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/codemirror.js"></script>
+        <script type="text/javascript" src="/js/vendor/list.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/butterchurn.js"></script>
+        <script type="text/javascript" src="/js/vendor/butterchurnPresets.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/butterchurnPresetsExtra.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/konami.js"></script>
+        <script type="text/javascript">
+            var terminal = {
+                currentUser: 'anon',
+                cwd: '/home/anon/',
+                previousDir: '/home/anon/',
+                previousCommand: '',
+                currentCommand: '',
+                init: function() {
+                    this.setFormHandlers();
+                    this.setClickHandlers();
+                },
+                setFormHandlers: function() {
+                    // run command
+                    $('#run').submit(function(e){
+                        e.preventDefault();
+                        terminal.run($('#command').val());
+                    });
+                },
+                setClickHandlers: function() {
+                    $('#command').keydown(function(e) {
+                        // show previous command on 'up'
+                        if (e.keyCode == 38) {
+                            if (terminal.previousCommand != $(this).val()) {
+                                terminal.currentCommand = $(this).val();
+                            }
+                            $(this).val(terminal.previousCommand);
+                        }
+                        // show current command on 'down'
+                        if (e.keyCode == 40) {
+                            $(this).val(terminal.currentCommand);
+                        }
+                    });
+                },
+                focus: function() {
+                    // focus terminal input
+                    $('input#command').focus();
+                },
+                updateScroll: function() {
+                    var $terminalContent = $('div[data-window="terminal"] .content');
+                    $terminalContent.scrollTop($terminalContent.prop('scrollHeight'));
+                },
+                changeCwd: function(dir) {
+                    this.previousDir = this.cwd;
+                    this.cwd = dir;
+                    $('.current .ps1 .wd').text(dir.replace('/home/anon/', '~/').replace('/home/keito/', '~/'));
+                },
+                run: function(command) {
+                    this.previousCommand = command;
+                    var fullCommand = command,
+                        parts = command.trim().split(' ');
+                    command = parts[0];
+                    // terminal.trimHistoryItems();
+                    // if (command == 'help') {
+                    //     terminal.clear();
+                    // }
+                    terminal.addHistoryItem(fullCommand);
+                    terminal.command(command, parts);
+                    $('#command').val('');
+                    terminal.updateScroll();
+                },
+                command: function(command, parts) {
+                    if (command == 'cat' || (command == '/bin/cat') || (terminal.cwd + command) == '/bin/cat') {
+                        // string.concat(other strings)
+                    } else if (command == 'cd' || (command == '/bin/cd') || (terminal.cwd + command) == '/bin/cd') {
+                        if (parts[1] === undefined) {
+                            var dir = '/';
+                        } else if (parts[1] === '-') {
+                            var dir = terminal.previousDir;
+                        } else {
+                            var dir = parts[1].substr(0,1) == '/' ? this.normalizeArg(parts[1]) : this.cwd + this.normalizeArg(parts[1]);
+                        }
+
+                        if (fs.tree[dir] === undefined) {
+                            terminal.print('<b>cd:</b> No such file or directory');
+                            return;
+                        }
+                        
+                        this.changeCwd(dir);
+
+                    } else if (command == 'clear' || (command == '/bin/clear') || (terminal.cwd + command) == '/bin/clear') {
+                        terminal.clear();
+                    } else if (command == 'echo' || (command == '/bin/echo') || (terminal.cwd + command) == '/bin/echo') {
+                        var output = parts.slice(1).join(' ').trim();
+                        terminal.print(output != '$PATH' ? output : '/usr/bin:/bin');
+                    } else if (command == 'help' || (command == '/bin/help') || (terminal.cwd + command) == '/bin/help') {
+                        if (parts[1] == undefined) {
+                            var str = '<b>VirusAV Shell, version 1.3.3.7-release</b><br>'
+                                    + 'These shell commands are defined internally.  Type \'help\' to see this list.<br>'
+                                    + 'Type \'help name\' to find out more about the function \'name\'.<br><br>'
+                                    + 'cat<br>'
+                                    + 'cd<br>'
+                                    + 'clear<br>'
+                                    + 'echo<br>'
+                                    + 'ls<br>'
+                                    + 'open<br>'
+                                    + 'pwd<br>'
+                                    + 'whoami<br><br>';
+                        } else {
+                            if (parts[1] == 'cat') {
+                                var str = 'cat: cat [file...]';
+                            } else if (parts[1] == 'cd') {
+                                var str = 'cd: cd [arg]';
+                            } else if (parts[1] == 'clear') {
+                                var str = 'clear: clear';
+                            } else if (parts[1] == 'echo') {
+                                var str = 'echo: echo [arg...]';
+                            } else if (parts[1] == 'ls') {
+                                var str = 'ls: ls [arg]';
+                            } else if (parts[1] == 'open') {
+                                var str = 'open: open [file]';
+                            } else if (parts[1] == 'pwd') {
+                                var str = 'pwd: pwd';
+                            } else if (parts[1] == 'whoami') {
+                                var str = 'whoami: whoami';
+                            } else {
+                                var str = 'Sorry, (not sorry), there is no help for non-existent functions.<br>Type \'help\' for the list of available function names.';
+                            }
+                        }
+                        terminal.print(str);
+                    } else if (command == 'ls' || (command == '/bin/ls') || (terminal.cwd + command) == '/bin/ls') {
+                        var ls,
+                            path;
+
+                        if (parts[1] === undefined) {
+                            path = this.cwd;
+                        } else if (parts[1].substr(0,1) == '-') {
+                            console.log('arguments passed')
+                            if (parts[1].indexOf('l') !== -1) {
+                                console.log('list vertically');
+                                console.log('what to list', parts[2])
+                            }
+                        } else {
+                            path = parts[1].substr(0,1) == '/' ? this.normalizeArg(parts[1]) : this.cwd + this.normalizeArg(parts[1]);
+                        }
+                        console.log('path', path)
+
+                        // handle -l
+
+                        if (fs.tree[path] === undefined) {
+                            ls = '<b>ls:</b> No such file or directory';
+                        } else {
+                            ls = '<ul class="list">' + fs.tree[path].map(f => '<li>'
+                               + (typeof f == 'string' ? f : f.name)
+                               + '</li>').join('')
+                               + '</ul>';
+                        }
+
+                        terminal.print(ls);
+
+                    } else if (command == 'matrix' || (command == '/usr/bin/matrix') || (terminal.cwd + command) == '/usr/bin/matrix') {
+                        terminal.disableScroll();
+                        matrix.start();
+                    } else if (command == 'open' || (command == '/bin/open') || (terminal.cwd + command) == '/bin/open') {
+                        alert('open something');
+                    } else if (command == 'pwd' || (command == '/bin/pwd') || (terminal.cwd + command) == '/bin/pwd') {
+                        terminal.print(this.cwd);
+                    } else if (command == 'random-quote' || (command == '/usr/bin/random-quote') || (terminal.cwd + command) == '/usr/bin/random-quote') {
+                        terminal.print(quotes.random());
+                    } else if (command == 'whoami' || (command == '/bin/whoami') || (terminal.cwd + command) == '/bin/whoami') {
+                        terminal.print(this.currentUser);
+                    } else if (command == 'update-steam-library' || (command == '/usr/bin/update-steam-library') || (terminal.cwd + command) == '/usr/bin/update-steam-library') {
+                        $.get('/update-steam-library', function(res) {
+                            console.log(res)
+                        });
+                        terminal.print('Steam library updated');
+                    } else {
+                        terminal.print('<b>' + command + '</b>: command not found');
+                    }
+                },
+                normalizeArg: function(arg) {
+                    return arg.replace(/\/+$/, '') + '/';
+                },
+                print: function(str) {
+                    $('.history').append('<div class="stdout">' + str + '</div>');
+                },
+                addHistoryItem: function(command) {
+                    var historyItem = '<div class="item"><form><span class="ps1">'
+                                    + $('#run span').html()
+                                    + '</span><input class="command" value="' + command + '" readonly>'
+                                    + '</form></div>';
+
+                    $('.history').append(historyItem);
+                },
+                trimHistoryItems: function() {
+                    $('.history .item:first-of-type').remove();
+                    $('.history .stdout:first-of-type').remove();
+                },
+                clear: function() {
+                    $('.history').html('');
+                },
+                setDropdownStatus: function(state) {
+                    if (state.terminal.dropdown) {
+                        $('select[name="terminal.dropdown"] option[value=1]').prop('selected', true);
+                        var y = $('div[data-window="terminal"]').hasClass('hide') ? '-110%' : '0%';
+                        $('div[data-window="terminal"]').removeClass('resize-drag')
+                                                        .addClass('dropdown')
+                                                        .css({'transform': 'translate(-50%,' + y + ')'});
+
+                        setTimeout(function() {
+                            $('div[data-window="terminal"]').css({'transition': 'transform 250ms ease'});
+                        }, 250);
+                    } else {
+                        $('div[data-window="terminal"]').addClass('resize-drag')
+                                                        .removeClass('dropdown')
+                                                        .css({'transform': 'translate(' + state.terminal.x + 'px, ' + state.terminal.y + 'px)'})
+                                                        .css({'transition': 'initial'})
+                                                        .attr('data-x', state.terminal.x)
+                                                        .attr('data-y', state.terminal.y);
+                        $('select[name="terminal.dropdown"] option[value=0]').prop('selected', true);
+                    }
+                    $('div[data-window="terminal"]').css('opacity', 1);
+                },
+                disableScroll: function() {
+                    $('div[data-window="terminal"] .content').addClass('scroll-disabled');
+                },
+                enableScroll: function() {
+                    $('div[data-window="terminal"] .content').removeClass('scroll-disabled');
+                }
+
+            }
+
+            var desktop = {
+                setBackground: function(state) {
+                    if (state.desktop.background == 'plain') {
+                        $('body').css('background', '#1b1b1b');
+                    } else if (state.desktop.background == 'intense') {
+                        $('body').css('background', '#f40000');
+                    } else if (state.desktop.background == 'hexa') {
+                        $('body').css({'background': 'url(/images/wallpapers/hexa.png)'});
+                    } else if (state.desktop.background == 'animated') {
+                        $('body').css({'background': 'url(/images/wallpapers/bg.gif)', 'background-size': 'cover'});
+                    } else if (state.desktop.background == 'unsplash-1') {
+                        $('body').css({'background': 'url(/images/wallpapers/1.jpg)', 'background-size': 'cover'});
+                    } else if (state.desktop.background == 'unsplash-2') {
+                        $('body').css({'background': 'url(/images/wallpapers/2.jpg)', 'background-size': 'cover'});
+                    } else if (state.desktop.background == 'unsplash-3') {
+                        $('body').css({'background': 'url(/images/wallpapers/3.jpg)', 'background-size': 'cover'});
+                    }
+                    $('select[name="desktop.background"] option[value=' + state.desktop.background + ']').prop('selected', true);
+                }
+            }
+
+            var menuBar = {
+                init: function() {
+                    this.setClickHandlers();
+                    this.initVolumeControlHandler();
+                },
+                setClickHandlers: function() {
+                    $('.menu-bar ul li a, .toggle-visibility').click(function(e) {
+                        e.preventDefault();
+                        var el = $(this).data('window');
+                        $('div[data-window="' + el + '"]').toggleClass('hide');
+
+                        windows.zIndexSort(el);
+
+                        if (el =='terminal') {
+                            terminal.focus();
+                            terminal.setDropdownStatus(state.get());
+                        }
+                    });
+
+                    $('.desktop .menu nav ul li a').click(function() {
+                        var el = $(this).data('window');
+                        $('div[data-window="' + el + '"]').removeClass('hide');
+                        if ($(this).data('init')) {
+                            apps[$(this).data('init')].init();
+                        }
+                        $('.desktop .menu').addClass('hide');
+                        windows.zIndexSort(el);
+                    });
+
+                    $('[data-control="play"],[data-control="pause"]').click(function(e) {
+                        apps.mediaPlayer.togglePlayback();
+                    });
+
+                    $('[data-control="stop"]').click(function(e) {
+                        apps.mediaPlayer.stop();
+                    });
+
+                    $('[data-control="volume"]').click(function(e) {
+                        $(this).toggleClass('active');
+                        $('.menu-bar-volume-slider').toggleClass('hide');
+                    });
+
+                    $('[data-control="sidebar"]').click(function(e) {
+                        e.preventDefault();
+                        $('body').toggleClass('sidebar-open');
+                        $(this).toggleClass('active');
+                    });
+
+                    $('[data-control="search"]').click(function(e) {
+                        if ($('.search').hasClass('hide')) {
+                            search.open();
+                        } else {
+                            search.close();
+                        }
+                    });
+
+                    $('.open-menu').click(function() {
+                        $('.menu').toggleClass('hide');
+                    });
+                },
+                initVolumeControlHandler: function() {
+                    $('#menu-bar-volume').slider({
+                        min: 0,
+                        max: 100,
+                        value: apps.mediaPlayer.volume,
+                        range: 'min',
+                        slide: function(e, ui) {
+                            e.stopPropagation();
+                            apps.mediaPlayer.setVolume(ui.value);
+                            $('#volume').slider('value', ui.value);
+                        }
+                    });
+                },
+            }
+
+            var fs = {
+                init: function() {
+                    this.fetchData();
+                },
+                fetchData: function() {
+
+                },
+                // tree: {
+                //     '/': {
+                //         'bin': {
+                //             'cat': {},
+                //             'cd': {},
+                //             'clear': {},
+                //             'echo': {},
+                //             'help': {},
+                //             'ls': {},
+                //             'open': {},
+                //             'pwd': {},
+                //             'whoami': {}
+                //         },
+                //         'dev': {},
+                //         'etc': {},
+                //         'home': {
+                //             'anon': {
+
+                //             },
+                //             'keito': {
+
+                //             }
+                //         },
+                //         'tmp': {},
+                //         'var': {},
+                //         'usr': {
+                //             'bin': {
+                //                 'matrix': null,
+                //                 'update-steam-library': null,
+                //                 'random-quote': null
+                //             }
+                //         }
+                //     }
+                // }
+                tree: {
+                    '/': ['bin','dev','etc','home','tmp','var','usr'],
+                    '/bin/': ['cat','cd','clear','echo','help','ls','open','pwd','whoami'],
+                    '/dev/': [],
+                    '/etc/': [],
+                    '/home/': ['anon','keito'],
+                    '/home/anon/': ['images','music','videos',{'name':'konami.txt','type':'file','icon':'file-text-o'},'manifesto.txt','neuro.txt','red-pill.txt'],
+                    '/home/anon/images/': ['image-001.png'],
+                    '/home/anon/music/': ['artists','netlabel','podcast'],
+                    '/home/anon/music/artists/': ['chewy','keito','kerouac','sci-fi-guy'],
+                    '/home/anon/music/artists/chewy/': ['chewy-001.mp3'],
+                    '/home/anon/music/artists/keito/': [
+                        'Keito - Chiller',
+                        'Keito - Dirty Bomb',
+                        'Keito - Kojima'
+                    ],
+                    '/home/anon/music/artists/keito/Keito - Chiller/': [{
+                        name: 'Keito - Chiller',
+                        path: 'https://www.virusav.com/music/artists/Keito/Keito_-_Chiller/Keito_-_Chiller.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/artists/Keito/Keito_-_Chiller/folder.jpg',
+                        meta: {
+                            title: 'Chiller',
+                            artist: 'Keito',
+                            album: 'Chiller',
+                            year: 2014,
+                            duration: '00:04:47',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/artists/keito/Keito - Dirty Bomb/': [{
+                        name: 'Keito - Dirty Bomb',
+                        path: 'https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/folder.jpg',
+                        meta: {
+                            title: 'Dirty Bomb',
+                            artist: 'Keito',
+                            album: 'Dirty Bomb',
+                            year: 2014,
+                            duration: '00:04:47',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/artists/keito/Keito - Kojima/': [{
+                        name: 'Keito - Kojima',
+                        path: 'https://www.virusav.com/music/artists/Keito/Keito_-_Kojima/Keito_-_Kojima.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/artists/Keito/Keito_-_Kojima/folder.jpg',
+                        meta: {
+                            title: 'Kojima',
+                            artist: 'Keito',
+                            album: 'Kojima',
+                            year: 2014,
+                            duration: '00:04:47',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/artists/kerouac/': ['kerouac-001.mp3'],
+                    '/home/anon/music/artists/sci-fi-guy/': ['sci-fi-guy-001.mp3'],
+                    '/home/anon/music/netlabel/': [
+                        '001. Matt B + Keito - Oy Fatty',
+                        '002. Keito - Smoothie',
+                        '003. Sci-Fi Guy - Waterfall',
+                        '004. Sci-Fi Guy - Epoch',
+                        '005. Kerouac - Satori',
+                        '006. Kerouac - Lucid',
+                        '007. Kerouac - Reckoner',
+                        '008. Kerouac - Naropa',
+                    ],
+                    '/home/anon/music/netlabel/001. Matt B + Keito - Oy Fatty/': [{
+                        name: '001. Matt B + Keito - Oy Fatty',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet001_-_Matt_B_and_Keito_-_Oy_Fatty/VirusAVNet001_-_Matt_B_and_Keito_-_Oy_Fatty.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet001_-_Matt_B_and_Keito_-_Oy_Fatty/folder.jpg',
+                        meta: {
+                            title: 'Oy Fatty',
+                            artist: 'Matt B + Keito',
+                            album: 'VirusAVNet001',
+                            year: 2014,
+                            duration: '00:04:59',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/002. Keito - Smoothie/': [{
+                        name: '002. Keito - Smoothie',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet002_-_Keito_-_Smoothie/VirusAVNet002_-_Keito_-_Smoothie.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet002_-_Keito_-_Smoothie/folder.jpg',
+                        meta: {
+                            title: 'Smoothie',
+                            artist: 'Keito',
+                            album: 'VirusAVNet002',
+                            year: 2015,
+                            duration: '00:06:10',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/003. Sci-Fi Guy - Waterfall/': [{
+                        name: '003. Sci-Fi Guy - Waterfall',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet003_-_Sci_Fi_Guy_-_Waterfall/VirusAVNet003_-_Sci_Fi_Guy_-_Waterfall.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet003_-_Sci_Fi_Guy_-_Waterfall/folder.jpg',
+                        meta: {
+                            title: 'Waterfall',
+                            artist: 'Sci-Fi Guy',
+                            album: 'VirusAVNet003',
+                            year: 2015,
+                            duration: '00:06:03',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/004. Sci-Fi Guy - Epoch/': [{
+                        name: '004. Sci-Fi Guy - Epoch',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet004_-_Sci_Fi_Guy_-_Epoch/VirusAVNet004_-_Sci_Fi_Guy_-_Epoch.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet004_-_Sci_Fi_Guy_-_Epoch/folder.jpg',
+                        meta: {
+                            title: 'Epoch',
+                            artist: 'Sci-Fi Guy',
+                            album: 'VirusAVNet004',
+                            year: 2015,
+                            duration: '00:07:16',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/005. Kerouac - Satori/': [{
+                        name: '005. Kerouac - Satori',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet005_-_Kerouac_-_Satori/VirusAVNet005_-_Kerouac_-_Satori.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet005_-_Kerouac_-_Satori/folder.jpg',
+                        meta: {
+                            title: 'Satori',
+                            artist: 'Kerouac',
+                            album: 'VirusAVNet005',
+                            year: 2015,
+                            duration: '00:07:16',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/006. Kerouac - Lucid/': [{
+                        name: '006. Kerouac - Lucid',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet006_-_Kerouac_-_Lucid/VirusAVNet006_-_Kerouac_-_Lucid.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet006_-_Kerouac_-_Lucid/folder.jpg',
+                        meta: {
+                            title: 'Lucid',
+                            artist: 'Kerouac',
+                            album: 'VirusAVNet006',
+                            year: 2015,
+                            duration: '00:07:16',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/007. Kerouac - Reckoner/': [{
+                        name: '007. Kerouac - Reckoner',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet007_-_Kerouac_-_Reckoner/VirusAVNet007_-_Kerouac_-_Reckoner.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet007_-_Kerouac_-_Reckoner/folder.jpg',
+                        meta: {
+                            title: 'Reckoner',
+                            artist: 'Kerouac',
+                            album: 'VirusAVNet007',
+                            year: 2015,
+                            duration: '00:07:16',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/netlabel/008. Kerouac - Naropa/': [{
+                        name: '008. Kerouac - Naropa',
+                        path: 'https://www.virusav.com/music/netlabel/VirusAVNet008_-_Kerouac_-_Naropa/VirusAVNet008_-_Kerouac_-_Naropa.mp3',
+                        type: 'file',
+                        icon: 'music',
+                        image: 'https://www.virusav.com/music/netlabel/VirusAVNet008_-_Kerouac_-_Naropa/folder.jpg',
+                        meta: {
+                            title: 'Naropa',
+                            artist: 'Kerouac',
+                            album: 'VirusAVNet008',
+                            year: 2015,
+                            duration: '00:07:16',
+                            genre: 'Electronic'
+                        }
+                    }],
+                    '/home/anon/music/podcast/': ['podcast-001.mp3'],
+                    '/home/anon/videos/': ['visuals','video-001.mp4'],
+                    '/home/anon/videos/visuals/': ['visuals-001.mp4'],
+                    '/tmp/': [],
+                    '/usr/': ['bin'],
+                    '/usr/bin/': ['matrix','update-steam-library','random-quote'],
+                    '/var/': [],
+                }
+            }
+
+            var fileBrowser = {
+                init: function() {
+                    this.setClickHandlers();
+                },
+                setClickHandlers: function() {
+                    $('body').delegate('.window.file-browser a', 'click', function(e) {
+                        e.preventDefault();
+                        fileBrowser.open($(this));
+                    });
+                },
+                open: function($item) {
+                    var $fileBrowserWindow = $item.closest('.file-browser'),
+                        itemHrefPath = $item.attr('href').replace('https://www.virusav.com', ''),
+                        folder = '/home/anon' + ($item.data('name') ? '/' + $item.data('name') : itemHrefPath) + '/';
+
+                    if ($item.data('type') == 'folder' || $item.data('type') === undefined) {
+                        var $listing = $('<ul></ul>'),
+                            titleItems = [],
+                            titleTrail = '',
+                            name,
+                            type,
+                            icon,
+                            image,
+                            listMarkup;
+
+                        $.each(fs.tree[folder], function(i, v) {
+                            if (typeof v == 'string') {
+                                name = v;
+                                path = v;
+                                type = 'folder';
+                                icon = 'folder-o';
+                                image = false;
+                            } else {
+                                name = v.name;
+                                path = v.path;
+                                type = v.type;
+                                icon = v.icon;
+                                image = false;
+                            }
+
+                            listMarkup = '<li>'
+                                       + '<a href="' + (type == 'file' ? path : itemHrefPath + '/' + name) + '" data-fs-index="/home/anon' + itemHrefPath + '/" data-path="' + path + '" data-type="' + type + '" aria-label="' + name + '">'
+                                       + (image ? '' : '<i class="fa fa-' + icon + '"></i>')
+                                       + name + '</a>'
+                                       + '</li>';
+
+                            $listing.append(listMarkup);
+                        });
+
+                        $fileBrowserWindow.find('.content').html($listing);
+
+                        $.each(folder.replace('/home/anon/','').split('/').filter(i => i), function(i, v) {
+                            titleTrail += '/' + v;
+                            titleItems.push('<a href="' + titleTrail + '" aria-label="' + v + '">' + v + '</a>')
+                        });
+
+                        $fileBrowserWindow.find('.title').html(titleItems.join(' | '));
+                    } else {
+                        // open file
+                        console.log('open file', $item.attr('href'), $item.data('fs-index'));
+                        console.log('open file', fs.tree[$item.data('fs-index')][0].path);
+                        // apps.mediaPlayer.play($item.attr('href'));
+                        apps.mediaPlayer.play($item.data('fs-index'));
+                    }
+                }
+            }
+
+            var sidebar = {
+                init: function() {
+                    this.setClickHandlers();
+                },
+                setClickHandlers: function() {
+                    $('select[name="terminal.dropdown"]').on('change', function(e) {
+                        if (this.value == 1) {
+                            terminal.x = $('div[data-window="terminal"]').data('x');
+                            terminal.y = $('div[data-window="terminal"]').data('y');
+                        }
+                        state.set('terminal.dropdown', this.value == '1');
+                        matrix.setDimensions();
+                    });
+
+                    $('select[name="desktop.background"]').on('change', function(e) {
+                        state.set('desktop.background', this.value);
+                    });
+                }
+            }
+
+            var state = {
+                init: function(state) {
+                    var state = this.get();
+                    terminal.setDropdownStatus(state);
+                    desktop.setBackground(state);
+                    windows.zIndexSort();
+                },
+                set: function(property, value) {
+                    var state = this.get();
+                    _.set(state, property, value);
+                    localStorage.setItem('state', JSON.stringify(state));
+                    this.init(state);
+                },
+                get: function() {
+                    var state = localStorage.getItem('state');
+                    if (state == null) {
+                        state = JSON.stringify({
+                            desktop: {
+                                background: 'unsplash-2',
+                            },
+                            terminal: {
+                                dropdown: true,
+                                x: 820,
+                                y: 20
+                            }
+                        });
+                    }
+                    return JSON.parse(state);
+                }
+            }
+
+            var windows = {
+                init: function() {
+                    this.setDragMoveListener();
+                    this.initialiseInteract();
+                    this.setClickHandlers();
+                },
+                setClickHandlers: function() {
+                    $('.toggle-size').click(function(e) {
+                        e.preventDefault();
+                        $(this).closest('.window').toggleClass('full-screen');
+                        $('body').toggleClass('full-screen');
+                        matrix.setDimensions();
+                        if (apps.mediaPlayer.currentRenderer !== null) {
+                            apps.mediaPlayer.renderers[apps.mediaPlayer.currentRenderer].init();
+                        }
+                    });
+
+                    $('.window').on('mouseup', function(e) {
+                        if ($(this).data('window') =='terminal') {
+                            terminal.focus();
+                        }
+                    });
+
+                    $('.window:not(.dropdown)').on('mousedown', function(e) {
+                        windows.zIndexSort($(this).data('window'));
+                    });
+
+                    $('.btn-group li').click(function(e) {
+                        $(this).parent().find('li').removeClass('active');
+                        $(this).addClass('active');
+                        $(this).closest('.content').find('section').addClass('hide');
+                        $(this).closest('.content').find('section[data-section="' + $(this).data('section') + '"]').removeClass('hide');
+                    });
+                },
+                zIndexSort: function(toTop) {
+                    var wCount = $('.window:not(.dropdown)').length,
+                        current,
+                        z;
+
+                    if ((toTop !== undefined) && (($('div[data-window="' + toTop + '"]').css('z-index') == wCount) || ($('div[data-window="' + toTop + '"]').hasClass('dropdown')))) {
+                        return;
+                    }
+
+                    $.each($('.window:not(.dropdown)'), function(i, v) {
+                        current = $(v).css('z-index');
+
+                        /// re-jig this so we move selected item z up to highest position
+                        /// then knock all other items down by 1 until we get to selected items previous z position !!!!!!!!!!!!!!!!!!!!!
+
+                        // initialise on page load
+                        if ($(v).css('z-index') == 'auto') {
+                            z = (i + 1);
+                            $(v).css('z-index', z).data('z', z);
+                        } else if (($(v).data('window') !== toTop) && (current == wCount)) {
+                            
+                            $(v).css('z-index', (current - 1));
+
+                        // move current item to top
+                        } else if ($(v).data('window') === toTop) {
+                            $(v).css('z-index', wCount).data('z', z);
+                        }
+                        //console.log($(v).data('window'), current, $(v).css('z-index'));
+                    });
+                },
+                dragMoveListener: function(event) {
+                    var target = event.target,
+                        // keep the dragged position in the data-x/data-y attributes
+                        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+                    // translate the element
+                    target.style.webkitTransform =
+                    target.style.transform =
+                      'translate(' + x + 'px, ' + y + 'px)';
+
+                    // update the posiion attributes
+                    target.setAttribute('data-x', x);
+                    target.setAttribute('data-y', y);
+
+                    if (target.getAttribute('data-window') == 'terminal') {
+                        state.set('terminal.x', x);
+                        state.set('terminal.y', y);
+                    }
+                },
+                setDragMoveListener: function() {
+                    window.dragMoveListener = this.dragMoveListener;
+                },
+                initialiseInteract: function() {
+                    interact('.resize-drag').draggable({
+                        onmove: window.dragMoveListener,
+                        allowFrom: '.header',
+                        restrict: {
+                            restriction: 'parent',
+                            elementRect: {
+                                top: 0,
+                                left: 0,
+                                bottom: 1,
+                                right: 1
+                            }
+                        },
+                    }).resizable({
+                        edges: {
+                            left: true,
+                            right: true,
+                            bottom: true,
+                            top: false
+                        },
+                        restrictEdges: {
+                            outer: 'parent',
+                            endOnly: true,
+                        },
+                        restrictSize: {
+                            min: {
+                                width: 100,
+                                height: 50
+                            },
+                        },
+                        inertia: true,
+                    }).on('resizemove', function (event) {
+                        var target = event.target,
+                            x = (parseFloat(target.getAttribute('data-x')) || 0),
+                            y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+                        // update the element's style
+                        target.style.width  = event.rect.width + 'px';
+                        target.style.height = event.rect.height + 'px';
+
+                        // translate when resizing from top or left edges
+                        x += event.deltaRect.left;
+                        y += event.deltaRect.top;
+
+                        target.style.webkitTransform = target.style.transform =
+                            'translate(' + x + 'px,' + y + 'px)';
+
+                        target.setAttribute('data-x', x);
+                        target.setAttribute('data-y', y);
+
+                        if (target.getAttribute('data-window') == 'terminal') {
+                            matrix.setDimensions();
+                        }
+
+                        if (target.getAttribute('data-window') == 'media-player') {
+                            apps.mediaPlayer.rendererResize();
+                        }
+                    });
+                }
+            }
+
+            var matrix = {
+                ps: null,
+                canvas: document.getElementById('matrix'),
+                ctx: null,
+                chars: [],
+                fontSize: 10,
+                columns: 0,
+                drops: [],
+                init: function() {
+                    var chars = '田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑';
+                    this.ctx = this.canvas.getContext('2d');
+                    this.chars = chars.split('');
+                    this.setDimensions();
+                },
+                setDimensions: function() {
+                    if (matrix.ctx === null) return;
+
+                    matrix.ctx.canvas.width = $('div[data-window="terminal"]').innerWidth();
+                    matrix.ctx.canvas.height = $('div[data-window="terminal"]').innerHeight() - 25;
+                    matrix.columns = matrix.canvas.width/matrix.fontSize;
+                    for (var x = 0; x < matrix.columns; x++) {
+                        matrix.drops[x] = 1; 
+                    }
+                },
+                draw: function() {
+                    matrix.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                    matrix.ctx.fillRect(0, 0, matrix.ctx.canvas.width, matrix.ctx.canvas.height);
+                    matrix.ctx.fillStyle = '#0F0';
+                    matrix.ctx.font = matrix.fontSize + 'px';
+
+                    for (var i = 0; i < matrix.drops.length; i++) {
+                        var text = matrix.chars[Math.floor(Math.random() * matrix.chars.length)];
+                        matrix.ctx.fillText(text, i * matrix.fontSize, matrix.drops[i] * matrix.fontSize);
+
+                        if (matrix.drops[i] * matrix.fontSize > matrix.ctx.canvas.height && Math.random() > 0.975) {
+                            matrix.drops[i] = 0;
+                        }
+                        
+                        matrix.drops[i]++;
+                    }
+                },
+                start: function() {
+                    matrix.canvas.classList.add('running');
+                    this.init();
+                    matrix.ps = setInterval(matrix.draw, 33);
+                    matrix.setEventListener();
+                },
+                stop: function() {
+                    matrix.canvas.classList.remove('running');
+                    clearInterval(matrix.ps);
+                },
+                setEventListener: function() {
+                    $(document).on('keyup', matrix.eventListener);
+                },
+                eventListener: function(e) {
+                    if (e.key === 'Escape') {
+                        terminal.enableScroll();
+                        terminal.updateScroll();
+                        matrix.stop();
+                        $(document).off('keyup', matrix.eventListener);
+                    }
+                }
+            }
+
+            var system = {
+                init: function() {
+                    this.setClickHandlers();
+                },
+                setClickHandlers: function() {
+                    $('a').click(function(e) {
+                        e.preventDefault();
+                        // history.pushState({}, '', $(this).attr('href'));
+                    });
+                }
+            }
+
+            apps = {
+                init: function() {
+                    // this.textEditor.init();
+                    this.mediaPlayer.init();
+                },
+                textEditor: {
+                    instance: null,
+                    config: {
+                        lineNumbers: true,
+                        matchBrackets: true,
+                        theme: 'monokai'
+                    },
+                    init: function() {
+                        if (apps.textEditor.instance == null) {
+                            apps.textEditor.instance = CodeMirror.fromTextArea(document.getElementById('text-editor'), apps.textEditor.config);
+                        }
+                    }
+                },
+                drumMachine: {
+                    init: function() {
+
+                    }
+                },
+                mediaPlayer: {
+                    initialised: false,
+                    volume: 100,
+                    audio: null,
+                    audioContext: null,
+                    analyser: null,
+                    frequencyData: null,
+                    source: null,
+                    status: 'stopped',
+                    currentTrack: '/home/anon/music/netlabel/002. Keito - Smoothie/',
+                    transition: null,
+                    currentRenderer: null,
+                    resizing: false,
+                    renderers: {
+                        bars: {
+                            config: {},
+                            running: false,
+                            init: function() {
+                                apps.mediaPlayer.renderers.bars.config.canvas = document.getElementById('barsCanvas');
+                                apps.mediaPlayer.renderers.bars.config.canvas.width = $('div[data-window="media-player"] .content .interface-section').innerWidth();
+                                apps.mediaPlayer.renderers.bars.config.canvas.height = $('div[data-window="media-player"] .content .interface-section').innerHeight();
+                                apps.mediaPlayer.renderers.bars.config.cwidth = apps.mediaPlayer.renderers.bars.config.canvas.width;
+                                apps.mediaPlayer.renderers.bars.config.cheight = apps.mediaPlayer.renderers.bars.config.canvas.height;
+                                apps.mediaPlayer.renderers.bars.config.meterWidth = 10;
+                                apps.mediaPlayer.renderers.bars.config.gap = 2;
+                                apps.mediaPlayer.renderers.bars.config.capHeight = 2;
+                                apps.mediaPlayer.renderers.bars.config.capStyle = '#fff';
+                                apps.mediaPlayer.renderers.bars.config.meterNum = apps.mediaPlayer.renderers.bars.config.cwidth / (apps.mediaPlayer.renderers.bars.config.meterWidth - apps.mediaPlayer.renderers.bars.config.gap);
+                                apps.mediaPlayer.renderers.bars.config.capYPositionArray = [];
+                                apps.mediaPlayer.renderers.bars.config.ctx = apps.mediaPlayer.renderers.bars.config.canvas.getContext('2d');
+                                apps.mediaPlayer.renderers.bars.config.gradient = apps.mediaPlayer.renderers.bars.config.ctx.createLinearGradient(0, 0, 0, 300);
+                                apps.mediaPlayer.renderers.bars.config.gradient.addColorStop(1, '#0f0');
+                                apps.mediaPlayer.renderers.bars.config.gradient.addColorStop(0.5, '#ff0');
+                                apps.mediaPlayer.renderers.bars.config.gradient.addColorStop(0, '#f00');
+                            },
+                            start: function() {
+                                apps.mediaPlayer.renderers.bars.running = true;
+                                apps.mediaPlayer.renderers.bars.init();
+                                apps.mediaPlayer.renderers.bars.renderFrame();
+                            },
+                            stop: function() {
+                                apps.mediaPlayer.renderers.bars.running = false;
+                            },
+                            renderFrame: function() {
+                                if (apps.mediaPlayer.renderers.bars.running) {
+                                    var array = new Uint8Array(apps.mediaPlayer.analyser.frequencyBinCount);
+                                    apps.mediaPlayer.analyser.getByteFrequencyData(array);
+                                    var step = Math.round(array.length / apps.mediaPlayer.renderers.bars.config.meterNum);
+                                    apps.mediaPlayer.renderers.bars.config.ctx.clearRect(0, 0, apps.mediaPlayer.renderers.bars.config.cwidth, apps.mediaPlayer.renderers.bars.config.cheight);
+
+                                    for (var i = 0; i < apps.mediaPlayer.renderers.bars.config.meterNum; i++) {
+                                        var value = array[i * step];
+
+                                        if (apps.mediaPlayer.renderers.bars.config.capYPositionArray.length < Math.round(apps.mediaPlayer.renderers.bars.config.meterNum)) {
+                                            apps.mediaPlayer.renderers.bars.config.capYPositionArray.push(value);
+                                        };
+
+                                        apps.mediaPlayer.renderers.bars.config.ctx.fillStyle = apps.mediaPlayer.renderers.bars.config.capStyle;
+                                        apps.mediaPlayer.renderers.bars.config.ctx.fillRect(i * 12, apps.mediaPlayer.renderers.bars.config.cheight - value, apps.mediaPlayer.renderers.bars.config.meterWidth, apps.mediaPlayer.renderers.bars.config.capHeight);
+                                        apps.mediaPlayer.renderers.bars.config.capYPositionArray[i] = value;
+                                        apps.mediaPlayer.renderers.bars.config.ctx.fillStyle = apps.mediaPlayer.renderers.bars.config.gradient;
+                                        apps.mediaPlayer.renderers.bars.config.ctx.fillRect(i * 12, apps.mediaPlayer.renderers.bars.config.cheight - value + apps.mediaPlayer.renderers.bars.config.capHeight, apps.mediaPlayer.renderers.bars.config.meterWidth, apps.mediaPlayer.renderers.bars.config.cheight);
+                                    }
+
+                                    requestAnimationFrame(apps.mediaPlayer.renderers.bars.renderFrame);
+                                }
+                            }
+                        },
+                        butterchurn: {
+                            config: {},
+                            running: false,
+                            instance: null,
+                            presets: {},
+                            presetKeys: [],
+                            presetIndexHist: [],
+                            presetIndex: 0,
+                            presetRandom: true,
+                            init: function() {
+                                apps.mediaPlayer.renderers.butterchurn.config.canvas = document.getElementById('butterchurnCanvas');
+                                apps.mediaPlayer.renderers.butterchurn.config.canvas.classList.remove('hide');
+                                apps.mediaPlayer.renderers.butterchurn.config.canvas.width = $('div[data-window="media-player"] .content .interface-section').innerWidth();
+                                apps.mediaPlayer.renderers.butterchurn.config.canvas.height = $('div[data-window="media-player"] .content .interface-section').innerHeight();
+                                apps.mediaPlayer.renderers.butterchurn.config.cwidth = apps.mediaPlayer.renderers.butterchurn.config.canvas.width;
+                                apps.mediaPlayer.renderers.butterchurn.config.cheight = apps.mediaPlayer.renderers.butterchurn.config.canvas.height;
+                                // apps.mediaPlayer.audioContext = apps.mediaPlayer.renderers.butterchurn.config.canvas.getContext('2d');
+                                apps.mediaPlayer.renderers.butterchurn.instance = butterchurn.createVisualizer(apps.mediaPlayer.audioContext, apps.mediaPlayer.renderers.butterchurn.config.canvas, {
+                                    width: apps.mediaPlayer.renderers.butterchurn.config.canvas.width,
+                                    height: apps.mediaPlayer.renderers.butterchurn.config.canvas.height
+                                });
+
+                                apps.mediaPlayer.renderers.butterchurn.instance.connectAudio(apps.mediaPlayer.source);
+
+                                // load a preset
+                                Object.assign(apps.mediaPlayer.renderers.butterchurn.presets, butterchurnPresets.getPresets());
+                                Object.assign(apps.mediaPlayer.renderers.butterchurn.presets, butterchurnPresetsExtra.getPresets());
+
+                                apps.mediaPlayer.renderers.butterchurn.presets = _(apps.mediaPlayer.renderers.butterchurn.presets).toPairs().sortBy(([k, v]) => k.toLowerCase()).fromPairs().value();
+                                apps.mediaPlayer.renderers.butterchurn.presetKeys = _.keys(apps.mediaPlayer.renderers.butterchurn.presets);
+                                apps.mediaPlayer.renderers.butterchurn.presetIndex = Math.floor(Math.random() * apps.mediaPlayer.renderers.butterchurn.presetKeys.length);
+
+                                apps.mediaPlayer.renderers.butterchurn.instance.loadPreset(apps.mediaPlayer.renderers.butterchurn.presets['Flexi, martin + geiss - dedicated to the sherwin maxawow'], 10); // 2nd argument is the number of seconds to blend presets
+
+                                apps.mediaPlayer.renderers.butterchurn.instance.setRendererSize(apps.mediaPlayer.renderers.butterchurn.config.canvas.width, apps.mediaPlayer.renderers.butterchurn.config.canvas.height);
+                            },
+                            start: function() {
+                                apps.mediaPlayer.renderers.butterchurn.running = true;
+                                apps.mediaPlayer.renderers.butterchurn.init();
+                                apps.mediaPlayer.renderers.butterchurn.renderFrame();
+                                $(document).on('keydown', apps.mediaPlayer.renderers.butterchurn.setKeyHandlers);
+                            },
+                            stop: function() {
+                                apps.mediaPlayer.renderers.butterchurn.running = false;
+                                $(document).off('keydown', apps.mediaPlayer.renderers.butterchurn.setKeyHandlers);
+                            },
+                            renderFrame: function() {
+                                if (apps.mediaPlayer.renderers.butterchurn.running) {
+                                    apps.mediaPlayer.renderers.butterchurn.instance.render();
+                                    requestAnimationFrame(apps.mediaPlayer.renderers.butterchurn.renderFrame);
+                                }
+                            },
+                            hide: function() {
+                                apps.mediaPlayer.renderers.butterchurn.config.canvas.classList.add('hide');
+                            },
+                            setKeyHandlers: function(e) {
+                                if (e.which === 32 || e.which === 39) {
+                                    apps.mediaPlayer.renderers.butterchurn.nextPreset();
+                                } else if (e.which === 8 || e.which === 37) {
+                                    apps.mediaPlayer.renderers.butterchurn.prevPreset();
+                                } else if (e.which === 72) {
+                                    apps.mediaPlayer.renderers.butterchurn.nextPreset(0);
+                                }
+                            },
+                            prevPreset: function(blendTime = 5.7) {
+                                var numPresets = apps.mediaPlayer.renderers.butterchurn.presetKeys.length;
+                                if (apps.mediaPlayer.renderers.butterchurn.presetIndexHist.length > 0) {
+                                    apps.mediaPlayer.renderers.butterchurn.presetIndex = apps.mediaPlayer.renderers.butterchurn.presetIndexHist.pop();
+                                } else {
+                                    apps.mediaPlayer.renderers.butterchurn.presetIndex = ((apps.mediaPlayer.renderers.butterchurn.presetIndex - 1) + numPresets) % numPresets;
+                                }
+                                apps.mediaPlayer.renderers.butterchurn.instance.loadPreset(apps.mediaPlayer.renderers.butterchurn.presets[apps.mediaPlayer.renderers.butterchurn.presetKeys[apps.mediaPlayer.renderers.butterchurn.presetIndex]], blendTime);
+                            },
+                            nextPreset(blendTime = 5.7) {
+                                apps.mediaPlayer.renderers.butterchurn.presetIndexHist.push(apps.mediaPlayer.renderers.butterchurn.presetIndex);
+                                var numPresets = apps.mediaPlayer.renderers.butterchurn.presetKeys.length;
+                                if (apps.mediaPlayer.renderers.butterchurn.presetRandom) {
+                                    apps.mediaPlayer.renderers.butterchurn.presetIndex = Math.floor(Math.random() * apps.mediaPlayer.renderers.butterchurn.presetKeys.length);
+                                } else {
+                                    apps.mediaPlayer.renderers.butterchurn.presetIndex = (apps.mediaPlayer.renderers.butterchurn.presetIndex + 1) % numPresets;
+                                }
+                                apps.mediaPlayer.renderers.butterchurn.instance.loadPreset(apps.mediaPlayer.renderers.butterchurn.presets[apps.mediaPlayer.renderers.butterchurn.presetKeys[apps.mediaPlayer.renderers.butterchurn.presetIndex]], blendTime);
+                            }
+                        }
+                    },
+                    init: function() {
+                        if (!this.initialised) {
+                            this.initialiseSliders();
+                            this.setClickHandlers();
+                            this.configureAudioSystem();
+                            this.setEventListeners();
+                            this.setVolume(this.volume);
+                            this.filterSort.init();
+                            this.initialised = true;
+                        }
+                    },
+                    configureAudioSystem: function() {
+                        this.audio = document.getElementById('audio');
+                        this.audioContext = new AudioContext();
+                        this.analyser = apps.mediaPlayer.audioContext.createAnalyser();
+                        this.source = apps.mediaPlayer.audioContext.createMediaElementSource(this.audio);
+
+                        // this could well be bars specific
+                        this.source.connect(this.analyser);
+                        this.analyser.connect(this.audioContext.destination);
+                        this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
+                    },
+                    rendererResize: function() {
+                        if (apps.mediaPlayer.currentRenderer == 'butterchurn') {
+                            if (apps.mediaPlayer.renderers.butterchurn.running) {
+                                apps.mediaPlayer.renderers.butterchurn.stop();
+                                apps.mediaPlayer.renderers.butterchurn.hide();
+                            }
+                            clearTimeout(apps.mediaPlayer.resizing);
+                            apps.mediaPlayer.resizing = setTimeout(function(){
+                                apps.mediaPlayer.renderers.butterchurn.init();
+                                apps.mediaPlayer.renderers.butterchurn.start();
+                            }, 500);
+                        } else if (apps.mediaPlayer.currentRenderer == 'bars') {
+                            apps.mediaPlayer.renderers.bars.init();
+                        }
+                    },
+                    initialiseSliders: function() {
+                        apps.mediaPlayer.initPlaybackSeekControlHandler();
+                        apps.mediaPlayer.initVolumeControlHandler();
+                    },
+                    setClickHandlers: function() {
+                        $('.visual-selector span').click(apps.mediaPlayer.setVisual);
+                        $('.toggle-artwork-size').click(apps.mediaPlayer.toggleArtworkSize);
+
+                        $('div[data-window="media-player"] .content .interface-section .navigator li:not(.title):not(.separator)').click(function(e) {
+                            e.preventDefault();
+                            apps.mediaPlayer.switchPanel($(this));
+                            $('div[data-window="media-player"] .content .interface-section .navigator li:not(.title):not(.separator)').removeClass('active');
+                            $(this).addClass('active');
+                        });
+
+                        $('span.overdrive-mode-on').click(function() {
+                            apps.mediaPlayer.enableOverdriveMode();
+                        });
+
+                        $('span.overdrive-mode-off').click(function() {
+                            apps.mediaPlayer.disableOverdriveMode();
+                        });
+
+                        $('body').delegate('div[data-window="media-player"].full-screen .content .interface-section .panels-container a[data-type="file"]', 'click', function(e) {
+                            e.preventDefault();
+                            apps.mediaPlayer.play($(this).data('fs-index'));
+                        });
+                    },
+                    setEventListeners: function() {
+                        apps.mediaPlayer.audio.addEventListener('timeupdate', function() {
+                            apps.mediaPlayer.setCurrentTime();
+                        });
+                        apps.mediaPlayer.audio.addEventListener('ended', function() {
+                            apps.mediaPlayer.stop();
+                        });
+                    },
+                    enableOverdriveMode: function() {
+                        $('body').addClass('overdrive-mode-on');
+                        // setTimeout(function() {
+                            apps.mediaPlayer.rendererResize();
+                        // },500);
+                        $(document).on('keyup', apps.mediaPlayer.overdriveModeEscapeListener);
+                    },
+                    disableOverdriveMode: function() {
+                        $('body').removeClass('overdrive-mode-on');
+                        apps.mediaPlayer.rendererResize();
+                        $(document).off('keyup', apps.mediaPlayer.overdriveModeEscapeListener);
+                    },
+                    overdriveModeEscapeListener: function(e) {
+                        if (e.key === 'Escape') {
+                            apps.mediaPlayer.disableOverdriveMode();
+                        }
+                    },
+                    switchPanel: function($this) {
+                        $('div[data-window="media-player"].full-screen .content .interface-section .panels-container .panel').addClass('hide');
+                        $('div[data-window="media-player"].full-screen .content .interface-section .panels-container .' + $this.data('panel-content')).removeClass('hide');
+                        apps.mediaPlayer.filterSort.currentList = $this.data('panel-content');
+                        apps.mediaPlayer.filterSort.search();
+                        apps.mediaPlayer.setPanelTitle($this.text());
+                    },
+                    setPanelTitle: function(title) {
+                        $('div[data-window="media-player"].full-screen .content .interface-section .panels-container .panel-header .title').text(title);
+                    },
+                    toggleArtworkSize: function() {
+                        var $artwork = $(this).parent();
+                        clearTimeout(apps.mediaPlayer.transition);
+                        $artwork.addClass('transitioning');
+                        $artwork.toggleClass('large-artwork');
+                        apps.mediaPlayer.transition = setTimeout(function() {
+                            $artwork.removeClass('transitioning');
+                        },350);
+                    },
+                    setVisual: function(visual) {
+
+                        $('.visual-selector span').removeClass('active');
+                        $(this).addClass('active');
+
+                        var visual = $(this).data('visual');
+
+                        if (apps.mediaPlayer.currentRenderer == visual) {
+                            apps.mediaPlayer.renderers.butterchurn.nextPreset();
+                            return;
+                        }
+
+                        if (apps.mediaPlayer.currentRenderer !== null) {
+                            apps.mediaPlayer.renderers[apps.mediaPlayer.currentRenderer].stop();
+                        }
+
+                        apps.mediaPlayer.currentRenderer = (visual == 'artwork') ? null : visual;
+
+                        if (visual == 'artwork') {
+                            $('div[data-window="media-player"] .content .interface-section .bars').addClass('hide');
+                            $('div[data-window="media-player"] .content .interface-section .butterchurn').addClass('hide');
+                        } else if (visual == 'bars') {
+                            apps.mediaPlayer.renderers.bars.start();
+                            $('div[data-window="media-player"] .content .interface-section .bars').removeClass('hide');
+                            $('div[data-window="media-player"] .content .interface-section .butterchurn').addClass('hide');
+                        } else if (visual == 'butterchurn') {
+                            apps.mediaPlayer.renderers.butterchurn.start();
+                            $('div[data-window="media-player"] .content .interface-section .bars').addClass('hide');
+                            $('div[data-window="media-player"] .content .interface-section .butterchurn').removeClass('hide');
+                        }
+                    },
+                    initPlaybackSeekControlHandler: function() {
+                        $('#seek').slider({
+                            min: 0,
+                            max: 1000,
+                            value: 0,
+                            range: 'min',
+                            slide: function(e, ui) {
+                                e.stopPropagation();
+                                apps.mediaPlayer.seekTo(ui.value);
+                            }
+                        });
+                    },
+                    seekTo: function(percent) {
+                        if (!isNaN(this.audio.duration)) {
+                            this.audio.currentTime = (this.audio.duration/1000) * percent;
+                        }
+                    },
+                    setCurrentTime: function(time) {
+                        if (time === undefined) {
+                            time = this.audio.currentTime;
+                        }
+                        $('#seek').slider('value', (1000/this.audio.duration) * time);
+                        $('#clock .current').text(this.secondsToHumanReadableTime(time));
+                        $('#clock .duration').text(this.secondsToHumanReadableTime(this.audio.duration));
+                    },
+                    secondsToHumanReadableTime: function(seconds) {
+                        seconds = Math.floor(seconds);
+                        return (seconds - (seconds %= 60)) / 60 + (9 < seconds ? ':' : ':0') + seconds;
+                    },
+                    initVolumeControlHandler: function() {
+                        $('#volume').slider({
+                            min: 0,
+                            max: 100,
+                            value: apps.mediaPlayer.volume,
+                            range: 'min',
+                            slide: function(e, ui) {
+                                e.stopPropagation();
+                                apps.mediaPlayer.setVolume(ui.value);
+                                $('#menu-bar-volume').slider('value', ui.value);
+                            }
+                        });
+                    },
+                    setVolume: function(vol) {
+                        apps.mediaPlayer.audio.volume = (vol / 100);
+                        $('.menu-bar .task-bar .media-player-controls li span em').text(vol + '%');
+                        var $volumeIcon = $('.menu-bar .task-bar .media-player-controls li span.action .fa');
+                        $volumeIcon.removeClass('fa-volume-up fa-volume-down fa-volume-off');
+                        if (vol > 66) {
+                            $volumeIcon.addClass('fa-volume-up');
+                        } else if (vol > 0) {
+                            $volumeIcon.addClass('fa-volume-down');
+                        } else {
+                            $volumeIcon.addClass('fa-volume-off');
+                        }
+                    },
+                    play: function(trackIndex) {
+
+                        if (apps.mediaPlayer.audioContext.state == 'suspended') {
+                            apps.mediaPlayer.audioContext.resume();
+                        }
+
+                        if (trackIndex !== undefined) {
+                            var track = fs.tree[trackIndex][0];
+                            apps.mediaPlayer.audio.src = track.path;
+                            apps.mediaPlayer.currentTrack = trackIndex;
+                            apps.mediaPlayer.setArtwork(track.image, track.name);
+                            apps.mediaPlayer.setArtist(track.meta.artist);
+                            apps.mediaPlayer.setTitle(track.meta.title);
+                        }
+
+                        if (apps.mediaPlayer.audio.src !== '') {
+                            apps.mediaPlayer.audio.play();
+                            apps.mediaPlayer.status = 'playing';
+
+                            $('[data-control="play"]').removeClass('play').addClass('pause');
+                            $('[data-control="play"]').find('i.fa').removeClass('fa-play').addClass('fa-pause');
+                        }
+                    },
+                    pause: function() {
+                        apps.mediaPlayer.audio.pause();
+                        apps.mediaPlayer.status = 'paused';
+
+                        $('[data-control="play"]').removeClass('pause').addClass('play');
+                        $('[data-control="play"]').find('i.fa').removeClass('fa-pause').addClass('fa-play');
+                    },
+                    stop: function() {
+                        this.audio.pause();
+                        this.audio.currentTime = 0;
+                        apps.mediaPlayer.status = 'stopped';
+
+                        $('[data-control="play"]').removeClass('pause').addClass('play');
+                        $('[data-control="play"]').find('i.fa').removeClass('fa-pause').addClass('fa-play');
+                    },
+                    togglePlayback: function() {
+                        if (this.status == 'playing') {
+                            this.pause();
+                        } else if (this.status == 'paused') {
+                            this.play();
+                        } else if (this.status == 'stopped') {
+                            this.play(this.currentTrack);
+                        }
+                    },
+                    setArtwork: function(image, alt) {
+                        var img = $('div[data-window="media-player"] .content .interface-section aside .artwork img');
+                        img.attr('src', image);
+                        img.attr('alt', alt);
+                    },
+                    setArtist: function(artist) {
+                        console.log('setting artist', artist)
+                        $('div[data-window="media-player"] .content .interface-section aside .track-details .artist').text(artist);
+                    },
+                    setTitle: function(title) {
+                        $('div[data-window="media-player"] .content .interface-section aside .track-details .title').text(title);
+                    },
+                    filterSort: {
+                        songs: null,
+                        currentList: 'songs',
+                        init: function() {
+                            var options = {
+                                valueNames: ['title','artist','album','length','genre','year']
+                            };
+
+                            apps.mediaPlayer.filterSort.songs = new List('songs', options);
+
+                            apps.mediaPlayer.filterSort.setKeyHandlers();
+                        },
+                        setKeyHandlers: function() {
+                            $('#music-search').on('keyup', function() {
+                                apps.mediaPlayer.filterSort.search();
+                            });
+
+                            $('.reset-music-search').click(function() {
+                                apps.mediaPlayer.filterSort.reset();
+                            });
+                        },
+                        search: function() {
+                            if (apps.mediaPlayer.filterSort[apps.mediaPlayer.filterSort.currentList] !== undefined) {
+                                apps.mediaPlayer.filterSort[apps.mediaPlayer.filterSort.currentList].search($('#music-search').val());
+                            }
+                        },
+                        reset: function() {
+                            $('#music-search').val('');
+                            apps.mediaPlayer.filterSort.search();
+                        }
+                    }
+                }
+            }
+
+            var search = {
+                init: function() {
+                    this.setClickHandlers();
+                    this.setKeyHandlers();
+                },
+                setClickHandlers: function() {
+                    $('.search').click(function(e) {
+                        e.stopPropagation();
+                    });
+                },
+                setKeyHandlers: function() {
+                    $('#search').keydown(function(e) {
+                        if (e.key === 'Escape') {
+                            search.close();
+                        } else {
+                            search.find($('#search').val());
+                        }
+                    });
+                },
+                find: function(string) {
+                    $('.search').addClass('has-results');
+
+                    // fake it for now
+                    setTimeout(function() {
+                        $('.search .results ul').append('<li>Result</li>');
+                    }, 500);
+                },
+                focus: function() {
+                    $('input#search').focus();
+                },
+                open: function() {
+                    $('.search').removeClass('hide');
+                    search.focus();
+                    setTimeout(function() {
+                        $('body').on('click', search.clickCloser);
+                    }, 250);
+                },
+                close: function() {
+                    $('.search .results ul li').remove();
+                    if ($('.search').hasClass('has-results')) {
+                        $('.search').removeClass('has-results');
+                        setTimeout(function() {
+                            $('.search').addClass('hide');
+                        }, 350);
+                    } else {
+                        $('.search').addClass('hide');
+                    }
+                    $('body').off('click', search.clickCloser);
+                },
+                clickCloser: function() {
+                    search.close();
+                }
+            }
+
+            var quotes = {
+                random: function() {
+                    var quote = os.data.quotes[Math.floor(Math.random() * os.data.quotes.length)];
+                    return '<span class="quote">' + quote.quote + '</span>' + (quote.attribution !== null ? '<br>-<b>' + quote.attribution + '</b>' : '');
+                }
+            }
+
+            var steam = {
+                loadLibrary: function() {
+                    // os.data.steamGames.forEach(function(game) {
+                    //     // $('div[data-window="steam"] .content ul').append('<li><img src="' + game + '" loading="lazy"></li>');
+                    //     // $('div[data-window="steam"] .content ul').append('<li><img class="lazy" data-src="' + game.image + '" alt="' + game.name + '"></li>');
+
+                    // });
+                }
+            }
+
+            var konami = {
+                init: function() {
+                    var easterEgg = new Konami(function() {
+                        alert('Konami Code!');
+                    });
+                }
+            }
+
+            var os = {
+                data: null,
+                init: function() {
+                    this.fetchData();
+                },
+                fetchData: function() {
+                    // $.get('/api/data', function(res) {
+                    //     os.data = res.data;
+                    //     // steam.loadLibrary();
+                    // });
+                }
+            }
+
+            var resizing;
+
+            $(window).resize(function() {
+                matrix.setDimensions();
+                apps.mediaPlayer.rendererResize();
+            });
+
+            var virusav = {
+                init: function() {
+                    terminal.init();
+                    menuBar.init();
+                    fileBrowser.init();
+                    sidebar.init();
+                    state.init();
+                    windows.init();
+                    system.init();
+                    apps.init();
+                    search.init();
+                    konami.init();
+                    os.init();
+                    console.log('VirusAV initialised');
+                },
+                os: function() {
+                    return os;
+                },
+                test: function() {
+                    console.log('VirusAV loaded 1');
+                }
+            }
+
+            virusav.init();
+        </script>
+    
+
+</body></html>

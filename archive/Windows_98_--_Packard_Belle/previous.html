@@ -1,0 +1,1456 @@
+<html lang="en"><head><meta charset="utf-8"><link rel="shortcut icon" href="/static/windowsThing.jpeg"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta property="og:title" content="Packard Belle (W98 Desktop Clone)"><meta property="og:url" content="https://packard-belle.netlify.com"><meta property="og:image" content="/static/des.png"><meta property="og:description" content="A Windows 98 clone built upon a W98 component library (https://github.com/padraigfl/packard-belle"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><title>Windows 98 -- Packard Belle</title><style>@keyframes Gradient{0%{background-position:0}100%{background-position:100%}}@font-face{font-family:AMIBios;src:url(assets/ami_bios1.woff2) format("woff2")}body{height:100%;width:100%;padding:0;overflow:hidden;margin:0;background-color:#2f4f4f}#root{display:flex;align-content:center;align-items:center;background-color:#2f4f4f}#root,*,.BIOSWrapper,.WindowsLaunchWrapper,.desktop,.w98,body,html{overscroll-behavior:none}.screen,.w98.desktop{width:100vw;height:80vh}.BIOSWrapper,.WindowsLaunchWrapper,.desktop{margin-left:auto;margin-right:auto;overflow:hidden;background-color:#5f9ea0;width:100vw;height:80vh}.desktop.notMobile{width:640px;height:480px}.BIOSWrapper,.WindowsLaunchWrapper{position:absolute;overflow:hidden;height:100%;width:100%;top:0;left:0;display:flex}.BIOS,.WindowsLaunch{color:#fff;font-family:AMIBios!important;z-index:1;width:640px;height:480px;margin:auto;padding:16px}.BIOS{background-color:#000}.WindowsLaunchWrapper{background:linear-gradient(-90deg,#a6c7df,#fff,#a6c7df,#c9d9ef,#a6c7df,#fff);background-size:400% 400%;animation:Gradient 5s ease infinite;z-index:1}.WindowsLaunch{background-image:url(static/windowsLaunch.png);background-size:cover;background-repeat:no-repeat}.BIOS>div{margin-bottom:16px;visibility:hidden}.BIOS>div.visible{visibility:visible}.BIOS__logo{float:right;width:40%;height:48px;background-image:url(static/packard.png);background-repeat:no-repeat;background-position:right}@media (max-width:600px),(max-height:600px){.BIOS,.WindowsLaunch{margin-top:0;background-position:center;width:100vw;height:80vh}.WindowsLaunch{background-size:contain}.BIOS__logo{width:100%}}.visible{visibility:visible}.hidden{display:none}</style><script>function hideBios() {
+        document
+          .getElementsByClassName("BIOSWrapper")[0]
+          .classList.add("hidden");
+      }
+      function windowsLogo() {
+        hideBios();
+        const windowsLaunch = document.getElementsByClassName(
+          "WindowsLaunchWrapper"
+        )[0];
+        windowsLaunch.classList.add("visible");
+        windowsLaunch.classList.remove("hidden");
+        window.localStorage.setItem("loggedIn", "true");
+        setTimeout(() => {
+          windowsLaunch.classList.remove("visible");
+          windowsLaunch.classList.add("hidden");
+        }, 5000);
+      }
+
+      function staggerElements(elems, entry) {
+        if (!elems[entry]) {
+          document.querySelector(".BIOS").classList.add("hidden");
+          windowsLogo();
+          return;
+        }
+        elems[entry].classList.add("visible");
+
+        setTimeout(() => staggerElements(elems, entry + 1), 1000);
+      }
+
+      function loadScreen() {
+        var biosElem = document.querySelector(".BIOS");
+        biosElem.classList.remove("initial");
+        if (window.localStorage.getItem("loggedIn")) {
+          hideBios();
+          return;
+        }
+        biosElem.classList.add("visible");
+
+        staggerElements(biosElem.getElementsByTagName("div"), 0);
+      }
+
+      setTimeout(loadScreen, 1500);</script><link href="/static/css/main.c9e38b4b.chunk.css" rel="stylesheet"><style type="text/css">/* stylelint-disable selector-pseudo-class-no-unknown */
+@font-face {
+  font-family: MSSansSerif;
+  src: url("data:application/octet-stream;base64,d09GMgABAAAAAAvUAAoAAAAAKxQAAAuFAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAhDQKuwCnNQuDDAABNgIkA4MIBCAFjSIHIBsMH6OinJKFyf76wDZgWqP9hojhba1xFDJiCIsynAoZ3uE+Q+dZlEV2NfTrthH/3Bn/WOaCIXhohCSz8PA/7r3vfWiCmpSNSCQkof4lMO8sMSQAaVn+v7U2SMKj2E/47pwL5sM7Ims2O8fOnGirlErIUBolAKF0XtJOvOgjfah6W28l3C/er9gfo5AswnEMhV7IJWyBCXQ32YZ3gDbBGt6BJcebPWB7qoOx/znGwZs5I89aKZFTK+rYtBwV3YOeT17ASnGdeGJP7BcqoTt1scQayv2vpSVVr872XZaMnNG1A4z8qM0MqAna/37PH03/mUuzSaNN8WQ5xmlpr0qSc8bOMEWUA4BGBiQR5DI1YiYU2qy6qpOTh1q8T5tM7W3+0jX8KV0kNeAYI4SsOGL8WGl/zK+BVPuLCVQotWiBv3PC2bYUSRAoDZVeKwD+1wky/tcXVAO3s2z/6wAyG5YGAaBdNe1AeECABBSAjTkECB/mhQUIC2vmgFhl70amtwE7/8BDWZVqcuvgYbgH9+7cTndphMv/jlyI0r+UPvw/WsuD4x5Xzavq72NM5eTsRnLRwFmNhtCM1honpXXFznpiCGgfXByOqgu1ZQ04n6oGrIGTdf0XoadyjopKFScDlQxVinXAq9vVIFW1QNGooXzsODX78+Zo1cDILsSPytyqV9XLduOB9ochxE/HATs+Lr1W4g3ZJXXjgscqDnz0Kj0OBtxDr+v4bsC7Ly7ZofD0Ba5DdNCCXPfImrRbtKZ+51/w/pd7RBdZDSHPjGIPT4ziBrf/2EB0nGiheWLI8EM6liWYm6wy2ZwwTPzAjYhS0URXECJll1kqfoi0QRUmh4VLPSVM+DeYE3r4CxfN9l94kBMBs39yAX5iryEpmG3I/pExsfhuN+h0Um4VeNNNSxr2W/a+PTywZDNqhVpYklw3ilo1G0ICJJKabTZ7gCEuDqb9S9BCy6aFZB8WiOJJnBniJqRsXTJDePg0CEq9E+HQVO7vCJexQV9qOLD4IURi9kL1idZIZQ1xv6A/wUBR8q/PgbuQ8lXlLb3+hRIN/Q/jZ7cbywXZc8uUN8a+oko2DbfuvnXZ/p002AhA1P4hZZID0pRIXCJZ9TOZ7FYp3xhyjJQe8gqq9B8CzUD5+/ZAWBzcpbLAnmV1/5vhlDJMOzx0VLHvPYWyo0FVOxwWFsDZqmLAIBVGwEwEZBktifEqKHDYkJ2Hsw60fBq6SRKDBANQRPloyg3Uv5DGYohSkS0jaki4hG6SPoYFVK8RJfY4NJBvRvcYObFhId9EmTIqBLtowutTBAeyiMGLZIg2BMvmO2R5M39IIGThRkEoKxQd5ynHRKmSgy/oVl4rDTMZu2fKbaswzzKmVDN5cMga6UzzQFjm2SByG3Gw5FMd4ZK7ZktlgWdRPgtnoJiQclFMBZJjLW28yZwbiDqYV1EEIXFjMjqEN5CCiQQyLIQC1+QbySdM07RrKpM3fUQKespwAjGke9/VmaC+zthsidLRLw9iV6KuZpazvZj+zOcfqf7xcuP2TheWTYszi8WzxcbC/+DG9Y3/jcZvvv7n0pMT2oOxSdoDCRgm7Tzw2aS1BFELikVcfr3uYpgkgKKqqCQjM43LAoiiuDEW1cYE2j89UP8QzCsXNlDM5VofT7PGBlkjL6ZOiMOJAdlZYz0p3NUVi0zNncA01C1iriAGb3r2WKeoyb6F056S7FtLw7TBgvYsBL1g7xhgdUf/aaEZkTBRdo4wNeR8UddcjovLKyswUtaWsaOVZzFZQHSn0M5t9kd+xYN9RsoeCDW3RsXgp4j9blf6cuVFAG3VEAVaIc2hhOxztt+CqvO3dG0sqrsxOgoq0ploLST2X9S2Yj76emgmLitjLkcGNXBEFWAG0HK0v95EmFFAQ4MsOt5JLqvOuMR1JSx2J1B0bTzIfx8ryrHxKvGXtoPEWR57t7KRXC1MjtLup3hvgq1WG6n1I5b3GJJhyso2pnGsp7YN5r0epysjMiuKtTFXEN/2KR3xxzPO/nF6j/BIZvWDA4cz4lhUluhIpuqrI3UlbjXtwWaO+nSgJKcEFjn4A9tlmscAuIsNNFOKov9MhYm7fRDUbiLF0fZyzd73XE8sa1s1BnF0BROa8dIb0PnVtW1IQZJLqW0tpC0hcVVB0cZJYUG7HvCK7VLiYai0kuR4trseu7A/iHqRoGTWaf8u22mJFjJiF6ppexmuRoEKxLOtGXk0HhFfQEPuC+Ahbbbfxz3ahayZUV936LbE+MCVnh6ai01O87TXr8atFhkfL7aI0YKov7TuKiTtt/sTkoRALLkFBFohDi0X/rI7onXHu4Dh6A0HRxIoDa1la5dFjrsyEcc3gdjkNRXGnsSXx/7dHq3r3Py87ZG4Oo0dNqoly4k3UbXRlcP+ZYOt4+tKhjJ3s79M05xk3gZUyoRN7FQZEqmj3ZPoP2OtlsxAcyASPuOB7e+byzuVrH3fOV/30e/cHnmElkyJz1qqVOVETLkhEWaqtlTtu7d8nk5ujU5j8Mm0mF9hx61HhpzWgaicxSgpi308rnS5uEB7QJezgmOugnpXaZcxiWb07u0S7zATi/sAyaqQBlnGXjeO263tz05ldG34TgMDtrkWxFh32xwAiIru4aPHCB2msOKtEIfYNlNfDHtJZFZ5sbzTmJvMAi93J+cycJrdwLyd1aQf87o/8vvaGCN+vuv3tcsx12pYxOAiv9336BQmqI6bTEyePCIk78B5FSWMgdchjMJkk+IFuiScP1hE7HL5PQkeKzy8sKRdLobUaek4AsLu7QnvjuN2gQdSUrtbtpWrqq3qg6pP0jBhuF+k+3du3f7apEmwi0cB93mpNA3TbcRI3r/bWfEgPZ2o+64Uml1d5SjM8NZBr723COcTyYdK4c2wuu9+mfYpzLcy25yk76txr1oWEHD00dXzz/j7dbBAK8OAFuncGG7MgyzfYElgKVRweXL1ljEhHw12rkWQPmyB1HPOtjFlmclV++tSFHdosW/eSBjRE+b/EIAU2LDYG5PYYxP6uOrc8uVxlivLQsTQsXuYBdiEE3kQnIHpGlLwYR3Z1j/wAiVUoKQqSu5fUq1kFQDJ5ZxH+lJnrNyDFZhiZSUa3K0CB/tWia2KVWEgx6oxpdxqiONbLXY+rQ4FG1ZPkC9rQqJfa0pAAq0ZYcnaa+0oPYmYfYJYQrFNqZvxyYqyAqecWYmZeLIKIopVEtQIq8KuxVaNU5ushq4OWS0hI60OtSLM6smdGGtC9wxYUzJXbc0o3fy91l52+WUEOHzKr+gUAet839OH3xMgasiBmJFr/U4KfDf8KxMRdXQBZeFJBjWjl6rU4nJsRKpK5QbK/808f30K33m6eEGuoRTPje3ylaaVS6pd7f3HXjnlp7z37NkB63y3P/kDf3hoCe4OLOj4MVrK+H92/btwPJlLZVMZTLm051NeVBu96Kv8rGR+VoKv7yeL2sj0uqn+mvc6Rnv73ptjbSBxFSflGL4INqu59v9Jwc/F+G0OzbYziDh4LBBAB9BT+6CZRr3H6norbb/Vy2XUxLQNRFw2hwACTAdIiInLukcAQhXid2q6/ju0vDDZOgKqyAUmJBBCpEMngOdmrcMgqLZUi3ODXxXEyWL6OGlfqTcKguEtFViaKoOUhm77AINsXyCuc/FWh50CXBc5eCekEjh+mSoALlGaKw5BaCvAMMu/nyNIZLqEoTDDD/C2GbjJ7SDQo1qams7u+IAgVxOc3hTvogUEvSuEVMKhnPi792BxSTkpWXH2DIziJOH9ON5pipjstLtMIK+EImPk2nWCOAAhgVLgWVVPVCfB1fhdiAzTAw/qi6aMccuGF0aHRU0aM5oB2gQD0pnDLvCpJv13Ax86VDqfNVxLhtdWmzM+gHzGw1IwQw2SU+1vmAz1NGH8j9K1pNne1JWVzQGAMLLFJQAAAA==");
+  font-weight: normal; }
+
+@font-face {
+  font-family: MSSansSerif;
+  src: url("data:application/octet-stream;base64,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");
+  font-weight: bold; }
+
+html {
+  font-size: 11px; }
+  html button {
+    font-size: 11px; }
+  html menu {
+    padding: 0px;
+    margin: 0px; }
+  html body {
+    font-family: MSSansSerif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 200px;
+    margin: 0px; }
+  html .disabled {
+    color: #808088; }
+
+.w98 {
+  font-family: MSSansSerif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  position: relative;
+  transform: scale(1);
+  /* stylelint-disable selector-max-specificity */ }
+  .w98 *, .w98 {
+    font-family: MSSansSerif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    cursor: url("data:image/gif;base64,R0lGODlhCwATAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAALABMAAAIrhI4JlhrcBAgvSlrbxPBs7mAU9IlMaV7mwo6jY2zk+Xphh8iWint1tDgUAAA7"), default;
+    /* core resizers */
+    /* stylelint-disable */
+    /* stylelint-enable */ }
+    .w98 * .default, .w98 .default {
+      cursor: url("data:image/gif;base64,R0lGODlhCwATAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAALABMAAAIrhI4JlhrcBAgvSlrbxPBs7mAU9IlMaV7mwo6jY2zk+Xphh8iWint1tDgUAAA7"), default; }
+    .w98 * .ns-resize, .w98 .ns-resize {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAARAgMAAAByem51AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTP///wAAAObOYyIAAAABdFJOUwBA5thmAAAAL0lEQVQI12NgcGBgYJzAwMC2hIFBaiUDQ9YqB4bQqQ5gMXQMEgfJg9SB1IPEgPoBo1IMTmZmZtEAAAAASUVORK5CYII="), ns-resize !important; }
+    .w98 * .ew-resize, .w98 .ew-resize {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJAgMAAACphi+fAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTP///wAAAObOYyIAAAABdFJOUwBA5thmAAAALklEQVQI12NgCGB0YGBgnMA4gYGBbQLjEgYGqamhKxkYslatWuUAZUPEIWrA6gFBVwvfT0IY5wAAAABJRU5ErkJggg=="), ew-resize !important; }
+    .w98 * .nesw-resize, .w98 .nesw-resize {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTP///wAAAObOYyIAAAABdFJOUwBA5thmAAAANklEQVQI12NgYA11YGBgWwUkGEEEQxaINQsk5ubAECDJ6MCQkgIUzpwAlWPIArOWAInQEAYGAEgkCk3UfIArAAAAAElFTkSuQmCC"), nesw-resize !important; }
+    .w98 * .nwse-resize, .w98 .nwse-resize {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTP///wAAAObOYyIAAAABdFJOUwBA5thmAAAAM0lEQVQI12MIDWFgYMhaAiImgAgHIJEJYqWkAIkASUagAJsbkGCc5QCVZ1wFEgMRrKEOAFiMCk2T07A5AAAAAElFTkSuQmCC"), nwse-resize !important; }
+    .w98 * .wait,
+    .w98 * .wait *, .w98 .wait,
+    .w98 .wait * {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAACVBMVEVHcEz///8AAADmzmMiAAAAAXRSTlMAQObYZgAAAFBJREFUGNNjYCATcK1atQLCCA3NQBVhCg1NQGNEzoQywlKhjKlTF0AMWhrWAGFozoIZnYHO0IyCMpZOa4BqD10AtWIquslwu9LSEgg5lSAAAOlfHH2vJ/pDAAAAAElFTkSuQmCC"), wait !important; }
+    .w98 * .wait2,
+    .w98 * .wait2 *, .w98 .wait2,
+    .w98 .wait2 * {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAMAAACjpw26AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTP///wAAAObOYyIAAAABdFJOUwBA5thmAAAAX0lEQVQY022RUQ4AIAhCjfsfuoaS2OKrvVGgBeIrwM9SYMHwooibD7fzctcJfyzOq4aLAwtMFG5OerH5OyVbTXdXz3nybRspPWySscJQQbluQfh0mDtxbhuc+HGP3zjaO/4BfC812vkAAAAASUVORK5CYII="), wait !important; }
+    .w98 * .text,
+    .w98 * input[type="text"],
+    .w98 * textarea,
+    .w98 * .text *, .w98 .text,
+    .w98 input[type="text"],
+    .w98 textarea,
+    .w98 .text * {
+      cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAASAgMAAAD07hzbAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTP///wAAAObOYyIAAAABdFJOUwBA5thmAAAAIElEQVQI12MIFXVgyNJyYAid6sDAOIGBJBw6FapX1AEAtPsMHfNC+MIAAAAASUVORK5CYII="), text !important; }
+    .w98 * .none, .w98 .none {
+      cursor: none; }
+    .w98 * .help, .w98 .help {
+      cursor: url(./cursors/Hand-min.png), help; }
+    .w98 * .pointer, .w98 .pointer {
+      cursor: url(./cursors/HandPointer-min.png), pointer; }
+    .w98 * .crosshair, .w98 .crosshair {
+      cursor: url(./cursors/Crosshair-min.png), crosshair; }
+    .w98 * .vertical-text, .w98 .vertical-text {
+      cursor: url(./cursors/VText-min.png), vertical-text; }
+    .w98 * .copy, .w98 .copy {
+      cursor: url(./cursors/Copy-min.png), copy; }
+    .w98 * .move, .w98 .move {
+      cursor: url(./cursors/Move-min.png), move; }
+    .w98 * .no-drop, .w98 .no-drop {
+      cursor: url(./cursors/NO-min.png), no-drop; }
+    .w98 * .not-allowed, .w98 .not-allowed {
+      cursor: url(./cursors/NO-min.png), not-allowed; }
+    .w98 * .grab, .w98 .grab {
+      cursor: url(./cursors/Hand-min.png), grab; }
+    .w98 * .grabbing, .w98 .grabbing {
+      cursor: url(./cursors/Handsqueezed-min.png), grabbing; }
+    .w98 * .col-resize, .w98 .col-resize {
+      cursor: url(./cursors/ColRezise-min.png), col-resize; }
+    .w98 * .row-resize, .w98 .row-resize {
+      cursor: url(./cursors/RowResize-min.png), row-resize; }
+    .w98 * .n-resize, .w98 .n-resize {
+      cursor: url(./cursors/UpArrow-min.png), n-resize; }
+    .w98 * .e-resize, .w98 .e-resize {
+      cursor: url(./cursors/LeftArrow-min.png), e-resize; }
+    .w98 * .s-resize, .w98 .s-resize {
+      cursor: url(./cursors/DownArrow-min.png), s-resize; }
+    .w98 * .w-resize, .w98 .w-resize {
+      cursor: url(./cursors/RightArrow-min.png), w-resize; }
+    .w98 * .ne-resize, .w98 .ne-resize {
+      cursor: url(./cursors/UpRightArrow-min.png), ne-resize; }
+    .w98 * .nw-resize, .w98 .nw-resize {
+      cursor: url(./cursors/UpLeftArrow-min.png), nw-resize; }
+    .w98 * .se-resize, .w98 .se-resize {
+      cursor: url(./cursors/DownRightArrow-min.png), se-resize; }
+    .w98 * .sw-resize, .w98 .sw-resize {
+      cursor: url(./cursors/DownLeftArrow-min.png), sw-resize; }
+    .w98 * .zoom-in, .w98 .zoom-in {
+      cursor: url(./cursors/ZoomIn-min.png), zoom-in; }
+    .w98 * .zoom-out, .w98 .zoom-out {
+      cursor: url(./cursors/ZoomOut-min.png), zoom-out; }
+  .w98.x2 {
+    transform: scale(2); }
+    .w98.x2 *, .w98.x2 {
+      cursor: url("data:image/gif;base64,R0lGODlhFgAmAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAWACYAAAJzBISpu8b/jINUHgpNCBMrzV1eAm6dV4YjkppiBWyyisazfDIt/ur2zcv8gDQf8ZYT7IDJJfHkZL6izwtVyhpKLVwtssudpZJZ8ZCstE3GvbSrHGxIPue2hW72CfOkNvy9wrbiFjcoGFhnmIjIp4iGcZdQAAA7"), default; }
+  .w98 ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    background-image: url("data:image/gif;base64,R0lGODlhAgACAJEAAAAAAP///8zMzP///yH5BAEAAAMALAAAAAACAAIAAAID1CYFADs="); }
+    .w98 ::-webkit-scrollbar-track {
+      position: relative; }
+    .w98 ::-webkit-scrollbar-thumb {
+      background: #bbc3c4;
+      box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px 0px #ffffff;
+      border: 1px solid #0c0c0c;
+      border-top: 1px solid #bbc3c4;
+      border-left: 1px solid #bbc3c4; }
+    .w98 ::-webkit-scrollbar-button {
+      background: #bbc3c4;
+      box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px 0px #ffffff;
+      border: 1px solid #0c0c0c;
+      border-top: 1px solid #bbc3c4;
+      border-left: 1px solid #bbc3c4; }
+      .w98 ::-webkit-scrollbar-button:start:decrement, .w98 ::-webkit-scrollbar-button:end:increment {
+        height: 16px;
+        width: 16px;
+        display: block;
+        background-repeat: no-repeat;
+        background-color: #bbc3c4; }
+        .w98 ::-webkit-scrollbar-button:start:decrement:active, .w98 ::-webkit-scrollbar-button:end:increment:active {
+          border: 1px solid #808088;
+          box-shadow: none;
+          background-color: #bbc3c4; }
+      .w98 ::-webkit-scrollbar-button:horizontal:decrement {
+        background-image: url("data:image/gif;base64,R0lGODlhBAAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAEAAcAAAIIlHEIy7ppBCgAOw==");
+        background-position: 4px 3px; }
+        .w98 ::-webkit-scrollbar-button:horizontal:decrement:active {
+          background-position: 5px 4px; }
+      .w98 ::-webkit-scrollbar-button:horizontal:increment {
+        background-image: url("data:image/gif;base64,R0lGODlhBAAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAEAAcAAAIIhA4maeyrlCgAOw==");
+        background-position: 5px 3px; }
+        .w98 ::-webkit-scrollbar-button:horizontal:increment:active {
+          background-position: 6px 4px; }
+      .w98 ::-webkit-scrollbar-button:vertical:decrement {
+        background-image: url("data:image/gif;base64,R0lGODlhBwAEAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAHAAQAAAIHlGEJq8sOCwA7");
+        background-position: 3px 5px; }
+        .w98 ::-webkit-scrollbar-button:vertical:decrement:active {
+          background-position: 4px 6px; }
+      .w98 ::-webkit-scrollbar-button:vertical:increment {
+        background-image: url("data:image/gif;base64,R0lGODlhBwAEAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAHAAQAAAIIhA+CKWoNmSgAOw==");
+        background-position: 3px 5px; }
+        .w98 ::-webkit-scrollbar-button:vertical:increment:active {
+          background-position: 4px 6px; }
+    .w98 ::-webkit-scrollbar-corner {
+      /*
+      background-image: url(resources/corner.png);
+      background-repeat: no-repeat;
+      */
+      background-color: #bbc3c4; }
+  .w98 ::selection {
+    color: #ffffff;
+    background-color: #0000a2; }
+</style><style type="text/css">.btn {
+  border: 0px solid transparent;
+  background-color: #bbc3c4;
+  position: relative;
+  user-select: none; }
+  .btn:disabled, .btn.disabled {
+    pointer-events: none; }
+  .btn:active, .btn:focus, .btn:active:focus, .btn.active, .btn.clicked {
+    outline: none;
+    color: inherit; }
+  .btn:before {
+    position: absolute;
+    display: block;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px); }
+</style><style type="text/css">.btn.ButtonForm {
+  min-width: 48px;
+  outline-width: 1px;
+  outline-offset: -5px;
+  padding: 5px 4px;
+  box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #ffffff, inset -2px -2px 0px #808088, inset 2px 2px 0px #bbc3c4; }
+  .btn.ButtonForm:focus {
+    outline: #0c0c0c;
+    outline-style: dotted;
+    outline-width: 1px;
+    box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #0c0c0c, inset -2px -2px 0px #0c0c0c, inset 2px 2px 0px #ffffff; }
+  .btn.ButtonForm:active:focus, .btn.ButtonForm:active, .btn.ButtonForm.active, .btn.ButtonForm.clicked {
+    padding: 6px 3px 4px 5px;
+    box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #0c0c0c, inset -2px -2px 0px #808088, inset 2px 2px 0px #808088; }
+</style><style type="text/css">.btn.ButtonNav {
+  padding: 0px;
+  min-width: initial;
+  width: 16px;
+  height: 14px;
+  margin-left: 1px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  image-rendering: pixelated;
+  box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #ffffff, inset -2px -2px 0px #808088, inset 2px 2px 0px #bbc3c4; }
+  .btn.ButtonNav img {
+    height: 14px;
+    width: 14px; }
+  .btn.ButtonNav:focus {
+    outline: none;
+    border: none; }
+  .btn.ButtonNav:active:focus, .btn.ButtonNav.clicked {
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 8px;
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px #808088; }
+  .btn.ButtonNav.window__close, .btn.ButtonNav.Window__close {
+    margin-left: 2px; }
+</style><style type="text/css">.btn.ButtonProgram {
+  flex: 1;
+  margin: 0px 1px;
+  height: 22px;
+  max-width: 140px;
+  min-width: 40px;
+  display: inline-block;
+  width: 100%;
+  padding-top: 1px;
+  padding-left: 24px;
+  padding-right: 3px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+  box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #ffffff, inset -2px -2px 0px #808088, inset 2px 2px 0px #bbc3c4; }
+  .btn.ButtonProgram:active:focus, .btn.ButtonProgram.btn--active, .btn.ButtonProgram.clicked {
+    background-position: 5px 3px;
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px #808088;
+    padding-top: 3px;
+    padding-left: 23px;
+    padding-right: 2px; }
+    .btn.ButtonProgram:active:focus:before, .btn.ButtonProgram.btn--active:before, .btn.ButtonProgram.clicked:before {
+      content: "";
+      background-size: 2px;
+      z-index: -1;
+      box-shadow: none; }
+  .btn.ButtonProgram.btn--active {
+    background-color: transparent;
+    font-weight: bold; }
+    .btn.ButtonProgram.btn--active:before {
+      content: "";
+      background-color: #ffffff;
+      background-image: url("data:image/gif;base64,R0lGODlhAgACAJEAAAAAAP///8zMzP///yH5BAEAAAMALAAAAAACAAIAAAID1CYFADs="); }
+</style><style type="text/css">.btn.StartButton {
+  height: 22px;
+  display: flex;
+  align-content: center;
+  width: 54px;
+  padding-right: 6px;
+  background-image: url("data:image/gif;base64,R0lGODlhNAATAPIFAAAAAAAA/wD/AP//AP8AAAAAAAAAAAAAACH5BAUAAAUALAAAAAA0ABMAAAOMWLrc/jDKSau9OF/Agf5RJ3ogRi4dwQkdI5aPJ6cqILAnp+j7KfGxEaF2AwJdvlBSQWhwaivjstCiVltVRnMLHR1fqKWOd2wMh50AZ5BFhsNYUlkRcAICasCAPZX2/mRTdYN5eGt8b1aJgYqND3iGdyKIcEmBcYkudl5zMBAyVm1tnhMjn6SoqaqrDwkAOw==");
+  background-size: auto 18px;
+  background-repeat: no-repeat;
+  background-position: 2px 1px;
+  box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #ffffff, inset -2px -2px 0px #808088, inset 2px 2px 0px #bbc3c4; }
+  .btn.StartButton__text {
+    font-size: 1rem;
+    font-weight: bold; }
+  .btn.StartButton.active, .btn.StartButton.clicked {
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c, inset 0px 1px 0px #0c0c0c, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px #808088, 0px -1px 0px #0c0c0c;
+    background-position: 3px 2px;
+    outline: 1px dotted #0c0c0c;
+    outline-offset: -4px; }
+</style><style type="text/css">.ButtonIconLarge {
+  padding: 2px;
+  width: 48px;
+  min-width: 48px;
+  height: 38px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center; }
+  .ButtonIconLarge__text {
+    margin-top: auto; }
+  .ButtonIconLarge .ButtonIconLarge__icon {
+    flex-grow: 1;
+    width: 20px;
+    height: 20px;
+    margin: 1px auto; }
+  .ButtonIconLarge img {
+    max-width: 20px;
+    max-height: 20px;
+    display: block;
+    filter: grayscale(1);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto; }
+  .ButtonIconLarge:disabled, .ButtonIconLarge.disabled {
+    color: #808088; }
+    .ButtonIconLarge:disabled:hover, .ButtonIconLarge.disabled:hover {
+      box-shadow: none; }
+      .ButtonIconLarge:disabled:hover img, .ButtonIconLarge.disabled:hover img {
+        filter: grayscale(1); }
+  .ButtonIconLarge:hover {
+    box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #ffffff; }
+    .ButtonIconLarge:hover img {
+      filter: grayscale(0); }
+  .ButtonIconLarge:active:focus {
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c;
+    padding: 3px 1px 1px 3px; }
+  .ButtonIconLarge__icon {
+    flex-grow: 1;
+    width: 20px;
+    height: 20px;
+    margin: 1px auto 0px;
+    align-content: center; }
+</style><style type="text/css">.btn.ButtonIconSmall {
+  height: 22px;
+  width: 22px;
+  padding: 0px; }
+  .btn.ButtonIconSmall img {
+    margin: 3px;
+    max-height: 16px;
+    max-width: 16px; }
+  .btn.ButtonIconSmall:hover, .btn.ButtonIconSmall--hasBorder {
+    box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px #ffffff; }
+  .btn.ButtonIconSmall:hover:focus:active, .btn.ButtonIconSmall:hover:active, .btn.ButtonIconSmall.active, .btn.ButtonIconSmall.clicked {
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #808088; }
+    .btn.ButtonIconSmall:hover:focus:active img, .btn.ButtonIconSmall:hover:active img, .btn.ButtonIconSmall.active img, .btn.ButtonIconSmall.clicked img {
+      margin: 4px 2px 2px 4px; }
+  .btn.ButtonIconSmall.btn--disabled img {
+    filter: grayscale(1); }
+</style><style type="text/css">.Frame {
+  position: relative;
+  background-color: #bbc3c4;
+  padding: 3px;
+  box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #bbc3c4, inset -2px -2px 0px #808088, inset 2px 2px 0px #ffffff;
+  display: inline-block; }
+</style><style type="text/css">.StandardMenu {
+  display: inline-flex;
+  flex-direction: column;
+  word-wrap: none;
+  white-space: nowrap;
+  text-overflow: clip; }
+  .StandardMenu > div {
+    position: relative; }
+    .StandardMenu > div > button {
+      user-select: none;
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0px 20px 0px 28px;
+      text-align: left;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: 3px center;
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      outline: none;
+      height: 20px; }
+      .StandardMenu > div > button:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 16px;
+        width: 16px;
+        background-repeat: no-repeat;
+        background-position: center; }
+      .StandardMenu > div > button .StandardMenu__item__text {
+        padding: 0px 20px 0px 0px; }
+      .StandardMenu > div > button:disabled, .StandardMenu > div > button.disabled {
+        color: #808088; }
+      .StandardMenu > div > button:not(:only-child):after {
+        content: "";
+        position: absolute;
+        background-image: url("data:image/gif;base64,R0lGODlhBAAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAEAAcAAAIIhA4maeyrlCgAOw==");
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: calc(100% - 8px);
+        background-position: right center;
+        background-repeat: no-repeat; }
+    .StandardMenu > div.radio-selected > button:before {
+      background-image: url("data:image/gif;base64,R0lGODlhBgAGAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAGAAYAAAIIFA6Gy816RAEAOw=="); }
+    .StandardMenu > div.checked > button:before {
+      background-image: url("data:image/gif;base64,R0lGODlhBwAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAHAAcAAAIMlA9nwMj9xGuLIlUAADs="); }
+    .StandardMenu > div.checked.disabled > button:before {
+      background-image: url("data:image/gif;base64,R0lGODlhBwAHAJEAAAAAAP///5mZmf///yH5BAEAAAMALAAAAAAHAAcAAAIMnC9nwsj9xmuLIlUAADs="); }
+    .StandardMenu > div.active, .StandardMenu > div.clicked {
+      color: #ffffff; }
+      .StandardMenu > div.active > button:not(.disabled), .StandardMenu > div.clicked > button:not(.disabled) {
+        color: #ffffff;
+        background-color: #0000a2; }
+        .StandardMenu > div.active > button:not(.disabled):not(:only-child):after, .StandardMenu > div.clicked > button:not(.disabled):not(:only-child):after {
+          background-image: url("data:image/gif;base64,R0lGODlhBAAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAEAAcAAAIIjB4maeyrlCgAOw=="); }
+    .StandardMenu > div > .window,
+    .StandardMenu > div > .Frame {
+      position: absolute;
+      visibility: hidden;
+      width: auto; }
+      @media (min-height: 720px) and (min-width: 960px) {
+        .StandardMenu > div > .window,
+        .StandardMenu > div > .Frame {
+          transition: max-width cubic-bezier(0.38, 0.01, 0, 1) 200ms, max-height cubic-bezier(0.38, 0.01, 0, 1) 200ms; } }
+    .StandardMenu > div.active > .window,
+    .StandardMenu > div.active > .Frame {
+      width: auto;
+      visibility: visible; }
+    .StandardMenu > div > .window,
+    .StandardMenu > div > .Frame {
+      left: calc(100% - 3px);
+      top: -3px;
+      max-width: 0%; }
+    .StandardMenu > div:hover > .window,
+    .StandardMenu > div:hover > .Frame, .StandardMenu > div.active > .window,
+    .StandardMenu > div.active > .Frame {
+      max-width: 400%; }
+  .StandardMenu > div:empty:not(:only-child) {
+    position: relative;
+    width: 95%;
+    margin: 2px auto;
+    border-top: 1px solid #808088;
+    border-bottom: 1px solid #ffffff;
+    display: none; }
+  .StandardMenu > div:not(:empty) + div:empty:not(:last-child):not(:first-child) {
+    display: block; }
+  .StandardMenu.css div__sub-menu--top > .window,
+  .StandardMenu.css div__sub-menu--top > .Frame {
+    position: absolute;
+    visibility: hidden;
+    width: auto; }
+    @media (min-height: 720px) and (min-width: 960px) {
+      .StandardMenu.css div__sub-menu--top > .window,
+      .StandardMenu.css div__sub-menu--top > .Frame {
+        transition: max-width cubic-bezier(0.38, 0.01, 0, 1) 200ms, max-height cubic-bezier(0.38, 0.01, 0, 1) 200ms; } }
+  .StandardMenu.css div__sub-menu--top.active > .window,
+  .StandardMenu.css div__sub-menu--top.active > .Frame {
+    width: auto;
+    visibility: visible; }
+  .StandardMenu.css div__sub-menu--top > .window,
+  .StandardMenu.css div__sub-menu--top > .Frame {
+    bottom: calc(100% + $windowPadding);
+    left: 0px;
+    height: 0px;
+    max-height: 0%;
+    max-width: 100%; }
+  .StandardMenu.css div__sub-menu--top:hover > .window,
+  .StandardMenu.css div__sub-menu--top:hover > .Frame, .StandardMenu.css div__sub-menu--top.active > .window,
+  .StandardMenu.css div__sub-menu--top.active > .Frame {
+    height: initial;
+    max-height: 100%; }
+  .StandardMenu.css div__sub-menu--bottom > .window,
+  .StandardMenu.css div__sub-menu--bottom > .Frame {
+    position: absolute;
+    visibility: hidden;
+    width: auto; }
+    @media (min-height: 720px) and (min-width: 960px) {
+      .StandardMenu.css div__sub-menu--bottom > .window,
+      .StandardMenu.css div__sub-menu--bottom > .Frame {
+        transition: max-width cubic-bezier(0.38, 0.01, 0, 1) 200ms, max-height cubic-bezier(0.38, 0.01, 0, 1) 200ms; } }
+  .StandardMenu.css div__sub-menu--bottom.active > .window,
+  .StandardMenu.css div__sub-menu--bottom.active > .Frame {
+    width: auto;
+    visibility: visible; }
+  .StandardMenu.css div__sub-menu--bottom > .window,
+  .StandardMenu.css div__sub-menu--bottom > .Frame {
+    top: calc(100% + $windowPadding);
+    left: 0px;
+    max-height: 0%;
+    max-width: 100%; }
+  .StandardMenu.css div__sub-menu--bottom:hover > .window,
+  .StandardMenu.css div__sub-menu--bottom:hover > .Frame, .StandardMenu.css div__sub-menu--bottom.active > .window,
+  .StandardMenu.css div__sub-menu--bottom.active > .Frame {
+    height: initial;
+    max-height: 100%; }
+  .StandardMenu.css div__sub-menu--left > .window,
+  .StandardMenu.css div__sub-menu--left > .Frame {
+    position: absolute;
+    visibility: hidden;
+    width: auto; }
+    @media (min-height: 720px) and (min-width: 960px) {
+      .StandardMenu.css div__sub-menu--left > .window,
+      .StandardMenu.css div__sub-menu--left > .Frame {
+        transition: max-width cubic-bezier(0.38, 0.01, 0, 1) 200ms, max-height cubic-bezier(0.38, 0.01, 0, 1) 200ms; } }
+  .StandardMenu.css div__sub-menu--left.active > .window,
+  .StandardMenu.css div__sub-menu--left.active > .Frame {
+    width: auto;
+    visibility: visible; }
+  .StandardMenu.css div__sub-menu--left > .window,
+  .StandardMenu.css div__sub-menu--left > .Frame {
+    left: -100%;
+    top: -3px;
+    max-width: 0%; }
+  .StandardMenu.css div__sub-menu--left:hover > .window,
+  .StandardMenu.css div__sub-menu--left:hover > .Frame, .StandardMenu.css div__sub-menu--left.active > .window,
+  .StandardMenu.css div__sub-menu--left.active > .Frame {
+    max-width: 100%; }
+  .StandardMenu.css div:active,
+  .StandardMenu.css div .active {
+    display: none; }
+  .StandardMenu.css div:hover > .window,
+  .StandardMenu.css div:hover > .Frame {
+    width: auto;
+    visibility: visible;
+    display: block; }
+  .StandardMenu.css div:hover > button {
+    background-color: #0000a2;
+    color: #ffffff; }
+    .StandardMenu.css div:hover > button:after {
+      background-image: url("data:image/gif;base64,R0lGODlhBAAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAEAAcAAAIIjB4maeyrlCgAOw=="); }
+  .StandardMenu.css div:hover.checked > *:before {
+    background-image: url("data:image/gif;base64,R0lGODlhBwAHAJEAAAAAAP///5mZmf///yH5BAEAAAMALAAAAAAHAAcAAAIMnC9nwsj9xmuLIlUAADs="); }
+
+.StandardMenuItem--empty .StandardMenuItem__button {
+  text-shadow: 1px 1px #ffffff;
+  text-align: center; }
+</style><style type="text/css">.icon.ExplorerIcon {
+  position: relative;
+  display: block;
+  outline: none;
+  background: none;
+  border: none;
+  color: initial;
+  text-decoration: none;
+  padding: 1px 7px 2px;
+  padding: initial;
+  margin: 3px;
+  width: 52px;
+  height: 58px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .icon.ExplorerIcon .icon__icon {
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .icon.ExplorerIcon:focus, .icon.ExplorerIcon:active, .icon.ExplorerIcon:active:focus, .icon.ExplorerIcon.is-active {
+    outline: none; }
+    .icon.ExplorerIcon:focus .icon__icon, .icon.ExplorerIcon:active .icon__icon, .icon.ExplorerIcon:active:focus .icon__icon, .icon.ExplorerIcon.is-active .icon__icon {
+      filter: hue-rotate(180deg) contrast(0.5) saturate(2); }
+    .icon.ExplorerIcon:focus .icon__text, .icon.ExplorerIcon:active .icon__text, .icon.ExplorerIcon:active:focus .icon__text, .icon.ExplorerIcon.is-active .icon__text {
+      background-color: #0000a2;
+      color: #ffffff;
+      outline: 1px dotted #ffffff;
+      outline-offset: -1px; }
+  .icon.ExplorerIcon .icon__icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 3px;
+    background-size: contain; }
+  .icon.ExplorerIcon .icon__text {
+    max-height: 22px;
+    padding: 2px 3px;
+    max-width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    margin-top: 2px;
+    top: 33px; }
+  .icon.ExplorerIcon:focus .icon__text, .icon.ExplorerIcon:active .icon__text, .icon.ExplorerIcon:active:focus .icon__text, .icon.ExplorerIcon.active .icon__text, .icon.ExplorerIcon.clicked .icon__text {
+    max-height: initial;
+    z-index: 1; }
+</style><style type="text/css">.icon.ListIcon {
+  position: relative;
+  display: block;
+  outline: none;
+  background: none;
+  border: none;
+  color: initial;
+  text-decoration: none;
+  padding: 1px 7px 2px;
+  height: 18px;
+  margin: 2px;
+  text-align: left;
+  display: flex;
+  align-items: center; }
+  .icon.ListIcon .icon__icon {
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .icon.ListIcon:focus, .icon.ListIcon:active, .icon.ListIcon:active:focus, .icon.ListIcon.is-active {
+    outline: none; }
+    .icon.ListIcon:focus .icon__icon, .icon.ListIcon:active .icon__icon, .icon.ListIcon:active:focus .icon__icon, .icon.ListIcon.is-active .icon__icon {
+      filter: hue-rotate(180deg) contrast(0.5) saturate(2); }
+    .icon.ListIcon:focus .icon__text, .icon.ListIcon:active .icon__text, .icon.ListIcon:active:focus .icon__text, .icon.ListIcon.is-active .icon__text {
+      background-color: #0000a2;
+      color: #ffffff;
+      outline: 1px dotted #ffffff;
+      outline-offset: -1px; }
+  .icon.ListIcon .icon__icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px; }
+  .icon.ListIcon .icon__text {
+    position: relative;
+    padding: 2px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100% - 20px);
+    padding-bottom: 3px; }
+  .icon.ListIcon:focus .icon__text, .icon.ListIcon:active .icon__text, .icon.ListIcon:active:focus .icon__text, .icon.ListIcon.active .icon__text, .icon.ListIcon.clicked .icon__text {
+    max-height: initial; }
+</style><style type="text/css">.ExplorerView {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  width: 100%;
+  align-content: flex-start; }
+  .ExplorerView--fixed-width {
+    overflow-y: scroll;
+    height: initial; }
+  .ExplorerView--fixed-height {
+    overflow-x: scroll;
+    width: initial; }
+</style><style type="text/css">.Checkbox {
+  display: inline-block; }
+  .Checkbox input[type="checkbox"] {
+    opacity: 0;
+    display: none;
+    cursor: pointer; }
+    .Checkbox input[type="checkbox"] + label {
+      position: relative;
+      padding: 1px 0px;
+      padding-left: 16px; }
+      .Checkbox input[type="checkbox"] + label > span,
+      .Checkbox input[type="checkbox"] + label > div {
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, 0); }
+      .Checkbox input[type="checkbox"] + label:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 1px;
+        width: 20px;
+        height: 12px;
+        background-repeat: no-repeat; }
+    .Checkbox input[type="checkbox"]:checked + label {
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px; }
+    .Checkbox input[type="checkbox"]:checked:active + label > span,
+    .Checkbox input[type="checkbox"]:checked:active + label > div, .Checkbox input[type="checkbox"]:checked:focus + label > span,
+    .Checkbox input[type="checkbox"]:checked:focus + label > div, .Checkbox input[type="checkbox"]:checked:active:focus + label > span,
+    .Checkbox input[type="checkbox"]:checked:active:focus + label > div, .Checkbox input[type="checkbox"]:checked.active + label > span,
+    .Checkbox input[type="checkbox"]:checked.active + label > div, .Checkbox input[type="checkbox"]:checked.clicked + label > span,
+    .Checkbox input[type="checkbox"]:checked.clicked + label > div {
+      border: 1px dotted #0c0c0c; }
+    .Checkbox input[type="checkbox"]:disabled + label, .Checkbox input[type="checkbox"].disabled + label {
+      color: #808088; }
+    .Checkbox input[type="checkbox"] + label:before {
+      width: 13px;
+      height: 13px;
+      background-color: #ffffff;
+      box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px 0px #808088, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px 0px #0c0c0c; }
+    .Checkbox input[type="checkbox"]:checked + label:before {
+      background-image: url("data:image/gif;base64,R0lGODlhBwAHAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAHAAcAAAIMlA9nwMj9xGuLIlUAADs=");
+      background-position: center;
+      background-size: 8px; }
+    .Checkbox input[type="checkbox"]:disabled + label:before, .Checkbox input[type="checkbox"].disabled + label:before {
+      background-color: #bbc3c4; }
+    .Checkbox input[type="checkbox"]:disabled:checked + label:before, .Checkbox input[type="checkbox"].disabled:checked + label:before {
+      background-image: url("data:image/gif;base64,R0lGODlhBwAHAJEAAAAAAP///5mZmf///yH5BAEAAAMALAAAAAAHAAcAAAIMnC9nwsj9xmuLIlUAADs="); }
+</style><style type="text/css">.Radio {
+  display: inline-block; }
+  .Radio input[type="radio"] {
+    opacity: 0;
+    display: none;
+    cursor: pointer; }
+    .Radio input[type="radio"] + label {
+      position: relative;
+      padding: 1px 0px;
+      padding-left: 16px; }
+      .Radio input[type="radio"] + label > span,
+      .Radio input[type="radio"] + label > div {
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, 0); }
+      .Radio input[type="radio"] + label:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 1px;
+        width: 20px;
+        height: 12px;
+        background-repeat: no-repeat; }
+    .Radio input[type="radio"]:checked + label {
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px; }
+    .Radio input[type="radio"]:checked:active + label > span,
+    .Radio input[type="radio"]:checked:active + label > div, .Radio input[type="radio"]:checked:focus + label > span,
+    .Radio input[type="radio"]:checked:focus + label > div, .Radio input[type="radio"]:checked:active:focus + label > span,
+    .Radio input[type="radio"]:checked:active:focus + label > div, .Radio input[type="radio"]:checked.active + label > span,
+    .Radio input[type="radio"]:checked.active + label > div, .Radio input[type="radio"]:checked.clicked + label > span,
+    .Radio input[type="radio"]:checked.clicked + label > div {
+      border: 1px dotted #0c0c0c; }
+    .Radio input[type="radio"]:disabled + label, .Radio input[type="radio"].disabled + label {
+      color: #808088; }
+    .Radio input[type="radio"] + label:before {
+      background-image: url("data:image/gif;base64,R0lGODlhDAAMAKIAAAAAAP///8zMzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAAAMAAwAAAMqSErTs6uBCVqcIQesBtCaEDAfGAaeeaZqILKqyLQyI4hhTWT3nUEKECQBADs="); }
+    .Radio input[type="radio"]:checked + label:before {
+      background-image: url("data:image/gif;base64,R0lGODlhDAAMAKIAAAAAAP///8zMzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAAAMAAwAAAMtSErTs6uBCVqcIQesBtCaEDBfhmWiZ1JooG5skJZwOA6g3QliKC4oXg+iAEESADs="); }
+    .Radio input[type="radio"]:disabled + label:before, .Radio input[type="radio"].disabled + label:before {
+      background-image: url("data:image/gif;base64,R0lGODlhDAAMAKIAAAAAAP///8zMzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAAAMAAwAAAMpSErTs6uBCVqccAY1AFTC1n1LOJKE6aEqmorsxggCRMtEENA3vug6SAIAOw=="); }
+    .Radio input[type="radio"]:disabled:checked + label:before, .Radio input[type="radio"].disabled:checked + label:before {
+      background-image: url("data:image/gif;base64,R0lGODlhDAAMAKIAAAAAAP///8zMzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAAAMAAwAAAMtSErTs6uBCVqccAY1AFTC1i0YGIwE5REhqppourLiZ3KCAOWbEgQ5Xg/y+0ESADs="); }
+</style><style type="text/css">.InputText {
+  position: relative;
+  padding: 3px 3px 6px;
+  font-size: 11px;
+  border: none;
+  box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px 0px #808088, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px 0px #0c0c0c; }
+  .InputText:active, .InputText:focus, .InputText:active:focus, .InputText.clicked {
+    outline: none; }
+  .InputText:disabled, .InputText.disabled {
+    background-color: #bbc3c4; }
+</style><style type="text/css">.FakeSelect {
+  position: relative;
+  display: flex;
+  height: 22px;
+  align-self: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px 0px #808088, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px 0px #0c0c0c; }
+  .FakeSelect__icon {
+    margin-left: 6px;
+    height: 16px; }
+  .FakeSelect__children {
+    margin-left: 6px;
+    margin-right: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .FakeSelect__arrow {
+    position: absolute;
+    box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #bbc3c4, inset -2px -2px 0px #808088, inset 2px 2px 0px #ffffff;
+    height: 18px;
+    width: 18px;
+    left: calc(100% - 20px);
+    top: 2px;
+    background-color: #bbc3c4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/gif;base64,R0lGODlhBwAEAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAHAAQAAAIIhA+CKWoNmSgAOw=="); }
+  .FakeSelect.disabled {
+    background-color: #bbc3c4;
+    color: #808088; }
+    .FakeSelect.disabled .FakeSelect__icon {
+      filter: grayscale(1); }
+    .FakeSelect.disabled .FakeSelect__arrow {
+      opacity: 0.5; }
+</style><style type="text/css">.SelectBox {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 2px; }
+  .SelectBox:disabled, .SelectBox.disabled {
+    pointer-events: none;
+    background-color: #bbc3c4; }
+    .SelectBox:disabled > div, .SelectBox.disabled > div {
+      overflow: hidden; }
+    .SelectBox:disabled button, .SelectBox.disabled button {
+      color: #808088 !important; }
+    .SelectBox:disabled .icon, .SelectBox.disabled .icon {
+      filter: grayscale(1); }
+  .SelectBox > div {
+    position: relative;
+    overflow: auto; }
+  .SelectBox:after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px 0px #808088, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px 0px #0c0c0c;
+    pointer-events: none;
+    content: ""; }
+  .SelectBox button:not(.icon) {
+    display: block;
+    outline: none;
+    background: transparent;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #0c0c0c;
+    width: 100%;
+    text-align: left; }
+    .SelectBox button:not(.icon):after {
+      content: attr(title);
+      position: initial; }
+    .SelectBox button:not(.icon).is-active {
+      background-color: #0000a2;
+      color: #ffffff;
+      outline-offset: -1px;
+      outline: 1px dotted #ffffff; }
+  .SelectBox--ExplorerIcon > div {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    padding-bottom: 20px; }
+    .SelectBox--ExplorerIcon > div .explorer-icon {
+      margin: 2px 8px; }
+  .SelectBox .icon--list, .SelectBox .ListIcon {
+    margin: 0px;
+    padding: 1px; }
+    .SelectBox .icon--list .icon__text, .SelectBox .ListIcon .icon__text {
+      width: initial; }
+  .SelectBox .icon--list:focus:not(.is-active) .icon__icon, .SelectBox .icon--list:active:not(.is-active) .icon__icon, .SelectBox .ListIcon:focus:not(.is-active) .icon__icon, .SelectBox .ListIcon:active:not(.is-active) .icon__icon, .SelectBox .icon--explorer:focus:not(.is-active) .icon__icon, .SelectBox .icon--explorer:active:not(.is-active) .icon__icon, .SelectBox .ExplorerIcon:focus:not(.is-active) .icon__icon, .SelectBox .ExplorerIcon:active:not(.is-active) .icon__icon {
+    filter: none; }
+  .SelectBox .icon--list:focus:not(.is-active) .icon__text, .SelectBox .icon--list:active:not(.is-active) .icon__text, .SelectBox .ListIcon:focus:not(.is-active) .icon__text, .SelectBox .ListIcon:active:not(.is-active) .icon__text, .SelectBox .icon--explorer:focus:not(.is-active) .icon__text, .SelectBox .icon--explorer:active:not(.is-active) .icon__text, .SelectBox .ExplorerIcon:focus:not(.is-active) .icon__text, .SelectBox .ExplorerIcon:active:not(.is-active) .icon__text {
+    background-color: transparent;
+    color: #0c0c0c;
+    outline: none;
+    outline-offset: -1px; }
+</style><style type="text/css">.SelectMultipleSimple select[multiple] {
+  position: relative;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 0px;
+  outline: none;
+  padding: 2px;
+  box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px 0px #808088, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px 0px #0c0c0c; }
+  .SelectMultipleSimple select[multiple]:active, .SelectMultipleSimple select[multiple]:focus, .SelectMultipleSimple select[multiple]:active:focus, .SelectMultipleSimple select[multiple].active, .SelectMultipleSimple select[multiple].clicked {
+    outline: none; }
+  .SelectMultipleSimple select[multiple] option:active, .SelectMultipleSimple select[multiple] option:focus, .SelectMultipleSimple select[multiple] option:checked, .SelectMultipleSimple select[multiple] option.checked {
+    outline: 1px dotted #ffffff;
+    outline-offset: -1px;
+    background-color: #0000a2;
+    color: #ffffff; }
+</style><style type="text/css">.TaskBar {
+  position: fixed;
+  background-color: #bbc3c4;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  max-width: 100%;
+  z-index: 10;
+  box-shadow: 0px -1px 0px #ffffff;
+  padding: 2px 0px;
+  display: flex; }
+  .TaskBar > div,
+  .TaskBar > button {
+    position: relative;
+    height: 22px;
+    margin: 0px 2px; }
+  .TaskBar > div:not(:last-child) {
+    padding: 0px 6px; }
+    .TaskBar > div:not(:last-child):first-child {
+      padding: 0px 3px 0px 0px; }
+    .TaskBar > div:not(:last-child):after {
+      position: absolute;
+      top: 1px;
+      right: 0px;
+      height: calc(100% - 2px);
+      width: 1px;
+      background-color: #808088;
+      content: "";
+      box-shadow: 1px 0px 0px #ffffff; }
+    .TaskBar > div:not(:last-child):before {
+      position: absolute;
+      top: 3px;
+      right: -6px;
+      height: calc(100% - 6px);
+      width: 3px;
+      background-color: #bbc3c4;
+      content: "";
+      box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px #ffffff; }
+  .TaskBar__programs {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    margin-right: 4px;
+    min-width: 42px; }
+    .TaskBar__programs:before {
+      display: none; }
+  .TaskBar__start {
+    position: relative; }
+    .TaskBar__start > button + div {
+      position: fixed;
+      bottom: 25px;
+      left: 2px;
+      visibility: hidden;
+      max-height: 0px;
+      padding-left: 22px; }
+      @media (min-height: 720px) and (min-width: 960px) {
+        .TaskBar__start > button + div {
+          transition: max-height linear 200ms; } }
+      .TaskBar__start > button + div > .divider:empty,
+      .TaskBar__start > button + div > div:empty {
+        margin-left: 24px;
+        width: calc(100% - 26px); }
+      .TaskBar__start > button + div:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        height: calc(100% - 6px);
+        width: 20px;
+        background: #0000a2;
+        background: linear-gradient(#0000a2, #126fc2);
+        background: url("data:image/gif;base64,R0lGODlhDgBkALMAAAAAAP///wIAsZKSmZKTmpGSmZKTmcjOz8fNzsfOz8fOzv///wAAAAAAAAAAAAAAACH5BAEAAAsALAAAAAAOAGQAAAT/cMk5SUo06CO179wSGEowgEOQBcRUEuqkUaIRd/cCwyvFzyJNS3JQ2Tyt0QLBklgwEqZGQasShr4DQhuilDxgRCWAINgIAkIxFoB2DDJWbmGb2Oq0nJx2dqoCXUEuKl8GMCZRSjpgWAdYEydVkhMJQlVkQR8UTFRgQDhiHkc9QRyfRwRSV5+ZH1KbnodzjEGPCAYFcBIJj5mOk61IkgZSnpKVxpSeYCuegTjCw8Uev1bLPkfXccuY29SSGgmRky2p4b2Jnm5+3LrQ3CsY5Wuk9ZlwcJrv2uzLvWthJgH0cWVAKkMGBjhKws1YQ4cPP1wxUETclUPuBOXRY4mOvmDJafaFFMmKwoEDCspIgnGSC0pYDZvB88YvE7Bd3YABrBlRJs+HN73MiPgq4heQYJAhlYiOhqyUwLhVo7TTWcYlyEZOmAbEYM+I4hape4b0Cg0tDXlVyapVR9UY5h7KaogAg9R1c82ubEohAgA7") no-repeat bottom 3px center, linear-gradient(#0000a2, #126fc2); }
+      .TaskBar__start > button + div > div {
+        display: flex;
+        align-items: center;
+        margin-left: 20px; }
+        .TaskBar__start > button + div > div > button {
+          height: 32px;
+          padding-left: 32px;
+          background-size: 22px;
+          background-position: 4px center; }
+    .TaskBar__start > button.active, .TaskBar__start > button.clicked {
+      background-position: 3px 2px;
+      outline: 1px dotted #0c0c0c;
+      outline-offset: -4px; }
+      .TaskBar__start > button.active > div, .TaskBar__start > button.clicked > div {
+        visibility: visible;
+        max-height: 100vh;
+        padding: 3px; }
+        .TaskBar__start > button.active > div div, .TaskBar__start > button.clicked > div div {
+          display: flex; }
+    .TaskBar__start.active > div {
+      visibility: visible;
+      max-height: 100vh;
+      padding: 3px; }
+      .TaskBar__start.active > div div {
+        display: flex; }
+  .TaskBar__notifications {
+    background-color: #bbc3c4;
+    display: flex;
+    flex: none;
+    margin-left: auto;
+    align-items: center;
+    height: 22px;
+    padding: 0px 8px 0px 4px;
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #808088; }
+    .TaskBar__notifications__time {
+      margin-left: 4px; }
+    .TaskBar__notifications__notifier {
+      height: 16px;
+      width: 16px;
+      background-color: #bbc3c4;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none; }
+      .TaskBar__notifications__notifier:active, .TaskBar__notifications__notifier:focus, .TaskBar__notifications__notifier:active:focus, .TaskBar__notifications__notifier.active, .TaskBar__notifications__notifier.clicked {
+        outline: none;
+        border: none; }
+</style><style type="text/css">.MenuBar {
+  display: flex;
+  padding: 0px;
+  font-size: 1rem;
+  position: relative;
+  overflow-y: visible;
+  z-index: 20; }
+  .MenuBar > div {
+    position: relative; }
+    .MenuBar > div > button {
+      outline: none;
+      border: none;
+      user-select: none;
+      color: #0c0c0c;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0);
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: left;
+      padding: 4px 7px;
+      text-transform: capitalize; }
+      .MenuBar > div > button + div,
+      .MenuBar > div > button + div {
+        z-index: 20;
+        visibility: hidden;
+        position: absolute;
+        max-height: 0px;
+        top: 100%;
+        left: 0px; }
+        @media (min-height: 720px) and (min-width: 960px) {
+          .MenuBar > div > button + div,
+          .MenuBar > div > button + div {
+            transition: max-height linear 750ms; } }
+      .MenuBar > div > button:hover {
+        box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px #ffffff; }
+      .MenuBar > div > button:active, .MenuBar > div > button:focus, .MenuBar > div > button:active:focus, .MenuBar > div > button.active, .MenuBar > div > button.clicked {
+        box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #808088;
+        padding: 5px 6px 3px 8px; }
+        .MenuBar > div > button:active + div,
+        .MenuBar > div > button:active + div, .MenuBar > div > button:focus + div,
+        .MenuBar > div > button:focus + div, .MenuBar > div > button:active:focus + div,
+        .MenuBar > div > button:active:focus + div, .MenuBar > div > button.active + div,
+        .MenuBar > div > button.active + div, .MenuBar > div > button.clicked + div,
+        .MenuBar > div > button.clicked + div {
+          visibility: visible;
+          max-height: 480px; }
+  .MenuBar__section > .btn {
+    user-select: none; }
+</style><style type="text/css">.w98 .Window__heading {
+  display: flex;
+  background: linear-gradient(to right, #0000a2, #126fc2);
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1px;
+  padding: 0px 1px 0px 3px;
+  align-items: center;
+  letter-spacing: 1px; }
+  .w98 .Window__heading button {
+    padding: 0px;
+    min-width: initial;
+    width: 16px;
+    height: 14px;
+    margin-left: 1px;
+    image-rendering: pixelated;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: 1px 1px; }
+    .w98 .Window__heading button:focus, .w98 .Window__heading button.clicked {
+      outline: none;
+      border: none; }
+    .w98 .Window__heading button:active:focus, .w98 .Window__heading button.clicked {
+      padding: 2px 8px 1px 4px;
+      background-position: 2px 2px; }
+
+.w98 .Window__icon {
+  padding: 8px;
+  display: flex;
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 4px; }
+
+.w98 .Window__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  min-width: 0px;
+  user-select: none; }
+
+.w98 .Window__close {
+  margin-left: 2px;
+  background-image: url("data:image/gif;base64,R0lGODlhDQALAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAANAAsAAAIUlI+pKwDoVGxvucmwvblqo33MqBQAOw=="); }
+
+.w98 .Window__restore {
+  background-image: url("data:image/gif;base64,R0lGODlhDQALAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAANAAsAAAIZlI9pwK3SnAKI1kjtwTlpyHjV830b9qRHAQA7"); }
+
+.w98 .Window__minimize {
+  background-image: url("data:image/gif;base64,R0lGODlhDQALAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAANAAsAAAIOlI+py+0PozSg2mXvFAUAOw=="); }
+
+.w98 .Window__maximize {
+  background-image: url("data:image/gif;base64,R0lGODlhDQALAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAANAAsAAAIXlI8Jy4wNXzJAznqwsjtPoYFfCDXfWQAAOw=="); }
+
+.w98 .Window__help {
+  background-image: url("data:image/gif;base64,R0lGODlhDQALAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAANAAsAAAIUlI9pwKDrBHtTxmcxvJTrn30VqBQAOw=="); }
+
+.w98 .Window--resizable:after {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  height: 12px;
+  width: 12px;
+  content: "";
+  background-image: url("data:image/gif;base64,R0lGODlhDAAMAJEAAAAAAP///5mZmf///yH5BAEAAAMALAAAAAAMAAwAAAIbnI8TmSF83IMSKvFWw3dnHnFV+GVGhZZXmaoFADs="); }
+
+.w98 .Window--maximized {
+  width: 100%;
+  height: 100%; }
+
+.w98 .Window--drag {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: inset -3px -3px 0px #808088, inset 3px 3px 0px #808088; }
+  .w98 .Window--drag > *, .w98 .Window--drag:after {
+    filter: opacity(0.1%); }
+</style><style type="text/css">.WindowAlert {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 250px; }
+  .WindowAlert__message {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    min-height: 28px;
+    padding: 10px 2px 6px; }
+    .WindowAlert__message.has-icon {
+      background-size: 28px 28px;
+      background-repeat: no-repeat;
+      background-position: 6px 6px;
+      padding: 6px 4px 8px 40px; }
+  .WindowAlert__actions {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    .WindowAlert__actions .btn {
+      margin: 0px 4px 8px; }
+</style><style type="text/css">.WindowAction {
+  width: 80%;
+  max-width: 350px;
+  min-width: 280px; }
+  .WindowAction > :not(:first-child) {
+    margin: 4px 5px;
+    width: auto; }
+  .WindowAction .Window__title {
+    text-transform: capitalize; }
+  .WindowAction__location {
+    display: flex;
+    align-items: center;
+    margin: 3px;
+    text-transform: capitalize; }
+    .WindowAction__location .btn {
+      margin-right: 2px; }
+    .WindowAction__location .FakeSelect {
+      flex-grow: 1;
+      margin: auto 4px; }
+  .WindowAction__files {
+    width: initial;
+    margin: 5px 3px; }
+  .WindowAction__footer {
+    margin: 3px;
+    display: flex; }
+  .WindowAction__input {
+    display: flex;
+    align-items: center; }
+    .WindowAction__input .FakeSelect {
+      margin-left: auto;
+      width: 75%;
+      max-width: 180px;
+      min-width: 140px; }
+    .WindowAction__input .InputText {
+      margin-left: auto;
+      width: calc(75% - 6px);
+      max-width: 174px;
+      min-width: 136px; }
+  .WindowAction__action-inputs {
+    flex-grow: 1; }
+  .WindowAction__input,
+  .WindowAction .ButtonForm {
+    margin-top: 4px; }
+  .WindowAction__action-buttons {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 8px; }
+    .WindowAction__action-buttons .btn {
+      text-transform: capitalize; }
+</style><style type="text/css">.w98 .WindowProgram {
+  display: inline-flex;
+  flex-direction: column; }
+  .w98 .WindowProgram > footer {
+    display: flex; }
+    .w98 .WindowProgram > footer > div {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      min-width: 0px;
+      flex-grow: 1;
+      padding: 2px;
+      height: 12px;
+      box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c; }
+      .w98 .WindowProgram > footer > div:not(:last-child) {
+        margin-right: 2px; }
+      .w98 .WindowProgram > footer > div:last-child {
+        padding-right: 12px; }
+  .w98 .WindowProgram > div:last-child {
+    margin-top: 2px; }
+</style><style type="text/css">.OptionsList {
+  display: block;
+  min-height: initial;
+  z-index: 10; }
+  .OptionsList__large-icons {
+    display: flex;
+    overflow: hidden;
+    padding: 1px 0px; }
+  .OptionsList__dropdown {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    height: calc(100% - 4px); }
+    .OptionsList__dropdown--empty {
+      display: none; }
+    .OptionsList__dropdown__button {
+      height: 100%;
+      border: none;
+      background-color: #bbc3c4;
+      background-image: url("data:image/gif;base64,R0lGODlhCAAFAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAIAAUAAAIKBCSGebzqoJKtAAA7");
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      padding: 0px 6px;
+      font-size: 0.7rem;
+      user-select: none;
+      letter-spacing: -2px;
+      display: flex;
+      flex-direction: column; }
+      .OptionsList__dropdown__button:hover {
+        box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px #ffffff; }
+      .OptionsList__dropdown__button:active, .OptionsList__dropdown__button:focus, .OptionsList__dropdown__button:active:focus {
+        outline: none;
+        background-position: 3px 4px;
+        box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #808088; }
+        .OptionsList__dropdown__button:active + .OptionsList__dropdown__list, .OptionsList__dropdown__button:focus + .OptionsList__dropdown__list, .OptionsList__dropdown__button:active:focus + .OptionsList__dropdown__list {
+          position: absolute;
+          top: 100%;
+          right: 0px;
+          display: block;
+          z-index: 10; }
+  .OptionsList .OptionsList__dropdown__list {
+    display: none; }
+  .OptionsList .OptionsList__dropdown__button {
+    margin-left: auto; }
+  .OptionsList .StandardMenuItem__button:hover {
+    background-color: #0000a2;
+    color: #ffffff; }
+  .OptionsList .divider {
+    border-left: 1px solid #808088;
+    border-right: 1px solid #ffffff;
+    width: 1px;
+    margin: 2px 3px; }
+    .OptionsList .divider + .divider {
+      display: none; }
+</style><style type="text/css">.w98 .WindowExplorer {
+  display: inline-flex;
+  flex-direction: column; }
+  .w98 .WindowExplorer__view {
+    min-height: 20px;
+    margin: 2px 0px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px 0px #808088, inset -2px -2px 0px #bbc3c4, inset 2px 2px 0px 0px #0c0c0c; }
+  .w98 .WindowExplorer__details {
+    display: flex; }
+    .w98 .WindowExplorer__details__section {
+      box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #808088;
+      flex-grow: 1;
+      margin-top: 2px;
+      height: 16px; }
+      .w98 .WindowExplorer__details__section:not(:last-child) {
+        margin: 2px; }
+  .w98 .WindowExplorer .window__menu {
+    padding: 2px 2px 2px 12px; }
+  .w98 .WindowExplorer > div + menu {
+    margin-top: 2px;
+    box-shadow: 0px 2px 0px -1px #ffffff, -1px 2px 0px -1px #ffffff, -1px 1px 0px #808088, 0px 1px 0px #808088, inset 0px -1px 0px #808088, inset -1px 0px 0px #808088, inset 0px 0px 0px 1px #ffffff, -1px 0px 0px #808088, 1px 0px 0px #ffffff, -1px 1px 0px 0px #ffffff, 1px 1px 0px 0px #ffffff, -1px -1px 0px #808088, 0px -1px 0px #808088, inset 0px 1px 0px #ffffff, 1px -1px 0px #ffffff; }
+  .w98 .WindowExplorer > menu {
+    position: relative;
+    min-height: 22px;
+    padding-left: 12px;
+    margin: 0px 1px;
+    box-shadow: inset 0px -1px 0px #808088, inset -1px 0px 0px #808088, inset 0px 0px 0px 1px #ffffff, -1px 0px 0px #808088, 1px 0px 0px #ffffff, -1px 1px 0px 0px #ffffff, 1px 1px 0px 0px #ffffff; }
+    .w98 .WindowExplorer > menu:before {
+      position: absolute;
+      top: 3px;
+      left: 5px;
+      height: calc(100% - 6px);
+      width: 3px;
+      background-color: #bbc3c4;
+      content: "";
+      box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px #ffffff; }
+    .w98 .WindowExplorer > menu.OptionsList {
+      min-height: 40px;
+      display: block; }
+  .w98 .WindowExplorer > footer {
+    display: flex; }
+    .w98 .WindowExplorer > footer > div {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      min-width: 0px;
+      flex-grow: 1;
+      padding: 2px;
+      height: 12px;
+      box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c; }
+      .w98 .WindowExplorer > footer > div:not(:last-child) {
+        margin-right: 2px; }
+      .w98 .WindowExplorer > footer > div:last-child {
+        padding-right: 12px; }
+  .w98 .WindowExplorer__address {
+    display: flex;
+    height: 26px;
+    overflow-y: visible;
+    user-select: none; }
+    .w98 .WindowExplorer__address__title {
+      align-self: center;
+      margin-right: 4px; }
+    .w98 .WindowExplorer__address .FakeSelect {
+      flex-grow: 1;
+      z-index: 5;
+      margin-right: 4px; }
+  .w98 .WindowExplorer__options {
+    display: flex;
+    padding: 2px 8px 2px 12px; }
+  .w98 .WindowExplorer > div:last-child {
+    margin-top: 2px; }
+</style><style type="text/css">.DetailsSection,
+.window__section {
+  position: relative;
+  border: 1px solid #ffffff;
+  outline: 1px solid #808088;
+  padding: 5px;
+  margin: 16px 8px 8px; }
+  .DetailsSection__title,
+  .window__section__title {
+    position: absolute;
+    top: -10px;
+    padding: 2px 4px;
+    background-color: #bbc3c4; }
+</style><style type="text/css">._game-module_cell__EY6d4 {
+  background-color: #bbc3c4;
+  height: 16px;
+  width: 16px;
+  box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px white, inset -2px -2px 0px #808088, inset 2px 2px 0px white;
+  border: none;
+  outline: none;
+  padding: 0px; }
+  ._game-module_cell__EY6d4._game-module_clicked__1OKNE, ._game-module_cell__EY6d4:hover:active, ._game-module_cell__EY6d4:hover:focus,
+  :active ._game-module_cell__EY6d4:hover,
+  :focus ._game-module_cell__EY6d4:hover {
+    background-color: #bbc3c4;
+    box-shadow: inset 0.5px 0.5px 0px #808088, inset -0.5px -0.5px 0px #808088;
+    position: relative;
+    display: inline-flex;
+    align-content: center;
+    text-align: center; }
+
+._game-module_clicked__1OKNE,
+._game-module_win__30lKE ._game-module_cell__EY6d4,
+._game-module_lose__o5F1L ._game-module_cell__EY6d4 {
+  background-color: #bbc3c4;
+  box-shadow: inset 0.5px 0.5px 0px #808088, inset -0.5px -0.5px 0px #808088;
+  position: relative;
+  display: inline-flex;
+  align-content: center;
+  text-align: center; }
+  ._game-module_clicked__1OKNE:after,
+  ._game-module_win__30lKE ._game-module_cell__EY6d4:after,
+  ._game-module_lose__o5F1L ._game-module_cell__EY6d4:after {
+    width: 100%;
+    align-self: center;
+    content: attr(data-warningcount);
+    font-weight: bold;
+    margin-top: 2px;
+    margin-left: 1px; }
+
+._game-module_end__30PuU {
+  background-color: #fb0006; }
+  ._game-module_end__30PuU:after {
+    content: ''; }
+
+._game-module_board__2yIss {
+  box-shadow: inset -1px -1px 0px white, inset 1px 1px 0px #808088, inset -2px -2px 0px white, inset 2px 2px 0px #808088, inset -3px -3px 0px white, inset 3px 3px 0px #808088;
+  padding: 3px; }
+
+._game-module_grid__Jk4tD {
+  display: grid;
+  grid-gap: 0px;
+  color: #444; }
+
+._game-module_minesweeper__gt7iO {
+  display: inline-block;
+  padding: 6px 4px 4px 6px;
+  box-shadow: inset 2px 2px 0px white; }
+
+._game-module_counter__2w-UX {
+  display: inline-flex;
+  padding: 1px;
+  box-shadow: inset 1px 1px 0px #808088, inset -1px -1px 0px white; }
+
+._game-module_status__3Uv-j {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 6px;
+  box-shadow: inset 1px 1px 0px #808088, inset -1px -1px 0px white, inset 2px 2px 0px #808088, inset -2px -2px 0px white;
+  padding: 6px 4px; }
+  ._game-module_status__3Uv-j > * {
+    margin: 0px 4px; }
+  ._game-module_status__3Uv-j button {
+    height: 24px;
+    width: 24px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAVElEQVR42mNgwA3+Y8FEA7CG//8xMbGGYdWMwzDyDcBnEEkG4DIIq9+JFMPuCmINQTaILK8MEUMIGUp04OJLsURHMVoSJxgzVE2xVMs7VMvFZJUnADl0GwKMOgB1AAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: -1px -1px 0px #808088, inset 1px 1px 0px white, inset -1px -1px 0px #808088, inset 2px 2px 0px white, inset -2px -2px 0px #808088;
+    background-color: #bbc3c4;
+    outline: none;
+    border: none; }
+    ._game-module_minesweeper__gt7iO:active ._game-module_status__3Uv-j button {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAbklEQVR42rWUgQ7AEAxEfbo/77ItXcTuziEkjWj14ahSeAtgdnsSIv7mwmAyga0DFOgL1vpOuPs2Cfl7EDo30wNChisqf4KmtGDanIUwfWxIapATey2G4mZQjeUVz+xEPjhHk+2nbxXhbhUv/ScXq9MFJP/q1DsAAAAASUVORK5CYII=); }
+    ._game-module_minesweeper__gt7iO._game-module_lose__o5F1L ._game-module_status__3Uv-j button {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAWklEQVR42mNgwA3+Y8FEA7CG//8xMbGGYdWMwzDyDcBnEIokMo1PHN0grBqw2Y7LNQRtJCROcljgCptBbgi2FEsoqimOHazpBJ/ziUpwdEn6RGVCSnMxWeUJAHw0FwbXaXdOAAAAAElFTkSuQmCC); }
+    ._game-module_minesweeper__gt7iO._game-module_win__30lKE ._game-module_status__3Uv-j button {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAZ0lEQVR42q2U0Q4AEAhF+28fn/FgmXuT0taD7B5SEeGmwMM2BaqnR2FQTGB5gAd6AjAQyps6grgAL25Ba4EEXmyDWHJr52kWNPZRyVOPCtOpQgRdnQlCJb5V6mvDlVs/NITVKU79Jx0lUucVtHPCpwAAAABJRU5ErkJggg==); }
+
+._game-module_buttonBorder__1A72p {
+  box-shadow: 1px 1px 0px; }
+</style></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div class="BIOSWrapper initial hidden"><div class="BIOS visible hidden"><div class="BIOS__logo visible"></div><div class="BIOS__bootHeader visible"><p>AMII BIOS (C) 1992-2019</p><p>BIOS Version 16.8.3.REACT</p></div><div class="BIOS__bootMessage1 visible">Press &lt;?&gt; key if you want to run setup</div><div class="BIOS__bootMessage2 visible">Keyboard... <span>detected</span></div><div class="BIOS__bootMessage3 visible">Mouse/digitizer... <span>detected</span></div><div class="BIOS__bootMessage4 visible"><p>This project is by <a href="https://github.com/padraigfl">Padraig Flood</a></p><p>London based frontend developer, contactable via <a href="https://www.linkedin.com/in/padraig-f-334b8764/">LinkedIn</a></p><p>Likes films and stuff <a href="https://letterboxd.com/padraig">Letterboxd</a></p><p>Is unwilling to link his Twitter because he can't remember whether anything he tweeted is embarrassing</p><p>Is sorry about how this works weird on tablets</p></div></div></div><div class="WindowsLaunchWrapper visible"><div class="WindowsLaunch"></div></div><div id="root"><div class="w98 desktop screen notMobile"><div class="Background Background--stretch"><div style="background-image: url(&quot;/static/media/pbbg.7491b6f9.jpg&quot;); background-color: rgb(255, 255, 255);"></div></div><div class="ExplorerView"><button class="icon ExplorerIcon"><div class="icon__icon" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAMAAADdXFNzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP///wAAAMDHyIeIj1OoqREA/wD/AACpUwD//wcAq/C1J6kAAAABdFJOUwBA5thmAAAAnUlEQVQoz42SCQ7EIAhFZZnpcv8Dl47Fon7aeTEx8UVAsBRHJ0pEZYCUo6YRjV5pvC6j73PT5DmC/CcA/Vbv5v73iNzb6f41OPceAfuz7id/nj97fwHwb/0bxiN/zOf+AgowLR6CAaavFIrxEua/4z/IvUCQD9E7vyzV3+X1fl27yGl8mN92mhe361CbbVrBemlO660kxV2jUU6o+gBEWAjauUre2gAAAABJRU5ErkJggg==&quot;);"></div><div class="icon__text">My Computer</div></button><button class="icon ExplorerIcon"><div class="icon__icon" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTAAA/////wAAAAAAgcHBwYGBgYGBAP//AMuYlv8AAAABdFJOUwBA5thmAAAApklEQVQ4y7XSQRLDIAwDQAuLkP+/uAyEAraZ9hIdo82AAZH/crlYkEwu/QWM8CDvwoO0iwDsIthkiwOomSpb0FvEAD1cxQIITBEAAvciHCBK7UkaMQDZ+vpFD2D0Vjyg9SDJZxELyl2wxQDXO5ALuE1nNllq/wVKkgwAlzHdEqB2cTioCkRHGR41IaI6fmcKwYX+gjSYot91Sscx4zf5AshhJtBDRD58+AgEB4pxSQAAAABJRU5ErkJggg==&quot;);"></div><div class="icon__text">README</div></button><button class="icon ExplorerIcon"><div class="icon__icon" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);"></div><div class="icon__text">Resume draft 31 final last 2019 may final 1</div></button></div><div class="TaskBar"><div class="StandardMenuWrapper StartMenu TaskBar__start"><button options="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" value="" class="btn StartButton"></button><div class="Frame StandardMenu renderedMenu"><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Windows Update" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAbCAMAAACz4aQdAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTAcAqxEA/wAAAAD/AACpU/8AAIeIj/////7/AMDHyAD//6qgZvEAAAABdFJOUwBA5thmAAAA60lEQVQoz33TWxaDIAwEUMhksNX977dJIIi0p+GDjzs8xVLuglXZC6v+SZg0QL8C6M3ZXYHDis8MVj9VScoc30amecjc1Vwy0bw1zEoW5O5aCxfg7Z2EitS+VRnzi/vb+5EIh7k1eTjVArVynDUWgwCxQHCVSir6+a2OdX8SrKcSeUNel1wCgL5CFRpz3q0heckoCp2V87IP4Us5DmagwYsbvzT9HHx7cLow+XZnzZv1Bbbx6hyBfvRtfOEcI1Vq/0rrW0mGszWQ4PqWcspgKzy5kCQJDI5E2QOoS+1PGcCq3y+93IFf+usv+QAnHQeZYIDm/wAAAABJRU5ErkJggg==&quot;);">Windows Update</button></div><div class="divider divider--group-1-start"></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAtUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6ipUREA/wCpU6oAV/8AAKlUqgD//wD/AH8xaYIAAAABdFJOUwBA5thmAAAAjUlEQVQoz42Q0RKEIAgABfTSsvv/zw2QtLC7aZ3pgZ1VM4QQjeCIkBrOROrcywge7DvRfS1ows1TF/+KOIGtuFzNQCvocwIoi3rRBSqjeNpKC/eTo3gSVmwrQNZpUbEILLbEYs+iShER5BIsVi0yp+WbVbS3B+J5pVolKFcxHX4Kfh8YnzfFLzE/iYIzBz/HBg1nyTBoAAAAAElFTkSuQmCC&quot;);">Programs</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs,Accessories" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6oAVwCpUxEA/wD///8AAHXN57cAAAABdFJOUwBA5thmAAAAW0lEQVQY012OWw7AIAgE2QWrtve/b8F3O3wYJpOIiFggG9PkY7/dzQwNB8YQSdd04e+GrTBdcBTXYBZf4cX6RkcBpAzULgLkJ6PcNYSQ9MIDlNLE59opzjsCHrx+sALRFlml9wAAAABJRU5ErkJggg==&quot;);">Accessories</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs,Accessories,Entertainment" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6oAVwCpUxEA/wD///8AAHXN57cAAAABdFJOUwBA5thmAAAAW0lEQVQY012OWw7AIAgE2QWrtve/b8F3O3wYJpOIiFggG9PkY7/dzQwNB8YQSdd04e+GrTBdcBTXYBZf4cX6RkcBpAzULgLkJ6PcNYSQ9MIDlNLE59opzjsCHrx+sALRFlml9wAAAABJRU5ErkJggg==&quot;);">Entertainment</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs,Accessories,Internet Tools" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6oAVwCpUxEA/wD///8AAHXN57cAAAABdFJOUwBA5thmAAAAW0lEQVQY012OWw7AIAgE2QWrtve/b8F3O3wYJpOIiFggG9PkY7/dzQwNB8YQSdd04e+GrTBdcBTXYBZf4cX6RkcBpAzULgLkJ6PcNYSQ9MIDlNLE59opzjsCHrx+sALRFlml9wAAAABJRU5ErkJggg==&quot;);">Internet Tools</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs,Accessories,System Tools" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6oAVwCpUxEA/wD///8AAHXN57cAAAABdFJOUwBA5thmAAAAW0lEQVQY012OWw7AIAgE2QWrtve/b8F3O3wYJpOIiFggG9PkY7/dzQwNB8YQSdd04e+GrTBdcBTXYBZf4cX6RkcBpAzULgLkJ6PcNYSQ9MIDlNLE59opzjsCHrx+sALRFlml9wAAAABJRU5ErkJggg==&quot;);">System Tools</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Programs,Accessories,Calculator" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAMAAABcOc2zAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAVUExURUdwTAcAq1Ooqf///wAAAAD//8DHyDK30YoAAAABdFJOUwBA5thmAAAAP0lEQVQI14XMWwoAIQxD0Zik3f+Sh/FFBcGTv3IpwANARRkNhqc/aAZldbkO4Rx2UX/2gtbeo1DeC7bKgA/4AN3sAhuaJA20AAAAAElFTkSuQmCC&quot;);">Calculator</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Programs,Accessories,Minesweeper" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAMAAAD+iNU2AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURUdwTL2+vQAAAHt9e////5M/3QoAAAABdFJOUwBA5thmAAAAVklEQVQI122NUQ7AMAhCRbz/mYfFmi0ZP+0ThQiL8RGLP+wZOUxkI4osgMIMDxpBYy8fpN2zXEjZksy7LCmaLeSVA8kFZ7xc4dAU9pNdlm7M/W5A7O0DpCMBT7ZwH3YAAAAASUVORK5CYII=&quot;);">Minesweeper</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Programs,Accessories,Notepad" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAVUExURUdwTFOoqQD//wAAAMDHyIeIj////3W9FIoAAAABdFJOUwBA5thmAAAAUUlEQVQY04WPQRLAIAjEWED+/+TiIracmvFiJjIosrFGClsAzzGmjTkNFERRIoO6Z0CBfoAS3wkUI0gxgxQjiF1cvApu5pcpIv4K93X++06WBx6UAlwUWdTdAAAAAElFTkSuQmCC&quot;);">Notepad</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Programs,Accessories,Paint" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUdwTP///wAAAMDHyIeIj1OoqaipUQcAq/8AAKoAV/7/ABEA/wD///UHVbMAAAABdFJOUwBA5thmAAAAX0lEQVQY06WOWxaAIAhEeVvZ/tfbIJr9N0cBLwNHopSJ4FBJvgDXLAOLKzIwaoTjFL8bBafNtEuBUBt7mvcEFlfMvc0T7LdtFTFlZoUWANHqr69Ny2sYYIz8cJBMZf0AaAwCYiqrjuQAAAAASUVORK5CYII=&quot;);">Paint</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Programs,Accessories,SkiFree" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAVCAMAAAB8FU7dAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAFNUExURUdwTP8AAKKhoioB/9vb2/8A/l9fX39/fwAA/6CgoL2rvgBLAADYAP8AdV5eXmZlZnd7d4aIhoCAgUYA//+vroeE/8TGxlBSUv8AZ+np6RcXF6ysrK2trZOR/9zc3M3Nzagzkra4ulteW/9dQ/XQ2h4a/5MAAP/Z0dLznv09PiYp/xQA/5yRnLept15hXmdgaDot/wVYA+Xmgv8SRv8bAPFoAFsnwEVWSP+9ugDeALa7AEpN/0zLS1doVQC8AIsA/9GnEThzOQCuAABGnQBJjuTUl6q2ALWtAPdL/2J8Wf8AWZYA//9z/6cA/8O8vFpQU+9l+//b3wAA8bzcVszSAACHL29v/ys86JuckgAA6ACEQTkh/6GHpQDwAAB8VFlM/4R3/z39AMi1AP9oZI4AWF9Nav9OTf8nANAADf80MP+Ojf80I/6Onf9LtP7l1my7VP8AAAABdFJOUwBA5thmAAAA10lEQVQYGVXAY5PDQACA4TfJbrob1Drbtm3btvD/P970ZtqkD/8+P76+CUsbhpHPGwTST6+G778/r1DSccCP//ZyuDpIUdM4/D4er81TUt8MHG1MjlBUowDW50bbKTOVkinKtXRJC9oaCHRacmd/e6iVQL/aklJuDhOwlLqCvV0CGaVOIZclJKPUHbksYeri7DxJ2L06ebhOELasLm8WuoEEIGqFENPe0u3iWKxOiOoY2Lbda89OeN5MX2M0aldWEI8UDLiuG48UJKFKm1rrHsdxTK21qeEPXIsaKL+hLrAAAAAASUVORK5CYII=&quot;);">SkiFree</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs,Online Services" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6oAVwCpUxEA/wD///8AAHXN57cAAAABdFJOUwBA5thmAAAAW0lEQVQY012OWw7AIAgE2QWrtve/b8F3O3wYJpOIiFggG9PkY7/dzQwNB8YQSdd04e+GrTBdcBTXYBZf4cX6RkcBpAzULgLkJ6PcNYSQ9MIDlNLE59opzjsCHrx+sALRFlml9wAAAABJRU5ErkJggg==&quot;);">Online Services</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Programs,StartUp" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTP///wAAAMDHyIeIj/7/AAcAq6oAVwCpUxEA/wD///8AAHXN57cAAAABdFJOUwBA5thmAAAAW0lEQVQY012OWw7AIAgE2QWrtve/b8F3O3wYJpOIiFggG9PkY7/dzQwNB8YQSdd04e+GrTBdcBTXYBZf4cX6RkcBpAzULgLkJ6PcNYSQ9MIDlNLE59opzjsCHrx+sALRFlml9wAAAABJRU5ErkJggg==&quot;);">StartUp</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Programs,IE4(BROKEN)" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTAcAqxEA/6ipUQAAAMDHyP7/AIeIj14ckmEAAAABdFJOUwBA5thmAAAAWklEQVQY002QURYAEAgEbbXc/8ZSif0y815LxngRz38OSoNkQQnn2eYw1BloEyyklbjcRmv+tujUONwMpeB7kE9oi+zQunEtqw6hAa/zCFopIPcixSJv0+8PNtfvAbX66OpXAAAAAElFTkSuQmCC&quot;);">IE4(BROKEN)</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Programs,JS-DOS Prompt" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTAAAAIeIj6oAV/8AAAcAq6ipUf7/ABEA/8DHyHxwNV4AAAABdFJOUwBA5thmAAAAcElEQVQY01WOAQ6AMAgDVwYw//9hS9FEm7CQWwusBdjqByx26rtMzAbYVEsABlMET0T/BNcbmbSMmr8pRAQyEw3cfcc5kUVlAxoOgEKbBBggrMaKXA24AoeGP0DVRLAdqASyZos7Td8tOqTvSCz8tW4gSwKSZc/r8wAAAABJRU5ErkJggg==&quot;);">JS-DOS Prompt</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Programs,Outlook Express" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTAcAqxEA/////wAAAP7/AIeIjwD//1Ooqf8AAMDHyKoAV952bY0AAAABdFJOUwBA5thmAAAAbElEQVQY01WPSxLAIAhDCVjA9v73Lb/p2IcLicEJRIWbGR2wGaBfR+yG29GtKrM7dFikEgLkkjhRLTCk2FtSQFLP+ynHUEMywjUlp4Prr9OR6drR05JCOtaQcbFWx4XfEZcJ3zqIuPxbN5S+vbMbAw1pOdpkAAAAAElFTkSuQmCC&quot;);">Outlook Express</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Programs,Windows Explorer" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTP///wAAAMDHyP7/AIeIjwD//xEA/6ipUQcAq/jryeYAAAABdFJOUwBA5thmAAAAXElEQVQI11WMWxLAIAgDeRil979wE6sdXT+YTUAzg7AftOTDrQzWGtwTCA6CoCe8e2AuyaU9Z/C5tEcdfbKv3TdIUbV6DV6PUaufPz+dgXyjgG6xURB2wOByrtoLU90C2k4z3ToAAAAASUVORK5CYII=&quot;);">Windows Explorer</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Favorites" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAMAAACgaw2xAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTMDHyP7/AIeIjwAAABEA/////6ipUSZt3z0AAAABdFJOUwBA5thmAAAAYElEQVQY042QUQ6AMAhDC6x6/xu7qRmTgFn5Wl8KAwCwVwgylaes8AMxWWRLVzsytQG8ldfZOkh8vcF8MU10l86WhFDpmc8MkskMDpuTbSREqxnlr8o9/jYPt0rVAVoqXAKxBIZ6OS1eAAAAAElFTkSuQmCC&quot;);">Favorites</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Favorites,Channels" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURUdwTP///wAAAMDHyP7/AIeIj/DYpwIAAAABdFJOUwBA5thmAAAAM0lEQVQI17WKwREAIAjDarH7r2zxOJUBDK+UAFCCg2b41NVDZRoPor2CHaVfjR//BgE2FuJjAlfcks8tAAAAAElFTkSuQmCC&quot;);">Channels</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Favorites,Links" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURUdwTP///wAAAMDHyP7/AIeIj/DYpwIAAAABdFJOUwBA5thmAAAAM0lEQVQI17WKwREAIAjDarH7r2zxOJUBDK+UAFCCg2b41NVDZRoPor2CHaVfjR//BgE2FuJjAlfcks8tAAAAAElFTkSuQmCC&quot;);">Links</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem ExternalLink"><button class="StandardMenuItem__button" value="Favorites,Links,MySpace" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTBEA/////wAAAMDHyIeIjwcAq6ipUf7/AJzvhEIAAAABdFJOUwBA5thmAAAAWElEQVQI112OQQ4AIQgDaQXY/794BdEY5zalAUREbCML40LtcdpxgByTdAfgRDbSPb4K2lNJryC9pl2YHrpG7H6EA6qnHxiOex8079ruz2D/1y6mh/Jx8QMPvwJYhQJ+mAAAAABJRU5ErkJggg==&quot;);">MySpace</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Favorites,Media" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURUdwTP///wAAAMDHyP7/AIeIj/DYpwIAAAABdFJOUwBA5thmAAAAM0lEQVQI17WKwREAIAjDarH7r2zxOJUBDK+UAFCCg2b41NVDZRoPor2CHaVfjR//BgE2FuJjAlfcks8tAAAAAElFTkSuQmCC&quot;);">Media</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem ExternalLink"><button class="StandardMenuItem__button" value="Favorites,Media,My Big List of Films" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTBEA/////wAAAMDHyIeIjwcAq6ipUf7/AJzvhEIAAAABdFJOUwBA5thmAAAAWElEQVQI112OQQ4AIQgDaQXY/794BdEY5zalAUREbCML40LtcdpxgByTdAfgRDbSPb4K2lNJryC9pl2YHrpG7H6EA6qnHxiOex8079ruz2D/1y6mh/Jx8QMPvwJYhQJ+mAAAAABJRU5ErkJggg==&quot;);">My Big List of Films</button></div></div></div><div class="StandardMenuItem ExternalLink"><button class="StandardMenuItem__button" value="Favorites,My Github" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTBEA/////wAAAMDHyIeIjwcAq6ipUf7/AJzvhEIAAAABdFJOUwBA5thmAAAAWElEQVQI112OQQ4AIQgDaQXY/794BdEY5zalAUREbCML40LtcdpxgByTdAfgRDbSPb4K2lNJryC9pl2YHrpG7H6EA6qnHxiOex8079ruz2D/1y6mh/Jx8QMPvwJYhQJ+mAAAAABJRU5ErkJggg==&quot;);">My Github</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Documents" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAWCAMAAADto6y6AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTP///wAAAMDHyP7/AIeIj6ipUREA/6MGgeEAAAABdFJOUwBA5thmAAAAc0lEQVQoz3XRWRKAMAgDULbU+99YgboVGsefvJHilOgTUB+o9D1zEXiYi3jn77EIWC37EAAPPH2I2bjh7VOGxMH6zyUOscwvcomD2vJI7oa1N2xF8m/qLEACrJ4S63azJtRZsvlCE7pZE5pZCaNk3oqUEJ1TjwT19CEMmgAAAABJRU5ErkJggg==&quot;);">Documents</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Documents,ASCII Art" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURUdwTP///wAAAMDHyP7/AIeIj/DYpwIAAAABdFJOUwBA5thmAAAAM0lEQVQI17WKwREAIAjDarH7r2zxOJUBDK+UAFCCg2b41NVDZRoPor2CHaVfjR//BgE2FuJjAlfcks8tAAAAAElFTkSuQmCC&quot;);">ASCII Art</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Documents,ASCII Art,facepalm" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);">facepalm</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Documents,ASCII Art,squirtel" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);">squirtel</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Documents,Lyrics" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURUdwTP///wAAAMDHyP7/AIeIj/DYpwIAAAABdFJOUwBA5thmAAAAM0lEQVQI17WKwREAIAjDarH7r2zxOJUBDK+UAFCCg2b41NVDZRoPor2CHaVfjR//BgE2FuJjAlfcks8tAAAAAElFTkSuQmCC&quot;);">Lyrics</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Documents,Lyrics,sunscreen" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);">sunscreen</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Documents,Lyrics,all star lyrics" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);">all star lyrics</button></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Documents,Guitar Tabs" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURUdwTP///wAAAMDHyP7/AIeIj/DYpwIAAAABdFJOUwBA5thmAAAAM0lEQVQI17WKwREAIAjDarH7r2zxOJUBDK+UAFCCg2b41NVDZRoPor2CHaVfjR//BgE2FuJjAlfcks8tAAAAAElFTkSuQmCC&quot;);">Guitar Tabs</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Documents,Guitar Tabs,rollin guitar tabs" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);">rollin guitar tabs</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Documents,Guitar Tabs,all star" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEVHcEz////AwMAAAACAgIAnu+Y7AAAAAXRSTlMAQObYZgAAAE1JREFUOMvlkYEGwEAMQ9O+/v83b2puWDC2m3FPUFIRIu2AkwYVZcXwCaMiuf1gyXcfaA6H6PtBwpySf+jAhTUTPthi9pqqdJy+BJb2NgG9BdieCff+AAAAAElFTkSuQmCC&quot;);">all star</button></div></div></div></div></div><div class="StandardMenuItem StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Settings" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAVUExURUdwTP///6ipUQAAAMDHyP7/AIeIj+yok/YAAAABdFJOUwBA5thmAAAAqElEQVQoz3WQARKEMAgDC6H8/8kXgNaqHnUczZKADn8URpfbrW5gNcsLIMs+gLDsD7BvBwxir63CwcvT9xiu2ssRuG8gOgXwCAPA5/2BKlO0AHvmBRCkAHXdgH0i6Ch6GyiLue2QmBG7EdDNcznyjQBhkezLnWYIC+T0PnqA7ItNFQhvAQNU018pQTk8g0vX7I2c/cMCIKPrPg7Al5JwgpHmlnDoix7aD+ZQBgFqmFWKAAAAAElFTkSuQmCC&quot;);">Settings</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="divider divider--group-0-start"></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Settings,Ctrl+Alt+Del">Ctrl+Alt+Del</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Settings,Control Panel" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTP///wAAAMDHyP7/AIeIj6oAV/8AABEA/6YT1MsAAAABdFJOUwBA5thmAAAAUElEQVQI11WOwREAIQgDMSFq/xUfCufo8goLA2amhR1Ej9Ibo1FjahdC5PQuwXemYhgMyfQSW1uhPLYBnGd/wkdn+WhMcPTL/zeQ3x5ghocP4sMCX1pY6W4AAAAASUVORK5CYII=&quot;);">Control Panel</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Settings,Printers" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTP///wAAAMDHyP7/AIeIj/8AAAD/AB/J9zYAAAABdFJOUwBA5thmAAAATElEQVQI11WOCQ7AIAzDWrNs///xwjouIyEFp6gRoU5MdDUfndEPf025IZyroF78csVMfA9fcXjpudHytv6b6cGGts1DLUFtOyGCgxfglgJPKhCz0gAAAABJRU5ErkJggg==&quot;);">Printers</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Settings,Folder Options" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTP///wAAAMDHyP7/AIeIjwD//xEA/6ipUQcAq/jryeYAAAABdFJOUwBA5thmAAAAXElEQVQI11WMWxLAIAgDeRil979wE6sdXT+YTUAzg7AftOTDrQzWGtwTCA6CoCe8e2AuyaU9Z/C5tEcdfbKv3TdIUbV6DV6PUaufPz+dgXyjgG6xURB2wOByrtoLU90C2k4z3ToAAAAASUVORK5CYII=&quot;);">Folder Options</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Settings,Active Desktop" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUdwTFOoqf///wAAAMDHyIeIjxEA/6ipUf7/AKoAVwcAqwD///8AAC/f764AAAABdFJOUwBA5thmAAAAZUlEQVQY012O0RKAIAgEQQ4s6/+/N06trH3bnZsBkYV9lw/1ZFDipG7V3EQPDZSEHpGhO7o3MHQfezSGxYFm4vRSh8MZ0osV2BOMR7AuskxnUNrt8yxeV34auIm+yFd9EMrX7ccF27wDshZIPIoAAAAASUVORK5CYII=&quot;);">Active Desktop</button></div><div class="divider divider--group-0-end"></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Settings,Windows Update..." style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOBAMAAADUAYG5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTAAAABEA/wCpUwcAq/8AAMDHyFOoqf7/AAD//0xDm5cAAAABdFJOUwBA5thmAAAAYUlEQVQIHQXAsQ2CQAAF0McG91GCliCJ9aGNJdEFKFiBHSztbN3YoEkgstYC6dZbwbZ3ORTYMnxSGPd2+B4qxjan9llkT3KeKkn/66cK/eN9XaC9zNMCzTTfCzi+FqBJ8QfutQupHeo2VwAAAABJRU5ErkJggg==&quot;);">Windows Update...</button></div></div></div><div class="StandardMenuItem hideMobileY StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Help" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTAAAAKlUqoeIj8DHyP////7/AKipURimofcAAAABdFJOUwBA5thmAAAAhklEQVQoz23SQRKAIAhAUQCV+984BAU1XDX/GTaTALmIEKpFrIJ1p4JW/5F3GUNu8j5snW/tOTJRTJ75MezuMiflIWcXn8P4zBH/Xm4KhIhrv9DuDsxGG2ZviEDY2qLsTAa996DoCzZlByJiDsoOMDcGHf2mq5/09CQufrtRfR2U6muilI8fx+gEA+5IErUAAAAASUVORK5CYII=&quot;);">Help</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Help,Support Me?" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTBEA/////wAAAMDHyIeIjwcAq6ipUf7/AJzvhEIAAAABdFJOUwBA5thmAAAAWElEQVQI112OQQ4AIQgDaQXY/794BdEY5zalAUREbCML40LtcdpxgByTdAfgRDbSPb4K2lNJryC9pl2YHrpG7H6EA6qnHxiOex8079ruz2D/1y6mh/Jx8QMPvwJYhQJ+mAAAAABJRU5ErkJggg==&quot;);">Support Me?</button></div></div></div><div class="StandardMenuItem hideMobileY StandardMenuItem--has-options"><button class="StandardMenuItem__button" value="Run..." style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAWCAMAAADto6y6AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUdwTP///wAAAMDHyIeIjwcAq6oAV/8AAACpUxEA/6lUqgD//wD/AKlOo4wAAAABdFJOUwBA5thmAAAAhElEQVQoz4WQAQ6EIAwES1tPiv7/vdeloqFqHBONDGtxiYDeYAohmVMsg8K4HgR35PtTZcbFb8BZrCIrcGF9sYYgPvDXzaBqDaH+EFEIM59Vd8uiSWsIjISocCSm4TBjXVWPW/yHlrT/S2CI8r0SldJPlejHZQjKKNp/Eld25irxJZAjf6KnBJOwTu4+AAAAAElFTkSuQmCC&quot;);">Run...</button><div class="Frame StandardMenu StandardMenuItem__child"><div class="StandardMenuItem StandardMenuItem--empty"><button class="StandardMenuItem__button disabled" value="">(Empty)</button></div></div></div><div class="divider divider--group-1-end"></div><div class="StandardMenuItem"><button class="StandardMenuItem__button disabled" value="Log Off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAMAAAAmopZHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUdwTP///wAAAMDHyP7/AIeIj6ipUREA//8AAKoAVwCpU6lUqgD/AON30IcAAAABdFJOUwBA5thmAAAAoUlEQVQoz22QURKDIAxEyW4W1Pb+522CWgVd8sG8N8kQSrkilLfIiFdsb0JG4SlyyLY9RGLwy0nITMuqDT6K4FiXFe4O3oTMiA+aKmgjX4jWMOIiLtZCTDg4m4kzRoQKOOIKSWHIGdOtZtOADXJ3q+PHVHOITHFl5zkiO65g53Gh0/0folQjAQYmST8qeEd5+hZH5VIn7hue1cW80e0bZvwD+wkD6X08PtQAAAAASUVORK5CYII=&quot;);">Log Off</button></div><div class="StandardMenuItem"><button class="StandardMenuItem__button" value="Shut Down..." style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURUdwTBEA/wAAAMDHyIeIjwcAq////wD///7/AD9rfX0AAAABdFJOUwBA5thmAAAAgklEQVQoz23R6xYFIQQF4Bhl3v+JDzHkaP/Ll6XLGBqSjB6iR9KIaD0Wsnz1pQnKVtt/IQHU1R8ZzFkIBXEDwEFSpIQgPVYB3mRHPoAVGGYD4LV7Lh0vww32jA5zgk2poBdVah2YlID6jBgUgP70QQ6Yv+XkUD7SqYPTDYzKhJO+8g96dQXmQ7dOfAAAAABJRU5ErkJggg==&quot;);">Shut Down...</button></div></div></div><div class="TaskBar__quick-launch"><button class="btn ButtonIconSmall" title="Display Desktop"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUdwTFOoqf///wAAAMDHyIeIjxEA/6ipUf7/AKoAVwcAqwD///8AAC/f764AAAABdFJOUwBA5thmAAAAZUlEQVQY012O0RKAIAgEQQ4s6/+/N06trH3bnZsBkYV9lw/1ZFDipG7V3EQPDZSEHpGhO7o3MHQfezSGxYFm4vRSh8MZ0osV2BOMR7AuskxnUNrt8yxeV34auIm+yFd9EMrX7ccF27wDshZIPIoAAAAASUVORK5CYII="></button></div><div class="TaskBar__programs"></div><div class="TaskBar__notifications"><div class="TaskBar__notifications__time">18:57</div></div></div><div class="container"><div class="screen"></div></div></div></div><script>!function(p){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,a=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(i,t)&&i[t]&&a.push(i[t][0]),i[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(p[r]=o[r]);for(s&&s(e);a.length;)a.shift()();return c.push.apply(c,u||[]),f()}function f(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==i[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},i={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return p[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=p,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonppackard-belle-desktop"]=window["webpackJsonppackard-belle-desktop"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;f()}([])</script><script src="/static/js/2.17f558be.chunk.js"></script><script src="/static/js/main.10a3c03a.chunk.js"></script></body></html>

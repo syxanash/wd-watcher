@@ -1,0 +1,79 @@
+<html><head>
+	<title>L U M I S E T</title>
+	<meta name="description" content="LUMISET provides music and visual for winters and other seasons.">
+	<meta name="keywords" content="winter,music,art,synth,synths,sampler,elektron,modular,visuals,psyche,physics,charles manson,soundtrack,brian eno">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-52045752-5"></script>
+	<script src="scripts/ga.js"></script>
+
+	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<script src="scripts/jquery-ui.min.js"></script>
+
+</head>
+
+<body class="noselect cursor">
+	<div id="icons">
+		<div id="0" class="icon track ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="track"></div>
+			<div class="icon_text">Departures &amp; arrivals</div>
+		</div>
+		<div id="1" class="icon track ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="track"></div>
+			<div class="icon_text">Crossings</div>
+		</div>
+
+		<div id="2" class="icon track ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="track"></div>
+			<div class="icon_text">Below zero</div>
+		</div>
+		<div id="3" class="icon track ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="track"></div>
+			<div class="icon_text">Blizzard</div>
+		</div>
+		<div id="4" class="icon track ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="track"></div>
+			<div class="icon_text">Winters end</div>
+		</div>
+		<div id="contact" class="icon contact ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="contact"></div>
+			<div class="icon_text">Contact</div>
+		</div>
+		<div id="spotify" class="icon spotify ui-draggable ui-draggable-handle" style="position: relative;">
+			<div class="spotify"></div>
+			<div class="icon_text">Spotify</div>
+		</div>
+	</div>
+	<div id="win" class="win drag resize ui-resizable ui-draggable" hidden="hidden">
+		<div id="pnav" class="ui-draggable-handle">
+			<span id="trackTitle">Departures &amp; arrivals</span>
+			<img class="pbuttons close" src="images/close.png">
+			<img class="pbuttons" src="images/max.png"> 
+			<img class="pbuttons" src="images/min.png">
+		</div>
+		<div class="noter">
+			<div class="notebox editable">&nbsp;</div>
+			<div class="notebox">lumiset</div>
+		</div>
+		<canvas id="canvas" width="2000" height="500"></canvas>
+	<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+	<div id="win_contact" class="win drag resize ui-resizable ui-draggable" hidden="hidden">
+		<div id="pnav_contact" class="ui-draggable-handle">
+			<span>Contact</span>
+			<img class="pbuttons close" src="images/close.png">
+			<img class="pbuttons" src="images/max.png">
+			<img class="pbuttons" src="images/min.png">
+		</div>
+			<canvas id="contact_canvas" width="600" height="325"></canvas>
+		<div class="noter">
+			<div class="notebox">lumiset.sequences@gmail.com</div>
+			<div class="notebox">&nbsp;</div>
+		</div>
+	<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+
+<script src="scripts/sketch1.js"></script>
+<script src="scripts/contactCanvas.js"></script>
+<script src="scripts/dom.js"></script>
+
+
+</body></html>
