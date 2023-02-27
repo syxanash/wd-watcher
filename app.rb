@@ -37,7 +37,11 @@ websites_object.each_with_index do |website_obj, index|
     FileUtils.mkdir_p(directory_name)
   end
 
-  next if ignore_list.include?(sanitize_filename(website_obj['name']))
+  if ignore_list.include?(sanitize_filename(website_obj['name']))
+    puts "[?] Ignoring: #{website_obj['url']}"
+
+    next
+  end
 
   begin
     print "[#{index + 1}/#{websites_object.size}]".yellow
