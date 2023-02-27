@@ -52,9 +52,6 @@ websites_object.each_with_index do |website_obj, index|
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.manage.window.resize_to(1792, 1120)
-    driver.manage.timeouts.implicit_wait = 20
-    driver.manage.timeouts.script_timeout = 20
-    driver.manage.timeouts.page_load = 20
 
     driver.get website_obj['url']
 
