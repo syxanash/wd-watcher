@@ -24,8 +24,30 @@ def sanitize_filename(filename)
   fn.join '.'
 end
 
+def create_report(links)
+  date_time = Time.new
+  html_report = File.new("report_#{date_time.strftime('%Y-%m-%d-%H:%M')}.html", 'w+')
+
+html_report.write <<EOH
+<HTML>
+<HEAD>
+<TITLE>Web Desktops Monitor Report</TITLE>
+</HEAD>
+<BODY>
+<div>
+<h1>Report #{date_time.strftime('%Y-%m-%d %H:%M')}</h1>
+#{links.map {|link| "<a href='#{link}'>#{link}</a>" }.join("<br>")}
+</div>
+</BODY>
+</HTML>
+EOH
+
+html_report.close
+end
+
 websites_object = JSON.parse(RestClient.get('https://raw.githubusercontent.com/syxanash/syxanash.github.io/development/src/resources/remote-desktops.json'))
 ignore_list = JSON.parse(File.read('ignore_list.json'))
+links_to_inspect = []
 jarow = FuzzyStringMatch::JaroWinkler.create(:native)
 
 websites_object.each_with_index do |website_obj, index|
@@ -33,12 +55,12 @@ websites_object.each_with_index do |website_obj, index|
 
   first_scan = false
 
-  if !Dir.exist? directory_name
-    FileUtils.mkdir_p(directory_name)
-  end
+  FileUtils.mkdir_p(directory_name) unless Dir.exist? directory_name
 
-  if ignore_list.include?(sanitize_filename(website_obj['name']))
+  if ignore_list.include?(website_obj['url'])
     puts "[?] Ignoring: #{website_obj['url']}"
+
+    links_to_inspect.push(website_obj['url'])
 
     next
   end
@@ -68,7 +90,7 @@ websites_object.each_with_index do |website_obj, index|
 
     File.write("#{directory_name}/recent.html", source)
 
-    if !first_scan
+    unless first_scan
       print 'Comparing...'.light_blue
       first_file = File.read("#{directory_name}/recent.html")
       second_file = File.read("#{directory_name}/previous.html")
@@ -77,6 +99,8 @@ websites_object.each_with_index do |website_obj, index|
         puts ''
         puts '[?] Found differences in:'.yellow
         puts website_obj['url']
+
+        links_to_inspect.push(website_obj['url'])
       end
     end
     puts 'Done.'
@@ -84,6 +108,8 @@ websites_object.each_with_index do |website_obj, index|
     puts ''
     puts "[!] Can't connect to: #{website_obj['url']}".red
     puts error.to_s.red
+
+    links_to_inspect.push(website_obj['url'])
   end
 end
 
@@ -102,21 +128,7 @@ Dir.chdir('archive') do
   end
 end
 
+puts '[?] Creating a report...'.yellow
+create_report(links_to_inspect)
+
 puts 'All Done.'
-
-#https://imagemagick.org/script/command-line-options.php#metric
-#compare 1.png 2.png -metric FUZZ null:
-
-#   if !first_scan
-#     first_file = "#{directory_name}/selenium.png"
-#     second_file = "#{directory_name}/previous.png"
-
-#     comparison = `compare #{first_file} #{second_file} -metric FUZZ null: 2>&1`
-
-#     compare_percentage = /\((.*?)\)%?/mi.match(comparison)[1].to_f * 100
-
-#     if compare_percentage > 45
-#       puts "something wrong with:"
-#       puts website_obj['url']
-#     end
-#   end
