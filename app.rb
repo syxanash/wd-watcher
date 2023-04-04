@@ -26,7 +26,7 @@ end
 
 def create_report(links)
   date_time = Time.new
-  html_report = File.new("report_#{date_time.strftime('%Y-%m-%d-%H:%M')}.html", 'w+')
+  html_report = File.new('report.html', 'w+')
 
 html_report.write <<EOH
 <HTML>
