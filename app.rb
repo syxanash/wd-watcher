@@ -70,7 +70,7 @@ websites_object.each_with_index do |website_obj, index|
     print " Scanning #{website_obj['name']}...".blue
 
     options = Selenium::WebDriver::Chrome::Options.new
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.manage.window.resize_to(1792, 1120)
