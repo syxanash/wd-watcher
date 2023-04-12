@@ -25,3 +25,6 @@ yarn-error.log*
 #vscode
 
 /.vscode
+
+nohup.out
+report.html
