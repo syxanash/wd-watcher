@@ -1,0 +1,365 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sophia's Time Capsule: Experience My Projects</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+
+
+  <!--Windows and Taskbar-->
+  <link href="../lib/jquery-ui/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
+  <link id="themecss" href="../src/jquery-lwd/themes/sophia/jquery-ui.theme.css" rel="stylesheet" type="text/css">
+  <link href="../src/jquery-lwd/jquery-lwd.structure.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../lib/jquery-ui/jquery.min.js"></script>
+
+  <!--Loader --Jquery Dependent-->
+  <script type="text/javascript" src="../src/jquery-sh/loader.js"></script>
+
+  <script type="text/javascript" src="../lib/jquery-ui/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="../src/jquery-lwd/jquery-lwd.js"></script>
+  <script type="text/javascript" src="../src/jquery-sh/jquery-sh.js"></script>
+
+  <!--For p5.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+
+  <!--Loader Overlay-->
+  <div id="loading-container" style="display: none;">
+    <div class="loader">
+      <img src="../media/loading.gif">
+
+        <div id="loading-bar" style="width: 100%;"></div>
+        <div id="loading-bar-text">My name is Sophia<span aria-hidden="true"></span></div>
+
+    </div>
+  </div>
+
+
+  <!--Background Video-->
+
+  <img id="background-video" src="../media/lightsaber.gif">
+
+  <div class="button-container" id="desktop">
+    <!--Applications-->
+    <!--Note 1-->
+    <!--Experience-->
+    <div class="ui-widget-content openbutton" style="left: 20px; top: 20px; width: 138.502px; height: 187.1px;">
+      <button class="experience my projects" id="experience" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/laptop.gif">
+        Experience My Projects
+      </button>
+    </div>
+
+    <!--Art 1-->
+    <!--Art-->
+    <div class="ui-widget-content openbutton" style="left: 177.941px; top: 20px; width: 138.502px; height: 187.1px;">
+      <button class="digital art showcase" id="digital" style="transform: scale(1.21493);">
+        <img class="icon" style="max-height: 80px; max-width: auto" src="../media/icons/flower.gif">
+        Digital Art Showcase
+      </button>
+    </div>
+
+    <!--Art 2-->
+    <!--3D Modeling-->
+    <div class="ui-widget-content openbutton" style="left: 335.883px; top: 20px; width: 138.502px; height: 187.384px;">
+      <button class="modeled 3d object showcase" id="modeling" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/leaf.gif">
+        3D Modeled Showcase
+      </button>
+    </div>
+
+    <!--Time=Based 1-->
+    <!--Video Editing-->
+    <div class="ui-widget-content openbutton" style="left: 20px; top: 226.539px; width: 138.502px; height: 187.1px;">
+      <button class="video editing showcase" id="video" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/glitch.gif">
+        Video Editing
+      </button>
+    </div>
+
+    <!--Application: Game 1-->
+    <!--Sprinkles-->
+    <div class="ui-widget-content openbutton" style="left: 177.941px; top: 226.539px; width: 138.502px; height: 187.1px;">
+      <button class="sprinkles drawing tool" id="sprinkles" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/sprinkles.gif">
+        Drawing Sprinkles
+      </button>
+    </div>
+
+    <!--Application: Game 2-->
+    <!--=Pong The Wall!-->
+    <div class="ui-widget-content openbutton" style="left: 335.883px; top: 226.539px; width: 138.502px; height: 187.1px;">
+      <button class="pong the wall game" id="pongthewall" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/PongIcon.gif">
+        Pong The Wall!
+      </button>
+    </div>
+
+    <!--Application: Game 3-->
+    <!--Funky Hangman-->
+    <div class="ui-widget-content openbutton" style="left: 20px; top: 433.077px; width: 138.502px; height: 187.1px;">
+      <button class="funky hangman" id="funkyhangman" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/hangman.gif">
+        Funky Hangman
+      </button>
+    </div>
+
+    <!--Landing Site-->
+    <!--Interactive Websites-->
+    <div class="ui-widget-content openbutton" style="left: 177.941px; top: 433.077px; width: 138.502px; height: 187.1px;">
+      <button class="interactive websites" id="interactive" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/web.gif">
+        Interactive Websites
+      </button>
+    </div>
+
+    <!--Link 1-->
+    <!--GitHub-->
+    <div class="ui-widget-content openbutton" style="left: 335.883px; top: 433.077px; width: 138.502px; height: 187.1px;">
+      <button class="github" id="github" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/github.png">
+        GitHub Profile
+      </button>
+    </div>
+
+    <!--Link 2-->
+    <!--LinkedIn-->
+    <div class="ui-widget-content openbutton" style="left: 20px; top: 639.616px; width: 138.502px; height: 187.1px;">
+      <button class="linkedin" id="linkedin" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/linkedin.png">
+        LinkedIn Profile
+      </button>
+    </div>
+
+    <!--Link 3-->
+    <!--Youtube-->
+    <div class="ui-widget-content openbutton" style="left: 177.941px; top: 639.616px; width: 138.502px; height: 187.1px;">
+      <button class="youtube" id="youtube" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/youtube.png">
+        YouTube Profile
+      </button>
+    </div>
+
+    <!--Link 4-->
+    <!--Vimeo-->
+    <div class="ui-widget-content openbutton" style="left: 335.883px; top: 639.616px; width: 138.502px; height: 187.1px;">
+      <button class="vimeo" id="vimeo" style="transform: scale(1.21493);">
+        <img class="icon" src="../media/icons/vimeo.png">
+        Vimeo Profile
+      </button>
+    </div>
+  </div>
+
+  <script>
+    //safe clicking and dragging
+    //Vimeo
+    $(document).ready(function () {
+      var mouseDownTime;
+
+      $("#vimeo").on("mousedown", function () {
+        mouseDownTime = new Date().getTime();
+      });
+
+      $("#vimeo").on("mouseup", function () {
+        var mouseUpTime = new Date().getTime();
+        var timeDifference = mouseUpTime - mouseDownTime;
+
+        if (timeDifference <= 250) {
+          window.open("https://vimeo.com/user150430210");
+        }
+      });
+      //LinkedIn
+      $("#linkedin").on("mousedown", function () {
+        mouseDownTime = new Date().getTime();
+      });
+
+      $("#linkedin").on("mouseup", function () {
+        var mouseUpTime = new Date().getTime();
+        var timeDifference = mouseUpTime - mouseDownTime;
+
+        if (timeDifference <= 250) {
+          window.open('https://www.linkedin.com/in/my-name-is-sophia-herman/')
+
+        }
+      });
+
+      //YouTube
+      $("#youtube").on("mousedown", function () {
+        mouseDownTime = new Date().getTime();
+      });
+
+      $("#youtube").on("mouseup", function () {
+        var mouseUpTime = new Date().getTime();
+        var timeDifference = mouseUpTime - mouseDownTime;
+
+        if (timeDifference <= 250) {
+          window.open('https://www.youtube.com/channel/UC2rgk3-bvZANhXLxFdAwhOw')
+
+        }
+      });
+
+      //GitHub
+      $("#github").on("mousedown", function () {
+        mouseDownTime = new Date().getTime();
+      });
+
+      $("#github").on("mouseup", function () {
+        var mouseUpTime = new Date().getTime();
+        var timeDifference = mouseUpTime - mouseDownTime;
+
+        if (timeDifference <= 250) {
+          window.open('https://github.com/sosophia10')
+        }
+      });
+
+    });
+  </script>
+
+
+  <!--Application Scripts-->
+  <script type="text/javascript" src="../js/experience.js"></script>
+  <script type="text/javascript" src="../js/digital.js"></script>
+  <script type="text/javascript" src="../js/modeling.js"></script>
+  <script type="text/javascript" src="../js/video.js"></script>
+  <script type="text/javascript" src="../js/sprinkles.js"></script>
+  <script type="text/javascript" src="../js/pongthewall.js"></script>
+  <script type="text/javascript" src="../js/funkyhangman.js"></script>
+  <script type="text/javascript" src="../js/interactive.js"></script>
+
+  <!--Draggable Application-->
+  <script type="text/javascript" src="../lib/w3/draggable.js"></script>
+
+  <!--Taskbar-->
+  <div id="taskbar" class="ui-widget-header ui-corner-all">
+    <div id="lwd-taskbar-left" style="display: inline-block">
+      <button id="start" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all" aria-haspopup="true">
+        <img src="../media/icons/start.png" style="float: left; margin-right: 0.5em">
+        Sophia Herman
+      </button>
+
+      <!--<button id="addbutton" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all">Add window</button>-->
+      <div class="taskbar-spacer"></div>
+    </div>
+  <div id="lwd-taskbar-button-navigation"><div id="lwd-taskbar-nav-up">&nbsp;</div><div id="lwd-taskbar-nav-down">&nbsp;</div></div><div id="lwd-taskbar-button-container"></div><div id="lwd-taskbar-information_container"><div id="lwd-taskbar-clock">11:08</div></div></div>
+
+  <div class="menu-wrapper">
+    <div class="menu-placeholder"></div>
+    <div class="menu is-hidden drop" id="menu">
+      <ul>
+        <li>
+          <a href="apps/experience.html" target="_blank"> MY EXPERIENCE </a>
+          <ul>
+            <li>
+              <a href="apps/digital.html" target="_blank" title="Adobe Photoshop and Illustrator">
+                Digital Art Showcase
+              </a>
+            </li>
+            <li>
+              <a href="apps/modeling.html" target="_blank" title="Blender">
+                3D Models Showcase
+              </a>
+            </li>
+            <li>
+              <a href="apps/video.html" target="_blank" title="Adobe Premiere and After Effects">
+                Video Editing Showcase
+              </a>
+            </li>
+            <li>
+              <a class="drop" title="Websites, Games, and Software">
+                Interactive Media »
+              </a>
+              <ul>
+                <li>
+                  <a href="apps/interactive.html" target="_blank" title="HTML and JavaScript">
+                    Websites
+                  </a>
+                </li>
+                <li>
+                  <a title="Python, Processing, P5.js, and C#"> Games » </a>
+                  <ul>
+                    <li>
+                      <a href="apps/funkyhangman.html" target="_blank">
+                        Funky Hangman</a>
+                    </li>
+                    <li>
+                      <a href="apps/pongthewall.html" target="_blank">
+                        Pong the Wall!</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a> Tools » </a>
+                  <ul>
+                    <li>
+                      <a href="apps/sprinkles.html" target="_blank">Sprinkles</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="upone">
+              <a href="mailto:sophiaherman@telrit.net" title="sophiaherman@telrit.net">
+                Email Me
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--Script For hide/show Start Menu Nav-->
+  <script>
+    const toggle = document.querySelector("#start");
+    const content = document.querySelector("#menu");
+
+    toggle.addEventListener("click", function () {
+      content.classList.toggle("is-hidden");
+    });
+  </script>
+
+
+
+<script>
+  $(document).ready(function () {
+    var intCounter = 1;
+
+    $("#addbutton").click(function () {
+      var $objWindow = $(
+        '<div class="window">Window ' + intCounter + "</div>"
+      );
+      var intRandom = Math.floor(Math.random() * 12 + 1);
+      $($objWindow).appendTo("body");
+      $objWindow.window({
+        title: "My awesome custom window " + intCounter,
+        width: 480,
+        height: 320,
+        position: {
+          my: "left+" + 200 + ", top+" + 200,
+          at: "left top",
+          of: window,
+        },
+        maximizable: true,
+        minimizable: true,
+
+        icon:
+          "../src/jquery-lwd/themes/sophia/images/icons/" +
+          intRandom +
+          ".png",
+      });
+
+      intCounter++;
+    });
+
+    $("#taskbar").taskbar();
+
+    $("#theme").change(function () {
+      $("head link#themecss").attr("href", $(this).val());
+    });
+  });
+</script>
+
+</body><!--Default Add New Window Function in Taskbar Start--></html>
