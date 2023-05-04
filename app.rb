@@ -36,9 +36,8 @@ html_report.write <<EOH
   <body>
     <div>
       <h1>Report #{date_time.strftime('%Y-%m-%d %H:%M')}</h1>
-      <p>Manually check the following links:
+      <p>Manually check the following links:</p>
 #{links.map {|link| "<a href='#{link}' target='_blank'>#{link}</a>" }.join("<br>")}
-      </p>
     </div>
   </body>
 </html>
