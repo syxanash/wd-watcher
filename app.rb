@@ -29,17 +29,19 @@ def create_report(links)
   html_report = File.new('report.html', 'w+')
 
 html_report.write <<EOH
-<HTML>
-<HEAD>
-<TITLE>Web Desktops Monitor Report</TITLE>
-</HEAD>
-<BODY>
-<div>
-<h1>Report #{date_time.strftime('%Y-%m-%d %H:%M')}</h1>
-#{links.map {|link| "<a href='#{link}'>#{link}</a>" }.join("<br>")}
-</div>
-</BODY>
-</HTML>
+<html>
+  <head>
+    <title>Web Desktops Monitor Report</title>
+  </head>
+  <body>
+    <div>
+      <h1>Report #{date_time.strftime('%Y-%m-%d %H:%M')}</h1>
+      <p>Manually check the following links:
+#{links.map {|link| "<a href='#{link}' target='_blank'>#{link}</a>" }.join("<br>")}
+      </p>
+    </div>
+  </body>
+</html>
 EOH
 
 html_report.close
