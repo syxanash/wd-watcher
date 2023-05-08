@@ -24,11 +24,11 @@ def sanitize_filename(filename)
   fn.join '.'
 end
 
-def create_report(links)
+def create_report(links, ignored)
   date_time = Time.new
   html_report = File.new('report.html', 'w+')
 
-html_report.write <<EOH
+  html_report.write <<HTML_REPORT
 <html>
   <head>
     <title>Web Desktops Monitor Report</title>
@@ -38,16 +38,19 @@ html_report.write <<EOH
       <h1>Report #{date_time.strftime('%Y-%m-%d %H:%M')}</h1>
       <p>Manually check the following links:</p>
 #{links.map {|link| "<a href='#{link}' target='_blank'>#{link}</a>" }.join("<br>")}
+      <br>
+      <p>Ignored links:</p>
+#{ignored.map {|link| "<a href='#{link}' target='_blank'>#{link}</a>" }.join("<br>")}
     </div>
   </body>
 </html>
-EOH
+HTML_REPORT
 
-html_report.close
+  html_report.close
 end
 
 websites_object = JSON.parse(RestClient.get('https://raw.githubusercontent.com/syxanash/syxanash.github.io/development/src/resources/remote-desktops.json'))
-ignore_list = JSON.parse(File.read('ignore_list.json'))
+ignored_links = JSON.parse(File.read('ignore_list.json'))
 links_to_inspect = []
 jarow = FuzzyStringMatch::JaroWinkler.create(:native)
 
@@ -58,10 +61,8 @@ websites_object.each_with_index do |website_obj, index|
 
   FileUtils.mkdir_p(directory_name) unless Dir.exist? directory_name
 
-  if ignore_list.include?(website_obj['url'])
+  if ignored_links.include?(website_obj['url'])
     puts "[?] Ignoring: #{website_obj['url']}"
-
-    links_to_inspect.push(website_obj['url'])
 
     next
   end
@@ -130,6 +131,6 @@ Dir.chdir('archive') do
 end
 
 puts '[?] Creating a report...'.yellow
-create_report(links_to_inspect)
+create_report(links_to_inspect, ignored_links)
 
 puts 'All Done.'
