@@ -31,7 +31,7 @@ def create_report(links, ignored)
   html_report.write <<HTML_REPORT
 <html>
   <head>
-    <title>Web Desktops Monitor Report</title>
+    <title>Web Desktops Watcher Report</title>
   </head>
   <body>
     <div>
