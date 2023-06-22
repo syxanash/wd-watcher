@@ -42,6 +42,16 @@ def create_report(links, ignored)
       <p>Ignored links:</p>
 #{ignored.map {|link| "<a href='#{link}' target='_blank'>#{link}</a>" }.join("<br>")}
     </div>
+    <br>
+    <button onClick='openAll()'>Open all</button>
+    <script>
+      function openAll() {
+        var links = document.links;
+        for (var i = 0; i < links.length; i++) {
+            window.open(links[i], '_blank')
+        }
+      }
+    </script>
   </body>
 </html>
 HTML_REPORT
