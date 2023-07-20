@@ -1,0 +1,304 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-style-type" content="text/css; charset=utf-8">
+	<meta http-equiv="content-script-type" content="text/javascript; charset=utf-8">
+
+	<link rel="shortcut icon" href="icon.php?type=ico">
+	<link rel="icon" type="image/png" href="icon.php?type=png">
+	<link rel="apple-touch-icon" href="icon.php?type=apple">
+
+	<script type="text/javascript" charset="utf-8" src="start.php"></script><style id="system_1_0_0_style_system_1_0_0_common" type="text/css">@charset "utf-8";
+
+	/* General tags */
+	html { width : 100%; height : 100%; padding : 0px; margin : 0px; } /* Make sure the content uses the entire window size and let % height work on nodes */
+
+	body { width : 100%; height : 100%; font-size : 100%; margin : 0px; padding : 0px; } /* Add general parameters */
+
+	table { font-size : 100%; margin : 0px; padding : 0px; } /* General parameters for tables */
+
+	input, select, textarea, pre { font-size : 100%; } /* General parameters */
+
+	a, label { cursor : pointer; } /* Let lables and links be visually recognized */
+
+	a:link, a:visited { color : #333; text-decoration : none; } /* Strip underlines and give a generic color */
+
+	a:active, a:hover { color : #777; } /* Hovered style */
+
+	p, h1, h2 { margin-top : 10px; margin-bottom : 10px; } /* Make them look same across browsers */
+
+	h2 { font-size : 120%; }
+
+
+	/* ID specific styles */
+	div#system_1_0_0_context { width : 100px; height : 200px; border : 1px #333 solid; position : absolute; } /* Context menu */
+
+	div.system_1_0_0_helper { position : absolute; cursor : help; padding : 5px; border : 1px #333 solid; } /* The tool tip window */
+
+	div.system_1_0_0_mover_box { position : absolute; cursor : move; } /* A box window movement indicator */
+
+	div.system_1_0_0_mover_clone { border : 1px #333 solid; position : absolute; cursor : move; } /* A cloned window when moving and resizing a window */
+
+
+	/* Application window */
+	table.system_1_0_0_window { position : absolute; cursor : move; } /* The window of an application */
+
+	table.system_1_0_0_bar { border : 1px #333 solid; width : 100%; } /* Toolbar cell */
+
+	table.system_1_0_0_bar th { font-size : 130%; text-align : left; padding : 5px; } /* Title text of the toolbar */
+
+	table.system_1_0_0_bar img, img.system_1_0_0_icon { border : none; width : 24px; height : 24px; } /* Toolbar buttons and general icons */
+
+	img.system_1_0_0_button { border : none; width : 16px; height : 16px; } /* Button images */
+
+
+	/* Info & tools pane */
+	div.system_1_0_0_info { background-color : #ddd; padding : 5px; border : 1px #333 dashed; }
+
+	td.system_1_0_0_configure_tab { border : 1px #333 dotted; }
+
+	td.system_1_0_0_configure_tab_active { border : 1px #333 solid; font-weight : bold; }
+
+	a.system_1_0_0_tab_active { color : #333; background-color : #f8f8f8; }
+
+	td.system_1_0_0_info_content { width : 80%; height : 100%; color : #333; border : 1px #333 solid; background-color : #f8f8f8; vertical-align : top; }
+
+	td.system_1_0_0_info_content a:hover, td.system_1_0_0_info_content a:active { color : #777 !important; }
+
+	td.system_1_0_0_info_tabs { text-align : center; width : 20%; border-top : 1px #333 solid; vertical-align : top; height : 100%; }
+
+	td.system_1_0_0_info_tabs a { text-decoration : none; display : block; padding : 5px; border : 1px #333 solid; border-top : none; border-right : none; }
+
+	.system_1_0_0_info_zone { vertical-align : top; text-align : center; }
+
+	.system_1_0_0_info_zone h2 { border : 1px #333 dotted; background-color : #eee; padding : 5px; }
+
+	.system_1_0_0_info_zone h3 { border-bottom : 1px #333 solid; text-align : left; }
+
+	td.system_1_0_0_info_list { border-right : 1px #333 solid; width : 30%; height : 100%; vertical-align : top; background-color : #eee; }
+
+	td.system_1_0_0_info_list ol { padding-left : 30px; }
+
+	td.system_1_0_0_info_list ol a { margin-top : 10px; display : block; }
+
+	a.system_1_0_0_viewed { font-weight : bold; }
+
+	ul.system_1_0_0_changes { text-align : left; }
+
+	div.system_1_0_0_info_changes { margin : 10px; }
+
+	h3.system_1_0_0_language { text-align : center; margin : 10px; font-size : 100%; }
+
+
+	/* Common styling */
+	input.system_1_0_0_flat { background-color : #fff; border : 1px #333 solid; } /* Flat looking buttons */
+
+	.system_1_0_0_field { background-color : #eee; padding : 5px; border : 1px #333 solid; } /*Configuration window content */
+
+	h2.system_1_0_0_report { text-align : center; border : 1px #333 solid; background-color : #fff; font-size : 120%; } /* Report message window */
+
+	.system_1_0_0_alert { font-size : 120%; border : 1px #333 dotted; background-color : #fed; padding : 10px; } /* Alert window message */
+
+	.system_1_0_0_box { border : 1px #333 solid; padding : 10px; } /* Border surrounded area */
+
+	.system_1_0_0_full { width : 100%; height : 100%; } /* To make a node at 100% size */
+
+	.system_1_0_0_hide { visibility : hidden; } /* Class name for making an element invisible */
+
+	.system_1_0_0_hidden { display : none; } /* Class name for hiding an element's presence */
+
+	.system_1_0_0_pad { margin-left : 20px; margin-right : 20px; } /* To add a padding on both sides of a content */
+</style>
+	<title>DeskPortal</title>
+<style id="system_1_0_0_style_about_1_0_0_common" type="text/css">div#about_1_0_0_more a:hover, div#about_1_0_0_more a:active { color : #567 !important; }
+
+	select#about_1_0_0_option { background-color : #d98; width : 100px; border : 1px #fff solid; }
+</style><style id="system_1_0_0_style_about_1_0_0_hover" type="text/css">table#about_1_0_0 a:hover, table#about_1_0_0 a:active { color : #ffffff; }</style><style id="system_1_0_0_style_announce_1_0_0_common" type="text/css">div#announce_1_0_0_box { word-break : all; height : 300px; overflow : auto; border : 1px #333 dotted; background-color : #ddd; } /* News region */
+
+	h3.announce_1_0_0_date { color : #888; margin-bottom : 0px; border-bottom : 1px #333 dashed; } /* News date */
+
+	h2.announce_1_0_0_title { font-size : 120%; margin-top : 0px; } /* News title */
+</style><style id="system_1_0_0_style_announce_1_0_0_hover" type="text/css">table#announce_1_0_0 a:hover, table#announce_1_0_0 a:active { color : #445566; }</style><style id="system_1_0_0_style_login_1_0_0_common" type="text/css">p#login_1_0_0_notice { font-size : 120%; background-color : #cba; border : 1px #333 dotted; padding : 10px; }
+
+	input.login_1_0_0_enter { background-color : #fff; width : 150px; }
+</style><style id="system_1_0_0_style_login_1_0_0_hover" type="text/css">table#login_1_0_0 a:hover, table#login_1_0_0 a:active { color : #666666; }</style></head>
+
+<body onload="deskportal.start()" style="background-color: rgb(51, 51, 51);">
+	<noscript>
+		<h1>DeskPortal</h1>
+		<p>To use DeskPortal, please enable JavaScript and Cookie on your browser. Please visit <a href="http://deskportal.com/">the official site</a> for more information.</p>
+	</noscript>
+
+
+<table class="system_1_0_0_full" cellpadding="0" cellspacing="0"><tbody class="system_1_0_0_full"><tr><td class="system_1_0_0_full"><img id="system_1_0_0_background" src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/wallpaper/db_tree.jpg" style="width: 1792px; height: 1120px;"></td></tr></tbody></table><table cellpadding="0" cellspacing="0" id="about_1_0_0" class="system_1_0_0_window" style="left: 10px; top: 10px; z-index: 1; color: rgb(34, 34, 34); opacity: 1;"><tbody>
+	<tr>
+		<td style="height: 10px; width: 10px; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tl&quot;);"></td>
+		<td style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tm&quot;);"></td>
+		<td id="system_1_0_0_about_1_0_0_invisible" style="width: 18px; cursor: n-resize; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tr&quot;);" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'restore', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"></td>
+	</tr>
+
+	<tr>
+		<td rowspan="2" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cl&quot;);"></td>
+
+		<td style="height: 0px; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cm&quot;);">
+			<table cellpadding="3" cellspacing="0" id="system_1_0_0_about_1_0_0_bar" class="system_1_0_0_bar system_1_0_0_hidden"><tbody><tr>
+				<th><img src="router-php.php?_version=1_0_0&amp;_self=about/1/0/0/component/default/computer/graphic/icon.png"> About</th>
+				<th style="text-align : right">
+					<a class="system_1_0_0_hidden" id="system_1_0_0_about_1_0_0_notice"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/notice.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.info('about_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'tool', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor: help">
+	<img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/info.png">
+</a>
+
+					<a onclick="deskportal.system_1_0_0.tool.lock('about_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'lock', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" id="system_1_0_0_about_1_0_0_lock" style="cursor : w-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/unlock.png"></a>
+					<a onclick="deskportal.system_1_0_0.window.sink('about_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'low', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor : n-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/behind.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.hide('about_1_0_0', 'body')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'drop', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" id="system_1_0_0_about_1_0_0_hide" style="cursor : nw-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/hide.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.fade('about_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'close', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor : ne-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/close.png"></a>
+				</th>
+			</tr></tbody></table>
+		</td>
+
+		<td rowspan="2" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cr&quot;);"></td>
+	</tr>
+
+	<tr>
+		<td style="vertical-align: middle; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cm&quot;);">
+			<table cellpadding="0" cellspacing="0" class="system_1_0_0_full"><tbody class="system_1_0_0_full"><tr>
+				<td id="system_1_0_0_about_1_0_0_body" style="padding: 0px; text-align: center; width: 310px; height: 200px;"><h1>DeskPortal</h1>
+
+<h2>Welcome</h2>
+<p>Next generation application platform</p>
+
+<p id="about_1_0_0_language">Change language :
+	<select onchange="deskportal.about_1_0_0.gui.language(this.value)" id="about_1_0_0_option" onmouseover="deskportal.system_1_0_0.tip.make('about_1_0_0', 'change', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"><option value="en">English (American)</option><option value="en-gb">English (British)</option><option value="ja">日本語</option></select>
+</p>
+
+<p><a id="about_1_0_0_click" onclick="deskportal.about_1_0_0.gui.show()" onmouseover="deskportal.system_1_0_0.tip.make('about_1_0_0', 'more', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">Read more about DeskPortal</a></p>
+
+<div id="about_1_0_0_more" style="width : 100%" class="system_1_0_0_hidden">
+	<div style="padding : 10px; border : 1px #333 solid; background-color : #fea">
+		<p>Web site : <a href="http://deskportal.com/" target="_blank" onmouseover="deskportal.system_1_0_0.tip.make('about_1_0_0', 'official', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">http://deskportal.com/</a></p>
+		<p>Information site : <a href="http://deskportal.com/wiki/" target="_blank" onmouseover="deskportal.system_1_0_0.tip.make('about_1_0_0', 'info', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">http://deskportal.com/wiki/</a></p>
+		<p>Developed by : <a href="http://windware.com/" target="_blank" onmouseover="deskportal.system_1_0_0.tip.make('about_1_0_0', 'company', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">Windware Solution</a></p>
+	</div>
+</div>
+</td>
+			</tr></tbody></table>
+		</td>
+	</tr>
+
+	<tr style="height : 18px">
+		<td style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=bl&quot;);"></td>
+		<td height="18px" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=bm&quot;);"></td>
+		<td id="system_1_0_0_about_1_0_0_resize" style="cursor: nw-resize; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=222222&amp;background=cc6633&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=br&quot;);" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'resize', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"></td>
+	</tr>
+</tbody></table><table cellpadding="0" cellspacing="0" id="announce_1_0_0" class="system_1_0_0_window" style="left: 360px; top: 15px; z-index: 2; color: rgb(51, 51, 51); opacity: 1;"><tbody>
+	<tr>
+		<td style="height: 10px; width: 10px; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tl&quot;);"></td>
+		<td style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tm&quot;);"></td>
+		<td id="system_1_0_0_announce_1_0_0_invisible" style="width: 18px; cursor: n-resize; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tr&quot;);" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'restore', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"></td>
+	</tr>
+
+	<tr>
+		<td rowspan="2" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cl&quot;);"></td>
+
+		<td style="height: 0px; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cm&quot;);">
+			<table cellpadding="3" cellspacing="0" id="system_1_0_0_announce_1_0_0_bar" class="system_1_0_0_bar system_1_0_0_hidden"><tbody><tr>
+				<th><img src="router-php.php?_version=1_0_0&amp;_self=announce/1/0/0/component/default/computer/graphic/icon.png"> Announce</th>
+				<th style="text-align : right">
+					<a class="system_1_0_0_hidden" id="system_1_0_0_announce_1_0_0_notice"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/notice.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.info('announce_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'tool', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor: help">
+	<img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/info.png">
+</a>
+
+					<a onclick="deskportal.system_1_0_0.tool.lock('announce_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'lock', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" id="system_1_0_0_announce_1_0_0_lock" style="cursor : w-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/unlock.png"></a>
+					<a onclick="deskportal.system_1_0_0.window.sink('announce_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'low', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor : n-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/behind.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.hide('announce_1_0_0', 'body')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'drop', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" id="system_1_0_0_announce_1_0_0_hide" style="cursor : nw-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/hide.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.fade('announce_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'close', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor : ne-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/close.png"></a>
+				</th>
+			</tr></tbody></table>
+		</td>
+
+		<td rowspan="2" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cr&quot;);"></td>
+	</tr>
+
+	<tr>
+		<td style="vertical-align: middle; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cm&quot;);">
+			<table cellpadding="0" cellspacing="0" class="system_1_0_0_full"><tbody class="system_1_0_0_full"><tr>
+				<td id="system_1_0_0_announce_1_0_0_body" style="padding: 0px; text-align: center; width: 550px; height: 480px;"><h2>Announce</h2>
+
+<h3 id="announce_1_0_0_month">2023 July</h3>
+<div id="announce_1_0_0_box" onmousedown="; deskportal.system_1_0_0.event.cancel(this, event)" onscroll="deskportal.system_1_0_0.gui.clear(this, event)"><div id="announce_1_0_0_container" class="" style="opacity: 1;">No news were found for this month</div></div>
+
+<p>&lt;&lt; <a id="announce_1_0_0_before" style="margin-right : 15px" onmouseover="deskportal.system_1_0_0.tip.make('announce_1_0_0', 'older', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">Previous month's announces</a>
+<a id="announce_1_0_0_next" style="margin-left : 15px" onmouseover="deskportal.system_1_0_0.tip.make('announce_1_0_0', 'newer', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">Next month's announces</a> &gt;&gt;</p>
+</td>
+			</tr></tbody></table>
+		</td>
+	</tr>
+
+	<tr style="height : 18px">
+		<td style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=bl&quot;);"></td>
+		<td height="18px" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=bm&quot;);"></td>
+		<td id="system_1_0_0_announce_1_0_0_resize" style="cursor: nw-resize; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ffffff&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=br&quot;);" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'resize', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"></td>
+	</tr>
+</tbody></table><table cellpadding="0" cellspacing="0" id="login_1_0_0" class="system_1_0_0_window" style="left: 15px; top: 260px; z-index: 3; color: rgb(51, 51, 51); opacity: 1;"><tbody>
+	<tr>
+		<td style="height: 10px; width: 10px; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tl&quot;);"></td>
+		<td style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tm&quot;);"></td>
+		<td id="system_1_0_0_login_1_0_0_invisible" style="width: 18px; cursor: n-resize; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=tr&quot;);" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'restore', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"></td>
+	</tr>
+
+	<tr>
+		<td rowspan="2" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cl&quot;);"></td>
+
+		<td style="height: 0px; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cm&quot;);">
+			<table cellpadding="3" cellspacing="0" id="system_1_0_0_login_1_0_0_bar" class="system_1_0_0_bar system_1_0_0_hidden"><tbody><tr>
+				<th><img src="router-php.php?_version=1_0_0&amp;_self=login/1/0/0/component/default/computer/graphic/icon.png"> Login</th>
+				<th style="text-align : right">
+					<a class="system_1_0_0_hidden" id="system_1_0_0_login_1_0_0_notice"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/notice.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.info('login_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'tool', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor: help">
+	<img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/info.png">
+</a>
+
+					<a onclick="deskportal.system_1_0_0.tool.lock('login_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'lock', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" id="system_1_0_0_login_1_0_0_lock" style="cursor : w-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/unlock.png"></a>
+					<a onclick="deskportal.system_1_0_0.window.sink('login_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'low', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor : n-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/behind.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.hide('login_1_0_0', 'body')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'drop', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" id="system_1_0_0_login_1_0_0_hide" style="cursor : nw-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/hide.png"></a>
+					<a onclick="deskportal.system_1_0_0.tool.fade('login_1_0_0')" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'close', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()" style="cursor : ne-resize"><img src="router-php.php?_version=1_0_0&amp;_self=system/1/0/0/component/default/computer/graphic/close.png"></a>
+				</th>
+			</tr></tbody></table>
+		</td>
+
+		<td rowspan="2" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cr&quot;);"></td>
+	</tr>
+
+	<tr>
+		<td style="vertical-align: middle; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=cm&quot;);">
+			<table cellpadding="0" cellspacing="0" class="system_1_0_0_full"><tbody class="system_1_0_0_full"><tr>
+				<td id="system_1_0_0_login_1_0_0_body" style="padding: 0px; text-align: center; width: 300px; height: 238px;"><h2>Login</h2>
+
+<form id="login_1_0_0_form" onsubmit="return deskportal.login_1_0_0.login.enter(this)" method="post">
+	<p>User name : <input type="text" name="user" class="system_1_0_0_flat login_1_0_0_enter"></p>
+	<p>Password : <input type="password" name="pass" class="system_1_0_0_flat login_1_0_0_enter"></p>
+
+	<p><label for="login_1_0_0_session" onmouseover="deskportal.system_1_0_0.tip.make('login_1_0_0', 'session', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">
+		<input type="checkbox" name="keep" id="login_1_0_0_session"> Keep logged in
+	</label></p>
+
+	<p><input type="submit" name="send" value="Enter" class="system_1_0_0_flat login_1_0_0_enter" id="login_1_0_0_send"></p>
+</form>
+
+<p style="border-top : 1px #333 dotted; padding-top : 10px">
+	<a href="http://deskportal.com/en/signup/" target="_blank" onmouseover="deskportal.system_1_0_0.tip.make('login_1_0_0', 'register', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">Register for a new account</a>
+</p>
+
+<p><a href="http://deskportal.com/en/account/" target="_blank" onmouseover="deskportal.system_1_0_0.tip.make('login_1_0_0', 'recover', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()">Recover lost password</a></p>
+</td>
+			</tr></tbody></table>
+		</td>
+	</tr>
+
+	<tr style="height : 18px">
+		<td style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=bl&quot;);"></td>
+		<td height="18px" style="background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=bm&quot;);"></td>
+		<td id="system_1_0_0_login_1_0_0_resize" style="cursor: nw-resize; background-image: url(&quot;router-php.php?_version=1_0_0&amp;_self=system/1/0/0/server/php/front.php&amp;task=window.create&amp;color=333333&amp;background=ddccaa&amp;border=333333&amp;edge=10&amp;shadow=8&amp;round=1&amp;place=br&quot;);" onmouseover="deskportal.system_1_0_0.tip.make('system_1_0_0', 'resize', null, false, event)" onmouseout="deskportal.system_1_0_0.tip.clear()"></td>
+	</tr>
+</tbody></table></body></html>
