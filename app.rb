@@ -81,10 +81,12 @@ websites_object.each_with_index do |website_obj, index|
     print "[#{index + 1}/#{websites_object.size}]".yellow
     print " Scanning #{website_obj['name']}...".blue
 
-    options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')
+    # options = Selenium::WebDriver::Chrome::Options.new(binary: '/opt/homebrew/bin/chromedriver')
+    # options.add_argument('--headless')
 
-    driver = Selenium::WebDriver.for :chrome, options: options
+    options = Selenium::WebDriver::Firefox::Options.new(args: ['-headless'])
+
+    driver = Selenium::WebDriver.for :firefox, options: options
     driver.manage.window.resize_to(1792, 1120)
 
     driver.get website_obj['url']

@@ -1,10 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    RubyInline (3.13.0)
+    RubyInline (3.14.0)
       ZenTest (~> 4.3)
     ZenTest (4.12.1)
-    colorize (0.8.1)
+    colorize (1.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     fuzzy-string-match (1.0.1)
@@ -21,9 +21,9 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.2.5)
+    rexml (3.2.6)
     rubyzip (2.3.2)
-    selenium-webdriver (4.8.1)
+    selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -33,7 +33,7 @@ GEM
     websocket (1.2.9)
 
 PLATFORMS
-  aarch64-linux
+  arm64-darwin-22
 
 DEPENDENCIES
   colorize
@@ -42,7 +42,7 @@ DEPENDENCIES
   selenium-webdriver
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.7
+   2.4.12
