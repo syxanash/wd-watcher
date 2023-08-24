@@ -7,7 +7,7 @@
 
         <link rel="stylesheet" href="/css/app.css">
     </head>
-    <body style="background: url(&quot;/images/wallpapers/2.jpg&quot;) 0% 0% / cover;">
+    <body>
         <div>
             <div class="menu-bar">
                 <nav>
@@ -31,21 +31,21 @@
                         <li class="separator"></li>
                     </ul>
                     <ul class="media-player-controls">
-                        <li><span class="action" data-control="skip-previous" aria-label="Skip to previous media"><i class="fa fa-fast-backward fa-volume-up"></i></span></li>
-                        <li><span class="action" data-control="rewind" aria-label="Rewind media"><i class="fa fa-backward fa-volume-up"></i></span></li>
-                        <li><span class="action" data-control="play" aria-label="Play/pause media"><i class="fa fa-play fa-volume-up"></i></span></li>
-                        <li><span class="action" data-control="fast-forward" aria-label="Fast-forward media"><i class="fa fa-forward fa-volume-up"></i></span></li>
-                        <li><span class="action" data-control="skip-next" aria-label="Skip to next media"><i class="fa fa-fast-forward fa-volume-up"></i></span></li>
-                        <li><span class="action" data-control="stop" aria-label="Stop media"><i class="fa fa-stop fa-volume-up"></i></span></li>
+                        <li><span class="action" data-control="skip-previous" aria-label="Skip to previous media"><i class="fa fa-fast-backward"></i></span></li>
+                        <li><span class="action" data-control="rewind" aria-label="Rewind media"><i class="fa fa-backward"></i></span></li>
+                        <li><span class="action" data-control="play" aria-label="Play/pause media"><i class="fa fa-play"></i></span></li>
+                        <li><span class="action" data-control="fast-forward" aria-label="Fast-forward media"><i class="fa fa-forward"></i></span></li>
+                        <li><span class="action" data-control="skip-next" aria-label="Skip to next media"><i class="fa fa-fast-forward"></i></span></li>
+                        <li><span class="action" data-control="stop" aria-label="Stop media"><i class="fa fa-stop"></i></span></li>
                         <li class="separator"></li>
                         <li>
                             <span class="action" data-control="volume" aria-label="Alter volume">
-                                <i class="fa volume-icon fa-volume-up"></i>
+                                <i class="fa fa-volume-up volume-icon"></i>
                                 <em>100%</em>
                             </span>
                             <span class="menu-bar-volume-slider hide">
                                 <i class="fa fa-volume-down"></i>
-                                <div id="menu-bar-volume" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+                                <div id="menu-bar-volume" class="slider"></div>
                                 <i class="fa fa-volume-up"></i>
                             </span>
                         </li>
@@ -85,7 +85,7 @@
                     </nav>
                 </div>
 
-                <div class="window file-browser resize-drag hide" data-window="music" data-x="345" data-y="20" style="z-index: 1;">
+                <div class="window file-browser resize-drag hide" data-window="music" data-x="345" data-y="20">
                     <div class="header">
                         <div class="title"><a href="/music" aria-label="Music">Music</a></div>
                         <ul>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
 
-                <div class="window file-browser resize-drag hide" data-window="videos" data-x="535" data-y="225" style="z-index: 2;">
+                <div class="window file-browser resize-drag hide" data-window="videos" data-x="535" data-y="225">
                     <div class="header">
                         <div class="title"><a href="/videos" aria-label="Videos">Videos</a></div>
                         <ul>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="window resize-drag hide" data-window="images" data-x="435" data-y="125" style="z-index: 3;">
+                <div class="window resize-drag hide" data-window="images" data-x="435" data-y="125">
                     <div class="header">
                         <div class="title"><a href="/images" aria-label="Images">Images</a></div>
                         <ul>
@@ -191,7 +191,7 @@
                     <div class="handle"></div>
                 </div> -->
 
-                <div class="window resize-drag hide" data-window="games" data-x="480" data-y="275" style="z-index: 4;">
+                <div class="window resize-drag hide" data-window="games" data-x="480" data-y="275">
                     <div class="header">
                         <div class="title"><a href="/games" aria-label="Games">Games</a></div>
                         <ul>
@@ -203,7 +203,7 @@
                     <div class="content"></div>
                 </div>
 
-                <div class="window resize-drag hide" data-window="projects" data-x="55" data-y="275" style="z-index: 5;">
+                <div class="window resize-drag hide" data-window="projects" data-x="55" data-y="275">
                     <div class="header">
                         <div class="title"><a href="/projects" aria-label="Projects">Projects</a></div>
                         <ul>
@@ -215,7 +215,7 @@
                     <div class="content"></div>
                 </div>
 
-                <div class="window resize-drag hide" data-window="steam" data-x="815" data-y="20" id="steam" style="z-index: 6;">
+                <div class="window resize-drag hide" data-window="steam" data-x="815" data-y="20" id="steam">
                     <div class="header">
                         <div class="title"><a href="/steam" aria-label="Steam Library">Steam Library</a></div>
                         <ul>
@@ -229,7 +229,7 @@
                     </div>
                 </div>
 
-                <div class="window dropdown hide" data-window="terminal" data-x="820" data-y="20" style="transform: translate(-50%, -110%); opacity: 1; transition: transform 250ms ease 0s;">
+                <div class="window resize-drag dropdown hide" data-window="terminal" data-x="820" data-y="20">
                     <div class="header">
                         <div class="title"><i class="fa fa-terminal"></i> Terminal</div>
                         <ul>
@@ -250,7 +250,7 @@
                     </div>
                 </div>
 
-                <div class="window resize-drag hide" data-window="media-player" data-x="20" data-y="20" style="z-index: 7;">
+                <div class="window resize-drag hide" data-window="media-player" data-x="20" data-y="20">
                     <div class="header">
                         <div class="title">Media Player</div>
                         <ul>
@@ -408,7 +408,8 @@
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"><tr>
+                                        <tbody class="list">
+                                            <tr>
                                                 <td>
                                                     <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Dirty Bomb/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Dirty_Bomb/Keito_-_Dirty_Bomb.mp3" data-type="file" aria-label="Keito - Dirty Bomb"><span class="title">Dirty Bomb</span></a>
                                                 </td>
@@ -424,7 +425,8 @@
                                                         <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
                                                     </ul>
                                                 </td>
-                                            </tr><tr>
+                                            </tr>
+                                            <tr>
                                                 <td>
                                                     <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Kojima/Keito_-_Kojima.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Kojima/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Kojima/Keito_-_Kojima.mp3" data-type="file" aria-label="Keito - Kojima"><span class="title">Kojima</span></a>
                                                 </td>
@@ -440,7 +442,8 @@
                                                         <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
                                                     </ul>
                                                 </td>
-                                            </tr><tr>
+                                            </tr>
+                                            <tr>
                                                 <td>
                                                     <a href="https://www.virusav.com/music/artists/Keito/Keito_-_Chiller/Keito_-_Chiller.mp3" data-fs-index="/home/anon/music/artists/keito/Keito - Chiller/" data-path="https://www.virusav.com/music/artists/Keito/Keito_-_Chiller/Keito_-_Chiller.mp3" data-type="file" aria-label="Keito - Chiller"><span class="title">Chiller</span></a>
                                                 </td>
@@ -456,7 +459,8 @@
                                                         <li><a href="#"><i class="fa fa-plus-circle"></i></a></li>
                                                     </ul>
                                                 </td>
-                                            </tr></tbody>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                                 <div class="albums panel hide">
@@ -592,7 +596,7 @@
                         </div>
                         <ul class="control-section">
                             <li class="seeker clock">
-                                <div id="seek" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span></div>
+                                <div id="seek" class="slider"></div>
                                 <div id="clock">
                                     <span class="current">0:00</span>
                                     <span>/</span>
@@ -613,7 +617,7 @@
                                     <li><span class="action" data-control="skip-next" aria-label="Skip to next media"><i class="fa fa-step-forward"></i></span></li>
                                     <li class="volume-controls">
                                         <i class="fa fa-volume-down"></i>
-                                        <div id="volume" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+                                        <div id="volume" class="slider"></div>
                                         <i class="fa fa-volume-up"></i>
                                     </li>
                                 </ul>
@@ -623,7 +627,7 @@
                     </div>
                 </div>
 
-                <div class="window resize-drag hide" data-window="text-editor" data-x="0" data-y="0" style="z-index: 8;">
+                <div class="window resize-drag hide" data-window="text-editor" data-x="0" data-y="0">
                     <div class="header">
                         <div class="title">Text Editor</div>
                         <ul>
@@ -637,7 +641,7 @@
                     </div>
                 </div>
 
-                <div class="window resize-drag hide" data-window="drum-machine" data-x="0" data-y="0" style="z-index: 9;">
+                <div class="window resize-drag hide" data-window="drum-machine" data-x="0" data-y="0">
                     <div class="header">
                         <div class="title">Drum Machine</div>
                         <ul>
@@ -657,7 +661,7 @@
                     </div>
                 </div>
 
-                <div class="window about hide" data-window="about" data-x="535" data-y="225" style="z-index: 10;">
+                <div class="window about hide" data-window="about" data-x="535" data-y="225">
                     <div class="header">
                         <div class="title"><a href="/about" aria-label="About VirusAV">-- About VirusAV --</a></div>
                         <ul>
