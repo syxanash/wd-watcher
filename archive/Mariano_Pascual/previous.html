@@ -15,11 +15,11 @@
     <meta property="og:url" content="http://www.marianopascual.me">
     <meta property="og:description" content="Illustrator, visual artist and designer from Argentina, based in Barcelona.">
 </head>
-<body style="display: block;">
+<body style="display: block;" class="body-overflow-h">
     <script>
         document.getElementsByTagName('body')[0].style.display = 'none';
     </script>
-    <div class="loading-screen">
+    <div class="loading-screen hidden">
         <div class="wrap">
             <div class="loading__img-wrap">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 192.9 320.2" style="enable-background:new 0 0 192.9 320.2;" xml:space="preserve">
@@ -66,7 +66,7 @@
     </div>
     <div class="body-wrap">
         <header>
-            <section class="mac-bar" hidden="">
+            <section class="mac-bar">
                 <div class="mac-bar_left">
                     <ul class="mac-bar_padding nav_basic">
                         <li class="mac-bar__item mac-bar__item_first">
@@ -77,7 +77,7 @@
                         </li>
                         <li class="mac-bar__item">
                             <button class="dropdown-button">File</button>
-                            <ul class="dropdown" hidden="">
+                            <ul class="dropdown hidden">
                                 <li>
                                     <a href="#about" class="dropdown__item link_no-style">About</a>
                                 </li>
@@ -91,7 +91,7 @@
                         </li>
                         <li class="mac-bar__item">
                             <button class="dropdown-button">Contact</button>
-                            <ul class="dropdown">
+                            <ul class="dropdown hidden">
                                 <li>
                                     <a href="mailto:hello@mariano-pascual.com" target="_blank" class="dropdown__item link_no-style">Email</a>
                                 </li>
@@ -105,7 +105,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mac-bar_center" hidden="">
+                <div class="mac-bar_center hidden">
                     <img src="img/icon-dots-m.png" alt="Phone dots" class="mac-bar-m-icon">
                     <h1 class="mac-bar__title">Mariano Pascual</h1>
                     <img src="img/icon-battery-m.png" alt="Battery icon" class="mac-bar-m-icon">
@@ -124,9 +124,7 @@
                         <li class="mac-bar__item mac-bar__img">
                             <img src="img/icon-small-battery.svg" alt="Battery icon" id="battery-small">
                         </li>
-                        <li class="mac-bar__item time">
-                            Wed 13:19
-                        </li>
+                        <li class="mac-bar__item time">Sun 21:20</li>
                     </ul>
                 </div>
             </section>
@@ -134,20 +132,20 @@
                 <ul class="nav_basic">
                     <li class="top-nav__item">
                         <div>
-                            <img src="img/icon-about.svg" alt="Notepad icon" hidden="">
-                            <h2 class="top-nav__title"><a href="#about" class="app link_style_normal drag hover-img">About</a></h2>
+                            <img src="img/icon-about.svg" alt="Notepad icon">
+                            <h2 class="top-nav__title"><a href="#about" class="app drag hover-img link_style_desktop">About</a></h2>
                         </div>
                     </li>
                     <li class="top-nav__item">
                         <div>
-                            <img src="img/icon-folder.svg" class="top-nav__img" alt="Folder" hidden="">
-                            <h2 class="top-nav__title"><a href="#projects" class="app link_style_normal drag hover-img">Projects</a></h2>
+                            <img src="img/icon-folder.svg" class="top-nav__img" alt="Folder">
+                            <h2 class="top-nav__title"><a href="#projects" class="app drag hover-img link_style_desktop">Projects</a></h2>
                         </div>
                     </li>
                     <li class="top-nav__item">
                         <div>
-                            <img src="img/icon-store.svg" alt="Folder" hidden="">
-                            <h2 class="top-nav__title"><a href="https://marianopascual.bigcartel.com/" target="_blank" class="app link_style_normal drag hover-img">Shop</a></h2>
+                            <img src="img/icon-store.svg" alt="Folder">
+                            <h2 class="top-nav__title"><a href="https://marianopascual.bigcartel.com/" target="_blank" class="app drag hover-img link_style_desktop">Shop</a></h2>
                         </div>
                     </li>
                 </ul>
@@ -155,13 +153,13 @@
         </header>
         <main>
             <div class="folder-wrap">
-                <section class="desktop-folder desktop-folder_small window" id="latestproject" hidden="">
+                <section class="desktop-folder desktop-folder_small window desktop-folder_open" id="latestproject">
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
                         <span class="desktop-folder__title-span">Plastic Thoughts</span>
                     </h2>
                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                    <section class="folder-content">
+                    <section class="folder-content js">
                         <div class="folder-content__wrap-overflow">
                             <a href="#project27" class="latestwork-btn">
                                 <img src="img/latestproject.jpg" alt="Plastic Thoughts" class="latest-project">
@@ -174,17 +172,17 @@
                         </a>
                     </div>
                 </section>
-                <section class="desktop-folder detail_d__horizontal detail_d__horizontal_center window" id="about">
+                <section class="desktop-folder detail_d__horizontal detail_d__horizontal_center window mobile-app hidden desktop-folder_open" id="about">
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
                         <span class="desktop-folder__title-span">About</span>
                     </h2>
                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                    <section class="folder-content">
+                    <section class="folder-content js">
                         <div class="folder-content__wrap-overflow scrollbar">
                             <nav>
                                 <ul class="nav_basic btn1-list btn1-list_top">
-                                    <li class="about-nav__item btn1-list__item">
+                                    <li class="about-nav__item btn1-list__item btn1-list__item_active">
                                         <a href="#aboutme" class="link_no-style btn1-list__link">About me</a>
                                         <div class="btn1-list__shadow">
 
@@ -241,7 +239,7 @@
                                         </p>
                                     </div>
                                 </section>
-                                <section id="press" class="tab">
+                                <section id="press" class="tab hidden">
                                     <h3 class="about__title">Selected Press</h3>
                                     <p class="folder-content__title2">
                                         <a href="https://www.itsnicethat.com/articles/mariano-pascual-36-days-of-type" target="_blank" class="about-link">It's Nice That</a>/
@@ -261,7 +259,7 @@
                                         <a href="http://www.lamondamagazine.com/en/m/ghost-army-by-mariano-pascual/" target="_blank" class="about-link">La Monda</a>
                                     </p>
                                 </section>
-                                <section id="exhibition" class="tab">
+                                <section id="exhibition" class="tab hidden">
                                     <h3 class="about__title">Exhibitions</h3>
                                     <p class="folder-content__title2">
                                         ‘Plastic Thoughts’ solo show<br>
@@ -293,25 +291,25 @@
                         </div>
                     </section>
                 </section>
-                <section class="desktop-folder desktop-folder_center window" id="projects">
+                <section class="desktop-folder desktop-folder_center window mobile-app hidden desktop-folder_open" id="projects">
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
                         <span class="desktop-folder__title-span">Projects</span>
                     </h2>
                     <button class="close"><img src="img/x.svg" alt="fullscreen button"></button>
-                    <section class="folder-content">
+                    <section class="folder-content js">
                         <div class="folder-content__wrap-overflow scrollbar">
                             <ul class="project-list nav_basic">
                                 <li class="project-list__item">
                                     <img src="img/projects/c-pendulum.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project19" class="folderlink">Pendulum</a></h2>
-                                    <section class="detail lazyload detail_c window" id="project19">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_c window hidden" id="project19">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Pendulum</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/pendulum_1.jpg" alt="Pendulum" class="project__img">
                                                 <img data-src="img/projects/pendulum_2.jpg" alt="Pendulum" class="project__img">
@@ -326,7 +324,7 @@
                                                         <img data-src="img/info.svg" alt="info icon" class="info-icon">
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 An exploration of time and tension of mechanical structures with a coherent color and continuous rhythm.
@@ -342,9 +340,9 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-trendmap-barcelona.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project9" class="folderlink">Trendmap Barcelona</a></h2>
-                                    <section class="detail lazyload detail_d" id="project9">
+                                    <section class="detail lazyload detail_d hidden" id="project9">
                                         <button class="close detail_d-close"><img src="img/x.svg" alt="close button"></button>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow detail_d_wrap">
                                                 <section class="detail_d__horizontal window">
                                                     <h2 class="detail__title desktop-folder__title drag">
@@ -352,7 +350,7 @@
                                                         <span class="desktop-folder__title-span">Trendmap Barcelona</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/trendmap_h_1.jpg" alt="Trendmap Barcelona" class="project__img">
                                                             <img data-src="img/projects/trendmap_h_2.jpg" alt="Trendmap Barcelona" class="project__img">
@@ -366,7 +364,7 @@
                                                         <span class="desktop-folder__title-span">Trendmap Barcelona</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/trendmap_v_1.jpg" alt="Trendmap Barcelona" class="project__img">
                                                             <img data-src="img/projects/trendmap_v_2.jpg" alt="Trendmap Barcelona" class="project__img">
@@ -384,7 +382,7 @@
                                                         <span class="see-project-info hidden">Trendmap Barcelona</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 The coolest guide of Barcelona city, Trendmap, collaborates  in every edition with local illustrators. The maps are created for 6 chosen districts with an exquisite selection of trendy points. They invited me for their 6th edition and I designed a modular and playful visual system inspired by totems.
@@ -401,13 +399,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/c-36-days-of-type2.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project16" class="folderlink">Alphabet Artworks</a></h2>
-                                    <section class="detail lazyload detail_c window" id="project16">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_c window hidden" id="project16">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Alphabet Artworks</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/alphabet_1.jpg" alt="Alphabet Artworks" class="project__img">
                                                 <img data-src="img/projects/alphabet_2.jpg" alt="Alphabet Artworks" class="project__img">
@@ -442,7 +440,7 @@
                                                         <span class="see-project-info hidden">Alphabet Artworks</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 I was invited to create a custom K letter as a guest artist for the fourth edition of @36daysoftype project. So, I decided to design not just that letter but all the alphabet, taking inspiration in contemporary works of art inside a museum.
@@ -458,13 +456,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-music-for-memphis.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project25" class="folderlink">Music for Memphis</a></h2>
-                                    <section class="detail lazyload detail_b" id="project25">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project25">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Music for Memphis</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/music4memphis_1.jpg" alt="Music for Memphis" class="project__img">
                                                 <img data-src="img/projects/music4memphis_2.jpg" alt="Music for Memphis" class="project__img">
@@ -477,7 +475,7 @@
                                                         <span class="desktop-folder__title-span">Music for Memphis</span>
                                                         <span class="see-project-info hidden">Music for Memphis</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Cassette cover artwork for Matt Wellins cassette tape, a serie of tracks inspired by the Memphis movement.
@@ -493,13 +491,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-paola-antonelli-for-printed-pages.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project26" class="folderlink">Printed Pages Interview</a></h2>
-                                    <section class="detail lazyload detail_b" id="project26">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project26">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Paola Antonelli Interview</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/paola-antonelli-1.jpg" alt="Artwork for Paolo Antonelli" class="project__img">
                                                 <img data-src="img/projects/paola-antonelli-2.jpg" alt="Artwork for Paolo Antonelli" class="project__img">
@@ -524,7 +522,7 @@
                                                         <span class="see-project-info hidden">Paola Antonelli Interview</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 I was commissioned by Printed Pages AW17, the magazine of It’s Nice That to interpret the interview of MOMA’s curator Paola Antonelli on how her advanced vision have transformed the collection of the museum including the popular objects and symbols of our time.&nbsp;
@@ -540,13 +538,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-plastic-thoughts.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project27" class="folderlink">Plastic Thoughts</a></h2>
-                                    <section class="detail lazyload detail_b" id="project27">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project27">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Plastic Thoughts</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/plastic_11.jpg" alt="Plastic Thoughts" class="project__img">
                                                 <img data-src="img/projects/plastic_12.jpg" alt="Plastic Thoughts" class="project__img">
@@ -569,7 +567,7 @@
                                                         <span class="see-project-info hidden">Plastic Thoughts</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 “Plastic Thoughts” is  a state of absurd fantasy and excessively optimistic, an unreal situation, so ideal that almost lunatic. A kingdom in the clouds, which can not be seen and neither can have shapes. “Plastic Thoughts” is a fictional paradise where everything is perfect and, therefore, it  does not even exist.
@@ -589,13 +587,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-discotexas.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project22" class="folderlink">Discotexas</a></h2>
-                                    <section class="detail lazyload detail_b" id="project22">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project22">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Discotexas</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/discotexas_0.jpg" alt="Disco Texas" class="project__img">
                                                 <img data-src="img/projects/discotexas_1.jpg" alt="Disco Texas" class="project__img">
@@ -611,7 +609,7 @@
                                                         <span class="see-project-info hidden">Discotexas</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Artworks created for Discotexas, celebrating one decade of love and passion for music. The record showcases various of Discotexas artists and their most relevant tracks. I also designed a system for the company releases which varies in colors and patterns in the same language.
@@ -627,13 +625,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/c-36-days-of-type1.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project15" class="folderlink">36 Days of Type #1</a></h2>
-                                    <section class="detail lazyload detail_c window" id="project15">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_c window hidden" id="project15">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">36 Days of Type #1</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/36daysoftype1_0.jpg" alt="36 days of type letter" class="project__img">
                                                 <img data-src="img/projects/36daysoftype1_1.jpg" alt="36 days of type letter" class="project__img">
@@ -678,7 +676,7 @@
                                                         <span class="see-project-info hidden">36 Days of Type #1</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Contribution to '36 days of type' a online project that invites designers, illustrators and graphic artists to give their particular view on the signs from our alphabet. I create an illustrated type exploring different materials and combinations, in the pursuit of a personal style.
@@ -694,13 +692,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/c-staf-magazine-logo.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project20" class="folderlink">Staf Magazine</a></h2>
-                                    <section class="detail lazyload detail_c window" id="project20">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_c window hidden" id="project20">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Staf Magazine</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/staf_1.jpg" alt="Staf Magazine" class="project__img">
                                                 <div class="project__desc window project__desc_small" id="stafmagazine-info">
@@ -710,7 +708,7 @@
                                                         <span class="see-project-info hidden">Staf Magazine</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Illustrated logo for Staf Magazine (2016)
@@ -726,9 +724,9 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-la-velocidad-de-una-fiesta.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project24" class="folderlink">La Velocidad de una Fiesta</a></h2>
-                                    <section class="detail lazyload detail_d" id="project24">
+                                    <section class="detail lazyload detail_d hidden" id="project24">
                                         <button class="close detail_d-close"><img src="img/x.svg" alt="close button"></button>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow detail_d_wrap">
                                                 <section class="detail_d__horizontal window">
                                                     <h2 class="detail__title desktop-folder__title drag">
@@ -736,7 +734,7 @@
                                                         <span class="desktop-folder__title-span">La Velocidad de una Fiesta</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/velocidad_h_1.jpg" alt="La Velocidad de una Fiesta" class="project__img">
                                                             <img data-src="img/projects/velocidad_h_2.jpg" alt="La Velocidad de una Fiesta" class="project__img">
@@ -751,7 +749,7 @@
                                                         <span class="desktop-folder__title-span">La Velocidad de una Fiesta</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/velocidad_v_1.jpg" alt="La Velocidad de una Fiesta" class="project__img">
                                                             <img data-src="img/projects/velocidad_v_2.jpg" alt="La Velocidad de una Fiesta" class="project__img">
@@ -770,7 +768,7 @@
                                                         <span class="see-project-info hidden">La Velocidad de una Fiesta</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Promotional postcards for the book 'La velocidad de una fiesta' by Valentina Varas. published by&nbsp;Pánico el pánico.&nbsp;Buenos Aires, Argentina (2016)
@@ -787,13 +785,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/b-daniel-emma.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project11" class="folderlink">Daniel &amp; Emma</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project11">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project11">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Daniel &amp; Emma</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/daniel_1.jpg" alt="Daniel &amp; Emma" class="project__img">
                                                 <img data-src="img/projects/daniel_2.jpg" alt="Daniel &amp; Emma" class="project__img">
@@ -806,7 +804,7 @@
                                                         <span class="see-project-info hidden">Daniel &amp; Emma</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Illustrations for Say Hi To Mag inspired by the product design duo&nbsp;Daniel &amp; Emma. Their products captivated my attention for their simplicity, colors and the playful way of communication. I decided to choose them because I think we share the same passion and admiration for the oriental world, both modern and classic in style. Their geometric shapes and lines make me empathize and identify with the creative duo.
@@ -822,13 +820,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-wild-free-album-covers.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project30" class="folderlink">Wild &amp; Free</a></h2>
-                                    <section class="detail lazyload detail_b" id="project30">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project30">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Wild &amp; Free Album Covers</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/wild_1.jpg" alt="Wild &amp; Free Album Covers" class="project__img">
                                                 <img data-src="img/projects/wild_2.jpg" alt="Wild &amp; Free Album Covers" class="project__img">
@@ -842,7 +840,7 @@
                                                         <span class="see-project-info hidden">Wild &amp; Free Album Covers</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 I was commissioned by Discotexas label for their band Wild&amp;Free’s vinyl and single covers. Pump up the volume!
@@ -859,13 +857,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/b-rohal-dahl-tribute.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project14" class="folderlink">Roald Dahl Tribute</a></h2>
-                                    <section class="detail lazyload detail_b window" id="project14">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b window hidden" id="project14">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Roald Dahl Tribute</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/roal_1.jpg" alt="Rohal Dahl" class="project__img">
                                                 <div class="project__desc window" id="roaldahl-info">
@@ -875,7 +873,7 @@
                                                         <span class="see-project-info hidden">Roald Dahl Tribute</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Interpretation of the word 'Lixivate' that means 'being turned into liquid and being squashed at the same time' to celebrate Roald Dahl's 100th birthday published on&nbsp;<a href="http://http//www.itsnicethat.com/features/roald-dahl-day-130916" target="_blank">It's Nice That</a>.
@@ -891,9 +889,9 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-geometric-poetry.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project23" class="folderlink">Geometric Poetry</a></h2>
-                                    <section class="detail lazyload detail_d" id="project23">
+                                    <section class="detail lazyload detail_d hidden" id="project23">
                                         <button class="close detail_d-close"><img src="img/x.svg" alt="close button"></button>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow">
                                                 <section class="detail_d__horizontal window">
                                                     <h2 class="detail__title desktop-folder__title drag">
@@ -901,7 +899,7 @@
                                                         <span class="desktop-folder__title-span">Geometric Poetry</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/poetry_h_1.jpg" alt="Geometric Poetry" class="project__img">
                                                             <img data-src="img/projects/poetry_h_2.jpg" alt="Geometric Poetry" class="project__img">
@@ -917,7 +915,7 @@
                                                         <span class="desktop-folder__title-span">Geometric Poetry</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/poetry_v_1.jpg" alt="Geometric Poetry" class="project__img">
                                                             <img data-src="img/projects/poetry_v_2.jpg" alt="Geometric Poetry" class="project__img">
@@ -937,7 +935,7 @@
                                                         <span class="see-project-info hidden">Geometric Poetry</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 The independent gallery Studio Store invited me for their collective show “Arty Party-Geometry Edition”
@@ -956,13 +954,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-die-zeit-magazine.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project21" class="folderlink">Die Zeit Magazine</a></h2>
-                                    <section class="detail lazyload detail_b" id="project21">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project21">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Die Zeit Campus</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/diezeit_1.jpg" alt="Die Zeit Campus" class="project__img">
                                                 <img data-src="img/projects/diezeit_2.jpg" alt="Die Zeit Campus" class="project__img">
@@ -973,7 +971,7 @@
                                                         <span class="desktop-folder__title-span">Die Zeit Campus</span>
                                                         <span class="see-project-info hidden">Die Zeit Campus</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Cover illustration for Diezeit Campus Magazine which is a supplement for German Newspaper to announce the master studies.
@@ -989,9 +987,9 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-cherry-glazerr-poster.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project3" class="folderlink">Cherry Glazerr</a></h2>
-                                    <section class="detail lazyload detail_d" id="project3">
+                                    <section class="detail lazyload detail_d hidden" id="project3">
                                         <button class="close detail_d-close"><img src="img/x.svg" alt="close button"></button>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow">
                                                 <section class="detail_d__horizontal window">
                                                     <h2 class="detail__title desktop-folder__title drag">
@@ -999,7 +997,7 @@
                                                         <span class="desktop-folder__title-span">Cherry Glazerr</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/cherry_hor_1.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img">
                                                         </div>
@@ -1011,7 +1009,7 @@
                                                         <span class="desktop-folder__title-span">Cherry Glazerr</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <img data-src="img/projects/cherry_ver_1.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img">
                                                         </div>
@@ -1024,7 +1022,7 @@
                                                         <span class="see-project-info hidden">Cherry Glazerr</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Poster artwork for Cherry glazerr &amp; Ian sweet gig&nbsp;at Baby's all right - Brooklyn, NYC. (2016)
@@ -1040,13 +1038,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/b-read-nothing-in-here.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project13" class="folderlink">Read Nothing in Here</a></h2>
-                                    <section class="detail lazyload detail_b window" id="project13">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b window hidden" id="project13">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Read Nothing in Here</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/readnothing_0.jpg" alt="Read Nothing" class="project__img">
                                                 <img data-src="img/projects/readnothing_1.jpg" alt="Read Nothing" class="project__img">
@@ -1069,7 +1067,7 @@
                                                         <span class="desktop-folder__title-span">Read Nothing in Here</span>
                                                         <span class="see-project-info hidden">Read Nothing in Here</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Serie of illustrations for the book 'Read Nothing In Here' by Seema Sharma. An unscientific exploration into the meaning, function, history and misuse of the word nothing. Published by&nbsp;<a href="http://www.bispublishers.com/" target="_blank">BIS Publishers</a>&nbsp;- Amsterdam, Netherlands (2016)
@@ -1085,13 +1083,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-the-aston-shuffle.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project29" class="folderlink">The Ashton Shuffle</a></h2>
-                                    <section class="detail lazyload detail_b" id="project29">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project29">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">The Ashton Shuffle</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/ashton_2.jpg" alt="The Ashton Shuffle" class="project__img">
                                                 <img data-src="img/projects/ashton_3.jpg" alt="The Ashton Shuffle" class="project__img">
@@ -1104,7 +1102,7 @@
                                                         <span class="desktop-folder__title-span">The Ashton Shuffle</span>
                                                         <span class="see-project-info hidden">The Ashton Shuffle</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 The Australian dj and producers commissioned me for the single cover “Penetrate” and spotify playlist artworks for their original and remix tracks and releases.
@@ -1120,13 +1118,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-ghost-army.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project5" class="folderlink">Ghost Army</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project5">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project5">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Ghost Army</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/ghostarmy_1.jpg" alt="Picture of Ghost Army Artwork" class="project__img">
                                                 <img data-src="img/projects/ghostarmy_2.jpg" alt="Picture of Ghost Army Artwork" class="project__img">
@@ -1147,7 +1145,7 @@
                                                         <span class="desktop-folder__title-span">Ghost Army</span>
                                                         <span class="see-project-info hidden">Ghost Army</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Series inspired by ghost soldiers returning from war dejected, with their skeletons in sight and tired of fighting.&nbsp;Personal project.
@@ -1163,13 +1161,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-the-floating-world.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project8" class="folderlink">The Floating World</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project8">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project8">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">The Floating World</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/floatingworld_1.jpg" alt="The Floating World" class="project__img">
                                                 <img data-src="img/projects/floatingworld_2.jpg" alt="The Floating World" class="project__img">
@@ -1182,7 +1180,7 @@
                                                         <span class="see-project-info hidden">The Floating World</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Ukiyo-e prints inspired illustrations, an imagined universe of wit, stylishness, and extravagance—with overtones of futurism and transgression.
@@ -1198,13 +1196,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/b-noguchi-sculptures.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project12" class="folderlink">Noguchi Sculptures</a></h2>
-                                    <section class="detail lazyload detail_b window" id="project12">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b window hidden" id="project12">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Noguchi Sculptures</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/noguchi_1.jpg" alt="Artwork of the Noguchi Sculptures" class="project__img">
                                                 <img data-src="img/projects/noguchi_2.jpg" alt="Artwork of the Noguchi Sculptures" class="project__img">
@@ -1222,7 +1220,7 @@
                                                         <span class="see-project-info hidden">Noguchi Sculptures</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Illustration for re:porter magazine by Porter Airlines (Canada) due to the exhibition 'Archaic-Modern' by Isamu Noguchi, who was the most innovative American sculptors of the twentieth century, creating works that were far ahead of his time. At Smithsonian American Art Museum (2016).
@@ -1238,13 +1236,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-astrogeishas.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project2" class="folderlink">Astrogeishas</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project2">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project2">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Astrogeishas</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/astrogeisha_1.jpg" alt="Astrogeishas" class="project__img">
                                                 <img data-src="img/projects/astrogeisha_2.jpg" alt="Astrogeishas" class="project__img">
@@ -1258,7 +1256,7 @@
                                                         <span class="see-project-info hidden">Astrogeishas</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Self-initiated project based on the old Japanese prints of the Ukiyo-e period, revisiting some works of Kitagawa Utamaro as homage, but raised to a dystopian, futuristic level. The contrast that is generated between the figures, which recall the traditions of the geisha – their clothes and their hands – as opposed to their face, the landscape and the elements which seem to be from another planet.  The geisha faces are without expression, to relinquish them from identity, with nothing to tie into this world.&nbsp;
@@ -1274,13 +1272,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/c-la-aventura.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project17" class="folderlink">La Aventura</a></h2>
-                                    <section class="detail lazyload detail_c window" id="project17">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_c window hidden" id="project17">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">La Aventura</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/laaventura_1.gif" alt="La Aventura" class="project__img">
                                                 <img data-src="img/projects/laaventura_2.gif" alt="La Aventura" class="project__img">
@@ -1292,7 +1290,7 @@
                                                         <span class="desktop-folder__title-span">La Aventura</span>
                                                         <span class="see-project-info hidden">La Aventura</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 A strange, dreamy kind of adventure. A personal work exploring shapes, composition and textures.
@@ -1308,13 +1306,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-velvet-club-poster.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project10" class="folderlink">Velvet Club</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project10">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project10">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Velvet Club</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/velvetclub_1.jpg" alt="Velvet Club" class="project__img">
                                                 <div class="project__desc project__desc_small window" id="velvetclub-info">
@@ -1324,7 +1322,7 @@
                                                         <span class="see-project-info hidden">Velvet Club</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Poster artwork for Velvet Club - Málaga, Spain. January 2016.
@@ -1340,13 +1338,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-la-guerra-war.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project6" class="folderlink">La Guerra (War)</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project6">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project6">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">La Guerra (War)</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/laguerra_1.jpg" alt="La Guerra" class="project__img">
                                                 <img data-src="img/projects/laguerra_2.jpg" alt="La Guerra" class="project__img">
@@ -1367,7 +1365,7 @@
                                                         <span class="see-project-info hidden">La Guerra (War)</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 The violence, caos, clashes and power of a devastating war are given in colors and movements in this personal project. Make love not war.
@@ -1383,13 +1381,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/d-secret7.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project28" class="folderlink">Secret 7</a></h2>
-                                    <section class="detail lazyload detail_b" id="project28">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b hidden" id="project28">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Secret 7</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/secret7_1.jpg" alt="Secret 7" class="project__img">
                                                 <img data-src="img/projects/secret7_2.jpg" alt="Secret 7" class="project__img">
@@ -1400,7 +1398,7 @@
                                                         <span class="see-project-info hidden">Secret 7</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Cover design for Max Richter's 'Dream 3' as a 7" single produced for the&nbsp;<a href="https://secret-7.com/">secret 7"</a>&nbsp;project supporting Amnesty International UK.
@@ -1416,13 +1414,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-quit-smoking.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project7" class="folderlink">Quit Smoking</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project7">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project7">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Quit Smoking</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/smoking_1.jpg" alt="Quit Smoking" class="project__img">
                                                 <img data-src="img/projects/smoking_2.jpg" alt="Quit Smoking" class="project__img">
@@ -1437,7 +1435,7 @@
                                                         <span class="see-project-info hidden">Quit Smoking</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Practice on composition, color combinations and equilibrium of shapes. I really think you should quit smoking.
@@ -1453,13 +1451,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/c-magic-vases.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project18" class="folderlink">Magic Vases</a></h2>
-                                    <section class="detail lazyload detail_c window" id="project18">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_c window hidden" id="project18">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Magic Vases</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/vases_1.jpg" alt="Magic Vases" class="project__img">
                                                 <img data-src="img/projects/vases_2.jpg" alt="Magic Vases" class="project__img">
@@ -1471,7 +1469,7 @@
                                                         <span class="see-project-info hidden">Magic Vases</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Rub the vase and invite the genie to command your endless wishes.
@@ -1487,13 +1485,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/a-dark-interiors.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project4" class="folderlink">Dark Interiors</a></h2>
-                                    <section class="detail lazyload detail_a window" id="project4">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_a window hidden" id="project4">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">Dark Interiors</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/darkinteriors_1.jpg" alt="Dark Interiors" class="project__img">
                                                 <img data-src="img/projects/darkinteriors_2.jpg" alt="Dark Interiors" class="project__img">
@@ -1505,7 +1503,7 @@
                                                         <span class="see-project-info hidden">Dark Interiors</span>
                                                     </h2>
                                                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 We all have a dark interior that rises to the surface sometimes. This serie is born through the search of this contradictory, interpreted through black and white with a focus on the halftones and textures.
@@ -1521,13 +1519,13 @@
                                 <li class="project-list__item">
                                     <img src="img/projects/offbook.svg" alt="Folder" class="project-list__preview">
                                     <h2 class="project-list__name"><a href="#project1" class="folderlink">OFFF18 Book</a></h2>
-                                    <section class="detail lazyload detail_b window" id="project1">
-                                        <button class="close" hidden=""><img src="img/x.svg" alt="close button"></button>
+                                    <section class="detail lazyload detail_b window hidden" id="project1">
+                                        <button class="close"><img src="img/x.svg" alt="close button"></button>
                                         <h2 class="desktop-folder__title drag">
                                             <div class="desktop-folder__title-background"></div>
                                             <span class="desktop-folder__title-span">OFFF18 Book</span>
                                         </h2>
-                                        <section class="folder-content">
+                                        <section class="folder-content js">
                                             <div class="folder-content__wrap-overflow scrollbar">
                                                 <img data-src="img/projects/offbook_1.jpg" alt="OFFF18 Book" class="project__img">
                                                 <div class="project__desc window" id="offbook-info">
@@ -1537,7 +1535,7 @@
                                                         <span class="desktop-folder__title-span">OFFF18 Book</span>
                                                         <span class="see-project-info hidden">OFFF18 Book</span>
                                                     </h2>
-                                                    <div class="folder-content">
+                                                    <div class="folder-content js">
                                                         <div class="folder-content__wrap-overflow scrollbar">
                                                             <p>
                                                                 Collaboration with the OFFF Barcelona 2018. I was invited to participate on the book ‘The visible an The…” designed by the studio Mucho for the festival. The illustration represents a sloth hanging from a tree in a surrealistic and abstract way. The idea is, you’re able to see the sloth only when you have seen the real picture before and the eye recognizes the figure through the previous experience.
@@ -1554,13 +1552,13 @@
                         </div>
                     </section>
                 </section>
-                <section class="desktop-folder desktop-folder_large desktop-folder_large-center window lazyload" id="photos" hidden="">
+                <section class="desktop-folder desktop-folder_large desktop-folder_large-center window lazyload hidden desktop-folder_open" id="photos">
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
                         <span class="desktop-folder__title-span">Gallery</span>
                     </h2>
                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                    <section class="folder-content">
+                    <section class="folder-content js">
                         <div class="folder-content__wrap-overflow scrollbar">
                             <ul class="basic_list gallery">
                                 <li class="gallery__item gallery__item-first">
@@ -1658,13 +1656,13 @@
                         </div>
                     </section>
                 </section>
-                <section class="desktop-folder desktop-folder_small desktop-folder_xsmall window" id="settings" hidden="">
+                <section class="desktop-folder desktop-folder_small desktop-folder_xsmall window hidden desktop-folder_open" id="settings">
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
                         <span class="desktop-folder__title-span">Settings</span>
                     </h2>
                     <button class="close"><img src="img/x.svg" alt="close button"></button>
-                    <section class="folder-content">
+                    <section class="folder-content js">
                         <div class="folder-content__wrap-overflow">
                             <section class="setting setting_first setting_border">
                                 <h3 class="setting__title">Change background</h3>
@@ -1727,7 +1725,7 @@
                         </div>
                     </section>
                 </section>
-                <section class="fullscreen-folder lazyload" id="trash" hidden="">
+                <section class="fullscreen-folder lazyload hidden" id="trash">
                     <button class="fullscreen__close-button close"><img src="img/x.svg" alt="close button"></button>
                     <img data-src="img/trash_1.jpg" alt="trash item" class="trash__img drag">
                     <img data-src="img/trash_2.jpg" alt="trash item" class="trash__img drag">
@@ -1798,7 +1796,7 @@
                         <img data-src="porn/porn_7.gif" alt="Porn" class="porn_img">
                     </section>
                 </div>
-                <section class="fullscreen-folder slideshow-wrap lazyload" id="latestwork" hidden="">
+                <section class="fullscreen-folder slideshow-wrap lazyload mobile-app hidden" id="latestwork" style="overflow-x: hidden;">
                     <button class="fullscreen__close-button close"><img src="img/x.svg" alt="close button"></button>
                     <ul class="basic_list slideshow" id="latest-slideshow">
                         <li class="slideshow__slide slideshow__slide_first">
@@ -1866,67 +1864,67 @@
                 </section>
             </div>
         </main>
-        <footer class="contact-info">
+        <footer class="contact-info hidden">
             <h2>Contact me</h2>
             <a href="mailto:hello@mariano-pascual.com">Email me</a>
         </footer>
         <img src="img/brightness1.gif" alt="brightness" class="brightness" id="stars" hidden="">
         <img src="img/brightness1.png" alt="brightness" class="brightness d" id="shine" hidden="">
-        <nav class="bottom-nav" draggable="false" hidden="">
+        <nav class="bottom-nav" draggable="false">
             <ul class="bottom-nav__list nav_basic">
-                <li class="bottom-nav__item" id="nav-home" hidden="">
+                <li class="bottom-nav__item" id="nav-home">
                     <img src="img/icon-home.svg" id="icon-home" alt="Home icon">
                     <h2 class="bottom-nav__name"><a href="./index.html" class="app hover-img">Home</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Reset everything</h3>
                 </li>
-                <li class="bottom-nav__item" id="nav-mail" hidden="">
+                <li class="bottom-nav__item" id="nav-mail">
                     <img src="img/icon-mail.svg" id="icon-mail" alt="Mail icon">
                     <h2 class="bottom-nav__name"><a href="mailto:hello@mariano-pascual.com" class="hover-img">Mail</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Send me an email</h3>
                 </li>
-                <li class="bottom-nav__item" id="nav-chrome" hidden="">
+                <li class="bottom-nav__item" id="nav-chrome">
                     <img src="img/icon-web.svg" alt="Browser logo">
                     <h2 class="bottom-nav__name"><a href="#porn" class="app hover-img">Browser</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Open Explorer</h3>
                 </li>
-                <li class="bottom-nav__item" id="nav-slideshow" hidden="">
+                <li class="bottom-nav__item" id="nav-slideshow">
                     <img src="img/icon-eye.svg" alt="Messenger logo" id="icon-eye">
                     <h2 class="bottom-nav__name"><a href="#latestwork" class="app hover-img">Slideshow</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Quick view my projects</h3>
                 </li>
-                <li class="bottom-nav__item" id="print-art" hidden="">
+                <li class="bottom-nav__item" id="print-art">
                     <img src="img/icon-printer.svg" id="icon-print" alt="Print icon">
                     <h2 class="bottom-nav__name"><a href="#print" class="hover-img">Print</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Print some artwork</h3>
                 </li>
-                <li class="bottom-nav__item" id="nav-photos" hidden="">
+                <li class="bottom-nav__item" id="nav-photos">
                     <img src="img/icon-photos.svg" alt="Photos icon">
                     <h2 class="bottom-nav__name"><a href="#photos" class="app hover-img">Photos</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Visit the Gallery</h3>
                 </li>
-                <li class="bottom-nav__item" id="nav-setting" hidden="">
+                <li class="bottom-nav__item" id="nav-setting">
                     <img src="img/icon-settings.svg" id="icon-setting" alt="Settings icon">
                     <h2 class="bottom-nav__name"><a href="#settings" class="app hover-img">Settings</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Settings</h3>
                 </li>
-                <li class="bottom-nav__item" id="nav-trash" hidden="">
+                <li class="bottom-nav__item" id="nav-trash">
                     <img src="img/icon-bin.svg" id="icon-bin" alt="Trashcan icon">
                     <h2 class="bottom-nav__name"><a href="#trash" class="app hover-img">Trashcan</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Trash</h3>
                 </li>
-                <li class="bottom-nav__item bottom-nav__item-m" id="nav-quickview-m">
+                <li class="bottom-nav__item bottom-nav__item-m hidden" id="nav-quickview-m">
                     <img src="img/icon-quickview-m.svg" id="icon-quickview-m" alt="Quickview icon">
                     <h2 class="bottom-nav__name"><a href="#latestwork" class="app hover-img">Quick view</a></h2>
                 </li>
-                <li class="bottom-nav__item bottom-nav__item-m" id="nav-about-m">
+                <li class="bottom-nav__item bottom-nav__item-m hidden" id="nav-about-m">
                     <img src="img/icon-about-m.svg" id="icon-about-m" alt="About icon">
                     <h2 class="bottom-nav__name"><a href="#about" class="app hover-img">About</a></h2>
                 </li>
-                <li class="bottom-nav__item bottom-nav__item-m" id="nav-projects-m">
+                <li class="bottom-nav__item bottom-nav__item-m hidden" id="nav-projects-m">
                     <img src="img/icon-projects-m.svg" id="icon-projects-m" alt="Projects icon">
                     <h2 class="bottom-nav__name"><a href="#projects" class="app hover-img">Projects</a></h2>
                 </li>
-                <li class="bottom-nav__item bottom-nav__item-m" id="nav-mail-m">
+                <li class="bottom-nav__item bottom-nav__item-m hidden" id="nav-mail-m">
                     <img src="img/icon-mail-m.svg" id="icon-mail-m" alt="Mail icon">
                     <h2 class="bottom-nav__name"><a href="mailto:hello@mariano-pascual.com" class="hover-img">Email</a></h2>
                 </li>
@@ -1960,7 +1958,7 @@
                 </section>
             </section>
         </div>
-        <div class="overlay" id="orientation-overlay" hidden="">
+        <div class="overlay" id="orientation-overlay" hidden="true">
             <section class="overlay__msg">
                 <img src="img/flip.png" alt="Flip icon" class="orient-msg__img">
                 <h2 class="orient-msg__h2">Hey! Flip your device for a better experience</h2>
