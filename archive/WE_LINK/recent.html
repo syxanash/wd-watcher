@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WE=LINK</title>
-<script src="https://hm.baidu.com/hm.js?9d0cb4a31de64c5e3c74baf4798bf865"></script><script src="jquery.min.js"></script><script src="archive.js"></script><style>
+<script src="https://hm.baidu.com/hm.js?9d0cb4a31de64c5e3c74baf4798bf865"></script><script src="jquery.min.js"></script><script src="archive.js?v=2"></script><style>
     * {
         margin: 0;
         padding: 0;
@@ -136,7 +136,7 @@
     @media screen and (max-width: 800px){
         html, body{
             font-size: 12px;
-            display: none;
+    
         }
         .menu{
             justify-content:center;
@@ -146,17 +146,17 @@
         }
     }
 
-</style><script>
+</style></head>
+
+
+
+
+<!-- <script>
     if(window.innerWidth<800){
-        window.location.href = 'http://we-link.chronusartcenter.org/sideways';
+        window.location.href = 'https://virtual.hek.ch/';
     }
 
-</script></head>
-
-
-
-
-
+</script> -->
 
 <body style="">
     <script>
@@ -182,43 +182,7 @@
 
     })
 </script>
-<script>
-    // Settings
-    if(window.innerWidth>800){
-        var myDate = new Date();
-        var h=myDate.getHours();
-        var assetsPath = './exonemo/assets';
-        if(h == 7){
-            var ex_mode = 'SUNRISE'
-        }else if(h==16){
-            var ex_mode = 'SUNSET'
-        }
-    }
-</script>
-<script>
-    if(window.innerWidth>800) {
-        var new_element = document.createElement('script');
-        new_element.setAttribute('type', 'text/javascript');
-        new_element.setAttribute('src', './exonemo/exonemo.js');
-        document.body.appendChild(new_element);
-    }
-</script><script type="text/javascript" src="./exonemo/exonemo.js"></script>
-<script>
-    $(document).ready(()=>{
-        if($(window).width()>800) {
-            var myDate = new Date();
-            var h = myDate.getHours();
-            var m = myDate.getMinutes();
-            if (h == 7 || h == 16) {
-                if (m > 0 && m < 60) {
-                    setTimeout(function () {
-                        ex_start();
-                    }, 10000);
-                }
-            }
-        }
-    })
-</script>
+
 <main>
     <header class="menu">
 
@@ -227,7 +191,7 @@
                 <li class="o-p">
                     <span>Archive</span>
                     <ul class="archive">
-                    <li><a href="http://we-link.chronusartcenter.org/teneasypieces/">Ten Easy Pieces 十个小品</a></li><li><a href="http://we-link.chronusartcenter.org/sideways">SIDEWAYS 辺</a></li></ul>
+                    <li><a href="http://we-link.chronusartcenter.org/teneasypieces/">Ten Easy Pieces 十个小品</a></li><li><a href="http://we-link.chronusartcenter.org/sideways">SIDEWAYS 辺</a></li><li><a href="https://virtual.hek.ch/">There Is No Perfect Spell</a></li></ul>
                 </li>
                 <li class="open-box">
                     <span>About</span>
@@ -339,7 +303,7 @@
             <div class="close">{CLOSE}</div>
         </div>
     </div>
-    <iframe src="sideways/index.html" id="content"></iframe>
+    <iframe src="https://virtual.hek.ch/ " id="content"></iframe>
 
 <script>
 var _hmt = _hmt || [];
