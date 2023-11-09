@@ -192,9 +192,9 @@
 <td class="td1"><div class="dl">MEGA</div></td>
 </tr>
 <tr>
-<td class="download"><a href="https://mega.nz/file/38JiALwK#iAO8-iHNe3ksbeg90HT4u5TnMGtJKdF_2pbFXF8jfy0"><div class="pl">PC-9801</div></a></td>
-<td class="td1"><div class="dl">2023 09/12</div></td>
-<td class="td1"><div class="dl">594MB</div></td>
+<td class="download"><a href="https://mega.nz/file/vsRSVQrZ#CA7HzlS_7eOPySK-aTBWD-k_V_tgU4YE9B31e8YA_Vg"><div class="pl">PC-9801</div></a></td>
+<td class="td1"><div class="dl">2023 10/28</div></td>
+<td class="td1"><div class="dl">595MB</div></td>
 <td class="td1"><div class="dl">MEGA</div></td>
 </tr>
 <tr>
@@ -1236,7 +1236,7 @@ PlayStation
 </div>
 
 <div id="zoombg" style="display: none;">
-	<div id="zoom"><img id="zoomimg" src="img/bing/bing_016t.png"></div>
+<div id="zoom"><img id="zoomimg" src="img/bing/bing_001.png"></div>
 </div>
     <div id="zoomimg-nex" style="display: none;">▶</div>
     <div id="zoomimg-res" style="display: none;">■</div>
@@ -1275,19 +1275,30 @@ Image Creatorは自然文を理解するので
 一例として日本語で<span class="color1">「雑魚寝」</span>と入れた場合
 英語に対応する単語がないため「魚と寝る絵」が出てきます。
 
-暴力、性、著作物、ディープフェイクに関係する単語は警告が出ます。
+暴力、性、著作物、著名な実在の人物名に関する単語は生成前に警告が出ます。
 警告が出るプロンプトを連続で実行すると一定時間のアクセス禁止処分となります。
 単純に単語単位で判定されるだけではなく文脈からも判断されるので
 通常牛乳は安全なプロンプトですが、いかがわしいことに使おうとすると見抜かれます。
 
-頻繁にアップデートがあるようで
-それまでは使えていたプロンプトが規制されるということはよくあります。
-どう考えてもセンシティブな内容になりえないはずのプロンプトが
-ブロックされることもよくあります
-そういう場合は言い回しを変えるか別の要素を加えてみましょう。
-「石鹸」を「棚に置かれた石鹸」にするだけで通ったことがあります。
+生成後には画像自体の倫理チェックもあります。
+1度の生成で4枚の画像が同時に作られるのですが
+チェックに引っかかるとその画像は表示されません。
+<img class="bingimg" src="img/bing/dog.png">
+4枚全てが除外されると犬の画像が出てきて
+「安全でない画像コンテンツが検出されました」と報告されます。
 
-■ 人形 ■
+このチェック機能はまだ未完成なのか結構ゆらぎがあって
+どう考えてもセンシティブな内容にはならないはずのプロンプトが
+犬ブロックされるということがよくあるので
+そういう場合は言い回しを変えるか別の要素を加えてみましょう。
+短すぎる1単語だけのプロンプトも犬率が高いです。
+
+BingのAI Chat経由でも画像作成ができます。
+「以下のプロンプトで画像を作って」と依頼するか
+「#graphic_art(“ここにプロンプト”)」で作成できます。
+Image Creatorが重い時でもこちら経由だと作成できることがあります。
+
+■ 画風 ■
 
 <table class="editor-table">
 <tbody><tr>
@@ -1297,19 +1308,21 @@ Image Creatorは自然文を理解するので
 <td class="td1"><img class="thumbnail-b" loading="lazy" src="img/bing/bing_017.png" alt="img/bing/bing_017.jpg"></td>
 </tr>
 </tbody></table>
-フィギュアなどの人形風の描画も可能です。
+指定できる画風は多彩でフィギュアなどの人形風の描画も可能です。
 左から<span class="color1">「プラモデル」「ねんどろいど」「球体関節人形」「フェルト」</span>。
-球体関節人形は日本語だと球体が拾われて球状のなにかが描画されてしまうので
+球体関節人形は日本語だと球体が拾われて球状のなにかも一緒に描画されてしまうので
 英語で<span class="color1">「ball-jointed doll」</span>と入力します。
 
 <table class="editor-table">
 <tbody><tr>
 <td class="td1"><img class="thumbnail-b" loading="lazy" src="img/bing/bing_019.png" alt="img/bing/bing_019.jpg"></td>
 <td class="td1"><img class="thumbnail-b" loading="lazy" src="img/bing/bing_018.png" alt="img/bing/bing_018.jpg"></td>
+<td class="td1"><img class="thumbnail-b" loading="lazy" src="img/bing/bing_025.png" alt="img/bing/bing_025.jpg"></td>
+<td class="td1"><img class="thumbnail-b" loading="lazy" src="img/bing/bing_026.png" alt="img/bing/bing_026.jpg"></td>
 </tr>
 </tbody></table>
-<span class="color1">「アラバスター彫刻」「木彫り」</span>。
-彫刻風の描画。
+<span class="color1">「アラバスター彫刻」「木彫り」「切り絵」「ペーパークラフト」</span>。
+
 
 ■ 作例 ■
 
@@ -1328,21 +1341,101 @@ film grain, depth of field, ドラマティックアングル、ジオラマ、
 男は黒く短いスキンヘッドの髪で黒い短い顎髭がある、
 男は上半身裸で黒いショートパンツを着ている、汗が飛び散っている、
 
+■ 戦場人形 ■
+
 <table class="editor-table">
 <tbody><tr>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_005.png" alt="img/bing/bing_005_00.jpg"></td>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_006.png" alt="img/bing/bing_006_00.jpg"></td>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_007.png" alt="img/bing/bing_007_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_035.png" alt="img/bing/bing_035_00.jpg"></td>
 </tr>
 <tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_046.png" alt="img/bing/bing_046_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_042.png" alt="img/bing/bing_042_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_044.png" alt="img/bing/bing_044_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_045.png" alt="img/bing/bing_045_00.jpg"></td>
+</tr>
+<tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_041.png" alt="img/bing/bing_041_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_043.png" alt="img/bing/bing_043_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ 引き出し屋と戦う自宅警備員 ■
+
+<table class="editor-table">
+<tbody><tr>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_008.png" alt="img/bing/bing_008_00.jpg"></td>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_009.png" alt="img/bing/bing_009_00.jpg"></td>
-<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_010.png" alt="img/bing/bing_010_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ 魔法少女は因果な商売 ■
+
+<table class="editor-table">
+<tbody><tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_027.png" alt="img/bing/bing_027_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_028.png" alt="img/bing/bing_028_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_029.png" alt="img/bing/bing_029_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_030.png" alt="img/bing/bing_030_00.jpg"></td>
 </tr>
 <tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_032.png" alt="img/bing/bing_032_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_033.png" alt="img/bing/bing_033_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_034.png" alt="img/bing/bing_034_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_031.png" alt="img/bing/bing_031_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ 密かに腰の炎を燃やします ■
+
+<table class="editor-table">
+<tbody><tr>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_011.png" alt="img/bing/bing_011_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_048.png" alt="img/bing/bing_048_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ ワノココロ ■
+
+<table class="editor-table">
+<tbody><tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_022.png" alt="img/bing/bing_022_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_023.png" alt="img/bing/bing_023_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ ファンタジー ■
+
+<table class="editor-table">
+<tbody><tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_036.png" alt="img/bing/bing_036_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_037.png" alt="img/bing/bing_037_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_040.png" alt="img/bing/bing_040_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_039.png" alt="img/bing/bing_039_00.jpg"></td>
+</tr>
+<tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_038.png" alt="img/bing/bing_038_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ 縛られる方が燃えるんスよね (規制に) ■
+
+<table class="editor-table">
+<tbody><tr>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_012.png" alt="img/bing/bing_012_00.jpg"></td>
 <td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_013.png" alt="img/bing/bing_013_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_024.png" alt="img/bing/bing_024_00.jpg"></td>
+</tr>
+</tbody></table>
+
+■ 贋作展 ■
+
+<table class="editor-table">
+<tbody><tr>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_047.png" alt="img/bing/bing_047_00.jpg"></td>
+<td class="td1"><img class="thumbnail" loading="lazy" src="img/bing/bing_010.png" alt="img/bing/bing_010_00.jpg"></td>
 </tr>
 </tbody></table>
 
@@ -1654,7 +1747,7 @@ film grain, depth of field, ドラマティックアングル、ジオラマ、
 	</tr>
 	<tr>
 		<td class="list_td1">Misc - </td>
-		<td><a href="x68k/Arcade.html"><div class="list_td2">Sharp - X68000</div></a></td>
+		<td><a href="x68k/arcade.html"><div class="list_td2">Sharp - X68000</div></a></td>
 	</tr>
 	<tr>
 		<td><br></td>
