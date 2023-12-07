@@ -427,7 +427,7 @@ window.top.location = 'ie.html';
           </ul>
         </li>
       </ul>
-      <span class="float_right" id="clock" title="November 23, 2023">Thursday 3:32 PM</span>
+      <span class="float_right" id="clock" title="December 1, 2023">Friday 1:40 PM</span>
       <span class="float_right" id="volume">
         <span class="navbarControl volumeToggle volumeFull">🔉</span>
         <span class="navbarControl volumeToggle volumeMuted">🔇</span>
@@ -588,15 +588,6 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_profile">
-      <a href="#window_profile" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
-        <div class="dock_title">
-          Profile
-        </div>
-      </a>
-    </li>
-  
     <li id="icon_dock_streamsquad">
       <a href="#window_streamsquad" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_streamsquad_64.png">
@@ -615,11 +606,29 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
+    <li id="icon_dock_profile">
+      <a href="#window_profile" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
+        <div class="dock_title">
+          Profile
+        </div>
+      </a>
+    </li>
+  
     <li id="icon_dock_console">
       <a href="#window_console" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
         <div class="dock_title">
           Console
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_appstore">
+      <a href="#window_appstore" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_appstore_64.png">
+        <div class="dock_title">
+          appstore
         </div>
       </a>
     </li>
@@ -638,15 +647,6 @@ window.top.location = 'ie.html';
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
         <div class="dock_title">
           Spellbook
-        </div>
-      </a>
-    </li>
-  
-    <li id="icon_dock_appstore">
-      <a href="#window_appstore" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_appstore_64.png">
-        <div class="dock_title">
-          appstore
         </div>
       </a>
     </li>
@@ -679,6 +679,146 @@ window.top.location = 'ie.html';
     </li>
   </ul>
     </div>
+  <style>
+  #streamsquadIframe {
+    height: 100%;
+    width: 100%;
+  }
+  .streamersTable {
+    height: 100%;
+    width: 80%;
+  }
+  .isStreamingNow {
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+  .nextStreamSoon {
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+</style>
+
+<div id="window_streamsquad" class="abs window" align="center" style="width: 662px; height: 495px; left: 50px; top: 50px;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_streamsquad_64.png" style="width: 16px; height: 16px;">
+        Stream Squad
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="streamsquadGameHolder">
+        <h2>Buddy Pond Live Streamers</h2>
+        <br>
+        <br>
+        <table class="streamersTable table">
+          
+            <tbody>
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>Marak</td>
+        <td>DJ Sets, Live Coding, Buddy Pond QA</td>
+        <td><a href="https://www.youtube.com/user/MarakSquires" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>SkratchBastidTV</td>
+        <td>DJ Sets</td>
+        <td><a href="https://www.youtube.com/user/SkratchBastidTV" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>Andrew Potthast</td>
+        <td>DJ Sets</td>
+        <td><a href="https://soundcloud.com/andrew-potthast" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    </tbody>
+        </table>
+        <br>
+        <br>
+        <div class="isStreamingNow rainbow" style="display: none;"><a href="#openIDC" data-videotype="livestream" data-videoid="1UFeeHqkUZU" class="openIDC rainbow">MARAK IS LIVE CLICK HERE TO VIEW</a></div>
+        <div class="nextStreamSoon">THE NEXT STREAM IS COMING UP SOON. CHECK BACK LATER</div>
+        <img height="333" src="desktop/appstore/desktop.streamsquad/assets/img/bad-enough-streamer.jpeg">
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  .wallpaperSettings {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .button_bar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+</style>
+
+<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
+    <div class="abs window_inner">
+      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+        <span class="float_left">
+          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
+          Wallpaper
+        </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+      </div>
+      <div class="abs window_content" style="top: 33px;">
+        <div class="window_main">
+          <div class="wallpaperSettings">
+            <div>
+                <h2>Wallpaper Type</h2>
+                <!-- Wake up neo -->
+                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
+                <label for="wallPaperRadioMatrix">Matrix</label>
+                <br>
+                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
+                <label for="wallPaperRadioSolid">Solid</label>
+                <br>
+            </div>
+            <br>
+            <br>
+            <div>
+                <h2>Wallpaper Options</h2>
+                <div>
+                    <label>Color</label>
+                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
+                </div>
+                <br>
+                <br>
+                <div>
+                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="abs window_bottom">
+        Build: v4.20.69
+      </div>
+    </div>
+    <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
   <style>
   #window_profile .publicProfilePreviewHolder {
     border: solid;
@@ -892,7 +1032,7 @@ window.top.location = 'ie.html';
                 <h2>Wallpaper Options</h2>
                 <div>
                     <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
+                    <div class="wallpaperOptionColor"></div>
                 </div>
               </div>
             </div>
@@ -1034,146 +1174,6 @@ window.top.location = 'ie.html';
 </div>
 
 <style>
-  #streamsquadIframe {
-    height: 100%;
-    width: 100%;
-  }
-  .streamersTable {
-    height: 100%;
-    width: 80%;
-  }
-  .isStreamingNow {
-    font-size: 32px;
-    padding-bottom: 32px;
-  }
-  .nextStreamSoon {
-    font-size: 32px;
-    padding-bottom: 32px;
-  }
-</style>
-
-<div id="window_streamsquad" class="abs window" align="center" style="width: 662px; height: 495px; left: 50px; top: 50px;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_streamsquad_64.png" style="width: 16px; height: 16px;">
-        Stream Squad
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="streamsquadGameHolder">
-        <h2>Buddy Pond Live Streamers</h2>
-        <br>
-        <br>
-        <table class="streamersTable table">
-          
-            <tbody>
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>Marak</td>
-        <td>DJ Sets, Live Coding, Buddy Pond QA</td>
-        <td><a href="https://www.youtube.com/user/MarakSquires" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>SkratchBastidTV</td>
-        <td>DJ Sets</td>
-        <td><a href="https://www.youtube.com/user/SkratchBastidTV" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>Andrew Potthast</td>
-        <td>DJ Sets</td>
-        <td><a href="https://soundcloud.com/andrew-potthast" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    </tbody>
-        </table>
-        <br>
-        <br>
-        <div class="isStreamingNow rainbow" style="display: none;"><a href="#openIDC" data-videotype="livestream" data-videoid="1UFeeHqkUZU" class="openIDC rainbow">MARAK IS LIVE CLICK HERE TO VIEW</a></div>
-        <div class="nextStreamSoon">THE NEXT STREAM IS COMING UP SOON. CHECK BACK LATER</div>
-        <img height="333" src="desktop/appstore/desktop.streamsquad/assets/img/bad-enough-streamer.jpeg">
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
-  .wallpaperSettings {
-    padding-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .button_bar {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-</style>
-
-<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
-    <div class="abs window_inner">
-      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-        <span class="float_left">
-          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
-          Wallpaper
-        </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-      </div>
-      <div class="abs window_content" style="top: 33px;">
-        <div class="window_main">
-          <div class="wallpaperSettings">
-            <div>
-                <h2>Wallpaper Type</h2>
-                <!-- Wake up neo -->
-                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
-                <label for="wallPaperRadioMatrix">Matrix</label>
-                <br>
-                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
-                <label for="wallPaperRadioSolid">Solid</label>
-                <br>
-            </div>
-            <br>
-            <br>
-            <div>
-                <h2>Wallpaper Options</h2>
-                <div>
-                    <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
-                </div>
-                <br>
-                <br>
-                <div>
-                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="abs window_bottom">
-        Build: v4.20.69
-      </div>
-    </div>
-    <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-  <style>
   .console {
     width: 100%;
     height: 100%;
@@ -1338,7 +1338,7 @@ window.top.location = 'ie.html';
                 The console is fresh. There are no messages yet. You can send a message to this console below.
               </div>
               <div class="console chat_messages">
-              <li>15:32:10: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>15:32:10: <span class="purple">Now loading deferred apps</span> </li><li>15:32:10: <span class="purple">Loading App.login</span> </li><li>15:32:10: <span class="purple">Loading App.videochat</span> </li><li>15:32:11: <span class="purple">Ready: App.merlin</span> </li></div>
+              <li>13:40:41: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>13:40:41: <span class="purple">Now loading deferred apps</span> </li><li>13:40:41: <span class="purple">Loading App.login</span> </li><li>13:40:41: <span class="purple">Loading App.videochat</span> </li><li>13:40:42: <span class="purple">Ready: App.merlin</span> </li></div>
               <hr>
             </div>
           </div>
@@ -1362,433 +1362,6 @@ window.top.location = 'ie.html';
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div>
 <style>
-  :root {
-    --pond-border-radius: 10px;
-    --pond-input-background-colour: #ebebeb;
-  }
-
-  div.pond_main {
-    padding: 16px;
-  }
-
-  div.pond_message_main {
-    padding-top: 0px;
-    position: relative;
-    overflow-y: scroll;
-    flex: 1;
-    word-wrap: break-word;
-  }
-
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .pond_send_message_form {
-    width: 100%;
-    display: flex;
-  }
-
-  .pond_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .pond_emoji_picker {
-    position: relative;
-  }
-
-  .pond_send_message_form>form .pond_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--pond-border-radius);
-  }
-
-  .pond_send_message_form>form .pond_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-
-  .sendPondMessage {
-    margin: 5px;
-    padding: 5px;
-    width: 9vw;
-    border-radius: var(--pond-border-radius);
-    border: none;
-    background-color: var(--pond-input-background-colour);
-  }
-
-  .submit_svg_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .message_send_svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .pondNameList {
-    padding: 16px;
-  }
-
-  .memeImage {
-    position: relative;
-  }
-
-  .memeImage .remixGif {
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    height: 22px;
-    width: 22px;
-    z-index: 99;
-  }
-
-  .memeImage .remixGif:hover {
-    opacity: 0.44;
-  }
-
-  .memeImage .remixPaint {
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    left: 33px;
-    height: 22px;
-    width: 22px;
-    z-index: 99;
-  }
-
-  .memeImage .remixPaint:hover {
-    opacity: 0.44;
-  }
-
-  .ponds td {
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-bottom: 3px;
-  }
-
-  .pondDesc {
-    font-style: italic;
-  }
-
-  .openPond {
-    cursor: pointer;
-  }
-
-  .joinPondTable td {
-    cursor: pointer;
-  }
-  .welcomePonds {
-    font-size: 24px;
-  }
-  .customPondName {
-    cursor: pointer;
-    border: solid;
-    border-width: 1px;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    border-radius: 4px;
-  }
-  .ui-autocomplete {
-    position: absolute !important;
-    bottom: 600px !important;
-    overflow: auto !important;
-    max-height: 300px;
-    min-height: 300px;
-  }
-</style>
-<div id="window_pond" class="abs window pond_list" data-window-index="0" style="width: 44vw; height: 75vh; top: 9vh; left: 21vw;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
-        <span class="window-context-title">Ponds</span>
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="window_main pond_main">
-        <div class="buddy_pond_not_connected">
-          You'll need to login in order to join Ponds.
-        </div>
-        <div class="loggedIn">
-          <h2>Join Ponds</h2>
-          <table class="joinPondTable data table">
-
-            <tbody><tr class="openPond" href="#Lily">
-              <td>
-                #Lily
-              </td>
-              <td>
-                <em>General Buddy Chats</em>
-              </td>
-              <td>
-                333
-              </td>
-            </tr>
-
-            <tr class="openPond" href="#Paint">
-              <td>
-                #Paint
-              </td>
-              <td>
-                <em>Paint Based Image Room - No Texting</em>
-              </td>
-              <td>
-                144
-              </td>
-            </tr>
-            <tr class="openPond" href="#Memes">
-              <td>
-                #Memes
-              </td>
-              <td>
-                <em>Everything you type turns into Memes</em>
-              </td>
-              <td>
-                212
-              </td>
-            </tr>
-            <tr class="openPond" href="#Say">
-              <td>
-                #Say
-              </td>
-              <td>
-                <em>Text-To-Speech Room - Everything you type is spoken</em>
-              </td>
-              <td>
-                66
-              </td>
-            </tr>
-            <tr class="openPond" href="#Alpha">
-              <td>
-                #Alpha
-              </td>
-              <td>
-                <em>Alpha Buddy Pond Developer Chat</em>
-              </td>
-              <td>
-                113
-              </td>
-            </tr>
-            <tr href="#backrooms" style="opacity: 0.33;" title="Matrix Agents only!">
-              <td>
-                #backrooms
-              </td>
-              <td>
-                <em>Liminal Backrooms</em>
-              </td>
-              <td>
-                432
-              </td>
-            </tr>
-            <tr class="openPond" href="#Brooklyn">
-              <td>
-                #Brooklyn
-              </td>
-              <td>
-                <em>Brooklyn, New York City</em>
-              </td>
-              <td>
-                33
-              </td>
-            </tr>
-          </tbody></table>
-          <p>
-            🐸🗿🧊🌊
-          </p>
-          <br>
-          <div align="center" class="welcomePonds">
-            <p>
-              Click A Pond To Chat With Buddies
-            </p>
-            <p><em>Wish to create your own Pond? <br>Type the name below...</em></p>
-            <form class="joinPondForm">
-              <label for="customPondName">
-                <input id="customPondName" name="customPondName" class="customPondName rainbow-border" placeholder="enter pond name..." type="text" size="16">
-              </label>
-              <button type="submit" class="joinPond desktopButton">Join Pond</button>
-              <br>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-
-<div id="window_pond_message_0" class="abs window pond_message" data-app="pond">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img width="16" height="16" src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
-        <span class="window-context-title">Pond</span>
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="chat_area">
-        <div class="window_main pond_message_main  message_main">
-          <div class="buddy_pond_not_connected">
-            You'll need to login in order to join the #<span class="context">${context}</span> Pond.
-            <form method="POST" action="/pondlogin" class="pondLoginForm">
-              <table class="pondLoginTable">
-                <tbody>
-                  <tr>
-                    <td colspan="2">
-                      <input class="buddyname rainbow-border" name="buddyname" type="text" size="16" placeholder="Enter name...">
-                    </td>
-                  </tr>
-                  <tr class="buddyPasswordRow">
-                    <td colspan="2">
-                      <input class="buddypassword" name="buddypassword" type="password" size="16" placeholder="Enter password..."></td>
-                  </tr>
-                  <tr class="invalidPassword">
-                    <td colspan="2" class="error">Invalid Password</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">
-                      <button type="submit" class="pondLoginButton">Join Pond</button>
-                    </td>
-                  </tr>
-                  <!--
-                  <tr>
-                    <td colspan="2">
-                      <button type="submit" class="loginAnonButton">Remain Anonymous</button>
-                    </td>
-                  </tr>
-                  -->
-                </tbody>
-              </table>
-            </form>
-          </div>
-          <div class="pondMessagesHolder" style="display: none;">
-            <div class="no_chat_messages" style="display: none;">
-              The pond is fresh. There are no messages yet. You can send a message to this pond below.
-            </div>
-            <div class="chat_messages">
-            </div>
-            <hr>
-          </div>
-        </div>
-        <div class="window_bottom_chat" style="display: none;">
-          <div class="pond_send_message_chatcontrols_form send_message_chatcontrols_form">
-            <img title="Insert Audio" class="insertSound chatControl" src="desktop/assets/images/icons/icon_soundrecorder_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a4.svg" -->
-            <img title="Insert Animation" class="insertGif chatControl" src="/desktop/assets/images/icons/icon_gifstudio_64.png"> <!-- "/desktop/assets/images/icons/svg/1f39e.svg" -->
-            <img title="Insert Paint" class="insertPaint chatControl" src="desktop/assets/images/icons/icon_paint_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a8.svg" -->
-            <img title="Insert Snap" class="insertSnap chatControl" src="/desktop/assets/images/icons/svg/1f4f7.svg">
-            <img title="Insert Emoji" class="desktopOnly pond_emoji_picker_0 emojiPicker chatControl" src="/desktop/assets/images/icons/svg/1f600.svg">
-            <img title="Get Help" class="desktopOnly getHelp chatControl" src="/desktop/assets/images/icons/svg/1f9ae.svg">
-          </div>
-          <div class="pond_send_message_form" style="padding-bottom: 0px;">
-            <form method="POST" action="" align="right" class="pond_send_message_form" style="padding-bottom: 0px;">
-              <textarea name="pond_message_text" class="pond_message_text pond_message_text_0" placeholder="" style="margin-top: 6px; margin-bottom: 6px;"></textarea>
-              <button name="pond_message_submit" class="sendPondMessage" style="width: 9vw; margin: 5px;">
-                SEND
-              </button>
-              <input name="pond_message_from" class="pond_message_from" type="hidden">
-              <input name="pond_message_to" class="pond_message_to" type="hidden">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
-  #window_spellbook .window_content {
-    background-image: url("desktop/assets/images/misc/ivy-bg.png");
-    background-color: black;
-  }
-  #window_spellbook .window_main {
-    padding-left: 48px;
-    padding-right: 48px;
-    padding-top: 32px;
-    font-size: 32px;
-  }
-  #window_spellbook input,select {
-    font-size: 24px;
-  }
-  #window_spellbook label {
-    color: white;
-  }
-  .ponderSpellbook {
-    float: right;
-  }
-</style>
-
-<div id="window_spellbook" class="abs window" style="width: 662px; height: 533px; left: 50px; top: 50px;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_spellbook_64.png" style="width: 16px; height: 16px;">
-        Spellbook
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="window_main">
-        <form class="castSpellForm">
-          <a class="desktopButton ponderSpellbook orb" href="#">
-            <img src="desktop/assets/images/misc/orb.jpeg" width="100" height="100" title="Cast spell...">
-          </a>
-          <label for="omegaSpellTome">Spell</label>
-          <br>
-          <select class="omegaSpellTome">
-            <option>Choose your spell wisely...</option>
-          <option value="zalgo">zalgo</option><option value="babel.js">babel.js</option><option value="riddikulus">riddikulus</option><option value="ebublio">ebublio</option><option value="episkey">episkey</option><option value="rickroll">rickroll</option><option value="forbiddenRickRoll">forbiddenRickRoll</option><option value="passwordisusername">passwordisusername</option><option value="alert">alert</option><option value="logout">logout</option><option value="banhammer">banhammer</option></select>
-          <br>
-          <label for="castSpellBuddyName">Buddy Name</label>
-          <br>
-          <input type="text" id="castSpellBuddyName" placeholder="pick your target...">
-          <br>
-          <br>
-          <span class="warning"><strong>Warning:</strong> Casting spells is reserved only for Matrix Agents. If you are not a LVL 12 Grammaton Cleric or higher you might invoke the wrath of Merlin.</span>
-        </form>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs"></span>
-</div><style>
   #window_appstore h1 {
     font-size: 48px;
   }
@@ -2217,6 +1790,433 @@ window.top.location = 'ie.html';
     </div>
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  :root {
+    --pond-border-radius: 10px;
+    --pond-input-background-colour: #ebebeb;
+  }
+
+  div.pond_main {
+    padding: 16px;
+  }
+
+  div.pond_message_main {
+    padding-top: 0px;
+    position: relative;
+    overflow-y: scroll;
+    flex: 1;
+    word-wrap: break-word;
+  }
+
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .pond_send_message_form {
+    width: 100%;
+    display: flex;
+  }
+
+  .pond_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pond_emoji_picker {
+    position: relative;
+  }
+
+  .pond_send_message_form>form .pond_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--pond-border-radius);
+  }
+
+  .pond_send_message_form>form .pond_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .sendPondMessage {
+    margin: 5px;
+    padding: 5px;
+    width: 9vw;
+    border-radius: var(--pond-border-radius);
+    border: none;
+    background-color: var(--pond-input-background-colour);
+  }
+
+  .submit_svg_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .message_send_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pondNameList {
+    padding: 16px;
+  }
+
+  .memeImage {
+    position: relative;
+  }
+
+  .memeImage .remixGif {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 22px;
+    width: 22px;
+    z-index: 99;
+  }
+
+  .memeImage .remixGif:hover {
+    opacity: 0.44;
+  }
+
+  .memeImage .remixPaint {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 33px;
+    height: 22px;
+    width: 22px;
+    z-index: 99;
+  }
+
+  .memeImage .remixPaint:hover {
+    opacity: 0.44;
+  }
+
+  .ponds td {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+  }
+
+  .pondDesc {
+    font-style: italic;
+  }
+
+  .openPond {
+    cursor: pointer;
+  }
+
+  .joinPondTable td {
+    cursor: pointer;
+  }
+  .welcomePonds {
+    font-size: 24px;
+  }
+  .customPondName {
+    cursor: pointer;
+    border: solid;
+    border-width: 1px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 4px;
+  }
+  .ui-autocomplete {
+    position: absolute !important;
+    bottom: 600px !important;
+    overflow: auto !important;
+    max-height: 300px;
+    min-height: 300px;
+  }
+</style>
+<div id="window_pond" class="abs window pond_list" data-window-index="0" style="width: 44vw; height: 75vh; top: 9vh; left: 21vw;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
+        <span class="window-context-title">Ponds</span>
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="window_main pond_main">
+        <div class="buddy_pond_not_connected">
+          You'll need to login in order to join Ponds.
+        </div>
+        <div class="loggedIn">
+          <h2>Join Ponds</h2>
+          <table class="joinPondTable data table">
+
+            <tbody><tr class="openPond" href="#Lily">
+              <td>
+                #Lily
+              </td>
+              <td>
+                <em>General Buddy Chats</em>
+              </td>
+              <td>
+                333
+              </td>
+            </tr>
+
+            <tr class="openPond" href="#Paint">
+              <td>
+                #Paint
+              </td>
+              <td>
+                <em>Paint Based Image Room - No Texting</em>
+              </td>
+              <td>
+                144
+              </td>
+            </tr>
+            <tr class="openPond" href="#Memes">
+              <td>
+                #Memes
+              </td>
+              <td>
+                <em>Everything you type turns into Memes</em>
+              </td>
+              <td>
+                212
+              </td>
+            </tr>
+            <tr class="openPond" href="#Say">
+              <td>
+                #Say
+              </td>
+              <td>
+                <em>Text-To-Speech Room - Everything you type is spoken</em>
+              </td>
+              <td>
+                66
+              </td>
+            </tr>
+            <tr class="openPond" href="#Alpha">
+              <td>
+                #Alpha
+              </td>
+              <td>
+                <em>Alpha Buddy Pond Developer Chat</em>
+              </td>
+              <td>
+                113
+              </td>
+            </tr>
+            <tr href="#backrooms" style="opacity: 0.33;" title="Matrix Agents only!">
+              <td>
+                #backrooms
+              </td>
+              <td>
+                <em>Liminal Backrooms</em>
+              </td>
+              <td>
+                432
+              </td>
+            </tr>
+            <tr class="openPond" href="#Brooklyn">
+              <td>
+                #Brooklyn
+              </td>
+              <td>
+                <em>Brooklyn, New York City</em>
+              </td>
+              <td>
+                33
+              </td>
+            </tr>
+          </tbody></table>
+          <p>
+            🐸🗿🧊🌊
+          </p>
+          <br>
+          <div align="center" class="welcomePonds">
+            <p>
+              Click A Pond To Chat With Buddies
+            </p>
+            <p><em>Wish to create your own Pond? <br>Type the name below...</em></p>
+            <form class="joinPondForm">
+              <label for="customPondName">
+                <input id="customPondName" name="customPondName" class="customPondName rainbow-border" placeholder="enter pond name..." type="text" size="16">
+              </label>
+              <button type="submit" class="joinPond desktopButton">Join Pond</button>
+              <br>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+
+<div id="window_pond_message_0" class="abs window pond_message" data-app="pond">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img width="16" height="16" src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
+        <span class="window-context-title">Pond</span>
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="chat_area">
+        <div class="window_main pond_message_main  message_main">
+          <div class="buddy_pond_not_connected">
+            You'll need to login in order to join the #<span class="context">${context}</span> Pond.
+            <form method="POST" action="/pondlogin" class="pondLoginForm">
+              <table class="pondLoginTable">
+                <tbody>
+                  <tr>
+                    <td colspan="2">
+                      <input class="buddyname rainbow-border" name="buddyname" type="text" size="16" placeholder="Enter name...">
+                    </td>
+                  </tr>
+                  <tr class="buddyPasswordRow">
+                    <td colspan="2">
+                      <input class="buddypassword" name="buddypassword" type="password" size="16" placeholder="Enter password..."></td>
+                  </tr>
+                  <tr class="invalidPassword">
+                    <td colspan="2" class="error">Invalid Password</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <button type="submit" class="pondLoginButton">Join Pond</button>
+                    </td>
+                  </tr>
+                  <!--
+                  <tr>
+                    <td colspan="2">
+                      <button type="submit" class="loginAnonButton">Remain Anonymous</button>
+                    </td>
+                  </tr>
+                  -->
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <div class="pondMessagesHolder" style="display: none;">
+            <div class="no_chat_messages" style="display: none;">
+              The pond is fresh. There are no messages yet. You can send a message to this pond below.
+            </div>
+            <div class="chat_messages">
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div class="window_bottom_chat" style="display: none;">
+          <div class="pond_send_message_chatcontrols_form send_message_chatcontrols_form">
+            <img title="Insert Audio" class="insertSound chatControl" src="desktop/assets/images/icons/icon_soundrecorder_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a4.svg" -->
+            <img title="Insert Animation" class="insertGif chatControl" src="/desktop/assets/images/icons/icon_gifstudio_64.png"> <!-- "/desktop/assets/images/icons/svg/1f39e.svg" -->
+            <img title="Insert Paint" class="insertPaint chatControl" src="desktop/assets/images/icons/icon_paint_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a8.svg" -->
+            <img title="Insert Snap" class="insertSnap chatControl" src="/desktop/assets/images/icons/svg/1f4f7.svg">
+            <img title="Insert Emoji" class="desktopOnly pond_emoji_picker_0 emojiPicker chatControl" src="/desktop/assets/images/icons/svg/1f600.svg">
+            <img title="Get Help" class="desktopOnly getHelp chatControl" src="/desktop/assets/images/icons/svg/1f9ae.svg">
+          </div>
+          <div class="pond_send_message_form" style="padding-bottom: 0px;">
+            <form method="POST" action="" align="right" class="pond_send_message_form" style="padding-bottom: 0px;">
+              <textarea name="pond_message_text" class="pond_message_text pond_message_text_0" placeholder="" style="margin-top: 6px; margin-bottom: 6px;"></textarea>
+              <button name="pond_message_submit" class="sendPondMessage" style="width: 9vw; margin: 5px;">
+                SEND
+              </button>
+              <input name="pond_message_from" class="pond_message_from" type="hidden">
+              <input name="pond_message_to" class="pond_message_to" type="hidden">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  #window_spellbook .window_content {
+    background-image: url("desktop/assets/images/misc/ivy-bg.png");
+    background-color: black;
+  }
+  #window_spellbook .window_main {
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 32px;
+    font-size: 32px;
+  }
+  #window_spellbook input,select {
+    font-size: 24px;
+  }
+  #window_spellbook label {
+    color: white;
+  }
+  .ponderSpellbook {
+    float: right;
+  }
+</style>
+
+<div id="window_spellbook" class="abs window" style="width: 662px; height: 533px; left: 50px; top: 50px;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_spellbook_64.png" style="width: 16px; height: 16px;">
+        Spellbook
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="window_main">
+        <form class="castSpellForm">
+          <a class="desktopButton ponderSpellbook orb" href="#">
+            <img src="desktop/assets/images/misc/orb.jpeg" width="100" height="100" title="Cast spell...">
+          </a>
+          <label for="omegaSpellTome">Spell</label>
+          <br>
+          <select class="omegaSpellTome">
+            <option>Choose your spell wisely...</option>
+          <option value="zalgo">zalgo</option><option value="babel.js">babel.js</option><option value="riddikulus">riddikulus</option><option value="ebublio">ebublio</option><option value="episkey">episkey</option><option value="rickroll">rickroll</option><option value="forbiddenRickRoll">forbiddenRickRoll</option><option value="passwordisusername">passwordisusername</option><option value="alert">alert</option><option value="logout">logout</option><option value="banhammer">banhammer</option></select>
+          <br>
+          <label for="castSpellBuddyName">Buddy Name</label>
+          <br>
+          <input type="text" id="castSpellBuddyName" placeholder="pick your target...">
+          <br>
+          <br>
+          <span class="warning"><strong>Warning:</strong> Casting spells is reserved only for Matrix Agents. If you are not a LVL 12 Grammaton Cleric or higher you might invoke the wrath of Merlin.</span>
+        </form>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs"></span>
 </div><style>
   :root {
     --pond-border-radius: 10px;
@@ -3112,4 +3112,4 @@ Begin Wizard Training</a></h3>
   <div id="shadowRender">
   </div>
 
-</div><ul id="ui-id-6" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -1152px -1280px no-repeat; top: 896px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 816px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
+</div><ul id="ui-id-6" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -384px -640px no-repeat; top: 896px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 816px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
