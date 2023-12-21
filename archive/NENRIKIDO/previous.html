@@ -6,34 +6,58 @@
     <link rel="shortcut icon" type="image/x-icon" href="./images/icons/favicon-32x32.png">
 
     <link rel="alternate" type="application/rss+xml" href="https://nenrikido.neocities.org/index.xml" title="NENRIKIDO">
+    
+    <link href="./sass/main.min.1b0e385727321aa6c9ab2363ec685359981762b2071f3e202a2f21d92393162a.css" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="./css/themes.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
     <link rel="stylesheet" type="text/css" href="./css/lightbox.css">
     
     </head><body><div id="preloader" style="opacity: -0.1; display: none;"></div>
 <link rel="stylesheet" type="text/css" href="./css/index.css">
-<div class="wrapper"> 
-<nav id="nav">
-    <div class="row centered">
-        <a class="navLink" href="./"><div id="home"></div>Home</a> 
-        <a class="navLink" href="./about"><div id="about"></div>About</a> 
-        <a class="navLink" href="./gallery"> <div id="gallery"></div>Gallery</a>
-        <a class="navLink" href="./commissions"> <div id="commissions"></div>Commissions </a> 
-        <a class="navLink" href="./code"> <div id="code"></div>Code </a> 
-        <a class="navLink" href="./blog"> <div id="blog"></div>Blog  </a> 
-        <a class="navLink" href="./links"> <div id="links"></div>Links </a> 
-        <a class="navLink" href="./microblog"> <div id="microblog"></div>Microblog</a> 
-        <a class="navLink" href="./library"> <div id="library"></div>Library</a> 
-        <a class="navLink" href="./nexus"><div id="nexus"></div>Nexus</a>
-    </div>
-    
+<div class="wrapper">
+    <nav id="nav">
+        <div class="row centered">
+            <a class="navLink" href="./">
+                <div id="home"></div>Home
+            </a>
+            <a class="navLink" href="./about">
+                <div id="about"></div>About
+            </a>
+            <a class="navLink" href="./gallery">
+                <div id="gallery"></div>Gallery
+            </a>
+            <a class="navLink" href="./commissions">
+                <div id="commissions"></div>Commissions
+            </a>
+            <a class="navLink" href="./code">
+                <div id="code"></div>Code
+            </a>
+            <a class="navLink" href="./blog">
+                <div id="blog"></div>Blog
+            </a>
+            <a class="navLink" href="./links">
+                <div id="links"></div>Links
+            </a>
+            <a class="navLink" href="./microblog">
+                <div id="microblog"></div>Microblog
+            </a>
+            <a class="navLink" href="./library">
+                <div id="library"></div>Library
+            </a>
+            <a class="navLink" href="./nexus">
+                <div id="nexus"></div>Nexus
+            </a>
+        </div>
+        
 <form class="search"> <input type="text" class="searchTerm" placeholder="Search..."> <button aria-label="submit" type="submit" class="searchButton"> <i class="fa fa-search"></i> </button> </form>
 
+<ul class="searchResults"></ul>
+    </nav>
 
-</nav>
-
-    <div class="grid muuri" style="height: 1682.92px;"> <div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(0px);">
+    <div class="grid muuri" style="height: 1681.45px;">
+        <div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(0px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -43,13 +67,13 @@
 </div>
         <div class="cardsBody">
             <h1>#WELCOME</h1>
-            <p> <img src="./images/pixels/strovi_pixel.gif" alt="A blue pixel catgirl blinking and kicking her feet gently." style="float: right; max-width: 80px;">
-This is my personal site and a place for me to share my work. It is a work in progress, so please excuse anything unfinished.
+            <p> <img src="./images/pixels/strovi_pixel.gif" alt="A blue pixel catgirl blinking and kicking her feet gently." style="float: right; max-width: 80px; margin: 2px;">
+This is my personal site and a place for me to share my work. It is perpetually in-progress, so please excuse anything unfinished.
 </p><p align="center"><i class="fa-solid fa-rss"></i> <a href="./index.xml">RSS feed</a> &nbsp; <i class="fa-solid fa-mobile-screen-button"></i> responsive </p>
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(316.8px) translateY(0px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(318.719px) translateY(0px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -59,7 +83,7 @@ This is my personal site and a place for me to share my work. It is a work in pr
 </div>
         <div class="cardsBody">
             <h1>#THEMES</h1>
-            <p> </p><p>Pick an emoji. You may need to tap it twice for the grid to refresh correctly.</p>
+            <p> </p><p>Pick an emoji to change the theme. You may need to tap it twice for the grid to refresh correctly.</p>
 <div class="row centered">
     <button id="pink" title="pink theme" class="theme-button btn-border" onclick="handleThemeButtonClick('pink', this)"><img draggable="false" class="emoji" alt="💗" src="https://twemoji.maxcdn.com/v/14.0.2/72x72/1f497.png"></button>
     <button id="blue" title="blue theme" class="theme-button" onclick="handleThemeButtonClick('blue', this)"><img draggable="false" class="emoji" alt="🫧" src="https://twemoji.maxcdn.com/v/14.0.2/72x72/1fae7.png"></button> 
@@ -70,7 +94,21 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(633.6px) translateY(0px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(637.438px) translateY(0px);">
+    <div class="cards" style="opacity: 1; transform: scale(1);">
+        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    <div class="cardsControls">
+            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
+    </div>
+</div>
+        <div class="cardsBody">
+            <h1>#DRAG N DROP</h1>
+            <p> Grab a card by its header and drag it wherever you want! </p>
+        </div>
+    </div>
+</div>
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(956.156px) translateY(0px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -88,23 +126,7 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(950.4px) translateY(0px);">
-    <div class="cards" style="opacity: 1; transform: scale(1);">
-        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-    <div class="cardsControls">
-            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
-            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
-    </div>
-</div>
-        <div class="cardsBody">
-            <h1>#COUNTERS</h1>
-            <p> </p><p align="center"> all visits: <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=38931944&amp;main=1"></script><a href="https://counter.fc2.com/" rel="noopener" target="_blank" onmouseover="_FC2COUNTER38931944_1.show_graph(event);" onmouseout="_FC2COUNTER38931944_1.hide_graph(event);"><span><nobr><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/l.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/4.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/6.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/4.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/8.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"></nobr><span></span></span></a><script src="https://counter1.fc2.com/counter_js.php?id=38931944&amp;main=1&amp;lang=0&amp;visitor=2" charset="UTF-8"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=38931944&main=1" /></noscript> </p>
-<p align="center"> current viewers: <script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=38931944&amp;main=1"></script><!-- FC2 --><a href="https://counter.fc2.com/" rel="noopener" target="_blank"><span><nobr><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/1.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"></nobr><span></span></span></a><script src="https://counter1.fc2.com/views_js.php?id=38931944&amp;main=1&amp;lang=0" charset="UTF-8"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=38931944&main=1" /></noscript> </p>
- <p></p>
-        </div>
-    </div>
-</div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(950.4px) translateY(233.222px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(637.438px) translateY(205.992px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -121,7 +143,7 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(316.8px) translateY(282.222px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(318.719px) translateY(290.391px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -130,27 +152,14 @@ This is my personal site and a place for me to share my work. It is a work in pr
     </div>
 </div>
         <div class="cardsBody">
-            <h1>#GUESTBOOK</h1>
-            <p> <iframe title="chatbox" src="https://www3.cbox.ws/box/?boxid=3526482&amp;boxtag=h3SRws" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
- </p>
+            <h1>#COUNTERS</h1>
+            <p> </p><p align="center"> all visits: <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=38931944&amp;main=1"></script><a href="https://counter.fc2.com/" rel="noopener" target="_blank" onmouseover="_FC2COUNTER38931944_1.show_graph(event);" onmouseout="_FC2COUNTER38931944_1.hide_graph(event);"><span><nobr><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/l.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/4.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/8.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/1.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/19/00005519/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"></nobr><span></span></span></a><script src="https://counter1.fc2.com/counter_js.php?id=38931944&amp;main=1&amp;lang=0&amp;visitor=2" charset="UTF-8"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=38931944&main=1" /></noscript> </p>
+<p align="center"> current viewers: <script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=38931944&amp;main=1"></script><!-- FC2 --><a href="https://counter.fc2.com/" rel="noopener" target="_blank"><span><nobr><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/0.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"><img border="0" src="https://counter1-cdn-ssl.fc2.com/cimg/94/00005194/1.gif" alt="FC2無料カウンター" "="" title="FC2無料カウンター" style="display:inline;margin:0px;padding:0px;border:none;"></nobr><span></span></span></a><script src="https://counter1.fc2.com/views_js.php?id=38931944&amp;main=1&amp;lang=0" charset="UTF-8"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=38931944&main=1" /></noscript> </p>
+ <p></p>
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(332.191px);">
-    <div class="cards" style="opacity: 1; transform: scale(1);">
-        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-    <div class="cardsControls">
-            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
-            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
-    </div>
-</div>
-        <div class="cardsBody">
-            <h1>#TAMA</h1>
-            <p> </p><p align="center"><a href="http://tamanotchi.world/4251c" target="_blank" rel="noopener noreferrer"><img src="http://tamanotchi.world/i2/4251" alt="It's tamaNOTchi! Click to feed!"></a> </p>
-        </div>
-    </div>
-</div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(633.6px) translateY(363.784px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(317.984px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -160,12 +169,12 @@ This is my personal site and a place for me to share my work. It is a work in pr
 </div>
         <div class="cardsBody">
             <h1>#MICROBLOG</h1>
-            <p> </p><div id="microblog_recent"><div class="post" id="38"><a href="/microblog"><img class="profilePic" src="/images/microblog/icon.jpg"></a><div class="postContent"><div class="authorDate"><div class="author"><span class="authorName">ravrioli <img src="/images/microblog/space1.gif" style="width:0.85em; height:0.85em;"></span> <span class="username">@guillotineworld</span></div><a href="/microblog#38" class="postDate" title="Wed Nov 01 2023 20:19:38 GMT+0000 (Greenwich Mean Time)">11/1/2023</a></div><div class="postText">pondering the merits of making a webring for marine bio enthusiasts and appreciators...🤔</div> </div></div></div>
+            <p> </p><div id="microblog_recent"><div class="post" id="39"><a href="/microblog"><img class="profilePic" src="/images/microblog/icon.jpg"></a><div class="postContent"><div class="authorDate"><div class="author"><span class="authorName">ravrioli <img src="/images/microblog/space1.gif" style="width:0.85em; height:0.85em;"></span> <span class="username">@nenrikido</span></div><a href="/microblog#39" class="postDate" title="Sun Dec 10 2023 23:26:12 GMT+0000 (Greenwich Mean Time)">12/10/2023</a></div><div class="postText">every time i start working on this site it gets so out of hand so quickly lol</div> </div></div></div>
  <p></p>
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(586.819px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(956.156px) translateY(354.875px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -174,18 +183,27 @@ This is my personal site and a place for me to share my work. It is a work in pr
     </div>
 </div>
         <div class="cardsBody">
-            <h1>#LUNAR</h1>
-            <p> <!-- © wdisseny -->
-</p><div id="contain_moon" style="text-align:center;padding-top:5px;padding-bottom:5px;margin:10px;width:auto;height:17em;"><div style="font-weight:bold">the moon today</div><div style="margin-bottom: 3em; padding: 2em; filter: drop-shadow(rgb(0, 26, 77) 0px 0px 20px); height: 100px;"><svg width="100" height="100" viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="49" stroke="none" fill="rgb(56,56,141)"></circle><path d="M 50 1 A 49,49 0 1,0 49,99 A 20.58,49 0 0,1 50,1" stroke-width="0" stroke="none" fill="rgb(255,249,253)"></path><a xlink:href="https://www.icalendar37.net/lunar/app/" rel="noopener noreferrer" target="_blank"><circle cx="50" cy="50" r="49" style="pointer-events:all;cursor:pointer" stroke-width="0" fill="transparent"></circle></a></g></svg></div><div>Waning (29%)</div><div style="font-size:small">next full moon<br><svg height="18" width="18" style="margin-top:-2px;display:inline-block; vertical-align:middle;stroke:rgb(56,56,141);stroke-width:px;fill:rgb(255,249,253)">
-<title>Full moon</title>
-<circle cx="9" cy="9" r="8"></circle>
-</svg> <b>27</b> December</div></div>
-<script>(function(){var d=new Date().getDate();var m=document.querySelectorAll("#contain_moon div");var a=new XMLHttpRequest();var url="https://www.icalendar37.net/lunar/api/?lang=en&month="+(new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+"&size=100&lightColor=rgb(255,249,253)&shadeColor=rgb(56,56,141)&LDZ="+new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";m[1].style.height="100px";a.onreadystatechange=function(){if(a.readyState==4&&a.status==200){var b=JSON.parse(a.responseText);m[1].innerHTML=b.phase[d].svg;if(typeof moon_widget_loaded=="function")moon_widget_loaded(b);m[2].innerHTML=b.phase[d].npWidget;m[3].innerHTML="next full moon<br>"+b.nextFullMoon}};a.open("GET",url,true);a.send()})()</script>
- <p></p>
+            <h1>#TAMANOTCHI</h1>
+            <p> </p><p align="center" style="height:85px;"><a href="http://tamanotchi.world/4251c" target="_blank" rel="noopener noreferrer"><img src="http://tamanotchi.world/i2/4251" alt="It's tamaNOTchi! Click to feed!"></a> </p>
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(633.6px) translateY(669.178px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(318.719px) translateY(506.383px);">
+    <div class="cards" style="opacity: 1; transform: scale(1);">
+        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    <div class="cardsControls">
+            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
+    </div>
+</div>
+        <div class="cardsBody">
+            <h1>#GUESTBOOK</h1>
+            <p> <iframe title="chatbox" src="https://www3.cbox.ws/box/?boxid=3526482&amp;boxtag=h3SRws" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+ </p>
+        </div>
+    </div>
+</div>
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(956.156px) translateY(605.07px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -200,7 +218,22 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(950.4px) translateY(831.756px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(610.766px);">
+    <div class="cards" style="opacity: 1; transform: scale(1);">
+        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    <div class="cardsControls">
+            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
+    </div>
+</div>
+        <div class="cardsBody">
+            <h1>#JELLY CAM</h1>
+            <p> </p><div class="youtube-player" data-id="OMlf71t2oV0" title="Youtube embed of Monterey Bay Jelly Cam"><div data-id="OMlf71t2oV0"><img src="//i.ytimg.com/vi/OMlf71t2oV0/hqdefault.jpg"><div class="play"></div></div></div>
+ <p></p>
+        </div>
+    </div>
+</div>
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(637.438px) translateY(794.688px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -212,19 +245,39 @@ This is my personal site and a place for me to share my work. It is a work in pr
             <h1>#BLOG POSTS</h1>
             <p> </p><p>Read the rest of the blog <a href="./blog">here</a>.</p>
 <ul>
+    <li>Dec 10: <strong><a href="https://nenrikido.neocities.org/blog/post/mega-site-update/"> Mega Site Update </a></strong> - Brand new fonts, search finally works, new blog tag filter, site got SASS’ed, microblog bug is …</li>
+</ul>
+<ul>
     <li>Jul 02: <strong><a href="https://nenrikido.neocities.org/blog/post/firefox-tutourial/"> Firefox Tree Tabs Tu(tour)ial </a></strong> - Welcome to my crib, Mozilla Firefox edition. With instructions on how to recreate it!</li>
 </ul>
 <ul>
     <li>Jun 17: <strong><a href="https://nenrikido.neocities.org/blog/post/yard-sale/"> Yard Sale </a></strong> - A diary entry. Featuring Hot Topic fashion and a sandwich.</li>
 </ul>
-<ul>
-    <li>May 28: <strong><a href="https://nenrikido.neocities.org/blog/post/bye-bye-bootstrap/"> Bye-bye Bootstrap </a></strong> - Bootstrap gets the boot, my hair gets a trim, and the site gets a map.</li>
-</ul>
  <p></p>
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(316.8px) translateY(908.85px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(915.859px);">
+    <div class="cards" style="opacity: 1; transform: scale(1);">
+        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    <div class="cardsControls">
+            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
+    </div>
+</div>
+        <div class="cardsBody">
+            <h1>#LUNAR</h1>
+            <p> <!-- © wdisseny -->
+</p><div id="contain_moon" style="text-align:center;padding-top:5px;padding-bottom:5px;margin:10px;width:auto;height:17em;"><div style="font-weight:bold">the moon today</div><div style="margin-bottom: 3em; padding: 2em; filter: drop-shadow(rgb(0, 26, 77) 0px 0px 20px); height: 100px;"><svg width="100" height="100" viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="49" stroke="none" fill="rgb(56,56,141)"></circle><path d="M 50 1 A 49,49 0 0,1 49,99 A 49,49 0 1,0 50,1" stroke-width="0" stroke="none" fill="rgb(255,249,253)"></path><a xlink:href="https://www.icalendar37.net/lunar/app/" rel="noopener noreferrer" target="_blank"><circle cx="50" cy="50" r="49" style="pointer-events:all;cursor:pointer" stroke-width="0" fill="transparent"></circle></a></g></svg></div><div>Waxing (0%)</div><div style="font-size:small">next full moon<br><svg height="18" width="18" style="margin-top:-2px;display:inline-block; vertical-align:middle;stroke:rgb(56,56,141);stroke-width:px;fill:rgb(255,249,253)">
+<title>Full moon</title>
+<circle cx="9" cy="9" r="8"></circle>
+</svg> <b>27</b> December</div></div>
+<script>(function(){var d=new Date().getDate();var m=document.querySelectorAll("#contain_moon div");var a=new XMLHttpRequest();var url="https://www.icalendar37.net/lunar/api/?lang=en&month="+(new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+"&size=100&lightColor=rgb(255,249,253)&shadeColor=rgb(56,56,141)&LDZ="+new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";m[1].style.height="100px";a.onreadystatechange=function(){if(a.readyState==4&&a.status==200){var b=JSON.parse(a.responseText);m[1].innerHTML=b.phase[d].svg;if(typeof moon_widget_loaded=="function")moon_widget_loaded(b);m[2].innerHTML=b.phase[d].npWidget;m[3].innerHTML="next full moon<br>"+b.nextFullMoon}};a.open("GET",url,true);a.send()})()</script>
+ <p></p>
+        </div>
+    </div>
+</div>
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(318.719px) translateY(1076.98px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -235,6 +288,7 @@ This is my personal site and a place for me to share my work. It is a work in pr
         <div class="cardsBody">
             <h1>#UPDATES</h1>
             <p> </p><div class="scrollbox"><ul>
+<li><strong>12-11-23</strong>: too many to list!! check out the blog!!</li>
 <li><strong>7-2-23</strong>: new blog post and a theme poll.</li>
 <li><strong>6-21-23</strong>: added a few new fanlistings…most are still pending but wooo</li>
 <li><strong>6-17-23</strong>: changed up a lot of CSS (ctrl + f5 if anything is weird), tweaked a few scripts, made a new blog post, joined the surf club webring &amp; added the widget, separated fanlistings, etc.</li>
@@ -272,22 +326,7 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(1002.65px);">
-    <div class="cards" style="opacity: 1; transform: scale(1);">
-        <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-    <div class="cardsControls">
-            <div> <i class="fa-solid fa-arrows-up-down-left-right"></i></div>
-            <div> <i class="fa-solid fa-window-minimize"></i> <i class="fa-regular fa-window-restore"></i> <i class="fa-solid fa-xmark"></i></div>
-    </div>
-</div>
-        <div class="cardsBody">
-            <h1>#JELLY CAM</h1>
-            <p> </p><div class="youtube-player" data-id="OMlf71t2oV0" title="Youtube embed of Monterey Bay Jelly Cam"><div data-id="OMlf71t2oV0"><img src="//i.ytimg.com/vi/OMlf71t2oV0/hqdefault.jpg"><div class="play"></div></div></div>
- <p></p>
-        </div>
-    </div>
-</div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(633.6px) translateY(1191.4px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(956.156px) translateY(1102.06px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -304,7 +343,7 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(950.4px) translateY(1281.92px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(637.438px) translateY(1224.66px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -315,26 +354,22 @@ This is my personal site and a place for me to share my work. It is a work in pr
         <div class="cardsBody">
             <h1>#TO-DO</h1>
             <p> </p><div class="scrollbox"><ul>
-<li><del>force grid refresh when theme is switched</del> <img src="images/pixels/new.gif" alt=""></li>
-<li><del>ease theme switch</del> <img src="images/pixels/new.gif" alt=""></li>
-<li><del>re-design start menu</del> <img src="images/pixels/new.gif" alt=""></li>
-<li><del>remove bootstrap</del> <img src="images/pixels/new.gif" alt=""></li>
+<li><del>fix microblog index bug</del> <img src="images/pixels/new.gif" alt=""></li>
+<li><del>fix search script</del> <img src="images/pixels/new.gif" alt=""></li>
+<li><del>add blog thumbnails</del> <img src="images/pixels/new.gif" alt=""></li>
+<li><del>fix blog filter</del> <img src="images/pixels/new.gif" alt=""></li>
 <li>open commissions</li>
-<li>fix firefox microblog index bug</li>
-<li>make OC pages</li>
-<li>fix search script</li>
-<li>RSS updates</li>
-<li>fix theme flickering</li>
 <li>add library genre drop-down</li>
 <li>add microblog pagination</li>
-<li>new shrines</li>
+<li>new nexus pages</li>
+<li>y2k f2u layout</li>
 </ul>
 </div>
  <p></p>
         </div>
     </div>
 </div>
-<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(316.8px) translateY(1295.88px);">
+<div class="item medium muuri-item muuri-item-shown" style="left: 0px; top: 0px; transform: translateX(0px) translateY(1312.25px);">
     <div class="cards" style="opacity: 1; transform: scale(1);">
         <div class="cardsHeader" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="cardsControls">
@@ -364,40 +399,43 @@ This is my personal site and a place for me to share my work. It is a work in pr
         </div>
     </div>
 </div>
- </div> </div>
-    <script src="./js/microblog_recent.js"></script>
-    <script type="text/javascript" src="./js/audioPlayer.js" defer=""></script>
+ </div>
+</div>
+<script src="./js/microblog_recent.js"></script>
+<script type="text/javascript" src="./js/audioPlayer.js" defer=""></script>
 
 <footer id="footer">
     <ul>
         <li> <button id="footer-button">START</button> </li>
         <li> <a href="#" id="btn-back-to-top" onclick="call()"><i class="fa-solid fa-circle-chevron-up"></i></a></li>
-        <li><div id="clock" class="clock" onload="showTime()">11:45 AM</div></li>
+        <li>
+            <div id="clock" class="clock" onload="showTime()">10:55 AM</div>
+        </li>
     </ul>
 </footer>
 
 <div id="start-menu" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h1>Start Menu</h1> <span class="close">×</span>
+            <h1>START MENU</h1> <span class="close">×</span>
         </div>
         <div class="modal-body">
-            
-                <div class="modal-bio">
-                    <img class="modal-bio img" src="./images/icons/sh.jpg">
-                    <h6>Rio's desktop</h6>
-                    <p align="center"><i class="fa-regular fa-map"></i> <a href="./sitemap">Sitemap</a></p>
 
-                    <ul style="font-style: italic;">
-                        <li>OS: NENRIKIDO</li>
-                        <li>Version: 1.5</li>
-                        <li>Host: Neocities</li>
-                        <li>Processor: Hugo</li>
-                        <li>Since: 03-13-23</li>
-                    </ul>
-                </div>
-                <div class="modal-list">  <a class="modal-menu " href="./">  <span>Home </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./about/">  <span>About </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./gallery/">  <span>Gallery </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./commissions/">  <span>Commissions </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./code/">  <span>Code </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./blog/">  <span>Blog </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./links/">  <span>Links </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./microblog/">  <span>Microblog </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./library/">  <span>Library </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./nexus/">  <span>Nexus </span> <i class="fa-solid fa-chevron-right"></i></a>  </div>
-            
+            <div class="modal-bio">
+                <img class="modal-bio img" src="./images/icons/sh.jpg">
+                <p style="font-size:large; font-weight:bold;">Rio's desktop</p>
+                <p align="center"><i class="fa-regular fa-map"></i> <a href="./sitemap">Sitemap</a></p>
+
+                <ul style="font-style: italic;">
+                    <li>OS: NENRIKIDO</li>
+                    <li>Version: 1.6</li>
+                    <li>Host: Neocities</li>
+                    <li>Processor: Hugo</li>
+                    <li>Since: 03-13-23</li>
+                </ul>
+            </div>
+            <div class="modal-list">  <a class="modal-menu " href="./">  <span>Home </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./about/">  <span>About </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./gallery/">  <span>Gallery </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./commissions/">  <span>Commissions </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./code/">  <span>Code </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./blog/">  <span>Blog </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./links/">  <span>Links </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./microblog/">  <span>Microblog </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./library/">  <span>Library </span> <i class="fa-solid fa-chevron-right"></i></a>  <a class="modal-menu " href="./nexus/">  <span>Nexus </span> <i class="fa-solid fa-chevron-right"></i></a>  </div>
+
         </div>
         <div class="modal-footer"><div class="row centered">
     <button id="pink" title="pink theme" class="theme-button" onclick="handleThemeButtonClick('pink', this)"><img draggable="false" class="emoji" alt="💗" src="https://twemoji.maxcdn.com/v/14.0.2/72x72/1f497.png"></button>
@@ -406,12 +444,12 @@ This is my personal site and a place for me to share my work. It is a work in pr
     <button id="black" title="black theme" class="theme-button" onclick="handleThemeButtonClick('black', this)"><img draggable="false" class="emoji" alt="💤" src="https://twemoji.maxcdn.com/v/14.0.2/72x72/1f4a4.png"></button>
 </div></div>
     </div>
-<script>
-function call() {
-    var body = $("html, body");
-    body.stop().animate({scrollTop:0}, 500, 'swing', function() {
-    });
-}</script>
+    <script>
+        function call() {
+            var body = $("html, body");
+            body.stop().animate({ scrollTop: 0 }, 500, 'swing', function () {
+            });
+        }</script>
     <script type="text/javascript" src="./js/clock.js"></script>
     <script defer="" type="text/javascript" src="./js/start.js"></script><script src="./js/theme.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>

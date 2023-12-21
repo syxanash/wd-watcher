@@ -1,7 +1,7 @@
 <html lang="en" data-theme="" style="background:black"><head>
 		<meta charset="utf-8">
 		<title>Microsoft Windows XP Professional</title>
-		<link rel="icon" href="https://win32.run/favicon.png">
+		<link rel="icon" href="./favicon.png">
 		<link rel="stylesheet" id="theme" href="">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="description" content="Yet another Windows XP in the browser, but with a File System and comes with it, Programs.">
@@ -146,12 +146,27 @@
 			}
 		</style>
 		
-	<link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/__layout.svelte-b81b30cf.js"><link rel="stylesheet" href="/_app/immutable/assets/__layout-9b54f97f.css"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/error.svelte-f18c64ba.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/index.svelte-1382e7cf.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/boot_manager.svelte-c358f143.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/utils-1f7a3290.js"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"></head>
-	<body style="zoom: 1;">
+	</head>
+	<body>
 
 		<div id="iframe-preload" style="position: absolute;inset: 0;display: none;"></div>
 		
-		<div style="position:absolute;inset:0;"> <div class="w-screen h-screen bg-black overflow-hidden font-MSSS"><div class="mt-12 ml-8 text-lg"><p class="text-slate-100">Use the ↑(Up) and ↓(Down) key to move the pointer to desired boot device.</p> <p class="text-slate-100">Press (Enter) to attempt to boot or ESC to cancel.</p> <p class="text-slate-100 mt-2 max-w-[500px]">WIN32.RUN might have unexpected behaviors on browsers that are NOT Chromium-based (Safari, Firefox, Internet Explorer, etc.)</p> <p class="text-slate-100 uppercase mt-4 mb-2">boot options:</p> <div><div class="ml-8 p-2 inline-block text-slate-900 bg-slate-200">Start Windows Normally</div></div><div><div class="ml-8 p-2 inline-block text-slate-300">Install Windows</div></div><div><div class="ml-8 p-2 inline-block text-slate-300">Onboard NIC (IPV4)</div></div><div><div class="ml-8 p-2 inline-block text-slate-300">Onboard NIC (IPV6</div></div> <p class="text-slate-100 uppercase mt-4 mb-2">other options:</p> <div><div class="ml-8 p-2 inline-block text-slate-300">BIOS Setup</div> </div><div><div class="ml-8 p-2 inline-block text-slate-300">Device Configuration</div> </div><div><div class="ml-8 p-2 inline-block text-slate-300">BIOS Flash Update</div> </div><div><div class="ml-8 p-2 inline-block text-slate-300">Change Boot Mode Settings</div> </div></div></div> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div>
+		<div style="position:absolute;inset:0;">
+		<script type="module" data-sveltekit-hydrate="45h">
+		import { set_public_env, start } from "/_app/immutable/start-93ac998b.js";
+
+		set_public_env({});
+
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: true,
+			trailing_slash: "never",
+			hydrate: null
+		});
+	</script></div>
 
 		<div id="pos_loader" style="position: absolute; inset: 0px; padding: 10px; background-color: black; font-size: 18px; display: none;">
 			<!-- Bootup by Kyle Stephens -->
