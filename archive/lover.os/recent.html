@@ -18,6 +18,8 @@
           <a href="#" onclick="openTab(5)"><img src="images\chatbox.png">Chatbox</a>
           <a href="#" onclick="openTab(6)"><img src="images\other.png">Updates</a>
           <a href="#" onclick="openTab(7)"><img src="images\todo32.png">Information</a>
+          <a href="#" onclick="openTab(8)"><img src="images\todo32.png">MEDIA</a>
+
           <div class="drop-divider"> </div>
           <a href="#" onclick="openTab(5)"><img src="images\logoff.png">Log off</a>
           <a href="#" onclick="openTab(5)"><img src="images\shutdownn.png">Shut down</a>
@@ -30,7 +32,9 @@
       <button class="box border" id="tab5" onclick="closeTab(5)" style="display:none">Chatbox</button>
       <button class="box border" id="tab6" onclick="closeTab(6)">Updates</button>
       <button class="box border" id="tab7" onclick="closeTab(7)">Information</button>
-      <p id="clock" style="float: right;">16:38:53</p>
+      <button class="box border" id="tab8" onclick="closeTab(7)">Media</button>
+
+      <p id="clock" style="float: right;">10:59:50</p>
     </div>
 
     <div class="icons">
@@ -38,10 +42,11 @@
       <button class="icon" onclick="openTab(3)"><img src="images\terminal.png"><br>Terminal</button>
       <button class="icon" onclick="openTab (6)"><img src="images\other.png"><br>Updates</button>
       <button class="icon" onclick="openTab (7)"><img src="images\todo32.png"><br>Info</button>
+      <button class="icon" onclick="openTab (8)"><img src="https://i.imgur.com/TVsXnTH.png"><br>Media</button>
+
       <button class="icon opennew" data-target="html/journal.html"><img src="images\journal.png"><br><img src="images\shortcut.png" class="shortcut">Journal</button>
       <button class="icon opennew" data-target="blog.html"><img src="images\notepad.png"><br><img src="images\shortcut.png" class="shortcut">Blog</button>
       <button class="icon opennew" data-target="links/links.html"><img src="images\links.png"><br><img src="images\shortcut.png" class="shortcut">Lit. Links</button>
-      <button class="icon opennew" data-target="html/music.html	"><img src="images\explorer.png"><br><img src="images\shortcut.png" class="shortcut">Music</button>
       <button class="icon opennew" data-target="html/ephemerality.html	"><img src="images\explorer.png"><br><img src="images\shortcut.png" class="shortcut">Ephemeral</button>
       <button class="icon opennew" data-target="rooms/room1.html"><img src="images\rooms.png"><br><img src="images\shortcut.png" class="shortcut">Rooms</button>
 
@@ -106,6 +111,9 @@
         <button class="x-button border" onclick="closeTab(6)">X</button>
       </div>
       <div class="content">
+        <span class="title"><img src="images/berry.png">2nd feb 2024:</span><br>
+        added "reviews.html", a place for film reviews. added a "media" folder which will include my music, film, and (eventually) book pages.
+        <br><br>
         <span class="title"><img src="images/berry.png">26th dec 2023:</span><br>
         added "journal.html", to replace the current diary i have on my homepage as something that gives me more creative freedom and space to add images and music
         <br><br>
@@ -192,6 +200,18 @@
         <br>
         </div>
     </div>
+
+    <div id="div8" class="hidden-div draggable">
+      <div class="header"><img src="https://i.imgur.com/TVsXnTH.png"><b>Media</b>
+        <button class="x-button border" onclick="closeTab(8)">X</button>
+      </div>
+      <div class="content">
+        <div class="folder"><a href="html/music.html" target="”_blank”"><img src="https://i.imgur.com/1pI9aWr.png"><br>music</a></div>
+        <div class="folder"><a href="html/reviews.html" target="”_blank”"><img src="https://i.imgur.com/beWuWAN.png"><br>film reviews</a></div>
+
+        </div>
+    </div>
+
 
     <div class="cornerimg">
       <img src="images/shells/shell1.png" class="toggle-image">
