@@ -427,7 +427,7 @@ window.top.location = 'ie.html';
           </ul>
         </li>
       </ul>
-      <span class="float_right" id="clock" title="March 12, 2024">Tuesday 7:28 PM</span>
+      <span class="float_right" id="clock" title="March 22, 2024">Friday 9:37 AM</span>
       <span class="float_right" id="volume">
         <span class="navbarControl volumeToggle volumeFull">🔉</span>
         <span class="navbarControl volumeToggle volumeMuted">🔇</span>
@@ -588,20 +588,20 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
+    <li id="icon_dock_console">
+      <a href="#window_console" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
+        <div class="dock_title">
+          Console
+        </div>
+      </a>
+    </li>
+  
     <li id="icon_dock_appstore">
       <a href="#window_appstore" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_appstore_64.png">
         <div class="dock_title">
           appstore
-        </div>
-      </a>
-    </li>
-  
-    <li id="icon_dock_mantra">
-      <a href="#window_mantra" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_mantra_64.png">
-        <div class="dock_title">
-          Mantra
         </div>
       </a>
     </li>
@@ -624,15 +624,6 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_profile">
-      <a href="#window_profile" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
-        <div class="dock_title">
-          Profile
-        </div>
-      </a>
-    </li>
-  
     <li id="icon_dock_streamsquad">
       <a href="#window_streamsquad" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_streamsquad_64.png">
@@ -642,20 +633,11 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_console">
-      <a href="#window_console" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
+    <li id="icon_dock_mantra">
+      <a href="#window_mantra" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_mantra_64.png">
         <div class="dock_title">
-          Console
-        </div>
-      </a>
-    </li>
-  
-    <li id="icon_dock_buddylist">
-      <a href="#window_buddylist" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_buddylist_64.png">
-        <div class="dock_title">
-          Buddies
+          Mantra
         </div>
       </a>
     </li>
@@ -665,6 +647,24 @@ window.top.location = 'ie.html';
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_wallpaper_64.png">
         <div class="dock_title">
           Wallpaper
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_profile">
+      <a href="#window_profile" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
+        <div class="dock_title">
+          Profile
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_buddylist">
+      <a href="#window_buddylist" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_buddylist_64.png">
+        <div class="dock_title">
+          Buddies
         </div>
       </a>
     </li>
@@ -689,6 +689,194 @@ window.top.location = 'ie.html';
   </ul>
     </div>
   <style>
+  .console {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 16px;
+  }
+  .consoleMessageSubmit {
+    width: 120px;
+  }
+  
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+  
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  div.console_message_main {
+    padding-top: 0px;
+    position: relative;
+    overflow-y: scroll;
+    flex: 1;
+    word-wrap: break-word;
+  }
+
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .console_message_submit {
+    margin: 5px;
+    padding: 5px;
+    width: 9vw;
+    border-radius: var(--console-border-radius);
+    border: none;
+    background-color: var(--console-input-background-colour);
+  }
+
+  .submit_svg_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .message_send_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ui-autocomplete {
+    position: absolute !important;
+    bottom: 600px !important;
+    overflow: auto !important;
+    max-height: 300px;
+    min-height: 300px;
+  }
+  
+  .window_bottom_console {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 20px;
+    /*overflow: hidden;*/
+    text-align: left;
+    text-shadow: #fff 0 1px 1px;
+    /* height: 33px; */
+    /* width: 100%; */
+    left: 1px;
+    right: 1px;
+    padding-left: 8px;
+    margin: 3px 0 3px 0;
+  }
+
+</style>
+
+<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
+        Console
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="chat_area">
+      <div class="abs window_content" style="top: 33px;">
+        <div class="chat_area">
+          <div class="window_main console_message_main  message_main">
+            <div class="consoleMessagesHolder">
+              <div class="no_chat_messages" style="display: none;">
+                The console is fresh. There are no messages yet. You can send a message to this console below.
+              </div>
+              <div class="console chat_messages">
+              <li>09:37:49: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>09:37:49: <span class="purple">Now loading deferred apps</span> </li><li>09:37:49: <span class="purple">Loading App.login</span> </li><li>09:37:49: <span class="purple">Loading App.videochat</span> </li><li>09:37:50: <span class="purple">Ready: App.merlin</span> </li></div>
+              <hr>
+            </div>
+          </div>
+          <div class="window_bottom_console">
+            <div class="console_send_message_form">
+              <form method="POST" action="" align="right" class="console_send_message_form">
+              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
+                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
+                  §~~~&gt; Evaluate
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+<style>
   #window_appstore h1 {
     font-size: 48px;
   }
@@ -1128,41 +1316,6 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
-  #mantraIframe {
-    height: 100%;
-    width: 100%;
-  }
-
-  .mantraGameHolder {
-    height: 100%;
-    width: 100%;
-  }
-</style>
-
-<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
-        Mantra
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="mantraGameHolder">
-        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
   :root {
     --pond-border-radius: 10px;
     --pond-input-background-colour: #ebebeb;
@@ -1590,6 +1743,181 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs"></span>
 </div><style>
+  #streamsquadIframe {
+    height: 100%;
+    width: 100%;
+  }
+  .streamersTable {
+    height: 100%;
+    width: 80%;
+  }
+  .isStreamingNow {
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+  .nextStreamSoon {
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+</style>
+
+<div id="window_streamsquad" class="abs window" align="center" style="width: 662px; height: 495px; left: 50px; top: 50px;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_streamsquad_64.png" style="width: 16px; height: 16px;">
+        Stream Squad
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="streamsquadGameHolder">
+        <h2>Buddy Pond Live Streamers</h2>
+        <br>
+        <br>
+        <table class="streamersTable table">
+          
+            <tbody>
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>Marak</td>
+        <td>DJ Sets, Live Coding, Buddy Pond QA</td>
+        <td><a href="https://www.youtube.com/user/MarakSquires" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>SkratchBastidTV</td>
+        <td>DJ Sets</td>
+        <td><a href="https://www.youtube.com/user/SkratchBastidTV" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>Andrew Potthast</td>
+        <td>DJ Sets</td>
+        <td><a href="https://soundcloud.com/andrew-potthast" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    </tbody>
+        </table>
+        <br>
+        <br>
+        <div class="isStreamingNow rainbow" style="display: none;"><a href="#openIDC" data-videotype="livestream" data-videoid="1UFeeHqkUZU" class="openIDC rainbow">MARAK IS LIVE CLICK HERE TO VIEW</a></div>
+        <div class="nextStreamSoon">THE NEXT STREAM IS COMING UP SOON. CHECK BACK LATER</div>
+        <img height="333" src="desktop/appstore/desktop.streamsquad/assets/img/bad-enough-streamer.jpeg">
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  #mantraIframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .mantraGameHolder {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
+        Mantra
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="mantraGameHolder">
+        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  .wallpaperSettings {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .button_bar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+</style>
+
+<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
+    <div class="abs window_inner">
+      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+        <span class="float_left">
+          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
+          Wallpaper
+        </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+      </div>
+      <div class="abs window_content" style="top: 33px;">
+        <div class="window_main">
+          <div class="wallpaperSettings">
+            <div>
+                <h2>Wallpaper Type</h2>
+                <!-- Wake up neo -->
+                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
+                <label for="wallPaperRadioMatrix">Matrix</label>
+                <br>
+                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
+                <label for="wallPaperRadioSolid">Solid</label>
+                <br>
+            </div>
+            <br>
+            <br>
+            <div>
+                <h2>Wallpaper Options</h2>
+                <div>
+                    <label>Color</label>
+                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
+                </div>
+                <br>
+                <br>
+                <div>
+                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="abs window_bottom">
+        Build: v4.20.69
+      </div>
+    </div>
+    <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+  <style>
   #window_profile .publicProfilePreviewHolder {
     border: solid;
     background-color: #CCC;
@@ -1628,16 +1956,16 @@ window.top.location = 'ie.html';
       <div class="window_main console_holder">
         <div id="profileTabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
           <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
-            <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#tabs-1" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1">Your Apps</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#tabs-2" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Themes</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-3" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">Settings</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-4" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#tabs-4" tabindex="-1" class="ui-tabs-anchor" id="ui-id-4">Audio</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-5" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#tabs-5" tabindex="-1" class="ui-tabs-anchor" id="ui-id-5">Camera</a></li>
+            <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-1" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true"><a href="#tabs-1" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Your Apps</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-2" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">Themes</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-3" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#tabs-3" tabindex="-1" class="ui-tabs-anchor" id="ui-id-4">Settings</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-4" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#tabs-4" tabindex="-1" class="ui-tabs-anchor" id="ui-id-5">Audio</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-5" aria-labelledby="ui-id-6" aria-selected="false" aria-expanded="false"><a href="#tabs-5" tabindex="-1" class="ui-tabs-anchor" id="ui-id-6">Camera</a></li>
             <!--
             <li><a href="#tabs-2">App Store</a></li>
             -->
           </ul>
-          <div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
+          <div id="tabs-1" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
             <table class="data table yourApps">
               <!--
               <tr>
@@ -1775,7 +2103,7 @@ window.top.location = 'ie.html';
               </p>
             -->
           </div>
-          <div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+          <div id="tabs-2" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
             <div class="wallpaperSettings">
               <div class="wallpaperTypes">
                   <h2>Wallpaper Type</h2>
@@ -1802,12 +2130,12 @@ window.top.location = 'ie.html';
                 <h2>Wallpaper Options</h2>
                 <div>
                     <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
+                    <div class="wallpaperOptionColor"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div id="tabs-3" align="left" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+          <div id="tabs-3" align="left" aria-labelledby="ui-id-4" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
             <span class="updateProfileResponse"></span>
             <form class="updateProfileForm">
               <table class="profileTable table data">
@@ -1884,7 +2212,7 @@ window.top.location = 'ie.html';
                 -->
             </form>
           </div>
-          <div id="tabs-4" aria-labelledby="ui-id-4" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+          <div id="tabs-4" aria-labelledby="ui-id-5" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
             <div id="tabs-2">
               <div class="wallpaperSettings">
                 <table class="data table">
@@ -1904,7 +2232,7 @@ window.top.location = 'ie.html';
               </div>
             </div>
           </div>
-          <div id="tabs-5" align="center" aria-labelledby="ui-id-5" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+          <div id="tabs-5" align="center" aria-labelledby="ui-id-6" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
             To Adjust Default Camera Settings <a href="#mirror" class="desktopLink openApp" data-app="mirror">Click Open Mirror App</a>
             <br>
             <br>
@@ -1943,271 +2271,6 @@ window.top.location = 'ie.html';
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div>
 
-<style>
-  #streamsquadIframe {
-    height: 100%;
-    width: 100%;
-  }
-  .streamersTable {
-    height: 100%;
-    width: 80%;
-  }
-  .isStreamingNow {
-    font-size: 32px;
-    padding-bottom: 32px;
-  }
-  .nextStreamSoon {
-    font-size: 32px;
-    padding-bottom: 32px;
-  }
-</style>
-
-<div id="window_streamsquad" class="abs window" align="center" style="width: 662px; height: 495px; left: 50px; top: 50px;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_streamsquad_64.png" style="width: 16px; height: 16px;">
-        Stream Squad
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="streamsquadGameHolder">
-        <h2>Buddy Pond Live Streamers</h2>
-        <br>
-        <br>
-        <table class="streamersTable table">
-          
-            <tbody>
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>Marak</td>
-        <td>DJ Sets, Live Coding, Buddy Pond QA</td>
-        <td><a href="https://www.youtube.com/user/MarakSquires" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>SkratchBastidTV</td>
-        <td>DJ Sets</td>
-        <td><a href="https://www.youtube.com/user/SkratchBastidTV" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>Andrew Potthast</td>
-        <td>DJ Sets</td>
-        <td><a href="https://soundcloud.com/andrew-potthast" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    </tbody>
-        </table>
-        <br>
-        <br>
-        <div class="isStreamingNow rainbow" style="display: none;"><a href="#openIDC" data-videotype="livestream" data-videoid="1UFeeHqkUZU" class="openIDC rainbow">MARAK IS LIVE CLICK HERE TO VIEW</a></div>
-        <div class="nextStreamSoon">THE NEXT STREAM IS COMING UP SOON. CHECK BACK LATER</div>
-        <img height="333" src="desktop/appstore/desktop.streamsquad/assets/img/bad-enough-streamer.jpeg">
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
-  .console {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    margin: 16px;
-  }
-  .consoleMessageSubmit {
-    width: 120px;
-  }
-  
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-  
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  div.console_message_main {
-    padding-top: 0px;
-    position: relative;
-    overflow-y: scroll;
-    flex: 1;
-    word-wrap: break-word;
-  }
-
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-
-  .console_message_submit {
-    margin: 5px;
-    padding: 5px;
-    width: 9vw;
-    border-radius: var(--console-border-radius);
-    border: none;
-    background-color: var(--console-input-background-colour);
-  }
-
-  .submit_svg_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .message_send_svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .ui-autocomplete {
-    position: absolute !important;
-    bottom: 600px !important;
-    overflow: auto !important;
-    max-height: 300px;
-    min-height: 300px;
-  }
-  
-  .window_bottom_console {
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 20px;
-    /*overflow: hidden;*/
-    text-align: left;
-    text-shadow: #fff 0 1px 1px;
-    /* height: 33px; */
-    /* width: 100%; */
-    left: 1px;
-    right: 1px;
-    padding-left: 8px;
-    margin: 3px 0 3px 0;
-  }
-
-</style>
-
-<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
-        Console
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="chat_area">
-      <div class="abs window_content" style="top: 33px;">
-        <div class="chat_area">
-          <div class="window_main console_message_main  message_main">
-            <div class="consoleMessagesHolder">
-              <div class="no_chat_messages">
-                The console is fresh. There are no messages yet. You can send a message to this console below.
-              </div>
-              <div class="console chat_messages">
-              <li>19:28:33: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>19:28:33: <span class="purple">Now loading deferred apps</span> </li><li>19:28:33: <span class="purple">Loading App.login</span> </li><li>19:28:33: <span class="purple">Loading App.videochat</span> </li><li>19:28:35: <span class="purple">Ready: App.merlin</span> </li></div>
-              <hr>
-            </div>
-          </div>
-          <div class="window_bottom_console">
-            <div class="console_send_message_form">
-              <form method="POST" action="" align="right" class="console_send_message_form">
-              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
-                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
-                  §~~~&gt; Evaluate
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
 <style>
   :root {
     --pond-border-radius: 10px;
@@ -2490,69 +2553,79 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
-  .wallpaperSettings {
-    padding-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
+  #chatVideoBuddy {
+    width: 44%; 
+    height: 44%;
+    padding: 20px;
   }
 
-  .button_bar {
-    position: absolute;
-    top: 16px;
-    right: 16px;
+  #chatVideoMe {
+    width: 44%; 
+    height: 44%;
+    padding: 20px;
+  }
+  .webrtcStatus {
+    padding: 5px;
   }
 </style>
 
-<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
-    <div class="abs window_inner">
-      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-        <span class="float_left">
-          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
-          Wallpaper
-        </span>
+<div id="window_videochat" class="abs window incoming_call" data-window-index="0">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img width="16" height="16" src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
+        <span class="window-context-title"><span class="buddyName"></span> Call in progress</span>
+      </span>
       <span class="float_right trafficLight">
         <a href="#min" class="minWindow" title="Min Window">🟠</a>
         <a href="#max" class="maxWindow" title="Max Window">🟢</a>
         <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
       </span>
-      </div>
-      <div class="abs window_content" style="top: 33px;">
-        <div class="window_main">
-          <div class="wallpaperSettings">
-            <div>
-                <h2>Wallpaper Type</h2>
-                <!-- Wake up neo -->
-                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
-                <label for="wallPaperRadioMatrix">Matrix</label>
-                <br>
-                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
-                <label for="wallPaperRadioSolid">Solid</label>
-                <br>
-            </div>
-            <br>
-            <br>
-            <div>
-                <h2>Wallpaper Options</h2>
-                <div>
-                    <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
-                </div>
-                <br>
-                <br>
-                <div>
-                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
-                </div>
-            </div>
-          </div>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="webrtcStatus">Connecting...</div>
+      <div class="window_main" align="center">
+        <div class="webCamWindow">
+          <video autoplay="true" id="chatVideoMe">Your browser does not support the video tag. </video>
+          <video autoplay="true" id="chatVideoBuddy">Your browser does not support the video tag. </video>
         </div>
-      </div>
-      <div class="abs window_bottom">
-        Build: v4.20.69
+        <br>
+        Video Source
+        <select name="selectCamera" class="selectCamera">
+        </select>
+        Audio Source
+        <select name="selectAudio" class="selectAudio">
+        </select>
+        <!--
+        <div class="callInProgress">
+          <h2>CALL IS NOW IN PROGRESS</h2>
+        </div>
+        <div class="incomingCall">
+          <h2>Incoming call from <span class="buddyName">Marak</span></h2>
+          <br/>
+          <form method="POST" action="">
+            <button class="acceptIncomingCall desktopButton" type="submit">Accept</button>
+            <button class="declineIncomingCall desktopButton" type="submit">Decline</button>
+          </form>
+        </div>
+        
+        <div class="outgoingCall">
+          <h2>Outgoing call to <span class="buddyName">Marak</span></h2>
+          <br/>
+          <form method="POST" action="">
+            <button class="acceptIncomingCall desktopButton" type="submit">Accept</button>
+            <button class="declineIncomingCall desktopButton" type="submit">Decline</button>
+          </form>
+        </div>
+        -->
       </div>
     </div>
-    <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-  <style>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
   .loginForm {
     margin: 0px;
     padding: 0px;
@@ -2883,79 +2956,6 @@ window.top.location = 'ie.html';
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div>
 <style>
-  #chatVideoBuddy {
-    width: 44%; 
-    height: 44%;
-    padding: 20px;
-  }
-
-  #chatVideoMe {
-    width: 44%; 
-    height: 44%;
-    padding: 20px;
-  }
-  .webrtcStatus {
-    padding: 5px;
-  }
-</style>
-
-<div id="window_videochat" class="abs window incoming_call" data-window-index="0">
-  <div class="abs window_inner">
-    <div class="window_top">
-      <span class="float_left">
-        <img width="16" height="16" src="desktop/assets/images/icons/icon_pond_64.png">
-        <span class="window-context-title"><span class="buddyName"></span> Call in progress</span>
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content">
-      <div class="webrtcStatus">Connecting...</div>
-      <div class="window_main" align="center">
-        <div class="webCamWindow">
-          <video autoplay="true" id="chatVideoMe">Your browser does not support the video tag. </video>
-          <video autoplay="true" id="chatVideoBuddy">Your browser does not support the video tag. </video>
-        </div>
-        <br>
-        Video Source
-        <select name="selectCamera" class="selectCamera">
-        </select>
-        Audio Source
-        <select name="selectAudio" class="selectAudio">
-        </select>
-        <!--
-        <div class="callInProgress">
-          <h2>CALL IS NOW IN PROGRESS</h2>
-        </div>
-        <div class="incomingCall">
-          <h2>Incoming call from <span class="buddyName">Marak</span></h2>
-          <br/>
-          <form method="POST" action="">
-            <button class="acceptIncomingCall desktopButton" type="submit">Accept</button>
-            <button class="declineIncomingCall desktopButton" type="submit">Decline</button>
-          </form>
-        </div>
-        
-        <div class="outgoingCall">
-          <h2>Outgoing call to <span class="buddyName">Marak</span></h2>
-          <br/>
-          <form method="POST" action="">
-            <button class="acceptIncomingCall desktopButton" type="submit">Accept</button>
-            <button class="declineIncomingCall desktopButton" type="submit">Decline</button>
-          </form>
-        </div>
-        -->
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
   .merlinHolder {
     padding: 16px;
   }
@@ -3169,4 +3169,4 @@ Begin Wizard Training</a></h3>
   <div id="shadowRender">
   </div>
 
-</div><ul id="ui-id-6" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) 0px -896px no-repeat; top: 896px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -128px -896px no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 816px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
+</div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -1792px -1024px no-repeat; top: 896px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -1920px -1024px no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 816px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>

@@ -1,0 +1,290 @@
+<html style="--hilight-inverted: #ffff7f;"><head>
+    <title>ModernActiveDesktop</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="stylesheet" href="css/wall.css">
+    <link rel="stylesheet" href="css/98.css">
+    <link id="scheme" rel="stylesheet" href="data:text/css,">
+    <link id="menuStyle" rel="stylesheet" href="">
+    <style id="langStyle"></style>
+    <style id="style">
+    :root {
+        --scroll-up: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8%206H7V7H6V8H5V9H4V10H11V9H10V8H9V7H8V6Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --scroll-down: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8%206H4V7H5V8H6V9H7V10H8V9H9V8H10V7H11V6Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --scroll-left: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M6%204H8V5H7V6H6V7H5V8H6V9H7V10H8V11H9V4Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --scroll-right: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10%204H6V11H7V10H8V9H9V8H10V7H9V6H8V5H7V4Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --scroll-track: url("data:image/svg+xml,%3Csvg%20width%3D%222%22%20height%3D%222%22%20viewBox%3D%220%200%202%202%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M1%200H0V1H1V2H2V1H1V0Z%22%20fill%3D%22silver%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M2%200H1V1H0V2H1V1H2V0Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E");
+        --radio-border: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8%200H4V1H2V2H1V4H0V8H1V10H2V8H1V4H2V2H4V1H8V2H10V1H8V0Z%22%20fill%3D%22grey%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8%201H4V2H2V3V4H1V8H2V9H3V8H2V4H3V3H4V2H8V3H10V2H8V1Z%22%20fill%3D%22%23000%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9%203H10V4H9V3ZM10%208V4H11V8H10ZM8%2010V9H9V8H10V9V10H8ZM4%2010V11H8V10H4ZM4%2010V9H2V10H4Z%22%20fill%3D%22%23dfdfdf%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M11%202H10V4H11V8H10V10H8V11H4V10H2V11H4V12H8V11H10V10H11V8H12V4H11V2Z%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M4%202H8V3H9V4H10V8H9V9H8V10H4V9H3V8H2V4H3V3H4V2Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E");
+        --radio-border-disabled: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8%200H4V1H2V2H1V4H0V8H1V10H2V8H1V4H2V2H4V1H8V2H10V1H8V0Z%22%20fill%3D%22grey%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8%201H4V2H2V3V4H1V8H2V9H3V8H2V4H3V3H4V2H8V3H10V2H8V1Z%22%20fill%3D%22%23000%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9%203H10V4H9V3ZM10%208V4H11V8H10ZM8%2010V9H9V8H10V9V10H8ZM4%2010V11H8V10H4ZM4%2010V9H2V10H4Z%22%20fill%3D%22%23dfdfdf%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M11%202H10V4H11V8H10V10H8V11H4V10H2V11H4V12H8V11H10V10H11V8H12V4H11V2Z%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M4%202H8V3H9V4H10V8H9V9H8V10H4V9H3V8H2V4H3V3H4V2Z%22%20fill%3D%22silver%22%2F%3E%3C%2Fsvg%3E");
+        --radio-dot: url("data:image/svg+xml,%3Csvg%20width%3D%224%22%20height%3D%224%22%20viewBox%3D%220%200%204%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M3%200H1V1H0V2V3H1V4H3V3H4V2V1H3V0Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --radio-dot-disabled: url("data:image/svg+xml,%3Csvg%20width%3D%224%22%20height%3D%224%22%20viewBox%3D%220%200%204%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M3%200H1V1H0V2V3H1V4H3V3H4V2V1H3V0Z%22%20fill%3D%22grey%22%2F%3E%3C%2Fsvg%3E");
+        --checkmark: url("data:image/svg+xml,%3Csvg%20width%3D%227%22%20height%3D%227%22%20viewBox%3D%220%200%207%207%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7%200H6V1H5V2H4V3H3V4H2V3H1V2H0V5H1V6H2V7H3V6H4V5H5V4H6V3H7V0Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --checkmark-disabled: url("data:image/svg+xml,%3Csvg%20width%3D%227%22%20height%3D%227%22%20viewBox%3D%220%200%207%207%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7%200H6V1H5V2H4V3H3V4H2V3H1V2H0V5H1V6H2V7H3V6H4V5H5V4H6V3H7V0Z%22%20fill%3D%22grey%22%2F%3E%3C%2Fsvg%3E");
+        --indicator-thumb: url("data:image/svg+xml,%3Csvg%20width%3D%2211%22%20height%3D%2221%22%20viewBox%3D%220%200%2011%2021%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M0%200V16H2V18H4V20H5V19H3V17H1V1H10V0Z%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M1%201V16H2V17H3V18H4V19H6V18H7V17H8V16H9V1Z%22%20fill%3D%22silver%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9%201H10V16H8V18H6V20H5V19H7V17H9Z%22%20fill%3D%22grey%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10%200H11V16H9V18H7V20H5V21H6V19H8V17H10Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+        --seek-handle: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewbox%3D%220%200%2013%2015%22%20width%3D%2213%22%20height%3D%2215%22%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2211%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%220%22%20y%3D%221%22%20width%3D%221%22%20height%3D%2212%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22silver%22%20x%3D%221%22%20y%3D%221%22%20width%3D%2210%22%20height%3D%222%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22silver%22%20x%3D%221%22%20y%3D%223%22%20width%3D%221%22%20height%3D%228%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22silver%22%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%222%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22silver%22%20x%3D%221%22%20y%3D%223%22%20width%3D%221%22%20height%3D%228%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22silver%22%20x%3D%2210%22%20y%3D%223%22%20width%3D%221%22%20height%3D%228%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22grey%22%20x%3D%222%22%20y%3D%223%22%20width%3D%228%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22grey%22%20x%3D%222%22%20y%3D%224%22%20width%3D%221%22%20height%3D%227%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%223%22%20y%3D%224%22%20width%3D%227%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23000%22%20x%3D%226%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%223%22%20y%3D%2210%22%20width%3D%227%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23000%22%20x%3D%226%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22silver%22%20x%3D%2211%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22grey%22%20x%3D%2211%22%20y%3D%221%22%20width%3D%221%22%20height%3D%2213%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22grey%22%20x%3D%220%22%20y%3D%2213%22%20width%3D%2211%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23000%22%20x%3D%220%22%20y%3D%2214%22%20width%3D%2213%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23000%22%20x%3D%2212%22%20y%3D%220%22%20width%3D%221%22%20height%3D%2214%22%2F%3E%3C%2Fsvg%3E");
+        --resize-area: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%20-0.5%2012%2012%22%20shape-rendering%3D%22crispEdges%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23fff%22%20d%3D%22M11%200h1M10%201h1M9%202h1M8%203h1M7%204h1M11%204h1M6%205h1M10%205h1M5%206h1M9%206h1M4%207h1M8%207h1M3%208h1M7%208h1M11%208h1M2%209h1M6%209h1M10%209h1M1%2010h1M5%2010h1M9%2010h1M0%2011h1M4%2011h1M8%2011h1%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22grey%22%20d%3D%22M11%201h1M10%202h2M9%203h2M8%204h2M7%205h2M11%205h1M6%206h2M10%206h2M5%207h2M9%207h2M4%208h2M8%208h2M3%209h2M7%209h2M11%209h1M2%2010h2M6%2010h2M10%2010h2M1%2011h2M5%2011h2M9%2011h2%22%20%2F%3E%3C%2Fsvg%3E");
+        --checkers: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewbox%3D%220%200%202%202%22%20width%3D%222%22%20height%3D%222%22%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22transparent%22%20x%3D%221%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%221%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Crect%20fill%3D%22transparent%22%20x%3D%220%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%2F%3E%3C%2Fsvg%3E");
+    }</style>
+</head>
+<body tabindex="-1" data-init-complete="true" style="background-image: none; background-size: auto; background-repeat: no-repeat; background-position: center center; zoom: 1;">
+    <div id="bgHtmlContainer" class="bgHtml" style="display: none;">
+        <iframe id="bgHtmlView" class="bgHtml" src="bghtml/index.html" style="pointer-events: auto;"></iframe>
+    </div>
+    <video id="bgVideo" src="" autoplay="" loop="" style="display: none;"></video>
+    <div class="windowContainer" data-style="ad" data-inactive="true" style="left: 1602px; height: 492px; width: 84px; z-index: 1; pointer-events: auto;">
+        <div class="windowTitlebar inactive" style="display: none; left: 0px; top: 6px; width: 90px;">
+            <div class="title-bar-text">Channel Bar</div>
+            <div class="title-bar-controls">
+                <div class="windowMenuBtn windowBtn">
+                    <p class="windowBtnText">⏷</p>
+                </div>
+                <img class="windowIcon" src="images/mad16.png">
+                <div class="windowCloseBtn windowBtn">
+                    <p class="windowBtnText">🗙</p>
+                </div>
+                <button class="windowCloseBtnAlt window-button"></button>
+            </div>
+        </div>
+        <div class="windowFrame" style="height: 471px; width: 86px;">
+            <iframe class="windowElement" name="DeskMovrW" src="ChannelBar.html" width="84px" height="471px" data-num=""></iframe>
+            <div class="resizeArea"></div>
+            <div class="dropdownBg" tabindex="-1" style="animation: 0.25s linear 0s 1 normal none running cmDropdown;">
+                <div class="dropdown">
+                    <div class="dropdownItem">Dummy</div>
+                </div>
+            </div>
+        </div>
+        <div class="windowMenuBg contextMenuBg window" tabindex="-1" style="display: none;">
+            <div class="windowMenu contextMenu window-body">
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_CONFIGURE">C<u>o</u>nfigure</mad-string></p><p class="submenuMark">⏵</p></div>
+                <div class="contextMenuItem debug"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_DEBUG"><u>D</u>ebug</mad-string> <span class="windowNumber"></span></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_RESET">R<u>e</u>set</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_RELOAD"><u>R</u>eload</mad-string></p></div>
+                <div class="contextMenuItem closeIcon"><p><b><mad-string data-locid="UI_CLOSE"><u>C</u>lose</mad-string></b></p></div>
+            </div>
+        </div>
+        <div class="confMenuBg contextMenuBg window" tabindex="-1" style="display: none;">
+            <div class="confMenu contextMenu window-body">
+                <div class="contextMenuItem activeStyle"><p><mad-string data-locid="MAD_CONF_MENUITEM_AD"><u>A</u>ctive Desktop</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NONAD"><u>N</u>on-ActiveDesktop Channel Bar</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_WND"><u>W</u>indow</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_SCALE"><u>S</u>cale contents</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AOT">A<u>l</u>ways on top</mad-string></p></div>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Re<u>s</u>izable</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_URL"><u>C</u>hange URL</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_TITLE">Change <u>t</u>itle</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW"><u>N</u>ew window</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload wallpaper</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
+            </div>
+        </div>
+    </div>
+    <div id="windowOutline">
+        <div id="windowOutlineInner"></div>
+    </div>
+    <div id="mainMenuBg" class="contextMenuBg window" tabindex="-1" style="animation: 0.25s linear 0s 1 normal none running cmDropdownright;">
+        <div id="mainMenu" class="contextMenu window-body">
+            <div class="contextMenuItem"><p><mad-string data-locid="MAD_MAIN_MENUITEM_NEW"><u>N</u>ew</mad-string></p></div>
+            <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
+        </div>
+    </div>
+    <div id="msgboxBg">
+        <div id="msgbox" class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">ModernActiveDesktop</div>
+                <div class="title-bar-controls">
+                    <button id="msgbox-close" class="window-button"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <section class="field-row">
+                    <img id="msgbox-icon" src="images/info.png">
+                    <p id="msgbox-msg">Message</p>
+                </section>
+                <input id="msgbox-input" type="text" autocomplete="off">
+                <section id="msgbox-buttons" class="field-row">
+                    <button id="msgbox-btn1"><mad-string data-locid="UI_OK">OK</mad-string></button>
+                    <button id="msgbox-btn2"><mad-string data-locid="UI_CANCEL">Cancel</mad-string></button>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="miniPicker window" tabindex="-1">
+        <div class="miniPickerColors">
+            <div class="miniPickerColor" style="background-color: #FFFFFF"></div>
+            <div class="miniPickerColor" style="background-color: #000000"></div>
+            <div class="miniPickerColor" style="background-color: #C0C0C0"></div>
+            <div class="miniPickerColor" style="background-color: #808080"></div>
+            <div class="miniPickerColor" style="background-color: #FF0000"></div>
+            <div class="miniPickerColor" style="background-color: #800000"></div>
+            <div class="miniPickerColor" style="background-color: #FFFF00"></div>
+            <div class="miniPickerColor" style="background-color: #808000"></div>
+            <div class="miniPickerColor" style="background-color: #00FF00"></div>
+            <div class="miniPickerColor" style="background-color: #008000"></div>
+            <div class="miniPickerColor" style="background-color: #00FFFF"></div>
+            <div class="miniPickerColor" style="background-color: #008080"></div>
+            <div class="miniPickerColor" style="background-color: #0000FF"></div>
+            <div class="miniPickerColor" style="background-color: #000080"></div>
+            <div class="miniPickerColor" style="background-color: #FF00FF"></div>
+            <div class="miniPickerColor" style="background-color: #800080"></div>
+            <div class="miniPickerColor" style="background-color: #C0DCC0"></div>
+            <div class="miniPickerColor" style="background-color: #A6CAF0"></div>
+            <div class="miniPickerColor" style="background-color: #F0FBFF"></div>
+            <div class="miniPickerColor" style="background-color: #A0A0A4"></div>
+        </div>
+        <hr>
+        <button class="openColorPickerBtn"><mad-string data-locid="UI_OTHER"><u>O</u>ther...</mad-string></button>
+    </div>
+    <div id="errorWnd" class="window">
+        <p id="errorMsg">ModernActiveDesktop failed to initialize because of an unknown error. Please consult the log below and report this to https://github.com/Ingan121/ModernActiveDesktop/issues.</p>
+        <pre id="errorLog"></pre>
+        <noscript>Please enable JavaScript!</noscript>
+        <button onclick="copyLog();">Copy log</button> <button onclick="localStorage.clear();location.reload(true);">Reset config</button> <button onclick="location.reload(true);">Retry</button> <button onclick="errorWnd.style.display='none';">Ignore</button>
+    </div>
+    <div id="debug" class="debug">
+        <span>ModernActiveDesktop 3.2.0</span><br>
+        <span>Loaded from <span id="location">https://www.ingan121.com/mad/</span></span><br>
+        <span>Running in <span id="runmode">browser</span><span id="simmode"></span></span><br>
+        <span id="debugLabel"><mad-string data-locid="MAD_DEBUG_DEBUG_MODE">Debug mode</mad-string></span><br>
+        <span id="initNotCompleteLabel"><mad-string data-locid="MAD_DEBUG_INIT_NOT_COMPLETE">Initialization not complete</mad-string></span><br>
+        <a href="javascript:localStorage.clear();location.reload(true);"><mad-string data-locid="MAD_DEBUG_RESET_CONFIG">Reset config</mad-string></a><br>
+        <a href="javascript:location.reload(true);"><mad-string data-locid="MAD_DEBUG_REFRESH">Refresh</mad-string></a><br>
+        <a id="jsRunBtn" href="javascript:(function(){eval(prompt('Enter JavaScript code to run.'));return;})();"><mad-string data-locid="MAD_DEBUG_RUNJS">Run JavaScript code</mad-string></a><br>
+        <a href="javascript:showErrors();"><mad-string data-locid="MAD_DEBUG_SHOW_ERRORS">Show errors</mad-string> <span id="errorCnt"></span></a><br>
+        <a href="javascript:toggleDebugLog();"><mad-string id="debugLogBtn" data-locid="MAD_DEBUG_ENABLE_LOGGING">Enable debug logging</mad-string></a><br>
+        <a href="javascript:toggleRunningMode();"><mad-string data-locid="MAD_DEBUG_SIMULATE">Simulate other environment</mad-string></a><br>
+        <a href="javascript:deactivateDebugMode();"><mad-string data-locid="MAD_DEBUG_DEACTIVATE">Deactivate debug mode</mad-string></a>
+    </div>
+    <script>
+        var errorLog = document.getElementById("errorLog");
+        var errorCnt = document.getElementById("errorCnt");
+
+        if (document.documentMode) {
+            errorLog.textContent = "Internet Explorer is NOT supported! Please use a modern browser like Chrome or Edge.\n";
+        }
+
+        window.onerror = function (msg, url, linenum) {
+            errorLog.textContent += msg + ' (' + url + ':' + linenum + ')\n';
+            errorCnt.textContent = '(' + (parseInt(errorCnt.textContent.slice(1, -1) || 0) + 1) + ')';
+        }
+
+        function copyLog() {
+            var tmp = document.createElement("textarea");
+            document.body.appendChild(tmp);
+            tmp.value = errorLog.textContent;
+            tmp.select();
+            document.execCommand('copy');
+            document.body.removeChild(tmp);
+        }
+
+        window.madMainWindow = true;
+    </script>
+    <script src="js/libmad-strings.js"></script>
+    <script src="js/DeskMover.js"></script>
+    <script src="js/DeskSettings.js"></script><div class="windowContainer window" data-style="wnd" style="left: 1192px; height: 221px; width: 302px; z-index: 2; pointer-events: auto; top: 200px;" data-inactive="true">
+        <div class="title-bar inactive" style="display: flex; left: 2px; top: 3px; width: auto;">
+            <div class="title-bar-text">ModernActiveDesktop</div>
+            <div class="title-bar-controls">
+                <div class="windowMenuBtn windowBtn">
+                    <p class="windowBtnText">⏷</p>
+                </div>
+                <img class="windowIcon" src="images/mad16.png">
+                <div class="windowCloseBtn windowBtn">
+                    <p class="windowBtnText">🗙</p>
+                </div>
+                <button class="windowCloseBtnAlt window-button"></button>
+            </div>
+        </div>
+        <div class="windowFrame" style="height: 200px; width: 302px; border-color: transparent; background-color: transparent;">
+            <iframe class="windowElement" name="DeskMovrW" src="placeholder.html" width="300px" height="200px" data-num="1" style="border-color: transparent;"></iframe>
+            <div class="resizeArea"></div>
+            <div class="dropdownBg" tabindex="-1" style="animation: 0.25s linear 0s 1 normal none running cmDropdown;">
+                <div class="dropdown">
+                    <div class="dropdownItem">Dummy</div>
+                </div>
+            </div>
+        </div>
+        <div class="windowMenuBg contextMenuBg window" tabindex="-1" style="display: none;">
+            <div class="windowMenu contextMenu window-body">
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_CONFIGURE">C<u>o</u>nfigure</mad-string></p><p class="submenuMark">⏵</p></div>
+                <div class="contextMenuItem debug"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_DEBUG"><u>D</u>ebug</mad-string> <span class="windowNumber">1</span></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_RESET">R<u>e</u>set</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_RELOAD"><u>R</u>eload</mad-string></p></div>
+                <div class="contextMenuItem closeIcon"><p><b><mad-string data-locid="UI_CLOSE"><u>C</u>lose</mad-string></b></p></div>
+            </div>
+        </div>
+        <div class="confMenuBg contextMenuBg window" tabindex="-1" style="display: none;">
+            <div class="confMenu contextMenu window-body">
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AD"><u>A</u>ctive Desktop</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NONAD"><u>N</u>on-ActiveDesktop Channel Bar</mad-string></p></div>
+                <div class="contextMenuItem activeStyle"><p><mad-string data-locid="MAD_CONF_MENUITEM_WND"><u>W</u>indow</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_SCALE"><u>S</u>cale contents</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AOT">A<u>l</u>ways on top</mad-string></p></div>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Re<u>s</u>izable</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_URL"><u>C</u>hange URL</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_TITLE">Change <u>t</u>itle</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW"><u>N</u>ew window</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload wallpaper</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="windowContainer window" data-style="wnd" style="left: 655px; height: 341px; width: 476px; z-index: 3; pointer-events: auto; top: 386.5px;" data-unresizable="true">
+        <div class="title-bar" style="display: flex; left: 2px; top: 3px; width: auto;">
+            <div class="title-bar-text">Welcome to ModernActiveDesktop</div>
+            <div class="title-bar-controls">
+                <div class="windowMenuBtn windowBtn">
+                    <p class="windowBtnText">⏷</p>
+                </div>
+                <img class="windowIcon" src="images/mad16.png">
+                <div class="windowCloseBtn windowBtn">
+                    <p class="windowBtnText">🗙</p>
+                </div>
+                <button class="windowCloseBtnAlt window-button"></button>
+            </div>
+        </div>
+        <div class="windowFrame" style="height: 322px; width: 478px; border-color: transparent; background-color: transparent;">
+            <iframe class="windowElement" name="DeskMovrW" src="apps/welcome/index.html" width="476px" height="322px" data-num="2" style="border-color: transparent;"></iframe>
+            <div class="resizeArea"></div>
+            <div class="dropdownBg" tabindex="-1" style="animation: 0.25s linear 0s 1 normal none running cmDropdown;">
+                <div class="dropdown">
+                    <div class="dropdownItem">Dummy</div>
+                </div>
+            </div>
+        </div>
+        <div class="windowMenuBg contextMenuBg window" tabindex="-1" style="display: none;">
+            <div class="windowMenu contextMenu window-body">
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_CONFIGURE">C<u>o</u>nfigure</mad-string></p><p class="submenuMark">⏵</p></div>
+                <div class="contextMenuItem debug"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_DEBUG"><u>D</u>ebug</mad-string> <span class="windowNumber">2</span></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_RESET">R<u>e</u>set</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_WINDOW_MENUITEM_RELOAD"><u>R</u>eload</mad-string></p></div>
+                <div class="contextMenuItem closeIcon"><p><b><mad-string data-locid="UI_CLOSE"><u>C</u>lose</mad-string></b></p></div>
+            </div>
+        </div>
+        <div class="confMenuBg contextMenuBg window" tabindex="-1" style="display: none;">
+            <div class="confMenu contextMenu window-body">
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AD"><u>A</u>ctive Desktop</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NONAD"><u>N</u>on-ActiveDesktop Channel Bar</mad-string></p></div>
+                <div class="contextMenuItem activeStyle"><p><mad-string data-locid="MAD_CONF_MENUITEM_WND"><u>W</u>indow</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_SCALE"><u>S</u>cale contents</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AOT">A<u>l</u>ways on top</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Re<u>s</u>izable</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_URL"><u>C</u>hange URL</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_TITLE">Change <u>t</u>itle</mad-string></p></div>
+                <hr>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW"><u>N</u>ew window</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload wallpaper</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
+            </div>
+        </div>
+    </div></body></html>
