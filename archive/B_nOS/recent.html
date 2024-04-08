@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#bcbcbc">
 <meta name="description" content="Artist and web developer living in Chattanooga, TN, US.">
-<link rel="stylesheet" href="styles.css?bug=water_striderzzzzzz" type="text/css">
+<link rel="stylesheet" href="styles.css?bug=clouded_plant_bugzzzz" type="text/css">
 <link href="https://benlacroix.com/" rel="canonical">
 <link rel="preload" href="fonts/archaic.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="images/tb.png" as="image">
@@ -33,7 +33,7 @@
 <div class="loading" style="display: none;">
 	<p id="guy">(- _ -&nbsp;&nbsp;&nbsp;)</p>
 	<p>
-		<span id="l1">BénOS version 9.8.9.0</span>
+		<span id="l1">BénOS version 9.9.1.0</span>
 		<br>
 		<span id="l2">
 			<span id="ellipsis">Load&nbsp;</span>
@@ -100,6 +100,7 @@
 
 <input type="checkbox" id="footertoga" autocomplete="off">
 <input type="checkbox" id="sysa" autocomplete="off">
+<input type="checkbox" id="playlistcheck" autocomplete="off">
 
 <div id="system">
 	<div class="window">
@@ -115,8 +116,8 @@
 		<h2><div class="title">System</div></h2>
 		<div class="wincont" tabindex="-1">
 			<div id="stolen"></div>
-			<h3><span class="benos"></span>&nbsp;v9.8.9.0</h3>
-			<p class="bug">water_strider</p>
+			<h3><span class="benos"></span>&nbsp;v9.9.1.0</h3>
+			<p class="bug">clouded_plant_bug</p>
 			<div class="status">
 				<dl>
 					<dt>MOTION</dt>
@@ -145,7 +146,7 @@
 <div class="topbarcont">
 	<input type="checkbox" id="topbartoga" autocomplete="off">
 	<div class="topbar" id="music">
-		<audio id="audio" src="mp3/energizer_bunny.mp3" preload="metadata"></audio>
+		<audio id="audio" src="mp3/finger_wag.mp3" preload="metadata"></audio>
 		<div id="controls">
 			<label for="topbartoga" id="topbartog" title="Expand/Collapse mp3 player" role="button" tabindex="0">
 				<span>
@@ -167,17 +168,22 @@
 		
 		<div id="expanded">
 			<div class="expleft">
-				<img id="artwork" src="images/energizer_bunny.png" alt="">
+				<div class="crt"></div>
+				<label for="playlistcheck" id="playlisttog" title="Show/hide playlist" role="button" tabindex="0">
+				</label>
+			
+				<img id="artwork" src="images/finger_wag.png" alt="">
 			</div>
 			<div class="expright">
-				<span id="trackinfo">energizer_bunny</span>
+				<span id="trackinfo">finger_wag</span>
 				<div id="progouter">
-					<div id="proginner"></div>
+					<div id="proginner" style="width: 0px;"></div>
+					<div id="buffer" style="width: 0px;"></div>
 				</div>
 				
 				<div id="times">
 					<span id="elapsed">0:00</span>
-					<span id="totaltime">2:00</span>
+					<span id="totaltime">1:39</span>
 				</div>
 			</div>
 		</div>
@@ -199,7 +205,7 @@
 	<div class="grip"></div>
 	<div class="closer"></div>
 	<div class="rescaler"></div>
-	<div class="scrollarea">
+	<div class="scrollarea hidden">
 		<div class="arrow up"></div>
 		<div class="arrow down"></div>
 		<div class="scrollfader"></div>
@@ -248,7 +254,7 @@
 			<div class="wincont">
 			<h3><span id="ex1">!</span>Warning<span id="ex2">!</span></h3>
 			<p>Your IP is<br></p>
-			<p><span>2a02:8084:a80:8800:e9a3:313:870:356</span></p>
+			<p><span>2a02:8084:a80:8800:6420:dca9:da64:3307</span></p>
 			<p>Please sit in a well-lit room away from screen.</p>
 			</div>
 	</div>
@@ -273,7 +279,7 @@
 				<label for="cva" id="cvl" tabindex="0"><span>CV</span></label>
 			</div>
 		</div>
-		<div id="crt"></div>
+		<div class="crt"></div>
 		<div class="window shrunk" id="palantir">
 			<div class="grip"></div>
 			<div class="closer"></div>
@@ -412,7 +418,7 @@
 			<dd>KM4WQR</dd>
 			
 			<dt>Current temperament</dt>
-			<dd><span class="kao">(º _ º )</span><br><span class="date">2024.02.02</span></dd>
+			<dd><span class="kao">(ª _ ª )</span><br><span class="date">2024.04.02</span></dd>
 			
 			<dt>Donor organs</dt>
 			<dd>All 'cept brain</dd>
@@ -497,7 +503,25 @@
 	<div class="wincont">
 		<div id="logimg"><a href="/rss.xml">RSS</a></div>
 		<div class="item">
-			<h3 id="current">v9.8.9.0 <span>water_strider</span> <span>2024.03.27</span></h3>
+			<h3 id="current">v9.9.1.0 <span>clouded_plant_bug</span> <span>2024.04.04</span></h3>
+			<ul>
+				<li>Mp3 player: progress bar now shows buffered amount.</li>
+			</ul>
+		</div>
+		<div class="item">
+			<h3>v9.9.0.0 <span>common_booklouse</span> <span>2024.04.02</span></h3>
+			<ul>
+				<li>Mp3 player: added "Trax" window, with navigable playlist &amp; expanded artwork. Access it by clicking or tapping on the artwork in the top bar.</li>
+			</ul>
+		</div>
+		<div class="item">
+			<h3>v9.8.10.0 <span>golden_eyed_stick_insect</span> <span>2024.03.31</span></h3>
+			<ul>
+				<li>Mp3 player: added track "finger_wag".</li>
+			</ul>
+		</div>
+		<div class="item">
+			<h3 id="">v9.8.9.0 <span>water_strider</span> <span>2024.03.27</span></h3>
 			<ul>
 				<li>Imbued the pulsating orb with additional phrases.</li>
 				<li>Polarity switching now works without JS.</li>
@@ -859,6 +883,28 @@
 	</div>
 </div>
 
+<div class="window" id="playlist">
+	<div class="grip"></div>
+	<div class="closer"></div>
+	<div class="rescaler"></div>
+	<div class="scrollarea hidden">
+		<div class="arrow up"></div>
+		<div class="arrow down"></div>
+		<div class="scrollfader"></div>
+	</div>
+	<div class="resizer"></div>
+	<h2><div class="title">Trax</div></h2>
+	<div class="wincont">
+		<div class="albumouter">
+			<div class="spacer"></div>
+			<img class="albumart" src="images/finger_wag.png">
+			<div class="spacer"></div>
+		</div>
+		<ul class="songs">
+		<li tabindex="0">finger_wag</li><li tabindex="0">energizer_bunny</li><li tabindex="0">murda_ibg_ss_naif_mix</li><li tabindex="0">icons</li><li tabindex="0">glowstick_coward</li><li tabindex="0">late2</li><li tabindex="0">all_of_it</li><li tabindex="0">earths_flavor_dude</li><li tabindex="0">fernando_o_fern</li><li tabindex="0">bluttered_numbling</li><li tabindex="0">little_rain</li><li tabindex="0">os_club</li><li tabindex="0">bw_comm</li><li tabindex="0">bad_mon</li><li tabindex="0">yoki_sinEdition</li><li tabindex="0">treachery_explainer</li><li tabindex="0">yokai_III_excerpt</li><li tabindex="0">hiders_loop_day</li></ul>
+	</div>
+</div>
+
 <div class="window main" id="mp3">
 	<div class="grip"></div>
 	<div class="rescaler"></div>
@@ -1001,13 +1047,13 @@
 			</div>
 		</div>
 		<div id="footerbottom">
-			<div class="version">v9.8.9.0</div>
+			<div class="version">v9.9.1.0</div>
 			<div id="lowerreveal">
 				<label for="sysa" id="systog" title="System information" tabindex="0">System</label>
 				<label for="poltoga" id="poltog" title="Toggle lite/dark mode" tabindex="0">Polarity</label>
 				<label id="reset" title="Reset window configuration" tabindex="0" class="">Reset</label>
 			</div>
-			<div id="clock">16:24</div>
+			<div id="clock">17:38</div>
 		</div>
 	</div>
 </div>
@@ -1041,16 +1087,6 @@ lastAnimated.addEventListener(`animationend`, overFlowDelayed300);
 document.querySelector(`#l21`).addEventListener(`click`, enterOs);
 //update js indicator
 document.querySelector(`dd.js`).innerText = `Enabled`;
-//improve keyboard nav a11y
-const labels = document.querySelectorAll(`label[tabindex="0"]`);
-for (const label of labels) {
-	label.addEventListener(`keydown`, (event) => {
-	   if (event.key === ` ` || event.key === `Enter` || event.key === `Spacebar`) {
-    event.preventDefault();
-	label.click();
-  }
-	})
-}
 //update favicon to match lite/nite mode
 const toggler = document.querySelector(`#poltoga`);
 function lightSwitch(){
@@ -1077,6 +1113,14 @@ document.querySelectorAll(`#system .closer,#system button`).forEach(c => {
 //show window when reopening
 document.querySelector(`#systog`).addEventListener(`click`, event => {
 	document.querySelector(`#system .window`).classList.remove(`closed`);
+})
+//close playlist window from multiple places
+document.querySelector(`#playlist .closer`).addEventListener(`click`, event => {
+		document.querySelector(`#playlistcheck`).checked=null;
+	})
+//show playlist window when reopening
+document.querySelector(`#playlistcheck`).addEventListener(`click`, event => {
+	document.querySelector(`#playlist`).classList.remove(`closed`);
 })
 //toggle half and full window size
 const rescalers = document.querySelectorAll(`.rescaler`);
@@ -1162,7 +1206,6 @@ const extNorWin = document.querySelectorAll(`.window:not(.home,.main,.main .wind
 const mainWin = document.querySelectorAll(`.main`);
 const defShrWin = document.querySelectorAll(`#warning,#off3,.main .window`);
 const resetter = document.querySelector(`#reset`);
-const closedWin = document.querySelectorAll(`.closed:not(.main)`);
 const scrollBox = document.querySelectorAll(`.wincont`);
 const allWin = document.querySelectorAll(`.window`);
 function resetWin(){
@@ -1175,7 +1218,7 @@ function resetWin(){
 	defShrWin.forEach(e => {
 		e.className = `window shrunk`;
 	})
-	document.querySelectorAll(`#wrapper input`).forEach(e => {
+	document.querySelectorAll(`#wrapper input,#playlistcheck`).forEach(e => {
 		e.checked=null;
 	})
 	document.querySelector(`.home`).classList.remove(`shrunk`);
@@ -1208,7 +1251,7 @@ document.querySelector(`.home .grip`).addEventListener(`pointerdown`, avoidShift
 document.querySelector(`.home .rescaler`).addEventListener(`click`, avoidShift);
 document.querySelector(`.home .resizer`).addEventListener(`pointerdown`, avoidShift);
 //reinventing the scrollbar
-const scrollableWins = document.querySelectorAll(`.home,#cv,#palantir,#projects,#log,#contact,#system,#guestbook,#biolong,#warning,#mp3`);
+const scrollableWins = document.querySelectorAll(`.home,#cv,#palantir,#projects,#log,#contact,#system,#playlist,#guestbook,#biolong,#warning,#mp3`);
 for (const scrollableWin of scrollableWins) {
 	const innerWindow = scrollableWin.querySelector(`.wincont`);
 	const arrowDown = innerWindow.parentElement.querySelector(`.down`);
@@ -1278,7 +1321,7 @@ for (const grip of grips) {
 				grip.parentElement.style.top = `calc(${pageY}px - ${shiftY}px - ${document.querySelector(`.imgcontainer`).getBoundingClientRect().top}px - 2em - ${document.documentElement.scrollTop}px)`;
 			}
 			//system window rules are different because different parent
-			if (grip.parentElement.matches(`#system .window`)) {
+			if (grip.parentElement.matches(`:where(#system .window,#playlist)`)) {
 				grip.parentElement.style.top = `calc(${pageY}px - ${shiftY}px - 2em - ${document.documentElement.scrollTop}px)`;
 			}
 		}
@@ -1320,10 +1363,11 @@ for (const resizer of resizers) {
 			resizer.parentElement.style.top = `calc(${resizer.parentElement.getBoundingClientRect().top}px - 2 * ${document.querySelector(`.imgcontainer`).getBoundingClientRect().top}px - 2em - ${document.documentElement.scrollTop}px)`;
 			resizer.parentElement.style.right = `unset`;
 		}
-		//exception for system dialog
-		if (resizer.parentElement.matches(`#system .window`)) {
+		//exception for system dialog and playlist
+		if (resizer.parentElement.matches(`#system .window, #playlist`)) {
 			resizer.parentElement.style.top = `calc(${resizer.parentElement.getBoundingClientRect().top}px - 2em - ${document.documentElement.scrollTop}px)`;
 		}
+
 	}
 	function resize(e) {
 		resizer.parentElement.style.width = `calc(${e.clientX}px - ${resizer.parentElement.offsetLeft}px - 8em`;
@@ -1333,8 +1377,8 @@ for (const resizer of resizers) {
 			resizer.parentElement.style.width = `calc(${e.clientX}px - ${resizer.parentElement.offsetLeft}px - ${document.querySelector(`.imgcontainer`).getBoundingClientRect().left}px - 8em)`;
 			resizer.parentElement.style.height = `calc(${e.clientY}px - ${resizer.parentElement.offsetTop}px - ${document.querySelector(`.imgcontainer`).getBoundingClientRect().top}px - 8em)`;
 		}
-		//exception for system dialog
-		if (resizer.parentElement.matches(`#system .window`)) {
+		//exception for system dialog and playlist
+		if (resizer.parentElement.matches(`#system .window, #playlist`)) {
 			resizer.parentElement.style.height = `calc(${e.clientY}px - ${resizer.parentElement.offsetTop}px - 8em)`;
 		}
 		const innerWindow = resizer.parentElement.querySelector(`.wincont`);
@@ -1381,7 +1425,7 @@ function overFlowDelayed300() {
 	setTimeout(overFlowCheck, 300);
 }
 //refresh visibility of all scrollbars upon opening any window
-const slowOpeners = document.querySelectorAll(`nav a,#bio label,#footer label:not(#systog)`);
+const slowOpeners = document.querySelectorAll(`nav a,#bio label,#footer label:not(#systog),#playlistcheck`);
 for (slowOpener of slowOpeners) {
 	slowOpener.addEventListener(`click`, overFlowDelayed300);
 }
@@ -1410,12 +1454,14 @@ const prevBtn = document.getElementById(`prev`);
 const nextBtn = document.getElementById(`next`);
 const audio = document.getElementById(`audio`);
 const progress = document.getElementById(`proginner`);
+const buffer = document.getElementById(`buffer`);
 const progressContainer = document.getElementById(`progouter`);
 const title = document.getElementById(`trackinfo`);
-const cover = document.getElementById(`artwork`);
+const covers = document.querySelectorAll(`#artwork,#playlist .albumart`);
 var currentTimeContainer = document.getElementById(`elapsed`);
 var totalTimeContainer = document.getElementById(`totaltime`);
 var songs = [
+	`finger_wag`,
 	`energizer_bunny`,
 	`murda_ibg_ss_naif_mix`,
 	`icons`,
@@ -1430,19 +1476,58 @@ var songs = [
 	`bw_comm`,
 	`bad_mon`,
 	`yoki_sinEdition`,
-	`treachery explainer`,
-	`Yokai III - Excerpt`,
+	`treachery_explainer`,
+	`yokai_III_excerpt`,
 	`hiders_loop_day`
 ];
 // Keep track of song
 let songIndex = 0;
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
-// Load song and details
+// Load song, artwork, and details
 function loadSong(song) {
 	title.innerText = song;
 	audio.src = `mp3/${song}.mp3`;
-	cover.src = `images/${song}.png`;
+	for (cover of covers) {
+		cover.src = `images/${song}.png`;
+	}
+	//reset progress bars more quickly
+	progress.style.width = `0`;
+	buffer.style.width = `0`;
+}
+//populate playlist 
+const songList = document.querySelector(`#playlist .songs`);
+for (song of songs) {
+	const songListItem = document.createElement(`li`);
+	songListItem.innerText = `${song}`;
+	songListItem.tabIndex = `0`;
+	songList.appendChild(songListItem);
+}
+//derive song number from the list item that was clicked
+const songListItems = document.querySelectorAll(`.songs li`);
+function findIndex(e) {
+	return [...e.parentNode.children].indexOf(e);
+}
+songListItems.forEach(songListItem => {
+	songListItem.addEventListener(`click`, function(event) {
+		const clickedElement = event.target;
+		const derivedIndex = findIndex(clickedElement);
+		//highlight the selected song and un-highlight all others 
+		songListItems.forEach(songListItem => {
+			songListItem.classList.remove(`currentsong`);
+		})
+		this.classList.add(`currentsong`);
+		songIndex = derivedIndex;
+		loadSong(songs[songIndex]);
+		playSong();
+	})
+})
+function refreshList() {
+	songListItems.forEach(songListItem => {
+		songListItem.classList.remove(`currentsong`);
+	})
+	let adjustedIndex = songIndex + 1;
+	document.querySelector(`.songs li:nth-of-type(${adjustedIndex})`).classList.add(`currentsong`);
 }
 //Convert, display and update times
 function convertElapsedTime(inputSeconds) {
@@ -1457,6 +1542,7 @@ function playSong() {
 	musicContainer.classList.add(`play`);
 	document.getElementById(`playpause`).innerText = `||`;
 	audio.play();
+	refreshList();
 	document.title = title.innerText + ` | Ben LaCroix`;
 }
 function pauseSong() {
@@ -1471,6 +1557,7 @@ function prevSong() {
 		songIndex = songs.length - 1;
 	}
 	loadSong(songs[songIndex]);
+	refreshList();
 	playSong();
 }
 function nextSong() {
@@ -1479,11 +1566,19 @@ function nextSong() {
 		songIndex = 0;
 	}
 	loadSong(songs[songIndex]);
+	refreshList();
 	playSong();
 }
+//update buffer progress
+audio.addEventListener(`timeupdate`, () => {
+	const duration = audio.duration;
+	if (duration > 0) {
+		buffer.style.width = `${(audio.buffered.end(audio.buffered.length - 1) * 100) / duration}%`;
+	}
+});
 // Update progress bar
 function updateProgress(e) {
-	const { duration, currentTime } = e.srcElement;
+	const { duration, currentTime } = e.target;
 	const progressPercent = (currentTime / duration) * 100;
 	progress.style.width = `${progressPercent}%`;
 }
@@ -1595,6 +1690,16 @@ window.addEventListener(`deviceorientation`, (e) => {
 	}
 	tiltMe.style.transform = `perspective(65vw) rotateY(${converted}deg)`;
 },{signal: controller.signal});
+//improve keyboard nav a11y
+const labels = document.querySelectorAll(`label[tabindex="0"], .songs li`);
+for (const label of labels) {
+	label.addEventListener(`keydown`, (event) => {
+	   if (event.key === ` ` || event.key === `Enter` || event.key === `Spacebar`) {
+    event.preventDefault();
+	label.click();
+  }
+	})
+}
 </script>
 
 

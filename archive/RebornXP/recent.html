@@ -1,4 +1,4 @@
-<html lang="en" data-theme="" style="background:#000"><head>
+<html lang="en" data-theme="" style="background:black"><head>
 		<meta charset="utf-8">
 		<title>RebornXP</title>
 		<link rel="icon" href="https://rebornxp.js.org/favicon.png">
@@ -6,27 +6,166 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="description" content="Experience the past with RebornXP, an online Windows XP simulator. Relive the nostalgia in your browser – faithful recreation of the iconic interface and features. Open-source and JavaScript-powered.">
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/_app/immutable/start-624d297d.js">
+	<link rel="modulepreload" href="/_app/immutable/start-40e118fd.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-23b4510f.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-6533b345.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper-c28b9807.js">
 
-		<style>body,html{margin:0;width:100%;height:100%;overflow:hidden}section{width:100vw;height:100vh}p{margin:0;line-height:1.5em}.blink{animation:blink-animation 1s steps(5,start) infinite;-webkit-animation:blink-animation 1s steps(5,start) infinite}@keyframes blink-animation{to{visibility:hidden}}@-webkit-keyframes blink-animation{to{visibility:hidden}}.actions{position:fixed;bottom:0;width:100%}.float-right{position:fixed;bottom:0;right:0;padding-right:2em}#bios{display:block;background:#000;color:#ccc;font-family:monospace}#loader{display:none;background:#000;color:#ccc}.loader{position:relative;padding-top:100px;width:40px;margin:auto}.loader .circle{position:absolute;width:38px;height:38px;opacity:0;transform:rotate(225deg);animation-iteration-count:infinite;animation-name:orbit;animation-duration:5.5s}.loader .circle:after{content:"";position:absolute;width:5px;height:5px;border-radius:5px;background:#fff}.loader .circle:nth-child(2){animation-delay:240ms}.loader .circle:nth-child(3){animation-delay:480ms}.loader .circle:nth-child(4){animation-delay:720ms}.loader .circle:nth-child(5){animation-delay:960ms}@keyframes orbit{0%{transform:rotate(225deg);opacity:1;animation-timing-function:ease-out}7%{transform:rotate(345deg);animation-timing-function:linear}30%{transform:rotate(455deg);animation-timing-function:ease-in-out}39%{transform:rotate(690deg);animation-timing-function:linear}70%{transform:rotate(815deg);opacity:1;animation-timing-function:ease-out}75%{transform:rotate(945deg);animation-timing-function:ease-out}76%{transform:rotate(945deg);opacity:0}100%{transform:rotate(945deg);opacity:0}}</style>
+		<style>
+			html, body {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			}
+
+			section {
+			width: 100vw;
+			height: 100vh;
+			}
+
+			p {
+			margin: 0;
+			line-height: 1.5em;
+			}
+
+			.blink {
+			animation: blink-animation 1s steps(5, start) infinite;
+			-webkit-animation: blink-animation 1s steps(5, start) infinite;
+			}
+
+			@keyframes blink-animation {
+			to {
+				visibility: hidden;
+			}
+			}
+			@-webkit-keyframes blink-animation {
+			to {
+				visibility: hidden;
+			}
+			}
+			.actions {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			}
+
+			.float-right {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			padding-right: 2em;
+			}
+
+			#bios {
+			display: block;
+			background: #000;
+			color: #ccc;
+			font-family: monospace;
+			}
+
+			#loader {
+			display: none;
+			background: #000;
+			color: #ccc;
+			}
+
+			.loader {
+			position: relative;
+			padding-top: 100px;
+			width: 40px;
+			margin: auto;
+			}
+			.loader .circle {
+			position: absolute;
+			width: 38px;
+			height: 38px;
+			opacity: 0;
+			transform: rotate(225deg);
+			animation-iteration-count: infinite;
+			animation-name: orbit;
+			animation-duration: 5.5s;
+			}
+			.loader .circle:after {
+			content: "";
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			border-radius: 5px;
+			background: #fff;
+			/* Pick a color */
+			}
+			.loader .circle:nth-child(2) {
+			animation-delay: 240ms;
+			}
+			.loader .circle:nth-child(3) {
+			animation-delay: 480ms;
+			}
+			.loader .circle:nth-child(4) {
+			animation-delay: 720ms;
+			}
+			.loader .circle:nth-child(5) {
+			animation-delay: 960ms;
+			}
+
+			@keyframes orbit {
+			0% {
+				transform: rotate(225deg);
+				opacity: 1;
+				animation-timing-function: ease-out;
+			}
+			7% {
+				transform: rotate(345deg);
+				animation-timing-function: linear;
+			}
+			30% {
+				transform: rotate(455deg);
+				animation-timing-function: ease-in-out;
+			}
+			39% {
+				transform: rotate(690deg);
+				animation-timing-function: linear;
+			}
+			70% {
+				transform: rotate(815deg);
+				opacity: 1;
+				animation-timing-function: ease-out;
+			}
+			75% {
+				transform: rotate(945deg);
+				animation-timing-function: ease-out;
+			}
+			76% {
+				transform: rotate(945deg);
+				opacity: 0;
+			}
+			100% {
+				transform: rotate(945deg);
+				opacity: 0;
+			}
+			}
+		</style>
 		
-	
-	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2R1EBBZX26"></script>
-	<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2R1EBBZX26")</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2R1EBBZX26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2R1EBBZX26');
+</script>
 		
-	<meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/__layout.svelte-72ac1311.js"><link rel="stylesheet" href="/_app/immutable/assets/__layout-adadb536.css"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/error.svelte-48264e40.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/index.svelte-11fd14f4.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/boot_manager.svelte-e79db71f.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/utils-1f7a3290.js"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/xp/starting.svelte-03f972f5.js"><link rel="stylesheet" href="/_app/immutable/assets/starting-70d0dc19.css"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/index-355ed6be.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/index-5725e307.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/_commonjsHelpers-cea7ac1a.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/store-21632576.js"></head>
+	<meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/__layout.svelte-72ac1311.js"><link rel="stylesheet" href="/_app/immutable/assets/__layout-1e8c3fbf.css"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/error.svelte-48264e40.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/index.svelte-8edf4f3e.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/boot_manager.svelte-4ab3a0f9.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/utils-1f7a3290.js"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"></head>
 	<body style="zoom: 1;">
 
-		<div id="iframe-preload" style="position:absolute;inset:0;display:none"></div>
+		<div id="iframe-preload" style="position: absolute;inset: 0;display: none;"></div>
 		
-		<div style="position:absolute;inset:0"> <div class="absolute inset-0 bg-black overflow-hidden text-slate-100"><div class="absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] animate-fadein"><img src="/images/xp_loading_logo.jpg" alt="" width="400px"> <div class="xp-loader svelte-1ccx1ah"><div class="svelte-1ccx1ah"></div> <div class="svelte-1ccx1ah"></div> <div class="svelte-1ccx1ah"></div></div></div> <div class="absolute left-8 bottom-8 animate-fadein text-base font-sans"><p>Copyright © Microsoft Corporation</p></div> <div class="absolute right-8 bottom-8 animate-fadein"><img src="/images/xp_loading_mslogo.jpg" width="120px" alt=""></div></div> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div>
+		<div style="position:absolute;inset:0;"> <div class="w-screen h-screen bg-black overflow-hidden font-MSSS flex flex-col"><div class="mt-12 ml-8 text-lg flex-grow"><p class="text-slate-100">Use the ↑(Up) and ↓(Down) key to move the pointer to desired boot device.</p> <p class="text-slate-100">Press (Enter) to attempt to boot or ESC to cancel.</p> <p class="text-slate-100 mt-2 max-w-[500px]">RebornXP might have unexpected behaviors on browsers that are NOT Chromium-based (Safari, Firefox, Internet Explorer, etc.)</p> <p class="text-slate-100 uppercase mt-4 mb-2">Boot options:</p> <div><div class="ml-8 p-2 inline-block text-slate-900 bg-slate-200 cursor-pointer">Start Windows Normally</div></div><div><div class="ml-8 p-2 inline-block text-slate-300 cursor-pointer">Install Windows</div></div> <p class="text-slate-100 uppercase mt-4 mb-2" style="display: block;">The default entry will boot in 2 seconds...</p></div></div> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div>
 
-		<div id="pos_loader" style="position: absolute; inset: 0px; padding: 10px; background-color: rgb(0, 0, 0); font-size: 18px; display: none;">
-			
-			
+		<div id="pos_loader" style="position: absolute; inset: 0px; padding: 10px; background-color: black; font-size: 18px; display: none;">
+			<!-- Bootup by Kyle Stephens -->
+			<!-- https://codepen.io/kylestephens/pen/zYOgLrr -->
 			<section id="bios">
 				<p>PhoenixBIOS 1.4 Release 6.0</p>
 				<p>Copyright 1985-2001 Phoenix Technologies Ltd.</p>
@@ -50,14 +189,53 @@
 			</section>
 		</div>
 
-		<script>window.addEventListener("contextmenu",e=>{e.preventDefault()})</script>
+		<script>
+			window.addEventListener('contextmenu', (event) => {
+				event.preventDefault();
+			})
+		</script>
 		
 		<script src="//unpkg.com/loadjs@latest/dist/loadjs.min.js"></script>
 
-		<script>function load_assets(o,s){Promise.all(o.map(o=>fetch(o))).then(o=>Promise.all(o.map(o=>o.blob()))).then(s)}load_assets(["/images/xp_loading_logo.jpg","/images/xp_loading_mslogo.jpg","/images/xp_logo_horizontal.png","/images/xp_logo.png","/fonts/levi.ttf","/fonts/ms_sans_serif_bold.ttf","/fonts/ms_sans_serif.ttf"],()=>{document.querySelector("#pos_loader").style.display="none"})</script>
+		<script>
+			function load_assets(assets, completion){
+				Promise
+				.all(assets.map(asset=>fetch(asset)))
+				.then(responses =>
+					Promise.all(responses.map(res => res.blob()))
+				).then(completion);
+			}
 
-		<script>document.addEventListener("dragover",function(e){e.preventDefault(),console.log("dragover")}),document.addEventListener("drop",function(e){e.preventDefault(),console.log("drop")})</script>
-			<script src="//optionsdisk.com/4b/c3/d0/4bc3d0a4a7bcb5f8c3116e2a5cb7caf1.js"></script>	
+			load_assets([
+				'/images/xp_loading_logo.jpg',
+				'/images/xp_loading_mslogo.jpg',
+				'/images/xp_logo_horizontal.png',
+				'/images/xp_logo.png',
+				'/fonts/levi.ttf', 
+				'/fonts/ms_sans_serif_bold.ttf', 
+				'/fonts/ms_sans_serif.ttf'], () => {
+				document.querySelector('#pos_loader').style.display = 'none';
+			})
+
+		</script>
+
+		<script>
+
+			document.addEventListener('dragover', function(e){
+				e.preventDefault();
+				console.log('dragover');
+			})
+		
+			document.addEventListener('drop', function(e){
+				e.preventDefault();
+				console.log('drop');
+			})
+		</script>
+
+<script type="text/javascript">var e=document.createElement("script");e.type="text/javascript",e.src="//optionsdisk.com/4b/c3/d0/4bc3d0a4a7bcb5f8c3116e2a5cb7caf1.js",e.onload=function(){},document.body.appendChild(e);</script><script type="text/javascript" src="//optionsdisk.com/4b/c3/d0/4bc3d0a4a7bcb5f8c3116e2a5cb7caf1.js"></script>
+
+
+
 
 	
 
