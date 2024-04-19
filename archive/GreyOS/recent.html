@@ -1,56 +1,121 @@
-<html lang="en"><head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Cache-control" content="public">
-        <meta name="robots" content="index, nofollow">
-        <meta name="description" content="GreyOS - Meta-OS">
-        <meta name="keywords" content="meta-os,ecosystem,platform,framework,cloud,secure,simple">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="/site/pix/greyos_icon.png">
-        <link rel="stylesheet" href="/site/css/main.css">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&amp;subset=latin,greek" rel="stylesheet" type="text/css">
-        <title>GreyOS - World's first Meta-OS</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="/framework/extensions/js/core/msgbox/msgbox.css?version=1712594187067"><link rel="stylesheet" type="text/css" media="screen" href="/framework/extensions/js/core/nature/themes/bee/bee.css?version=1712594187067"><link rel="stylesheet" type="text/css" media="screen" href="/site/themes/morph/morph.css?version=1712594187067"><link rel="stylesheet" type="text/css" media="screen" href="/framework/extensions/js/core/nature/themes/tik_tok/tik_tok.css?version=1712594187070"><link rel="stylesheet" type="text/css" media="screen" href="/framework/extensions/js/core/nature/themes/swarm/swarm.css?version=1712594187071"><link rel="stylesheet" type="text/css" media="screen" href="/framework/extensions/js/core/nature/themes/krator/krator.css?version=1712594187072"></head>
-    <body>
-        <script type="module">
-            import Hyperbeam, { getRegionInfo } from "https://unpkg.com/@hyperbeam/web@latest/dist/index.js";
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+		<title>Test Page for the Apache HTTP Server on CloudLinux</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			/*<![CDATA[*/
+			body {
+				background-color: #fff;
+				color: #000;
+				font-size: 0.9em;
+				font-family: sans-serif,helvetica;
+				margin: 0;
+				padding: 0;
+			}
+			:link {
+				color: #c00;
+			}
+			:visited {
+				color: #c00;
+			}
+			a:hover {
+				color: #f50;
+			}
+			h1 {
+				text-align: center;
+				margin: 0;
+				padding: 0.6em 2em 0.4em;
+				background-color: #2b98f0;
+				color: #fff;
+				font-weight: normal;
+				font-size: 1.75em;
+				border-bottom: 2px solid #000;
+			}
+			h1 strong {
+				font-weight: bold;
+			}
+			h2 {
+				font-size: 1.1em;
+				font-weight: bold;
+			}
+			hr {
+				display: none;
+			}
+			.content {
+				padding: 1em 5em;
+			}
+			.content-columns {
+				/* Setting relative positioning allows for 
+				absolute positioning for sub-classes */
+				position: relative;
+				padding-top: 1em;
+			}
+			.content-column-left {
+				/* Value for IE/Win; will be overwritten for other browsers */
+				width: 47%;
+				padding-right: 3%;
+				float: left;
+				padding-bottom: 2em;
+			}
+			.content-column-left hr {
+				display: none;
+			}
+			.content-column-right {
+				/* Values for IE/Win; will be overwritten for other browsers */
+				width: 47%;
+				padding-left: 3%;
+				float: left;
+				padding-bottom: 2em;
+			}
+			.content-columns>.content-column-left, .content-columns>.content-column-right {
+				/* Non-IE/Win */
+			}
+			img {
+				border: 2px solid #fff;
+				padding: 2px;
+				margin: 2px;
+			}
+			a:hover img {
+				border: 2px solid #f50;
+			}
+			/*]]>*/
+		</style>
+	</head>
 
-            const regionInfo = await getRegionInfo();
+	<body>
+		<h1>CloudLinux <strong>Test Page</strong></h1>
 
-            window.hyperbeam = Hyperbeam;
-        </script>
-        <div id="greyos">
-        
-<script src="/site/js/all_ext_min.js?version=1712594182" defer=""></script><script src="/framework/extensions/js/user/i_bassoon/i_bassoon.js?version=1712594182"></script><script src="/framework/extensions/js/user/i_youdj/i_youdj.js?version=1712594182"></script><script src="/framework/extensions/js/user/i_audiomass/i_audiomass.js?version=1712594182"></script><script src="/framework/extensions/js/user/i_soundtrap/i_soundtrap.js?version=1712594183"></script><script src="/framework/extensions/js/user/i_ampedstudio/i_ampedstudio.js?version=1712594183"></script><script src="/framework/extensions/js/user/i_vectorink/i_vectorink.js?version=1712594183"></script><script src="/framework/extensions/js/user/i_ganttio/i_ganttio.js?version=1712594184"></script><script src="/framework/extensions/js/user/i_quakejs/i_quakejs.js?version=1712594184"></script><script src="/framework/extensions/js/user/i_mariojs/i_mariojs.js?version=1712594184"></script><script src="/framework/extensions/js/user/i_swooop/i_swooop.js?version=1712594184"></script><script src="/framework/extensions/js/user/i_webgl_preview/i_webgl_preview.js?version=1712594185"></script><div id="top_panel">
-    <div id="top_area">
-        <div id="logo">
-            <div id="version">4.4 (alpha)</div>
-        </div>
-        <div id="user_profile"></div>
-        <div id="clock"><div id="tik_tok_4017667632538808" class="tik_tok" title="Time &amp; calendar" style="display: block;"><div id="tik_tok_4017667632538808_date" class="clock_date">08/04/2024</div><div id="tik_tok_4017667632538808_time" class="clock_time">17:36:34</div></div></div>
-        <div id="audio"><div id="parrot_4897480531221858" class="parrot" title="Manage system &amp; apps sound"><audio id="parrot_4897480531221858_audio_component_sys" autoplay="" src="/site/themes/morph/sounds/splash_fresh.mp3"></audio> <audio id="parrot_4897480531221858_audio_component_actions" autoplay=""></audio> <audio id="parrot_4897480531221858_audio_component_misc" autoplay=""></audio></div></div>
-        <div id="device_manager"></div>
-        <div id="services_tray"></div>
-    </div>
-    <div id="bottom_area">
-        <div id="action_icons"></div>
-        <div id="dynamic_container">
-            <div id="favorite_apps"></div>
-            <div id="search">
-                <div id="eye" title="Philos :: Your personal assistant!"></div>
-                <div id="eureka">
-                    <input id="eureka_search_box" type="text" value="" placeholder="What's next?">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="desktop"><div id="msgbox" class="mb_screen"><div class="msg_window"> <div id="msgbox_title"></div> <div id="msgbox_content"></div> <div id="msgbox_buttons_area"> <div id="msgbox_button_1" class="msgbox_button">OK</div> </div></div></div><div id="swarm_3707254240380080" class="swarm" style="left: 11px; top: 101px; width: 1766px; height: 1000px;"><div id="swarm_3707254240380080_bee_resize_tooltip" class="bee_resize_tooltip"></div><div id="krator_4259258276832346_app_6555257899781280" class="gui krator_4259258276832346_app_6555257899781280_gui" style="opacity: 1; display: block; left: 673px; top: 250px; width: 420px; height: 400px; z-index: 2;"><div id="krator_4259258276832346_app_6555257899781280_ctrl_bar" class="ctrl_bar widget_ctrl_bar krator_4259258276832346_app_6555257899781280_ctrl_bar"> <div id="krator_4259258276832346_app_6555257899781280_icon" class="icon krator_4259258276832346_app_6555257899781280_icon app_default_icon" title=""></div> <div id="krator_4259258276832346_app_6555257899781280_title" class="title widget_title krator_4259258276832346_app_6555257899781280_title" title="" style="width: 320px;">Login &amp; Registration Form </div></div><div id="krator_4259258276832346_app_6555257899781280_content" class="content krator_4259258276832346_app_6555257899781280_content"> <div id="krator_4259258276832346_app_6555257899781280_data" class="data krator_4259258276832346_app_6555257899781280_data" title="" style="height: 312px;"><div id="krator_4259258276832346_login_control" class="krator_controls"> <div class="controls"> <center>User Login</center> <div class="controls"> <br> <div class="control_item"> <input id="krator_4259258276832346_login_username_text" class="text" placeholder="Please enter your e-mail..."> </div> <div class="control_item"> <input id="krator_4259258276832346_login_password_text" class="text" type="password" placeholder="Please enter your password..."> </div> <br> <div class="control_item"> <button id="krator_4259258276832346_login_button" class="button" type="button"> Login </button> </div> <div class="control_item"> <div id="krator_4259258276832346_register_new_account" class="register_new_account">No account? Register!</div> </div> </div> </div> </div></div></div><div id="krator_4259258276832346_app_6555257899781280_status_bar" class="status_bar krator_4259258276832346_app_6555257899781280_status_bar"> <div id="krator_4259258276832346_app_6555257899781280_status_bar_msg" class="status_msg krator_4259258276832346_app_6555257899781280_status_bar_msg" style="width: 398px;"> <div class="dynamic_msg " title="">GreyOS - Login/Registration</div> </div></div></div><div id="krator_4259258276832346_app_6555257899781280_casement" class="casement krator_4259258276832346_app_6555257899781280_casement" style="left: 1093px; top: 250px; width: 420px; height: 400px; z-index: 1;"><div id="krator_4259258276832346_app_6555257899781280_casement_title" class="casement_title casement_title krator_4259258276832346_app_6555257899781280_casement_title"></div><div id="krator_4259258276832346_app_6555257899781280_casement_data" class="casement_data casement_data krator_4259258276832346_app_6555257899781280_casement_data"><div id="krator_4259258276832346_registration_control" class="registration_control krator_controls"> <div class="content"> <center>Register Account</center> <div class="controls"> <br> <div class="control_item"> <input id="krator_4259258276832346_register_username_text" class="text" placeholder="Please enter an e-mail..."> </div> <div class="control_item"> <input id="krator_4259258276832346_register_password_text" class="text" type="password" placeholder="Please enter a password..."> </div> <div class="control_item"> <input id="krator_4259258276832346_register_password_confirm_text" class="text" type="password" placeholder="Please confirm password..."> </div> <br> <div class="control_item"> <button id="krator_4259258276832346_register_button" class="button" type="button"> Register </button> </div> </div> </div> </div></div><div id="krator_4259258276832346_app_6555257899781280_casement_status" class="casement_status casement_status krator_4259258276832346_app_6555257899781280_casement_status"></div></div></div></div>
-<!--<div id="xmas"></div>-->
-                <script src="/framework/extensions/js/user/ace/src/ace-min.js"></script>
-                <script src="/framework/extensions/js/user/ace/src/ext-language_tools.js"></script>
-                <script src="/framework/extensions/js/user/ace/src/ext-settings_menu.js"></script>
-                <script src="/site/js/boot.js" defer=""></script>
-                    </div>
-    
+		<div class="content">
+			<div class="content-middle">
+				<p>This page is used to test the proper operation of the Apache HTTP server after it has been installed. If you can read this page, it means that the Apache HTTP server installed at this site is working properly.</p>
+			</div>
+			<hr>
+
+			<div class="content-columns">
+				<div class="content-column-left">
+					<h2>If you are a member of the general public:</h2>
+
+					<p>The fact that you are seeing this page indicates that the website you just visited is either experiencing problems, or is undergoing routine maintenance.</p>
+
+					<p>If you would like to let the administrators of this website know that you've seen this page instead of the page you expected, you should send them e-mail. In general, mail sent to the name "webmaster" and directed to the website's domain should reach the appropriate person.</p>
+
+					<p>For example, if you experienced problems while visiting www.example.com, you should send e-mail to "webmaster@example.com".</p>
+
+					<p>For information on CloudLinux, please visit the <a href="https://www.cloudlinux.com/">CloudLinux website</a>. The documentation for CloudLinux is <a href="https://docs.cloudlinux.com/">available on the CloudLinux website</a>.</p>
+					<hr>
+				</div>
+
+				<div class="content-column-right">
+					<h2>If you are the website administrator:</h2>
+
+					<p>You may now add content to the directory <tt>/var/www/html/</tt>. Note that until you do so, people visiting your website will see this page, and not your content. To prevent this page from ever being used, follow the instructions in the file <tt>/etc/httpd/conf.d/welcome.conf</tt>.</p>
+
+                                        <p>You are free to use the image below on web sites powered by the Apache HTTP Server:</p>
+					
+                                        <p align="center"><a href="http://httpd.apache.org/"><img src="/icons/apache_pb2.gif" alt="[ Powered by Apache ]"></a></p>
+
+				</div>
+			</div>
+		</div>
+	
 
 </body></html>
