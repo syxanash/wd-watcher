@@ -71,13 +71,13 @@
                 <hr>
                 <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_SCALE"><u>S</u>cale contents</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AOT">A<u>l</u>ways on top</mad-string></p></div>
-                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Re<u>s</u>izable</mad-string></p></div>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Res<u>i</u>zable</mad-string></p></div>
                 <hr>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_URL"><u>C</u>hange URL</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_TITLE">Change <u>t</u>itle</mad-string></p></div>
                 <hr>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW"><u>N</u>ew window</mad-string></p></div>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload wallpaper</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW">N<u>e</u>w window</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload ModernActiveDesktop</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
             </div>
         </div>
@@ -136,7 +136,7 @@
             <div class="miniPickerColor" style="background-color: #A0A0A4"></div>
         </div>
         <hr>
-        <button class="openColorPickerBtn"><mad-string data-locid="UI_OTHER"><u>O</u>ther...</mad-string></button>
+        <button class="openColorPickerBtn" accesskey="o"><mad-string data-locid="UI_OTHER"><u>O</u>ther...</mad-string></button>
     </div>
     <div id="errorWnd" class="window">
         <p id="errorMsg">ModernActiveDesktop failed to initialize because of an unknown error. Please consult the log below and report this to https://github.com/Ingan121/ModernActiveDesktop/issues.</p>
@@ -145,7 +145,7 @@
         <button onclick="copyLog();">Copy log</button> <button onclick="localStorage.clear();location.reload(true);">Reset config</button> <button onclick="location.reload(true);">Retry</button> <button onclick="errorWnd.style.display='none';">Ignore</button>
     </div>
     <div id="debug" class="debug">
-        <span>ModernActiveDesktop 3.2.0</span><br>
+        <span>ModernActiveDesktop 3.2.1</span><br>
         <span>Loaded from <span id="location">https://www.ingan121.com/mad/</span></span><br>
         <span>Running in <span id="runmode">browser</span><span id="simmode"></span></span><br>
         <span id="debugLabel"><mad-string data-locid="MAD_DEBUG_DEBUG_MODE">Debug mode</mad-string></span><br>
@@ -163,7 +163,7 @@
         var errorCnt = document.getElementById("errorCnt");
 
         if (document.documentMode) {
-            errorLog.textContent = "Internet Explorer is NOT supported! Please use a modern browser like Chrome or Edge.\n";
+            errorLog.textContent = "Internet Explorer is NOT supported! Please use a modern browser like Chrome, Firefox, or Edge.\n";
         }
 
         window.onerror = function (msg, url, linenum) {
@@ -200,7 +200,7 @@
         </div>
         <div class="windowFrame" style="height: 200px; width: 302px; border-color: transparent; background-color: transparent;">
             <iframe class="windowElement" name="DeskMovrW" src="placeholder.html" width="300px" height="200px" data-num="1" style="border-color: transparent;"></iframe>
-            <div class="resizeArea"></div>
+            <div class="resizeArea" style="display: none;"></div>
             <div class="dropdownBg" tabindex="-1" style="animation: 0.25s linear 0s 1 normal none running cmDropdown;">
                 <div class="dropdown">
                     <div class="dropdownItem">Dummy</div>
@@ -224,13 +224,13 @@
                 <hr>
                 <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_SCALE"><u>S</u>cale contents</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AOT">A<u>l</u>ways on top</mad-string></p></div>
-                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Re<u>s</u>izable</mad-string></p></div>
+                <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Res<u>i</u>zable</mad-string></p></div>
                 <hr>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_URL"><u>C</u>hange URL</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_TITLE">Change <u>t</u>itle</mad-string></p></div>
                 <hr>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW"><u>N</u>ew window</mad-string></p></div>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload wallpaper</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW">N<u>e</u>w window</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload ModernActiveDesktop</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
             </div>
         </div>
@@ -277,13 +277,13 @@
                 <hr>
                 <div class="contextMenuItem checkedItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_SCALE"><u>S</u>cale contents</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_AOT">A<u>l</u>ways on top</mad-string></p></div>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Re<u>s</u>izable</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RESIZABLE">Res<u>i</u>zable</mad-string></p></div>
                 <hr>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_URL"><u>C</u>hange URL</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_CHANGE_TITLE">Change <u>t</u>itle</mad-string></p></div>
                 <hr>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW"><u>N</u>ew window</mad-string></p></div>
-                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload wallpaper</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_NEW_WINDOW">N<u>e</u>w window</mad-string></p></div>
+                <div class="contextMenuItem"><p><mad-string data-locid="MAD_CONF_MENUITEM_RELOAD_WALLPAPER"><u>R</u>eload ModernActiveDesktop</mad-string></p></div>
                 <div class="contextMenuItem"><p><mad-string data-locid="UI_MENUITEM_PROPERTIES"><u>P</u>roperties</mad-string></p></div>
             </div>
         </div>

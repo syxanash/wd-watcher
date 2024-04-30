@@ -66,9 +66,9 @@ Shopify.routes.root = "/";</script>
     window.addEventListener('load', asyncLoad, false);
   }
 })();</script>
-<script id="__st">var __st={"a":33722990728,"offset":10800,"reqid":"8e7e51ea-f085-49e0-9d35-7413074d696c-1713436828","pageurl":"gleb.solutions\/","u":"2f73ad084525","p":"home"};</script>
+<script id="__st">var __st={"a":33722990728,"offset":10800,"reqid":"a4ebc2a5-0b2b-4d64-ae3a-7be21eff08c3-1714415529","pageurl":"gleb.solutions\/","u":"d472205e967f","p":"home"};</script>
 <script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
-<script>!function(o){o.addEventListener("DOMContentLoaded",function(){window.Shopify=window.Shopify||{},window.Shopify.recaptchaV3=window.Shopify.recaptchaV3||{siteKey:"6LeHG2ApAAAAAO4rPaDW-qVpPKPOBfjbCpzJB9ey"};var t=['form[action*="/contact"] input[name="form_type"][value="contact"]','form[action*="/comments"] input[name="form_type"][value="new_comment"]','form[action*="/account"] input[name="form_type"][value="customer_login"]','form[action*="/account"] input[name="form_type"][value="recover_customer_password"]','form[action*="/account"] input[name="form_type"][value="create_customer"]','form[action*="/contact"] input[name="form_type"][value="customer"]'].join(",");function n(e){e=e.target;null==e||null!=(e=function e(t,n){if(null==t.parentElement)return null;if("FORM"!=t.parentElement.tagName)return e(t.parentElement,n);for(var o=t.parentElement.action,r=0;r<n.length;r++)if(-1!==o.indexOf(n[r]))return t.parentElement;return null}(e,["/contact","/comments","/account"]))&&null!=e.querySelector(t)&&((e=o.createElement("script")).setAttribute("src","https://cdn.shopify.com/shopifycloud/storefront-recaptcha-v3/v0.6/index.js"),o.body.appendChild(e),o.removeEventListener("focus",n,!0),o.removeEventListener("change",n,!0),o.removeEventListener("click",n,!0))}o.addEventListener("click",n,!0),o.addEventListener("change",n,!0),o.addEventListener("focus",n,!0)})}(document);</script>
+<script>!function(){'use strict';const e='contact',t='account',n='new_comment',o=e=>e.map((([e,t])=>`form[action*='/${e}'] input[name='form_type'][value='${t}']`)).join(',');function c(e,t,n){try{for(const[o,c]of Object.entries(JSON.parse(n.getItem(t))))e.elements[o]&&(e.elements[o].value=c);n.removeItem(t)}catch{}}const s='form_type',r='cptcha';var a,m,i,u;a=window,m=document,u='ce_forms',a[i='Shopify']=a[i]||{},a[i][u]=a[i][u]||{},a[i][u].q=[],function(a,m,i,u,f,d){const[l,p]=function(c,s){const r=s?[[e,e],['blogs',n],['comments',n],[e,'customer']]:[],a=c?[[t,'customer_login'],[t,'recover_customer_password'],[t,'create_customer']]:[],m=o([...r,...a]),i=o(r.slice(0,3)),u=e=>()=>e?[...document.querySelectorAll(e)].map((e=>e.form)):[];return[u(m),u(i)]}(!0,!1),_=e=>{const t=e.target,n=t instanceof HTMLFormElement?t:t&&t.form;return n&&l().find((e=>n===e))};a.addEventListener('submit',(e=>{_(e)&&e.preventDefault()}));for(const e of['focusin','change'])a.addEventListener(e,(e=>{const t=_(e);t&&!t.dataset[r]&&(u(t,p().some((e=>e===t))),t.dataset[r]=!0)}));const v=i.get('form_key'),g=i.get(s);v&&g&&a.addEventListener('DOMContentLoaded',(()=>{for(const e of p())e.elements[s].value===g&&c(e,v,m)}))}(m,a.sessionStorage,new URLSearchParams(a.location.search),((e,t)=>{const n=a[i][u],o=n.bindForm,c='6LeHG2ApAAAAAO4rPaDW-qVpPKPOBfjbCpzJB9ey';if(o)return o(e,c,t);n.q.push([e,c,t]),m.body.append(Object.assign(m.createElement('script'),{async:!0,src:'https://cdn.shopify.com/shopifycloud/storefront-forms-hcaptcha/ce_storefront_forms_captcha_recaptcha.v1.0.1.iife.js'}))}))}();</script>
 <script integrity="sha256-n5Uet9jVOXPHGd4hH4B9Y6+BxkTluaaucmYaxAjUcvY=" data-source-attribution="shopify.loadfeatures" defer="defer" src="//gleb.solutions/cdn/shopifycloud/shopify/assets/storefront/load_feature-9f951eb7d8d53973c719de211f807d63af81c644e5b9a6ae72661ac408d472f6.js" crossorigin="anonymous"></script>
 <script integrity="sha256-HAs5a9TQVLlKuuHrahvWuke+s1UlxXohfHeoYv8G2D8=" data-source-attribution="shopify.dynamic-checkout" defer="defer" src="//gleb.solutions/cdn/shopifycloud/shopify/assets/storefront/features-1c0b396bd4d054b94abae1eb6a1bd6ba47beb35525c57a217c77a862ff06d83f.js" crossorigin="anonymous"></script>
 
@@ -102,7 +102,7 @@ Shopify.routes.root = "/";</script>
     <link rel="preload" href="http://gleb.solutions/cdn/shop/t/6/assets/video-radio-anime-sunset-c.mp4?v=46674824806162113251647010412" as="video" type="video/mp4">
   <link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">
 <script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 33722990728,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "index"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
-<script id="web-pixels-manager-setup">(function e(e,n,a,t,r){var o="function"==typeof BigInt&&-1!==BigInt.toString().indexOf("[native code]")?"modern":"legacy";window.Shopify=window.Shopify||{};var i=window.Shopify;i.analytics=i.analytics||{};var s=i.analytics;s.replayQueue=[],s.publish=function(e,n,a){return s.replayQueue.push([e,n,a]),!0};try{self.performance.mark("wpm:start")}catch(e){}var l=[a,"/wpm","/b",r,o.substring(0,1),".js"].join("");!function(e){var n=e.src,a=e.async,t=void 0===a||a,r=e.onload,o=e.onerror,i=document.createElement("script"),s=document.head,l=document.body;i.async=t,i.src=n,r&&i.addEventListener("load",r),o&&i.addEventListener("error",o),s?s.appendChild(i):l?l.appendChild(i):console.error("Did not find a head or body element to append the script")}({src:l,async:!0,onload:function(){var a=window.webPixelsManager.init(e);n(a);var t=window.Shopify.analytics;t.replayQueue.forEach((function(e){var n=e[0],t=e[1],r=e[2];a.publishCustomEvent(n,t,r)})),t.replayQueue=[],t.publish=a.publishCustomEvent,t.visitor=a.visitor},onerror:function(){var n=e.storefrontBaseUrl.replace(/\/$/,""),a="".concat(n,"/.well-known/shopify/monorail/unstable/produce_batch"),r=JSON.stringify({metadata:{event_sent_at_ms:(new Date).getTime()},events:[{schema_id:"web_pixels_manager_load/2.0",payload:{version:t||"latest",page_url:self.location.href,status:"failed",error_msg:"".concat(l," has failed to load")},metadata:{event_created_at_ms:(new Date).getTime()}}]});try{if(self.navigator.sendBeacon.bind(self.navigator)(a,r))return!0}catch(e){}var o=new XMLHttpRequest;try{return o.open("POST",a,!0),o.setRequestHeader("Content-Type","text/plain"),o.send(r),!0}catch(e){console&&console.warn&&console.warn("[Web Pixels Manager] Got an unhandled error while logging a load error.")}return!1}})})({shopId: 33722990728,storefrontBaseUrl: "https://gleb.solutions",cdnBaseUrl: "https://gleb.solutions/cdn",surface: "storefront-renderer",enabledBetaFlags: [],webPixelsConfigList: [{"id":"shopify-app-pixel","configuration":"{}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"063","apiClientId":"shopify-pixel","type":"APP","purposes":["ANALYTICS"]},{"id":"shopify-custom-pixel","eventPayloadVersion":"v1","runtimeContext":"LAX","scriptVersion":"063","apiClientId":"shopify-pixel","type":"CUSTOM","purposes":["ANALYTICS"]}],initData: {"cart":null,"checkout":null,"customer":null,"productVariants":[]},},function pageEvents(webPixelsManagerAPI) {webPixelsManagerAPI.publish("page_viewed");},"https://gleb.solutions/cdn","0.0.473","5049c50awde185c9fp43897680m7e819d87",);</script><script async="" src="https://gleb.solutions/cdn/wpm/b5049c50awde185c9fp43897680m7e819d87m.js"></script>  <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+<script id="web-pixels-manager-setup">(function e(e,n,a,t,r){var o="function"==typeof BigInt&&-1!==BigInt.toString().indexOf("[native code]")?"modern":"legacy";window.Shopify=window.Shopify||{};var i=window.Shopify;i.analytics=i.analytics||{};var s=i.analytics;s.replayQueue=[],s.publish=function(e,n,a){return s.replayQueue.push([e,n,a]),!0};try{self.performance.mark("wpm:start")}catch(e){}var l=[a,"/wpm","/b",r,o.substring(0,1),".js"].join("");!function(e){var n=e.src,a=e.async,t=void 0===a||a,r=e.onload,o=e.onerror,i=document.createElement("script"),s=document.head,l=document.body;i.async=t,i.src=n,r&&i.addEventListener("load",r),o&&i.addEventListener("error",o),s?s.appendChild(i):l?l.appendChild(i):console.error("Did not find a head or body element to append the script")}({src:l,async:!0,onload:function(){var a=window.webPixelsManager.init(e);n(a);var t=window.Shopify.analytics;t.replayQueue.forEach((function(e){var n=e[0],t=e[1],r=e[2];a.publishCustomEvent(n,t,r)})),t.replayQueue=[],t.publish=a.publishCustomEvent,t.visitor=a.visitor},onerror:function(){var n=e.storefrontBaseUrl.replace(/\/$/,""),a="".concat(n,"/.well-known/shopify/monorail/unstable/produce_batch"),r=JSON.stringify({metadata:{event_sent_at_ms:(new Date).getTime()},events:[{schema_id:"web_pixels_manager_load/2.0",payload:{version:t||"latest",page_url:self.location.href,status:"failed",error_msg:"".concat(l," has failed to load")},metadata:{event_created_at_ms:(new Date).getTime()}}]});try{if(self.navigator.sendBeacon.bind(self.navigator)(a,r))return!0}catch(e){}var o=new XMLHttpRequest;try{return o.open("POST",a,!0),o.setRequestHeader("Content-Type","text/plain"),o.send(r),!0}catch(e){console&&console.warn&&console.warn("[Web Pixels Manager] Got an unhandled error while logging a load error.")}return!1}})})({shopId: 33722990728,storefrontBaseUrl: "https://gleb.solutions",cdnBaseUrl: "https://gleb.solutions/cdn",surface: "storefront-renderer",enabledBetaFlags: ["5de24938"],webPixelsConfigList: [{"id":"shopify-app-pixel","configuration":"{}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"063","apiClientId":"shopify-pixel","type":"APP","purposes":["ANALYTICS"]},{"id":"shopify-custom-pixel","eventPayloadVersion":"v1","runtimeContext":"LAX","scriptVersion":"063","apiClientId":"shopify-pixel","type":"CUSTOM","purposes":["ANALYTICS"]}],initData: {"cart":null,"checkout":null,"customer":null,"productVariants":[]},},function pageEvents(webPixelsManagerAPI) {webPixelsManagerAPI.publish("page_viewed");},"https://gleb.solutions/cdn","8992621294471f0af4901e35bbe077e32fc814fc","62cf46f4w0b3aa4f8pd4b3b9bcmd2934107",);</script><script async="" src="https://gleb.solutions/cdn/wpm/b62cf46f4w0b3aa4f8pd4b3b9bcmd2934107m.js"></script>  <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
 window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
 window.ShopifyAnalytics.meta.currency = 'RUB';
 var meta = {"page":{"pageType":"home"}};
@@ -238,7 +238,7 @@ for (var attr in meta) {
       first.parentNode.insertBefore(script, first);
     };
     trekkie.load(
-      {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":33722990728,"isMerchantRequest":null,"themeId":128866484454,"themeCityHash":"2148629035394112714","contentLanguage":"ru","currency":"RUB"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["bbcf04e6"]},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer"}}
+      {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":33722990728,"isMerchantRequest":null,"themeId":128866484454,"themeCityHash":"15568135624635200801","contentLanguage":"ru","currency":"RUB"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["bbcf04e6"]},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer"}}
     );
 
     var loaded = false;
@@ -416,7 +416,7 @@ for (var attr in meta) {
     });
   }
 })();</script><link href="https://gleb.solutions/cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js" rel="preload" as="script">
-<script id="boomr-scr-as" src="https://gleb.solutions/cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js" async=""></script><script type="module" defer="" src="https://gleb.solutions/cdn/shopifycloud/media-analytics/v0.1/analytics.js"></script><link rel="dns-prefetch preconnect" href="h" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/runtime.latest.ru.ea34dd6e55589defa889.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/902.latest.ru.0aa608d7d865861c8c96.js" crossorigin=""><script type="text/javascript" async="" src=" https://static-tracking.klaviyo.com/onsite/js/fender_analytics.f692ee00c71150d7db91.js?cb=1" crossorigin="anonymous"></script><script type="text/javascript" async="" src=" https://static-tracking.klaviyo.com/onsite/js/static.500134348b1f0969ffe3.js?cb=1" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://static.klaviyo.com/onsite/js/runtime.25ae3e5a925b967796f1.js?cb=1" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://static.klaviyo.com/onsite/js/sharedUtils.616df14b2a706a7b4c44.js?cb=1" crossorigin="anonymous"></script><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/114.latest.ru.c10601cb53ddc81e5051.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/991.latest.ru.9c44aa3fb5e5c3cd39f5.js" crossorigin=""><script type="module" defer="" src="https://gleb.solutions/cdn/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js"></script><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/app.latest.ru.fe14b397fe1147386b1d.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/845.latest.ru.6db36d65de55b15facf0.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/569.latest.ru.406f42dec60e3e93493f.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/462.latest.ru.3b87988d0a0387e36697.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/18.latest.ru.9581b442f2fc72e06d81.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/OnePage.latest.ru.22ce730ff3889a28843a.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="style" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/902.latest.ru.e3249b8edfbd78330bac.css" crossorigin=""><link rel="prefetch" fetchpriority="low" as="style" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/app.latest.ru.917d84ea702497c705db.css" crossorigin=""><link rel="prefetch" fetchpriority="low" as="style" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/268.latest.ru.b1a85f925b41702ad78f.css" crossorigin=""><link rel="prefetch" fetchpriority="low" as="image" href="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/logotype_x320.png?v=1637871875" crossorigin=""></head>
+<script id="boomr-scr-as" src="https://gleb.solutions/cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js" async=""></script><script type="module" defer="" src="https://gleb.solutions/cdn/shopifycloud/media-analytics/v0.1/analytics.js"></script><link rel="dns-prefetch preconnect" href="h" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/runtime.latest.ru.5e37b7fce9766e3b9e35.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/893.latest.ru.05c0bf0970f8edc86870.js" crossorigin=""><script type="text/javascript" async="" src=" https://static-tracking.klaviyo.com/onsite/js/fender_analytics.f692ee00c71150d7db91.js?cb=1" crossorigin="anonymous"></script><script type="text/javascript" async="" src=" https://static-tracking.klaviyo.com/onsite/js/static.500134348b1f0969ffe3.js?cb=1" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://static.klaviyo.com/onsite/js/runtime.c2d02b0390781a485371.js?cb=1" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://static.klaviyo.com/onsite/js/sharedUtils.885822fb4d01d810cec0.js?cb=1" crossorigin="anonymous"></script><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/204.latest.ru.d2c543d435a51d189957.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/891.latest.ru.051286e30b2bab5510b4.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/app.latest.ru.5723372d545cc9d024b2.js" crossorigin=""><script type="module" defer="" src="https://gleb.solutions/cdn/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js"></script><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/977.latest.ru.e1a0ded7d00403072415.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/535.latest.ru.279632d5b190d715dfcc.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/307.latest.ru.d54ae8b8312e9f79b258.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="script" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/OnePage.latest.ru.af466ed17b4f31fafdd6.js" crossorigin=""><link rel="prefetch" fetchpriority="low" as="style" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/893.latest.ru.c2dc1f07062250e60370.css" crossorigin=""><link rel="prefetch" fetchpriority="low" as="style" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/app.latest.ru.488c8cb223eba58f78de.css" crossorigin=""><link rel="prefetch" fetchpriority="low" as="style" href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/268.latest.ru.486259ea242ae985c66f.css" crossorigin=""><link rel="prefetch" fetchpriority="low" as="image" href="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/logotype_x320.png?v=1637871875" crossorigin=""></head>
 
   <body>
     
@@ -890,32 +890,32 @@ Winter 2023
       files: [
         {
           title: 'omanko note.txt',
-          link: 'https://radio.gleb.solutions/docs/ÖMANKÖ - docs/omanko note.txt',
+          link: 'https://disk.gleb.solutions/docs/ÖMANKÖ - docs/omanko note.txt',
           size: 0.13,
         },
         {
           title: 'Орг фотосъемки.docx',
-          link: 'https://radio.gleb.solutions/docs/ÖMANKÖ - docs/Орг фотосъемки.docx',
+          link: 'https://disk.gleb.solutions/docs/ÖMANKÖ - docs/Орг фотосъемки.docx',
           size: 34.32,
         },
         {
           title: 'Пр-во предметов.docx',
-          link: 'https://radio.gleb.solutions/docs/ÖMANKÖ - docs/Пр-во предметов.docx',
+          link: 'https://disk.gleb.solutions/docs/ÖMANKÖ - docs/Пр-во предметов.docx',
           size: 49.12,
         },
         {
           title: 'Размещение публикации.docx',
-          link: 'https://radio.gleb.solutions/docs/ÖMANKÖ - docs/Размещение публикации.docx',
+          link: 'https://disk.gleb.solutions/docs/ÖMANKÖ - docs/Размещение публикации.docx',
           size: 32.93,
         },
         {
           title: 'Разработка дизайна.docx',
-          link: 'https://radio.gleb.solutions/docs/ÖMANKÖ - docs/Разработка дизайна.docx',
+          link: 'https://disk.gleb.solutions/docs/ÖMANKÖ - docs/Разработка дизайна.docx',
           size: 60.94,
         },
         {
           title: 'Шаблон + ОРД.pages',
-          link: 'https://radio.gleb.solutions/docs/ÖMANKÖ - docs/Шаблон + ОРД.pages',
+          link: 'https://disk.gleb.solutions/docs/ÖMANKÖ - docs/Шаблон + ОРД.pages',
           size: 987.09,
         },
       ],
@@ -925,42 +925,42 @@ Winter 2023
       files: [
         {
           title: 'gk notes.txt',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/gk notes.txt',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/gk notes.txt',
           size: 6.11,
         },
         {
           title: 'Договор Дизайн + лиц.doc',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Дизайн + лиц.doc',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Дизайн + лиц.doc',
           size: 97.79,
         },
         {
           title: 'Договор Дизайн + отч.doc',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Дизайн + отч.doc',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Дизайн + отч.doc',
           size: 104.45,
         },
         {
           title: 'Договор Дизайн.doc',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Дизайн.doc',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Дизайн.doc',
           size: 105.98,
         },
         {
           title: 'Договор Подряда.docx',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Подряда.docx',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Подряда.docx',
           size: 37.91,
         },
         {
           title: 'Договор Половой Акт.docx',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Половой Акт.docx',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Половой Акт.docx',
           size: 195.16,
         },
         {
           title: 'Договор Пошив.docx',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Пошив.docx',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Пошив.docx',
           size: 43.47,
         },
         {
           title: 'Договор Реклама.docx',
-          link: 'https://radio.gleb.solutions/docs/Gleb Kostin - docs/Договор Реклама.docx',
+          link: 'https://disk.gleb.solutions/docs/Gleb Kostin - docs/Договор Реклама.docx',
           size: 43.5,
         },
       ],
@@ -970,12 +970,12 @@ Winter 2023
       files: [
         {
           title: 'delai note.txt',
-          link: 'https://radio.gleb.solutions/docs/Delai - docs/delai note.txt',
+          link: 'https://disk.gleb.solutions/docs/Delai - docs/delai note.txt',
           size: 0.35,
         },
         {
           title: 'Договор на производство.docx',
-          link: 'https://radio.gleb.solutions/docs/Delai - docs/Договор на производство.docx',
+          link: 'https://disk.gleb.solutions/docs/Delai - docs/Договор на производство.docx',
           size: 33.64,
         },
       ],
@@ -985,12 +985,12 @@ Winter 2023
       files: [
         {
           title: 'easy fresh note.txt',
-          link: 'https://radio.gleb.solutions/docs/Easy Fresh - docs/easy fresh note.txt',
+          link: 'https://disk.gleb.solutions/docs/Easy Fresh - docs/easy fresh note.txt',
           size: 0.36,
         },
         {
           title: 'DOGOVOR FISH.docx',
-          link: 'https://radio.gleb.solutions/docs/Easy Fresh - docs/DOGOVOR FISH.docx',
+          link: 'https://disk.gleb.solutions/docs/Easy Fresh - docs/DOGOVOR FISH.docx',
           size: 43.16,
         },
       ],
@@ -1000,22 +1000,22 @@ Winter 2023
       files: [
         {
           title: 'egor notes.txt',
-          link: 'https://radio.gleb.solutions/docs/Egor Loskutov - docs/egor notes.txt',
+          link: 'https://disk.gleb.solutions/docs/Egor Loskutov - docs/egor notes.txt',
           size: 0.24,
         },
         {
           title: 'DRAFT_Договор с СМЗ.docx',
-          link: 'https://radio.gleb.solutions/docs/Egor Loskutov - docs/DRAFT_Договор с СМЗ.docx',
+          link: 'https://disk.gleb.solutions/docs/Egor Loskutov - docs/DRAFT_Договор с СМЗ.docx',
           size: 41.13,
         },
         {
           title: 'NDA_DRAFT.docx',
-          link: 'https://radio.gleb.solutions/docs/Egor Loskutov - docs/NDA_DRAFT.docx',
+          link: 'https://disk.gleb.solutions/docs/Egor Loskutov - docs/NDA_DRAFT.docx',
           size: 41.17,
         },
         {
           title: 'Договор_на_размещение_рекламных_интеграций_клиента.docx',
-          link: 'https://radio.gleb.solutions/docs/Egor Loskutov - docs/Договор_на_размещение_рекламных_интеграций_клиента.docx',
+          link: 'https://disk.gleb.solutions/docs/Egor Loskutov - docs/Договор_на_размещение_рекламных_интеграций_клиента.docx',
           size: 44.24,
         },
       ],
@@ -1025,27 +1025,27 @@ Winter 2023
       files: [
         {
           title: 'karchauskas note.txt',
-          link: 'https://radio.gleb.solutions/docs/Karchauskas - docs/karchauskas note.txt',
+          link: 'https://disk.gleb.solutions/docs/Karchauskas - docs/karchauskas note.txt',
           size: 0.83,
         },
         {
           title: 'KARCHAUSKAS_AGREEMENT.docx',
-          link: 'https://radio.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_AGREEMENT.docx',
+          link: 'https://disk.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_AGREEMENT.docx',
           size: 26.23,
         },
         {
           title: 'KARCHAUSKAS_BRIEF.docx',
-          link: 'https://radio.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_BRIEF.docx',
+          link: 'https://disk.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_BRIEF.docx',
           size: 228.64,
         },
         {
           title: 'KARCHAUSKAS_COUNTS.xlsx',
-          link: 'https://radio.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_COUNTS.xlsx',
+          link: 'https://disk.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_COUNTS.xlsx',
           size: 8.22,
         },
         {
           title: 'KARCHAUSKAS_PRODTIMING.xlsx',
-          link: 'https://radio.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_PRODTIMING.xlsx',
+          link: 'https://disk.gleb.solutions/docs/Karchauskas - docs/KARCHAUSKAS_PRODTIMING.xlsx',
           size: 17.94,
         },
       ],
@@ -1055,12 +1055,12 @@ Winter 2023
       files: [
         {
           title: 'mashkov note.txt',
-          link: 'https://radio.gleb.solutions/docs/Mashkov - docs/mashkov note.txt',
+          link: 'https://disk.gleb.solutions/docs/Mashkov - docs/mashkov note.txt',
           size: 0.15,
         },
         {
           title: 'Лицензионный_договор_шаблон.docx',
-          link: 'https://radio.gleb.solutions/docs/Mashkov - docs/Лицензионный_договор_шаблон.docx',
+          link: 'https://disk.gleb.solutions/docs/Mashkov - docs/Лицензионный_договор_шаблон.docx',
           size: 36.21,
         },
       ],
@@ -1070,12 +1070,12 @@ Winter 2023
       files: [
         {
           title: 'panki note.txt',
-          link: 'https://radio.gleb.solutions/docs/PANKI - docs/panki note.txt',
+          link: 'https://disk.gleb.solutions/docs/PANKI - docs/panki note.txt',
           size: 1.62,
         },
         {
           title: 'Драфт_договора_режиссер_постановщик.doc',
-          link: 'https://radio.gleb.solutions/docs/PANKI - docs/Драфт_договора_режиссер_постановщик.doc',
+          link: 'https://disk.gleb.solutions/docs/PANKI - docs/Драфт_договора_режиссер_постановщик.doc',
           size: 155.65,
         },
       ],
@@ -1085,27 +1085,27 @@ Winter 2023
       files: [
         {
           title: 'pokras note.txt',
-          link: 'https://radio.gleb.solutions/docs/POKRAS - docs/pokras note.txt',
+          link: 'https://disk.gleb.solutions/docs/POKRAS - docs/pokras note.txt',
           size: 0.19,
         },
         {
           title: 'Акт_выполненных_работ_создание_Росписи.docx',
-          link: 'https://radio.gleb.solutions/docs/POKRAS - docs/Акт_выполненных_работ_создание_Росписи.docx',
+          link: 'https://disk.gleb.solutions/docs/POKRAS - docs/Акт_выполненных_работ_создание_Росписи.docx',
           size: 20.29,
         },
         {
           title: 'Акт_приема_передачи_искл_лицензия.docx',
-          link: 'https://radio.gleb.solutions/docs/POKRAS - docs/Акт_приема_передачи_искл_лицензия.docx',
+          link: 'https://disk.gleb.solutions/docs/POKRAS - docs/Акт_приема_передачи_искл_лицензия.docx',
           size: 20.32,
         },
         {
           title: 'Договор_авторского_заказа_создание_Росписи.docx',
-          link: 'https://radio.gleb.solutions/docs/POKRAS - docs/Договор_авторского_заказа_создание_Росписи.docx',
+          link: 'https://disk.gleb.solutions/docs/POKRAS - docs/Договор_авторского_заказа_создание_Росписи.docx',
           size: 60.4,
         },
         {
           title: 'Лицензионный_договор_исключительная_лицензия.docx',
-          link: 'https://radio.gleb.solutions/docs/POKRAS - docs/Лицензионный_договор_исключительная_лицензия.docx',
+          link: 'https://disk.gleb.solutions/docs/POKRAS - docs/Лицензионный_договор_исключительная_лицензия.docx',
           size: 48.74,
         },
       ],
@@ -1115,27 +1115,27 @@ Winter 2023
       files: [
         {
           title: 'savemymind notes.txt',
-          link: 'https://radio.gleb.solutions/docs/SaveMyMind - docs/savemymind notes.txt',
+          link: 'https://disk.gleb.solutions/docs/SaveMyMind - docs/savemymind notes.txt',
           size: 0.82,
         },
         {
           title: 'Акт_выполненных_работ_(Мерч).docx',
-          link: 'https://radio.gleb.solutions/docs/SaveMyMind - docs/Акт_выполненных_работ_(Мерч).docx',
+          link: 'https://disk.gleb.solutions/docs/SaveMyMind - docs/Акт_выполненных_работ_(Мерч).docx',
           size: 22.15,
         },
         {
           title: 'Акт_выполненных_работ_создание_Обложки.docx',
-          link: 'https://radio.gleb.solutions/docs/SaveMyMind - docs/Акт_выполненных_работ_создание_Обложки.docx',
+          link: 'https://disk.gleb.solutions/docs/SaveMyMind - docs/Акт_выполненных_работ_создание_Обложки.docx',
           size: 20.26,
         },
         {
           title: 'Договор_авторского_заказа_(Мерч).docx',
-          link: 'https://radio.gleb.solutions/docs/SaveMyMind - docs/Договор_авторского_заказа_(Мерч).docx',
+          link: 'https://disk.gleb.solutions/docs/SaveMyMind - docs/Договор_авторского_заказа_(Мерч).docx',
           size: 61.26,
         },
         {
           title: 'Договор_авторского_заказа_создание_Обложки.docx',
-          link: 'https://radio.gleb.solutions/docs/SaveMyMind - docs/Договор_авторского_заказа_создание_Обложки.docx',
+          link: 'https://disk.gleb.solutions/docs/SaveMyMind - docs/Договор_авторского_заказа_создание_Обложки.docx',
           size: 58.15,
         },
       ],
@@ -1145,27 +1145,27 @@ Winter 2023
       files: [
         {
           title: 'slava note.txt',
-          link: 'https://radio.gleb.solutions/docs/Slava Marlow - docs/slava note.txt',
+          link: 'https://disk.gleb.solutions/docs/Slava Marlow - docs/slava note.txt',
           size: 0.08,
         },
         {
           title: 'Договор аренды_аппартаменты.docx',
-          link: 'https://radio.gleb.solutions/docs/Slava Marlow - docs/Договор аренды_аппартаменты.docx',
+          link: 'https://disk.gleb.solutions/docs/Slava Marlow - docs/Договор аренды_аппартаменты.docx',
           size: 20.95,
         },
         {
           title: 'Договор отчуждения (инструмент).docx',
-          link: 'https://radio.gleb.solutions/docs/Slava Marlow - docs/Договор отчуждения (инструмент).docx',
+          link: 'https://disk.gleb.solutions/docs/Slava Marlow - docs/Договор отчуждения (инструмент).docx',
           size: 31.93,
         },
         {
           title: 'Договор отчуждения аранжировка.docx',
-          link: 'https://radio.gleb.solutions/docs/Slava Marlow - docs/Договор отчуждения аранжировка.docx',
+          link: 'https://disk.gleb.solutions/docs/Slava Marlow - docs/Договор отчуждения аранжировка.docx',
           size: 55.86,
         },
         {
           title: 'Договор передачи прав.docx',
-          link: 'https://radio.gleb.solutions/docs/Slava Marlow - docs/Договор передачи прав.docx',
+          link: 'https://disk.gleb.solutions/docs/Slava Marlow - docs/Договор передачи прав.docx',
           size: 20.2,
         },
       ],
@@ -1175,52 +1175,52 @@ Winter 2023
       files: [
         {
           title: 'yana note.txt',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/yana note.txt',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/yana note.txt',
           size: 2.73,
         },
         {
           title: 'Авторское Задание.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Авторское Задание.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Авторское Задание.docx',
           size: 11.88,
         },
         {
           title: 'Договор  об оказании услуг.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Договор  об оказании услуг.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Договор  об оказании услуг.docx',
           size: 16.45,
         },
         {
           title: 'Договор Поставка Разовый.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Договор Поставка Разовый.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Договор Поставка Разовый.docx',
           size: 35.56,
         },
         {
           title: 'Договор реализации.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Договор реализации.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Договор реализации.docx',
           size: 22.56,
         },
         {
           title: 'Договор с фотографом .docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Договор с фотографом .docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Договор с фотографом .docx',
           size: 14.06,
         },
         {
           title: 'Договор_Возмездное_оказание_услуг_ИП.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Договор_Возмездное_оказание_услуг_ИП.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Договор_Возмездное_оказание_услуг_ИП.docx',
           size: 28.81,
         },
         {
           title: 'Договор_поставки_с_Реализацией.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Договор_поставки_с_Реализацией.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Договор_поставки_с_Реализацией.docx',
           size: 23.52,
         },
         {
           title: 'Рамочный типовой договор с ИП .docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/Рамочный типовой договор с ИП .docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/Рамочный типовой договор с ИП .docx',
           size: 42.41,
         },
         {
           title: 'фотосъемка_с_искл_правом_ИП.docx',
-          link: 'https://radio.gleb.solutions/docs/Yana Davydova - docs/фотосъемка_с_искл_правом_ИП.docx',
+          link: 'https://disk.gleb.solutions/docs/Yana Davydova - docs/фотосъемка_с_искл_правом_ИП.docx',
           size: 31.24,
         },
       ],
@@ -2363,8 +2363,8 @@ Winter 2023
       </div>
       <div class="nikto-image-container">
         <div class="nikto-arrow" id="nikto-left-arrow">&lt;</div>
-        <img class="nikto-thumbnail" crossorigin="anonymous" id="nikto-first-thumbnail" src="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/nikto-37_80x80.png?v=1710005835">
-        <img class="nikto-thumbnail" crossorigin="anonymous" id="nikto-overlay-thumbnail" src="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/nikto-16_1000x1000.png?v=1710005843">
+        <img class="nikto-thumbnail" crossorigin="anonymous" id="nikto-first-thumbnail" src="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/nikto-41_80x80.png?v=1710005845">
+        <img class="nikto-thumbnail" crossorigin="anonymous" id="nikto-overlay-thumbnail" src="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/nikto-10_1000x1000.png?v=1710005845">
         <img class="nikto-thumbnail" crossorigin="anonymous" id="nikto-last-thumbnail" src="https://cdn.shopify.com/s/files/1/0337/2299/0728/files/nikto-15_80x80.png?v=1710005840">
         <div class="nikto-arrow" id="nikto-right-arrow">&gt;</div>
       </div>
@@ -2641,7 +2641,7 @@ Winter 2023
     
     let gltfLoader = new GLTFLoader();
     let dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('//gleb.solutions/cdn/shop/t/6/assets/THREE_draco_decoder.js?4487');
+    dracoLoader.setDecoderPath('//gleb.solutions/cdn/shop/t/6/assets/THREE_draco_decoder.js?4488');
     gltfLoader.setDRACOLoader(dracoLoader); 
         
     container.appendChild(renderer.domElement);
@@ -2761,4 +2761,4 @@ Winter 2023
   os.lang.CART_EMPTY = "Cart is empty."
   os.size_chart =  false;
 </script>
-<div id="WebPixelsManagerSandboxContainer" aria-hidden="true" tabindex="-1" style="height: 0px !important; width: 0px !important; position: fixed !important; visibility: hidden !important; overflow: hidden !important; z-index: -100 !important; margin: 0px !important; padding: 0px !important; border: 0px !important;"><iframe src="https://gleb.solutions/wpm@5049c50awde185c9fp43897680m7e819d87/custom/web-pixel-shopify-custom-pixel@063/sandbox/modern/" id="web-pixel-sandbox-CUSTOM-shopify-custom-pixel-LAX-5049c50awde185c9fp43897680m7e819d87" name="web-pixel-sandbox-CUSTOM-shopify-custom-pixel-LAX-5049c50awde185c9fp43897680m7e819d87" sandbox="allow-scripts allow-forms" tabindex="-1" aria-hidden="true" style="height: 0px !important; width: 0px !important; visibility: hidden !important;"></iframe></div></body></html>
+<div id="WebPixelsManagerSandboxContainer" aria-hidden="true" tabindex="-1" style="height: 0px !important; width: 0px !important; position: fixed !important; visibility: hidden !important; overflow: hidden !important; z-index: -100 !important; margin: 0px !important; padding: 0px !important; border: 0px !important;"><iframe src="https://gleb.solutions/wpm@62cf46f4w0b3aa4f8pd4b3b9bcmd2934107/custom/web-pixel-shopify-custom-pixel@063/sandbox/modern/" id="web-pixel-sandbox-CUSTOM-shopify-custom-pixel-LAX-62cf46f4w0b3aa4f8pd4b3b9bcmd2934107" name="web-pixel-sandbox-CUSTOM-shopify-custom-pixel-LAX-62cf46f4w0b3aa4f8pd4b3b9bcmd2934107" sandbox="allow-scripts allow-forms" tabindex="-1" aria-hidden="true" style="height: 0px !important; width: 0px !important; visibility: hidden !important;"></iframe></div></body></html>
