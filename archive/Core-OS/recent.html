@@ -30,6 +30,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+<script defer="" src="https://pyscript.net/latest/pyscript.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/root.css">
     <link rel="stylesheet" type="text/css" href="css/assets-base/base-page.css">
@@ -68,7 +70,7 @@
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Toggle Apps</button>
                 <ul class="dropdown-menu">
                     <p class="divider">Toggle App</p>
-                    <div id="togApp"><button class="btn-secondary">terminal [OFF]</button><button class="btn-secondary">projects [OFF]</button><button class="btn-secondary">Adobe XD Prototypes [OFF]</button><button class="btn-secondary">career [OFF]</button><button class="btn-secondary">repos [OFF]</button><button class="btn-secondary">intern [OFF]</button><button class="btn-secondary">isan [OFF]</button><button class="btn-secondary">temp [OFF]</button></div>
+                    <div id="togApp"><button class="btn-secondary">terminal [OFF]</button><button class="btn-secondary">projects [OFF]</button><button class="btn-secondary">UI UX Design [OFF]</button><button class="btn-secondary">career [OFF]</button><button class="btn-secondary">repos [OFF]</button><button class="btn-secondary">intern [OFF]</button><button class="btn-secondary">isan [OFF]</button><button class="btn-secondary">temp [OFF]</button></div>
 
 
                 </ul>
@@ -121,13 +123,13 @@
                 <div id="containment-wrapper">
                     <div class="content">
                         <svg class="scene" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
-              <path d="M -84.52,-81.13 C -94.62,-73.4 -88.88,-59.55 -90.33,-48.91 -89.29,27.31 -89.61,103.5 -88.33,179.8 -85.99,416.1 -81.32,888.9 -81.32,888.9 -81.32,888.9 974.5,888.7 1587,891.9 1518.0447431397172,719.8882742116602 1487.023143003302,643.9858827679858 1429.023143003302,532.9858827679858 1388.023143003302,437.6858827679858 1446.9868856314622,259.7222172831699 1399.9861141980189,187 1361.9899713652358,131.9878884949386 1270.0200572695285,90.50218211003099 1207.0254573036323,39.899461187132765 1161.0339430715096,2.903887422455602 1071.0378002387267,-74.45705090167269 1071.0378002387267,-74.45705090167269 1071.0378002387267,-74.45705090167269 914.5,-77.77 848.2,-80.17 537.6,-80.84 227,-81.38 -83.6,-81.6 -83.91,-81.44 -84.21,-81.29 -84.52,-81.13 Z" pathdata:id="M -84.52,-81.13 C -94.62,-73.4 -88.88,-59.55 -90.33,-48.91 -89.29,27.31 -89.61,103.5 -88.33,179.8 -85.99,416.1 -81.32,888.9 -81.32,888.9 -81.32,888.9 974.5,888.7 1587,891.9 1576,704.7 1517,625.7 1459,514.7 1418,419.4 1430,288.5 1382,187 1349,116.3 1296,54.47 1240,0.3429 1205,-33.51 1120,-83.59 1120,-83.59 1120,-83.59 914.5,-77.77 848.2,-80.17 537.6,-80.84 227,-81.38 -83.6,-81.6 -83.91,-81.44 -84.21,-81.29 -84.52,-81.13 Z"></path>
-              <path d="M 665.2,-83.08 C 413.7,-81.89 162.2,-82.43 -89.29,-81.61 -90.35,164.3 -85.06,410.2 -84.09,656.1 -83.37,733.7 -82.64,811.3 -81.92,888.9 442.4,889.8 966.7,890.7 1491,891.6 1253,747.5 1411.5548585859262,431.8823438799453 1282.5567488116887,246.61714925726355 1224.757882947146,164.27301316100863 1110.0428731431589,138.4821839840022 1046.2030243612198,61.36980663848268 1012.2830999702503,21.44399944151044 973,-76.01 973,-76.01 973,-76.01 706.6,-83.67 665.2,-83.08 Z" pathdata:id="M 665.2,-83.08 C 413.7,-81.89 162.2,-82.43 -89.29,-81.61 -90.35,164.3 -85.06,410.2 -84.09,656.1 -83.37,733.7 -82.64,811.3 -81.92,888.9 442.4,889.8 966.7,890.7 1491,891.6 1253,747.5 1349,460.4 1243,260.6 1199,176.6 1145,96.92 1083,24.95 1050,-12.63 973,-76.01 973,-76.01 973,-76.01 706.6,-83.67 665.2,-83.08 Z"></path>
-              <path d="M -85.01,-74.02 C -92.39,-66.64 -85.37,-55.79 -87.81,-46.91 -86.65,265.1 -84.66,577.2 -83.18,889.2 317.2,888.3 717.5,885.8 1118,890.4 1152,890.6 1187,890.9 1221,890 1219,768.3 1188.6408059358405,654.9293744246388 1160.3002004005327,539.2055765586555 1134.9595948652247,432.4425867953676 1128.5240426803325,314.46517142388024 1066.5240426803325,226.26484861617303 1002.5524042680332,137.07922981055606 937.7705031681866,119.75523154404003 875.0461376801469,64.05585711940117 798.1063781607861,-4.887892867139868 772.2,-78.96 772.2,-78.96 772.2,-78.96 222.1,-81.07 -85.01,-74.02 Z" pathdata:id="M -85.01,-74.02 C -92.39,-66.64 -85.37,-55.79 -87.81,-46.91 -86.65,265.1 -84.66,577.2 -83.18,889.2 317.2,888.3 717.5,885.8 1118,890.4 1152,890.6 1187,890.9 1221,890 1219,768.3 1175,659.3 1150,544.3 1128,438.4 1143,312.6 1081,227.1 1004,121.1 925.8,114.8 851.3,54.73 762,-17.34 772.2,-78.96 772.2,-78.96 772.2,-78.96 222.1,-81.07 -85.01,-74.02 Z"></path>
-              <path d="M -92.42,-79.11 C -89.97,243.8 -87.52,566.7 -85.07,889.6 201.8,889.9 488.7,889.9 775.5,895.6 880.4,896.9 1007.2198328462102,892.7263592826743 1082.3581556960453,891.6509061884494 1063.7169687294831,806.1882336340568 1049.453375902741,684.6014461422636 982.1285660620088,562.885698186026 950.0397689920987,506.83821955015674 930.2516292595813,445.04514038905637 892.3306413738646,392.6675462492364 828.6833599392131,304.8901493106342 735.1393088559239,254.34915954528978 656.0693586261353,179.97558456170324 574.5392431221848,104.57349516328553 495.0848436474158,19.6944802322221 397.9080383124669,-27.69056624997147 352.31614235867295,-48.130675180548195 276.55475631126524,-83.10366043744756 276.55475631126524,-83.10366043744756 276.55475631126524,-83.10366043744756 9.82,-84.94 -92.42,-79.11 Z" pathdata:id="M -92.42,-79.11 C -89.97,243.8 -87.52,566.7 -85.07,889.6 201.8,889.9 488.7,889.9 775.5,895.6 880.4,896.9 1063,889.5 1063,889.5 1063,889.5 1081,768.2 997.4,608.7 958.5,534.8 969.9,436.8 918.5,370.8 848.4,280.8 717,260.3 629.9,186.5 552.6,121.2 491.5,38.73 426.3,-38.61 412.9,-54.44 387.9,-87.47 387.9,-87.47 387.9,-87.47 9.82,-84.94 -92.42,-79.11 Z"></path>
-              <path d="M -88.6,95.54 C -90.38,166.1 -88.23,236.7 -88.68,307.4 L -86.19,890 C 229.7,890.2 939.8,892.4 939.8,892.4 861.4188049094793,763.114750511099 824.7811950905208,643.8024808450084 721.4,519.4 639.7640558353786,421.40864049954325 531.2234831116076,354.4285937305613 432.4206194927529,276.36305644277644 335.40644314242326,199.75389142544265 247.83503687298455,109.92615534353928 136.21475051109908,56.67049897780185 67.05720869011584,23.715811565576853 -24.82,24.2 -85.28,0.03 Z" pathdata:id="M -88.6,95.54 C -90.38,166.1 -88.23,236.7 -88.68,307.4 L -86.19,890 C 229.7,890.2 939.8,892.4 939.8,892.4 906.9,734.7 779.3,676 721.4,519.4 676.8,398.8 566.5,307.1 458.9,236.6 355.2,168.7 220.3,165.7 107.8,113.5 40.05,82.12 -24.82,24.2 -85.28,0.03 Z"></path>
-              <path d="M -95.69,252.3 -87.65,890.4 698.1,892 C 698.1,892 597.6474087710194,682.7126048588582 515.4296455280326,604.259166614791 345.60545541434243,441.6240897462486 131.4,466.5 -95.69,252.3 Z" pathdata:id="M -95.69,252.3 -87.65,890.4 698.1,892 C 698.1,892 569.8,587.1 448.9,482.7 299.7,353.9 131.4,466.5 -95.69,252.3 Z"></path>
-              <path d="M -85.59,444.4 -85.59,890.6 543.1616879574105,895.6 C 543.1616879574105,895.6 512.1960630287961,698.6217922439588 342.6504679277083,599.6886285483283 192.24537422794987,509.7674419922471 57.98,629.2 -85.59,444.4 Z" pathdata:id="M -85.59,444.4 -85.59,890.6 546.9,895.6 C 546.9,895.6 517.4,695.4 339.9,593.4 187.7,505.9 57.98,629.2 -85.59,444.4 Z"></path>
+              <path d="M -84.52,-81.13 C -94.62,-73.4 -88.88,-59.55 -90.33,-48.91 -89.29,27.31 -89.61,103.5 -88.33,179.8 -85.99,416.1 -81.32,888.9 -81.32,888.9 -81.32,888.9 974.5,888.7 1587,891.9 1526.8834263751169,717.5719296396245 1491.5948757112674,641.1971258161269 1433.5948757112674,530.1971258161269 1392.5948757112674,434.89712581612696 1444.3962370969484,264.1110806828166 1397.2430745732397,187 1360.0088871917842,129.5953483777701 1273.9822256164316,85.00695939505671 1212.054363282394,33.86673985768301 1167.7391510431921,-2.6495486890000994 1078.5049636617366,-75.84990546669944 1078.5049636617366,-75.84990546669944 1078.5049636617366,-75.84990546669944 914.5,-77.77 848.2,-80.17 537.6,-80.84 227,-81.38 -83.6,-81.6 -83.91,-81.44 -84.21,-81.29 -84.52,-81.13 Z" pathdata:id="M -84.52,-81.13 C -94.62,-73.4 -88.88,-59.55 -90.33,-48.91 -89.29,27.31 -89.61,103.5 -88.33,179.8 -85.99,416.1 -81.32,888.9 -81.32,888.9 -81.32,888.9 974.5,888.7 1587,891.9 1576,704.7 1517,625.7 1459,514.7 1418,419.4 1430,288.5 1382,187 1349,116.3 1296,54.47 1240,0.3429 1205,-33.51 1120,-83.59 1120,-83.59 1120,-83.59 914.5,-77.77 848.2,-80.17 537.6,-80.84 227,-81.38 -83.6,-81.6 -83.91,-81.44 -84.21,-81.29 -84.52,-81.13 Z"></path>
+              <path d="M 665.2,-83.08 C 413.7,-81.89 162.2,-82.43 -89.29,-81.61 -90.35,164.3 -85.06,410.2 -84.09,656.1 -83.37,733.7 -82.64,811.3 -81.92,888.9 442.4,889.8 966.7,890.7 1491,891.6 1253,747.5 1365.877982576231,452.7056255902476 1253.672841923205,256.82727448296015 1205.9497575313892,173.274044609978 1135.5681862074002,108.13393018814877 1073.0717749551582,34.77646073813213 1039.8235693290371,-3.436463608476533 973,-76.01 973,-76.01 973,-76.01 706.6,-83.67 665.2,-83.08 Z" pathdata:id="M 665.2,-83.08 C 413.7,-81.89 162.2,-82.43 -89.29,-81.61 -90.35,164.3 -85.06,410.2 -84.09,656.1 -83.37,733.7 -82.64,811.3 -81.92,888.9 442.4,889.8 966.7,890.7 1491,891.6 1253,747.5 1349,460.4 1243,260.6 1199,176.6 1145,96.92 1083,24.95 1050,-12.63 973,-76.01 973,-76.01 973,-76.01 706.6,-83.67 665.2,-83.08 Z"></path>
+              <path d="M -85.01,-74.02 C -92.39,-66.64 -85.37,-55.79 -87.81,-46.91 -86.65,265.1 -84.66,577.2 -83.18,889.2 317.2,888.3 717.5,885.8 1118,890.4 1152,890.6 1187,890.9 1221,890 1219,768.3 1223.6189400396488,643.7220947219901 1186.7122608462655,526.1423142300904 1152.805581652882,417.166422105133 1091.4043901620053,319.2478958829724 1029.4043901620053,224.12333020165414 998.8404390162004,178.05361547501715 968.4656004429571,132.461574136852 935.9366445996335,87.96947941486194 890.6913576151521,27.042146693336548 772.2,-78.96 772.2,-78.96 772.2,-78.96 222.1,-81.07 -85.01,-74.02 Z" pathdata:id="M -85.01,-74.02 C -92.39,-66.64 -85.37,-55.79 -87.81,-46.91 -86.65,265.1 -84.66,577.2 -83.18,889.2 317.2,888.3 717.5,885.8 1118,890.4 1152,890.6 1187,890.9 1221,890 1219,768.3 1175,659.3 1150,544.3 1128,438.4 1143,312.6 1081,227.1 1004,121.1 925.8,114.8 851.3,54.73 762,-17.34 772.2,-78.96 772.2,-78.96 772.2,-78.96 222.1,-81.07 -85.01,-74.02 Z"></path>
+              <path d="M -92.42,-79.11 C -89.97,243.8 -87.52,566.7 -85.07,889.6 201.8,889.9 488.7,889.9 775.5,895.6 880.4,896.9 1035.80281634633,891.0731018822817 1072.43861129369,890.5487345881878 1063.3495781960626,848.8790136175264 1065.6185593732457,727.4391823391014 989.9539844238667,586.3619532716002 954.3749772864614,521.1664503535587 950.5683257577385,440.82014925471987 905.7403958437153,381.46213497990914 838.7865996082786,292.5458273877032 725.8443283603837,257.3985009726805 642.6596041562847,183.31883841583038 563.2970927995154,113.09328163330842 493.247890980313,29.4486988945381 412.4567034359212,-33.285924073966676 383.3606424327107,-51.36371187464916 333.610506151479,-85.34106878597879 333.610506151479,-85.34106878597879 333.610506151479,-85.34106878597879 9.82,-84.94 -92.42,-79.11 Z" pathdata:id="M -92.42,-79.11 C -89.97,243.8 -87.52,566.7 -85.07,889.6 201.8,889.9 488.7,889.9 775.5,895.6 880.4,896.9 1063,889.5 1063,889.5 1063,889.5 1081,768.2 997.4,608.7 958.5,534.8 969.9,436.8 918.5,370.8 848.4,280.8 717,260.3 629.9,186.5 552.6,121.2 491.5,38.73 426.3,-38.61 412.9,-54.44 387.9,-87.47 387.9,-87.47 387.9,-87.47 9.82,-84.94 -92.42,-79.11 Z"></path>
+              <path d="M -88.6,95.54 C -90.38,166.1 -88.23,236.7 -88.68,307.4 L -86.19,890 C 229.7,890.2 939.8,892.4 939.8,892.4 858.0131644046141,765.2424524125912 828.1868355953858,641.39152451081 721.4,519.4 636.9907973198116,423.101579783393 528.581970843811,357.97256779558523 430.43783846380825,279.3405216423876 333.92429785500616,202.07921269859034 249.89686565059142,105.74979928921735 138.34245241259114,52.41509517481769 69.0795135933916,19.342494870838177 -24.82,24.2 -85.28,0.03 Z" pathdata:id="M -88.6,95.54 C -90.38,166.1 -88.23,236.7 -88.68,307.4 L -86.19,890 C 229.7,890.2 939.8,892.4 939.8,892.4 906.9,734.7 779.3,676 721.4,519.4 676.8,398.8 566.5,307.1 458.9,236.6 355.2,168.7 220.3,165.7 107.8,113.5 40.05,82.12 -24.82,24.2 -85.28,0.03 Z"></path>
+              <path d="M -95.69,252.3 -87.65,890.4 698.1,892 C 698.1,892 591.1389979109922,660.3663204725535 499.88054108428173,575.8487314954233 334.8765733481544,421.12148488684574 131.4,466.5 -95.69,252.3 Z" pathdata:id="M -95.69,252.3 -87.65,890.4 698.1,892 C 698.1,892 569.8,587.1 448.9,482.7 299.7,353.9 131.4,466.5 -95.69,252.3 Z"></path>
+              <path d="M -85.59,444.4 -85.59,890.6 513.797233660316,895.6 C 513.797233660316,895.6 471.31911974130344,723.9289816986222 364.2554032136535,649.085828004926 227.9493048413429,540.1462124999493 57.98,629.2 -85.59,444.4 Z" pathdata:id="M -85.59,444.4 -85.59,890.6 546.9,895.6 C 546.9,895.6 517.4,695.4 339.9,593.4 187.7,505.9 57.98,629.2 -85.59,444.4 Z"></path>
             </svg>
                     </div>
                     <nav id="taskbar-nav" class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
@@ -182,25 +184,10 @@
 
                             <div class="collapse navbar-collapse" id="navbarsExample02">
                                 <ul id="task-windows" class="navbar-nav me-auto">
-
-                                    <!--<li class="nav-item minWindow">
-                                        <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br>
-                                    </li>-->
-
                                 </ul>
-                                <!--
-                                    <form>
-                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                                </form>
-                                -->
-
                             </div>
                         </div>
                     </nav>
-
-
-
 
                     <div id="icon-container">
                         <div class="container noti-box">
@@ -289,51 +276,12 @@
 
                         </div>
                     </div>
-                    <!--
-                    <div id="draggable-js-collective" class="win-prop box-sm-resize application-non-drag isan-prop">
-                        <div class="behind-isan"></div>
-                        <div class="header">
-                            <div class="sub-menu-title">
-                                <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
-                                <div class="text">Collective <strong>Inactive</strong></div>
-                            </div>
-                            <div class="buttons">
-                                <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
-                                <div id="windowed" type="button" class="btn windowed" style="display: none; pointer-events: none;"><i class="bi bi-fullscreen-exit" style="display: none; pointer-events: none;"></i></div>
-                                <div id="maximise" type="button" class="btn maximise" style="display: none; pointer-events: none;"><i class="bi bi-arrows-fullscreen" style="display: none; pointer-events: none;"></i></div>
-
-                                <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
-                            </div>
-                        </div>
-                        <div class="form isan-form">
-
-
-
-                            <div class="row isan-prop position-relative">
-                                <div class="col p-4 d-flex flex-column position-static">
-                                    <kbd class="d-inline-block mb-2 text-primary">Landing Page</kbd>
-                                    <h3 class="mb-0">Collective Hub</h3>
-                                    <div class="mb-1 text-muted">Nov 12</div>
-                                    <p class="card-text mb-auto">Under development by the Collective, ISAN uses in-game station transmitters as reference points, in order to calculate your relative position. This is the private home of that project.</p>
-                                    <a href="https://collective-inactive.web.app/" target="blank_"><img class="bd-placeholder-img lazyload isan-img" width="300" height="250" src="/img/images/applications/sb-collective/profileIcon.png" alt="..."></a>
-
-                                    <a href="https://wiki.starbasegame.com/index.php/Collective" target="blank_"><img class="isan-img2" width="300" height="250" src="/img/icons/applications/collective-logo.png" alt="..."></a>
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-                -->
                     <div id="draggable-js-temp" class="win-prop box-sm-resize application-non-drag isan-prop ui-draggable ui-draggable-handle maxOff" style="display: none;">
                         <div class="behind-isan"></div>
                         <div class="header">
                             <div class="sub-menu-title">
                                 <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
-                                <div class="text">Collective <strong>Inactive</strong></div>
+                                <div class="text">Collective <strong>Under Construction</strong></div>
                             </div>
                             <div class="buttons">
                                 <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
@@ -343,25 +291,7 @@
                                 <div id="close" type="button" class="btn close"><i class="bi bi-x-square"></i></div>
                             </div>
                         </div>
-                        <div class="form isan-form">
-
-
-
-                            <div class="row isan-prop position-relative">
-                                <div class="col p-4 d-flex flex-column position-static">
-                                    <kbd class="d-inline-block mb-2 text-primary">Landing Page</kbd>
-                                    <h3 class="mb-0">Collective Hub</h3>
-                                    <div class="mb-1 text-muted">Nov 12</div>
-                                    <p class="card-text mb-auto">Under development by the Collective, ISAN uses in-game station transmitters as reference points, in order to calculate your relative position. This is the private home of that project.</p>
-                                    <a href="https://collective-inactive.web.app/" target="blank_"><img class="bd-placeholder-img lazyload isan-img" width="300" height="250" src="/img/images/applications/sb-collective/profileIcon.png" alt="..."></a>
-
-                                    <a href="https://wiki.starbasegame.com/index.php/Collective" target="blank_"><img class="isan-img2" width="300" height="250" src="/img/icons/applications/collective-logo.png" alt="..."></a>
-
-                                </div>
-                            </div>
-
-
-
+                        <div class="form">
                         </div>
                     </div>
 
@@ -369,7 +299,7 @@
                         <div class="header">
                             <div class="sub-menu-title">
                                 <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Desktop_Folder_2.png" alt="Card image cap"></div>
-                                <div class="text">Adobe XD Prototypes</div>
+                                <div class="text">UI-UX <strong>Under Construction</strong></div>
                             </div>
                             <div class="buttons">
                                 <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
@@ -409,9 +339,9 @@
                   LinkedIn Profile
                   <span class="badge badge-primary badge-pill">ACTIVE</span>
                 </a>
-                                <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-success" href="/img/images/applications/CareerImage/Timothy Howard CV July 2021.pdf" target="_blank">
+                                <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-success" href="#" target="_blank">
                   Resume [.pdf]
-                  <span class="badge badge-primary badge-pill">29-08-21</span>
+                  <span class="badge badge-primary badge-pill">N/A</span>
                 </a>
                                 <a rel="noopener" class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger" href="https://codepen.io/timhow38" target="_blank">
                   CodePen Profile
@@ -443,7 +373,7 @@
 
                                     <div class="print"><strong>[CoreCLI]</strong> - Exploring WebCli Possibilities.<br>Type "help" for more information.
                                     </div>
-                                    <div id="cli" type="text" inputmode="search"><span class="label"></span><span class="prompt"><span class="cursor">&nbsp;</span></span>
+                                    <div id="cli" type="text" inputmode="search"><span class="conlabel"></span><span class="prompt"><span class="cursor">&nbsp;</span></span><py-script id="pyID"></py-script>
                                     </div>
                                 </div>
                             </div>
@@ -466,7 +396,7 @@
                         <div class="header">
                             <div class="sub-menu-title">
                                 <div class="icon"><img class="icon-img" src="/img/icons/desktop/sm/Notes_Purple.png" alt="Card image cap"></div>
-                                <div class="text">Projects</div>
+                                <div class="text">Projects <strong>Need to Update</strong></div>
                             </div>
                             <div class="buttons">
                                 <div id="minimize" type="button" class="btn minimize"><i class="bi bi-dash-circle"></i></div>
@@ -478,7 +408,7 @@
                         </div>
                         <div class="form sub-folder" id="sub-folder-0">
 
-                        <div id="app-icon-Adobe XD Prototypes" class="desk-prop" style="left: 20px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">Adobe XD</p></div></div></div><div id="app-icon-intern" class="desk-prop ui-draggable ui-draggable-handle" style="left: 115px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">Design Factory</p></div></div></div><div id="app-icon-isan" class="desk-prop ui-draggable ui-draggable-handle" style="left: 210px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">ISAN Starmap</p></div></div></div><div id="app-icon-temp" class="desk-prop ui-draggable ui-draggable-handle" style="left: 305px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">C-SB Inactive</p></div></div></div></div>
+                        <div id="app-icon-UI UX Design" class="desk-prop" style="left: 20px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">UI UX Design</p></div></div></div><div id="app-icon-intern" class="desk-prop ui-draggable ui-draggable-handle" style="left: 115px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">Design Factory</p></div></div></div><div id="app-icon-isan" class="desk-prop ui-draggable ui-draggable-handle" style="left: 210px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">ISAN Starmap</p></div></div></div><div id="app-icon-temp" class="desk-prop ui-draggable ui-draggable-handle" style="left: 305px; top: 50px;"><div class="card"><img class="card-img-top mx-auto d-block" src="/img/icons/desktop/bg/Desktop_Folder_2.png" alt="Card image cap"><div class="card-body"><p class="card-text">C-SB Inactive</p></div></div></div></div>
                     </div>
                     <div id="draggable-js-repos" class="win-prop box-lg-resize application-non-drag ui-draggable ui-draggable-handle maxOff" style="display: none;">
                         <div class="header">
@@ -552,4 +482,4 @@
 
 
 
-</div></body></html>
+</div><py-terminal auto="" docked="" class="py-terminal-hidden py-terminal-docked"><pre class="py-terminal"></pre></py-terminal></body></html>
