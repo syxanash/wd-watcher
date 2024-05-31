@@ -176,6 +176,8 @@
 				<span class="iconLabel">Stickers</span></a></p>
 				<p><a href="#" id="prompts-link" onclick="showWindow('prompts')"><img src="img/icons/icon_prompts_2x.png" alt="Daily Prompts"><br>
 				<span class="iconLabel">Daily Prompts</span></a></p>
+				<p><a href="#" id="todo-link" onclick="showWindow('todo')"><img src="img/icons/icon_todo_2x.png" alt="To-do List"><br>
+				<span class="iconLabel">To-do</span></a></p>
 			</div>
 			</div>
 		</div>
@@ -237,14 +239,14 @@
 			
 			<div class="content">
 				<div class="progMenu">
-					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-15" role="menu" tabindex="0">
-						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-16" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>File</a>
+					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-23" role="menu" tabindex="0">
+						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-24" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>File</a>
 							<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
 								<li class="ui-menu-item"><a href="#" id="textpad-save-menu" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Save</a></li>
 								<li class="ui-menu-item"><a href="#" id="textpad-open-menu" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Open...</a></li>
 							</ul>
 						</li>
-						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-17" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>Edit</a>
+						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-25" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>Edit</a>
 							<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
 								<li class="ui-menu-item"><a href="#" id="textpad-wordcount" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Word count</a></li>
 								<li class="ui-menu-item"><a href="#" id="textpad-spellcheck" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Spellcheck</a></li>
@@ -264,7 +266,11 @@
 			
 			
 
-			
+			<div class="off" id="textpad-modalDialogue" title="Warning!">
+				<p>Are you sure? Anything that has not been saved will be lost!</p>
+				
+				<p><input type="button" value="No" class="dialogueBtn"> <input type="button" value="Yes" id="textpad_ybtn" class="dialogueBtn"></p>
+			</div>
 		</div>
 		
 		<div class="window draggable off ui-draggable ui-draggable-handle" id="myComputer">
@@ -331,6 +337,9 @@
 				<h1>To Do</h1>
 				
 				<ul>
+					<li>Make all apps use one universal alert box</li>
+					<li>Implement local storage</li>
+					<li>Add Documents folder and put localstorage files in it</li>
 					<li><strike>Make window code modular</strike></li>
 					<li><strike>Implement close and minimize menu buttons</strike></li>
 					<li><strike>Add desktop icons</strike></li>
@@ -344,6 +353,9 @@
 					<li>Get started on a pixel editor</li>
 					<li>Pillbug buddy</li>
 					<li>Add search function to TextPad and CSVEdit</li>
+					<li>Add view mode to TextPad</li>
+					<li>Make icons for elements in TextPad, which should free up space for more elements</li>
+					<li>Eventually I'd like to implement document tree view for TextPad</li>
 					<li><strike>Finish adding mem function to calculator</strike></li>
 					<li>Add column/row names and sorting function to CSVEdit</li>
 					<li>Finish implementing Webamp playlists; may require a different, non-programmatic approach</li>
@@ -365,7 +377,7 @@
 			<div class="content">
 				<h1>Credits</h1>
 				
-				<p><img src="img/pillBug_hanginout.jpg" alt="Where is that pillbug goin? Image from Wikimedia Commons: https://commons.wikimedia.org/wiki/Armadillidium_vulgare#/media/File:Armadillidium_vulgare_2418.JPG" class="inline"> Backgrounds 1-10 are courtesy of the <a href="https://modus-interactive.itch.io/bryce-render-pack-v1">Bryce Render pack volumes 1 and 2</a> by <a href="https://modus-interactive.itch.io/">Modus Interactive</a>. I dithered and modified the colors to match my theme using <a href="https://dithermark.com/">Dithermark</a>. Backgrounds 11-15 were made using <a href="https://the-l0bster.itch.io/i-need-more-space">I need more space</a> by <a href="https://the-l0bster.itch.io/">the-L0bster</a></p>
+				<p><img src="img/PillBug_hanginout.jpg" alt="Where is that pillbug goin? Image from Wikimedia Commons: https://commons.wikimedia.org/wiki/Armadillidium_vulgare#/media/File:Armadillidium_vulgare_2418.JPG" class="inline"> Backgrounds 1-10 are courtesy of the <a href="https://modus-interactive.itch.io/bryce-render-pack-v1">Bryce Render pack volumes 1 and 2</a> by <a href="https://modus-interactive.itch.io/">Modus Interactive</a>. I dithered and modified the colors to match my theme using <a href="https://dithermark.com/">Dithermark</a>. Backgrounds 11-15 were made using <a href="https://the-l0bster.itch.io/i-need-more-space">I need more space</a> by <a href="https://the-l0bster.itch.io/">the-L0bster</a></p>
 				
 				<p>All icons are by me, <a href="https://thefrugalgamer.net">FrugalGamer</a></p>
 
@@ -418,8 +430,8 @@
 			
 			<div class="content">
 				<div class="progMenu">
-					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-18" role="menu" tabindex="0">
-						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-19" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>File</a>
+					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-26" role="menu" tabindex="0">
+						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-27" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>File</a>
 						<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
 							<li class="ui-menu-item"><a href="#" id="calc-show-mem" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Memory</a></li>
 						</ul></li>
@@ -471,12 +483,12 @@
 			
 			<div class="content">
 				<div class="progMenu">
-					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-20" role="menu" tabindex="0">
-						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-21" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>File</a>
+					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-28" role="menu" tabindex="0">
+						<li class="ui-menu-item"><a href="#" aria-haspopup="true" id="ui-id-29" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>File</a>
 						<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
-							<li class="ui-menu-item"><a href="#" class="new ui-menu-item-wrapper" id="ui-id-22" tabindex="-1" role="menuitem">New</a></li>
-							<li class="ui-menu-item"><a href="#" class="save ui-menu-item-wrapper" id="ui-id-23" tabindex="-1" role="menuitem">Save</a></li>
-							<li class="ui-menu-item"><a href="#" class="open ui-menu-item-wrapper" id="ui-id-24" tabindex="-1" role="menuitem">Open</a></li>
+							<li class="ui-menu-item"><a href="#" class="new ui-menu-item-wrapper" id="ui-id-30" tabindex="-1" role="menuitem">New</a></li>
+							<li class="ui-menu-item"><a href="#" class="save ui-menu-item-wrapper" id="ui-id-31" tabindex="-1" role="menuitem">Save</a></li>
+							<li class="ui-menu-item"><a href="#" class="open ui-menu-item-wrapper" id="ui-id-32" tabindex="-1" role="menuitem">Open</a></li>
 						</ul></li>
 						<li class="ui-menu-item"><a href="#" id="csv-about-menu" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">About</a></li>
 					</ul>
@@ -553,24 +565,24 @@
 				
 				<div id="wheelOfTheYear">
 					<img src="img/wheelOfTheYear.png" alt="Wheel of the Year illustration"><br>
-					<span class="currentDate">05/09/2024</span><br>
-					<b>Current lunar phase:</b> <span class="lunarPhase">Waxing Gibbous</span><br>
-					<b>Next full moon:</b> <span class="nextFull">Thu May 23 2024 16:27:53 GMT+0100 (Irish Standard Time)</span><br>
+					<span class="currentDate">05/20/2024</span><br>
+					<b>Current lunar phase:</b> <span class="lunarPhase"></span><br>
+					<b>Next full moon:</b> <span class="nextFull">Thu May 23 2024 10:30:18 GMT+0100 (Irish Standard Time)</span><br>
 					<b>Next Sabbat:</b> <span class="nextSabbat">Litha, 6/19</span><br>
 				</div>
 			
 				<h2>Runes</h2>
 				<div class="runes ui-accordion ui-widget ui-helper-reset" role="tablist">
-					<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-28" aria-controls="witchesRunes" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Witches Runes</h3>
-					<div id="witchesRunes" class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" aria-labelledby="ui-id-28" role="tabpanel" aria-hidden="true" style="display: none;">
+					<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-35" aria-controls="witchesRunes" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Witches Runes</h3>
+					<div id="witchesRunes" class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" aria-labelledby="ui-id-35" role="tabpanel" aria-hidden="true" style="display: none;">
 						<span class="error" style="display: none;">ERROR: Please enter your intention</span><br>
 						<input type="text" value="Enter intention" class="intention"><br><input type="button" value="Draw rune" onclick="pullWitchRune()"> <input type="button" value="clear" onclick="clearDiv('wruneResult')">
 						<div id="wruneResult"></div>
 						<p>You can pull as many runes as you like by clicking the button above. Hover over each rune to see its meaning</p>
 					</div>
 
-					<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-29" aria-controls="cityRunes" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>City Runes</h3>
-					<div id="cityRunes" class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" aria-labelledby="ui-id-29" role="tabpanel" aria-hidden="true" style="display: none;">
+					<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-36" aria-controls="cityRunes" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>City Runes</h3>
+					<div id="cityRunes" class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" aria-labelledby="ui-id-36" role="tabpanel" aria-hidden="true" style="display: none;">
 						<p>City Runes were created by Christopher Penczack in his book <i>City Magick,</i> and I think are a fun way to work modern world symbols into one's divination practice.</p>
 						<span class="error" style="display: none;">ERROR: Please enter your intention</span><br>
 						<input type="text" value="Enter intention" class="intention"><br><input type="button" value="Draw rune" onclick="pullCityRune()"> <input type="button" value="clear" onclick="clearDiv('cruneResult')">
@@ -589,7 +601,7 @@
 			
 			<div class="content">
 				<div class="progMenu">
-					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-25" role="menu" tabindex="0">
+					<ul class="menu ui-menu ui-widget ui-widget-content" id="ui-id-33" role="menu" tabindex="0">
 						<li class="ui-menu-item"><a href="#" id="tarot-credits-menu" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Credits</a>
 					</li></ul>
 				</div>
@@ -607,12 +619,12 @@
 				
 				<div id="tarotCards" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
 					<ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
-						<li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="singleCard" aria-labelledby="ui-id-33" aria-selected="true" aria-expanded="true"><a href="#singleCard" tabindex="-1" class="ui-tabs-anchor" id="ui-id-33">Single Card</a></li>
-						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="cardSpreads" aria-labelledby="ui-id-34" aria-selected="false" aria-expanded="false"><a href="#cardSpreads" tabindex="-1" class="ui-tabs-anchor" id="ui-id-34">Card Spreads</a></li>
-						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="cardDictionary" aria-labelledby="ui-id-35" aria-selected="false" aria-expanded="false"><a href="#cardDictionary" tabindex="-1" class="ui-tabs-anchor" id="ui-id-35">Tarot Dictionary</a></li>
+						<li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="singleCard" aria-labelledby="ui-id-40" aria-selected="true" aria-expanded="true"><a href="#singleCard" tabindex="-1" class="ui-tabs-anchor" id="ui-id-40">Single Card</a></li>
+						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="cardSpreads" aria-labelledby="ui-id-41" aria-selected="false" aria-expanded="false"><a href="#cardSpreads" tabindex="-1" class="ui-tabs-anchor" id="ui-id-41">Card Spreads</a></li>
+						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="cardDictionary" aria-labelledby="ui-id-42" aria-selected="false" aria-expanded="false"><a href="#cardDictionary" tabindex="-1" class="ui-tabs-anchor" id="ui-id-42">Tarot Dictionary</a></li>
 					</ul>
 				
-					<div id="singleCard" aria-labelledby="ui-id-33" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
+					<div id="singleCard" aria-labelledby="ui-id-40" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
 						<h3>Single Card</h3>
 						<p>You can pull as many cards as you like by clicking the "Draw single card" button, but they will not be unique as they are in the spreads section. Their meaning and other info will be displayed below.</p>
 						<input type="button" value="Draw single card" onclick="displayTarotCard()"> <input type="button" value="clear" onclick="clearDiv('tarotResult')">
@@ -620,7 +632,7 @@
 						<div class="clear"></div>
 					</div>
 
-					<div id="cardSpreads" aria-labelledby="ui-id-34" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+					<div id="cardSpreads" aria-labelledby="ui-id-41" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
 						<h3>Card Spreads</h3>
 
 						<p>Here you can pull specific spreads</p>
@@ -653,7 +665,7 @@
 						<div class="clear"></div>
 					</div>
 
-					<div id="cardDictionary" aria-labelledby="ui-id-35" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+					<div id="cardDictionary" aria-labelledby="ui-id-42" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
 						<p>Coming soon</p>
 					</div>
 
@@ -676,12 +688,12 @@
 				
 				<div id="ftharkRunes" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
 					<ul class="runes ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" role="tablist">
-						<li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="singleRunes" aria-labelledby="ui-id-30" aria-selected="true" aria-expanded="true"><a href="#singleRunes" tabindex="-1" class="ui-tabs-anchor" id="ui-id-30">Single Runes</a></li>
-						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="runeSpreads" aria-labelledby="ui-id-31" aria-selected="false" aria-expanded="false"><a href="#runeSpreads" tabindex="-1" class="ui-tabs-anchor" id="ui-id-31">Rune Spreads</a></li>
-						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="runeDictionary" aria-labelledby="ui-id-32" aria-selected="false" aria-expanded="false"><a href="#runeDictionary" tabindex="-1" class="ui-tabs-anchor" id="ui-id-32">Rune Dictionary</a></li>
+						<li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="singleRunes" aria-labelledby="ui-id-37" aria-selected="true" aria-expanded="true"><a href="#singleRunes" tabindex="-1" class="ui-tabs-anchor" id="ui-id-37">Single Runes</a></li>
+						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="runeSpreads" aria-labelledby="ui-id-38" aria-selected="false" aria-expanded="false"><a href="#runeSpreads" tabindex="-1" class="ui-tabs-anchor" id="ui-id-38">Rune Spreads</a></li>
+						<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="runeDictionary" aria-labelledby="ui-id-39" aria-selected="false" aria-expanded="false"><a href="#runeDictionary" tabindex="-1" class="ui-tabs-anchor" id="ui-id-39">Rune Dictionary</a></li>
 					</ul>
 				
-					<div id="singleRunes" aria-labelledby="ui-id-30" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
+					<div id="singleRunes" aria-labelledby="ui-id-37" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
 						<h3>Single Runes</h3>
 						<p>You can pull as many runes as you like by clicking the "Draw single rune" button, but they will not be unique as they are in the spreads section. Their meaning and other info will be displayed below.</p>
 						<input type="button" value="Draw single rune" onclick="displayFtharkRune()"> <input type="button" value="clear" onclick="clearDiv('fruneResult')">
@@ -689,7 +701,7 @@
 						<div class="clear"></div>
 					</div>
 
-					<div id="runeSpreads" aria-labelledby="ui-id-31" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+					<div id="runeSpreads" aria-labelledby="ui-id-38" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
 						<h3>Rune Spreads</h3>
 						
 						<p>Here you can pull specific spreads</p>
@@ -721,7 +733,7 @@
 						<div id="ftharkSpreadResult"></div>
 					</div>
 					
-					<div id="runeDictionary" aria-labelledby="ui-id-32" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+					<div id="runeDictionary" aria-labelledby="ui-id-39" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
 						<h3>Rune Dictionary</h3>
 						
 						<p>The runes are divided into three different groups, known as aetts. These aetts are each named and governed by a god from the Norse pantheon, though not everyone agrees on what they mean.</p>
@@ -1130,27 +1142,54 @@
 			</div>
 		</div>
 
+		<div class="window draggable off ui-draggable ui-draggable-handle" id="todo">
+			<div class="menuBar">
+				<span id="todo-span" class="windowTitle">To-do list</span>
+				<a href="#" class="minimize">_</a> | <a href="#" class="close">X</a>
+			</div>
+
+			<div class="content">
+				<input type="button" value="+ Add new" id="todo-addNew"> <input type="button" value="Export" id="todo-export"> <input type="button" value="Import" id="todo-import">
+
+				<div id="todo-items"></div>
+			</div>
+		</div>
+
 	
 	
 	
 	<ul id="beginMenu" class="beginMenuLinks ui-menu ui-widget ui-widget-content" style="display: none" role="menu" tabindex="0">
-		<li class="ui-menu-item"><div id="ui-id-1" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_winamp_1x.png" alt="icon"> <a href="#" onclick="startWebamp()">Winamp</a></div></li>
-		<li class="ui-menu-item"><div id="ui-id-2" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_terminal_1x.png" alt="icon"> <a href="#" onclick="initializeFetch()">FrugalFetch</a></div></li>
-		<li class="ui-menu-item"><div id="ui-id-3" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_book_1x.png" alt="icon"> <a href="#" onclick="showWindow('ePubReader')">ePub Reader</a></div></li>
-		<li class="ui-menu-item"><div id="ui-id-4" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_settings_1x.png" alt="icon"> <a href="#" onclick="showWindow('settings')">Settings</a></div></li>
-		<li class="ui-menu-item"><div id="ui-id-5" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_calculator_1x.png" alt="icon"> <a href="#" onclick="showWindow('calculator')">Calculator</a></div></li>
-		<li class="ui-menu-item"><div id="ui-id-6" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_textpad_1x.png" alt="icon"> <a href="#" onclick="showWindow('textpad')">Textpad</a></div></li>
-		<li class="ui-menu-item"><div id="ui-id-7" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_csv_1x.png" alt="icon"> <a href="#" onclick="showWindow('CsvEdit')">CSVEdit</a></div></li>
-		<li class="ui-menu-item"><div aria-haspopup="true" id="ui-id-8" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span><img src="img/icons/icon_pentacle_1x.png" alt="icon"> <a href="#">Pagan Tools</a></div>
+		<li class="ui-menu-item"><img src="img/icons/icon_folder_1x.png" alt="Folder" aria-haspopup="true" id="ui-id-1" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> Office
 			<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
-				<li class="ui-menu-item"><img src="img/icons/icon_pentacle_1x.png" alt="icon" id="ui-id-9" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> <a href="#" onclick="showWindow('paganTools')" id="ui-id-10" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Main</a></li>
-				<li class="ui-menu-item"><img src="img/icons/icon_fthark_1x.png" alt="icon" id="ui-id-11" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> <a href="#" onclick="showWindow('ftharkReader')" id="ui-id-12" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Fthark Reader</a></li>
-				<li class="ui-menu-item"><img src="img/icons/icon_tarot_1x.png" alt="icon" id="ui-id-13" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> <a href="#" onclick="showWindow('tarotReader')" id="ui-id-14" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Tarot Reader</a></li>
+				<li class="ui-menu-item"><div id="ui-id-2" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_calculator_1x.png" alt="icon"> <a href="#" onclick="showWindow('calculator')">Calculator</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-3" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_textpad_1x.png" alt="icon"> <a href="#" onclick="showWindow('textpad')">Textpad</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-4" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_csv_1x.png" alt="icon"> <a href="#" onclick="showWindow('csvEdit')">CSVEdit</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-5" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_todo_1x.png" alt="icon"> <a href="#" onclick="showWindow('todo')">To-do</a></div></li>	
+			</ul>
+		</li>
+		<li class="ui-menu-item"><img src="img/icons/icon_folder_1x.png" alt="Folder" aria-haspopup="true" id="ui-id-6" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> Entertainment
+			<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
+				<li class="ui-menu-item"><div id="ui-id-7" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_stickers_1x.png" alt="Stickers"> <a href="#" id="stickers-link" onclick="showWindow('stickers')">Stickers</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-8" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_minesweeper_1x.png" alt="Minesweeper"> <a href="#" onclick="showWindow('minesweeper')">Minesweeper</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-9" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_jspaint_1x.png" alt="JSPaint"> <a href="#" onclick="showWindow('jspaint')" id="jspaint-link">JSPaint</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-10" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_book_1x.png" alt="icon"> <a href="#" onclick="showWindow('ePubReader')">ePub Reader</a></div></li>
+				<li class="ui-menu-item"><div id="ui-id-11" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_winamp_1x.png" alt="icon"> <a href="#" onclick="startWebamp()">Winamp</a></div></li>
+			</ul>
+		</li>
+		<li class="ui-menu-item"><div id="ui-id-12" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_prompts_1x.png" alt="Daily Prompts"> <a href="#" id="prompts-link" onclick="showWindow('prompts')">Daily Prompts</a></div></li>
+		<li class="ui-menu-item"><div id="ui-id-13" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_weather_1x.png" alt="Today's Weather"> <a href="#" onclick="showWindow('weather')">Today's Weather</a></div></li>
+		<li class="ui-menu-item"><div id="ui-id-14" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_terminal_1x.png" alt="icon"> <a href="#" onclick="initializeFetch()">FrugalFetch</a></div></li>
+		<li class="ui-menu-item"><div id="ui-id-15" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><img src="img/icons/icon_settings_1x.png" alt="icon"> <a href="#" onclick="showWindow('settings')">Settings</a></div></li>
+		<li class="ui-menu-item"><div aria-haspopup="true" id="ui-id-16" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"><span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span><img src="img/icons/icon_pentacle_1x.png" alt="icon"> <a href="#">Pagan Tools</a></div>
+			<ul role="menu" aria-hidden="true" aria-expanded="false" class="ui-menu ui-widget ui-widget-content ui-front" style="display: none;">
+				<li class="ui-menu-item"><img src="img/icons/icon_pentacle_1x.png" alt="icon" id="ui-id-17" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> <a href="#" onclick="showWindow('paganTools')" id="ui-id-18" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Main</a></li>
+				<li class="ui-menu-item"><img src="img/icons/icon_fthark_1x.png" alt="icon" id="ui-id-19" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> <a href="#" onclick="showWindow('ftharkReader')" id="ui-id-20" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Fthark Reader</a></li>
+				<li class="ui-menu-item"><img src="img/icons/icon_tarot_1x.png" alt="icon" id="ui-id-21" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper"> <a href="#" onclick="showWindow('tarotReader')" id="ui-id-22" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Tarot Reader</a></li>
 			</ul>
 		</li>
 	</ul>
 
-	<div id="calendar" class="off"><table class="calendar"><thead><tr class="calendar-title"><th colspan="7">May 2024</th></tr><tr class="calendar-header"><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr></thead><tbody><tr><td class="pad"> </td><td class="pad"> </td><td class="pad"> </td><td class="day" title=" "><div>1</div><div> </div></td><td class="day" title=" "><div>2</div><div> </div></td><td class="day" title=" "><div>3</div><div> </div></td><td class="day" title=" "><div>4</div><div> </div></td></tr><tr><td class="day" title=" "><div>5</div><div> </div></td><td class="day" title=" "><div>6</div><div> </div></td><td class="day" title=" "><div>7</div><div> </div></td><td class="day" title=" "><div>8</div><div> </div></td><td class="day today" title=" "><div>9</div><div> </div></td><td class="day" title=" "><div>10</div><div> </div></td><td class="day" title=" "><div>11</div><div> </div></td></tr><tr><td class="day" title=" "><div>12</div><div> </div></td><td class="day" title=" "><div>13</div><div> </div></td><td class="day" title=" "><div>14</div><div> </div></td><td class="day" title=" "><div>15</div><div> </div></td><td class="day" title=" "><div>16</div><div> </div></td><td class="day" title=" "><div>17</div><div> </div></td><td class="day" title=" "><div>18</div><div> </div></td></tr><tr><td class="day" title=" "><div>19</div><div> </div></td><td class="day" title=" "><div>20</div><div> </div></td><td class="day" title=" "><div>21</div><div> </div></td><td class="day" title=" "><div>22</div><div> </div></td><td class="day" title=" "><div>23</div><div> </div></td><td class="day" title=" "><div>24</div><div> </div></td><td class="day" title=" "><div>25</div><div> </div></td></tr><tr><td class="day" title=" "><div>26</div><div> </div></td><td class="day" title=" "><div>27</div><div> </div></td><td class="day" title=" "><div>28</div><div> </div></td><td class="day" title=" "><div>29</div><div> </div></td><td class="day" title=" "><div>30</div><div> </div></td><td class="day" title=" "><div>31</div><div> </div></td><td class="pad"> </td></tr></tbody></table></div>
+	<div id="calendar" class="off"><table class="calendar"><thead><tr class="calendar-title"><th colspan="7">May 2024</th></tr><tr class="calendar-header"><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr></thead><tbody><tr><td class="pad"> </td><td class="pad"> </td><td class="pad"> </td><td class="day" title=" "><div>1</div><div> </div></td><td class="day" title=" "><div>2</div><div> </div></td><td class="day" title=" "><div>3</div><div> </div></td><td class="day" title=" "><div>4</div><div> </div></td></tr><tr><td class="day" title=" "><div>5</div><div> </div></td><td class="day" title=" "><div>6</div><div> </div></td><td class="day" title=" "><div>7</div><div> </div></td><td class="day" title=" "><div>8</div><div> </div></td><td class="day" title=" "><div>9</div><div> </div></td><td class="day" title=" "><div>10</div><div> </div></td><td class="day" title=" "><div>11</div><div> </div></td></tr><tr><td class="day" title=" "><div>12</div><div> </div></td><td class="day" title=" "><div>13</div><div> </div></td><td class="day" title=" "><div>14</div><div> </div></td><td class="day" title=" "><div>15</div><div> </div></td><td class="day" title=" "><div>16</div><div> </div></td><td class="day" title=" "><div>17</div><div> </div></td><td class="day" title=" "><div>18</div><div> </div></td></tr><tr><td class="day" title=" "><div>19</div><div> </div></td><td class="day today" title=" "><div>20</div><div> </div></td><td class="day" title=" "><div>21</div><div> </div></td><td class="day" title=" "><div>22</div><div> </div></td><td class="day" title=" "><div>23</div><div> </div></td><td class="day" title=" "><div>24</div><div> </div></td><td class="day" title=" "><div>25</div><div> </div></td></tr><tr><td class="day" title=" "><div>26</div><div> </div></td><td class="day" title=" "><div>27</div><div> </div></td><td class="day" title=" "><div>28</div><div> </div></td><td class="day" title=" "><div>29</div><div> </div></td><td class="day" title=" "><div>30</div><div> </div></td><td class="day" title=" "><div>31</div><div> </div></td><td class="pad"> </td></tr></tbody></table></div>
 	
 	<div id="taskBar">
 		<a href="#" class="toggleMenu" id="toggleBegin">Begin</a>
@@ -1159,12 +1198,16 @@
 		</ul>
 	
 		<div id="rightTaskbar">
-			<span id="swClock" tooltip="Swatch time">686.42</span> <img src="img/icon_tb_clock.png" alt=""> <span id="rtClock">4:28:26 pm</span>
+			<span id="swClock" tooltip="Swatch time">438.03</span> <img src="img/icon_tb_clock.png" alt=""> <span id="rtClock">10:30:45 am</span>
 		</div>
 	</div>
+
+	<!-- This is a modal window that can be used by all apps -->
+	
 	
 	<script>
 		// javascript functions only here
+		// Disabling for now because it's causing issues locally
 		var dictionary = new Typo("en_US");
 		
 		//This shows the window you pass to it. I've done this in javascript rather than jQuery because it's
@@ -1248,26 +1291,25 @@
 		}
 </script>
 <script src="script/epubFunctions.js"></script>
+<script src="script/todo.js"></script>
 
 
 
-<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="modalDialogue" aria-labelledby="ui-id-26" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-26" class="ui-dialog-title">Warning!</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="modalDialogue" style="display: block;">
-				<p>Are you sure? Anything that has not been saved will be lost!</p>
-				
-				<p><input type="button" value="No" class="dialogueBtn"> <input type="button" value="Yes" id="textpad_ybtn" class="dialogueBtn"></p>
-			</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="blankDialogue" aria-labelledby="ui-id-27" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-27" class="ui-dialog-title">Window Title</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="blankDialogue" style="display: block;">
+<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="blankDialogue" aria-labelledby="ui-id-34" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-34" class="ui-dialog-title">Window Title</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="blankDialogue" style="display: block;">
 				<p></p>
-			</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="tarot-credits-dialogue" aria-labelledby="ui-id-36" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-36" class="ui-dialog-title">Credits</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="tarot-credits-dialogue" style="display: block;">
+			</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="tarot-credits-dialogue" aria-labelledby="ui-id-43" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-43" class="ui-dialog-title">Credits</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="tarot-credits-dialogue" style="display: block;">
 					<ul>
 						<li>The <a href="https://en.wikipedia.org/wiki/Rider_waite" target="_external">Rider-Waite-Smith tarot deck</a> has been in the public domain in the United States since 1966. The images here are from Wikimedia Commons.</li>
 						<li>The Inner World Tarot is by Vince Cabrera. You can download and find more info about it here: <a href="http://www.innerworldtarot.co.nz/index.php/">http://www.innerworldtarot.co.nz/index.php/</a></li>
 						<li>The wonderful re-drawing of the tarot of Marsellies was done by Yoav Ben-dov, and you can find more info about them here: <a href="https://cbdtarot.com/the-cards/">https://cbdtarot.com/the-cards/</a></li>
 						<li>The lovely collage work of the Little Dead Girl tarot was done by Little Dead Girl, and you can find them here: <a href="https://littledeadgirl0.tripod.com/freeprintabletarotcardsthebasicdeck/index.html">https://littledeadgirl0.tripod.com/freeprintabletarotcardsthebasicdeck/index.html</a></li>
 					</ul>
-				</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="csv-aboutDialogue" aria-labelledby="ui-id-37" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-37" class="ui-dialog-title">About CSVEdit</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="csv-aboutDialogue" style="display: block;">
+				</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="csv-aboutDialogue" aria-labelledby="ui-id-44" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-44" class="ui-dialog-title">About CSVEdit</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="csv-aboutDialogue" style="display: block;">
 					<p>CSVEdit is a simple CSV editor that I've built so that I could learn programming. Currently, it allows you to create, save, and load CSV files. You can also add and remove both rows and cells. More features to come!</p>
-				</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="csv-modalDialogue" aria-labelledby="ui-id-38" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-38" class="ui-dialog-title">Warning!</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="csv-modalDialogue" style="display: block;">
+				</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="csv-modalDialogue" aria-labelledby="ui-id-45" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-45" class="ui-dialog-title">Warning!</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="off ui-dialog-content ui-widget-content" id="csv-modalDialogue" style="display: block;">
 					<p>Are you sure? Anything that has not been saved will be lost!</p>
 					
 					<p><input type="button" value="No" class="dialogueBtn"> <input type="button" value="Yes" id="csvEdit_ybtn" class="dialogueBtn"></p>
-				</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>
+				</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="universal-modularWindow" aria-labelledby="ui-id-46" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-46" class="ui-dialog-title">&nbsp;</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div class="modular ui-dialog-content ui-widget-content" id="universal-modularWindow">
+		<span id="univ-text"></span>
+	</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>
