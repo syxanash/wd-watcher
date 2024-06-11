@@ -7,9 +7,10 @@
   <link type="text/css" rel="stylesheet" href="css/main.css">
   <link type="text/css" rel="stylesheet" href="css/paganTools.css">
   <link type="text/css" rel="stylesheet" href="css/prompts.css">
+  <link type="text/css" rel="stylesheet" href="css/todo.css">
   
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="script/jquery-3.7.0.min.js"></script>
+  <script src="script/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
   <!--script src="script/exif-js.js"></script-->
   <!-- Note: I'd like to add EXIF data parsing eventually, but I'm struggling with it atm, so I'm shelving it for now.-->
   <script>
@@ -97,6 +98,7 @@
    <script src="script/photoViewer.js"></script>
    <script src="script/stickers.js"></script>
    <script src="script/prompts.js"></script>
+   <script src="script/aquarium.js"></script>
    
 <!--- These scripts aren't mine --->
 	<script src="script/suncalc-master/suncalc.js"></script>
@@ -178,6 +180,8 @@
 				<span class="iconLabel">Daily Prompts</span></a></p>
 				<p><a href="#" id="todo-link" onclick="showWindow('todo')"><img src="img/icons/icon_todo_2x.png" alt="To-do List"><br>
 				<span class="iconLabel">To-do</span></a></p>
+				<p><a href="#" id="aquarium-link" onclick="showWindow('aquarium')"><img src="img/icons/icon_aquarium_2x.png" alt="Aquarium"><br>
+				<span class="iconLabel">Aquarium</span></a></p>
 			</div>
 			</div>
 		</div>
@@ -260,7 +264,7 @@
 				</div>
 				<textarea id="textpad_wa"></textarea>
 				<div class="uiButtons">
-					<input type="button" value="Clear" id="textpad-clear"> <input type="button" value="Save" id="textpad-save"> <input type="file" value="Open..." id="textpad-open" onchange="loadTxtFile()" style="display: none;">
+					<input type="button" value="Clear" id="textpad-clear"> <input type="button" value="Save" id="textpad-saveLocal">  <input type="button" value="Export" id="textpad-save"> <input type="file" value="Open..." id="textpad-open" onchange="loadTxtFile()" style="display: none;">
 				</div>
 			</div>
 			
@@ -291,10 +295,10 @@
 					<a href=""><img src="img/icons/icon_browserStorage_2x.png" alt="BrowserStorage"></a><br>
 					<span class="iconLabel">Browser Storage</span>
 				</div>
-				<!--div class="folderIcon">
-					<a href=""><img src="img/icon_folder_2x.png" alt="Docs"></a><br>
-					<span class="iconLabel">Docs</span></a>
-				</div-->
+				<div class="folderIcon">
+					<a href="#" onclick="showWindow('myDocs')"><img src="img/icons/icon_folder_2x.png" alt="My Docs"><br>
+					<span class="iconLabel">My Docs</span></a>
+				</div>
 				<div class="folderIcon">
 					<a href="#" onclick="showWindow('pillbugTXT')"><img src="img/icons/icon_text_2x.png" alt="PillBug.txt"><br>
 					<span class="iconLabel">PillBug.txt</span></a>
@@ -565,9 +569,9 @@
 				
 				<div id="wheelOfTheYear">
 					<img src="img/wheelOfTheYear.png" alt="Wheel of the Year illustration"><br>
-					<span class="currentDate">05/20/2024</span><br>
-					<b>Current lunar phase:</b> <span class="lunarPhase"></span><br>
-					<b>Next full moon:</b> <span class="nextFull">Thu May 23 2024 10:30:18 GMT+0100 (Irish Standard Time)</span><br>
+					<span class="currentDate">05/31/2024</span><br>
+					<b>Current lunar phase:</b> <span class="lunarPhase">Waning Crescent</span><br>
+					<b>Next full moon:</b> <span class="nextFull">Sat Jun 22 2024 09:48:28 GMT+0100 (Irish Standard Time)</span><br>
 					<b>Next Sabbat:</b> <span class="nextSabbat">Litha, 6/19</span><br>
 				</div>
 			
@@ -995,7 +999,7 @@
 			</div>
 			
 			<div class="content">
-				<iframe src="https://jspaint.app/" width="570" height="500"></iframe>
+				<iframe src="jspaint.html" width="570" height="500"></iframe>
 			</div>
 		</div>
 
@@ -1006,7 +1010,7 @@
 			</div>
 
 			<div class="content">
-				<iframe src="https://wttr.in/"></iframe>
+				<iframe src="weather.html"></iframe>
 			</div>
 		</div>
 
@@ -1142,6 +1146,20 @@
 			</div>
 		</div>
 
+		<div class="window draggable off ui-draggable ui-draggable-handle" id="myDocs">
+			<div class="menuBar">
+				<span id="computerWindow" class="windowTitle">My Docs</span>
+				<a href="#" class="minimize">_</a> | <a href="#" class="close">X</a>
+			</div>
+			<div class="navBar">
+				<a href="#" class="back">Back</a> | <a href="#" class="forward">Forward</a>
+			</div>
+
+			<div class="content">
+
+			</div>
+		</div>
+
 		<div class="window draggable off ui-draggable ui-draggable-handle" id="todo">
 			<div class="menuBar">
 				<span id="todo-span" class="windowTitle">To-do list</span>
@@ -1149,10 +1167,24 @@
 			</div>
 
 			<div class="content">
-				<input type="button" value="+ Add new" id="todo-addNew"> <input type="button" value="Export" id="todo-export"> <input type="button" value="Import" id="todo-import">
+				<input type="button" value="+ Add new" id="todo-addNew"> <input type="button" value="Export" id="todo-export" onclick="exportTodo()"> <input type="button" value="Import" id="todo-import">
 
-				<div id="todo-items"></div>
+				<div id="todo-items">
+					<ul>
+					</ul>
+				</div>
 			</div>
+		</div>
+
+		<div class="window draggable off ui-draggable ui-draggable-handle" id="aquarium">
+			<div class="menuBar">
+				<span id="computerWindow" class="windowTitle">Aquarium</span>
+				<a href="#" class="minimize">_</a> | <a href="#" class="close">X</a>
+			</div>
+
+			<div class="content">
+				<canvas>
+			</canvas></div>
 		</div>
 
 	
@@ -1189,7 +1221,7 @@
 		</li>
 	</ul>
 
-	<div id="calendar" class="off"><table class="calendar"><thead><tr class="calendar-title"><th colspan="7">May 2024</th></tr><tr class="calendar-header"><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr></thead><tbody><tr><td class="pad"> </td><td class="pad"> </td><td class="pad"> </td><td class="day" title=" "><div>1</div><div> </div></td><td class="day" title=" "><div>2</div><div> </div></td><td class="day" title=" "><div>3</div><div> </div></td><td class="day" title=" "><div>4</div><div> </div></td></tr><tr><td class="day" title=" "><div>5</div><div> </div></td><td class="day" title=" "><div>6</div><div> </div></td><td class="day" title=" "><div>7</div><div> </div></td><td class="day" title=" "><div>8</div><div> </div></td><td class="day" title=" "><div>9</div><div> </div></td><td class="day" title=" "><div>10</div><div> </div></td><td class="day" title=" "><div>11</div><div> </div></td></tr><tr><td class="day" title=" "><div>12</div><div> </div></td><td class="day" title=" "><div>13</div><div> </div></td><td class="day" title=" "><div>14</div><div> </div></td><td class="day" title=" "><div>15</div><div> </div></td><td class="day" title=" "><div>16</div><div> </div></td><td class="day" title=" "><div>17</div><div> </div></td><td class="day" title=" "><div>18</div><div> </div></td></tr><tr><td class="day" title=" "><div>19</div><div> </div></td><td class="day today" title=" "><div>20</div><div> </div></td><td class="day" title=" "><div>21</div><div> </div></td><td class="day" title=" "><div>22</div><div> </div></td><td class="day" title=" "><div>23</div><div> </div></td><td class="day" title=" "><div>24</div><div> </div></td><td class="day" title=" "><div>25</div><div> </div></td></tr><tr><td class="day" title=" "><div>26</div><div> </div></td><td class="day" title=" "><div>27</div><div> </div></td><td class="day" title=" "><div>28</div><div> </div></td><td class="day" title=" "><div>29</div><div> </div></td><td class="day" title=" "><div>30</div><div> </div></td><td class="day" title=" "><div>31</div><div> </div></td><td class="pad"> </td></tr></tbody></table></div>
+	<div id="calendar" class="off"><table class="calendar"><thead><tr class="calendar-title"><th colspan="7">May 2024</th></tr><tr class="calendar-header"><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr></thead><tbody><tr><td class="pad"> </td><td class="pad"> </td><td class="pad"> </td><td class="day" title=" "><div>1</div><div> </div></td><td class="day" title=" "><div>2</div><div> </div></td><td class="day" title=" "><div>3</div><div> </div></td><td class="day" title=" "><div>4</div><div> </div></td></tr><tr><td class="day" title=" "><div>5</div><div> </div></td><td class="day" title=" "><div>6</div><div> </div></td><td class="day" title=" "><div>7</div><div> </div></td><td class="day" title=" "><div>8</div><div> </div></td><td class="day" title=" "><div>9</div><div> </div></td><td class="day" title=" "><div>10</div><div> </div></td><td class="day" title=" "><div>11</div><div> </div></td></tr><tr><td class="day" title=" "><div>12</div><div> </div></td><td class="day" title=" "><div>13</div><div> </div></td><td class="day" title=" "><div>14</div><div> </div></td><td class="day" title=" "><div>15</div><div> </div></td><td class="day" title=" "><div>16</div><div> </div></td><td class="day" title=" "><div>17</div><div> </div></td><td class="day" title=" "><div>18</div><div> </div></td></tr><tr><td class="day" title=" "><div>19</div><div> </div></td><td class="day" title=" "><div>20</div><div> </div></td><td class="day" title=" "><div>21</div><div> </div></td><td class="day" title=" "><div>22</div><div> </div></td><td class="day" title=" "><div>23</div><div> </div></td><td class="day" title=" "><div>24</div><div> </div></td><td class="day" title=" "><div>25</div><div> </div></td></tr><tr><td class="day" title=" "><div>26</div><div> </div></td><td class="day" title=" "><div>27</div><div> </div></td><td class="day" title=" "><div>28</div><div> </div></td><td class="day" title=" "><div>29</div><div> </div></td><td class="day" title=" "><div>30</div><div> </div></td><td class="day today" title=" "><div>31</div><div> </div></td><td class="pad"> </td></tr></tbody></table></div>
 	
 	<div id="taskBar">
 		<a href="#" class="toggleMenu" id="toggleBegin">Begin</a>
@@ -1198,7 +1230,7 @@
 		</ul>
 	
 		<div id="rightTaskbar">
-			<span id="swClock" tooltip="Swatch time">438.03</span> <img src="img/icon_tb_clock.png" alt=""> <span id="rtClock">10:30:45 am</span>
+			<span id="swClock" tooltip="Swatch time">408.81</span> <img src="img/icon_tb_clock.png" alt=""> <span id="rtClock">9:48:41 am</span>
 		</div>
 	</div>
 
