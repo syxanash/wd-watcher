@@ -1,0 +1,561 @@
+<html lang="en"><head>
+  </head>
+<body>
+<style>
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #553ac2cc;
+  backdrop-filter: blur(10px);
+  	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    background-attachment: fixed !important;
+  overflow-x: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+  padding-top: 60px;
+}
+
+.sidenav a, .sidenav button {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #00000099;
+  display: block;
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: Arial;
+}
+
+
+.sidenav h1 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: #00000099;
+  display: block;
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: Arial;
+}
+
+.sidenav a:hover, button:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.sidenav .logoutbtn {
+  position: absolute;
+  top: 8px;
+  left: 1px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#toast {
+    visibility: hidden;
+    max-width: 50px;
+   backdrop-filter:blur(6px);
+    height: 170px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #01010133;
+    color: black;
+    text-align: center;
+    border-radius: 2px;
+    border-radius: 6px 6px 6px 6px;
+    position: fixed;
+    z-index: 99999;
+    left: 0;right:0;
+    bottom: 400px;
+    font-size: 17px;
+
+}
+#toast #img{
+	width: 50px;
+	height: 170px;
+    z-index: 99999;
+    float: left;
+    
+    padding-top: 70px;
+    padding-bottom: 40px;
+    
+    box-sizing: border-box;
+
+       border-radius: 8px 0px 0px 8px;
+    background-color: #aaaaaa33;
+    color: #ffffffcc;
+}
+#toast #desc{
+
+    z-index: 99999;
+    color: #ffffffcc;
+    padding: 16px;
+    border-radius: 6px 6px 6px 6px;
+    overflow: auto;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 10s 1s, shrink 0.5s 11s, fadeout 0.5s 11.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+
+@keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+
+@keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+    from {min-width: 350px;}
+    to {min-width: 50px;}
+}
+
+@keyframes shrink {
+    from {min-width: 350px;}
+    to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+</style>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="kban.js"></script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="jquery-ui.css">
+	<link rel="canonical" href="https://html5-templates.com/">
+	<script src="jquery-1.12.4.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="context.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="lockRec/fontCSS.css" rel="stylesheet">
+	<script src="context.js"></script>
+<script src="microne.js"></script>
+  <script>
+     function saveTextAsFile()
+        {
+            var textToWrite = tinyMCE.activeEditor.getContent();
+            var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+            var fileNameToSaveAs = "note.html";
+
+            var downloadLink = document.createElement("a");
+            downloadLink.download = fileNameToSaveAs;
+            downloadLink.innerHTML = "Download File";
+
+            downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+            downloadLink.click();
+        };
+ </script>
+	<title>Kiosk Home</title>
+	<div id="desktop" style="background-image: url(&quot;http://...&quot;);">
+	  <meta http-equiv="Cache-control" content="no-cache">
+<style>
+marquee {
+position:fixed;
+top:0;
+}
+	mark {
+		background-color: #fff;
+		color: #fff;
+	}
+</style>
+<div class="kiosknews">
+<marquee style="position: fixed; top: 40%;" behavior="scroll" direction="left" scrollamount="3">
+	<mark>
+		<h1 style="font-size:20px; z-index:9999 !important;" id="currentTime">11:06 am</h1><mark>
+</mark></mark></marquee>
+<marquee style="position: fixed; top: 40%;" behavior="scroll" direction="right" scrollamount="2">
+	<mark>
+		<h1 style="font-size:100px; opacity:20%; z-index:9999 !important;" class="logo">Kiosk Home</h1><mark>
+</mark></mark></marquee>
+<br><h4 contenteditable="true" style="font-size: 30px;">⠀Desktop</h4>
+
+<script>window.onload = function () {
+  clock();
+  function clock() {
+    var now = new Date();
+    var TwentyFourHour = now.getHours();
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    var mid = 'pm';
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (hour > 12) {
+      hour = hour - 12;
+    }
+    if (hour == 0) {
+      hour = 12;
+    }
+    if (TwentyFourHour < 12) {
+      mid = 'am';
+    }
+    document.getElementById('currentTime').innerHTML = hour + ':' + min + ' ' + mid;
+    setTimeout(clock, 1000);
+  }
+}
+
+
+</script></div>
+	  <button style="float: right;font-size: 14px;" onclick="hideBar()" title="hide navigation shelf"><strong>▽</strong></button>
+	  		    <div style="" id="urlbar">
+	  <form id="omni" post="">
+    <input placeholder="Type in a URL with http:// or https://" value="https://" type="text" id="field" autofocus="">
+    <button id="myBtn">Go</button>
+    <script type="text/javascript">
+        document.getElementById("myBtn").addEventListener("click", function(){
+            var url = document.getElementById("field").value;
+window.open(url);
+        });
+    </script>
+</form>
+</div>
+	  <div id="toast" contenteditable="true"><div id="img">News</div><div id="desc">Added Shortnest &amp; Tungli</div></div>
+
+<!-- http://jsfiddle.net/m8x1g0q8/ --><script>function launch_toast() {
+    var x = document.getElementById("toast")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 10000);
+
+}</script>
+
+	<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+	<div class="position">
+    <div class="container" align="center">
+        <table style="text-align: left; width: 99%; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="0"><a>LCTapps Search app</a><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="1"><a>LCTapps Labyrinth</a><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="2"><a>Browser</a><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="3"><a>os options</a><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="4"><a>Welcome screen</a><br>
+                    </td>
+                </tr>
+			       <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="5"><a>Kiosk URL Loader</a><br>
+                    </td>
+                </tr>
+			       <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="6"><a>song test</a><br>
+                    </td>
+                </tr>
+			       <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="7"><a>Notepad</a><br>
+                    </td>
+                </tr>
+			       <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="8"><a>Contact LCTapps</a><br>
+                    </td>
+                </tr>
+			       <tr>
+                    <td style="vertical-align: middle; text-align: center;" onclick="gAccountAdd()"><a>Add gAccount</a><br>
+                    </td>
+                </tr>
+             <tr>
+			       </tr><tr>
+                    <td style="vertical-align: middle; text-align: center;" onclick="spawnHolyUnblocker()"><a>Spawn IN Tab</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="9"><a>Kiosk Survey</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" onclick="launch_toast()"><a>Additional info</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" onclick="robloxNowgg()"><a>Roblox</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="10"><a>Ice Dodo</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="11"><a><strong><i>COMPUCIDAL SCRIPTO</i></strong></a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="13"><a>Shortcut Nest</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="14"><a>Tunnel Glider (REMOVED)</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="15"><a>1998 Instant Messaging</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="17"><a>HexGL</a><br>
+                    </td>
+                </tr>
+             <tr>
+                    <td style="vertical-align: middle; text-align: center;" class="openWindow" data-id="19"><a>magiconsole</a><br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+		<div class="window closed app ui-draggable ui-draggable-handle" data-title="Web Search" data-id="0" id="window0" style="z-index: 1000;"><div class="windowHeader"><strong>Web Search</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+			<iframe style="height: 100%; width: 100%; margin: 0px; border: none;" src="files/apps/websearch.html"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed app ui-draggable ui-draggable-handle" data-title="LCTapps Labyrinth" data-id="1" id="window1" style="z-index: 1000;"><div class="windowHeader"><strong>LCTapps Labyrinth</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+			<iframe style="height: 100%; width: 100%; margin: 0px; border: none;" src="files/redidmaze/software/maze3d-launch.html"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Browser" data-id="2" id="window2"><div class="windowHeader"><strong>Browser</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+			<iframe style="height: 100%; width: 100%; margin: 0px; border: none; left: 0;" src="files/apps/browserlite.html"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div id="window3" class="window closed ui-draggable ui-draggable-handle" data-title="Options" data-id="3" style="z-index: 1000;"><div class="windowHeader"><strong>Options</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+			<h1 class="settingui">Options</h1><br>
+
+			<script type="text/javascript">
+    var defaultImage = "http://...";
+    document.getElementsByTagName('div')[0].style.backgroundImage = localStorage.getItem('back') ? "url('"+localStorage.getItem('back')+"')" : "url('"+defaultImage+"')";
+  function changebackground(){
+      var url =  document.getElementById('bgchanger').value;
+      document.getElementsByTagName('div')[0].style.backgroundImage = "url('" + url + "')";
+      localStorage.setItem('back',url);
+    }
+</script><input class="settingui" style="width: 70%;" type="text" id="bgchanger" placeholder="Change Background Add URL">
+<input class="settingui" type="button" onclick="changebackground();" value="Change!"><br><span style="text-align: center;">---</span>
+		<div><button onclick="myFunction()">Toggle dark mode</button></div>
+		<span style="text-align: center;">---</span>
+		<button style="float: right !important;font-size: 14px;" onclick="hideBar()" title="hide navigation shelf"><strong>Hide Navigation Bar</strong></button><br>
+		    <button style="cursor: pointer;" class="openWindow" data-id="12">Credits</button><br><button style="float: right !important;font-size: 14px;" class="openWindow" data-id="16" title="lctcmd"><strong>LCTcmd</strong></button>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window ui-draggable ui-draggable-handle" data-title="Welcome to Kiosk Home" data-id="4" id="window4" style="z-index: 1000;"><div class="windowHeader"><strong>Welcome to Kiosk Home</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+			<div style="padding: 10px;"><h1>What's been popping recently...</h1>
+			<p>
+ANNOUNCEMENT OF 4/1/22:
+HAHA! Welcome to the beta, click around and have fun.
+				<br><strong>Check additional info!!!</strong></p>
+			<p>Drag the title bar to move the windows or resize them from the bottom right corner.<br>Not happy with Windo 8, and want to downgrade? Quickly fill out a report via right clicking, and then go back to <a href="../">here (just click back on the first thing!)</a></p>
+			<hr>
+			<p><strong>This webtop's ui uses HTML5-Template's Desktop Template. You can check it out at <a href="https://html5-templates.com/" rel="nofollow" target="_blank">HTML5-Templates.com</a>	</strong></p><br></div>
+
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div><div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Kiosk URL Loader" data-id="5" id="window5"><div class="windowHeader"><strong>Kiosk URL Loader</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+	 <iframe src="https://cseriestechhero.github.io/kiosk-setup/services/redir/basepage" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed app ui-draggable ui-draggable-handle" id="window6" data-title="song test" data-id="6" style="z-index: 1000;"><div class="windowHeader"><strong>song test</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+		<div id="player">	  	<script>
+	    	var m = new Microne(document.getElementById('player'))
+m.source('files/uploads/hypp3rr x ace of spadez - 13013013 𓆉 {p. sujo} ༼ つ ◕◡◕ ༽つ.mp3')
+	  	</script></div><div style="width: 100%; height: 100%; border: 1px solid rgb(0, 0, 0); cursor: auto; position: relative;"><div style="background: rgb(238, 238, 238); height: 100%; width: 0%; pointer-events: none;"></div><div style="cursor: pointer; font-family: monospace; font-size: 14px; position: absolute; top: 50%; left: 50%; width: 25px; height: 25px; transform: translate(-50%, -50%); text-align: center; font-weight: bold;">&gt;</div></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+				<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Notepad" data-id="7" id="window7"><div class="windowHeader"><strong>Notepad</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+				<script src="notepadDev.js"></script>
+<form id="noteApp" class="notemenu" onsubmit="download(this['name'].value, this['text'].value)">
+  <input type="text" id="noteTitle" name="name" value="Untitled.txt"><input style="width: 50px;" id="saveBtn" type="submit" value="Save">
+  <textarea id="textArea" name="text">This notepad does not autosave, make sure to hit the save button so you can download your note to your device! Additionally, saving restarts Windo 8 so make sure everything else is closed and ready...
+  You can clear this text when you're ready to start writing.</textarea>
+
+</form>
+<script>
+var form = document.getElementById("noteApp", "omni");
+function handleForm(event) { event.preventDefault(); }
+form.addEventListener('submit', handleForm);
+</script>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Contact LCTapps" data-id="8" id="window8"><div class="windowHeader"><strong>Contact LCTapps</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSvCRie2uxs17LDmNbISX7BT0PpPFAc6BsgKxWP6JwsI-PEA/viewform?embedded=true" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Kiosk Survey" data-id="9" id="window9"><div class="windowHeader"><strong>Kiosk Survey</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="https://cseriestechhero.github.io/kiosk-setup/services/redir/override-12-09-21" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Ice Dodo" data-id="10" id="window10"><div class="windowHeader"><strong>Ice Dodo</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/icedodo/icedodo-launch.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="CONFIRMATION DIALOG" data-id="11" id="window11"><div class="windowHeader"><strong>CONFIRMATION DIALOG</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <div style="padding: 10px;"><h1>WARNING!</h1><p style="display:flex;justify-content:center;">    YOU UNDERSTAND THE CONSEQUENCES OF LAUNCHING THIS SCRIPT WHICH WILL LEAVE YOUR COMPUTER IN A [temporarily] UNUSABLE STATE?<br>Compucidal Scripto will open several empty popups endlessly until your system freezes. To attempt to stop this, try force-killing Kiosk Home via a task manager or if Kiosk Home is in Kiosk, try [CTRL]+[SHIFT]+[W] or [ALT]+[SEARCH]+[FULLSCREEN]. IF ALL FAILS, TRY [RELOAD]+[POWER]</p><br><style>
+.warn {
+background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(209,209,209,1) 49%, rgba(0,0,0,1) 100%);
+border: 1px solid #000;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  align-content:center;
+}
+.warn:active {
+background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(209,209,209,1) 0%, rgba(0,0,0,1) 49%, rgba(209,209,209,1) 100%);
+border: 1px solid #000;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style><center><button class="warn" onclick="compucidalScripto()">CONTINUE</button><br><button class="warn" onclick="closeWindwow(11)">NEVERMIND</button></center></div>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Credits" data-id="12" id="window12"><div class="windowHeader"><strong>Credits</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/credits/creditsIndex.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+				<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Shortcut nest" data-id="13" id="window13"><div class="windowHeader"><strong>Shortcut nest</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/tree.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Tunnel Glider" data-id="14" id="window14"><div class="windowHeader"><strong>Tunnel Glider</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/tungli/tungli-launch.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Socialselect" data-id="15" id="window15"><div class="windowHeader"><strong>Socialselect</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/socialselect.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="LCTcmd" data-id="16" id="window16"><div class="windowHeader"><strong>LCTcmd</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/lctcmd/cmd/prompt.html" width="100%" height="100%" style="border: none;"></iframe>
+   <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="HexGL" data-id="17" id="window17"><div class="windowHeader"><strong>HexGL</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/hxgl/hexgl-launch.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+    <div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="Uh oh..." data-id="18" id="window18"><div class="windowHeader"><strong>Uh oh...</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <div style="padding: 10px;"><h1>WARNING!</h1><p style="display:flex;justify-content:center;">    It apparently seems that you've been banned from Kiosk's services. Most features of Kiosk Home will NOT work!</p><br>
+	   <center><button class="warn" onclick="window.open('mailto:lcteatsoatmeal@gmail.com')">Contact Lettuce Cobbler Twinkie</button><br><button class="warn" onclick="closeWindwow(18)">Got it</button></center></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+	   		<div style="z-index: 1000;" class="window closed app ui-draggable ui-draggable-handle" data-title="magiconsole" data-id="19" id="window19"><div class="windowHeader"><strong>magiconsole</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/magiconsole/index.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div style="z-index: 1000;" class="window closed app activeWindow ui-draggable ui-draggable-handle" data-title="Documentation" data-id="20" id="window20"><div class="windowHeader"><strong>Documentation</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
+   <iframe src="files/apps/docs/docpage1.html" width="100%" height="100%" style="border: none;"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+</div>
+		<div id="taskbar" class="navbar">
+		  <button style="cursor:pointer" onclick="openNav()">K+</button>
+		  <button style="float: right;font-size: 14px;" onclick="hideBar()" title="hide navigation shelf"><strong>▽</strong></button>
+		<div class="taskbarPanel closed" id="minimPanel0" data-id="0">Web Search</div><div class="taskbarPanel closed" id="minimPanel1" data-id="1">LCTapps Labyrinth</div><div class="taskbarPanel closed" id="minimPanel2" data-id="2">Browser</div><div class="taskbarPanel closed" id="minimPanel3" data-id="3">Options</div><div class="taskbarPanel" id="minimPanel4" data-id="4">Welcome to Kiosk Home</div><div class="taskbarPanel closed" id="minimPanel5" data-id="5">Kiosk URL Loader</div><div class="taskbarPanel closed" id="minimPanel6" data-id="6">song test</div><div class="taskbarPanel closed" id="minimPanel7" data-id="7">Notepad</div><div class="taskbarPanel closed" id="minimPanel8" data-id="8">Contact LCTapps</div><div class="taskbarPanel closed" id="minimPanel9" data-id="9">Kiosk Survey</div><div class="taskbarPanel closed" id="minimPanel10" data-id="10">Ice Dodo</div><div class="taskbarPanel closed" id="minimPanel11" data-id="11">CONFIRMATION DIALOG</div><div class="taskbarPanel closed" id="minimPanel12" data-id="12">Credits</div><div class="taskbarPanel closed" id="minimPanel13" data-id="13">Shortcut nest</div><div class="taskbarPanel closed" id="minimPanel14" data-id="14">Tunnel Glider</div><div class="taskbarPanel closed" id="minimPanel15" data-id="15">Socialselect</div><div class="taskbarPanel closed" id="minimPanel16" data-id="16">LCTcmd</div><div class="taskbarPanel closed" id="minimPanel17" data-id="17">HexGL</div><div class="taskbarPanel closed" id="minimPanel18" data-id="18">Uh oh...</div><div class="taskbarPanel closed" id="minimPanel19" data-id="19">magiconsole</div><div class="taskbarPanel closed activeTab" id="minimPanel20" data-id="20">Documentation</div></div>
+	
+			<div id="mySidenav" class="sidenav">
+			  		    <a style="float: left; font-family: 'Material Icons Sharp';cursor: pointer;z-index:11;" class="logoutbtn" onclick="window.location.replace('index.html')" title="Log out"><strong>logout</strong></a>
+  <a href="javascript:void(0)" style="z-index:11;" class="closebtn" onclick="closeNav()">×</a>
+  <h1>Apps</h1>
+<iframe style="position:fixed;top:0;height:100%;width:100%;border:none;z-index:10;" src="dist/index.html#"></iframe>
+<script>
+function gAccountAdd() {
+  window.open("https://accounts.google.com/accountchooser");
+}
+function spawnHolyUnblocker() {
+  window.open("https://totalbuilds.org/");
+}
+function windo7Spawn() {
+  window.open("https://cseriestechhero.github.io/kiosk-setup/services/windo7/");
+}
+function kioskSurvey() {
+  window.open("https://cseriestechhero.github.io/kiosk-setup/services/redir/override-12-09-21");
+}
+
+function robloxNowgg() {
+  window.open("https://now.gg/apps/roblox-corporation/5349/roblox.html");
+}
+
+function compucidalScripto() {
+  window.open("files/apps/Compucidal-scripto.html");
+}
+</script>
+
+</div>
+
+		<!-- You can use this template freely if you leave a visible link to HTML5-Templates.com -->
+
+	<script>
+function hideBar() {
+  var x = document.getElementById("taskbar");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+
+</body></html>
