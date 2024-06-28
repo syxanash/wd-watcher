@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#bcbcbc">
 <meta name="description" content="Artist and web developer living in Chattanooga, TN, US.">
-<link rel="stylesheet" href="styles.css?bug=palm_weevilzzz" type="text/css">
+<link rel="stylesheet" href="styles.css?bug=large_big_eyed_bugz" type="text/css">
 <link href="https://benlacroix.com/" rel="canonical">
 <link rel="preload" href="fonts/archaic.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="images/tb.png" as="image">
@@ -34,7 +34,7 @@
 <div class="loading" style="display: none;">
 	<p id="guy">(- _ -&nbsp;&nbsp;&nbsp;)</p>
 	<p>
-		<span id="l1">BénOS version 9.9.8.0</span>
+		<span id="l1">BénOS version 9.9.10.0</span>
 		<br>
 		<span id="l2">
 			<span id="ellipsis">Load&nbsp;</span>
@@ -117,8 +117,8 @@
 		<h2><div class="title">System</div></h2>
 		<div class="wincont" tabindex="-1">
 			<div id="stolen"></div>
-			<h3><span class="benos"></span>&nbsp;v9.9.8.0</h3>
-			<p class="bug">palm_weevil</p>
+			<h3><span class="benos"></span>&nbsp;v9.9.10.0</h3>
+			<p class="bug">large_big_eyed_bug</p>
 			<div class="status">
 				<dl>
 					<dt>MOTION</dt>
@@ -147,7 +147,7 @@
 <div class="topbarcont">
 	<input type="checkbox" id="topbartoga" autocomplete="off">
 	<div class="topbar" id="music">
-		<audio id="audio" src="mp3/happy_fn_bounce_1n2.mp3" preload="metadata"></audio>
+		<audio id="audio" src="mp3/beetdown_x80b.mp3" preload="metadata"></audio>
 		<div id="controls">
 			<label for="topbartoga" id="topbartog" title="Expand/Collapse mp3 player" role="button" tabindex="0">
 				<span>
@@ -173,10 +173,10 @@
 				<label for="playlistcheck" id="playlisttog" title="Show/hide playlist" role="button" tabindex="0">
 				</label>
 			
-				<img id="artwork" src="images/happy_fn_bounce_1n2.png" alt="">
+				<img id="artwork" src="images/beetdown_x80b.png" alt="">
 			</div>
 			<div class="expright">
-				<span id="trackinfo">happy_fn_bounce_1n2</span>
+				<span id="trackinfo">beetdown_x80b</span>
 				<div id="progouter">
 					<div id="proginner" style="width: 0px;"></div>
 					<div id="buffer" style="width: 0px;"></div>
@@ -184,7 +184,7 @@
 				
 				<div id="times">
 					<span id="elapsed">0:00</span>
-					<span id="totaltime">2:16</span>
+					<span id="totaltime">1:51</span>
 				</div>
 			</div>
 		</div>
@@ -255,7 +255,7 @@
 	<div class="wincont">
 		<h3><span class="ex1">!</span>Warning<span class="ex2">!</span></h3>
 		<p>Your IP is<br></p>
-		<p><span>2a02:8084:a80:8800:4c16:af2e:31a8:6faa</span></p>
+		<p><span>2a02:8084:a80:8800:d5a3:ebe3:e71f:96dd</span></p>
 		<p>Please sit in a well-lit room away from screen.</p>
 	</div>
 </div>
@@ -518,7 +518,20 @@
 	<div class="wincont">
 		<div id="logimg"><a href="/rss.xml">RSS</a></div>
 		<div class="item">
-			<h3 id="current">v9.9.8.0 <span>palm_weevil</span> <span>2024.06.03</span></h3>
+			<h3 id="current">v9.9.10.0 <span>large_big_eyed_bug</span> <span>2024.06.18</span></h3>
+			<ul>
+				<li>Mp3 player: added artwork display mode for the playlist. Click on "grid".</li>
+			</ul>
+		</div>
+		<div class="item">
+			<h3>v9.9.9.0 <span>wasp_beetle</span> <span>2024.06.17</span></h3>
+			<ul>
+				<li>Mp3 player: added track "beetdown_x80b".</li>
+				<li>Garag£ $al€: fixed a bug that occurred when using dark mode without JS.</li>
+			</ul>
+		</div>
+		<div class="item">
+			<h3>v9.9.8.0 <span>palm_weevil</span> <span>2024.06.03</span></h3>
 			<ul>
 				<li>Mp3 player: added tracks "muscle_mouth" and "happy_fn_bounce_1n2".</li>
 				<li>Added "Garag£ $al€", my virtual p0p-up sh0p.</li>
@@ -535,7 +548,7 @@
 		<div class="item">
 			<h3>v9.9.6.0 <span>thistle_mantis</span> <span>2024.05.07</span></h3>
 			<ul>
-				<li>Mp3 player: added tracks "murda_ffr_vs_cs_mix" and "formulosense".</li>
+				<li>Mp3 player: added tracks "murda_ffr_vs_cs_mix" and "formulosense" (vocal sample credit: AJB×DEA).</li>
 				<li>CV: added links.</li>
 			</ul>
 		</div>
@@ -977,13 +990,22 @@
 	<div class="resizer"></div>
 	<h2><div class="title">Trax</div></h2>
 	<div class="wincont">
+		<input type="radio" id="lista" name="playlistmode" autocomplete="off" checked="">
+		<input type="radio" id="grida" name="playlistmode" autocomplete="off">
 		<div class="albumouter">
 			<div class="spacer"></div>
-			<img class="albumart" src="images/happy_fn_bounce_1n2.png">
-			<div class="spacer"></div>
+			<img class="albumart" src="images/beetdown_x80b.png">
+			<div class="spacer">
+				<div class="icon">
+					<label for="lista" id="listl" tabindex="0" title="Change playlist to track title display mode"><span>List</span></label>
+				</div>
+				<div class="icon">
+					<label for="grida" id="gridl" tabindex="0" title="Change playlist to artwork display mode"><span>Grid</span></label>
+				</div>
+			</div>
 		</div>
 		<ul class="songs">
-		<li tabindex="0">happy_fn_bounce_1n2</li><li tabindex="0">muscle_mouth</li><li tabindex="0">murda_ffr_vs_cs_mix</li><li tabindex="0">formulosense</li><li tabindex="0">screen_door</li><li tabindex="0">wake_n_cloac</li><li tabindex="0">finger_wag</li><li tabindex="0">energizer_bunny</li><li tabindex="0">murda_ibg_ss_naif_mix</li><li tabindex="0">icons</li><li tabindex="0">glowstick_coward</li><li tabindex="0">late2</li><li tabindex="0">all_of_it</li><li tabindex="0">earths_flavor_dude</li><li tabindex="0">fernando_o_fern</li><li tabindex="0">bluttered_numbling</li><li tabindex="0">little_rain</li><li tabindex="0">os_club</li><li tabindex="0">bw_comm</li><li tabindex="0">bad_mon</li><li tabindex="0">yoki_sinEdition</li><li tabindex="0">treachery_explainer</li><li tabindex="0">yokai_III_excerpt</li><li tabindex="0">hiders_loop_day</li></ul>
+		<li tabindex="0" class="currentsong">beetdown_x80b</li><li tabindex="0">happy_fn_bounce_1n2</li><li tabindex="0">muscle_mouth</li><li tabindex="0">murda_ffr_vs_cs_mix</li><li tabindex="0">formulosense</li><li tabindex="0">screen_door</li><li tabindex="0">wake_n_cloac</li><li tabindex="0">finger_wag</li><li tabindex="0">energizer_bunny</li><li tabindex="0">murda_ibg_ss_naif_mix</li><li tabindex="0">icons</li><li tabindex="0">glowstick_coward</li><li tabindex="0">late2</li><li tabindex="0">all_of_it</li><li tabindex="0">earths_flavor_dude</li><li tabindex="0">fernando_o_fern</li><li tabindex="0">bluttered_numbling</li><li tabindex="0">little_rain</li><li tabindex="0">os_club</li><li tabindex="0">bw_comm</li><li tabindex="0">bad_mon</li><li tabindex="0">yoki_sinEdition</li><li tabindex="0">treachery_explainer</li><li tabindex="0">yokai_III_excerpt</li><li tabindex="0">hiders_loop_day</li></ul>
 	</div>
 </div>
 
@@ -1129,13 +1151,13 @@
 			</div>
 		</div>
 		<div id="footerbottom">
-			<div class="version">v9.9.8.0</div>
+			<div class="version">v9.9.10.0</div>
 			<div id="lowerreveal">
 				<label for="sysa" id="systog" title="System information" tabindex="0">System</label>
 				<label for="poltoga" id="poltog" title="Toggle lite/dark mode" tabindex="0">Polarity</label>
 				<label id="reset" title="Reset window configuration" tabindex="0" class="">Reset</label>
 			</div>
-			<div id="clock">11:28</div>
+			<div id="clock">11:01</div>
 		</div>
 	</div>
 </div>
@@ -1300,7 +1322,7 @@ function resetWin(){
 	defShrWin.forEach(e => {
 		e.className = `window shrunk`;
 	})
-	document.querySelectorAll(`#wrapper input,#playlistcheck`).forEach(e => {
+	document.querySelectorAll(`#wrapper input[type="checkbox"],#playlistcheck`).forEach(e => {
 		e.checked=null;
 	})
 	document.querySelector(`.home`).classList.remove(`shrunk`);
@@ -1318,6 +1340,8 @@ function resetWin(){
 	})
 	document.querySelector(`.home`).classList.remove(`resizing`);
 	document.querySelector(`.home`).classList.remove(`resized`);
+	document.querySelector(`#lista`).checked = `true`;
+	swapToTitles();
 }
 resetter.addEventListener(`click`, resetWin);
 window.addEventListener(`load`, resetWin);
@@ -1524,9 +1548,6 @@ for (rescaler of rescalers) {
 document.querySelector(`#systog`).addEventListener(`click`, overFlowDelayed50);
 //le sigh
 document.querySelector(`#guestbookl`).addEventListener(`click`, overFlowDelayed2000);
-</script>
-<script src="js/htmx.min.js"></script>
-<script>
 //clock
 function currentTime(){
 	let e=new Date,
@@ -1536,8 +1557,6 @@ function currentTime(){
 	document.getElementById(`clock`).innerText=r,setTimeout(function(){currentTime()},1e3)
 }
 currentTime();
-</script>
-<script>
 // Mp3 player
 const musicContainer = document.getElementById(`music`);
 const playBtn = document.getElementById(`playpause`);
@@ -1552,6 +1571,7 @@ const covers = document.querySelectorAll(`#artwork,#playlist .albumart`);
 var currentTimeContainer = document.getElementById(`elapsed`);
 var totalTimeContainer = document.getElementById(`totaltime`);
 var songs = [
+	`beetdown_x80b`,
 	`happy_fn_bounce_1n2`,
 	`muscle_mouth`,
 	`murda_ffr_vs_cs_mix`,
@@ -1594,32 +1614,90 @@ function loadSong(song) {
 }
 //populate playlist 
 const songList = document.querySelector(`#playlist .songs`);
-for (song of songs) {
-	const songListItem = document.createElement(`li`);
-	songListItem.innerText = `${song}`;
-	songListItem.tabIndex = `0`;
-	songList.appendChild(songListItem);
+function populatePlaylist() {
+	for (song of songs) {
+		const songListItem = document.createElement(`li`);
+		songListItem.innerText = `${song}`;
+		songListItem.tabIndex = `0`;
+		songList.appendChild(songListItem);
+	}
+}
+populatePlaylist();
+//playlist display mode logic
+function changePlaylistMode() {
+	var isGrid = document.querySelector(`#grida:checked`);
+	if (isGrid != null) {
+		addPlaylistImg();
+	} else {
+		swapToTitles();
+	}
+}
+const playlistSwitches = document.querySelectorAll(`input[name="playlistmode"]`);
+for (playlistSwitch of playlistSwitches) {
+	playlistSwitch.addEventListener(`change`, changePlaylistMode);
+}
+//replace list items with grid items
+function addPlaylistImg() {
+	const songListItems = document.querySelectorAll(`.songs li`);
+	for (songListItem of songListItems) {
+	songListItem.remove();
+	}
+	for (song of songs) {
+		const songListItem = document.createElement(`li`);
+		songListItem.innerHTML = `
+				<img src="images/${song}.png">
+		`;
+		songListItem.tabIndex = `0`;
+		songList.appendChild(songListItem);
+	}
+	attachPlaylistListeners();
+	deriveSongNumber();
+	refreshList();
+	overFlowCheck();
+}
+//replace grid items with list items
+function swapToTitles() {
+	const songListItems = document.querySelectorAll(`.songs li`);
+	for (songListItem of songListItems) {
+		songListItem.remove();
+	}
+	populatePlaylist();
+	attachPlaylistListeners();
+	deriveSongNumber();
+	refreshList();
+	overFlowCheck();
 }
 //derive song number from the list item that was clicked
-const songListItems = document.querySelectorAll(`.songs li`);
 function findIndex(e) {
 	return [...e.parentNode.children].indexOf(e);
 }
-songListItems.forEach(songListItem => {
-	songListItem.addEventListener(`click`, function(event) {
-		const clickedElement = event.target;
-		const derivedIndex = findIndex(clickedElement);
-		//highlight the selected song and un-highlight all others 
-		songListItems.forEach(songListItem => {
-			songListItem.classList.remove(`currentsong`);
+function deriveSongNumber() {
+	const songListItems = document.querySelectorAll(`.songs li`);
+	function findIndex(e) {
+		return [...e.parentNode.children].indexOf(e);
+	}
+}
+deriveSongNumber();
+function attachPlaylistListeners() {
+	const songListItems = document.querySelectorAll(`.songs li`);
+	songListItems.forEach(songListItem => {
+		songListItem.addEventListener(`click`, function(event) {
+			const clickedElement = event.target;
+			const derivedIndex = findIndex(clickedElement);
+			//highlight the selected song and un-highlight all others 
+			songListItems.forEach(songListItem => {
+				songListItem.classList.remove(`currentsong`);
+			})
+			this.classList.add(`currentsong`);
+			songIndex = derivedIndex;
+			loadSong(songs[songIndex]);
+			playSong();
 		})
-		this.classList.add(`currentsong`);
-		songIndex = derivedIndex;
-		loadSong(songs[songIndex]);
-		playSong();
 	})
-})
+}
+attachPlaylistListeners();
 function refreshList() {
+	const songListItems = document.querySelectorAll(`.songs li`);
 	songListItems.forEach(songListItem => {
 		songListItem.classList.remove(`currentsong`);
 	})
@@ -1798,6 +1876,7 @@ for (const label of labels) {
 	})
 }
 </script>
+<script src="js/htmx.min.js"></script>
 
 
 
