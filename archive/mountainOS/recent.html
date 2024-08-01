@@ -1,0 +1,537 @@
+<html lang="en"><head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="system/js/kernel.js"></script>	
+	<script src="system/js/desktop.js"></script>	
+	<script src="system/js/screensaver.js"></script>
+	<script src="system/js/taskbar.js"></script>
+	<script src="system/js/cookies.js"></script>								
+	<link rel="stylesheet" type="text/css" href="system/css/themes/default.css">
+	<link rel="alternate stylesheet 2" type="text/css" title="classic" href="system/css/themes/classic.css" disabled="">
+	<link rel="alternate stylesheet 3" type="text/css" title="mobile" href="system/css/themes/mobile.css" disabled="">
+	<link rel="alternate stylesheet 4" type="text/css" title="dark" href="system/css/themes/dark.css" disabled="">
+	<link rel="stylesheet" media="screen and (max-device-width: 768px)" href="system/css/themes/mobile.css">
+
+
+	<title>mountainOS</title>
+</head>
+
+<body onload="startupFunctions()">
+
+	<div id="desktop" class="desktop">
+		
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Paint</strong>" taskicon="<img src='system/img/icons/paint.png'  width='42' height='42'>" headicon="<img src='system/img/icons/paint.png' class='winheadimg' width='26' height='26'>" data-id="0" style="z-index: 1000;" id="window0"><div class="windowHeader"><strong><img src="system/img/icons/paint.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">untitled - Paint</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+			<iframe class="iframe" height="100%" width="100%" src="apps/jspaint/index.html" data-id="0"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Notepad</strong>" taskicon="<img src='system/img/icons/notepad.png'  width='42' height='42'>" headicon="<img src='system/img/icons/notepad.png' class='winheadimg' width='26' height='26'>" data-id="1" style="z-index: 1000;" id="window1"><div class="windowHeader"><strong><img src="system/img/icons/notepad.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Untitled - Notepad</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">			
+			<iframe class="iframe" src="apps/notepad/index.html" data-id="1"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Calendar</strong>" taskicon="<img src='system/img/icons/calendar.png'  width='42' height='42'>" headicon="<img src='system/img/icons/calendar.png' class='winheadimg' width='26' height='26'>" data-id="2" style="z-index: 1000;" id="window2"><div class="windowHeader"><strong><img src="system/img/icons/calendar.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Calendar</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">		
+			<iframe class="iframe" title="Calendar" src="apps/calendar/index.html" data-id="2"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Calculator</strong>" taskicon="<img src='system/img/icons/calculator.png'  width='42' height='42'>" headicon="<img src='system/img/icons/calculator.png' class='winheadimg' width='26' height='26'>" data-id="3" style="z-index: 1000;" id="window3"><div class="windowHeader"><strong><img src="system/img/icons/calculator.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Calculator</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+			<iframe class="iframe" title="Calculator" src="apps/calc/index.html" data-id="3"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Bronze</strong>" taskicon="<img src='system/img/icons/bronze.png'  width='42' height='42'>" headicon="<img src='system/img/icons/bronze.png' class='winheadimg' width='26' height='26'>" data-id="4" style="z-index: 1000;" id="window4"><div class="windowHeader"><strong><img src="system/img/icons/bronze.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Bronze Browser</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+			<iframe class="iframe" title="Bronze" src="apps/bronze/index.html" data-id="4"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>VMBox</strong>" taskicon="<img src='system/img/icons/vmbox.png'  width='42' height='42'>" headicon="<img src='system/img/icons/vmbox.png' class='winheadimg' width='26' height='26'>" data-id="5" style="z-index: 1000;" id="window5"><div class="windowHeader"><strong><img src="system/img/icons/vmbox.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">VMBox</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+			<a href="apps/vmbox/index.html" target="vbox">Home</a>
+			<iframe class="iframe" id="vbox" title="VMBox" src="apps/vmbox/index.html" name="vbox" data-id="5"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Minesweeper</strong>" taskicon="<img src='system/img/icons/minesweeper.png'  width='42' height='42'>" headicon="<img src='system/img/icons/minesweeper.png' class='winheadimg' width='26' height='26'>" data-id="6" style="z-index: 1000;" id="window6"><div class="windowHeader"><strong><img src="system/img/icons/minesweeper.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Minesweeper</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">			
+			<iframe class="iframe" title="Minesweeper" src="apps/minesweeper/index.html" data-id="6"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Media Player</strong>" taskicon="<img src='system/img/icons/mediaplayer.png'  width='42' height='42'>" headicon="<img src='system/img/icons/mediaplayer.png' class='winheadimg' width='26' height='26'>" data-id="7" style="z-index: 1000;" id="window7"><div class="windowHeader"><strong><img src="system/img/icons/mediaplayer.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Media Player</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+			<link rel="stylesheet" type="text/css" href="apps/mediaplayer/mediaplayer.css">
+			<script src="apps/mediaplayer/mediaplayer.js"></script>			
+			<div class="wplist">
+				<ul style="list-style: none">
+				<li style="margin-left: 20px !important; margin-top: 10px !important; line-height: 135%;">
+				<ul id="list">
+			
+			
+			<div id="pages">
+			<div id="mpBACK" class="mydivshow">
+			<h1>Select a Category:</h1>
+			 <button id="mpNETR" class="catsel">Internet Radio</button>
+			 <br>
+			 <br>
+			 <button id="mpCURL" class="catsel">Custom URL</button>
+			</div>        
+			
+			<div id="mpNETR" class="mydivhide" style="display:none;">
+			<h1>Internet Radio:</h1>
+			<li><button onclick="cs_change_music('https://s2.radio.co/s2b2b68744/listen');">BadRadio</button></li>
+			<br> 
+			<li><button onclick="cs_change_music('https://streamer.radio.co/sd7b28e5f3/listen');">Mambo Radio</button></li>
+			<br> 
+			<li><button onclick="cs_change_music('https://radio.plaza.one/ogg');">Nightwave Plaza</button></li>
+			<br><button id="mpBACK" class="catsel">Back</button><br><br>
+			<strong>© 2022 BadRadio, Mambo Radio, Nightwave Plaza, This music is streamed live.</strong>
+			 <br><br>
+			</div>
+			<div id="mpCURL" class="mydivhide" style="display:none;">
+			<h1>Custom URL:</h1>
+			<input name="musicURL" type="text" maxlength="512" id="musicURL" class="textinput"><button id="playbtn" class="search" onclick="cs_change_music(musicURL.value);">Play!</button>
+			<br><button id="mpBACK" class="catsel">Back</button><br><br>
+			<br><br>
+			</div>
+			
+			</div>   
+			
+			</ul>
+			</li>
+			</ul>
+			</div>
+			<audio style="width:100%;height:28px;bottom:0;position:absolute;" id="my-audio" controls="" loop=""></audio>		
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+			<div class="window closed ui-draggable ui-draggable-handle" data-html="true" taskicon="<img src='system/img/icons/settings.png' width='42' height='42'>" headicon="<img src='system/img/icons/settings.png' class='winheadimg' width='26' height='26'>" data-title="<strong class='cpapptitle'>Settings</strong>" data-id="8" style="z-index: 1000;" id="window8"><div class="windowHeader"><strong><img src="system/img/icons/settings.png" class="winheadimg" width="26" height="26"><strong class="cpapptitle">Customization - Settings</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+				<script src="apps/settings/settings.js"></script>
+				<link rel="stylesheet" type="text/css" href="apps/settings/settings.css">			
+				<div id="tabsettings">
+					<button class="settingsbutton currentst" data-title="Customization" onclick="openTab('Customization')">Customization</button>
+					<button class="settingsbutton" data-title="User Profile" onclick="openTab('UserProfile')">User Profile</button>
+					<button class="settingsbutton" data-title="About" onclick="openTab('About')">About</button>
+				</div>
+				<hr id="settingshr" class="tabset">
+		
+			<div id="Customization" class="tab">
+				<h1 id="settingsh1" class="themestext">Themes</h1>
+				<div id="themesrow">
+					<button id="settingsbutton" onclick="switch_style('default');return false;" name="Default Theme" value="Default Theme">Default</button>
+					<button id="settingsbutton" onclick="switch_style('dark');return false;" name="Dark Theme" value="Dark Mobile">Dark</button>
+					<button id="settingsbutton" onclick="switch_style('classic');return false;" name="Classic Theme" value="Theme Classic">Classic</button>
+					<button id="settingsbutton" onclick="switch_style('mobile');return false;" name="Mobile Theme" value="Theme Mobile">Mobile</button>
+					<hr id="settingshr" class="themeshr">
+				</div>
+				<hr>
+					<h1 id="settingsh1">Background</h1>
+					<input id="inputbtn" class="wppicker" type="file" accept="image/*" onchange="changeBG(event)">
+					<br>
+					<br>
+					<button onclick="localBG()">Enable Bing Wallpaper</button>
+                    <br>
+					<br>
+					<button onclick="resetBG(event)">Reset to default</button>
+					<br>
+					<br>
+					<hr id="settingshr">
+					<h1 id="settingsh1">Colors</h1>
+					<input type="color" id="colorpicker"><a>Choose your color</a>
+					<br>
+					<br>
+					<button id="defaultColor" onclick="defaultColors();defaultColorsCookies()">Set colors to default</button>
+					<br>
+					<br>
+					<hr id="settingshr">
+					<div class="taskbartab">
+					<h1 id="settingsh1" class="tskbrtab">Taskbar</h1>
+					<input type="checkbox" onclick="addAppTitleTaskbar()" id="AppTitleOnTaskBarPanelChk" class="checkBox"><a class="addAppTitleTaskbarTxt">Apply app titles to taskbar icons.</a>
+				    </div>
+				    </div>
+
+					<div id="UserProfile" data-title="User Profile" class="tab" style="display:none;overflow: hidden;">
+						<h1>User Profile</h1>
+						<hr>
+						<div id="userProfile" style="margin: -10px 0px; bottom :unset;right :unset;right :unset;">
+						  <div>
+							<img class="pfpimageset" border="0" alt="" src="system/img/pfp.png" width="32" height="32"><br><a class="userProfileSetTxt">User</a>
+						  </div>
+						</div>						
+						<br>
+						<br>
+						<input id="usrsetinpt" name="usrsetinpt" type="text" maxlength="10" placeholder="Change your username..." required="required" class="textinput">
+						<br>
+						<br>
+						<a>Change your profile picture</a>
+						<br>
+						<input id="inputbtn" class="wppicker" type="file" accept="image/*" onchange="changePFP(event)">
+						<br>
+						<br>
+						<button id="usrSetBtn" onclick="setUsrSet()">Apply</button>			
+						<br>
+						<br>			
+						<hr>
+					</div>
+
+				<div id="About" data-title="About" class="tab" style="display:none;text-align: center;">
+		
+					<div id="abranding">
+					<img src="system/img/systemlogo.png" width="72px" height="78px">
+					<br>
+					<p>mountainOS</p>
+					</div>
+		
+					<hr id="settingshr">
+					<a>Kernel: </a><a class="kernelver">5.0</a>
+					<br>
+					<a>July 2023 Release (Build: </a><a class="buildnumb">9880</a>)
+					<br>		
+					<hr id="settingshr">
+					<a>broimluna - 2023</a>
+					<br>
+					<br>
+					<p>Current theme: <a class="currenttheme"></a></p>
+					<p>Based on 'Windows' Template from <a target="blank" id="htmltemp" href="https://html5-templates.com">html5-templates.com</a></p>
+					<hr>
+					<a>Click the "Reset mountainOS" to reset your settings.</a>
+					<br>
+					<br>
+					<strong>
+					<a>This will include your wallpaper, profile picture and username, color settings and taskbar settings.</a>
+					<br>
+				</strong>
+					<br>
+					<button onclick="resetAllCookies();"><strong>Reset mountainOS</strong></button>
+				</div>
+			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+			<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Terminal</strong>" taskbar-title="<strong>Terminal</strong>" taskicon="<img src='system/img/icons/terminal.png'  width='42' height='42'>" headicon="<img src='system/img/icons/terminal.png' class='winheadimg' width='26' height='26'>" data-id="9" style="z-index: 1000;" id="window9"><div class="windowHeader"><strong><img src="system/img/icons/terminal.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Terminal</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+				<link rel="stylesheet" type="text/css" href="apps/terminal/terminal.css">
+				<link rel="stylesheet" type="text/css" href="apps/terminal/jquery.terminal.css">
+				<script src="apps/terminal/jquery.terminal.js"></script>
+				<script src="apps/terminal/terminal.js"></script>
+				<div id="jsterminal" class="terminal" style="height: 200px; --char-width: 7.22656; --pixel-density: 1; --terminal-height: -4; --terminal-x: 0; --terminal-y: 0; --terminal-scroll: 0;">
+				<div class="terminal-scroller"><div class="terminal-wrapper" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14" style="display: none;"><title id="title2">rounded</title><path id="terminal-broken-image" d="m 14,10 h 2 v 1 a 3,3 0 0 1 -3,3 H 3 A 3,3 0 0 1 0,11 H 4.5 A 1.00012,1.00012 0 0 0 5.207,10.707 L 6.5,9.414 7.793,10.707 a 0.99963,0.99963 0 0 0 1.41406,0 l 2.36719,-2.36719 1.80127,1.44092 A 0.99807,0.99807 0 0 0 14,10 Z M 16,3 V 8 H 14.35059 L 12.12451,6.21924 A 0.99846,0.99846 0 0 0 10.793,6.293 L 8.5,8.586 7.207,7.293 a 0.99962,0.99962 0 0 0 -1.41406,0 L 4.08594,9 H 0 V 3 A 3,3 0 0 1 3,0 h 10 a 3,3 0 0 1 3,3 z M 6,4.5 A 1.5,1.5 0 1 0 4.5,6 1.5,1.5 0 0 0 6,4.5 Z"></path></svg><div class="terminal-output" role="log"><div data-index="0"><div style="width: 100%;"><span data-text="m">m</span></div><div style="width: 100%;"><span data-text="o">o</span></div><div style="width: 100%;"><span data-text="u">u</span></div><div style="width: 100%;"><span data-text="n">n</span></div><div style="width: 100%;"><span data-text="t">t</span></div><div style="width: 100%;"><span data-text="a">a</span></div><div style="width: 100%;"><span data-text="i">i</span></div><div style="width: 100%;"><span data-text="n">n</span></div><div style="width: 100%;"><span data-text="O">O</span></div><div style="width: 100%;"><span data-text="S">S</span></div><div style="width: 100%;"><span data-text="&nbsp;">&nbsp;</span></div><div style="width: 100%;"><span data-text="[">[</span></div><div style="width: 100%;"><span data-text="v">v</span></div><div style="width: 100%;"><span data-text="e">e</span></div><div style="width: 100%;"><span data-text="r">r</span></div><div style="width: 100%;"><span data-text="s">s</span></div><div style="width: 100%;"><span data-text="i">i</span></div><div style="width: 100%;"><span data-text="o">o</span></div><div style="width: 100%;"><span data-text="n">n</span></div><div style="width: 100%;"><span data-text="&nbsp;">&nbsp;</span></div><div style="width: 100%;"><span data-text="5">5</span></div><div style="width: 100%;"><span data-text=".">.</span></div><div style="width: 100%;"><span data-text="0">0</span></div><div style="width: 100%;"><span data-text=".">.</span></div><div style="width: 100%;"><span data-text="9">9</span></div><div style="width: 100%;"><span data-text="8">8</span></div><div style="width: 100%;"><span data-text="8">8</span></div><div style="width: 100%;"><span data-text="0">0</span></div><div style="width: 100%;"><span data-text="]">]</span></div><div style="width: 100%;"><span data-text="R">R</span></div><div style="width: 100%;"><span data-text="u">u</span></div><div style="width: 100%;"><span data-text="n">n</span></div><div style="width: 100%;"><span data-text="&nbsp;">&nbsp;</span></div><div style="width: 100%;"><span data-text="a">a</span></div><div style="width: 100%;"><span data-text="n">n</span></div><div style="width: 100%;"><span data-text="y">y</span></div><div style="width: 100%;"><span data-text="&nbsp;">&nbsp;</span></div><div style="width: 100%;"><span data-text="J">J</span></div><div style="width: 100%;"><span data-text="a">a</span></div><div style="width: 100%;"><span data-text="v">v</span></div><div style="width: 100%;"><span data-text="a">a</span></div><div style="width: 100%;"><span data-text="s">s</span></div><div style="width: 100%;"><span data-text="c">c</span></div><div style="width: 100%;"><span data-text="r">r</span></div><div style="width: 100%;"><span data-text="i">i</span></div><div style="width: 100%;"><span data-text="p">p</span></div><div style="width: 100%;"><span data-text="t">t</span></div><div style="width: 100%;"><span data-text="&nbsp;">&nbsp;</span></div><div style="width: 100%;"><span data-text="c">c</span></div><div style="width: 100%;"><span data-text="o">o</span></div><div style="width: 100%;"><span data-text="m">m</span></div><div style="width: 100%;"><span data-text="m">m</span></div><div style="width: 100%;"><span data-text="a">a</span></div><div style="width: 100%;"><span data-text="n">n</span></div><div style="width: 100%;"><span data-text="d">d</span></div><div style="width: 100%;"><span data-text=".">.</span></div><div style="width: 100%;"><span data-text=".">.</span></div><div style="width: 100%;"><span data-text=".">.</span></div></div></div><div class="cmd" style="width: 100%; --cursor-line: 0;"><div class="cmd-wrapper" style=""><span class="cmd-prompt" style=""><span data-text=">&nbsp;"><span style="width: 2ch;">&gt;&nbsp;</span></span></span><div class="cmd-cursor-line" role="presentation" aria-hidden="true"><span></span><span class="cmd-cursor"><span data-text="" class="end"><span>&nbsp;<span></span></span></span></span><span></span></div></div><label class="visually-hidden" for="xkasb7">Clipbard textarea for jQuery Terminal</label><textarea autocapitalize="off" spellcheck="false" id="xkasb7" tabindex="1" class="cmd-clipboard" data-cmd-prompt=">&nbsp;"></textarea></div></div><div class="terminal-fill"></div><div class="terminal-scroll-marker"><div style="height:20px;height:calc(20px / var(--pixel-density, 1))"></div></div></div><div class="terminal-font">&nbsp;</div><div class="terminal-pixel"></div></div>
+			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+		
+
+			<div class="window closed ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>Task List</strong>" taskicon="<img src='system/img/icons/tasklist.png'  width='42' height='42'>" headicon="<img src='system/img/icons/tasklist.png' class='winheadimg' width='26' height='26'>" data-id="10" style="z-index: 1000;" id="window10"><div class="windowHeader"><strong><img src="system/img/icons/tasklist.png" class="winheadimg" width="26" height="26"><strong class="winheadstrongtitle">Task List</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+				<h1 class="appsHtxt">Task List</h1>
+				<h2 class="appsHtxt">Click on any app to restart it.</h2>
+				<div id="tasksicons">
+					<center>
+						<li><a class="reloadWindow" data-id="0"><img border="0" alt="" src="system/img/icons/paint.png" width="32" height="32"><br>Paint</a></li>
+						<li><a class="reloadWindow" data-id="1"><img border="0" alt="" src="system/img/icons/notepad.png" width="32" height="32"><br>Notepad</a></li>
+						<li><a class="reloadWindow" data-id="2"><img border="0" alt="" src="system/img/icons/calendar.png" width="32" height="32"><br>Calendar</a></li>
+						<li><a class="reloadWindow" data-id="3"><img border="0" alt="" src="system/img/icons/calculator.png" width="32" height="32"><br>Calculator</a></li>
+						<li><a class="reloadWindow" data-id="4"><img border="0" alt="" src="system/img/icons/bronze.png" width="32" height="32"><br>Bronze Browser</a></li>
+						<li><a class="reloadWindow" data-id="5"><img border="0" alt="" src="system/img/icons/vmbox.png" width="32" height="32"><br>VMBox</a></li>
+						<li><a class="reloadWindow" data-id="6"><img border="0" alt="" src="system/img/icons/minesweeper.png" width="32" height="32"><br>Minesweeper</a></li>
+					</center>
+				</div>		
+			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+
+			<div class="window closed activeWindow ui-draggable ui-draggable-handle" data-html="true" data-title="<strong class='winheadstrongtitle'>mountainOS</strong>" taskbar-title="<strong>mountainOS</strong>" taskicon="<img src='system/img/systemlogo.png'  width='42' height='44'>" headicon="<img src='system/img/systemlogo.png' class='winheadimg notiwindow' width='28' height='30'>" data-id="11" style="z-index: 1000;" id="window11"><div class="windowHeader"><strong><img src="system/img/systemlogo.png" class="winheadimg notiwindow" width="28" height="30"><strong class="winheadstrongtitle">mountainOS</strong></strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div><div class="wincontent ui-resizable">
+				<a class="alertxt"></a>
+				<br>
+				<br>
+				<br>
+				<button class="confirmButton">OK</button>
+			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+
+
+			
+			
+		<div id="taskbar">
+			<a class="taskbarPanel" id="appsBtn" onclick="appstoggle()"><img src="system/img/icons/apps.png" width="46" height="46"></a>
+			<a class="timedatetext" title="Click here to see the date and time." onclick="timedatetoggle();">12:02 • August 01, 2024</a>
+			<a class="quickweanewsap" title="Click here to access weather and news." onclick="quickweanewstoggle();"><a><img src="system/img/icons/widgets.png" style="vertical-align: middle;" width="46" height="46"></a>Could not fetch weather</a>
+			
+
+		<div class="taskbarPanel closed" id="minimPanel0" data-id="0"><img src="system/img/icons/paint.png" width="42" height="42"><strong class="winheadstrongtitle">Paint</strong></div><div class="taskbarPanel closed" id="minimPanel1" data-id="1"><img src="system/img/icons/notepad.png" width="42" height="42"><strong class="winheadstrongtitle">Notepad</strong></div><div class="taskbarPanel closed" id="minimPanel2" data-id="2"><img src="system/img/icons/calendar.png" width="42" height="42"><strong class="winheadstrongtitle">Calendar</strong></div><div class="taskbarPanel closed" id="minimPanel3" data-id="3"><img src="system/img/icons/calculator.png" width="42" height="42"><strong class="winheadstrongtitle">Calculator</strong></div><div class="taskbarPanel closed" id="minimPanel4" data-id="4"><img src="system/img/icons/bronze.png" width="42" height="42"><strong class="winheadstrongtitle">Bronze</strong></div><div class="taskbarPanel closed" id="minimPanel5" data-id="5"><img src="system/img/icons/vmbox.png" width="42" height="42"><strong class="winheadstrongtitle">VMBox</strong></div><div class="taskbarPanel closed" id="minimPanel6" data-id="6"><img src="system/img/icons/minesweeper.png" width="42" height="42"><strong class="winheadstrongtitle">Minesweeper</strong></div><div class="taskbarPanel closed" id="minimPanel7" data-id="7"><img src="system/img/icons/mediaplayer.png" width="42" height="42"><strong class="winheadstrongtitle">Media Player</strong></div><div class="taskbarPanel closed" id="minimPanel8" data-id="8"><img src="system/img/icons/settings.png" width="42" height="42"><strong class="cpapptitle">Settings</strong></div><div class="taskbarPanel closed" id="minimPanel9" data-id="9"><img src="system/img/icons/terminal.png" width="42" height="42"><strong class="winheadstrongtitle">Terminal</strong></div><div class="taskbarPanel closed" id="minimPanel10" data-id="10"><img src="system/img/icons/tasklist.png" width="42" height="42"><strong class="winheadstrongtitle">Task List</strong></div><div class="taskbarPanel closed activeTab" id="minimPanel11" data-id="11"><img src="system/img/systemlogo.png" width="42" height="44"><strong class="winheadstrongtitle">mountainOS</strong></div></div>
+
+	
+		
+		
+		<div id="appsmenu">
+			<input type="text" id="appSearch" onkeyup="appSearch()" placeholder="Click here to search for an app" title="Click here to search for an app">
+			<div id="appicons">
+				<center>
+					<li><a class="openWindow" data-id="0"><img border="0" alt="" src="system/img/icons/paint.png" width="32" height="32"><br>Paint</a></li>
+					<li><a class="openWindow" data-id="1"><img border="0" alt="" src="system/img/icons/notepad.png" width="32" height="32"><br>Notepad</a></li>
+					<li><a class="openWindow" data-id="2"><img border="0" alt="" src="system/img/icons/calendar.png" width="32" height="32"><br>Calendar</a></li>
+					<li><a class="openWindow" data-id="3"><img border="0" alt="" src="system/img/icons/calculator.png" width="32" height="32"><br>Calculator</a></li>
+					<li><a class="openWindow" data-id="4"><img border="0" alt="" src="system/img/icons/bronze.png" width="32" height="32"><br>Bronze Browser</a></li>
+					<li><a class="openWindow" data-id="5"><img border="0" alt="" src="system/img/icons/vmbox.png" width="32" height="32"><br>VMBox</a></li>
+					<li><a class="openWindow" data-id="6"><img border="0" alt="" src="system/img/icons/minesweeper.png" width="32" height="32"><br>Minesweeper</a></li>
+					<li><a class="openWindow" data-id="7"><img border="0" alt="" src="system/img/icons/mediaplayer.png" width="32" height="32"><br>Media Player</a></li>
+					<li><a class="openWindow" data-id="9"><img border="0" alt="" src="system/img/icons/terminal.png" width="32" height="32"><br>Terminal</a></li>
+					<li><a class="openWindow" data-id="10"><img border="0" alt="" src="system/img/icons/tasklist.png" width="32" height="32"><br>Task List</a></li>
+				</center>		
+			</div>	
+			<div id="userProfile">
+				<hr>
+				<div><img border="0" class="pfpimage" alt="" src="system/img/pfp.png" width="32" height="32"><br><a class="userProfileTxt">User</a></div>
+				<a id="settingsUP" class="openWindow" data-id="8"><img border="0" alt="" src="system/img/icons/settings.png" width="32" height="32"></a>
+			</div>
+		</div>
+
+		<a id="watermark">Luna's mountainOS<br> Build 9880<br>Compiled on 11/09/2023 02:27:55</a>
+
+		<div id="quickweanews">
+			<h1>Welcome back!</h1>
+			<h2 class="quiweatherfull">It is currently <span id="quiweather"><a><img src="system/img/icons/widgets.png" style="vertical-align: middle;" width="46" height="46"></a>Could not fetch weather</span></h2>
+			<hr>
+			<div id="quinews">
+			<h3 class="feed-title"><a href="https://www.theverge.com/" target="_blank">The Verge -  All Posts</a></h3><h4 class="feed-item-title"><a href="https://www.theverge.com/24210505/samsung-galaxy-watch-ultra-review-smartwatch-wearables" target="_blank">Samsung Galaxy Watch Ultra review: if you can’t beat ’em, join ’em</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/8/1/24211087/openai-chatgpt-advanced-voice-mode-demo-accents-language" target="_blank">Watch ChatGPT’s new voice mode mimic accents and correct pronunciation</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210859/netflix-squid-game-second-final-season-release-date" target="_blank">Squid Game returns this December — and will end with another season next year</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210786/meta-earnings-q2-2024-ai-llama-zuckerberg" target="_blank">Meta’s future is AI, AI, and more AI</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210667/microsoft-tiktok-ai-openai-customer" target="_blank">TikTok is one of Microsoft’s biggest AI cloud computing customers</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210783/qualcomm-promises-snapdragon-x-pcs-will-cost-as-little-as-700-next-year" target="_blank">Qualcomm promises Snapdragon X PCs will cost as little as $700 next year</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210621/honda-hp-x-concept-car-1984-nsx-gps-pininfarina" target="_blank">Honda’s 1984 HP-X concept was the carbon fiber future we expected</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210620/dji-neo-drone-4k-digital-photography" target="_blank">Leak: here’s the DJI Neo, the lightest budget drone DJI’s ever made</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24210565/reddit-microsoft-anthropic-perplexity-pay-ai-search" target="_blank">Reddit CEO says Microsoft needs to pay to search the site</a></h4><h4 class="feed-item-title"><a href="https://www.theverge.com/2024/7/31/24209910/apple-intelligence-ios-18-preview-siri" target="_blank">A first look at Apple Intelligence and its (slightly) smarter Siri</a></h4><div style="text-align: end;">
+  <a href="https://rss.bloople.net/" target="_blank" style="color: #000000;">Powered by RSS 2 HTML</a>
+</div>
+
+<!-- To create this output, visit: https://rss2html.net/build_embeds/new?embed_render_title=false&feed_render_description=false&feed_render_image=false&strip_html=false&template=legacy&url=https%3A%2F%2Fwww.theverge.com%2Frss%2Findex.xml -->
+
+		   </div>		
+		   <hr> 
+			<h2>
+			  Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> and <a href="https://theverge.com/" target="_blank">The Verge</a>
+			</h2>
+		</div>
+
+			<div id="timedateflyout">
+				<h1 style="top: 3px; position: relative;">The time is <span id="quitime">12:02:48 on August 01, 2024</span></h1>
+				<iframe class="tdfi" src="apps/calendar/index.html"></iframe>
+			   <hr> 
+			</div>
+			<div id="firstexperience" style="display: block;">
+				<a class="FTUEtext"></a>
+				<div class="backgroundftue">
+				<div class="circles">
+					<div class="circle1"></div>
+					<div class="circle2"></div>
+					<div class="circle3"></div>
+				</div>
+			</div>
+				<div id="firstexperiencewindow">
+				 <h1>First-time User Experience</h1>
+				 <br>
+				 <h2>Welcome to mountainOS.<br>Let's set up your account and user interface.</h2>
+				 <br>
+				 <input id="usrinpt" name="usrinpt" type="text" maxlength="10" placeholder="Enter your username..." required="required" class="textinput">
+				 <br>
+				 <br>
+				 <a>Choose a profile picture, or leave it blank.</a>
+				 <br>
+				 <input id="inputbtn" class="wppicker" type="file" accept="image/*" onchange="changePFP(event)">
+				 <br>
+				 <br>
+				 <a>Choose a desktop background image, or leave it blank.</a>
+				 <br>
+				 <input id="inputbtn" class="wppicker" type="file" accept="image/*" onchange="changeBG(event)">
+				 <br>
+				 <br>
+				 <input type="color" id="colorpickersetup"><a>Choose your color</a>
+				 <br>
+				 <br>
+				 <input type="checkbox" onclick="addAppTitleTaskbarStp()" id="AppTitleOnTaskBarPanelStp" class="checkBox"><a class="addAppTitleTaskbarTxt">Add app title to taskbar icons.</a>
+				 <br>
+				 <br>
+				 <button onclick="finishFTUE()">Finish setup.</button>
+				</div>
+			  </div>
+
+			  
+
+
+
+	</div>
+
+	<div id="startup" style="display: none;">
+		<div><img id="startuplogo" src="system/img/systemlogo.png"></div>	
+		<div><img id="startupload" src="system/img/startupload.gif"></div>	
+	</div>
+
+	
+	<div id="contextMenu" class="context-menu" style="display: none; left: 140px; top: 421px;">
+		<ul>
+			<li class="openWindow" data-id="8">Open Settings</li>
+			<li onclick="window.location.reload(true);">Reload mountainOS</li>
+			<li onclick="activatefull(document.documentElement);">Activate Fullscreen</li>
+			<li onclick="deactivatefull();">Deactivate Fullscreen</li>
+			
+
+		</ul>
+		</div>
+
+
+<script>
+	$('#colorpicker').on('change', function() {
+    var cpcolor = this.value;
+	const winhead = document.getElementsByClassName('windowHeader');
+    $(winhead).css('background', cpcolor);
+	$('#taskbar').css('background', cpcolor);
+	$('.quickfeatures').css('background', cpcolor);
+	$('#appsmenu').css('background', cpcolor);
+	$('#quickweanews').css('background', cpcolor);
+	$('#timedateflyout').css('background', cpcolor);
+	$('#htmltemp').css('color', cpcolor);
+	$('#watermark').css('color', cpcolor);
+	$('#abranding a').css('color', cpcolor);
+	$('input').css('border-color', cpcolor);
+	$('button').css('border-color', cpcolor);
+	$('.checkBox').css('color', cpcolor);
+	document.cookie = "mOSColor=" + cpcolor;
+	localStorage.setItem("mOSColor", cpcolor)
+})
+$('#colorpickersetup').on('change', function() {
+    var cpcolor = this.value;
+	const winhead = document.getElementsByClassName('windowHeader');
+    $(winhead).css('background', cpcolor);
+	$('#taskbar').css('background', cpcolor);
+	$('.quickfeatures').css('background', cpcolor);
+	$('#appsmenu').css('background', cpcolor);
+	$('#quickweanews').css('background', cpcolor);
+	$('#timedateflyout').css('background', cpcolor);
+	$('#htmltemp').css('color', cpcolor);
+	$('#watermark').css('color', cpcolor);
+	$('#abranding a').css('color', cpcolor);
+	$('button').css('border-color', cpcolor);
+	$('.checkBox').css('color', cpcolor);
+	$('input').css('border-color', cpcolor);
+	document.cookie = "mOSColor=" + cpcolor;
+	localStorage.setItem("mOSColor", cpcolor)
+})
+
+
+function centeredApps() {
+	// Get the checkbox
+	var checkBox = document.getElementById("centrdAppsChk");
+	var checkBoxSetup = document.getElementById("centrdAppsChkSetup");
+	// Get the output text
+	var taskbar = document.getElementById("taskbar");
+	var appsmenu = document.getElementById("appsmenu");
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+	  appsmenu.style.margin = "unset";
+	  taskbar.style.margin = "unset";
+	  taskbar.style.borderTopLeftRadius = "0px";
+	  taskbar.style.borderBottomLeftRadius = "0px";
+	  taskbar.style.borderBottomRightRadius = "0px";
+	  taskbar.style.bottom = "0px";
+	  appsmenu.style.bottom = "58px";
+	  checkBoxSetup.checked = true;
+	  document.cookie = "mOSLeftBar=true"
+	  localStorage.setItem("mOSLeftBar", "true")
+	} else {
+		appsmenu.style.margin = "";
+	  taskbar.style.margin = "";
+	  taskbar.style.borderTopLeftRadius = "";
+	  taskbar.style.borderBottomLeftRadius = "";
+	  taskbar.style.borderBottomRightRadius = "";
+	  taskbar.style.bottom = "";
+	  appsmenu.style.bottom = "";
+	  checkBoxSetup.checked = false;
+		document.cookie = "mOSLeftBar=false"
+		localStorage.setItem("mOSLeftBar", "false")
+
+	}
+}
+function centeredAppsStp() {
+	// Get the checkbox
+	var checkBox = document.getElementById("centrdAppsChkSetup");
+	var checkBoxSettings = document.getElementById("centrdAppsChk");
+
+	// Get the output text
+	var taskbar = document.getElementById("taskbar");
+	var appsmenu = document.getElementById("appsmenu");
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+	  appsmenu.style.margin = "unset";
+	  taskbar.style.margin = "unset";
+	  taskbar.style.borderTopLeftRadius = "0px";
+	  taskbar.style.borderBottomLeftRadius = "0px";
+	  taskbar.style.borderBottomRightRadius = "0px";
+	  taskbar.style.bottom = "0px";
+	  appsmenu.style.bottom = "58px";
+	  document.cookie = "mOSLeftBar=true"
+	  localStorage.setItem("mOSLeftBar", "true")
+	  checkBoxSettings.checked = true;
+	} else {
+		appsmenu.style.margin = "";
+	  taskbar.style.margin = "";
+	  taskbar.style.borderTopLeftRadius = "";
+	  taskbar.style.borderBottomLeftRadius = "";
+	  taskbar.style.borderBottomRightRadius = "";
+	  taskbar.style.bottom = "";
+	  appsmenu.style.bottom = "";
+		document.cookie = "mOSLeftBar=false"
+		localStorage.setItem("mOSLeftBar", "false")
+		checkBoxSettings.checked = false;
+
+	}
+}
+
+
+
+$(".catsel").click(function() {
+    var id = $(this).attr("id");
+    $("#pages div").css("display", "none");
+    $("#pages div#" + id + "").css("display", "block");
+});
+
+
+
+</script>
+
+
+<div id="s1722510161818" class="Screensaver" style="position: fixed; display: none;"><div><div><img style="width: 100px !important; height:100px !important;" src="system/img/systemlogo.png"></div></div></div><style>
+#s1722510161818 {
+  left: 0; top: 0; right:0; bottom: 0;
+  z-index: 100000;
+  color: #eee;
+  cursor: none !important;
+  background-color: /*#202020*/ transparent;
+  backdrop-filter: blur(5px);
+	transition: 0.2s;
+}
+#s1722510161818 div {
+  width: 100px;
+  height: 102px;
+  font-size: 0px;
+  font-family: Helvetica, Arial;
+  background-size: 100%;
+  line-height: 1;
+}
+#s1722510161818 > div {
+  animation: biggers1722510161818 15s linear infinite alternate, xs1722510161818 15s linear infinite alternate;
+}
+#s1722510161818 > div > div {
+  animation: smallers1722510161818 12s linear infinite alternate, ys1722510161818 12s linear infinite alternate;
+}
+@keyframes xs1722510161818 {
+  100% {
+    transform: translateX(calc(100vw - 100px));
+  }
+}
+
+@keyframes ys1722510161818 {
+  100% {
+    transform: translateY(calc(100vh - 102px));
+  }
+}
+
+@keyframes biggers1722510161818 {
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.30);
+  }
+  75% {
+    transform: scale(1.45);
+  }
+  100% {
+    transform: scale(1.60);
+  }
+}
+
+@keyframes smallers1722510161818 {
+  100% {
+    transform: scale(1.60);
+  }
+  75% {
+    transform: scale(1.45);
+  }
+  50% {
+    transform: scale(1.30);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+
+}
+</style></body></html>
