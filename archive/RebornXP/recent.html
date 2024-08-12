@@ -1,152 +1,40 @@
-<html lang="en" data-theme="" style="background:black"><head>
-		<meta charset="utf-8">
-		<title>RebornXP</title>
-		<link rel="icon" href="https://rebornxp.js.org/favicon.png">
-		<link rel="stylesheet" id="theme" href="">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="description" content="Experience the past with RebornXP, an online Windows XP simulator. Relive the nostalgia in your browser – faithful recreation of the iconic interface and features. Open-source and JavaScript-powered.">
-		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/_app/immutable/start-f2355718.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-23b4510f.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-6533b345.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper-c28b9807.js">
-
-		<style>
-			html, body {
-			margin: 0;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			}
-
-			section {
-			width: 100vw;
-			height: 100vh;
-			}
-
-			p {
-			margin: 0;
-			line-height: 1.5em;
-			}
-
-			.blink {
-			animation: blink-animation 1s steps(5, start) infinite;
-			-webkit-animation: blink-animation 1s steps(5, start) infinite;
-			}
-
-			@keyframes blink-animation {
-			to {
-				visibility: hidden;
-			}
-			}
-			@-webkit-keyframes blink-animation {
-			to {
-				visibility: hidden;
-			}
-			}
-			.actions {
-			position: fixed;
-			bottom: 0;
-			width: 100%;
-			}
-
-			.float-right {
-			position: fixed;
-			bottom: 0;
-			right: 0;
-			padding-right: 2em;
-			}
-
-			#bios {
-			display: block;
-			background: #000;
-			color: #ccc;
-			font-family: monospace;
-			}
-
-			#loader {
-			display: none;
-			background: #000;
-			color: #ccc;
-			}
-
-			.loader {
-			position: relative;
-			padding-top: 100px;
-			width: 40px;
-			margin: auto;
-			}
-			.loader .circle {
-			position: absolute;
-			width: 38px;
-			height: 38px;
-			opacity: 0;
-			transform: rotate(225deg);
-			animation-iteration-count: infinite;
-			animation-name: orbit;
-			animation-duration: 5.5s;
-			}
-			.loader .circle:after {
-			content: "";
-			position: absolute;
-			width: 5px;
-			height: 5px;
-			border-radius: 5px;
-			background: #fff;
-			/* Pick a color */
-			}
-			.loader .circle:nth-child(2) {
-			animation-delay: 240ms;
-			}
-			.loader .circle:nth-child(3) {
-			animation-delay: 480ms;
-			}
-			.loader .circle:nth-child(4) {
-			animation-delay: 720ms;
-			}
-			.loader .circle:nth-child(5) {
-			animation-delay: 960ms;
-			}
-
-			@keyframes orbit {
-			0% {
-				transform: rotate(225deg);
-				opacity: 1;
-				animation-timing-function: ease-out;
-			}
-			7% {
-				transform: rotate(345deg);
-				animation-timing-function: linear;
-			}
-			30% {
-				transform: rotate(455deg);
-				animation-timing-function: ease-in-out;
-			}
-			39% {
-				transform: rotate(690deg);
-				animation-timing-function: linear;
-			}
-			70% {
-				transform: rotate(815deg);
-				opacity: 1;
-				animation-timing-function: ease-out;
-			}
-			75% {
-				transform: rotate(945deg);
-				animation-timing-function: ease-out;
-			}
-			76% {
-				transform: rotate(945deg);
-				opacity: 0;
-			}
-			100% {
-				transform: rotate(945deg);
-				opacity: 0;
-			}
-			}
-		</style>
-		
-<!-- Google tag (gtag.js) -->
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RebornXP Migration Notice</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <style>
+	 body {
+            margin: 0;
+            padding: 0;
+            background-image: url('Bliss.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .window {
+            width: 400px;
+        }
+        .window-body {
+            padding: 10px;
+        }
+        menu[role="tablist"] {
+            display: flex;
+        }
+        menu[role="tablist"] button[aria-selected="true"] {
+            background-color: #e5e5e5;
+        }
+        article[role="tabpanel"] {
+            display: none;
+        }
+        article[role="tabpanel"][aria-hidden="false"] {
+            display: block;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2R1EBBZX26"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -155,94 +43,125 @@
 
   gtag('config', 'G-2R1EBBZX26');
 </script>
-		
-	<link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/__layout.svelte-dd2af2de.js"><link rel="stylesheet" href="/_app/immutable/assets/__layout-d908ec64.css"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/error.svelte-f5a98e7b.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/index.svelte-ed0672b6.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/pages/boot_manager.svelte-8431174a.js"><link rel="modulepreload" as="script" crossorigin="" href="/_app/immutable/chunks/utils-bd7a0315.js"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"></head>
-	<body style="zoom: 1;">
+</head>
+<body>
+    <div class="container">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">RebornXP Migration Notice</div>
+                <div class="title-bar-controls">
+                   <button aria-label="Minimize" onclick="openInNewTab()"></button>
+                    <button aria-label="Maximize" onclick="openInNewTab()"></button>
+                    <button aria-label="Close" onclick="openInNewTab()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <menu role="tablist">
+                    <button role="tab" aria-selected="true" aria-controls="tab-english" id="tab-english-button"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAJxJREFUOE9jZKAQMFKon4FyA8w04l9c49URZ2RjYfj/6w8DNrrmZCEuhx5j5DHt/r9rdiJDXOsVhkXVOljpU/MssBowZd5SBkZe6/7/4lKGODWzcLExbDkWhtWAtfefMAwnF4D8+ufbLwZsNN4waJo4939OUjRZ6QkcC50sDP+DFWXIMgAcC9RwwVEGBgYrspzAwHCc8rxAps1wbQC3bYRR4qmtqQAAAABJRU5ErkJggg=="></button>
+                    <button role="tab" aria-controls="tab-russian" id="tab-russian-button" aria-selected="false"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAGxJREFUOE9jZKAQMFKon4Fx+tJ1u16/ee9KjkGiwkJ7GJsmzv1fnB5Hjn6G3pmLGAaBAYya9f/tvFPJ8sKhrbMZGIeBAcsFGP5by0iQFQZHn7xgYBwEBggyzGT4z5BGlh8YGWZTnpnIshlJEwBHQTvXfUCl1AAAAABJRU5ErkJggg=="></button>
+					<button role="tab" aria-controls="tab-chinese" id="tab-chinese-button" aria-selected="false"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAARdJREFUOE+tkz1Ow0AQhd/MmtjIiF0XCGi4TQQIIdFDww1yEcQloAWERAMNNRegpuKvCETBxHF2FnkVWy6i/JmRplntfPNm3i6hYVDDetCD4te+yNYyoJj5na4J7sAkGDmHfMOBP4EVEATwZwGRz0lx99WFB+xpg561iM5bSG9HCB8dmAirFyGykwwR83RAO9EYdhT0aQu259A/GyK4ElhxvjBknqiiUtBe1+juCLZvYmQvFt9Hv0g4QO4cwikqKsCuNsgPCemzhTKEiBj8JB4wl4J9bWDHUxaLkyIBrF1G8+2gcKGMgYiXnR4PoMYOzHShDigUzLKvbFbtoA5Y5EH9D+Be8duPyOYincu7MfNH88+0TOd6zR8dGYk2Yl8fXQAAAABJRU5ErkJggg=="></button>
+					<button role="tab" aria-controls="tab-portuguese" id="tab-portuguese-button" aria-selected="false"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAeFJREFUOE+tk81LVFEYxn/nfsy943xVjjpTE21ChFISISrJRUP7FrapRRRGixYOSNhGCIQQ2rRoV6HgHyAhuIkCo5SCYoQQ+iQpaUYdG2fu3NvM3JkTpqVWbsbO/nme97y/5xXs8Ikd6hGc3f8UKTtrNJoSdMckp5u26qWEko1esqgiqBgB0E0Qfwz8MM3fBhUXnCyHKkuMdjZju1UuTL/ng6cRvCFQ1I2wLQarqeXvKPkFEhGNwaMxvLqCEAKrWCExNcf9ZQGBBtANQMBvg3gYnBwHil8Z6dhLxx4PY8l2+h5coj5kcKf7LvHmJOMfc/TMLLLoi4Lhh0dL61/o8nOxLsXt9jBBj0IqUyCpvWC36WFkbIGJNylm+3vwmTpp2+Xyq2XG3ShM5tcMRJef3uA8Nw8H8WoCy3E5ODRKhCB955v4VnU4FzlJeJeJ40puzFrcykaRT6z1CeL1YK/QUvrCcJuPYxGdyU/HSUxcJ5cvMHhqiDOtL3megSuvbd4Z+9YW+jizicLPJTpouTT9DRYDrTqGuopNslKEazMl7uVCyEDjBtJ/YyyDneVI+TPDbSpzBcnVtyrzdTHwBkDRtsG4uUqyCiUHtWhREQqYAdCMbYv0DDhRY5Wn/8Mx1Rj9S/YDAD650ncphJAAAAAASUVORK5CYII="></button>
+					<button role="tab" aria-controls="tab-turkish" id="tab-turkish-button" aria-selected="false"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAWFJREFUOE+lk71LQlEYxn837VrkNRPyA5QbBDq0ONcfIDi4CXfP0dW/xDWdBMHFwc3FpQ8cBJeLm5GSVPhVZuFNM65QeP0g0ANnOec8v/Oc93mPwJZD2FKPcCVwDVxsAhLgVgdML6fL8m9g5x9qSmDmwAB4BfQ5ttvZ6/c5BA7WgJYAPeDt7Ax3JoPo9/NRKtFOJPDUaogrIAaAbvneakVWVb4aDVrhMPuDAZ+ShNnr5ahWw7YAMQDegUE0iieXoxWJIBUKtL1enMkkZp+P51gMV7WKZQ5iAAyAoaLgzmZ5DIWQikWGgC2fRwwGeQgEONU05nM3ACZAw+XipF5npKo8KQqmep2JLDPpdhFEEbnTwbTOgb7eBrRIBFc6jcnhYFSp8BKPc1wuswsGsX5+ZYwdoGexzAo3bjZxatpS8X5NrATom3pfjQEzGN68mOQMkBK4mcL5Jq0M3G3/mTa8+U/2A1IDg+91mJI9AAAAAElFTkSuQmCC"></button>
+                </menu>
+                <article role="tabpanel" id="tab-english" aria-hidden="false">
+                <h4>🚨 Announcement 🚨</h4>
+                <p>
+Hello everyone,
+<br>
 
-		<div id="iframe-preload" style="position: absolute;inset: 0;display: none;"></div>
-		
-		<div style="position:absolute;inset:0;"> <div class="w-screen h-screen bg-black overflow-hidden font-MSSS flex flex-col"><div class="mt-12 ml-8 text-lg flex-grow"><p class="text-slate-100">Use the ↑(Up) and ↓(Down) key to move the pointer to desired boot device.</p> <p class="text-slate-100">Press (Enter) to attempt to boot or ESC to cancel.</p> <p class="text-slate-100 mt-2 max-w-[500px]">RebornXP might have unexpected behaviors on browsers that are NOT Chromium-based (Safari, Firefox, Internet Explorer, etc.)</p> <p class="text-slate-100 uppercase mt-4 mb-2">Boot options:</p> <div><div class="ml-8 p-2 inline-block text-slate-900 bg-slate-200 cursor-pointer">Start Windows Normally</div></div><div><div class="ml-8 p-2 inline-block text-slate-300 cursor-pointer">Install Windows</div></div> <p class="text-slate-100 uppercase mt-4 mb-2" style="display: block;">The default entry will boot in 3 seconds...</p></div></div> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div>
+We want to inform you that we are aware of an ongoing issue where some users (particularly in the US and UK) are being redirected to other websites through our advertising service. This behavior is not in line with our values, and we have taken immediate action.
+<br>
 
-		<div id="pos_loader" style="position: absolute; inset: 0px; padding: 10px; background-color: black; font-size: 18px; display: none;">
-			<!-- Bootup by Kyle Stephens -->
-			<!-- https://codepen.io/kylestephens/pen/zYOgLrr -->
-			<section id="bios">
-				<p>PhoenixBIOS 1.4 Release 6.0</p>
-				<p>Copyright 1985-2001 Phoenix Technologies Ltd.</p>
-				<p>All Rights Reserved</p>
-				<p>Copyright 2001-2003 VMware. Inc.</p>
-				<p>VMware BIOS build 314</p>
-				<br>
-				<p>ATAPI CD-ROM: VMware Virtual IDECDROM Drive</p>
-				<p>Initializing <span class="blink">...</span></p>
-			  
-			  </section>
-			  
-			<section id="loader">
-				<div class="loader">
-					<div class="circle"></div>
-					<div class="circle"></div>
-					<div class="circle"></div>
-					<div class="circle"></div>
-					<div class="circle"></div>
-				</div>
-			</section>
-		</div>
+We have ended our partnership with the current ad service due to their irresponsible practices. We are in the process of switching to a more reliable service to ensure a better and safer experience for all our users.
+<br>
 
-		<script>
-			window.addEventListener('contextmenu', (event) => {
-				event.preventDefault();
-			})
-		</script>
-		
-		<script src="//unpkg.com/loadjs@latest/dist/loadjs.min.js"></script>
+We appreciate your understanding and patience as we resolve this issue.
+<br>
 
-		<script>
-			function load_assets(assets, completion){
-				Promise
-				.all(assets.map(asset=>fetch(asset)))
-				.then(responses =>
-					Promise.all(responses.map(res => res.blob()))
-				).then(completion);
-			}
+Thank you for your continued support.</p>
+<hr>
+                   <p>Hey there,</p>
+<p>We're excited to let you know that RebornXP has moved to a new website! This old domain, rebornxp.js.org, will expire soon, so be sure to bookmark our new site, Quenq.com</p>
+<p>Visit <a href="https://www.quenq.com" target="_blank">quenq.com</a> to access RebornXP and discover other fun simulators and pranks. Also, join our <a href="https://discord.gg/9dFx9kKQS6" target="_blank">Discord community</a> for updates and chat.</p>
+<p>For now, just head over to <a href="https://www.quenq.com" target="_blank">quenq.com</a> to launch RebornXP or you can visit it directly on xp.quenq.com sub-domain.</p>
+<p>If you have any questions, feel free to reach out to us on Discord.</p>
+<p>Cheers,<br>The Retro Roll Team</p>
 
-			load_assets([
-				'/images/xp_loading_logo.jpg',
-				'/images/xp_loading_mslogo.jpg',
-				'/images/xp_logo_horizontal.png',
-				'/images/xp_logo.png',
-				'/fonts/levi.ttf', 
-				'/fonts/ms_sans_serif_bold.ttf', 
-				'/fonts/ms_sans_serif.ttf'], () => {
-				document.querySelector('#pos_loader').style.display = 'none';
-			})
+                </article>
+                <article role="tabpanel" id="tab-russian" aria-hidden="true">
+                    <p>Привет,</p>
+<p>Мы рады сообщить вам, что RebornXP переехал на новый сайт! Срок действия старого домена rebornxp.js.org скоро истечет, поэтому обязательно добавьте наш новый сайт Quenq.com в закладки</p>
+<p>Посетите <a href="https://www.quenq.com" target="_blank">quenq.com</a>, чтобы получить доступ к RebornXP и открыть для себя другие забавные симуляторы и розыгрыши. Также присоединяйтесь к нашему <a href="https://discord.gg/9dFx9kKQS6" target="_blank">сообществу Discord</a> для получения обновлений и общения.</p>
+<p>А пока просто зайдите на <a href="https://www.quenq.com" target="_blank">quenq.com</a>, чтобы запустить RebornXP, или вы можете посетить его напрямую на поддомене xp.quenq.com.</p>
+<p>Если у вас есть какие-либо вопросы, не стесняйтесь обращаться к нам в Discord.</p>
+<p>С уважением,<br>Команда Retro Roll</p>
+                </article>
+				
+				 <article role="tabpanel" id="tab-chinese" aria-hidden="true">
+                   <p>大家好，</p>
+<p>我们很高兴地通知您，RebornXP 已移至新网站！这个旧域名 rebornxp.js.org 即将过期，因此请务必收藏我们的新网站 Quenq.com</p>
+<p>访问 <a href="https://www.quenq.com" target="_blank">quenq.com</a> 以访问 RebornXP 并发现其他有趣的模拟器和恶作剧。此外，加入我们的 <a href="https://discord.gg/9dFx9kKQS6" target="_blank">Discord 社区</a>，获取最新资讯和聊天。</p>
+<p>现在，只需前往 <a href="https://www.quenq.com" target="_blank">quenq.com</a> 即可启动 RebornXP，或者您可以直接在 xp.quenq.com 子域上访问它。</p>
+<p>如果您有任何疑问，请随时通过 Discord 与我们联系。</p>
+<p>干杯，<br>Retro Roll 团队</p>
+                </article>
+				
+				 <article role="tabpanel" id="tab-portuguese" aria-hidden="true">
+                  <p>Olá,</p>
+<p>Estamos felizes em informar que o RebornXP mudou para um novo site! Este antigo domínio, rebornxp.js.org, irá expirar em breve, então certifique-se de marcar nosso novo site, Quenq.com</p>
+<p>Visite <a href="https://www.quenq.com" target="_blank">quenq.com</a> para acessar o RebornXP e descobrir outros simuladores e pegadinhas divertidas. Além disso, junte-se à nossa <a href="https://discord.gg/9dFx9kKQS6" target="_blank">comunidade Discord</a> para atualizações e bate-papo.</p>
+<p>Por enquanto, vá para <a href="https://www.quenq.com" target="_blank">quenq.com</a> para iniciar o RebornXP ou você pode visitá-lo diretamente no subdomínio xp.quenq.com.</p>
+<p>Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato conosco no Discord.</p>
+<p>Saudações,<br>Equipe Retro Roll</p>
+                </article>
+				
+								 <article role="tabpanel" id="tab-turkish" aria-hidden="true">
+<p>Merhaba,</p>
+<p>RebornXP'nin yeni bir web sitesine taşındığını duyurmaktan heyecan duyuyoruz! Bu eski alan adı, rebornxp.js.org, yakında sona erecek, bu nedenle yeni sitemiz Quenq.com'u yer imlerinize eklediğinizden emin olun</p>
+<p>RebornXP'ye erişmek ve diğer eğlenceli simülatörleri ve şakaları keşfetmek için <a href="https://www.quenq.com" target="_blank">quenq.com</a> adresini ziyaret edin. Ayrıca, güncellemeler ve sohbet için <a href="https://discord.gg/9dFx9kKQS6" target="_blank">Discord topluluğumuza</a> katılın.</p>
+<p>Şimdilik, RebornXP'yi başlatmak için <a href="https://www.quenq.com" target="_blank">quenq.com</a> adresine gidin veya doğrudan xp.quenq.com alt alan adından ziyaret edebilirsiniz.</p>
+<p>Herhangi bir sorunuz varsa, Discord'da bize ulaşmaktan çekinmeyin.</p>
+<p>Teşekkürler,<br>Retro Roll Ekibi</p>
+                </article>
+				
+				
+				
+				<section class="field-row" style="justify-content: flex-end">
+     <a href="https://www.quenq.com" target="_blank"> <button>OK</button></a>
+    </section>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tabs = document.querySelectorAll('[role="tab"]');
+        const tabPanels = document.querySelectorAll('[role="tabpanel"]');
 
-		</script>
+        function handleTabClick(event) {
+            const selectedTab = event.currentTarget;
+            const selectedPanelId = selectedTab.getAttribute('aria-controls');
 
-		<script>
+            tabs.forEach(tab => {
+                tab.setAttribute('aria-selected', 'false');
+            });
+            selectedTab.setAttribute('aria-selected', 'true');
 
-			document.addEventListener('dragover', function(e){
-				e.preventDefault();
-				console.log('dragover');
-			})
-		
-			document.addEventListener('drop', function(e){
-				e.preventDefault();
-				console.log('drop');
-			})
-		</script>
-<script type="text/javascript">
-setTimeout(function(){
-    var e=document.createElement("script");
-    e.type="text/javascript";
-    e.src="//pl22394392.highrevenuenetwork.com/4b/c3/d0/4bc3d0a4a7bcb5f8c3116e2a5cb7caf1.js";
-    e.onload=function(){};
-    document.body.appendChild(e);
-}, 30000);
-</script>
+            tabPanels.forEach(panel => {
+                panel.setAttribute('aria-hidden', panel.id !== selectedPanelId);
+            });
+        }
 
+        tabs.forEach(tab => {
+            tab.addEventListener('click', handleTabClick);
+        });
 
-	
+        // Initialize by showing the first tab
+        handleTabClick({ currentTarget: tabs[0] });
+
+         // Function to open Quenq.com in a new tab
+        function openInNewTab() {
+            window.open('https://www.quenq.com', '_blank');
+        }
+    </script>
 
 
 </body></html>

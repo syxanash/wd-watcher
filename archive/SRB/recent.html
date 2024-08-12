@@ -1,0 +1,842 @@
+<html><head>
+  
+  
+  
+ <style> /*css stylesheet*/
+
+ /*1--------------------------*/
+
+
+body{
+	background-position:center; background-attachment: fixed; background-size: cover;
+	background-color: #070707; 
+	font-family:'Arial';
+	font-weight:normal;
+	text-align:center;
+	line-height:1;
+	color: #f4f1e8;
+	letter-spacing:5px;
+	margin: 0 auto;
+	cursor: url(https://srb.neocities.org/img_sources/smile.gif), auto;
+}
+/*text scrolling*/
+div.scrolling-limit{
+width: auto;
+  overflow:hidden;
+  white-space:nowrap;
+  
+}
+
+div.scrolltitle{
+  position: relative;
+  -webkit-animation: scroll 10s infinite linear;;
+  -moz-animation: scroll 10s infinite linear;
+  -o-animation: scroll 10s infinite linear;
+  animation: scroll 10s infinite linear;
+}
+
+@keyframes scroll{
+    0%   {left: 100%;}
+    100% {left: -100%;}
+}
+@-webkit-keyframes scroll{
+    0%   {left: 100%;}
+    100% {left: -100%;}
+}
+
+/* Text decoration */
+
+hr { border-bottom-width:2px; border-color:#e5b7e5; }
+
+a:hover { color: #ce73ce; cursor: url(https://srb.neocities.org/img_sources/blushy.gif) ,auto; }
+a 		{ color: #e5b7e5; text-decoration:none; }
+
+h2, h3, h4, h5 {
+	font-family: 'Arial';
+	font-weight:normal;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+h1 { font-size:20px; letter-spacing:9px; font-weight:normal;}
+h2 { font-size:18px; }
+h3 { font-size:16px; }
+h4 { font-size:12px; }
+h5 { font-size:10px; }
+
+/* Scrollbar */
+
+::-webkit-scrollbar {width: 20px;height:0px;}
+::-webkit-scrollbar-track {background: rgba(203,255,0,1);}
+::-webkit-scrollbar-thumb {
+    background: black;
+    box-shadow: inset 2px 2px 0px 0px lightgrey, inset -2px -2px 0px 0px purple;
+}
+::-webkit-scrollbar-thumb:hover {background: black;
+    box-shadow: inset 2px 2px 0px 0px lightgrey, inset -2px -2px 0px 0px purple}
+::-webkit-scrollbar-corner {background: purple;}
+::-webkit-scrollbar-button {
+    color:red;
+    background: black;
+    box-shadow: inset 2px 2px 0px 0px lightgrey, inset -2px -2px 0px 0px purple}
+
+/* Class controls */
+
+.hide { display:none; }
+
+.button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button:active {
+  border: none;
+  box-shadow: none;
+}
+
+
+/* Custom elements */
+
+.block {
+	background-color:#070707;
+	width:55%;
+	height:auto;
+	margin: 35px auto 10px auto;
+	box-shadow:#e5b7e5 0px 0px 2px;
+	padding:1px;
+}
+ /*2------------------------------*/
+ 
+.dLink{
+	margin: auto auto 2px 10px;
+	width:64px;
+	height:64px;
+	margin: 10px;
+	float:left;
+	
+}
+.dLink button{
+	font-family:'Arial';
+	margin: 0px auto 0px auto;
+	text-align: center;
+	font-size:14px;
+	font-family:'Arial';
+	font-weight:bold;
+	line-height:1;
+	letter-spacing:2px;
+	text-shadow: 1px 1px turquoise;
+	color: black; text-decoration:none;
+} 
+.dLink button:hover { color: blue; cursor:url(https://srb.neocities.org/img_sources/blushy.gif), auto; }
+
+.dIcon{
+	margin: auto;
+	width:48px;
+	height:48px;
+	image-rendering: pixelated;
+	background-size: cover;
+	position: relative;
+	top: 0;
+	left: 0;
+	-webkit-filter: drop-shadow(2px 2px 2px #222);
+  	filter: drop-shadow(2px 2px 2px #222);
+}
+
+.dIcon img{
+	width:48px;
+	height:48px;
+	image-rendering: pixelated;
+}
+
+.icon-line {
+	clear: both;
+}
+
+.dIcon-about { background-image: url("../img_sources/about.png" ); }
+.dIcon-cv  { background-image: url("../img_sources/cv.png"  ); }
+.dIcon-gif { background-image: url("../img_sources/gif.png" ); }
+.dIcon-print{ background-image: url("../img_sources/print.png"); }
+.dIcon-video { background-image: url("../img_sources/video.png" ); }
+.dIcon-virtual{ background-image: url("../img_sources/virtual.png"); }
+.dIcon-game  { background-image: url("../img_sources/game.png"  ); }
+
+
+ /*3------------------------------*/
+ .border-out{
+	position:absolute;
+	top: 0px; left: 0px;
+	width: 100%; height: 100%;
+	border: 2px solid #2b2b2b;
+	box-sizing: border-box;
+}
+/*
+#infobar {
+	position:fixed;
+	top: 0px; 
+	left: 0px; 
+	width: 100%;
+	box-sizing: border-box;
+	border: 4px ridge  white;
+	font: normal 15px 'Arial'; 
+	line-height:19px;
+	/*padding: 1px;*//*
+	background-image: linear-gradient(35deg, rgba(2,0,36,1) 54%, rgba(203,255,0,1) 100%);
+	color:white;
+}*/
+#infobar {
+	position:fixed;
+	bottom: 0px; 
+	left: 0px; 
+	width: 100%;
+	box-sizing: border-box;
+	border: 8px /*ridge  white*/;
+	box-shadow: 0px -2px 0px white;
+	font: normal 15px 'Arial'; 
+	line-height:27px;
+	/*padding: 1px;*/
+	background-image: linear-gradient(35deg, rgba(2,0,36,1) 54%, rgba(203,255,0,1) 100%);
+	color:white;
+	z-index: 99999;
+	 -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#infobar a	    { color:#9d00b2; }
+#infobar a:hover{ color:#dc00ff; }
+
+#infomenu {
+	text-align:center; 
+	float:left;
+	width:120px; height:27px;
+	background-color: lightgrey; color:black;
+	border-right: 4px ridge  #746f75;
+	box-shadow: 0px -2px 0px white, inset -2px -2px 0px darkgrey, inset 2px 0px 0px white;
+	cursor:url(https://srb.neocities.org/img_sources/blushy.gif), auto;
+}
+
+#infomenu:hover {
+  color:white;
+  background-color: blue;
+  }
+  
+
+
+#infopath {
+	margin: auto 10px auto 10px; 
+	text-align:center;
+	font-weight:bold;
+	float:left;
+}
+
+#page {
+	background-color: grey;
+	background-image: url("https://srb.neocities.org/background.gif");
+	background-position:center;
+	background-size: cover;
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%; height: 100%;
+}
+
+#docker{ 
+	font: normal 15px 'Arial'; 
+	position: absolute;
+	bottom: 27px;
+	left: 0;
+	z-index: 99;
+	width: 140px;
+	min-height: 19px;
+	background-color: lightgray;
+	box-shadow: 0px -1px 0px #ffff;
+/*	border: 4px ridge  #746f75;*/
+	 -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.dock-names {
+/*	background-color: #424242; */
+  color: black;
+	width: 100%;
+	min-height: 19px;
+	margin: 3px auto 3px auto;
+}
+
+.dock-names:hover {
+  color: white;
+	background-color: blue;
+}
+
+
+.window {
+	display: inline-block;
+	position: relative;
+	background-color: white;
+	width: 60%;
+	height: 60%;
+	z-index: 10;
+	border: 5px ridge black;
+}
+
+.win-bar{
+	text-align:left;
+	width: calc(100% - 2px);
+	height: 26px;
+	background-image: linear-gradient(35deg, rgba(2,0,36,1) 54%, rgba(203,255,0,1) 100%);
+	border-bottom: 3px ridge white;
+	color: black;
+}
+
+.win-close, 
+.win-full,
+.win-min{
+	background-position:center;
+	background-size: cover;
+	width:18px;
+	height:18px;
+	float:right;
+	margin: 4px 2px 4px 2px;
+	cursor:url(https://srb.neocities.org/img_sources/blushy.gif), auto;
+}
+
+.win-close { background-image: url("../img_sources/close.png"); 
+margin-right: 5px;}
+.win-full { background-image: url("../img_sources/full.png");
+margin-right: 5px; }
+.win-min { background-image: url("../img_sources/min.png"); 
+margin-right: 5px;}
+
+.win-text{
+
+
+	margin: auto;
+
+	height: 22px;
+/*	background-color: #7a6573;*/ 
+	box-sizing: border-box;
+
+	width: calc( 100% - 87px );
+	border: 3px /*ridge #746f75*/;
+	margin: 2px;
+	float: right;
+	color: white;
+	font: normal 15px 'Arial'; 
+	text-align: left;
+	padding-left: 4px;
+	vertical-align: middle;
+	line-height: 22px;  
+	text-shadow: 1px 1px black;
+}
+
+.win-content {
+	height: calc(100% - 29px);
+	width: calc(100% - 1px);
+	background-color: #111111;
+}
+
+.win-frame {
+	background-color: #111111;
+	overflow: none;
+	height: 100%;
+	width: 100%;
+	border: none;
+}
+
+.resizer {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: -5px;
+	bottom: -5px;
+	cursor: nw-resize;
+}
+
+#story {
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	bottom: 2%;
+	z-index: 1;
+	text-shadow: 1px 1px black;
+	text-decoration: underline;
+}
+
+#story a{
+	color: white;
+}
+
+#backneko {
+	position:absolute;
+	right:0;
+	bottom:0;
+	opacity: 0.5;
+	z-index:-1;
+}
+
+:target {
+	display:inline;
+}
+
+
+</style>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> SRB </title>
+		<link rel="icon" href="images/logo.gif">
+<!--		<script src="/img_sources/jquery1.min.js"></script-->
+		
+<!--
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"></script>
+-->
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTKNCLSLL3&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-REFENGSGY7&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"></script>
+
+		<script type="text/javascript">
+	/*! jquery.iframetracker v2.1.0 | https://github.com/vincepare/iframeTracker-jquery | Copyright (c) 2013-2018 Vincent ParÃ© | Licensed Apache-2.0 */
+!function(e,r){"function"==typeof define&&define.amd?define(["jquery"],function(e){return r(e)}):"object"==typeof module&&module.exports?module.exports=r(require("jquery")):r(e.jQuery)}(this,function(e){!function(e){e.fn.iframeTracker=function(r){"function"==typeof r&&(r={blurCallback:r});
+var t=this.get();if(null===r||!1===r)e.iframeTracker.untrack(t);
+else{if("object"!=typeof r)throw new Error("Wrong handler type (must be an object, or null|false to untrack)");e.iframeTracker.track(t,r)}return this},e.iframeTracker={focusRetriever:null,focusRetrieved:!1,handlersList:[],isIE8AndOlder:!1,init:function(){try{!0===e.browser.msie&&e.browser.version<9&&(this.isIE8AndOlder=!0)}catch(e){try{navigator.userAgent.match(/(msie) ([\w.]+)/i)[2]<9&&(this.isIE8AndOlder=!0)}catch(e){}}if(e(window).focus(),e(window).blur(function(r){e.iframeTracker.windowLoseFocus(r)}),e("body").append('<div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;" type="text" value="" id="focus_retriever" readonly="true" /></div>'),this.focusRetriever=e("#focus_retriever"),this.focusRetrieved=!1,this.isIE8AndOlder){this.focusRetriever.blur(function(r){r.stopPropagation(),r.preventDefault(),e.iframeTracker.windowLoseFocus(r)}),e("body").click(function(r){e(window).focus()}),e("form").click(function(e){e.stopPropagation()});
+try{e("body").on("click","form",function(e){e.stopPropagation()})}catch(e){console.log("[iframeTracker] Please update jQuery to 1.7 or newer. (exception: "+e.message+")")}}},track:function(r,t){t.target=r,e.iframeTracker.handlersList.push(t),e(r).bind("mouseover",{handler:t},e.iframeTracker.mouseoverListener).bind("mouseout",{handler:t},e.iframeTracker.mouseoutListener)},untrack:function(r){if("function"==typeof Array.prototype.filter){e(r).each(function(r){e(this).unbind("mouseover",e.iframeTracker.mouseoverListener).unbind("mouseout",e.iframeTracker.mouseoutListener)});var t=function(e){return null!==e};for(var i in this.handlersList){for(var o in this.handlersList[i].target)-1!==e.inArray(this.handlersList[i].target[o],r)&&(this.handlersList[i].target[o]=null);
+this.handlersList[i].target=this.handlersList[i].target.filter(t),0===this.handlersList[i].target.length&&(this.handlersList[i]=null)}this.handlersList=this.handlersList.filter(t)}else console.log("Your browser doesn't support Array filter, untrack disabled")},mouseoverListener:function(r){r.data.handler.over=!0,e.iframeTracker.retrieveFocus();try{r.data.handler.overCallback(this,r)}catch(e){}},mouseoutListener:function(r){r.data.handler.over=!1,e.iframeTracker.retrieveFocus();
+try{r.data.handler.outCallback(this,r)}catch(e){}},retrieveFocus:function(){document.activeElement&&"IFRAME"===document.activeElement.tagName&&(e.iframeTracker.focusRetriever.focus(),e.iframeTracker.focusRetrieved=!0)},windowLoseFocus:function(e){for(var r in this.handlersList)if(!0===this.handlersList[r].over)try{this.handlersList[r].blurCallback(e)}catch(e){}}},e(document).ready(function(){e.iframeTracker.init()})}(e)});
+		</script>
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EC3V0PSH5C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EC3V0PSH5C');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-REFENGSGY7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-REFENGSGY7');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTKNCLSLL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XTKNCLSLL3');
+</script>
+		
+		<!--
+		<script src="js/cookies.js"></script>-->
+		<script type="text/javascript">
+		let winIndex = [];
+/*
+$(document).ready(function () {
+    $('#infomenu').mouseenter(function (e) {
+        if (winIndex.length == 0 || $('#docker').length) {
+            return;
+        }
+        let $docker = $('<div id="docker"></div>');
+        $('body').append($docker);
+        for (let i = 0; i < winIndex.length; i++) {
+            let $name = $('<div class="dock-names">' + winIndex[i].name + '</div>');
+            $docker.append($name);
+            $name.click(function (e) {
+                focusWindow(i);
+            });
+        }
+        $('#docker').mouseleave(function (e) {
+            $('#docker').remove();
+            
+        });
+        //('html').click(function (e) {
+          //  $('#docker').remove();
+            
+      //  });
+      //element.addEventListener("click", function() {
+        //    $('#docker').remove();
+         
+      //  });
+    });
+});*/
+$(document).ready(function () {
+    $('#infomenu').on('mouseenter touchstart', function (e) {
+        if (winIndex.length == 0 || $('#docker').length) {
+            return;
+        }
+        let $docker = $('<div id="docker"></div>');
+        $('body').append($docker);
+        for (let i = 0; i < winIndex.length; i++) {
+            let $name = $('<div class="dock-names">' + winIndex[i].name + '</div>');
+            $docker.append($name);
+            $name.on('click touchstart', function (e) {
+                focusWindow(i);
+            });
+            
+        }
+        $('#docker').on('mouseleave touchend', function (e) {
+            $('#docker').remove();
+            
+        });
+        $('html').on('touchstart', function (e) {
+            $('#docker').remove();
+            
+        });
+       // ('html').click(function (e) {
+        //    $('#docker').remove();
+            
+      //  });
+      element.addEventListener("click touchend", function() {
+            $('#docker').remove();
+         
+        });
+    });
+});
+
+
+
+
+
+//---------functions------------
+function loadWallpaper() {
+    let wallpaper = getCookie("background");
+    if (wallpaper == "" || wallpaper == null) {
+        setCookie("background", "1", 365);
+        wallpaper = "1";
+    }
+    let url = 'url("images/backgrounds/ocback' + wallpaper + '.gif")';
+    $('#page').css('background-image', url);
+}
+//------------------windows mechanic----------------
+function deployWindow(url, name, link) {
+    for (let i = 0; i < winIndex.length; i++) {
+        if (winIndex[i].name == name) {
+            focusWindow(i);
+            return;
+        }
+    }
+    new AWindow(url, name, link);
+    windowCounter();
+}
+function closeWindow(id) {
+    $('#win-id-' + id).remove();
+    winIndex.splice(id, 1);
+    sortWindows();
+    windowCounter();
+}
+function maximizeWindow(id) {
+    //let url = $('#win-id-' + id).find('.win-frame').attr('src');
+    //window.open(url, '_blank');
+    let win = $('#win-id-' + id);
+    let pos = win.offset();
+    let size = {w: win.width(), h: win.height()};
+    let type = (pos.left < 2 && pos.top < 2 && size.w > $(window).width() - 12 && size.h > $(window).height() - 12)? false : true; //false - minimize, true - maximize
+    if (type == true) {
+        win.attr({
+            'data-pos-x': pos.left,
+            'data-pos-y': pos.top,
+            'data-size-w': size.w,
+            'data-size-h': size.h
+        });
+    }
+    setTimeout(__maxWindow, 1000 / 60, win, type);
+}
+function __maxWindow(win, type) {
+    let pos = win.offset();
+    let size = {w: win.width(), h: win.height()};
+    let oleft = win.attr('data-pos-x');
+    let otop = win.attr('data-pos-y');
+    let ow = win.attr('data-size-w');
+    let oh = win.attr('data-size-h');
+
+    let lerpPos = type ? {top: 0, left: 0} : {top: otop, left: oleft};
+    let lerpSize = type ? {w: $(window).width() - 9, h: $(window).height() - 9} : {w: ow, h: oh};
+    // - 37 (instead of 9)
+    let newPos = {
+        top: lerp(pos.top, lerpPos.top, 0.2),
+        left: lerp(pos.left, lerpPos.left, 0.2)
+    }
+    let newSize = {
+        w: lerp(size.w, lerpSize.w, 0.2),
+        h: lerp(size.h, lerpSize.h, 0.2)
+    }
+    win.offset(newPos);
+    win.width(newSize.w);
+    win.height(newSize.h);
+    if (type == true) {
+        if (newPos.left < 1 && newPos.top < 1 && newSize.w > $(window).width() - 12 && newSize.h > $(window).height() - 12) return;
+    } else {
+        if (newPos.left > oleft - 1 && newPos.top > otop - 1 && newSize.w < ow + 1 && newSize.h < oh + 1) return;
+    }
+    console.log('timeout')
+    setTimeout(__maxWindow, 1000 / 60, win, type);
+}
+function lerp(v0, v1, t) {
+    return v0*(1-t)+v1*t
+}
+function minimizeWindow(id) {
+    $('#win-id-' + id).css('display', 'none');
+}
+function sortWindows() {
+    for (let i = 0; i < winIndex.length; i++) {
+        if (winIndex[i].id !== i) {
+            winIndex[i].setId(winIndex[i].id, i);
+        }
+    }
+}
+function focusWindow(id) {
+    $('#win-id-' + id).css('display', 'inline-block');
+    let actIndex = parseInt($('#win-id-' + id).css('z-index'));
+    for (let i = 0; i < winIndex.length; i++) {
+        if (i == id) {
+            continue;
+        }
+        let $window = $('#win-id-' + winIndex[i].id);
+        let newIndex = parseInt($window.css('z-index'));
+        if (actIndex < newIndex) {
+            $window.css('z-index', newIndex - 1);
+        }
+    }
+    $('#win-id-' + id).css('z-index', '50');
+}
+function windowCounter() {
+    $('#infomenu').html('<img src="img_sources/blushy2.gif"> :  ' + winIndex.length);
+}
+//----------------------windows--------------------------------
+class AWindow {
+    constructor(url, name, link) {
+        this.url = url;
+        this.name = name;
+        this.link = link;
+        this.id = winIndex.length;
+        winIndex.push(this);
+        this.create();
+    }
+    create() {
+        let $window = $('<div class="window" id="win-id-' + this.id + '"></div>');
+        $window.draggable();
+        $('#page').append($window);
+        $window.css({
+            position: 'absolute',
+            top: 16 + (winIndex.length * 2) + '%',
+            left: 23 + (winIndex.length * 2) + '%'
+        });
+        let frameId = this.url.includes('?')? `&id=${this.id}`: `?id=${this.id}`;
+        $window.append(`<div class="win-bar"> 
+				<button class="win-close button" onclick="closeWindow(${this.id})"></button>
+				<button class="win-full button"  onclick="maximizeWindow(${this.id})"></button>
+				<button class="win-min button"  onclick="minimizeWindow(${this.id})"></button>
+				<div class="win-text">${this.link}</div>
+			</div>
+			<div class="win-content">
+				<iframe class="win-frame" id="win-frame-id-${this.id}" src="${this.url}${frameId}"></iframe>
+			</div>
+			<div class="resizer"></div>`);
+        this.setListeners();
+        this.makeResizable();
+        focusWindow(this.id);
+    }
+    setListeners() {
+        let $window = $('#win-id-' + this.id);
+        let id = this.id;
+        //set click event for window
+        $window.on('mousedown touchstart', function (e) {
+            focusWindow(id);
+        });
+        //set click event for iframe (tricky)
+        let $iframe = $window.find('.win-frame');
+        $iframe.iframeTracker(false);
+        $iframe.iframeTracker(function () {
+            focusWindow(id);
+        });
+    }
+    setId(id, newId) {
+        this.id = newId;
+        let $window = $('#win-id-' + id);
+        $window.attr('id', 'win-id-' + this.id);
+        $window.find('.win-close').attr('onclick', 'closeWindow(' + this.id + ')');
+        $window.find('.win-full').attr('onclick', 'maximizeWindow(' + this.id + ')');
+        $window.find('.win-min').attr('onclick', 'minimizeWindow(' + this.id + ')');
+        this.setListeners();
+    }
+    makeResizable() {
+        const minWidth = 500;
+        const minHeight = 200;
+        let $window = $('#win-id-' + this.id);
+        $window.attr({
+            'data-pos-x': $window.offset().left,
+            'data-pos-y': $window.offset().top,
+            'data-size-w': $window.width(),
+            'data-size-h': $window.height()
+        });
+        let $list = $window.find('.resizer');
+        $list.on('mousedown', function () {
+            $window.draggable('disable');
+            $(this).css({
+                width: 600,
+                height: 600,
+                right: -300,
+                bottom: -300
+            });
+            $(this).on('mousemove', function (e) {
+                let offset = $(this).offset();
+                let x = e.pageX - offset.left;
+                let y = e.pageY - offset.top;
+                let $par = $(this).parent();
+                let newWidth = $par.width() + (x - 300);
+                let newHeight = $par.height() + (y - 300);
+                if (newWidth >= minWidth) {
+                    $par.width(newWidth);
+                }
+                if (newHeight >= minHeight) {
+                    $par.height(newHeight);
+                }
+            });
+        }).on('mouseup', function () {
+            $(this).off('mousemove');
+            $window.draggable('enable');
+            $(this).css({
+                width: 10,
+                height: 10,
+                right: -5,
+                bottom: -5
+            });
+        });
+    }
+}
+		</script>
+		
+	<!--
+		<script>
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.open('mobile.html', '_self');
+      }
+			//window.location.hash = '';
+			//$(document).ready(() => {setTimeout(changeBack, 1)});
+			//function changeBack() {$('#page').css('background-image', 'url("images/backgrounds/okay.gif")');}
+		</script>-->
+	</head>
+	
+	
+	
+	<body>
+
+
+		
+		<div id="infobar">
+			<div id="infomenu"><img src="img_sources/smiley2.gif"></div>
+			<div id="infopath"><div class="scrolling-limit">
+  <div class="scrolltitle">☺ SRB's website ☺</div></div></div>
+		</div>
+		
+		<div id="page">
+			<script>loadWallpaper();</script>
+			<div class="icon-line"> <!-- LINE 1 -->
+				<div class="dLink"><button class="button" onclick="deployWindow('about.html', 'about me', 'about me')">
+					<div class="dIcon dIcon-about"></div>
+					about me
+				</button></div>
+				
+				<div class="dLink"><button class="button" onclick="deployWindow('cv.html', 'cv', 'cv')">
+					<div class="dIcon dIcon-cv"></div>
+					CV
+				</button></div>
+				</div>
+				
+								
+					<div class="dLink"><button class="button" onclick="deployWindow('virtualsculpture.html', 'virtual sculptures', 'virtual sculptures')" "="">
+				  	<div class="dIcon dIcon-shop">
+					<img src="img_sources/shop.png">
+					</div>
+					virtual sculptures
+				</button></div>
+				
+			
+			
+								<div class="icon-line"> <!-- LINE break--> 
+				<div class="dLink"></div>
+			</div> <!-- END LINE break -->
+			
+					<div class="icon-line"> <!-- LINE 2 --> 
+				
+				<div class="dLink"><button class="button" onclick="deployWindow('https://unmaru.tumblr.com/tagged/glitch%20gif', 'gif', 'gif')">
+					<div class="dIcon dIcon-gif"></div>
+					gifs
+				</button></div>
+				
+				<div class="dLink"><button class="button" onclick="deployWindow('https://unmaru.tumblr.com/tagged/screenprints', 'screenprint', 'screenprint')">
+					<div class="dIcon dIcon-print"></div>
+					screen print
+				</button></div>
+				
+				<div class="dLink"><button class="button" onclick="deployWindow('https://unmaru.tumblr.com/tagged/videoart', 'video','video')">
+					<div class="dIcon dIcon-video"></div>
+					video
+				</button></div>
+				
+		
+				
+				
+			
+			</div> <!-- END LINE 2 -->
+			
+			<div class="icon-line"> <!-- LINE 3 --> 
+				<div class="dLink"></div>
+			</div> <!-- END LINE 3 -->
+			
+			<div class="icon-line"> <!-- LINE 3 -->
+			
+			<div class="dLink"><button class="button" onclick="deployWindow('https://unmaru.tumblr.com/tagged/virtualart', 'virtual','virtual')">
+					<div class="dIcon dIcon-virtual"></div>
+					virtual art
+				</button></div>
+								
+				<div class="dLink"><button class="button" onclick="window.open('https://www.instagram.com/roribleu', '_blank')">
+					<div class="dIcon dIcon-Mail">
+						<img src="img_sources/insta.png">
+					</div>
+					insta
+				</button></div>
+				
+					<div class="dLink"><button class="button" onclick="deployWindow('game.html', 'solitaire','solitaire')">
+					<div class="dIcon dIcon-game"></div>
+					solitaire
+				</button></div>
+				
+			
+			</div> <!-- END LINE 3 -->
+			
+			<div class="icon-line"> <!-- LINE 4 --> 
+				<div class="dLink"></div>
+			</div> <!-- END LINE 4 -->
+			
+		
+				
+		</div> <!-- END OF PAGE -->
+			
+	<!--SRB website--->
+	
+
+
+
+
+
+
+
+
+<div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;" type="text" value="" id="focus_retriever" readonly="true"></div></body></html>

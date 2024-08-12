@@ -427,7 +427,7 @@ window.top.location = 'ie.html';
           </ul>
         </li>
       </ul>
-      <span class="float_right" id="clock" title="August 1, 2024">Thursday 11:53 AM</span>
+      <span class="float_right" id="clock" title="August 12, 2024">Monday 7:11 AM</span>
       <span class="float_right" id="volume">
         <span class="navbarControl volumeToggle volumeFull">🔉</span>
         <span class="navbarControl volumeToggle volumeMuted">🔇</span>
@@ -588,11 +588,11 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_console">
-      <a href="#window_console" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
+    <li id="icon_dock_profile">
+      <a href="#window_profile" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
         <div class="dock_title">
-          Console
+          Profile
         </div>
       </a>
     </li>
@@ -606,20 +606,20 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_spellbook">
-      <a href="#window_spellbook" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
-        <div class="dock_title">
-          Spellbook
-        </div>
-      </a>
-    </li>
-  
     <li id="icon_dock_streamsquad">
       <a href="#window_streamsquad" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_streamsquad_64.png">
         <div class="dock_title">
           streamsquad
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_pond">
+      <a href="#window_pond" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_pond_64.png">
+        <div class="dock_title">
+          Ponds
         </div>
       </a>
     </li>
@@ -633,20 +633,20 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_profile">
-      <a href="#window_profile" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
+    <li id="icon_dock_console">
+      <a href="#window_console" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
         <div class="dock_title">
-          Profile
+          Console
         </div>
       </a>
     </li>
   
-    <li id="icon_dock_pond">
-      <a href="#window_pond" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_pond_64.png">
+    <li id="icon_dock_spellbook">
+      <a href="#window_spellbook" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
         <div class="dock_title">
-          Ponds
+          Spellbook
         </div>
       </a>
     </li>
@@ -689,154 +689,33 @@ window.top.location = 'ie.html';
   </ul>
     </div>
   <style>
-  .console {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    margin: 16px;
-  }
-  .consoleMessageSubmit {
-    width: 120px;
-  }
-  
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-  
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  div.console_message_main {
-    padding-top: 0px;
-    position: relative;
-    overflow-y: scroll;
-    flex: 1;
-    word-wrap: break-word;
-  }
-
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-
-  .console_message_submit {
-    margin: 5px;
-    padding: 5px;
-    width: 9vw;
-    border-radius: var(--console-border-radius);
-    border: none;
-    background-color: var(--console-input-background-colour);
-  }
-
-  .submit_svg_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .message_send_svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .ui-autocomplete {
-    position: absolute !important;
-    bottom: 600px !important;
-    overflow: auto !important;
-    max-height: 300px;
-    min-height: 300px;
-  }
-  
-  .window_bottom_console {
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 20px;
-    /*overflow: hidden;*/
+  #window_profile .publicProfilePreviewHolder {
+    border: solid;
+    background-color: #CCC;
     text-align: left;
-    text-shadow: #fff 0 1px 1px;
-    /* height: 33px; */
-    /* width: 100%; */
-    left: 1px;
-    right: 1px;
-    padding-left: 8px;
-    margin: 3px 0 3px 0;
+    width: 280px;
   }
 
+  #window_profile .publicProfilePreviewHolder:hover * {
+    cursor: pointer;
+  }
+
+  .updateProfileResponse {
+    font-size: 18px;
+    color: green;
+  }
+  .buddyGeoFlag {
+    width: 16px;
+    height: 16px;
+  }
 </style>
 
-<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
+<div id="window_profile" class="abs window">
   <div class="abs window_inner">
     <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
       <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
-        Console
+        <img src="desktop/assets/images/icons/icon_profile_64.png" style="width: 16px; height: 16px;">
+        Profile
       </span>
       <span class="float_right trafficLight">
         <a href="#min" class="minWindow" title="Min Window">🟠</a>
@@ -844,29 +723,315 @@ window.top.location = 'ie.html';
         <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
       </span>
     </div>
-    <div class="chat_area">
-      <div class="abs window_content" style="top: 33px;">
-        <div class="chat_area">
-          <div class="window_main console_message_main  message_main">
-            <div class="consoleMessagesHolder">
-              <div class="no_chat_messages" style="display: none;">
-                The console is fresh. There are no messages yet. You can send a message to this console below.
+    <div class="abs window_content" style="top: 33px;">
+      <div class="window_main console_holder">
+        <div id="profileTabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+          <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+            <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#tabs-1" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1">Your Apps</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#tabs-2" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Themes</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-3" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">Settings</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-4" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#tabs-4" tabindex="-1" class="ui-tabs-anchor" id="ui-id-4">Audio</a></li>
+            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-5" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#tabs-5" tabindex="-1" class="ui-tabs-anchor" id="ui-id-5">Camera</a></li>
+            <!--
+            <li><a href="#tabs-2">App Store</a></li>
+            -->
+          </ul>
+          <div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
+            <table class="data table yourApps">
+              <!--
+              <tr>
+                <th>
+                  Installed
+                </th>
+                <th>
+                  App Name
+                </th>
+              </tr>
+              -->
+              <tbody>
+    <tr class="openApp" data-app="buddylist">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_buddylist_64.png">
+      </td>
+      <td>
+       Buddy List
+      </td>
+  </tr>
+    <tr class="openApp" data-app="pond">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_pond_64.png">
+      </td>
+      <td>
+       Ponds
+      </td>
+  </tr>
+    <tr class="openApp" data-app="paint">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_paint_64.png">
+      </td>
+      <td>
+       Paint
+      </td>
+  </tr>
+    <tr class="openApp" data-app="interdimensionalcable">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png">
+      </td>
+      <td>
+       IDC Cable
+      </td>
+  </tr>
+    <tr class="openApp" data-app="memepool">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_memepool_64.png">
+      </td>
+      <td>
+       Meme Pool ( Powered By: Mnemosyne )
+      </td>
+  </tr>
+    <tr class="openApp" data-app="games">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_folder_64.png">
+      </td>
+      <td>
+       Games
+      </td>
+  </tr>
+    <tr class="openApp" data-app="soundrecorder">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_soundrecorder_64.png">
+      </td>
+      <td>
+       Sound Recorder
+      </td>
+  </tr>
+    <tr class="openApp" data-app="piano">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_piano_64.png">
+      </td>
+      <td>
+       Piano
+      </td>
+  </tr>
+    <tr class="openApp" data-app="mirror">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_mirror_64.png">
+      </td>
+      <td>
+       Mirror
+      </td>
+  </tr>
+    <tr class="openApp" data-app="visuals">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_visuals_64.png">
+      </td>
+      <td>
+       Audio Visualizer ( Requires Microphone )
+      </td>
+  </tr>
+    <tr class="openApp" data-app="midi">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_midi_64.png">
+      </td>
+      <td>
+       MIDI
+      </td>
+  </tr>
+    <tr class="openApp" data-app="appstore">
+      <td>
+        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_appstore_64.png">
+      </td>
+      <td>
+       App Store
+      </td>
+  </tr></tbody>
+
+              <!-- TODO: hide if no midi support? 
+              <tr class="openApp" data-app="midi">
+                <td>
+                  <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_midi_64.png" />
+                </td>
+                <td>
+                  Audio MIDI Setup
+                </td>
+              </tr>
+              -->
+            </table>
+            <br>
+            <p align="left">
+              You can Install or Unstall Apps using <a href="#" class="openApp" data-app="appstore">The App Store</a><br><br>
+              <button class="openApp" data-app="appstore">Install / Uninstall Apps</button>
+              
+              <!-- TODO: list all available apps with checkboxes that persist to localstorage and toggle desktop.foo.load() triggers -->
+            
+              </p>
+            
+            <br>
+            
+            <!--
+              <p>
+                Refresh entire page to for Buddy Apps to reload.
+              </p>
+            -->
+          </div>
+          <div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+            <div class="wallpaperSettings">
+              <div class="wallpaperTypes">
+                  <h2>Wallpaper Type</h2>
+              
+    <input type="radio" id="wallPaperRadiosolid" name="wallpaper_opt" class="wallpaper_opt" value="solid">
+    <label for="wallPaperRadiosolid">Solid</label>
+    <br>
+    
+    <input type="radio" id="wallPaperRadiomatrix" name="wallpaper_opt" class="wallpaper_opt" value="matrix">
+    <label for="wallPaperRadiomatrix">Matrix</label>
+    <br>
+    
+    <input type="radio" id="wallPaperRadionyancat" name="wallpaper_opt" class="wallpaper_opt" value="nyancat">
+    <label for="wallPaperRadionyancat">Nyan Cat</label>
+    <br>
+    
+    <input type="radio" id="wallPaperRadioripples" name="wallpaper_opt" class="wallpaper_opt" value="ripples" checked="">
+    <label for="wallPaperRadioripples">Ripples</label>
+    <br>
+    </div>
+              <br>
+              <br>
+              <div>
+                <h2>Wallpaper Options</h2>
+                <div>
+                    <label>Color</label>
+                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
+                </div>
               </div>
-              <div class="console chat_messages">
-              <li>11:53:11: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>11:53:11: <span class="purple">Now loading deferred apps</span> </li><li>11:53:11: <span class="purple">Loading App.login</span> </li><li>11:53:11: <span class="purple">Loading App.videochat</span> </li><li>11:53:12: <span class="purple">Ready: App.merlin</span> </li></div>
-              <hr>
             </div>
           </div>
-          <div class="window_bottom_console">
-            <div class="console_send_message_form">
-              <form method="POST" action="" align="right" class="console_send_message_form">
-              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
-                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
-                  §~~~&gt; Evaluate
-                </button>
-              </form>
+          <div id="tabs-3" align="left" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+            <span class="updateProfileResponse"></span>
+            <form class="updateProfileForm">
+              <table class="profileTable table data">
+                <tbody><tr class="loggedIn">
+                  <td>Username</td>
+                  <td class="me">Marak</td>
+                </tr>
+                <!--
+                <tr>
+                  <td>Avatar</td>
+                  <td class="me">
+                    <input type="file"/>
+                  </td>
+                </tr>
+                -->
+                <tr class="loggedIn">
+                  <td>Email</td>
+                  <td>
+                    <input type="text" size="32" name="buddy_email" class="buddy_email" value="">
+                  </td>
+                </tr>
+                <tr class="loggedIn">
+                  <td>Password</td>
+                  <td>
+                    <input type="password" size="32" name="buddy_password" class="buddy_password">
+                  </td>
+                </tr>
+                <tr class="loggedIn">
+                  <td>Confirm Password</td>
+                  <td>
+                    <input type="password" size="32" name="confirm_buddy_password" class="confirm_buddy_password">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Text To Speech Voice</td>
+                  <td>
+                    <select name="ttsVoice" class="ttsVoice"><option value="Moira">Moira en-IE</option><option value="Aaron">Aaron en-US</option><option value="Albert">Albert en-US</option><option value="Alice">Alice it-IT</option><option value="Alva">Alva sv-SE</option><option value="Amélie">Amélie fr-CA</option><option value="Amira">Amira ms-MY</option><option value="Anna">Anna de-DE</option><option value="Arthur">Arthur en-GB</option><option value="Bad News">Bad News en-US</option><option value="Bahh">Bahh en-US</option><option value="Bells">Bells en-US</option><option value="Boing">Boing en-US</option><option value="Bubbles">Bubbles en-US</option><option value="Carmit">Carmit he-IL</option><option value="Catherine">Catherine en-AU</option><option value="Cellos">Cellos en-US</option><option value="Damayanti">Damayanti id-ID</option><option value="Daniel (English (United Kingdom))">Daniel (English (United Kingdom)) en-GB</option><option value="Daniel (French (France))">Daniel (French (France)) fr-FR</option><option value="Daria">Daria bg-BG</option><option value="Eddy (German (Germany))">Eddy (German (Germany)) de-DE</option><option value="Eddy (English (United Kingdom))">Eddy (English (United Kingdom)) en-GB</option><option value="Eddy (English (United States))">Eddy (English (United States)) en-US</option><option value="Eddy (Spanish (Spain))">Eddy (Spanish (Spain)) es-ES</option><option value="Eddy (Spanish (Mexico))">Eddy (Spanish (Mexico)) es-MX</option><option value="Eddy (Finnish (Finland))">Eddy (Finnish (Finland)) fi-FI</option><option value="Eddy (French (Canada))">Eddy (French (Canada)) fr-CA</option><option value="Eddy (French (France))">Eddy (French (France)) fr-FR</option><option value="Eddy (Italian (Italy))">Eddy (Italian (Italy)) it-IT</option><option value="Eddy (Portuguese (Brazil))">Eddy (Portuguese (Brazil)) pt-BR</option><option value="Ellen">Ellen nl-BE</option><option value="Flo (German (Germany))">Flo (German (Germany)) de-DE</option><option value="Flo (English (United Kingdom))">Flo (English (United Kingdom)) en-GB</option><option value="Flo (English (United States))">Flo (English (United States)) en-US</option><option value="Flo (Spanish (Spain))">Flo (Spanish (Spain)) es-ES</option><option value="Flo (Spanish (Mexico))">Flo (Spanish (Mexico)) es-MX</option><option value="Flo (Finnish (Finland))">Flo (Finnish (Finland)) fi-FI</option><option value="Flo (French (Canada))">Flo (French (Canada)) fr-CA</option><option value="Flo (French (France))">Flo (French (France)) fr-FR</option><option value="Flo (Italian (Italy))">Flo (Italian (Italy)) it-IT</option><option value="Flo (Portuguese (Brazil))">Flo (Portuguese (Brazil)) pt-BR</option><option value="Fred">Fred en-US</option><option value="Good News">Good News en-US</option><option value="Gordon">Gordon en-AU</option><option value="Grandma (German (Germany))">Grandma (German (Germany)) de-DE</option><option value="Grandma (English (United Kingdom))">Grandma (English (United Kingdom)) en-GB</option><option value="Grandma (English (United States))">Grandma (English (United States)) en-US</option><option value="Grandma (Spanish (Spain))">Grandma (Spanish (Spain)) es-ES</option><option value="Grandma (Spanish (Mexico))">Grandma (Spanish (Mexico)) es-MX</option><option value="Grandma (Finnish (Finland))">Grandma (Finnish (Finland)) fi-FI</option><option value="Grandma (French (Canada))">Grandma (French (Canada)) fr-CA</option><option value="Grandma (French (France))">Grandma (French (France)) fr-FR</option><option value="Grandma (Italian (Italy))">Grandma (Italian (Italy)) it-IT</option><option value="Grandma (Portuguese (Brazil))">Grandma (Portuguese (Brazil)) pt-BR</option><option value="Grandpa (German (Germany))">Grandpa (German (Germany)) de-DE</option><option value="Grandpa (English (United Kingdom))">Grandpa (English (United Kingdom)) en-GB</option><option value="Grandpa (English (United States))">Grandpa (English (United States)) en-US</option><option value="Grandpa (Spanish (Spain))">Grandpa (Spanish (Spain)) es-ES</option><option value="Grandpa (Spanish (Mexico))">Grandpa (Spanish (Mexico)) es-MX</option><option value="Grandpa (Finnish (Finland))">Grandpa (Finnish (Finland)) fi-FI</option><option value="Grandpa (French (Canada))">Grandpa (French (Canada)) fr-CA</option><option value="Grandpa (French (France))">Grandpa (French (France)) fr-FR</option><option value="Grandpa (Italian (Italy))">Grandpa (Italian (Italy)) it-IT</option><option value="Grandpa (Portuguese (Brazil))">Grandpa (Portuguese (Brazil)) pt-BR</option><option value="Hattori">Hattori ja-JP</option><option value="Helena">Helena de-DE</option><option value="Ioana">Ioana ro-RO</option><option value="Jacques">Jacques fr-FR</option><option value="Jester">Jester en-US</option><option value="Joana">Joana pt-PT</option><option value="Junior">Junior en-US</option><option value="Kanya">Kanya th-TH</option><option value="Karen">Karen en-AU</option><option value="Kathy">Kathy en-US</option><option value="Kyoko">Kyoko ja-JP</option><option value="Lana">Lana hr-HR</option><option value="Laura">Laura sk-SK</option><option value="Lekha">Lekha hi-IN</option><option value="Lesya">Lesya uk-UA</option><option value="Li-Mu">Li-Mu zh-CN</option><option value="Linh">Linh vi-VN</option><option value="Luciana">Luciana pt-BR</option><option value="Majed">Majed ar-001</option><option value="Marie">Marie fr-FR</option><option value="Martha">Martha en-GB</option><option value="Martin">Martin de-DE</option><option value="Meijia">Meijia zh-TW</option><option value="Melina">Melina el-GR</option><option value="Milena">Milena ru-RU</option><option value="Montse">Montse ca-ES</option><option value="Mónica">Mónica es-ES</option><option value="Nicky">Nicky en-US</option><option value="Nora">Nora nb-NO</option><option value="O-Ren">O-Ren ja-JP</option><option value="Organ">Organ en-US</option><option value="Paulina">Paulina es-MX</option><option value="Ralph">Ralph en-US</option><option value="Reed (German (Germany))">Reed (German (Germany)) de-DE</option><option value="Reed (English (United Kingdom))">Reed (English (United Kingdom)) en-GB</option><option value="Reed (English (United States))">Reed (English (United States)) en-US</option><option value="Reed (Spanish (Spain))">Reed (Spanish (Spain)) es-ES</option><option value="Reed (Spanish (Mexico))">Reed (Spanish (Mexico)) es-MX</option><option value="Reed (Finnish (Finland))">Reed (Finnish (Finland)) fi-FI</option><option value="Reed (French (Canada))">Reed (French (Canada)) fr-CA</option><option value="Reed (Italian (Italy))">Reed (Italian (Italy)) it-IT</option><option value="Reed (Portuguese (Brazil))">Reed (Portuguese (Brazil)) pt-BR</option><option value="Rishi">Rishi en-IN</option><option value="Rocko (German (Germany))">Rocko (German (Germany)) de-DE</option><option value="Rocko (English (United Kingdom))">Rocko (English (United Kingdom)) en-GB</option><option value="Rocko (English (United States))">Rocko (English (United States)) en-US</option><option value="Rocko (Spanish (Spain))">Rocko (Spanish (Spain)) es-ES</option><option value="Rocko (Spanish (Mexico))">Rocko (Spanish (Mexico)) es-MX</option><option value="Rocko (Finnish (Finland))">Rocko (Finnish (Finland)) fi-FI</option><option value="Rocko (French (Canada))">Rocko (French (Canada)) fr-CA</option><option value="Rocko (French (France))">Rocko (French (France)) fr-FR</option><option value="Rocko (Italian (Italy))">Rocko (Italian (Italy)) it-IT</option><option value="Rocko (Portuguese (Brazil))">Rocko (Portuguese (Brazil)) pt-BR</option><option value="Samantha">Samantha en-US</option><option value="Sandy (German (Germany))">Sandy (German (Germany)) de-DE</option><option value="Sandy (English (United Kingdom))">Sandy (English (United Kingdom)) en-GB</option><option value="Sandy (English (United States))">Sandy (English (United States)) en-US</option><option value="Sandy (Spanish (Spain))">Sandy (Spanish (Spain)) es-ES</option><option value="Sandy (Spanish (Mexico))">Sandy (Spanish (Mexico)) es-MX</option><option value="Sandy (Finnish (Finland))">Sandy (Finnish (Finland)) fi-FI</option><option value="Sandy (French (Canada))">Sandy (French (Canada)) fr-CA</option><option value="Sandy (French (France))">Sandy (French (France)) fr-FR</option><option value="Sandy (Italian (Italy))">Sandy (Italian (Italy)) it-IT</option><option value="Sandy (Portuguese (Brazil))">Sandy (Portuguese (Brazil)) pt-BR</option><option value="Sara">Sara da-DK</option><option value="Satu">Satu fi-FI</option><option value="Shelley (German (Germany))">Shelley (German (Germany)) de-DE</option><option value="Shelley (English (United Kingdom))">Shelley (English (United Kingdom)) en-GB</option><option value="Shelley (English (United States))">Shelley (English (United States)) en-US</option><option value="Shelley (Spanish (Spain))">Shelley (Spanish (Spain)) es-ES</option><option value="Shelley (Spanish (Mexico))">Shelley (Spanish (Mexico)) es-MX</option><option value="Shelley (Finnish (Finland))">Shelley (Finnish (Finland)) fi-FI</option><option value="Shelley (French (Canada))">Shelley (French (Canada)) fr-CA</option><option value="Shelley (French (France))">Shelley (French (France)) fr-FR</option><option value="Shelley (Italian (Italy))">Shelley (Italian (Italy)) it-IT</option><option value="Shelley (Portuguese (Brazil))">Shelley (Portuguese (Brazil)) pt-BR</option><option value="Sinji">Sinji zh-HK</option><option value="Superstar">Superstar en-US</option><option value="Tessa">Tessa en-ZA</option><option value="Thomas">Thomas fr-FR</option><option value="Tingting">Tingting zh-CN</option><option value="Trinoids">Trinoids en-US</option><option value="Tünde">Tünde hu-HU</option><option value="Whisper">Whisper en-US</option><option value="Wobble">Wobble en-US</option><option value="Xander">Xander nl-NL</option><option value="Yelda">Yelda tr-TR</option><option value="Yu-shu">Yu-shu zh-CN</option><option value="Yuna">Yuna ko-KR</option><option value="Zarvox">Zarvox en-US</option><option value="Zosia">Zosia pl-PL</option><option value="Zuzana">Zuzana cs-CZ</option></select>
+                  </td>
+                </tr>
+                <tr class="loggedIn">
+                  <td>Hide Geo Flag</td>
+                  <td>
+                    <input type="checkbox" name="hideFlag" class="hideFlag">
+                  </td>
+                </tr>
+                <!--
+                <tr>
+                  <td>Geo Flag Country Code</td>
+                  <td>
+                    <img class="buddyGeoFlag" src="desktop/assets/geo-flags/flags/4x3/${message.location}.svg"/>
+                    <select name="geoFlags" class="geoFlags">
+                      <option>Select Country Flag...</option>
+                    </select>
+                  </td>
+                </tr>
+                -->
+                <tr>
+                  <td>Enable Web Notifications</td>
+                  <td>
+                    <input type="checkbox" size="32" name="notifications_web_enabled" class="enableWebNotifications" title="This will enable the browser's Notification settings allow Buddy Pond to notify you have new buddy messages while the website tab is not visible.">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Enable Audio Notifications</td>
+                  <td>
+                    <input type="checkbox" size="32" name="notifications_audio_enabled" class="enableAudioNotifications" title="This will enable audio notifications in the browser window while the website tab is not visible.">
+                  </td>
+                </tr>
+
+              </tbody></table>
+              <button type="submit" class="desktopPanel updateProfileButton loggedIn">Save Profile</button>
+              <!-- TODO logoout button 
+              <button type="submit" class="desktopPanel updateProfileButton">Logout</button>
+                -->
+            </form>
+          </div>
+          <div id="tabs-4" aria-labelledby="ui-id-4" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+            <div id="tabs-2">
+              <div class="wallpaperSettings">
+                <table class="data table">
+                  <tbody><tr>
+                    <td>Enable Desktop Audio</td>
+                    <td>
+                      <input type="checkbox" size="32" name="audio_enabled" class="audioEnabled" title="This will enable or mute all Audio on the Desktop.">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Enable Text-To-Speech (TTS) Audio</td>
+                    <td>
+                      <input type="checkbox" size="32" name="audio_tts_enabled" class="audioTTSEnabled" title="This will enable or mute all Text-To-Speech Audio on the Desktop.">
+                    </td>
+                  </tr>
+                </tbody></table>
+              </div>
             </div>
           </div>
+          <div id="tabs-5" align="center" aria-labelledby="ui-id-5" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+            To Adjust Default Camera Settings <a href="#mirror" class="desktopLink openApp" data-app="mirror">Click Open Mirror App</a>
+            <br>
+            <br>
+            <br>
+             <a href="#mirror" class="desktopLink openApp" data-app="mirror">
+               <img src="desktop/assets/images/icons/icon_mirror_64.png">
+             </a>
+          </div>
+          <!-- BUDDY PROFILE
+          <div id="tabs-2">
+            <h2>Your current Buddy Profile:</h2>
+            <br/>
+            <div class="publicProfilePreviewHolder desktopButton">
+              <div class="border">
+                <p class="me">Marak</p>
+                <p><em>Last Seen: <span class="lastSeen">2/22/2022 14:40pm</span></em></p>
+              </div>
+              <br/>
+              <div class="publicProfilePreview"></div>
+            </div>
+            <br/>
+            <br/>
+            <div class="profileEditor">
+              <textarea name="profileMarkdown" class="profileMarkdown" cols="60" rows="15"></textarea>
+              <button class="desktopButton updateProfileMarkdown">Update Profile</button>
+            </div>
+          </div>
+          -->
         </div>
       </div>
     </div>
@@ -876,6 +1041,7 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div>
+
 <style>
   #window_appstore h1 {
     font-size: 48px;
@@ -1316,67 +1482,6 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
-  #window_spellbook .window_content {
-    background-image: url("desktop/assets/images/misc/ivy-bg.png");
-    background-color: black;
-  }
-  #window_spellbook .window_main {
-    padding-left: 48px;
-    padding-right: 48px;
-    padding-top: 32px;
-    font-size: 32px;
-  }
-  #window_spellbook input,select {
-    font-size: 24px;
-  }
-  #window_spellbook label {
-    color: white;
-  }
-  .ponderSpellbook {
-    float: right;
-  }
-</style>
-
-<div id="window_spellbook" class="abs window" style="width: 662px; height: 533px; left: 50px; top: 50px;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_spellbook_64.png" style="width: 16px; height: 16px;">
-        Spellbook
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="window_main">
-        <form class="castSpellForm">
-          <a class="desktopButton ponderSpellbook orb" href="#">
-            <img src="desktop/assets/images/misc/orb.jpeg" width="100" height="100" title="Cast spell...">
-          </a>
-          <label for="omegaSpellTome">Spell</label>
-          <br>
-          <select class="omegaSpellTome">
-            <option>Choose your spell wisely...</option>
-          <option value="zalgo">zalgo</option><option value="babel.js">babel.js</option><option value="riddikulus">riddikulus</option><option value="ebublio">ebublio</option><option value="episkey">episkey</option><option value="rickroll">rickroll</option><option value="forbiddenRickRoll">forbiddenRickRoll</option><option value="passwordisusername">passwordisusername</option><option value="alert">alert</option><option value="logout">logout</option><option value="banhammer">banhammer</option></select>
-          <br>
-          <label for="castSpellBuddyName">Buddy Name</label>
-          <br>
-          <input type="text" id="castSpellBuddyName" placeholder="pick your target...">
-          <br>
-          <br>
-          <span class="warning"><strong>Warning:</strong> Casting spells is reserved only for Matrix Agents. If you are not a LVL 12 Grammaton Cleric or higher you might invoke the wrath of Merlin.</span>
-        </form>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs"></span>
-</div><style>
   #streamsquadIframe {
     height: 100%;
     width: 100%;
@@ -1454,395 +1559,6 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
-  #mantraIframe {
-    height: 100%;
-    width: 100%;
-  }
-
-  .mantraGameHolder {
-    height: 100%;
-    width: 100%;
-  }
-</style>
-
-<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
-        Mantra
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="mantraGameHolder">
-        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
-  #window_profile .publicProfilePreviewHolder {
-    border: solid;
-    background-color: #CCC;
-    text-align: left;
-    width: 280px;
-  }
-
-  #window_profile .publicProfilePreviewHolder:hover * {
-    cursor: pointer;
-  }
-
-  .updateProfileResponse {
-    font-size: 18px;
-    color: green;
-  }
-  .buddyGeoFlag {
-    width: 16px;
-    height: 16px;
-  }
-</style>
-
-<div id="window_profile" class="abs window">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_profile_64.png" style="width: 16px; height: 16px;">
-        Profile
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="window_main console_holder">
-        <div id="profileTabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
-          <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
-            <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-1" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true"><a href="#tabs-1" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Your Apps</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-2" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">Themes</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-3" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#tabs-3" tabindex="-1" class="ui-tabs-anchor" id="ui-id-4">Settings</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-4" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#tabs-4" tabindex="-1" class="ui-tabs-anchor" id="ui-id-5">Audio</a></li>
-            <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-5" aria-labelledby="ui-id-6" aria-selected="false" aria-expanded="false"><a href="#tabs-5" tabindex="-1" class="ui-tabs-anchor" id="ui-id-6">Camera</a></li>
-            <!--
-            <li><a href="#tabs-2">App Store</a></li>
-            -->
-          </ul>
-          <div id="tabs-1" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
-            <table class="data table yourApps">
-              <!--
-              <tr>
-                <th>
-                  Installed
-                </th>
-                <th>
-                  App Name
-                </th>
-              </tr>
-              -->
-              <tbody>
-    <tr class="openApp" data-app="buddylist">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_buddylist_64.png">
-      </td>
-      <td>
-       Buddy List
-      </td>
-  </tr>
-    <tr class="openApp" data-app="pond">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_pond_64.png">
-      </td>
-      <td>
-       Ponds
-      </td>
-  </tr>
-    <tr class="openApp" data-app="paint">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_paint_64.png">
-      </td>
-      <td>
-       Paint
-      </td>
-  </tr>
-    <tr class="openApp" data-app="interdimensionalcable">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png">
-      </td>
-      <td>
-       IDC Cable
-      </td>
-  </tr>
-    <tr class="openApp" data-app="memepool">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_memepool_64.png">
-      </td>
-      <td>
-       Meme Pool ( Powered By: Mnemosyne )
-      </td>
-  </tr>
-    <tr class="openApp" data-app="games">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_folder_64.png">
-      </td>
-      <td>
-       Games
-      </td>
-  </tr>
-    <tr class="openApp" data-app="soundrecorder">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_soundrecorder_64.png">
-      </td>
-      <td>
-       Sound Recorder
-      </td>
-  </tr>
-    <tr class="openApp" data-app="piano">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_piano_64.png">
-      </td>
-      <td>
-       Piano
-      </td>
-  </tr>
-    <tr class="openApp" data-app="mirror">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_mirror_64.png">
-      </td>
-      <td>
-       Mirror
-      </td>
-  </tr>
-    <tr class="openApp" data-app="visuals">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_visuals_64.png">
-      </td>
-      <td>
-       Audio Visualizer ( Requires Microphone )
-      </td>
-  </tr>
-    <tr class="openApp" data-app="midi">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_midi_64.png">
-      </td>
-      <td>
-       MIDI
-      </td>
-  </tr>
-    <tr class="openApp" data-app="appstore">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_appstore_64.png">
-      </td>
-      <td>
-       App Store
-      </td>
-  </tr></tbody>
-
-              <!-- TODO: hide if no midi support? 
-              <tr class="openApp" data-app="midi">
-                <td>
-                  <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_midi_64.png" />
-                </td>
-                <td>
-                  Audio MIDI Setup
-                </td>
-              </tr>
-              -->
-            </table>
-            <br>
-            <p align="left">
-              You can Install or Unstall Apps using <a href="#" class="openApp" data-app="appstore">The App Store</a><br><br>
-              <button class="openApp" data-app="appstore">Install / Uninstall Apps</button>
-              
-              <!-- TODO: list all available apps with checkboxes that persist to localstorage and toggle desktop.foo.load() triggers -->
-            
-              </p>
-            
-            <br>
-            
-            <!--
-              <p>
-                Refresh entire page to for Buddy Apps to reload.
-              </p>
-            -->
-          </div>
-          <div id="tabs-2" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
-            <div class="wallpaperSettings">
-              <div class="wallpaperTypes">
-                  <h2>Wallpaper Type</h2>
-              
-    <input type="radio" id="wallPaperRadiosolid" name="wallpaper_opt" class="wallpaper_opt" value="solid">
-    <label for="wallPaperRadiosolid">Solid</label>
-    <br>
-    
-    <input type="radio" id="wallPaperRadiomatrix" name="wallpaper_opt" class="wallpaper_opt" value="matrix">
-    <label for="wallPaperRadiomatrix">Matrix</label>
-    <br>
-    
-    <input type="radio" id="wallPaperRadionyancat" name="wallpaper_opt" class="wallpaper_opt" value="nyancat">
-    <label for="wallPaperRadionyancat">Nyan Cat</label>
-    <br>
-    
-    <input type="radio" id="wallPaperRadioripples" name="wallpaper_opt" class="wallpaper_opt" value="ripples" checked="">
-    <label for="wallPaperRadioripples">Ripples</label>
-    <br>
-    </div>
-              <br>
-              <br>
-              <div>
-                <h2>Wallpaper Options</h2>
-                <div>
-                    <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="tabs-3" align="left" aria-labelledby="ui-id-4" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
-            <span class="updateProfileResponse"></span>
-            <form class="updateProfileForm">
-              <table class="profileTable table data">
-                <tbody><tr class="loggedIn">
-                  <td>Username</td>
-                  <td class="me">Marak</td>
-                </tr>
-                <!--
-                <tr>
-                  <td>Avatar</td>
-                  <td class="me">
-                    <input type="file"/>
-                  </td>
-                </tr>
-                -->
-                <tr class="loggedIn">
-                  <td>Email</td>
-                  <td>
-                    <input type="text" size="32" name="buddy_email" class="buddy_email" value="">
-                  </td>
-                </tr>
-                <tr class="loggedIn">
-                  <td>Password</td>
-                  <td>
-                    <input type="password" size="32" name="buddy_password" class="buddy_password">
-                  </td>
-                </tr>
-                <tr class="loggedIn">
-                  <td>Confirm Password</td>
-                  <td>
-                    <input type="password" size="32" name="confirm_buddy_password" class="confirm_buddy_password">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Text To Speech Voice</td>
-                  <td>
-                    <select name="ttsVoice" class="ttsVoice"><option value="Moira">Moira en-IE</option><option value="Aaron">Aaron en-US</option><option value="Albert">Albert en-US</option><option value="Alice">Alice it-IT</option><option value="Alva">Alva sv-SE</option><option value="Amélie">Amélie fr-CA</option><option value="Amira">Amira ms-MY</option><option value="Anna">Anna de-DE</option><option value="Arthur">Arthur en-GB</option><option value="Bad News">Bad News en-US</option><option value="Bahh">Bahh en-US</option><option value="Bells">Bells en-US</option><option value="Boing">Boing en-US</option><option value="Bubbles">Bubbles en-US</option><option value="Carmit">Carmit he-IL</option><option value="Catherine">Catherine en-AU</option><option value="Cellos">Cellos en-US</option><option value="Damayanti">Damayanti id-ID</option><option value="Daniel (English (United Kingdom))">Daniel (English (United Kingdom)) en-GB</option><option value="Daniel (French (France))">Daniel (French (France)) fr-FR</option><option value="Daria">Daria bg-BG</option><option value="Eddy (German (Germany))">Eddy (German (Germany)) de-DE</option><option value="Eddy (English (United Kingdom))">Eddy (English (United Kingdom)) en-GB</option><option value="Eddy (English (United States))">Eddy (English (United States)) en-US</option><option value="Eddy (Spanish (Spain))">Eddy (Spanish (Spain)) es-ES</option><option value="Eddy (Spanish (Mexico))">Eddy (Spanish (Mexico)) es-MX</option><option value="Eddy (Finnish (Finland))">Eddy (Finnish (Finland)) fi-FI</option><option value="Eddy (French (Canada))">Eddy (French (Canada)) fr-CA</option><option value="Eddy (French (France))">Eddy (French (France)) fr-FR</option><option value="Eddy (Italian (Italy))">Eddy (Italian (Italy)) it-IT</option><option value="Eddy (Portuguese (Brazil))">Eddy (Portuguese (Brazil)) pt-BR</option><option value="Ellen">Ellen nl-BE</option><option value="Flo (German (Germany))">Flo (German (Germany)) de-DE</option><option value="Flo (English (United Kingdom))">Flo (English (United Kingdom)) en-GB</option><option value="Flo (English (United States))">Flo (English (United States)) en-US</option><option value="Flo (Spanish (Spain))">Flo (Spanish (Spain)) es-ES</option><option value="Flo (Spanish (Mexico))">Flo (Spanish (Mexico)) es-MX</option><option value="Flo (Finnish (Finland))">Flo (Finnish (Finland)) fi-FI</option><option value="Flo (French (Canada))">Flo (French (Canada)) fr-CA</option><option value="Flo (French (France))">Flo (French (France)) fr-FR</option><option value="Flo (Italian (Italy))">Flo (Italian (Italy)) it-IT</option><option value="Flo (Portuguese (Brazil))">Flo (Portuguese (Brazil)) pt-BR</option><option value="Fred">Fred en-US</option><option value="Good News">Good News en-US</option><option value="Gordon">Gordon en-AU</option><option value="Grandma (German (Germany))">Grandma (German (Germany)) de-DE</option><option value="Grandma (English (United Kingdom))">Grandma (English (United Kingdom)) en-GB</option><option value="Grandma (English (United States))">Grandma (English (United States)) en-US</option><option value="Grandma (Spanish (Spain))">Grandma (Spanish (Spain)) es-ES</option><option value="Grandma (Spanish (Mexico))">Grandma (Spanish (Mexico)) es-MX</option><option value="Grandma (Finnish (Finland))">Grandma (Finnish (Finland)) fi-FI</option><option value="Grandma (French (Canada))">Grandma (French (Canada)) fr-CA</option><option value="Grandma (French (France))">Grandma (French (France)) fr-FR</option><option value="Grandma (Italian (Italy))">Grandma (Italian (Italy)) it-IT</option><option value="Grandma (Portuguese (Brazil))">Grandma (Portuguese (Brazil)) pt-BR</option><option value="Grandpa (German (Germany))">Grandpa (German (Germany)) de-DE</option><option value="Grandpa (English (United Kingdom))">Grandpa (English (United Kingdom)) en-GB</option><option value="Grandpa (English (United States))">Grandpa (English (United States)) en-US</option><option value="Grandpa (Spanish (Spain))">Grandpa (Spanish (Spain)) es-ES</option><option value="Grandpa (Spanish (Mexico))">Grandpa (Spanish (Mexico)) es-MX</option><option value="Grandpa (Finnish (Finland))">Grandpa (Finnish (Finland)) fi-FI</option><option value="Grandpa (French (Canada))">Grandpa (French (Canada)) fr-CA</option><option value="Grandpa (French (France))">Grandpa (French (France)) fr-FR</option><option value="Grandpa (Italian (Italy))">Grandpa (Italian (Italy)) it-IT</option><option value="Grandpa (Portuguese (Brazil))">Grandpa (Portuguese (Brazil)) pt-BR</option><option value="Hattori">Hattori ja-JP</option><option value="Helena">Helena de-DE</option><option value="Ioana">Ioana ro-RO</option><option value="Jacques">Jacques fr-FR</option><option value="Jester">Jester en-US</option><option value="Joana">Joana pt-PT</option><option value="Junior">Junior en-US</option><option value="Kanya">Kanya th-TH</option><option value="Karen">Karen en-AU</option><option value="Kathy">Kathy en-US</option><option value="Kyoko">Kyoko ja-JP</option><option value="Lana">Lana hr-HR</option><option value="Laura">Laura sk-SK</option><option value="Lekha">Lekha hi-IN</option><option value="Lesya">Lesya uk-UA</option><option value="Li-Mu">Li-Mu zh-CN</option><option value="Linh">Linh vi-VN</option><option value="Luciana">Luciana pt-BR</option><option value="Majed">Majed ar-001</option><option value="Marie">Marie fr-FR</option><option value="Martha">Martha en-GB</option><option value="Martin">Martin de-DE</option><option value="Meijia">Meijia zh-TW</option><option value="Melina">Melina el-GR</option><option value="Milena">Milena ru-RU</option><option value="Montse">Montse ca-ES</option><option value="Mónica">Mónica es-ES</option><option value="Nicky">Nicky en-US</option><option value="Nora">Nora nb-NO</option><option value="O-Ren">O-Ren ja-JP</option><option value="Organ">Organ en-US</option><option value="Paulina">Paulina es-MX</option><option value="Ralph">Ralph en-US</option><option value="Reed (German (Germany))">Reed (German (Germany)) de-DE</option><option value="Reed (English (United Kingdom))">Reed (English (United Kingdom)) en-GB</option><option value="Reed (English (United States))">Reed (English (United States)) en-US</option><option value="Reed (Spanish (Spain))">Reed (Spanish (Spain)) es-ES</option><option value="Reed (Spanish (Mexico))">Reed (Spanish (Mexico)) es-MX</option><option value="Reed (Finnish (Finland))">Reed (Finnish (Finland)) fi-FI</option><option value="Reed (French (Canada))">Reed (French (Canada)) fr-CA</option><option value="Reed (Italian (Italy))">Reed (Italian (Italy)) it-IT</option><option value="Reed (Portuguese (Brazil))">Reed (Portuguese (Brazil)) pt-BR</option><option value="Rishi">Rishi en-IN</option><option value="Rocko (German (Germany))">Rocko (German (Germany)) de-DE</option><option value="Rocko (English (United Kingdom))">Rocko (English (United Kingdom)) en-GB</option><option value="Rocko (English (United States))">Rocko (English (United States)) en-US</option><option value="Rocko (Spanish (Spain))">Rocko (Spanish (Spain)) es-ES</option><option value="Rocko (Spanish (Mexico))">Rocko (Spanish (Mexico)) es-MX</option><option value="Rocko (Finnish (Finland))">Rocko (Finnish (Finland)) fi-FI</option><option value="Rocko (French (Canada))">Rocko (French (Canada)) fr-CA</option><option value="Rocko (French (France))">Rocko (French (France)) fr-FR</option><option value="Rocko (Italian (Italy))">Rocko (Italian (Italy)) it-IT</option><option value="Rocko (Portuguese (Brazil))">Rocko (Portuguese (Brazil)) pt-BR</option><option value="Samantha">Samantha en-US</option><option value="Sandy (German (Germany))">Sandy (German (Germany)) de-DE</option><option value="Sandy (English (United Kingdom))">Sandy (English (United Kingdom)) en-GB</option><option value="Sandy (English (United States))">Sandy (English (United States)) en-US</option><option value="Sandy (Spanish (Spain))">Sandy (Spanish (Spain)) es-ES</option><option value="Sandy (Spanish (Mexico))">Sandy (Spanish (Mexico)) es-MX</option><option value="Sandy (Finnish (Finland))">Sandy (Finnish (Finland)) fi-FI</option><option value="Sandy (French (Canada))">Sandy (French (Canada)) fr-CA</option><option value="Sandy (French (France))">Sandy (French (France)) fr-FR</option><option value="Sandy (Italian (Italy))">Sandy (Italian (Italy)) it-IT</option><option value="Sandy (Portuguese (Brazil))">Sandy (Portuguese (Brazil)) pt-BR</option><option value="Sara">Sara da-DK</option><option value="Satu">Satu fi-FI</option><option value="Shelley (German (Germany))">Shelley (German (Germany)) de-DE</option><option value="Shelley (English (United Kingdom))">Shelley (English (United Kingdom)) en-GB</option><option value="Shelley (English (United States))">Shelley (English (United States)) en-US</option><option value="Shelley (Spanish (Spain))">Shelley (Spanish (Spain)) es-ES</option><option value="Shelley (Spanish (Mexico))">Shelley (Spanish (Mexico)) es-MX</option><option value="Shelley (Finnish (Finland))">Shelley (Finnish (Finland)) fi-FI</option><option value="Shelley (French (Canada))">Shelley (French (Canada)) fr-CA</option><option value="Shelley (French (France))">Shelley (French (France)) fr-FR</option><option value="Shelley (Italian (Italy))">Shelley (Italian (Italy)) it-IT</option><option value="Shelley (Portuguese (Brazil))">Shelley (Portuguese (Brazil)) pt-BR</option><option value="Sinji">Sinji zh-HK</option><option value="Superstar">Superstar en-US</option><option value="Tessa">Tessa en-ZA</option><option value="Thomas">Thomas fr-FR</option><option value="Tingting">Tingting zh-CN</option><option value="Trinoids">Trinoids en-US</option><option value="Tünde">Tünde hu-HU</option><option value="Whisper">Whisper en-US</option><option value="Wobble">Wobble en-US</option><option value="Xander">Xander nl-NL</option><option value="Yelda">Yelda tr-TR</option><option value="Yu-shu">Yu-shu zh-CN</option><option value="Yuna">Yuna ko-KR</option><option value="Zarvox">Zarvox en-US</option><option value="Zosia">Zosia pl-PL</option><option value="Zuzana">Zuzana cs-CZ</option></select>
-                  </td>
-                </tr>
-                <tr class="loggedIn">
-                  <td>Hide Geo Flag</td>
-                  <td>
-                    <input type="checkbox" name="hideFlag" class="hideFlag">
-                  </td>
-                </tr>
-                <!--
-                <tr>
-                  <td>Geo Flag Country Code</td>
-                  <td>
-                    <img class="buddyGeoFlag" src="desktop/assets/geo-flags/flags/4x3/${message.location}.svg"/>
-                    <select name="geoFlags" class="geoFlags">
-                      <option>Select Country Flag...</option>
-                    </select>
-                  </td>
-                </tr>
-                -->
-                <tr>
-                  <td>Enable Web Notifications</td>
-                  <td>
-                    <input type="checkbox" size="32" name="notifications_web_enabled" class="enableWebNotifications" title="This will enable the browser's Notification settings allow Buddy Pond to notify you have new buddy messages while the website tab is not visible.">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Enable Audio Notifications</td>
-                  <td>
-                    <input type="checkbox" size="32" name="notifications_audio_enabled" class="enableAudioNotifications" title="This will enable audio notifications in the browser window while the website tab is not visible.">
-                  </td>
-                </tr>
-
-              </tbody></table>
-              <button type="submit" class="desktopPanel updateProfileButton loggedIn">Save Profile</button>
-              <!-- TODO logoout button 
-              <button type="submit" class="desktopPanel updateProfileButton">Logout</button>
-                -->
-            </form>
-          </div>
-          <div id="tabs-4" aria-labelledby="ui-id-5" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
-            <div id="tabs-2">
-              <div class="wallpaperSettings">
-                <table class="data table">
-                  <tbody><tr>
-                    <td>Enable Desktop Audio</td>
-                    <td>
-                      <input type="checkbox" size="32" name="audio_enabled" class="audioEnabled" title="This will enable or mute all Audio on the Desktop.">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Enable Text-To-Speech (TTS) Audio</td>
-                    <td>
-                      <input type="checkbox" size="32" name="audio_tts_enabled" class="audioTTSEnabled" title="This will enable or mute all Text-To-Speech Audio on the Desktop.">
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-            </div>
-          </div>
-          <div id="tabs-5" align="center" aria-labelledby="ui-id-6" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
-            To Adjust Default Camera Settings <a href="#mirror" class="desktopLink openApp" data-app="mirror">Click Open Mirror App</a>
-            <br>
-            <br>
-            <br>
-             <a href="#mirror" class="desktopLink openApp" data-app="mirror">
-               <img src="desktop/assets/images/icons/icon_mirror_64.png">
-             </a>
-          </div>
-          <!-- BUDDY PROFILE
-          <div id="tabs-2">
-            <h2>Your current Buddy Profile:</h2>
-            <br/>
-            <div class="publicProfilePreviewHolder desktopButton">
-              <div class="border">
-                <p class="me">Marak</p>
-                <p><em>Last Seen: <span class="lastSeen">2/22/2022 14:40pm</span></em></p>
-              </div>
-              <br/>
-              <div class="publicProfilePreview"></div>
-            </div>
-            <br/>
-            <br/>
-            <div class="profileEditor">
-              <textarea name="profileMarkdown" class="profileMarkdown" cols="60" rows="15"></textarea>
-              <button class="desktopButton updateProfileMarkdown">Update Profile</button>
-            </div>
-          </div>
-          -->
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-
-<style>
   :root {
     --pond-border-radius: 10px;
     --pond-input-background-colour: #ebebeb;
@@ -2208,6 +1924,290 @@ window.top.location = 'ie.html';
     </div>
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  #mantraIframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .mantraGameHolder {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
+        Mantra
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="mantraGameHolder">
+        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  .console {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 16px;
+  }
+  .consoleMessageSubmit {
+    width: 120px;
+  }
+  
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+  
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  div.console_message_main {
+    padding-top: 0px;
+    position: relative;
+    overflow-y: scroll;
+    flex: 1;
+    word-wrap: break-word;
+  }
+
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .console_message_submit {
+    margin: 5px;
+    padding: 5px;
+    width: 9vw;
+    border-radius: var(--console-border-radius);
+    border: none;
+    background-color: var(--console-input-background-colour);
+  }
+
+  .submit_svg_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .message_send_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ui-autocomplete {
+    position: absolute !important;
+    bottom: 600px !important;
+    overflow: auto !important;
+    max-height: 300px;
+    min-height: 300px;
+  }
+  
+  .window_bottom_console {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 20px;
+    /*overflow: hidden;*/
+    text-align: left;
+    text-shadow: #fff 0 1px 1px;
+    /* height: 33px; */
+    /* width: 100%; */
+    left: 1px;
+    right: 1px;
+    padding-left: 8px;
+    margin: 3px 0 3px 0;
+  }
+
+</style>
+
+<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
+        Console
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="chat_area">
+      <div class="abs window_content" style="top: 33px;">
+        <div class="chat_area">
+          <div class="window_main console_message_main  message_main">
+            <div class="consoleMessagesHolder">
+              <div class="no_chat_messages">
+                The console is fresh. There are no messages yet. You can send a message to this console below.
+              </div>
+              <div class="console chat_messages">
+              <li>07:11:53: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>07:11:53: <span class="purple">Now loading deferred apps</span> </li><li>07:11:54: <span class="purple">Loading App.login</span> </li><li>07:11:54: <span class="purple">Loading App.videochat</span> </li><li>07:11:54: <span class="purple">Ready: App.merlin</span> </li></div>
+              <hr>
+            </div>
+          </div>
+          <div class="window_bottom_console">
+            <div class="console_send_message_form">
+              <form method="POST" action="" align="right" class="console_send_message_form">
+              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
+                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
+                  §~~~&gt; Evaluate
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+<style>
+  #window_spellbook .window_content {
+    background-image: url("desktop/assets/images/misc/ivy-bg.png");
+    background-color: black;
+  }
+  #window_spellbook .window_main {
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 32px;
+    font-size: 32px;
+  }
+  #window_spellbook input,select {
+    font-size: 24px;
+  }
+  #window_spellbook label {
+    color: white;
+  }
+  .ponderSpellbook {
+    float: right;
+  }
+</style>
+
+<div id="window_spellbook" class="abs window" style="width: 662px; height: 533px; left: 50px; top: 50px;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_spellbook_64.png" style="width: 16px; height: 16px;">
+        Spellbook
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="window_main">
+        <form class="castSpellForm">
+          <a class="desktopButton ponderSpellbook orb" href="#">
+            <img src="desktop/assets/images/misc/orb.jpeg" width="100" height="100" title="Cast spell...">
+          </a>
+          <label for="omegaSpellTome">Spell</label>
+          <br>
+          <select class="omegaSpellTome">
+            <option>Choose your spell wisely...</option>
+          <option value="zalgo">zalgo</option><option value="babel.js">babel.js</option><option value="riddikulus">riddikulus</option><option value="ebublio">ebublio</option><option value="episkey">episkey</option><option value="rickroll">rickroll</option><option value="forbiddenRickRoll">forbiddenRickRoll</option><option value="passwordisusername">passwordisusername</option><option value="alert">alert</option><option value="logout">logout</option><option value="banhammer">banhammer</option></select>
+          <br>
+          <label for="castSpellBuddyName">Buddy Name</label>
+          <br>
+          <input type="text" id="castSpellBuddyName" placeholder="pick your target...">
+          <br>
+          <br>
+          <span class="warning"><strong>Warning:</strong> Casting spells is reserved only for Matrix Agents. If you are not a LVL 12 Grammaton Cleric or higher you might invoke the wrath of Merlin.</span>
+        </form>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs"></span>
 </div><style>
   .wallpaperSettings {
     padding-top: 16px;
@@ -3169,4 +3169,4 @@ Begin Wizard Training</a></h3>
   <div id="shadowRender">
   </div>
 
-</div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -768px -640px no-repeat; top: 896px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 816px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
+</div><ul id="ui-id-6" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -1152px -1280px no-repeat; top: 896px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 816px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
