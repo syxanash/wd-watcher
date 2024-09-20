@@ -23,7 +23,7 @@
 <script async="true">!function(){var t=window.location.hostname,e=document.createElement("script"),a=document.getElementsByTagName("script")[0],t="https://cmp.quantcast.com".concat("/choice/","xncav4ssEzwLp","/",t,"/choice.js?tag_version=V2"),n=0;e.async=!0,e.type="text/javascript",e.src=t,a.parentNode.insertBefore(e,a),function(){for(var t,o="__tcfapiLocator",a=[],i=window;i;){try{if(i.frames[o]){t=i;break}}catch(t){}if(i===window.top)break;i=i.parent}t||(!function t(){var e,a=i.document,n=!!i.frames[o];return n||(a.body?((e=a.createElement("iframe")).style.cssText="display:none",e.name=o,a.body.appendChild(e)):setTimeout(t,5)),!n}(),i.__tcfapi=function(){var t,e=arguments;if(!e.length)return a;"setGdprApplies"===e[0]?3<e.length&&2===e[2]&&"boolean"==typeof e[3]&&(t=e[3],"function"==typeof e[2]&&e[2]("set",!0)):"ping"===e[0]?(t={gdprApplies:t,cmpLoaded:!1,cmpStatus:"stub"},"function"==typeof e[2]&&e[2](t)):("init"===e[0]&&"object"==typeof e[3]&&(e[3]=Object.assign(e[3],{tag_version:"V2"})),a.push(e))},i.addEventListener("message",function(a){var n="string"==typeof a.data,t={};try{t=n?JSON.parse(a.data):a.data}catch(t){}var o=t.__tcfapiCall;o&&window.__tcfapi(o.command,o.version,function(t,e){e={__tcfapiReturn:{returnValue:t,success:e,callId:o.callId}};n&&(e=JSON.stringify(e)),a&&a.source&&a.source.postMessage&&a.source.postMessage(e,"*")},o.parameter)},!1))}();var o,i=function(){var t=arguments;typeof window.__uspapi!==i&&setTimeout(function(){void 0!==window.__uspapi&&window.__uspapi.apply(window.__uspapi,t)},500)};void 0===window.__uspapi&&(window.__uspapi=i,o=setInterval(function(){n++,window.__uspapi===i&&n<3?console.warn("USP is not accessible"):clearInterval(o)},6e3))}();</script>
 <link rel="stylesheet" href="https://a.pub.network/core/pubfig/cls.css"><script data-cfasync="false">var freestar = freestar || {};freestar.queue = freestar.queue || [];freestar.config = freestar.config || {};freestar.config.enabled_slots = [];freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }</script><script src="https://a.pub.network/pranx-com/pubfig.min.js" async=""></script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5RJ4ST6');</script>
-<script data-owner="freestar" src="https://a.pub.network/core/pubfig/5.101.0/pubfig.engine.js" async="" type="text/javascript"></script><style type="text/css">.fs-sticky-footer {
+<script data-owner="freestar" src="https://a.pub.network/core/pubfig/5.109.1/pubfig.engine.js" async="" type="text/javascript"></script><style type="text/css">.fs-sticky-footer {
     display: block;
     bottom: 0;
     right: 0;
@@ -40,15 +40,12 @@
             justify-content: center;
     z-index: 2147483647;
 }
-
 .fs-sticky-slot-element > div > iframe {
     margin: 0 !important;
 }
-
 .fs-sticky-slot-element > div {
     position: relative;
 }
-
 .fs-sticky-parent {
     z-index: 2147483647;
     bottom: 0;
@@ -58,18 +55,16 @@
     right: 0;
     text-align: center;
 }
-
 .fs-sticky-wrapper {
     background-color: #f6f3f3;
     display: inline-block;
     margin: auto;
-    width: -webkit-fit-content;
     width: -moz-fit-content;
+    width: -webkit-fit-content;
     width: fit-content;
     visibility: inherit;
     z-index: inherit;
 }
-
 .fs-overlay {
     width: 0%;
     height: 100%;
@@ -83,30 +78,22 @@
     display: -ms-flexbox;
     display: flex;
 }
-
 .canvas-boxes {
     width: 100px;
     height: 100px;
 }
-
 .captcha-styles {
     text-align: center;
     width: 100%;
 }
-
 .fs-dynamic {
     text-align: center;
-    /*margin: 10px auto 10px auto;*/
     clear: both;
 }
-
 .fs-iai {
-    /* TODO: this is just copied from fs-dynamic, what do we actually want here? */
     text-align: center;
-    /*margin: 10px auto 10px auto;*/
     clear: both;
 }
-
 .fs-x-btn {
     position: absolute;
     top: 20px;
@@ -119,7 +106,6 @@
     -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
             box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
-
 .fs-l-btn {
     display: block;
     position: absolute;
@@ -131,9 +117,8 @@
     height: 2px;
     background-color: rgba(0, 0, 0, 0);
     -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
-
 .fs-r-btn {
     display: block;
     pointer-events: none;
@@ -142,19 +127,17 @@
     height: 2px;
     background-color: #ffffff;
     -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+            transform: rotate(45deg);
 }
-
 .fs-btn-wrapper {
     display: inline-block;
 }
-
 .fs-pdu-x {
     -moz-appearance: none;
     -webkit-appearance: none;
     -webkit-transition: all 0.3s ease-in-out;
     background-color: #ffffff;
-    background-image: url(data: image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9ImZzQ2xvc2UiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDU1LjAwMDAwMCwgLTcwLjAwMDAwMCkiIGZpbGw9IiM4ODg4ODgiPiAgICAgICAgICAgIDxnIGlkPSJjYW5jZWwtaWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA1NS4wMDAwMDAsIDcwLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNOS40ODU5Mzc1LDAuNjE4NDM3NSBDOS4yNDI1LDAuMzc0Njg3NSA4Ljg0NzUsMC4zNzQ2ODc1IDguNjA0Mzc1LDAuNjE4NDM3NSBMNC45ODEyNSw0LjI0MDYyNSBMMS4zNTkwNjI1LDAuNjE4NDM3NSBDMS4xMTU2MjUsMC4zNzQ2ODc1IDAuNzIwMzEyNSwwLjM3NDY4NzUgMC40NzcxODc1LDAuNjE4NDM3NSBDMC4yMzQwNjI1LDAuODYxODc1IDAuMjM0MDYyNSwxLjI1Njg3NSAwLjQ3NzE4NzUsMS41MDA2MjUgTDQuMDcwNjI1LDUuMDk0Mzc1IEwwLjQ3OTM3NSw4LjY4NDY4NzUgQzAuMjM2MjUsOC45MjgxMjUgMC4yMzYyNSw5LjMyMzEyNSAwLjQ3OTM3NSw5LjU2NjU2MjUgQzAuNjAxODc1LDkuNjg4NzUgMC43NjE1NjI1LDkuNzQ5Njg3NSAwLjkyMTI1LDkuNzQ5Njg3NSBDMS4wODA5Mzc1LDkuNzQ5Njg3NSAxLjI0LDkuNjg4NzUgMS4zNjIxODc1LDkuNTY2NTYyNSBMNC45ODEyNSw1Ljk0ODEyNSBMOC42MDA5Mzc1LDkuNTY2NTYyNSBDOC43MjI4MTI1LDkuNjg4NzUgOC44ODE4NzUsOS43NDk2ODc1IDkuMDQxNTYyNSw5Ljc0OTY4NzUgQzkuMjAxNTYyNSw5Ljc0OTY4NzUgOS4zNjE1NjI1LDkuNjg4NzUgOS40ODI4MTI1LDkuNTY2NTYyNSBDOS43MjYyNSw5LjMyMzEyNSA5LjcyNjI1LDguOTI4MTI1IDkuNDgyODEyNSw4LjY4NDY4NzUgTDUuODkyNSw1LjA5NDY4NzUgTDkuNDg1OTM3NSwxLjUwMDkzNzUgQzkuNzI5Njg3NSwxLjI1Njg3NSA5LjcyOTY4NzUsMC44NjIxODc1IDkuNDg1OTM3NSwwLjYxODQzNzUgWiIgaWQ9IlBhdGgiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=);
+    background-image: url('https://a.pub.network/core/imgs/freestar_close_button.svg');
     background-position: 50%;
     background-repeat: no-repeat;
     border: none;
@@ -178,14 +161,13 @@
     transition: all 0.3s ease-in-out;
     width: 20px;
 }
-
 .fs-close-button {
     -moz-appearance: none !important;
     -webkit-appearance: none !important;
     -webkit-transition: all 0.3s ease-in-out !important;
     appearance: none !important;
     background-color: #ffffff !important;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9ImZzQ2xvc2UiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDU1LjAwMDAwMCwgLTcwLjAwMDAwMCkiIGZpbGw9IiM4ODg4ODgiPiAgICAgICAgICAgIDxnIGlkPSJjYW5jZWwtaWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA1NS4wMDAwMDAsIDcwLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNOS40ODU5Mzc1LDAuNjE4NDM3NSBDOS4yNDI1LDAuMzc0Njg3NSA4Ljg0NzUsMC4zNzQ2ODc1IDguNjA0Mzc1LDAuNjE4NDM3NSBMNC45ODEyNSw0LjI0MDYyNSBMMS4zNTkwNjI1LDAuNjE4NDM3NSBDMS4xMTU2MjUsMC4zNzQ2ODc1IDAuNzIwMzEyNSwwLjM3NDY4NzUgMC40NzcxODc1LDAuNjE4NDM3NSBDMC4yMzQwNjI1LDAuODYxODc1IDAuMjM0MDYyNSwxLjI1Njg3NSAwLjQ3NzE4NzUsMS41MDA2MjUgTDQuMDcwNjI1LDUuMDk0Mzc1IEwwLjQ3OTM3NSw4LjY4NDY4NzUgQzAuMjM2MjUsOC45MjgxMjUgMC4yMzYyNSw5LjMyMzEyNSAwLjQ3OTM3NSw5LjU2NjU2MjUgQzAuNjAxODc1LDkuNjg4NzUgMC43NjE1NjI1LDkuNzQ5Njg3NSAwLjkyMTI1LDkuNzQ5Njg3NSBDMS4wODA5Mzc1LDkuNzQ5Njg3NSAxLjI0LDkuNjg4NzUgMS4zNjIxODc1LDkuNTY2NTYyNSBMNC45ODEyNSw1Ljk0ODEyNSBMOC42MDA5Mzc1LDkuNTY2NTYyNSBDOC43MjI4MTI1LDkuNjg4NzUgOC44ODE4NzUsOS43NDk2ODc1IDkuMDQxNTYyNSw5Ljc0OTY4NzUgQzkuMjAxNTYyNSw5Ljc0OTY4NzUgOS4zNjE1NjI1LDkuNjg4NzUgOS40ODI4MTI1LDkuNTY2NTYyNSBDOS43MjYyNSw5LjMyMzEyNSA5LjcyNjI1LDguOTI4MTI1IDkuNDgyODEyNSw4LjY4NDY4NzUgTDUuODkyNSw1LjA5NDY4NzUgTDkuNDg1OTM3NSwxLjUwMDkzNzUgQzkuNzI5Njg3NSwxLjI1Njg3NSA5LjcyOTY4NzUsMC44NjIxODc1IDkuNDg1OTM3NSwwLjYxODQzNzUgWiIgaWQ9IlBhdGgiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=) !important;
+    background-image: url('https://a.pub.network/core/imgs/freestar_close_button.svg') !important;
     background-position: 50% !important;
     background-repeat: no-repeat !important;
     border: none !important;
@@ -209,20 +191,16 @@
     transition: all 0.3s ease-in-out !important;
     width: 20px !important;
 }
-
 .fs-close-button {
     all: unset;
 }
-
 .fs-close-button:hover,
 .fs-close-button:focus {
     background-color: #000 !important;
 }
-
 .fs-sticky-popup-container {
     z-index: 2147483647 !important;
 }
-
 .fs-sticky-popup-container {
     font-size: 0.8em;
     text-align: center;
@@ -234,11 +212,9 @@
     -webkit-filter: drop-shadow(2px 2px 2px grey);
             filter: drop-shadow(2px 2px 2px grey);
 }
-
 .fs-sticky-popup-container a:nth-child(2) {
     border-top: 1px solid #999;
 }
-
 .fs-close-button:hover {
     -webkit-box-shadow:
         0 0 0 1px #888888,
@@ -247,29 +223,24 @@
         0 0 0 1px #888888,
         0 0 0 8px rgba(247, 247, 247, 0.75);
 }
-
 .fs-close-button-pushdown {
     right: 12px !important;
     top: 12px !important;
 }
-
 .fs-close-button-zerg-interstitial {
     right: -5px !important;
     top: -5px !important;
 }
-
 .fs-close-button-zerg-interstitial {
     -webkit-transform: scale(1.25);
             transform: scale(1.25);
 }
-
 @media screen and (min-width: 820px) {
     .fs-close-button-sticky {
         top: 9.3% !important;
         right: 10px !important;
     }
 }
-
 @media screen and (max-width: 820px) {
     .fs-close-button-sticky {
         top: 3px !important;
@@ -287,14 +258,11 @@
         right: -38px !important;
     }
 }
-
 .fs-pushdown {
     background-color: rgba(247, 247, 247, 0.9);
     top: 0;
-    /*left: 0 !important;*/
     text-align: center;
     z-index: 2147483647;
-    /*position: inherit !important;*/
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -305,15 +273,11 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    /*    height: 100%;
-    max-height: 250px;*/
 }
-
 .fs-pushdown-sticky {
     position: sticky !important;
     left: 0 !important;
 }
-
 .fs-pushdown-sticky {
     background-color: rgba(247, 247, 247, 0.9);
     top: 0;
@@ -329,7 +293,6 @@
         -ms-flex-align: center;
             align-items: center;
 }
-
 .freestar_report_button {
     border: none;
     font-family: sans-serif;
@@ -337,11 +300,9 @@
     cursor: pointer;
     color: #646464;
 }
-
 ._fsBranding {
     position: relative;
 }
-
 ._fsBranding a {
     max-height: none;
     max-height: initial;
@@ -355,7 +316,7 @@
     -webkit-appearance: none;
     -webkit-transition: all 0.3s ease-in-out;
     appearance: none;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAMAAABYi/ZGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAASlQTFRFAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAAAAAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMKIAMOIAMOIA76FDKt7BLyEAMOIAMOIAMOIAMOIAMOIC659F5RvAMOIAMOIAMOIAsCGFJtzAMOIAMOIAMOIAMOIAMOIA7yEAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIXQtSBAAAAGN0Uk5TZ/P/+5zy67G59Nb+iAUAGtq9AcgjzsYfTpoHk+1+IgLQ+B0RjvfwluI6A1fE/M9GvPo0GZf5oh3c/917amAT2tzAtizavReR9dtQvWHu0ubCG5JZMem/DmvhFP1iGNfqyotPvfuArgAAANFJREFUeJxdztdWwkAQgOFlAyIEhypShNB772iUEnqTXgWF938IQ0g8ZP+bOfPNzSCkwPIoJVI9qPkeNcK4psVIS+ueAPQGI9wymSlkecbWlzuzYTsChxO/utySMR6vDwH4A8FQOCJalFKbeINYPJGkU2mhTDYHSLjmC0XplRKIBuVKFb+9syz78flv+lq9kW1yt0WyVrvT7fUHzL0ZhuAYjSeczPhfuK/pjLDYvLgAwpar9YY0F70Fwtw7z5403eEbZHY8rX5+/XJjzgfFRST4A0TXI5cUTyEqAAAAAElFTkSuQmCC);
+    background-image: url('https://a.pub.network/core/imgs/fslogo-green.svg');
     background-position: 50%;
     background-repeat: no-repeat;
     border: none;
@@ -374,7 +335,6 @@
     min-width: 0;
     min-width: initial;
 }
-
 @media screen and (max-width: 820px) {
     ._fsBranding a {
         top: -30px;
@@ -382,12 +342,10 @@
         background-size: 58%;
     }
 }
-
 .fs-report-ad-img {
     width: 60%;
     margin: 9px;
 }
-
 #freestar_overlay {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -397,7 +355,6 @@
     left: 0;
     position: fixed;
 }
-
 #freestar_overlay_flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -415,11 +372,9 @@
     width: 100%;
     height: 100%;
 }
-
 #freestar_report_ad {
     background: rgba(255, 255, 255, 1) !important;
 }
-
 #freestar_report_ad {
     width: 300px;
     display: -webkit-box;
@@ -432,11 +387,9 @@
         -ms-flex-pack: center;
             justify-content: center;
 }
-
 #freestar_report_ad::before {
     background: rgba(255, 255, 255, 1) !important;
 }
-
 #freestar_report_ad::before {
     width: 300px;
     display: -webkit-box;
@@ -449,11 +402,9 @@
         -ms-flex-pack: center;
             justify-content: center;
 }
-
 #freestar_report_ad_text_center {
     text-align: center;
 }
-
 .freestar_close_btn {
     position: absolute;
     right: 0px;
@@ -462,17 +413,14 @@
     height: 32px;
     background-color: rgb(255, 255, 255);
 }
-
 .freestar_close_btn:before {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-
 .freestar_close_btn:after {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }
-
 .freestar_report_btn {
     background: #00c389 !important;
     cursor: pointer !important;
@@ -484,20 +432,16 @@
     font-weight: 500 !important;
     font-family: Arial, Helvetica, sans-serif !important;
 }
-
 .freestar_report_btn {
     margin: 20px;
     outline: 0;
 }
-
 .freestar_report_btn:focus {
     outline: 0;
 }
-
 #freestar_report_div {
     font-family: Arial, Helvetica, sans-serif !important;
 }
-
 #freestar_report_div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -513,21 +457,17 @@
         -ms-flex-direction: column;
             flex-direction: column;
 }
-
 .freestar_report_sub_header {
     color: #00c389 !important;
     font-size: 16px !important;
     font-weight: 600 !important;
 }
-
 .freestar_report_sub_header {
     margin: 23px;
 }
-
 .fs_report_container span {
     margin-left: 10px;
 }
-
 .fs_checkbox {
     cursor: pointer;
     position: relative;
@@ -541,20 +481,19 @@
         -ms-flex-align: center;
             align-items: center;
 }
-
 .fs_checkbox > span {
     color: #34495e;
     margin-left: 5px;
-    /*padding: 0.5rem 0.25rem;*/
+    /*padding: 0.5rem 0.25rem;
+	*/
 }
-
 .fs_checkbox > input {
     height: 15px;
     width: 15px;
     -webkit-appearance: none;
-    -moz-appearance: none;
     -o-appearance: none;
-    appearance: none;
+    -moz-appearance: none;
+         appearance: none;
     border: 1px solid #34495e;
     border-radius: 4px;
     outline: none;
@@ -564,68 +503,59 @@
     cursor: pointer;
     margin-bottom: 3px;
 }
-
 .fs_checkbox > input:checked {
     border: 1px solid #41b883;
     background-color: #34495e;
 }
-
 .fs_checkbox > input:checked + span::before {
     display: block;
     text-align: center;
     color: #41b883;
-    /*position: absolute;*/
-    /*left: 0.7rem;*/
-    /*top: 0.2rem;*/
+    /*position: absolute;
+	*/
+    /*left: 0.7rem;
+	*/
+    /*top: 0.2rem;
+	*/
 }
-
 .fs_checkbox > input:active {
     border: 2px solid #34495e;
 }
-
 .fs-new-close-container {
     top: calc(50% - 250px);
     right: calc(50% - 250px);
     position: absolute;
 }
-
 @media screen and (max-width: 820px) {
     .fs-new-close-container {
         top: 15%;
         right: calc(50% - 131px);
     }
 }
-
 .fs-new-close {
     margin-left: 30%;
     margin-bottom: 5%;
     cursor: pointer;
 }
-
 .fs-new-close:hover {
     opacity: 1;
 }
-
 .fs-new-close:before,
 .fs-new-close:after {
     position: absolute;
-    /*left: 15px;*/
     content: ' ';
     height: 33px;
     width: 2px;
     background-color: rgb(255, 255, 255);
 }
-
 .fs-new-close:before {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-
 .fs-new-close:after {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }
-
 .__fs-ancillary {
     --childHeight: 16px;
     width: 100%;
@@ -643,17 +573,13 @@
     height: 16px;
     height: var(--childHeight);
     visibility: hidden;
-    /*    order: 5;*/
 }
-
 .fs-sticky-wrapper .__fs-ancillary {
     display: none !important;
 }
-
 .__fs-report-this-ad {
     line-height: 0px;
 }
-
 .__fs-branding {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -664,25 +590,21 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    /*width: var(--childHeight);*/
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
 }
-
 .__fs-branding > a {
     width: 100%;
     max-width: var(--childWidth);
     height: var(--childHeight);
     display: block;
 }
-
 .__fs-branding > a > img {
     height: calc(var(--childHeight) - 2px) !important;
     width: auto !important;
     width: initial !important;
 }
-
 .__fs-branding > a > img {
     max-height: none;
     max-height: initial;
@@ -702,7 +624,6 @@
     -webkit-box-shadow: none;
             box-shadow: none;
 }
-
 .fs-sticky-wrapper .__fs-branding {
     position: absolute;
     top: 0;
@@ -711,7 +632,6 @@
     width: 30px;
     height: 30px;
 }
-
 .fs-sticky-wrapper .__fs-branding {
     position: absolute;
     top: 50%;
@@ -719,11 +639,9 @@
     border: none;
     border-radius: 50%;
 }
-
 .fs-mobile-tall {
     top: 30% !important;
 }
-
 .fs-sticky-wrapper .__fs-branding > a {
     width: 100%;
     height: 100%;
@@ -737,16 +655,13 @@
         -ms-flex-pack: center;
             justify-content: center;
 }
-
 .fs-sticky-wrapper .__fs-branding > a > img {
     width: 100% !important;
     height: 100% !important;
 }
-
 .fs-sticky-wrapper .__fs-branding > a > img {
     opacity: 1;
 }
-
 @media screen and (max-width: 820px) {
     .fs-sticky-wrapper .__fs-branding > a > img {
         width: 70% !important;
@@ -756,9 +671,7 @@
         opacity: 1;
     }
 }
-
 .fs-sticky-wrapper .__fs-branding {
-    /* top: -30px; */
     background-color: rgba(247, 247, 247, 0.75);
     background-size: 58%;
 }
@@ -770,13 +683,12 @@
     background-color: #f6f3f3;
     padding-right: 38px;
     display: inline-block;
-    width: -webkit-fit-content;
     width: -moz-fit-content;
+    width: -webkit-fit-content;
     width: fit-content;
     visibility: inherit;
     z-index: inherit;
 }
-
 .fs-interstitial-overlay {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -800,7 +712,6 @@
             flex-direction: column;
     visibility: hidden;
 }
-
 .fs-interstitial-container {
     width: 1000px;
     height: 650px;
@@ -816,7 +727,6 @@
         -ms-flex-align: start;
             align-items: flex-start;
 }
-
 .fs-interstitial-ad-space {
     width: 970px;
     height: 250px;
@@ -827,7 +737,6 @@
     min-height: 250px;
     overflow: hidden;
 }
-
 .fs-interstitial-content {
     width: 100%;
     height: 250px;
@@ -844,7 +753,6 @@
         -ms-flex-align: start;
             align-items: flex-start;
 }
-
 .fs-interstitial-message-container {
     width: 100%;
     height: 100px;
@@ -864,7 +772,6 @@
         -ms-flex-pack: center;
             justify-content: center;
 }
-
 .fs-interstitial-message {
     color: #17181f;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -873,15 +780,13 @@
         align-self: center;
     padding: 10px;
 }
-
 .fs-interstitial-close-container {
     width: 1000px;
     height: 50px;
     position: relative;
 }
-
 .fs-interstitial-branding {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAMAAABYi/ZGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAASlQTFRFAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAAAAAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMKIAMOIAMOIA76FDKt7BLyEAMOIAMOIAMOIAMOIAMOIC659F5RvAMOIAMOIAMOIAsCGFJtzAMOIAMOIAMOIAMOIAMOIA7yEAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIAMOIXQtSBAAAAGN0Uk5TZ/P/+5zy67G59Nb+iAUAGtq9AcgjzsYfTpoHk+1+IgLQ+B0RjvfwluI6A1fE/M9GvPo0GZf5oh3c/917amAT2tzAtizavReR9dtQvWHu0ubCG5JZMem/DmvhFP1iGNfqyotPvfuArgAAANFJREFUeJxdztdWwkAQgOFlAyIEhypShNB772iUEnqTXgWF938IQ0g8ZP+bOfPNzSCkwPIoJVI9qPkeNcK4psVIS+ueAPQGI9wymSlkecbWlzuzYTsChxO/utySMR6vDwH4A8FQOCJalFKbeINYPJGkU2mhTDYHSLjmC0XplRKIBuVKFb+9syz78flv+lq9kW1yt0WyVrvT7fUHzL0ZhuAYjSeczPhfuK/pjLDYvLgAwpar9YY0F70Fwtw7z5403eEbZHY8rX5+/XJjzgfFRST4A0TXI5cUTyEqAAAAAElFTkSuQmCC);
+    background-image: url('https://a.pub.network/core/imgs/fslogo-green.svg');
     background-position: 100%;
     background-repeat: no-repeat;
     height: 30px;
@@ -892,7 +797,6 @@
     min-width: initial;
     margin-left: 56%;
 }
-
 .fs-interstitial-container .zegrow {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
@@ -904,62 +808,51 @@
         -ms-flex-pack: center !important;
             justify-content: center !important;
 }
-
 .fs-interstitial-container .zergentity {
     width: 237px !important;
     margin: 0px 8px 0px 5px !important;
 }
-
 .fs-interstitial-container .widget-loaded {
     -ms-flex-item-align: center !important;
         align-self: center !important;
     width: 100% !important;
     background: rgba(0, 0, 0, 0) !important;
 }
-
 .fs_interstitial_branding_link img {
     width: 200px;
     padding-bottom: 16px;
 }
-
 .fs_interstitial_branding_link {
     -ms-flex-item-align: center !important;
         align-self: center !important;
 }
-
 #freestar-video-parent,
 #freestar-video-child {
     max-width: 100vw !important;
 }
-
 #freestar-video-parent,
 #freestar-video-child {
     width: 100%;
     overflow: hidden;
 }
-
 .freestar_report_comments {
     font-family: Arial, Helvetica, sans-serif !important;
 }
-
 .freestar_report_comments {
     padding-top: 10px;
     margin-top: 10px;
 }
-
 #freestar_report_comment_box_wrapper {
     width: 100%;
     height: 90px;
 }
-
 .sticky-reportThisAd button {
     visibility: hidden;
     position: relative;
 }
-
 .sticky-reportThisAd button:after {
     content: '';
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAVUlEQVR4Ae3OsREAEBAFUaEClKIA/SjiSlKUQrhAzAyBH+zObP4CEX3O/HFxVANlNVAVA53/AAIECBAgQIAs7EtSoFVXAzUl0HuAAAESqPi2Lj6RfBMQ53XW4UhrMwAAAABJRU5ErkJggg==);
+    background-image: url('https://a.pub.network/core/imgs/freestar_report_ad_icon.png');
     background-size: 18px;
     visibility: visible;
     position: absolute;
@@ -992,7 +885,6 @@
     min-width: 0;
     min-width: initial;
 }
-
 .sticky-reportThisAd {
     content: '\127987';
     cursor: pointer;
@@ -1006,15 +898,13 @@
     top: 50%;
     z-index: 2147483647;
 }
-
 .pushdown-reportThisAd button {
     visibility: hidden;
     position: relative;
 }
-
 .pushdown-reportThisAd button:after {
     content: '';
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAVUlEQVR4Ae3OsREAEBAFUaEClKIA/SjiSlKUQrhAzAyBH+zObP4CEX3O/HFxVANlNVAVA53/AAIECBAgQIAs7EtSoFVXAzUl0HuAAAESqPi2Lj6RfBMQ53XW4UhrMwAAAABJRU5ErkJggg==);
+    background-image: url('https://a.pub.network/core/imgs/freestar_report_ad_icon.png');
     background-size: 18px;
     visibility: visible;
     position: absolute;
@@ -1047,7 +937,6 @@
     min-width: 0;
     min-width: initial;
 }
-
 .pushdown-reportThisAd {
     content: '\127987';
     cursor: pointer;
@@ -1061,7 +950,6 @@
     top: 5px;
     z-index: 2147483647;
 }
-
 .center-ad {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1077,7 +965,6 @@
         -ms-flex-direction: column;
             flex-direction: column;
 }
-
 ._wrapper .orp-player-wrapper {
     width: 100% !important;
     height: 100% !important;
@@ -1153,7 +1040,7 @@
 <div id="desktop" class="start">
 	<div id="typingArea">
 		<div id="wrapDesktopTyper">
-			<span id="desktopTyper"></span><span class="cursor">_</span>
+			<span id="desktopTyper"></span><span class="cursor cursorBlink">_</span>
 		</div>
 	</div>
 	<div class="window closed howToUse ui-draggable ui-draggable-handle" data-ico="?" data-title="Useful information" data-id="0" id="window0" style="z-index: 994;"><div class="windowHeader"><strong>Useful information</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
@@ -1206,7 +1093,7 @@
 							<div class="divTableCell">
 								128.154.26.11 Connected to btcn.miner.bitcoin-heap.htmlg.com<br>
 								Block: ...7e9Wq#001 Diff:147M<span class="hideUnder1000"> Permission granted!<br>
-								Initialized GPU #0 - #32: [OK] (1.092Ph/s) Started @ <span class="clock">9:03:44</span><br>
+								Initialized GPU #0 - #32: [OK] (1.092Ph/s) Started @ <span class="clock">10:17:47</span><br>
 								Overclock set to 300% | BW:[ 55/ 13/ 4Mh/kWh]  <br>
 								<span class="showWhileMining">Running BitCrane.exe in unsafe mode | STATUS: Miner running...</span></span>
 							</div>
@@ -1287,7 +1174,7 @@
 	<div class="window closed bank ui-draggable ui-draggable-handle" data-ico="◰" data-title="Headquarter surveillance" data-id="3" id="window3" style="z-index: 994;"><div class="windowHeader"><strong>Headquarter surveillance</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
 		<div class="wrapVideo">
 			<div class="loading">Connecting...<br><img src="wait.gif" alt="loading"></div>
-			<div class="watch"><span class="datum">2024-81-5</span><br><span class="ora">9:03:52</span></div>
+			<div class="watch"><span class="datum">2024-81-12</span><br><span class="ora">10:17:55</span></div>
 			<div class="video" data-iframe="CTV9kOEP8Mo" style="height: 200px; width: 356px;"> </div>
 		</div>
 	<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
@@ -1316,14 +1203,14 @@
 				<div class="divTable" id="pwCrackTable">
 					<div class="divTableBody">
 						<div class="divTableRow" id="pwGuesserRow">
-							<div class="divTableCell" id="pw1">T</div>
-							<div class="divTableCell" id="pw2">s</div>
-							<div class="divTableCell" id="pw3">H</div>
-							<div class="divTableCell" id="pw4">s</div>
-							<div class="divTableCell" id="pw5">l</div>
-							<div class="divTableCell" id="pw6">t</div>
-							<div class="divTableCell" id="pw7">s</div>
-							<div class="divTableCell" id="pw8">7</div>
+							<div class="divTableCell" id="pw1">I</div>
+							<div class="divTableCell" id="pw2">H</div>
+							<div class="divTableCell" id="pw3">w</div>
+							<div class="divTableCell" id="pw4">u</div>
+							<div class="divTableCell" id="pw5">d</div>
+							<div class="divTableCell" id="pw6">f</div>
+							<div class="divTableCell" id="pw7">A</div>
+							<div class="divTableCell" id="pw8">&amp;</div>
 							<div class="divTableCell" id="pw9">&nbsp;</div>
 							<div class="divTableCell" id="pw10">&nbsp;</div>
 							<div class="divTableCell" id="pw11">&nbsp;</div>
@@ -1333,14 +1220,14 @@
 							<div class="divTableCell" id="pw15">&nbsp;</div>
 						</div>
 						<div class="divTableRow" id="pwOkRow">
-							<div class="divTableCell" id="pwok1">T</div>
-							<div class="divTableCell" id="pwok2">s</div>
-							<div class="divTableCell" id="pwok3">H</div>
-							<div class="divTableCell" id="pwok4">s</div>
-							<div class="divTableCell" id="pwok5">l</div>
-							<div class="divTableCell" id="pwok6">t</div>
-							<div class="divTableCell nowGuessing" id="pwok7">l</div>
-							<div class="divTableCell" id="pwok8">7</div>
+							<div class="divTableCell" id="pwok1">I</div>
+							<div class="divTableCell" id="pwok2">H</div>
+							<div class="divTableCell nowGuessing" id="pwok3">w</div>
+							<div class="divTableCell" id="pwok4">u</div>
+							<div class="divTableCell" id="pwok5">d</div>
+							<div class="divTableCell" id="pwok6">f</div>
+							<div class="divTableCell" id="pwok7">A</div>
+							<div class="divTableCell" id="pwok8">&amp;</div>
 							<div class="divTableCell" id="pwok9">&nbsp;</div>
 							<div class="divTableCell" id="pwok10">&nbsp;</div>
 							<div class="divTableCell" id="pwok11">&nbsp;</div>
@@ -1379,51 +1266,51 @@
 		<div class="scroll-wrapper scrollbar-rail" style="position: relative;"><div class="scrollbar-rail scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
 			<div id="wrapNuclearPlant">
 				<div id="nuclearFloods">
-					<div class="flood"><div data-percent="54" data-step="6" style="height: 54%;"></div></div>
-					<div class="flood" id="flood2"><div data-percent="41" data-step="6" style="height: 41%;"></div></div>
-					<div class="flood" id="flood3"><div data-percent="26" data-step="36" style="height: 26%;"></div></div>
-					<div class="flood" id="flood4"><div data-percent="82" data-step="36" style="height: 82%;"></div></div>
-					<div class="flood" id="flood5"><div data-percent="17" data-step="6" style="height: 17%;"></div></div>
-					<div class="flood" id="flood6"><div data-percent="48" data-step="46" style="height: 48%;"></div></div>
+					<div class="flood"><div data-percent="44" data-step="6" style="height: 44%;"></div></div>
+					<div class="flood" id="flood2"><div data-percent="46" data-step="6" style="height: 46%;"></div></div>
+					<div class="flood" id="flood3"><div data-percent="43" data-step="36" style="height: 43%;"></div></div>
+					<div class="flood" id="flood4"><div data-percent="67" data-step="36" style="height: 67%;"></div></div>
+					<div class="flood" id="flood5"><div data-percent="18" data-step="6" style="height: 18%;"></div></div>
+					<div class="flood" id="flood6"><div data-percent="66" data-step="46" style="height: 66%;"></div></div>
 				</div>
 				<div id="nuclearPlant">
-					<div class="randomnr" id="nr01" data-step="0.3">16.9</div>
-					<div class="randomnr" id="nr02" data-step="0.3">17.5</div>
-					<div class="randomnr" id="nr03" data-step="5">644</div>
-					<div class="randomnr" id="nr04" data-step="0.3">2022</div>
-					<div class="randomnr" id="nr05" data-step="0.3">2</div>
-					<div class="randomnr" id="nr06" data-step="100">70017</div>
+					<div class="randomnr" id="nr01" data-step="0.3">14.4</div>
+					<div class="randomnr" id="nr02" data-step="0.3">15.5</div>
+					<div class="randomnr" id="nr03" data-step="5">632</div>
+					<div class="randomnr" id="nr04" data-step="0.3">2024.5</div>
+					<div class="randomnr" id="nr05" data-step="0.3">2.5</div>
+					<div class="randomnr" id="nr06" data-step="100">70033</div>
 					<div class="randomnr" id="nr07" data-step="1">0</div>
-					<div class="randomnr" id="nr08" data-step="0.2">14.2</div>
+					<div class="randomnr" id="nr08" data-step="0.2">15.2</div>
 					<div class="randomnr yellow" id="nr09" data-step="1">120</div>
-					<div class="randomnr yellow" id="nr10" data-step="10">2585</div>
+					<div class="randomnr yellow" id="nr10" data-step="10">2580</div>
 					<div class="randomnr yellow" id="nr11" data-step="0">0</div>
-					<div class="randomnr yellow" id="nr12" data-step="10">1500</div>
-					<div class="randomnr" id="nr13" data-step="5">133</div>
+					<div class="randomnr yellow" id="nr12" data-step="10">1499</div>
+					<div class="randomnr" id="nr13" data-step="5">129</div>
 					<div class="randomnr yellow" id="nr14" data-step="0">0</div>
-					<div class="randomnr yellow" id="nr15" data-step="5">1516</div>
-					<div class="randomnr" id="nr16" data-step="10">2175</div>
-					<div class="randomnr" id="nr17" data-step="5">2174</div>
+					<div class="randomnr yellow" id="nr15" data-step="5">1504</div>
+					<div class="randomnr" id="nr16" data-step="10">2189</div>
+					<div class="randomnr" id="nr17" data-step="5">2170</div>
 					<div class="randomnr" id="nr18" data-step="1">220</div>
-					<div class="randomnr" id="nr19" data-step="0.5">221.5</div>
-					<div class="randomnr" id="nr20" data-step="0">0.0</div>
-					<div class="randomnr" id="nr21" data-step="5">929</div>
+					<div class="randomnr" id="nr19" data-step="0.5">230.5</div>
+					<div class="randomnr" id="nr20" data-step="0">0</div>
+					<div class="randomnr" id="nr21" data-step="5">928</div>
 					<div class="randomnr" id="nr22" data-step="2">604</div>
-					<div class="randomnr" id="nr23" data-step="0.5">43</div>
-					<div class="randomnr" id="nr24" data-step="5">560</div>
-					<div class="randomnr" id="nr25" data-step="5">1965</div>
+					<div class="randomnr" id="nr23" data-step="0.5">45</div>
+					<div class="randomnr" id="nr24" data-step="5">561</div>
+					<div class="randomnr" id="nr25" data-step="5">1958</div>
 					<div class="randomnr" id="nr26" data-step="0.5">603</div>
 					<div class="randomnr" id="nr27" data-step="5">937</div>
-					<div class="randomnr yellow" id="nr28" data-step="5">1497</div>
-					<div class="randomnr" id="nr29" data-step="5">290</div>
-					<div class="randomnr" id="nr30" data-step="0.5">71</div>
+					<div class="randomnr yellow" id="nr28" data-step="5">1496</div>
+					<div class="randomnr" id="nr29" data-step="5">297</div>
+					<div class="randomnr" id="nr30" data-step="0.5">73.5</div>
 					<div class="randomnr" id="nr31" data-step="0">0</div>
-					<div class="randomnr" id="nr32" data-step="2">45</div>
-					<div class="randomnr" id="nr33" data-step="7">568</div>
-					<div class="randomnr" id="nr34" data-step="20">1970</div>
-					<div class="randomnr" id="nr35" data-step="0.5">72.3</div>
-					<div class="randomnr" id="nr36" data-step="2">290</div>
-					<div class="randomnr yellow" id="nr37" data-step="0.8">1516</div>
+					<div class="randomnr" id="nr32" data-step="2">46</div>
+					<div class="randomnr" id="nr33" data-step="7">565</div>
+					<div class="randomnr" id="nr34" data-step="20">1945</div>
+					<div class="randomnr" id="nr35" data-step="0.5">71.8</div>
+					<div class="randomnr" id="nr36" data-step="2">289</div>
+					<div class="randomnr yellow" id="nr37" data-step="0.8">1499.5</div>
 				</div>
 			</div>
 		</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar"></div></div></div></div>
@@ -1431,7 +1318,7 @@
 	<div class="window closed remoteConnection ui-draggable ui-draggable-handle" data-ico="╩" data-title="Remote Connection" data-id="6" id="window6" style="z-index: 994;"><div class="windowHeader"><strong>Remote Connection</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
 		<div class="scroll-wrapper scrollbar-rail" style="position: relative;"><div class="scrollbar-rail scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
 			<span id="remoteText"></span>
-			<span class="cursor"></span>
+			<span class="cursor cursorBlink"></span>
 		</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar"></div></div></div></div>
 	<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
 	<div class="window reklamocskak ui-draggable ui-draggable-handle activeWindow" data-ico="$" data-title="Advertisements" data-id="7" id="window7" style="z-index: 1000;"><div class="windowHeader"><strong>Advertisements</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
@@ -1444,13 +1331,13 @@
 		<div id="compierWrap">
 			<canvas id="compilerZoomBox" width="1194" height="327"></canvas>
 			<canvas id="compilerWaves" width="597" height="327"></canvas>
-			<div id="compilerConsoleText" style="height: 654px; top: 327px;"><p>Access Granted..</p><p>....Searching...</p><span>0.28543163 </span><span>0.83942524 </span><span>0.87971339 </span><span>0.62882264 </span><span>0.84852694 </span><span>0.56026319 </span><span>0.79133142 </span><span>0.99300567 </span><span>0.82745174 </span><span>0.50452280 </span><span>0.65075663 </span><span>0.88449526 </span><span>0.16656328 </span><span>0.039217616 </span><span>0.73065764 </span><span>0.75994044 </span><span>0.29457937 </span><span>0.89184593 </span><span>0.20615563 </span><span>0.80952849 </span><span>0.34086748 </span><span>0.29494517 </span><p>Access Granted..</p><p>Compression Complete.</p><p>Access Granted..</p><span>0.34473415 </span><span>0.056044145 </span><span>0.71676175 </span><span>0.69826799 </span><span>0.85565759 </span><span>0.19489709 </span><span>0.75184622 </span><span>0.43292935 </span><p>Compression Complete.</p><p>Compilation Started of http://wwjd.com?au&amp;2</p><p>Encryption Unsuccesful Attempting Retry...</p><p>Access Granted..</p><p>Compression Complete.</p><p>Compression Complete.</p><span>0.32529270 </span><span>0.098715513 </span><span>0.56804801 </span></div>
+			<div id="compilerConsoleText" style="height: 654px; top: 327px;"><p>Compression Complete.</p><p>Compilation of Data Structures Complete..</p><p>Requesting Authorization From : http://ab.ret45-33/?timing=1ww</p><p>tar -xzf http://ab.ret45-33/?timing=1ww</p><p>Authorizing </p><p>Entering Security Console...</p><span>0.11952815 </span><span>0.73962649 </span><span>0.97652001 </span><span>0.50132100 </span><span>0.16152053 </span><span>0.70050026 </span><span>0.94902262 </span><span>0.89919522 </span><span>0.73319537 </span><span>0.99958770 </span><span>0.64107052 </span><span>0.17028457 </span><span>0.037765447 </span><span>0.26014924 </span><span>0.077432021 </span><span>0.034283784 </span><p>Compilation of Data Structures Complete..</p><p>....Searching...</p><p>Encryption Unsuccesful Attempting Retry...</p><p>Downloading  .... Searching ... </p><p>Waiting for response...</p><span>0.11046769 </span><span>0.078757043 </span><span>0.69060067 </span><span>0.89192892 </span><span>0.52434976 </span><span>0.48107671 </span><span>0.066218462 </span><span>0.20955332 </span><span>0.67484257 </span><span>0.69257603 </span><span>0.66663726 </span><span>0.79142264 </span><span>0.24496074 </span><span>0.11304892 </span></div>
 		</div>
 	<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
 	<div class="window consoleWindow ui-draggable ui-draggable-handle" data-ico=">." data-title="Program Console" data-id="9" id="window9" style="z-index: 999;"><div class="windowHeader"><strong>Program Console</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">×</span></div><div class="wincontent ui-resizable">
 		<div class="scroll-wrapper scrollbar-rail" style="position: relative;"><div class="scrollbar-rail scroll-content" style="height: 265px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
-			<span id="consoleText">penetrate" == typeof $.accessRequest &amp;&amp; <br>&nbsp;&nbsp;&nbsp;($.accessRqst = !0),<br>&nbsp;&nbsp;&nbsp;function(a, b, c) {<br>&nbsp;&nbsp;&nbsp;</span>
-			<span class="cursor"></span>
+			<span id="consoleText">penetrate" == typeof $.accessRequest &amp;&amp; <br>&nbsp;&nbsp;&nbsp;($.accessRqst = !0),<br>&nbsp;&nbsp;&nbsp;function(a, b, c)</span>
+			<span class="cursor cursorBlink"></span>
 		</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 0px;"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 0px;"></div></div></div></div>
 	<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
 	<div id="accessDenied" class="ablakocska ablakocska0 ui-draggable ui-draggable-handle" data-id="0" style="z-index: 1994;"><div class="ablakcontent"><a class="closeAblakocska" title="Close">×</a>
@@ -1475,7 +1362,7 @@
 	<div id="matrixRain" class="ablakocska ablakocska5 ui-draggable ui-draggable-handle" data-id="5" style="display: block; z-index: 998;"><div class="ablakcontent"><a class="closeAblakocska" title="Close">×</a>
 		<div class="windowHeader"><strong>Compiling...</strong></div>
 		<div id="wrapMtRain">
-			<div id="mtRain"><span class="opacity3" data-x="0" data-y="0" id="drop-0-0">丂</span><span class="opacity9" data-x="1" data-y="0" id="drop-1-0">匚</span><span class="opacity9" data-x="2" data-y="0" id="drop-2-0">丨</span><span class="opacity0" data-x="3" data-y="0" id="drop-3-0">ҟ</span><span class="opacity2" data-x="4" data-y="0" id="drop-4-0">匚</span><span class="opacity5" data-x="5" data-y="0" id="drop-5-0">ㄖ</span><span class="opacity7" data-x="6" data-y="0" id="drop-6-0">Σ</span><span class="opacity8" data-x="7" data-y="0" id="drop-7-0">爪</span><span class="opacity4" data-x="8" data-y="0" id="drop-8-0">Ɋ</span><span class="opacity8" data-x="9" data-y="0" id="drop-9-0">Ꮆ</span><span class="opacity7" data-x="10" data-y="0" id="drop-10-0">ㄖ</span><span class="opacity3" data-x="11" data-y="0" id="drop-11-0">ʝ</span><span class="opacity7" data-x="12" data-y="0" id="drop-12-0">է</span><span class="opacity0" data-x="13" data-y="0" id="drop-13-0">ƒ</span><span class="opacity4" data-x="14" data-y="0" id="drop-14-0">Ꮆ</span><span class="opacity7" data-x="15" data-y="0" id="drop-15-0">卂</span><span class="opacity8" data-x="16" data-y="0" id="drop-16-0">ᑕ</span><span class="opacity1" data-x="17" data-y="0" id="drop-17-0">甼</span><span class="opacity0" data-x="18" data-y="0" id="drop-18-0">甹</span><span class="opacity1" data-x="19" data-y="0" id="drop-19-0">Ƨ</span><br><span class="opacity3" data-x="0" data-y="1" id="drop-0-1">ƒ</span><span class="opacity9" data-x="1" data-y="1" id="drop-1-1">甶</span><span class="opacity9" data-x="2" data-y="1" id="drop-2-1">丨</span><span class="opacity0" data-x="3" data-y="1" id="drop-3-1">ҟ</span><span class="opacity2" data-x="4" data-y="1" id="drop-4-1">匚</span><span class="opacity5" data-x="5" data-y="1" id="drop-5-1">ㄖ</span><span class="opacity7" data-x="6" data-y="1" id="drop-6-1">Σ</span><span class="opacity8" data-x="7" data-y="1" id="drop-7-1">爪</span><span class="opacity4" data-x="8" data-y="1" id="drop-8-1">Ɋ</span><span class="opacity8" data-x="9" data-y="1" id="drop-9-1">Ꮆ</span><span class="opacity7" data-x="10" data-y="1" id="drop-10-1">ㄖ</span><span class="opacity3" data-x="11" data-y="1" id="drop-11-1">Հ</span><span class="opacity7" data-x="12" data-y="1" id="drop-12-1">ҟ</span><span class="opacity0" data-x="13" data-y="1" id="drop-13-1">甸</span><span class="opacity4" data-x="14" data-y="1" id="drop-14-1">Ꮆ</span><span class="opacity7" data-x="15" data-y="1" id="drop-15-1">卂</span><span class="opacity8" data-x="16" data-y="1" id="drop-16-1">ᑕ</span><span class="opacity1" data-x="17" data-y="1" id="drop-17-1">乂</span><span class="opacity0" data-x="18" data-y="1" id="drop-18-1">甹</span><span class="opacity1" data-x="19" data-y="1" id="drop-19-1">Ƨ</span><br><span class="opacity5" data-x="0" data-y="2" id="drop-0-2">画</span><span class="opacity9" data-x="1" data-y="2" id="drop-1-2">Ӏ</span><span class="opacity9" data-x="2" data-y="2" id="drop-2-2">ʍ</span><span class="opacity0" data-x="3" data-y="2" id="drop-3-2">ҟ</span><span class="opacity3" data-x="4" data-y="2" id="drop-4-2">ㄥ</span><span class="opacity7" data-x="5" data-y="2" id="drop-5-2">Σ</span><span class="opacity7" data-x="6" data-y="2" id="drop-6-2">ղ</span><span class="opacity8" data-x="7" data-y="2" id="drop-7-2">ɾ</span><span class="opacity4" data-x="8" data-y="2" id="drop-8-2">甼</span><span class="opacity8" data-x="9" data-y="2" id="drop-9-2">ㄩ</span><span class="opacity7" data-x="10" data-y="2" id="drop-10-2">丨</span><span class="opacity3" data-x="11" data-y="2" id="drop-11-2">Ƭ</span><span class="opacity7" data-x="12" data-y="2" id="drop-12-2">ㄚ</span><span class="opacity0" data-x="13" data-y="2" id="drop-13-2">ժ</span><span class="opacity4" data-x="14" data-y="2" id="drop-14-2">Ƨ</span><span class="opacity7" data-x="15" data-y="2" id="drop-15-2">ᑕ</span><span class="opacity9" data-x="16" data-y="2" id="drop-16-2">ʝ</span><span class="opacity1" data-x="17" data-y="2" id="drop-17-2">町</span><span class="opacity1" data-x="18" data-y="2" id="drop-18-2">Ө</span><span class="opacity1" data-x="19" data-y="2" id="drop-19-2">卄</span><br><span class="opacity6" data-x="0" data-y="3" id="drop-0-3">甸</span><span class="opacity9" data-x="1" data-y="3" id="drop-1-3">丨</span><span class="opacity9" data-x="2" data-y="3" id="drop-2-3">Ɋ</span><span class="opacity0" data-x="3" data-y="3" id="drop-3-3">Ҝ</span><span class="opacity3" data-x="4" data-y="3" id="drop-4-3">乂</span><span class="opacity9" data-x="5" data-y="3" id="drop-5-3">甼</span><span class="opacity8" data-x="6" data-y="3" id="drop-6-3">ㄥ</span><span class="opacity8" data-x="7" data-y="3" id="drop-7-3">ҟ</span><span class="opacity5" data-x="8" data-y="3" id="drop-8-3">甹</span><span class="opacity8" data-x="9" data-y="3" id="drop-9-3">է</span><span class="opacity7" data-x="10" data-y="3" id="drop-10-3">ㄥ</span><span class="opacity3" data-x="11" data-y="3" id="drop-11-3">ﾌ</span><span class="opacity7" data-x="12" data-y="3" id="drop-12-3">甾</span><span class="opacity1" data-x="13" data-y="3" id="drop-13-3">Я</span><span class="opacity5" data-x="14" data-y="3" id="drop-14-3">ժ</span><span class="opacity7" data-x="15" data-y="3" id="drop-15-3">爪</span><span class="opacity9" data-x="16" data-y="3" id="drop-16-3">վ</span><span class="opacity1" data-x="17" data-y="3" id="drop-17-3">爪</span><span class="opacity1" data-x="18" data-y="3" id="drop-18-3">ᑕ</span><span class="opacity1" data-x="19" data-y="3" id="drop-19-3">օ</span><br><span class="opacity6" data-x="0" data-y="4" id="drop-0-4">ʍ</span><span class="opacity9" data-x="1" data-y="4" id="drop-1-4">ﾌ</span><span class="opacity9" data-x="2" data-y="4" id="drop-2-4">Ө</span><span class="opacity0" data-x="3" data-y="4" id="drop-3-4">ղ</span><span class="opacity3" data-x="4" data-y="4" id="drop-4-4">ҟ</span><span class="opacity5" data-x="5" data-y="4" id="drop-5-4">甽</span><span class="opacity8" data-x="6" data-y="4" id="drop-6-4">ʝ</span><span class="opacity8" data-x="7" data-y="4" id="drop-7-4">丨</span><span class="opacity6" data-x="8" data-y="4" id="drop-8-4">画</span><span class="opacity8" data-x="9" data-y="4" id="drop-9-4">ﾌ</span><span class="opacity8" data-x="10" data-y="4" id="drop-10-4">Y</span><span class="opacity3" data-x="11" data-y="4" id="drop-11-4">ҽ</span><span class="opacity8" data-x="12" data-y="4" id="drop-12-4">ɾ</span><span class="opacity2" data-x="13" data-y="4" id="drop-13-4">ㄩ</span><span class="opacity5" data-x="14" data-y="4" id="drop-14-4">Ө</span><span class="opacity7" data-x="15" data-y="4" id="drop-15-4">ҽ</span><span class="opacity9" data-x="16" data-y="4" id="drop-16-4">ㄒ</span><span class="opacity1" data-x="17" data-y="4" id="drop-17-4">Ƨ</span><span class="opacity2" data-x="18" data-y="4" id="drop-18-4">ą</span><span class="opacity1" data-x="19" data-y="4" id="drop-19-4">爪</span><br><span class="opacity6" data-x="0" data-y="5" id="drop-0-5">ㄥ</span><span class="opacity0" data-x="1" data-y="5" id="drop-1-5">Σ</span><span class="opacity9" data-x="2" data-y="5" id="drop-2-5">乂</span><span class="opacity0" data-x="3" data-y="5" id="drop-3-5">ʍ</span><span class="opacity3" data-x="4" data-y="5" id="drop-4-5">ﾌ</span><span class="opacity5" data-x="5" data-y="5" id="drop-5-5">Ɋ</span><span class="opacity8" data-x="6" data-y="5" id="drop-6-5">Ҝ</span><span class="opacity8" data-x="7" data-y="5" id="drop-7-5">Ɋ</span><span class="opacity6" data-x="8" data-y="5" id="drop-8-5">Ɋ</span><span class="opacity8" data-x="9" data-y="5" id="drop-9-5">Ꮆ</span><span class="opacity0" data-x="10" data-y="5" id="drop-10-5">Y</span><span class="opacity4" data-x="11" data-y="5" id="drop-11-5">Ө</span><span class="opacity8" data-x="12" data-y="5" id="drop-12-5">ҟ</span><span class="opacity2" data-x="13" data-y="5" id="drop-13-5">甸</span><span class="opacity6" data-x="14" data-y="5" id="drop-14-5">男</span><span class="opacity7" data-x="15" data-y="5" id="drop-15-5">甼</span><span class="opacity7" data-x="16" data-y="5" id="drop-16-5">男</span><span class="opacity2" data-x="17" data-y="5" id="drop-17-5">尺</span><span class="opacity2" data-x="18" data-y="5" id="drop-18-5">丂</span><span class="opacity1" data-x="19" data-y="5" id="drop-19-5">尺</span><br><span class="opacity6" data-x="0" data-y="6" id="drop-0-6">ƒ</span><span class="opacity0" data-x="1" data-y="6" id="drop-1-6">画</span><span class="opacity3" data-x="2" data-y="6" id="drop-2-6">Σ</span><span class="opacity0" data-x="3" data-y="6" id="drop-3-6">Ө</span><span class="opacity4" data-x="4" data-y="6" id="drop-4-6">画</span><span class="opacity6" data-x="5" data-y="6" id="drop-5-6">ҟ</span><span class="opacity9" data-x="6" data-y="6" id="drop-6-6">卂</span><span class="opacity9" data-x="7" data-y="6" id="drop-7-6">ҍ</span><span class="opacity6" data-x="8" data-y="6" id="drop-8-6">ƒ</span><span class="opacity8" data-x="9" data-y="6" id="drop-9-6">匚</span><span class="opacity0" data-x="10" data-y="6" id="drop-10-6">尺</span><span class="opacity4" data-x="11" data-y="6" id="drop-11-6">ղ</span><span class="opacity8" data-x="12" data-y="6" id="drop-12-6">Y</span><span class="opacity2" data-x="13" data-y="6" id="drop-13-6">甾</span><span class="opacity6" data-x="14" data-y="6" id="drop-14-6">Я</span><span class="opacity7" data-x="15" data-y="6" id="drop-15-6">Հ</span><span class="opacity7" data-x="16" data-y="6" id="drop-16-6">ㄖ</span><span class="opacity2" data-x="17" data-y="6" id="drop-17-6">画</span><span class="opacity3" data-x="18" data-y="6" id="drop-18-6">Ɋ</span><span class="opacity2" data-x="19" data-y="6" id="drop-19-6">Ӏ</span><br><span class="opacity6" data-x="0" data-y="7" id="drop-0-7">Ө</span><span class="opacity0" data-x="1" data-y="7" id="drop-1-7">ᑕ</span><span class="opacity4" data-x="2" data-y="7" id="drop-2-7">ƒ</span><span class="opacity0" data-x="3" data-y="7" id="drop-3-7">ʍ</span><span class="opacity7" data-x="4" data-y="7" id="drop-4-7">ﾌ</span><span class="opacity6" data-x="5" data-y="7" id="drop-5-7">千</span><span class="opacity9" data-x="6" data-y="7" id="drop-6-7">卂</span><span class="opacity9" data-x="7" data-y="7" id="drop-7-7">Ƭ</span><span class="opacity6" data-x="8" data-y="7" id="drop-8-7">Я</span><span class="opacity9" data-x="9" data-y="7" id="drop-9-7">甹</span><span class="opacity1" data-x="10" data-y="7" id="drop-10-7">乂</span><span class="opacity4" data-x="11" data-y="7" id="drop-11-7">ﾌ</span><span class="opacity7" data-x="12" data-y="7" id="drop-12-7">尺</span><span class="opacity3" data-x="13" data-y="7" id="drop-13-7">爪</span><span class="opacity8" data-x="14" data-y="7" id="drop-14-7">ㄖ</span><span class="opacity7" data-x="15" data-y="7" id="drop-15-7">卄</span><span class="opacity8" data-x="16" data-y="7" id="drop-16-7">ա</span><span class="opacity2" data-x="17" data-y="7" id="drop-17-7">Я</span><span class="opacity4" data-x="18" data-y="7" id="drop-18-7">ㄥ</span><span class="opacity3" data-x="19" data-y="7" id="drop-19-7">Ɋ</span><br><span class="opacity7" data-x="0" data-y="8" id="drop-0-8">ա</span><span class="opacity0" data-x="1" data-y="8" id="drop-1-8">վ</span><span class="opacity5" data-x="2" data-y="8" id="drop-2-8">ᐯ</span><span class="opacity0" data-x="3" data-y="8" id="drop-3-8">Λ</span><span class="opacity7" data-x="4" data-y="8" id="drop-4-8">町</span><span class="opacity8" data-x="5" data-y="8" id="drop-5-8">ᑕ</span><span class="opacity9" data-x="6" data-y="8" id="drop-6-8">ҽ</span><span class="opacity9" data-x="7" data-y="8" id="drop-7-8">ҍ</span><span class="opacity7" data-x="8" data-y="8" id="drop-8-8">甶</span><span class="opacity7" data-x="9" data-y="8" id="drop-9-8">օ</span><span class="opacity4" data-x="10" data-y="8" id="drop-10-8">ㄒ</span><span class="opacity4" data-x="11" data-y="8" id="drop-11-8">ㄩ</span><span class="opacity7" data-x="12" data-y="8" id="drop-12-8">Ƨ</span><span class="opacity4" data-x="13" data-y="8" id="drop-13-8">爪</span><span class="opacity9" data-x="14" data-y="8" id="drop-14-8">千</span><span class="opacity8" data-x="15" data-y="8" id="drop-15-8">ᗪ</span><span class="opacity9" data-x="16" data-y="8" id="drop-16-8">卩</span><span class="opacity2" data-x="17" data-y="8" id="drop-17-8">ᐯ</span><span class="opacity5" data-x="18" data-y="8" id="drop-18-8">Ƭ</span><span class="opacity3" data-x="19" data-y="8" id="drop-19-8">甼</span><br><span class="opacity8" data-x="0" data-y="9" id="drop-0-9">է</span><span class="opacity0" data-x="1" data-y="9" id="drop-1-9">ժ</span><span class="opacity5" data-x="2" data-y="9" id="drop-2-9">丂</span><span class="opacity0" data-x="3" data-y="9" id="drop-3-9">町</span><span class="opacity7" data-x="4" data-y="9" id="drop-4-9">卂</span><span class="opacity9" data-x="5" data-y="9" id="drop-5-9">Y</span><span class="opacity9" data-x="6" data-y="9" id="drop-6-9">甹</span><span class="opacity9" data-x="7" data-y="9" id="drop-7-9">ᐯ</span><span class="opacity8" data-x="8" data-y="9" id="drop-8-9">甹</span><span class="opacity8" data-x="9" data-y="9" id="drop-9-9">Ө</span><span class="opacity4" data-x="10" data-y="9" id="drop-10-9">Ƨ</span><span class="opacity4" data-x="11" data-y="9" id="drop-11-9">ʍ</span><span class="opacity7" data-x="12" data-y="9" id="drop-12-9">Ꮆ</span><span class="opacity5" data-x="13" data-y="9" id="drop-13-9">丨</span><span class="opacity0" data-x="14" data-y="9" id="drop-14-9">ƒ</span><span class="opacity8" data-x="15" data-y="9" id="drop-15-9">爪</span><span class="opacity9" data-x="16" data-y="9" id="drop-16-9">匚</span><span class="opacity2" data-x="17" data-y="9" id="drop-17-9">卂</span><span class="opacity5" data-x="18" data-y="9" id="drop-18-9">町</span><span class="opacity4" data-x="19" data-y="9" id="drop-19-9">Λ</span><br><span class="opacity8" data-x="0" data-y="10" id="drop-0-10">ﾌ</span><span class="opacity0" data-x="1" data-y="10" id="drop-1-10">甿</span><span class="opacity5" data-x="2" data-y="10" id="drop-2-10">ㄚ</span><span class="opacity0" data-x="3" data-y="10" id="drop-3-10">匚</span><span class="opacity7" data-x="4" data-y="10" id="drop-4-10">ʍ</span><span class="opacity0" data-x="5" data-y="10" id="drop-5-10">ҽ</span><span class="opacity9" data-x="6" data-y="10" id="drop-6-10">ա</span><span class="opacity0" data-x="7" data-y="10" id="drop-7-10">ƒ</span><span class="opacity9" data-x="8" data-y="10" id="drop-8-10">爪</span><span class="opacity8" data-x="9" data-y="10" id="drop-9-10">ㄚ</span><span class="opacity4" data-x="10" data-y="10" id="drop-10-10">Λ</span><span class="opacity4" data-x="11" data-y="10" id="drop-11-10">ㄖ</span><span class="opacity8" data-x="12" data-y="10" id="drop-12-10">Ƭ</span><span class="opacity5" data-x="13" data-y="10" id="drop-13-10">匚</span><span class="opacity0" data-x="14" data-y="10" id="drop-14-10">ղ</span><span class="opacity8" data-x="15" data-y="10" id="drop-15-10">ㄩ</span><span class="opacity9" data-x="16" data-y="10" id="drop-16-10">ҍ</span><span class="opacity2" data-x="17" data-y="10" id="drop-17-10">丂</span><span class="opacity5" data-x="18" data-y="10" id="drop-18-10">甶</span><span class="opacity4" data-x="19" data-y="10" id="drop-19-10">ƒ</span><br><span class="opacity9" data-x="0" data-y="11" id="drop-0-11">ʝ</span><span class="opacity0" data-x="1" data-y="11" id="drop-1-11">甸</span><span class="opacity5" data-x="2" data-y="11" id="drop-2-11">画</span><span class="opacity0" data-x="3" data-y="11" id="drop-3-11">爪</span><span class="opacity8" data-x="4" data-y="11" id="drop-4-11">ㄖ</span><span class="opacity0" data-x="5" data-y="11" id="drop-5-11">ㄚ</span><span class="opacity2" data-x="6" data-y="11" id="drop-6-11">甸</span><span class="opacity0" data-x="7" data-y="11" id="drop-7-11">Ӏ</span><span class="opacity9" data-x="8" data-y="11" id="drop-8-11">ʝ</span><span class="opacity9" data-x="9" data-y="11" id="drop-9-11">卂</span><span class="opacity4" data-x="10" data-y="11" id="drop-10-11">ա</span><span class="opacity4" data-x="11" data-y="11" id="drop-11-11">Ӏ</span><span class="opacity9" data-x="12" data-y="11" id="drop-12-11">ﾌ</span><span class="opacity5" data-x="13" data-y="11" id="drop-13-11">ᗪ</span><span class="opacity1" data-x="14" data-y="11" id="drop-14-11">ҽ</span><span class="opacity9" data-x="15" data-y="11" id="drop-15-11">ղ</span><span class="opacity9" data-x="16" data-y="11" id="drop-16-11">男</span><span class="opacity2" data-x="17" data-y="11" id="drop-17-11">օ</span><span class="opacity8" data-x="18" data-y="11" id="drop-18-11">丨</span><span class="opacity5" data-x="19" data-y="11" id="drop-19-11">Ƭ</span><br><span class="opacity0" data-x="0" data-y="12" id="drop-0-12">ժ</span><span class="opacity0" data-x="1" data-y="12" id="drop-1-12">町</span><span class="opacity6" data-x="2" data-y="12" id="drop-2-12">甽</span><span class="opacity0" data-x="3" data-y="12" id="drop-3-12">甹</span><span class="opacity8" data-x="4" data-y="12" id="drop-4-12">Y</span><span class="opacity1" data-x="5" data-y="12" id="drop-5-12">վ</span><span class="opacity2" data-x="6" data-y="12" id="drop-6-12">甽</span><span class="opacity0" data-x="7" data-y="12" id="drop-7-12">ㄩ</span><span class="opacity9" data-x="8" data-y="12" id="drop-8-12">町</span><span class="opacity0" data-x="9" data-y="12" id="drop-9-12">ա</span><span class="opacity4" data-x="10" data-y="12" id="drop-10-12">Ꮆ</span><span class="opacity4" data-x="11" data-y="12" id="drop-11-12">甽</span><span class="opacity0" data-x="12" data-y="12" id="drop-12-12">ㄩ</span><span class="opacity5" data-x="13" data-y="12" id="drop-13-12">ą</span><span class="opacity1" data-x="14" data-y="12" id="drop-14-12">Ƭ</span><span class="opacity9" data-x="15" data-y="12" id="drop-15-12">ժ</span><span class="opacity9" data-x="16" data-y="12" id="drop-16-12">甹</span><span class="opacity4" data-x="17" data-y="12" id="drop-17-12">卂</span><span class="opacity9" data-x="18" data-y="12" id="drop-18-12">Ƨ</span><span class="opacity8" data-x="19" data-y="12" id="drop-19-12">ą</span><br><span class="opacity0" data-x="0" data-y="13" id="drop-0-13">ժ</span><span class="opacity1" data-x="1" data-y="13" id="drop-1-13">ҍ</span><span class="opacity7" data-x="2" data-y="13" id="drop-2-13">卂</span><span class="opacity0" data-x="3" data-y="13" id="drop-3-13">甿</span><span class="opacity9" data-x="4" data-y="13" id="drop-4-13">ㄖ</span><span class="opacity1" data-x="5" data-y="13" id="drop-5-13">ղ</span><span class="opacity3" data-x="6" data-y="13" id="drop-6-13">ժ</span><span class="opacity0" data-x="7" data-y="13" id="drop-7-13">ㄒ</span><span class="opacity9" data-x="8" data-y="13" id="drop-8-13">匚</span><span class="opacity0" data-x="9" data-y="13" id="drop-9-13">ҽ</span><span class="opacity5" data-x="10" data-y="13" id="drop-10-13">ʍ</span><span class="opacity5" data-x="11" data-y="13" id="drop-11-13">ɾ</span><span class="opacity1" data-x="12" data-y="13" id="drop-12-13">ą</span><span class="opacity6" data-x="13" data-y="13" id="drop-13-13">甾</span><span class="opacity2" data-x="14" data-y="13" id="drop-14-13">甹</span><span class="opacity9" data-x="15" data-y="13" id="drop-15-13">ﾌ</span><span class="opacity9" data-x="16" data-y="13" id="drop-16-13">ㄥ</span><span class="opacity6" data-x="17" data-y="13" id="drop-17-13">ㄩ</span><span class="opacity9" data-x="18" data-y="13" id="drop-18-13">ᗪ</span><span class="opacity4" data-x="19" data-y="13" id="drop-19-13">画</span><br><span class="opacity0" data-x="0" data-y="14" id="drop-0-14">ƒ</span><span class="opacity4" data-x="1" data-y="14" id="drop-1-14">Ƨ</span><span class="opacity8" data-x="2" data-y="14" id="drop-2-14">千</span><span class="opacity0" data-x="3" data-y="14" id="drop-3-14">尺</span><span class="opacity8" data-x="4" data-y="14" id="drop-4-14">甾</span><span class="opacity1" data-x="5" data-y="14" id="drop-5-14">甹</span><span class="opacity3" data-x="6" data-y="14" id="drop-6-14">ᑕ</span><span class="opacity0" data-x="7" data-y="14" id="drop-7-14">甿</span><span class="opacity0" data-x="8" data-y="14" id="drop-8-14">卂</span><span class="opacity0" data-x="9" data-y="14" id="drop-9-14">卂</span><span class="opacity7" data-x="10" data-y="14" id="drop-10-14">甹</span><span class="opacity5" data-x="11" data-y="14" id="drop-11-14">ㄖ</span><span class="opacity2" data-x="12" data-y="14" id="drop-12-14">甶</span><span class="opacity6" data-x="13" data-y="14" id="drop-13-14">卂</span><span class="opacity4" data-x="14" data-y="14" id="drop-14-14">ժ</span><span class="opacity3" data-x="15" data-y="14" id="drop-15-14">Հ</span><span class="opacity0" data-x="16" data-y="14" id="drop-16-14">ҟ</span><span class="opacity8" data-x="17" data-y="14" id="drop-17-14">乂</span><span class="opacity0" data-x="18" data-y="14" id="drop-18-14">օ</span><span class="opacity4" data-x="19" data-y="14" id="drop-19-14">ʍ</span></div>
+			<div id="mtRain"><span class="opacity5" data-x="0" data-y="0" id="drop-0-0">Y</span><span class="opacity1" data-x="1" data-y="0" id="drop-1-0">甿</span><span class="opacity3" data-x="2" data-y="0" id="drop-2-0">ժ</span><span class="opacity2" data-x="3" data-y="0" id="drop-3-0">ҟ</span><span class="opacity8" data-x="4" data-y="0" id="drop-4-0">ҽ</span><span class="opacity4" data-x="5" data-y="0" id="drop-5-0">Հ</span><span class="opacity7" data-x="6" data-y="0" id="drop-6-0">ƒ</span><span class="opacity0" data-x="7" data-y="0" id="drop-7-0">ᐯ</span><span class="opacity2" data-x="8" data-y="0" id="drop-8-0">ɾ</span><span class="opacity7" data-x="9" data-y="0" id="drop-9-0">尺</span><span class="opacity6" data-x="10" data-y="0" id="drop-10-0">卩</span><span class="opacity9" data-x="11" data-y="0" id="drop-11-0">匚</span><span class="opacity3" data-x="12" data-y="0" id="drop-12-0">丂</span><span class="opacity0" data-x="13" data-y="0" id="drop-13-0">ҽ</span><span class="opacity9" data-x="14" data-y="0" id="drop-14-0">ㄩ</span><span class="opacity7" data-x="15" data-y="0" id="drop-15-0">ㄖ</span><span class="opacity7" data-x="16" data-y="0" id="drop-16-0">匚</span><span class="opacity0" data-x="17" data-y="0" id="drop-17-0">町</span><span class="opacity8" data-x="18" data-y="0" id="drop-18-0">Ɋ</span><span class="opacity0" data-x="19" data-y="0" id="drop-19-0">ɾ</span><br><span class="opacity5" data-x="0" data-y="1" id="drop-0-1">Y</span><span class="opacity1" data-x="1" data-y="1" id="drop-1-1">甿</span><span class="opacity3" data-x="2" data-y="1" id="drop-2-1">ժ</span><span class="opacity2" data-x="3" data-y="1" id="drop-3-1">ҟ</span><span class="opacity8" data-x="4" data-y="1" id="drop-4-1">ҽ</span><span class="opacity4" data-x="5" data-y="1" id="drop-5-1">Հ</span><span class="opacity7" data-x="6" data-y="1" id="drop-6-1">ƒ</span><span class="opacity0" data-x="7" data-y="1" id="drop-7-1">甽</span><span class="opacity2" data-x="8" data-y="1" id="drop-8-1">ɾ</span><span class="opacity7" data-x="9" data-y="1" id="drop-9-1">尺</span><span class="opacity6" data-x="10" data-y="1" id="drop-10-1">卩</span><span class="opacity9" data-x="11" data-y="1" id="drop-11-1">Ҝ</span><span class="opacity3" data-x="12" data-y="1" id="drop-12-1">丂</span><span class="opacity0" data-x="13" data-y="1" id="drop-13-1">ҽ</span><span class="opacity9" data-x="14" data-y="1" id="drop-14-1">ㄩ</span><span class="opacity7" data-x="15" data-y="1" id="drop-15-1">卄</span><span class="opacity7" data-x="16" data-y="1" id="drop-16-1">匚</span><span class="opacity0" data-x="17" data-y="1" id="drop-17-1">町</span><span class="opacity8" data-x="18" data-y="1" id="drop-18-1">Ɋ</span><span class="opacity0" data-x="19" data-y="1" id="drop-19-1">ɾ</span><br><span class="opacity5" data-x="0" data-y="2" id="drop-0-2">卩</span><span class="opacity4" data-x="1" data-y="2" id="drop-1-2">ㄩ</span><span class="opacity4" data-x="2" data-y="2" id="drop-2-2">Я</span><span class="opacity2" data-x="3" data-y="2" id="drop-3-2">乂</span><span class="opacity8" data-x="4" data-y="2" id="drop-4-2">ㄩ</span><span class="opacity5" data-x="5" data-y="2" id="drop-5-2">ㄖ</span><span class="opacity7" data-x="6" data-y="2" id="drop-6-2">ᐯ</span><span class="opacity0" data-x="7" data-y="2" id="drop-7-2">Ӏ</span><span class="opacity2" data-x="8" data-y="2" id="drop-8-2">甸</span><span class="opacity8" data-x="9" data-y="2" id="drop-9-2">甿</span><span class="opacity6" data-x="10" data-y="2" id="drop-10-2">Ƨ</span><span class="opacity0" data-x="11" data-y="2" id="drop-11-2">Հ</span><span class="opacity4" data-x="12" data-y="2" id="drop-12-2">町</span><span class="opacity1" data-x="13" data-y="2" id="drop-13-2">画</span><span class="opacity9" data-x="14" data-y="2" id="drop-14-2">է</span><span class="opacity8" data-x="15" data-y="2" id="drop-15-2">Հ</span><span class="opacity7" data-x="16" data-y="2" id="drop-16-2">ㄥ</span><span class="opacity0" data-x="17" data-y="2" id="drop-17-2">甼</span><span class="opacity9" data-x="18" data-y="2" id="drop-18-2">ժ</span><span class="opacity0" data-x="19" data-y="2" id="drop-19-2">町</span><br><span class="opacity6" data-x="0" data-y="3" id="drop-0-3">甽</span><span class="opacity4" data-x="1" data-y="3" id="drop-1-3">甾</span><span class="opacity4" data-x="2" data-y="3" id="drop-2-3">甹</span><span class="opacity2" data-x="3" data-y="3" id="drop-3-3">ㄥ</span><span class="opacity9" data-x="4" data-y="3" id="drop-4-3">卄</span><span class="opacity5" data-x="5" data-y="3" id="drop-5-3">ㄖ</span><span class="opacity7" data-x="6" data-y="3" id="drop-6-3">ҟ</span><span class="opacity0" data-x="7" data-y="3" id="drop-7-3">Ƭ</span><span class="opacity2" data-x="8" data-y="3" id="drop-8-3">ㄒ</span><span class="opacity8" data-x="9" data-y="3" id="drop-9-3">甹</span><span class="opacity6" data-x="10" data-y="3" id="drop-10-3">ㄒ</span><span class="opacity0" data-x="11" data-y="3" id="drop-11-3">Y</span><span class="opacity5" data-x="12" data-y="3" id="drop-12-3">Ƭ</span><span class="opacity1" data-x="13" data-y="3" id="drop-13-3">卂</span><span class="opacity0" data-x="14" data-y="3" id="drop-14-3">乂</span><span class="opacity8" data-x="15" data-y="3" id="drop-15-3">ҟ</span><span class="opacity7" data-x="16" data-y="3" id="drop-16-3">ᑕ</span><span class="opacity0" data-x="17" data-y="3" id="drop-17-3">画</span><span class="opacity9" data-x="18" data-y="3" id="drop-18-3">ᗪ</span><span class="opacity0" data-x="19" data-y="3" id="drop-19-3">ҍ</span><br><span class="opacity7" data-x="0" data-y="4" id="drop-0-4">Ӏ</span><span class="opacity5" data-x="1" data-y="4" id="drop-1-4">丂</span><span class="opacity4" data-x="2" data-y="4" id="drop-2-4">Я</span><span class="opacity3" data-x="3" data-y="4" id="drop-3-4">ɾ</span><span class="opacity9" data-x="4" data-y="4" id="drop-4-4">Λ</span><span class="opacity7" data-x="5" data-y="4" id="drop-5-4">Ƭ</span><span class="opacity7" data-x="6" data-y="4" id="drop-6-4">甶</span><span class="opacity0" data-x="7" data-y="4" id="drop-7-4">匚</span><span class="opacity3" data-x="8" data-y="4" id="drop-8-4">画</span><span class="opacity8" data-x="9" data-y="4" id="drop-9-4">匚</span><span class="opacity6" data-x="10" data-y="4" id="drop-10-4">卄</span><span class="opacity0" data-x="11" data-y="4" id="drop-11-4">Ꮆ</span><span class="opacity5" data-x="12" data-y="4" id="drop-12-4">画</span><span class="opacity3" data-x="13" data-y="4" id="drop-13-4">画</span><span class="opacity0" data-x="14" data-y="4" id="drop-14-4">Ƨ</span><span class="opacity9" data-x="15" data-y="4" id="drop-15-4">ㄒ</span><span class="opacity7" data-x="16" data-y="4" id="drop-16-4">ㄥ</span><span class="opacity1" data-x="17" data-y="4" id="drop-17-4">ą</span><span class="opacity2" data-x="18" data-y="4" id="drop-18-4">ᗪ</span><span class="opacity1" data-x="19" data-y="4" id="drop-19-4">卂</span><br><span class="opacity7" data-x="0" data-y="5" id="drop-0-5">卩</span><span class="opacity5" data-x="1" data-y="5" id="drop-1-5">甸</span><span class="opacity5" data-x="2" data-y="5" id="drop-2-5">ㄥ</span><span class="opacity3" data-x="3" data-y="5" id="drop-3-5">丨</span><span class="opacity9" data-x="4" data-y="5" id="drop-4-5">尺</span><span class="opacity8" data-x="5" data-y="5" id="drop-5-5">町</span><span class="opacity8" data-x="6" data-y="5" id="drop-6-5">尺</span><span class="opacity0" data-x="7" data-y="5" id="drop-7-5">尺</span><span class="opacity3" data-x="8" data-y="5" id="drop-8-5">Ө</span><span class="opacity4" data-x="9" data-y="5" id="drop-9-5">Ɋ</span><span class="opacity9" data-x="10" data-y="5" id="drop-10-5">ժ</span><span class="opacity0" data-x="11" data-y="5" id="drop-11-5">ҟ</span><span class="opacity5" data-x="12" data-y="5" id="drop-12-5">Ƨ</span><span class="opacity5" data-x="13" data-y="5" id="drop-13-5">乂</span><span class="opacity1" data-x="14" data-y="5" id="drop-14-5">ᐯ</span><span class="opacity0" data-x="15" data-y="5" id="drop-15-5">ʍ</span><span class="opacity7" data-x="16" data-y="5" id="drop-16-5">卄</span><span class="opacity1" data-x="17" data-y="5" id="drop-17-5">ҽ</span><span class="opacity2" data-x="18" data-y="5" id="drop-18-5">男</span><span class="opacity3" data-x="19" data-y="5" id="drop-19-5">卩</span><br><span class="opacity8" data-x="0" data-y="6" id="drop-0-6">ᐯ</span><span class="opacity6" data-x="1" data-y="6" id="drop-1-6">甶</span><span class="opacity5" data-x="2" data-y="6" id="drop-2-6">Ҝ</span><span class="opacity3" data-x="3" data-y="6" id="drop-3-6">ㄚ</span><span class="opacity9" data-x="4" data-y="6" id="drop-4-6">Ꮆ</span><span class="opacity8" data-x="5" data-y="6" id="drop-5-6">Ƨ</span><span class="opacity8" data-x="6" data-y="6" id="drop-6-6">ƒ</span><span class="opacity0" data-x="7" data-y="6" id="drop-7-6">ҍ</span><span class="opacity3" data-x="8" data-y="6" id="drop-8-6">ᑕ</span><span class="opacity5" data-x="9" data-y="6" id="drop-9-6">ᗪ</span><span class="opacity9" data-x="10" data-y="6" id="drop-10-6">丂</span><span class="opacity0" data-x="11" data-y="6" id="drop-11-6">匚</span><span class="opacity6" data-x="12" data-y="6" id="drop-12-6">爪</span><span class="opacity5" data-x="13" data-y="6" id="drop-13-6">Ɋ</span><span class="opacity1" data-x="14" data-y="6" id="drop-14-6">丂</span><span class="opacity0" data-x="15" data-y="6" id="drop-15-6">乂</span><span class="opacity8" data-x="16" data-y="6" id="drop-16-6">丨</span><span class="opacity4" data-x="17" data-y="6" id="drop-17-6">Հ</span><span class="opacity2" data-x="18" data-y="6" id="drop-18-6">卩</span><span class="opacity4" data-x="19" data-y="6" id="drop-19-6">千</span><br><span class="opacity8" data-x="0" data-y="7" id="drop-0-7">ㄚ</span><span class="opacity6" data-x="1" data-y="7" id="drop-1-7">Y</span><span class="opacity6" data-x="2" data-y="7" id="drop-2-7">ɾ</span><span class="opacity3" data-x="3" data-y="7" id="drop-3-7">×</span><span class="opacity9" data-x="4" data-y="7" id="drop-4-7">ƒ</span><span class="opacity9" data-x="5" data-y="7" id="drop-5-7">甶</span><span class="opacity8" data-x="6" data-y="7" id="drop-6-7">ą</span><span class="opacity0" data-x="7" data-y="7" id="drop-7-7">男</span><span class="opacity4" data-x="8" data-y="7" id="drop-8-7">Ө</span><span class="opacity7" data-x="9" data-y="7" id="drop-9-7">Ɋ</span><span class="opacity9" data-x="10" data-y="7" id="drop-10-7">×</span><span class="opacity0" data-x="11" data-y="7" id="drop-11-7">甾</span><span class="opacity8" data-x="12" data-y="7" id="drop-12-7">ᑕ</span><span class="opacity5" data-x="13" data-y="7" id="drop-13-7">甿</span><span class="opacity2" data-x="14" data-y="7" id="drop-14-7">甼</span><span class="opacity0" data-x="15" data-y="7" id="drop-15-7">ᑕ</span><span class="opacity9" data-x="16" data-y="7" id="drop-16-7">է</span><span class="opacity5" data-x="17" data-y="7" id="drop-17-7">甼</span><span class="opacity2" data-x="18" data-y="7" id="drop-18-7">ҽ</span><span class="opacity5" data-x="19" data-y="7" id="drop-19-7">ᑕ</span><br><span class="opacity8" data-x="0" data-y="8" id="drop-0-8">ᗪ</span><span class="opacity6" data-x="1" data-y="8" id="drop-1-8">ㄒ</span><span class="opacity6" data-x="2" data-y="8" id="drop-2-8">Я</span><span class="opacity4" data-x="3" data-y="8" id="drop-3-8">ҽ</span><span class="opacity9" data-x="4" data-y="8" id="drop-4-8">甸</span><span class="opacity9" data-x="5" data-y="8" id="drop-5-8">Ҝ</span><span class="opacity9" data-x="6" data-y="8" id="drop-6-8">ժ</span><span class="opacity0" data-x="7" data-y="8" id="drop-7-8">卂</span><span class="opacity4" data-x="8" data-y="8" id="drop-8-8">甿</span><span class="opacity8" data-x="9" data-y="8" id="drop-9-8">Ƨ</span><span class="opacity9" data-x="10" data-y="8" id="drop-10-8">乂</span><span class="opacity0" data-x="11" data-y="8" id="drop-11-8">Ҝ</span><span class="opacity8" data-x="12" data-y="8" id="drop-12-8">ᗪ</span><span class="opacity6" data-x="13" data-y="8" id="drop-13-8">ㄚ</span><span class="opacity2" data-x="14" data-y="8" id="drop-14-8">ﾌ</span><span class="opacity0" data-x="15" data-y="8" id="drop-15-8">卩</span><span class="opacity0" data-x="16" data-y="8" id="drop-16-8">Հ</span><span class="opacity5" data-x="17" data-y="8" id="drop-17-8">画</span><span class="opacity2" data-x="18" data-y="8" id="drop-18-8">Ƭ</span><span class="opacity7" data-x="19" data-y="8" id="drop-19-8">丨</span><br><span class="opacity9" data-x="0" data-y="9" id="drop-0-9">ㄒ</span><span class="opacity6" data-x="1" data-y="9" id="drop-1-9">ժ</span><span class="opacity6" data-x="2" data-y="9" id="drop-2-9">甽</span><span class="opacity4" data-x="3" data-y="9" id="drop-3-9">Ɋ</span><span class="opacity9" data-x="4" data-y="9" id="drop-4-9">է</span><span class="opacity9" data-x="5" data-y="9" id="drop-5-9">ㄩ</span><span class="opacity3" data-x="6" data-y="9" id="drop-6-9">ᑕ</span><span class="opacity0" data-x="7" data-y="9" id="drop-7-9">卩</span><span class="opacity4" data-x="8" data-y="9" id="drop-8-9">甿</span><span class="opacity8" data-x="9" data-y="9" id="drop-9-9">爪</span><span class="opacity9" data-x="10" data-y="9" id="drop-10-9">ᑕ</span><span class="opacity0" data-x="11" data-y="9" id="drop-11-9">Y</span><span class="opacity8" data-x="12" data-y="9" id="drop-12-9">Ɋ</span><span class="opacity6" data-x="13" data-y="9" id="drop-13-9">画</span><span class="opacity4" data-x="14" data-y="9" id="drop-14-9">Ӏ</span><span class="opacity0" data-x="15" data-y="9" id="drop-15-9">甹</span><span class="opacity0" data-x="16" data-y="9" id="drop-16-9">ą</span><span class="opacity5" data-x="17" data-y="9" id="drop-17-9">町</span><span class="opacity3" data-x="18" data-y="9" id="drop-18-9">×</span><span class="opacity8" data-x="19" data-y="9" id="drop-19-9">ㄥ</span><br><span class="opacity9" data-x="0" data-y="10" id="drop-0-10">乂</span><span class="opacity6" data-x="1" data-y="10" id="drop-1-10">ㄚ</span><span class="opacity6" data-x="2" data-y="10" id="drop-2-10">ա</span><span class="opacity7" data-x="3" data-y="10" id="drop-3-10">Y</span><span class="opacity9" data-x="4" data-y="10" id="drop-4-10">ᑕ</span><span class="opacity6" data-x="5" data-y="10" id="drop-5-10">丨</span><span class="opacity3" data-x="6" data-y="10" id="drop-6-10">甼</span><span class="opacity0" data-x="7" data-y="10" id="drop-7-10">卄</span><span class="opacity4" data-x="8" data-y="10" id="drop-8-10">Ҝ</span><span class="opacity9" data-x="9" data-y="10" id="drop-9-10">օ</span><span class="opacity9" data-x="10" data-y="10" id="drop-10-10">ҍ</span><span class="opacity0" data-x="11" data-y="10" id="drop-11-10">ա</span><span class="opacity8" data-x="12" data-y="10" id="drop-12-10">ҽ</span><span class="opacity7" data-x="13" data-y="10" id="drop-13-10">卂</span><span class="opacity4" data-x="14" data-y="10" id="drop-14-10">×</span><span class="opacity0" data-x="15" data-y="10" id="drop-15-10">Ҝ</span><span class="opacity0" data-x="16" data-y="10" id="drop-16-10">千</span><span class="opacity5" data-x="17" data-y="10" id="drop-17-10">甹</span><span class="opacity6" data-x="18" data-y="10" id="drop-18-10">ժ</span><span class="opacity9" data-x="19" data-y="10" id="drop-19-10">爪</span><br><span class="opacity0" data-x="0" data-y="11" id="drop-0-11">尺</span><span class="opacity6" data-x="1" data-y="11" id="drop-1-11">画</span><span class="opacity8" data-x="2" data-y="11" id="drop-2-11">վ</span><span class="opacity7" data-x="3" data-y="11" id="drop-3-11">ᐯ</span><span class="opacity0" data-x="4" data-y="11" id="drop-4-11">Ӏ</span><span class="opacity6" data-x="5" data-y="11" id="drop-5-11">ㄖ</span><span class="opacity4" data-x="6" data-y="11" id="drop-6-11">ㄒ</span><span class="opacity0" data-x="7" data-y="11" id="drop-7-11">ʝ</span><span class="opacity4" data-x="8" data-y="11" id="drop-8-11">է</span><span class="opacity1" data-x="9" data-y="11" id="drop-9-11">ㄚ</span><span class="opacity9" data-x="10" data-y="11" id="drop-10-11">ﾌ</span><span class="opacity0" data-x="11" data-y="11" id="drop-11-11">ա</span><span class="opacity8" data-x="12" data-y="11" id="drop-12-11">ҟ</span><span class="opacity8" data-x="13" data-y="11" id="drop-13-11">Я</span><span class="opacity4" data-x="14" data-y="11" id="drop-14-11">ҟ</span><span class="opacity0" data-x="15" data-y="11" id="drop-15-11">Y</span><span class="opacity0" data-x="16" data-y="11" id="drop-16-11">վ</span><span class="opacity7" data-x="17" data-y="11" id="drop-17-11">Հ</span><span class="opacity6" data-x="18" data-y="11" id="drop-18-11">町</span><span class="opacity9" data-x="19" data-y="11" id="drop-19-11">ƒ</span><br><span class="opacity0" data-x="0" data-y="12" id="drop-0-12">ʝ</span><span class="opacity6" data-x="1" data-y="12" id="drop-1-12">ҟ</span><span class="opacity8" data-x="2" data-y="12" id="drop-2-12">乂</span><span class="opacity9" data-x="3" data-y="12" id="drop-3-12">ㄥ</span><span class="opacity0" data-x="4" data-y="12" id="drop-4-12">ҽ</span><span class="opacity9" data-x="5" data-y="12" id="drop-5-12">男</span><span class="opacity4" data-x="6" data-y="12" id="drop-6-12">Ө</span><span class="opacity0" data-x="7" data-y="12" id="drop-7-12">Σ</span><span class="opacity4" data-x="8" data-y="12" id="drop-8-12">ƒ</span><span class="opacity1" data-x="9" data-y="12" id="drop-9-12">Ƭ</span><span class="opacity8" data-x="10" data-y="12" id="drop-10-12">丨</span><span class="opacity0" data-x="11" data-y="12" id="drop-11-12">ㄚ</span><span class="opacity8" data-x="12" data-y="12" id="drop-12-12">千</span><span class="opacity8" data-x="13" data-y="12" id="drop-13-12">ʝ</span><span class="opacity5" data-x="14" data-y="12" id="drop-14-12">甸</span><span class="opacity0" data-x="15" data-y="12" id="drop-15-12">ㄖ</span><span class="opacity0" data-x="16" data-y="12" id="drop-16-12">甾</span><span class="opacity9" data-x="17" data-y="12" id="drop-17-12">ą</span><span class="opacity7" data-x="18" data-y="12" id="drop-18-12">ㄖ</span><span class="opacity9" data-x="19" data-y="12" id="drop-19-12">千</span><br><span class="opacity0" data-x="0" data-y="13" id="drop-0-13">町</span><span class="opacity9" data-x="1" data-y="13" id="drop-1-13">卄</span><span class="opacity8" data-x="2" data-y="13" id="drop-2-13">千</span><span class="opacity9" data-x="3" data-y="13" id="drop-3-13">ɾ</span><span class="opacity0" data-x="4" data-y="13" id="drop-4-13">甾</span><span class="opacity0" data-x="5" data-y="13" id="drop-5-13">ղ</span><span class="opacity4" data-x="6" data-y="13" id="drop-6-13">ᐯ</span><span class="opacity0" data-x="7" data-y="13" id="drop-7-13">爪</span><span class="opacity5" data-x="8" data-y="13" id="drop-8-13">甶</span><span class="opacity1" data-x="9" data-y="13" id="drop-9-13">ɾ</span><span class="opacity8" data-x="10" data-y="13" id="drop-10-13">ㄒ</span><span class="opacity0" data-x="11" data-y="13" id="drop-11-13">甶</span><span class="opacity8" data-x="12" data-y="13" id="drop-12-13">Հ</span><span class="opacity9" data-x="13" data-y="13" id="drop-13-13">ㄥ</span><span class="opacity5" data-x="14" data-y="13" id="drop-14-13">甿</span><span class="opacity0" data-x="15" data-y="13" id="drop-15-13">Ӏ</span><span class="opacity0" data-x="16" data-y="13" id="drop-16-13">ᑕ</span><span class="opacity9" data-x="17" data-y="13" id="drop-17-13">Σ</span><span class="opacity7" data-x="18" data-y="13" id="drop-18-13">Y</span><span class="opacity9" data-x="19" data-y="13" id="drop-19-13">ҟ</span><br><span class="opacity0" data-x="0" data-y="14" id="drop-0-14">甹</span><span class="opacity0" data-x="1" data-y="14" id="drop-1-14">爪</span><span class="opacity9" data-x="2" data-y="14" id="drop-2-14">町</span><span class="opacity9" data-x="3" data-y="14" id="drop-3-14">ʍ</span><span class="opacity0" data-x="4" data-y="14" id="drop-4-14">甾</span><span class="opacity0" data-x="5" data-y="14" id="drop-5-14">甹</span><span class="opacity4" data-x="6" data-y="14" id="drop-6-14">町</span><span class="opacity0" data-x="7" data-y="14" id="drop-7-14">Y</span><span class="opacity5" data-x="8" data-y="14" id="drop-8-14">甹</span><span class="opacity1" data-x="9" data-y="14" id="drop-9-14">ㄚ</span><span class="opacity8" data-x="10" data-y="14" id="drop-10-14">尺</span><span class="opacity0" data-x="11" data-y="14" id="drop-11-14">町</span><span class="opacity8" data-x="12" data-y="14" id="drop-12-14">ҍ</span><span class="opacity9" data-x="13" data-y="14" id="drop-13-14">Λ</span><span class="opacity7" data-x="14" data-y="14" id="drop-14-14">甸</span><span class="opacity0" data-x="15" data-y="14" id="drop-15-14">Ө</span><span class="opacity0" data-x="16" data-y="14" id="drop-16-14">Ƭ</span><span class="opacity9" data-x="17" data-y="14" id="drop-17-14">ㄒ</span><span class="opacity7" data-x="18" data-y="14" id="drop-18-14">Ɋ</span><span class="opacity9" data-x="19" data-y="14" id="drop-19-14">×</span></div>
 		</div>
 	</div></div>
 	<div id="pcvirus" class="ablakocska ablakocska6 ui-draggable ui-draggable-handle" data-id="6" style="z-index: 1994;"><div class="ablakcontent"><a class="closeAblakocska" title="Close">×</a>
