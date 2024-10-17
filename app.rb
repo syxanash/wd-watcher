@@ -5,7 +5,7 @@ require 'colorize'
 require 'fuzzystringmatch'
 require 'fileutils'
 
-SIMILARITY_THRESHOLD = 75
+SIMILARITY_THRESHOLD = 70
 
 # https://stackoverflow.com/a/10823131
 def sanitize_filename(filename)

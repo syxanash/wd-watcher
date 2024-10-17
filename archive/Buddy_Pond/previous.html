@@ -427,7 +427,7 @@ window.top.location = 'ie.html';
           </ul>
         </li>
       </ul>
-      <span class="float_right" id="clock" title="October 3, 2024">Thursday 10:02 AM</span>
+      <span class="float_right" id="clock" title="October 10, 2024">Thursday 9:38 AM</span>
       <span class="float_right" id="volume">
         <span class="navbarControl volumeToggle volumeFull">🔉</span>
         <span class="navbarControl volumeToggle volumeMuted">🔇</span>
@@ -588,20 +588,20 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_spellbook">
-      <a href="#window_spellbook" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
-        <div class="dock_title">
-          Spellbook
-        </div>
-      </a>
-    </li>
-  
     <li id="icon_dock_mantra">
       <a href="#window_mantra" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_mantra_64.png">
         <div class="dock_title">
           Mantra
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_spellbook">
+      <a href="#window_spellbook" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
+        <div class="dock_title">
+          Spellbook
         </div>
       </a>
     </li>
@@ -624,15 +624,6 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_console">
-      <a href="#window_console" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
-        <div class="dock_title">
-          Console
-        </div>
-      </a>
-    </li>
-  
     <li id="icon_dock_streamsquad">
       <a href="#window_streamsquad" class="">
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_streamsquad_64.png">
@@ -647,6 +638,15 @@ window.top.location = 'ie.html';
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_appstore_64.png">
         <div class="dock_title">
           appstore
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_console">
+      <a href="#window_console" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
+        <div class="dock_title">
+          Console
         </div>
       </a>
     </li>
@@ -689,6 +689,41 @@ window.top.location = 'ie.html';
   </ul>
     </div>
   <style>
+  #mantraIframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .mantraGameHolder {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
+        Mantra
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="mantraGameHolder">
+        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
   #window_spellbook .window_content {
     background-image: url("desktop/assets/images/misc/ivy-bg.png");
     background-color: black;
@@ -749,41 +784,6 @@ window.top.location = 'ie.html';
     </div>
   </div>
   <span class="abs"></span>
-</div><style>
-  #mantraIframe {
-    height: 100%;
-    width: 100%;
-  }
-
-  .mantraGameHolder {
-    height: 100%;
-    width: 100%;
-  }
-</style>
-
-<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
-        Mantra
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="mantraGameHolder">
-        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
   :root {
     --pond-border-radius: 10px;
@@ -1505,194 +1505,6 @@ window.top.location = 'ie.html';
 </div>
 
 <style>
-  .console {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    margin: 16px;
-  }
-  .consoleMessageSubmit {
-    width: 120px;
-  }
-  
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-  
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  div.console_message_main {
-    padding-top: 0px;
-    position: relative;
-    overflow-y: scroll;
-    flex: 1;
-    word-wrap: break-word;
-  }
-
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-
-  .console_message_submit {
-    margin: 5px;
-    padding: 5px;
-    width: 9vw;
-    border-radius: var(--console-border-radius);
-    border: none;
-    background-color: var(--console-input-background-colour);
-  }
-
-  .submit_svg_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .message_send_svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .ui-autocomplete {
-    position: absolute !important;
-    bottom: 600px !important;
-    overflow: auto !important;
-    max-height: 300px;
-    min-height: 300px;
-  }
-  
-  .window_bottom_console {
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 20px;
-    /*overflow: hidden;*/
-    text-align: left;
-    text-shadow: #fff 0 1px 1px;
-    /* height: 33px; */
-    /* width: 100%; */
-    left: 1px;
-    right: 1px;
-    padding-left: 8px;
-    margin: 3px 0 3px 0;
-  }
-
-</style>
-
-<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
-        Console
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="chat_area">
-      <div class="abs window_content" style="top: 33px;">
-        <div class="chat_area">
-          <div class="window_main console_message_main  message_main">
-            <div class="consoleMessagesHolder">
-              <div class="no_chat_messages">
-                The console is fresh. There are no messages yet. You can send a message to this console below.
-              </div>
-              <div class="console chat_messages">
-              <li>10:02:44: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>10:02:44: <span class="purple">Now loading deferred apps</span> </li><li>10:02:44: <span class="purple">Loading App.login</span> </li><li>10:02:44: <span class="purple">Loading App.videochat</span> </li><li>10:02:45: <span class="purple">Ready: App.merlin</span> </li></div>
-              <hr>
-            </div>
-          </div>
-          <div class="window_bottom_console">
-            <div class="console_send_message_form">
-              <form method="POST" action="" align="right" class="console_send_message_form">
-              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
-                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
-                  §~~~&gt; Evaluate
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-<style>
   #streamsquadIframe {
     height: 100%;
     width: 100%;
@@ -2209,6 +2021,194 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
+  .console {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 16px;
+  }
+  .consoleMessageSubmit {
+    width: 120px;
+  }
+  
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+  
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  div.console_message_main {
+    padding-top: 0px;
+    position: relative;
+    overflow-y: scroll;
+    flex: 1;
+    word-wrap: break-word;
+  }
+
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .console_message_submit {
+    margin: 5px;
+    padding: 5px;
+    width: 9vw;
+    border-radius: var(--console-border-radius);
+    border: none;
+    background-color: var(--console-input-background-colour);
+  }
+
+  .submit_svg_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .message_send_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ui-autocomplete {
+    position: absolute !important;
+    bottom: 600px !important;
+    overflow: auto !important;
+    max-height: 300px;
+    min-height: 300px;
+  }
+  
+  .window_bottom_console {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 20px;
+    /*overflow: hidden;*/
+    text-align: left;
+    text-shadow: #fff 0 1px 1px;
+    /* height: 33px; */
+    /* width: 100%; */
+    left: 1px;
+    right: 1px;
+    padding-left: 8px;
+    margin: 3px 0 3px 0;
+  }
+
+</style>
+
+<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
+        Console
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="chat_area">
+      <div class="abs window_content" style="top: 33px;">
+        <div class="chat_area">
+          <div class="window_main console_message_main  message_main">
+            <div class="consoleMessagesHolder">
+              <div class="no_chat_messages">
+                The console is fresh. There are no messages yet. You can send a message to this console below.
+              </div>
+              <div class="console chat_messages">
+              <li>09:38:12: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>09:38:12: <span class="purple">Now loading deferred apps</span> </li><li>09:38:12: <span class="purple">Loading App.login</span> </li><li>09:38:12: <span class="purple">Loading App.videochat</span> </li><li>09:38:13: <span class="purple">Ready: App.merlin</span> </li></div>
+              <hr>
+            </div>
+          </div>
+          <div class="window_bottom_console">
+            <div class="console_send_message_form">
+              <form method="POST" action="" align="right" class="console_send_message_form">
+              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
+                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
+                  §~~~&gt; Evaluate
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+<style>
   :root {
     --pond-border-radius: 10px;
     --pond-input-background-colour: #ebebeb;
@@ -3169,4 +3169,4 @@ Begin Wizard Training</a></h3>
   <div id="shadowRender">
   </div>
 
-</div><ul id="ui-id-6" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -256px -768px no-repeat; top: 784.8px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -2432px -640px no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 704.797px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
+</div><ul id="ui-id-6" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -2048px -1280px no-repeat; top: 784.8px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 704.797px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
