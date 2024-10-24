@@ -12,6 +12,13 @@
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>
+<script type="text/javascript">
+	function demo_login() {
+		$('input#username').val('demo');
+		$('input#password').val('demo');
+		$('button').first().trigger('click');
+	}
+</script>
 </head>
 <body><div class="content notification">
 <h1>Orb login</h1>
@@ -22,7 +29,7 @@
 <label for="password">Password:</label><input type="password" id="password" name="password" class="form-control">
 </div>
 <div class="btn-group">
-<button class="btn btn-default">Login</button><button class="btn btn-default" onclick="javascript:$('input#username').val('demo'); $('input#password').val('demo'); $('div.btn-group').find('button').first().click();">Demo login</button>
+<button class="btn btn-default">Login</button><button class="btn btn-default" onclick="javascript:demo_login()">Demo login</button>
 </div>
 <div class="source"><a href="https://gitlab.com/hsleisink/orb" target="_blank">Source</a></div>
 </div>
