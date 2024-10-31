@@ -427,7 +427,7 @@ window.top.location = 'ie.html';
           </ul>
         </li>
       </ul>
-      <span class="float_right" id="clock" title="October 24, 2024">Thursday 9:51 AM</span>
+      <span class="float_right" id="clock" title="October 31, 2024">Thursday 8:02 AM</span>
       <span class="float_right" id="volume">
         <span class="navbarControl volumeToggle volumeFull">🔉</span>
         <span class="navbarControl volumeToggle volumeMuted">🔇</span>
@@ -588,20 +588,11 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_console">
-      <a href="#window_console" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
+    <li id="icon_dock_appstore">
+      <a href="#window_appstore" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_appstore_64.png">
         <div class="dock_title">
-          Console
-        </div>
-      </a>
-    </li>
-  
-    <li id="icon_dock_streamsquad">
-      <a href="#window_streamsquad" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_streamsquad_64.png">
-        <div class="dock_title">
-          streamsquad
+          appstore
         </div>
       </a>
     </li>
@@ -615,11 +606,20 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_appstore">
-      <a href="#window_appstore" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_appstore_64.png">
+    <li id="icon_dock_spellbook">
+      <a href="#window_spellbook" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
         <div class="dock_title">
-          appstore
+          Spellbook
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_streamsquad">
+      <a href="#window_streamsquad" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_streamsquad_64.png">
+        <div class="dock_title">
+          streamsquad
         </div>
       </a>
     </li>
@@ -633,20 +633,11 @@ window.top.location = 'ie.html';
       </a>
     </li>
   
-    <li id="icon_dock_buddylist">
-      <a href="#window_buddylist" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_buddylist_64.png">
+    <li id="icon_dock_console">
+      <a href="#window_console" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_console_64.png">
         <div class="dock_title">
-          Buddies
-        </div>
-      </a>
-    </li>
-  
-    <li id="icon_dock_spellbook">
-      <a href="#window_spellbook" class="">
-        <img class="emojiIcon" src="desktop/assets/images/icons/icon_spellbook_64.png">
-        <div class="dock_title">
-          Spellbook
+          Console
         </div>
       </a>
     </li>
@@ -656,6 +647,15 @@ window.top.location = 'ie.html';
         <img class="emojiIcon" src="desktop/assets/images/icons/icon_profile_64.png">
         <div class="dock_title">
           Profile
+        </div>
+      </a>
+    </li>
+  
+    <li id="icon_dock_buddylist">
+      <a href="#window_buddylist" class="">
+        <img class="emojiIcon" src="desktop/assets/images/icons/icon_buddylist_64.png">
+        <div class="dock_title">
+          Buddies
         </div>
       </a>
     </li>
@@ -689,637 +689,6 @@ window.top.location = 'ie.html';
   </ul>
     </div>
   <style>
-  .console {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    margin: 16px;
-  }
-  .consoleMessageSubmit {
-    width: 120px;
-  }
-  
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-  
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  div.console_message_main {
-    padding-top: 0px;
-    position: relative;
-    overflow-y: scroll;
-    flex: 1;
-    word-wrap: break-word;
-  }
-
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .console_send_message_form {
-    width: 100%;
-    display: flex;
-  }
-
-  .console_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .console_emoji_picker {
-    position: relative;
-  }
-
-  .console_send_message_form>form .console_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--console-border-radius);
-  }
-
-  .console_send_message_form>form .console_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-
-  .console_message_submit {
-    margin: 5px;
-    padding: 5px;
-    width: 9vw;
-    border-radius: var(--console-border-radius);
-    border: none;
-    background-color: var(--console-input-background-colour);
-  }
-
-  .submit_svg_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .message_send_svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .ui-autocomplete {
-    position: absolute !important;
-    bottom: 600px !important;
-    overflow: auto !important;
-    max-height: 300px;
-    min-height: 300px;
-  }
-  
-  .window_bottom_console {
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 20px;
-    /*overflow: hidden;*/
-    text-align: left;
-    text-shadow: #fff 0 1px 1px;
-    /* height: 33px; */
-    /* width: 100%; */
-    left: 1px;
-    right: 1px;
-    padding-left: 8px;
-    margin: 3px 0 3px 0;
-  }
-
-</style>
-
-<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
-        Console
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="chat_area">
-      <div class="abs window_content" style="top: 33px;">
-        <div class="chat_area">
-          <div class="window_main console_message_main  message_main">
-            <div class="consoleMessagesHolder">
-              <div class="no_chat_messages" style="display: none;">
-                The console is fresh. There are no messages yet. You can send a message to this console below.
-              </div>
-              <div class="console chat_messages">
-              <li>09:51:17: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>09:51:17: <span class="purple">Now loading deferred apps</span> </li><li>09:51:17: <span class="purple">Loading App.login</span> </li><li>09:51:17: <span class="purple">Loading App.videochat</span> </li><li>09:51:18: <span class="purple">Ready: App.merlin</span> </li></div>
-              <hr>
-            </div>
-          </div>
-          <div class="window_bottom_console">
-            <div class="console_send_message_form">
-              <form method="POST" action="" align="right" class="console_send_message_form">
-              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
-                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
-                  §~~~&gt; Evaluate
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-<style>
-  #streamsquadIframe {
-    height: 100%;
-    width: 100%;
-  }
-  .streamersTable {
-    height: 100%;
-    width: 80%;
-  }
-  .isStreamingNow {
-    font-size: 32px;
-    padding-bottom: 32px;
-  }
-  .nextStreamSoon {
-    font-size: 32px;
-    padding-bottom: 32px;
-  }
-</style>
-
-<div id="window_streamsquad" class="abs window" align="center" style="width: 662px; height: 495px; left: 50px; top: 50px;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_streamsquad_64.png" style="width: 16px; height: 16px;">
-        Stream Squad
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="streamsquadGameHolder">
-        <h2>Buddy Pond Live Streamers</h2>
-        <br>
-        <br>
-        <table class="streamersTable table">
-          
-            <tbody>
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>Marak</td>
-        <td>DJ Sets, Live Coding, Buddy Pond QA</td>
-        <td><a href="https://www.youtube.com/user/MarakSquires" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>SkratchBastidTV</td>
-        <td>DJ Sets</td>
-        <td><a href="https://www.youtube.com/user/SkratchBastidTV" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    
-      <tr>
-        <td>🟠</td>
-        <td>OFFLINE</td>
-        <td>Andrew Potthast</td>
-        <td>DJ Sets</td>
-        <td><a href="https://soundcloud.com/andrew-potthast" target="_blank" class="">Subscribe</a></td>
-      </tr>
-    </tbody>
-        </table>
-        <br>
-        <br>
-        <div class="isStreamingNow rainbow" style="display: none;"><a href="#openIDC" data-videotype="livestream" data-videoid="1UFeeHqkUZU" class="openIDC rainbow">MARAK IS LIVE CLICK HERE TO VIEW</a></div>
-        <div class="nextStreamSoon">THE NEXT STREAM IS COMING UP SOON. CHECK BACK LATER</div>
-        <img height="333" src="desktop/appstore/desktop.streamsquad/assets/img/bad-enough-streamer.jpeg">
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
-  :root {
-    --pond-border-radius: 10px;
-    --pond-input-background-colour: #ebebeb;
-  }
-
-  div.pond_main {
-    padding: 16px;
-  }
-
-  div.pond_message_main {
-    padding-top: 0px;
-    position: relative;
-    overflow-y: scroll;
-    flex: 1;
-    word-wrap: break-word;
-  }
-
-  .chat_area {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .pond_send_message_form {
-    width: 100%;
-    display: flex;
-  }
-
-  .pond_message_form>form {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .pond_emoji_picker {
-    position: relative;
-  }
-
-  .pond_send_message_form>form .pond_message_text {
-    width: 100%;
-    resize: none;
-    cursor: text;
-    box-sizing: border-box;
-    background-color: #ebebeb;
-    padding: 2px 10px;
-    flex-grow: 1;
-    border: none;
-    border-radius: var(--pond-border-radius);
-  }
-
-  .pond_send_message_form>form .pond_message_text:focus-visible {
-    border: none;
-    outline: none;
-  }
-
-  .sendPondMessage {
-    margin: 5px;
-    padding: 5px;
-    width: 9vw;
-    border-radius: var(--pond-border-radius);
-    border: none;
-    background-color: var(--pond-input-background-colour);
-  }
-
-  .submit_svg_container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .message_send_svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .pondNameList {
-    padding: 16px;
-  }
-
-  .memeImage {
-    position: relative;
-  }
-
-  .memeImage .remixGif {
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    height: 22px;
-    width: 22px;
-    z-index: 99;
-  }
-
-  .memeImage .remixGif:hover {
-    opacity: 0.44;
-  }
-
-  .memeImage .remixPaint {
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    left: 33px;
-    height: 22px;
-    width: 22px;
-    z-index: 99;
-  }
-
-  .memeImage .remixPaint:hover {
-    opacity: 0.44;
-  }
-
-  .ponds td {
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-bottom: 3px;
-  }
-
-  .pondDesc {
-    font-style: italic;
-  }
-
-  .openPond {
-    cursor: pointer;
-  }
-
-  .joinPondTable td {
-    cursor: pointer;
-  }
-  .welcomePonds {
-    font-size: 24px;
-  }
-  .customPondName {
-    cursor: pointer;
-    border: solid;
-    border-width: 1px;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    border-radius: 4px;
-  }
-  .ui-autocomplete {
-    position: absolute !important;
-    bottom: 600px !important;
-    overflow: auto !important;
-    max-height: 300px;
-    min-height: 300px;
-  }
-</style>
-<div id="window_pond" class="abs window pond_list" data-window-index="0" style="width: 44vw; height: 75vh; top: 9vh; left: 21vw;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
-        <span class="window-context-title">Ponds</span>
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="window_main pond_main">
-        <div class="buddy_pond_not_connected">
-          You'll need to login in order to join Ponds.
-        </div>
-        <div class="loggedIn">
-          <h2>Join Ponds</h2>
-          <table class="joinPondTable data table">
-
-            <tbody><tr class="openPond" href="#Lily">
-              <td>
-                #Lily
-              </td>
-              <td>
-                <em>General Buddy Chats</em>
-              </td>
-              <td>
-                333
-              </td>
-            </tr>
-
-            <tr class="openPond" href="#Paint">
-              <td>
-                #Paint
-              </td>
-              <td>
-                <em>Paint Based Image Room - No Texting</em>
-              </td>
-              <td>
-                144
-              </td>
-            </tr>
-            <tr class="openPond" href="#Memes">
-              <td>
-                #Memes
-              </td>
-              <td>
-                <em>Everything you type turns into Memes</em>
-              </td>
-              <td>
-                212
-              </td>
-            </tr>
-            <tr class="openPond" href="#Say">
-              <td>
-                #Say
-              </td>
-              <td>
-                <em>Text-To-Speech Room - Everything you type is spoken</em>
-              </td>
-              <td>
-                66
-              </td>
-            </tr>
-            <tr class="openPond" href="#Alpha">
-              <td>
-                #Alpha
-              </td>
-              <td>
-                <em>Alpha Buddy Pond Developer Chat</em>
-              </td>
-              <td>
-                113
-              </td>
-            </tr>
-            <tr href="#backrooms" style="opacity: 0.33;" title="Matrix Agents only!">
-              <td>
-                #backrooms
-              </td>
-              <td>
-                <em>Liminal Backrooms</em>
-              </td>
-              <td>
-                432
-              </td>
-            </tr>
-            <tr class="openPond" href="#Brooklyn">
-              <td>
-                #Brooklyn
-              </td>
-              <td>
-                <em>Brooklyn, New York City</em>
-              </td>
-              <td>
-                33
-              </td>
-            </tr>
-          </tbody></table>
-          <p>
-            🐸🗿🧊🌊
-          </p>
-          <br>
-          <div align="center" class="welcomePonds">
-            <p>
-              Click A Pond To Chat With Buddies
-            </p>
-            <p><em>Wish to create your own Pond? <br>Type the name below...</em></p>
-            <form class="joinPondForm">
-              <label for="customPondName">
-                <input id="customPondName" name="customPondName" class="customPondName rainbow-border" placeholder="enter pond name..." type="text" size="16">
-              </label>
-              <button type="submit" class="joinPond desktopButton">Join Pond</button>
-              <br>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-
-<div id="window_pond_message_0" class="abs window pond_message" data-app="pond">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img width="16" height="16" src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
-        <span class="window-context-title">Pond</span>
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="chat_area">
-        <div class="window_main pond_message_main  message_main">
-          <div class="buddy_pond_not_connected">
-            You'll need to login in order to join the #<span class="context">${context}</span> Pond.
-            <form method="POST" action="/pondlogin" class="pondLoginForm">
-              <table class="pondLoginTable">
-                <tbody>
-                  <tr>
-                    <td colspan="2">
-                      <input class="buddyname rainbow-border" name="buddyname" type="text" size="16" placeholder="Enter name...">
-                    </td>
-                  </tr>
-                  <tr class="buddyPasswordRow">
-                    <td colspan="2">
-                      <input class="buddypassword" name="buddypassword" type="password" size="16" placeholder="Enter password..."></td>
-                  </tr>
-                  <tr class="invalidPassword">
-                    <td colspan="2" class="error">Invalid Password</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">
-                      <button type="submit" class="pondLoginButton">Join Pond</button>
-                    </td>
-                  </tr>
-                  <!--
-                  <tr>
-                    <td colspan="2">
-                      <button type="submit" class="loginAnonButton">Remain Anonymous</button>
-                    </td>
-                  </tr>
-                  -->
-                </tbody>
-              </table>
-            </form>
-          </div>
-          <div class="pondMessagesHolder" style="display: none;">
-            <div class="no_chat_messages" style="display: none;">
-              The pond is fresh. There are no messages yet. You can send a message to this pond below.
-            </div>
-            <div class="chat_messages">
-            </div>
-            <hr>
-          </div>
-        </div>
-        <div class="window_bottom_chat" style="display: none;">
-          <div class="pond_send_message_chatcontrols_form send_message_chatcontrols_form">
-            <img title="Insert Audio" class="insertSound chatControl" src="desktop/assets/images/icons/icon_soundrecorder_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a4.svg" -->
-            <img title="Insert Animation" class="insertGif chatControl" src="/desktop/assets/images/icons/icon_gifstudio_64.png"> <!-- "/desktop/assets/images/icons/svg/1f39e.svg" -->
-            <img title="Insert Paint" class="insertPaint chatControl" src="desktop/assets/images/icons/icon_paint_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a8.svg" -->
-            <img title="Insert Snap" class="insertSnap chatControl" src="/desktop/assets/images/icons/svg/1f4f7.svg">
-            <img title="Insert Emoji" class="desktopOnly pond_emoji_picker_0 emojiPicker chatControl" src="/desktop/assets/images/icons/svg/1f600.svg">
-            <img title="Get Help" class="desktopOnly getHelp chatControl" src="/desktop/assets/images/icons/svg/1f9ae.svg">
-          </div>
-          <div class="pond_send_message_form" style="padding-bottom: 0px;">
-            <form method="POST" action="" align="right" class="pond_send_message_form" style="padding-bottom: 0px;">
-              <textarea name="pond_message_text" class="pond_message_text pond_message_text_0" placeholder="" style="margin-top: 6px; margin-bottom: 6px;"></textarea>
-              <button name="pond_message_submit" class="sendPondMessage" style="width: 9vw; margin: 5px;">
-                SEND
-              </button>
-              <input name="pond_message_from" class="pond_message_from" type="hidden">
-              <input name="pond_message_to" class="pond_message_to" type="hidden">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
   #window_appstore h1 {
     font-size: 48px;
   }
@@ -1759,123 +1128,21 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
-  #mantraIframe {
-    height: 100%;
-    width: 100%;
-  }
-
-  .mantraGameHolder {
-    height: 100%;
-    width: 100%;
-  }
-</style>
-
-<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
-        Mantra
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 33px;">
-      <div class="mantraGameHolder">
-        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
   :root {
     --pond-border-radius: 10px;
     --pond-input-background-colour: #ebebeb;
   }
 
-  .positiveAffirmation {
-    font-style: italic;
-    padding-left: 16px;
-    text-align: center;
-    padding-right: 16px;
-    padding-top: 8px;
-    cursor: pointer;
+  div.pond_main {
+    padding: 16px;
   }
 
-  .buddyProfilePanel {
-    height: 444px;
-    width: 444px;
-    border: solid;
-    position: absolute;
-    right: 15.2vw;
-    float: left;
-    top: 0px;
-    background-color: white;
-    display: none;
-  }
-
-  .chatMessagesHolder {
-    padding-top: 16px;
-  }
-
-  .buddyListHolder {
-    text-align: left;
-    width: 75%;
-  }
-
-  .startVideoCall {
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    right: 32px;
-    top: 16px;
-    z-index: 10;
-    border-radius: 100%;
-  }
-
-  .endVideoCall {
-    opacity: 0.4;
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    right: 64px;
-    top: 16px;
-  }
-
-  .endVideoCall:hover {
-    opacity: 0.4;
-    cursor: pointer;
-  }
-
-  .startVideoCall:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-
-  .acceptVideoCall {
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    right: 48px;
-    top: 16px;
-    border-radius: 100%;
-  }
-
-  .acceptVideoCall:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-
-  div.buddy_message_main {
+  div.pond_message_main {
     padding-top: 0px;
     position: relative;
     overflow-y: scroll;
+    flex: 1;
+    word-wrap: break-word;
   }
 
   .chat_area {
@@ -1884,21 +1151,21 @@ window.top.location = 'ie.html';
     height: 100%;
   }
 
-  .buddy_send_message_form {
+  .pond_send_message_form {
     width: 100%;
     display: flex;
   }
 
-  .buddy_message_form>form {
+  .pond_message_form>form {
     display: flex;
     flex-direction: row;
   }
 
-  .buddy_emoji_picker {
+  .pond_emoji_picker {
     position: relative;
   }
 
-  .buddy_send_message_form>form .buddy_message_text {
+  .pond_send_message_form>form .pond_message_text {
     width: 100%;
     resize: none;
     cursor: text;
@@ -1910,7 +1177,12 @@ window.top.location = 'ie.html';
     border-radius: var(--pond-border-radius);
   }
 
-  .sendBuddyMessage {
+  .pond_send_message_form>form .pond_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .sendPondMessage {
     margin: 5px;
     padding: 5px;
     width: 9vw;
@@ -1933,6 +1205,73 @@ window.top.location = 'ie.html';
     height: 100%;
   }
 
+  .pondNameList {
+    padding: 16px;
+  }
+
+  .memeImage {
+    position: relative;
+  }
+
+  .memeImage .remixGif {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 22px;
+    width: 22px;
+    z-index: 99;
+  }
+
+  .memeImage .remixGif:hover {
+    opacity: 0.44;
+  }
+
+  .memeImage .remixPaint {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 33px;
+    height: 22px;
+    width: 22px;
+    z-index: 99;
+  }
+
+  .memeImage .remixPaint:hover {
+    opacity: 0.44;
+  }
+
+  .ponds td {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+  }
+
+  .pondDesc {
+    font-style: italic;
+  }
+
+  .openPond {
+    cursor: pointer;
+  }
+
+  .joinPondTable td {
+    cursor: pointer;
+  }
+  .welcomePonds {
+    font-size: 24px;
+  }
+  .customPondName {
+    cursor: pointer;
+    border: solid;
+    border-width: 1px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 4px;
+  }
   .ui-autocomplete {
     position: absolute !important;
     bottom: 600px !important;
@@ -1940,19 +1279,13 @@ window.top.location = 'ie.html';
     max-height: 300px;
     min-height: 300px;
   }
-
 </style>
-
-<div id="window_buddylist" class="abs window" style="width: 15vw; height: 75vh; top: 9vh; left: 77vw;">
-  <div id="panel_buddy_profile" class="buddyProfilePanel"></div>
-  <div id="contextMenuBuddy" class="context-menu" style="display: none">
-    <ul id="contextListBuddy" class="context-list"></ul>
-  </div>
+<div id="window_pond" class="abs window pond_list" data-window-index="0" style="width: 44vw; height: 75vh; top: 9vh; left: 21vw;">
   <div class="abs window_inner">
     <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
       <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_buddylist_64.png" style="width: 16px; height: 16px;">
-        Buddy List
+        <img src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
+        <span class="window-context-title">Ponds</span>
       </span>
       <span class="float_right trafficLight">
         <a href="#min" class="minWindow" title="Min Window">🟠</a>
@@ -1961,51 +1294,109 @@ window.top.location = 'ie.html';
       </span>
     </div>
     <div class="abs window_content" style="top: 33px;">
-      <div class="window_main">
-        <div class="buddy_list_not_connected">
-          You'll need to login in order to access your Buddy List.
+      <div class="window_main pond_main">
+        <div class="buddy_pond_not_connected">
+          You'll need to login in order to join Ponds.
         </div>
-        <div class="loggedIn" align="center">
-          <div class="positiveAffirmation">Hello. You look nice today!</div>
+        <div class="loggedIn">
+          <h2>Join Ponds</h2>
+          <table class="joinPondTable data table">
+
+            <tbody><tr class="openPond" href="#Lily">
+              <td>
+                #Lily
+              </td>
+              <td>
+                <em>General Buddy Chats</em>
+              </td>
+              <td>
+                333
+              </td>
+            </tr>
+
+            <tr class="openPond" href="#Paint">
+              <td>
+                #Paint
+              </td>
+              <td>
+                <em>Paint Based Image Room - No Texting</em>
+              </td>
+              <td>
+                144
+              </td>
+            </tr>
+            <tr class="openPond" href="#Memes">
+              <td>
+                #Memes
+              </td>
+              <td>
+                <em>Everything you type turns into Memes</em>
+              </td>
+              <td>
+                212
+              </td>
+            </tr>
+            <tr class="openPond" href="#Say">
+              <td>
+                #Say
+              </td>
+              <td>
+                <em>Text-To-Speech Room - Everything you type is spoken</em>
+              </td>
+              <td>
+                66
+              </td>
+            </tr>
+            <tr class="openPond" href="#Alpha">
+              <td>
+                #Alpha
+              </td>
+              <td>
+                <em>Alpha Buddy Pond Developer Chat</em>
+              </td>
+              <td>
+                113
+              </td>
+            </tr>
+            <tr href="#backrooms" style="opacity: 0.33;" title="Matrix Agents only!">
+              <td>
+                #backrooms
+              </td>
+              <td>
+                <em>Liminal Backrooms</em>
+              </td>
+              <td>
+                432
+              </td>
+            </tr>
+            <tr class="openPond" href="#Brooklyn">
+              <td>
+                #Brooklyn
+              </td>
+              <td>
+                <em>Brooklyn, New York City</em>
+              </td>
+              <td>
+                33
+              </td>
+            </tr>
+          </tbody></table>
+          <p>
+            🐸🗿🧊🌊
+          </p>
           <br>
-          <div class="buddyListHolder" style="display: none;">
-            <h2>Buddies</h2>
-            <span class="you_have_no_buddies">
-              It's time to add buddies.<br><br>
-              Why not invite a friend?<br><br>
-              <a href="#/addbuddy/Marak" class="sendBuddyRequest">Marak</a> wants to be buddies!<br>
-              <a href="#/addbuddy/Marak" class="sendBuddyRequest">Marak</a>
-              &lt;- Click To Add <br>
+          <div align="center" class="welcomePonds">
+            <p>
+              Click A Pond To Chat With Buddies
+            </p>
+            <p><em>Wish to create your own Pond? <br>Type the name below...</em></p>
+            <form class="joinPondForm">
+              <label for="customPondName">
+                <input id="customPondName" name="customPondName" class="customPondName rainbow-border" placeholder="enter pond name..." type="text" size="16">
+              </label>
+              <button type="submit" class="joinPond desktopButton">Join Pond</button>
               <br>
-            </span>
-            <div class="pendingIncomingBuddyRequestsHolder">
-              <h3>New Buddy Requests</h3>
-              <div class="pendingIncomingBuddyRequests">
-              </div>
-              <br>
-            </div>
-            <ul class="buddylist">
-            </ul>
-            <br>
-            <div class="pendingOutgoingBuddyRequestsHolder">
-              <h3>Pending Buddy Requests</h3>
-              <div class="pendingOutgoingBuddyRequests">
-              </div>
-              <br>
-              <br>
-            </div>
-          </div>
-          <div class="addBuddyForm">
-            <form method="POST" action="#">
-              <label for="buddy_request_name">Send Buddy Request:</label><br>
-              <input id="buddy_request_name" placeholder="enter buddy name..." value="" class="rainbow-border buddy_request_name desktopInput" name="buddy_request_name" type="text" size="16"><br>
-              <button class="sendBuddyRequest desktopButton" type="submit">Send Buddy Request</button>
             </form>
-            <br>
-            <div class="inviteBuddyHolder">
-              <span>Don't know any Buddy Names?</span><br>
-              <span><a class="inviteBuddy" href="#invite-buddy">Invite a Buddy!</a></span>
-            </div>
           </div>
         </div>
       </div>
@@ -2017,12 +1408,12 @@ window.top.location = 'ie.html';
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div>
 
-<div id="window_buddy_message_0" class="abs window buddy_message" data-app="buddylist">
+<div id="window_pond_message_0" class="abs window pond_message" data-app="pond">
   <div class="abs window_inner">
     <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
       <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_buddylist_64.png" style="width: 16px; height: 16px;">
-        <span class="window-context-title">Chat</span>
+        <img width="16" height="16" src="desktop/assets/images/icons/icon_pond_64.png" style="width: 16px; height: 16px;">
+        <span class="window-context-title">Pond</span>
       </span>
       <span class="float_right trafficLight">
         <a href="#min" class="minWindow" title="Min Window">🟠</a>
@@ -2032,43 +1423,71 @@ window.top.location = 'ie.html';
     </div>
     <div class="abs window_content" style="top: 33px;">
       <div class="chat_area">
-        <!--
-        <img class="acceptVideoCall" title="Accept Video Call" src="desktop/assets/images/icons/phonebooth.png" />
-        -->
-        <!-- <span title="End Video Call" class="endVideoCall emojiIcon context">🚫</span> -->
-
-        <img title="Start Video Call" class="startVideoCall context" src="desktop/assets/images/icons/icon_phone.png">
-        <div class="window_main buddy_message_main  message_main">
-          <div class="chatMessagesHolder">
-            <div class="no_chat_messages">
-              Your conversation has just started. You can send a message using the form below.
+        <div class="window_main pond_message_main  message_main">
+          <div class="buddy_pond_not_connected">
+            You'll need to login in order to join the #<span class="context">${context}</span> Pond.
+            <form method="POST" action="/pondlogin" class="pondLoginForm">
+              <table class="pondLoginTable">
+                <tbody>
+                  <tr>
+                    <td colspan="2">
+                      <input class="buddyname rainbow-border" name="buddyname" type="text" size="16" placeholder="Enter name...">
+                    </td>
+                  </tr>
+                  <tr class="buddyPasswordRow">
+                    <td colspan="2">
+                      <input class="buddypassword" name="buddypassword" type="password" size="16" placeholder="Enter password..."></td>
+                  </tr>
+                  <tr class="invalidPassword">
+                    <td colspan="2" class="error">Invalid Password</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <button type="submit" class="pondLoginButton">Join Pond</button>
+                    </td>
+                  </tr>
+                  <!--
+                  <tr>
+                    <td colspan="2">
+                      <button type="submit" class="loginAnonButton">Remain Anonymous</button>
+                    </td>
+                  </tr>
+                  -->
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <div class="pondMessagesHolder" style="display: none;">
+            <div class="no_chat_messages" style="display: none;">
+              The pond is fresh. There are no messages yet. You can send a message to this pond below.
             </div>
             <div class="chat_messages">
             </div>
             <hr>
           </div>
         </div>
-        <div class="window_bottom_chat">
-            <div class="buddy_send_message_chatcontrols_form send_message_chatcontrols_form">
-              <img title="Insert Audio" class="insertBuddySound chatControl" src="desktop/assets/images/icons/icon_soundrecorder_64.png"><!-- "/desktop/assets/images/icons/svg/1f3a4.svg" -->
-              <img title="Insert Animation" class="insertBuddyGif chatControl" src="/desktop/assets/images/icons/icon_gifstudio_64.png"><!-- "/desktop/assets/images/icons/svg/1f39e.svg" -->
-              <img title="Insert Paint" class="insertBuddyPaint chatControl" src="desktop/assets/images/icons/icon_paint_64.png"><!-- "/desktop/assets/images/icons/svg/1f3a8.svg" -->
-              <img title="Insert Snap" class="insertBuddySnap chatControl" src="/desktop/assets/images/icons/svg/1f4f7.svg">
-              <img title="Insert Emoji" class="desktopOnly emoji_picker_0 emojiPicker chatControl" src="/desktop/assets/images/icons/svg/1f600.svg">
-              <img title="Get Help" class="desktopOnly getHelp chatControl" src="/desktop/assets/images/icons/svg/1f9ae.svg">
-            </div>
-          <div class="buddy_send_message_form" style="padding-bottom: 0px;">
-            <form method="POST" action="" align="right" class="buddy_send_message_form" style="padding-bottom: 0px;">
-              <textarea name="buddy_message_text" class="buddy_message_text buddy_message_text_0" placeholder="" style="margin-top: 6px; margin-bottom: 6px;"></textarea>
-                <button name="buddy_message_submit" class="sendBuddyMessage" style="width: 9vw;">SEND</button>
-              <input name="buddy_message_from" class="buddy_message_from" type="hidden">
-              <input name="buddy_message_to" class="buddy_message_to" type="hidden">
+        <div class="window_bottom_chat" style="display: none;">
+          <div class="pond_send_message_chatcontrols_form send_message_chatcontrols_form">
+            <img title="Insert Audio" class="insertSound chatControl" src="desktop/assets/images/icons/icon_soundrecorder_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a4.svg" -->
+            <img title="Insert Animation" class="insertGif chatControl" src="/desktop/assets/images/icons/icon_gifstudio_64.png"> <!-- "/desktop/assets/images/icons/svg/1f39e.svg" -->
+            <img title="Insert Paint" class="insertPaint chatControl" src="desktop/assets/images/icons/icon_paint_64.png"> <!-- "/desktop/assets/images/icons/svg/1f3a8.svg" -->
+            <img title="Insert Snap" class="insertSnap chatControl" src="/desktop/assets/images/icons/svg/1f4f7.svg">
+            <img title="Insert Emoji" class="desktopOnly pond_emoji_picker_0 emojiPicker chatControl" src="/desktop/assets/images/icons/svg/1f600.svg">
+            <img title="Get Help" class="desktopOnly getHelp chatControl" src="/desktop/assets/images/icons/svg/1f9ae.svg">
+          </div>
+          <div class="pond_send_message_form" style="padding-bottom: 0px;">
+            <form method="POST" action="" align="right" class="pond_send_message_form" style="padding-bottom: 0px;">
+              <textarea name="pond_message_text" class="pond_message_text pond_message_text_0" placeholder="" style="margin-top: 6px; margin-bottom: 6px;"></textarea>
+              <button name="pond_message_submit" class="sendPondMessage" style="width: 9vw; margin: 5px;">
+                SEND
+              </button>
+              <input name="pond_message_from" class="pond_message_from" type="hidden">
+              <input name="pond_message_to" class="pond_message_to" type="hidden">
             </form>
           </div>
         </div>
       </div>
     </div>
-
     <div class="abs window_bottom">
       Build: v4.20.69
     </div>
@@ -2136,6 +1555,306 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs"></span>
 </div><style>
+  #streamsquadIframe {
+    height: 100%;
+    width: 100%;
+  }
+  .streamersTable {
+    height: 100%;
+    width: 80%;
+  }
+  .isStreamingNow {
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+  .nextStreamSoon {
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+</style>
+
+<div id="window_streamsquad" class="abs window" align="center" style="width: 662px; height: 495px; left: 50px; top: 50px;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_streamsquad_64.png" style="width: 16px; height: 16px;">
+        Stream Squad
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="streamsquadGameHolder">
+        <h2>Buddy Pond Live Streamers</h2>
+        <br>
+        <br>
+        <table class="streamersTable table">
+          
+            <tbody>
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>Marak</td>
+        <td>DJ Sets, Live Coding, Buddy Pond QA</td>
+        <td><a href="https://www.youtube.com/user/MarakSquires" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>SkratchBastidTV</td>
+        <td>DJ Sets</td>
+        <td><a href="https://www.youtube.com/user/SkratchBastidTV" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    
+      <tr>
+        <td>🟠</td>
+        <td>OFFLINE</td>
+        <td>Andrew Potthast</td>
+        <td>DJ Sets</td>
+        <td><a href="https://soundcloud.com/andrew-potthast" target="_blank" class="">Subscribe</a></td>
+      </tr>
+    </tbody>
+        </table>
+        <br>
+        <br>
+        <div class="isStreamingNow rainbow" style="display: none;"><a href="#openIDC" data-videotype="livestream" data-videoid="1UFeeHqkUZU" class="openIDC rainbow">MARAK IS LIVE CLICK HERE TO VIEW</a></div>
+        <div class="nextStreamSoon">THE NEXT STREAM IS COMING UP SOON. CHECK BACK LATER</div>
+        <img height="333" src="desktop/appstore/desktop.streamsquad/assets/img/bad-enough-streamer.jpeg">
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  #mantraIframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .mantraGameHolder {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<div id="window_mantra" class="abs window" style="width: 80vw; height: 60vh; min-width: 300px; min-height: 600px; left: 100px; top: 9vh;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_mantra.png" style="width: 16px; height: 16px;">
+        Mantra
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="mantraGameHolder">
+        <iframe id="mantraIframe" class="mantraIframe" src=""></iframe>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
+  .console {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 16px;
+  }
+  .consoleMessageSubmit {
+    width: 120px;
+  }
+  
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+  
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  div.console_message_main {
+    padding-top: 0px;
+    position: relative;
+    overflow-y: scroll;
+    flex: 1;
+    word-wrap: break-word;
+  }
+
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .console_send_message_form {
+    width: 100%;
+    display: flex;
+  }
+
+  .console_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .console_emoji_picker {
+    position: relative;
+  }
+
+  .console_send_message_form>form .console_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--console-border-radius);
+  }
+
+  .console_send_message_form>form .console_message_text:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .console_message_submit {
+    margin: 5px;
+    padding: 5px;
+    width: 9vw;
+    border-radius: var(--console-border-radius);
+    border: none;
+    background-color: var(--console-input-background-colour);
+  }
+
+  .submit_svg_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .message_send_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ui-autocomplete {
+    position: absolute !important;
+    bottom: 600px !important;
+    overflow: auto !important;
+    max-height: 300px;
+    min-height: 300px;
+  }
+  
+  .window_bottom_console {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 20px;
+    /*overflow: hidden;*/
+    text-align: left;
+    text-shadow: #fff 0 1px 1px;
+    /* height: 33px; */
+    /* width: 100%; */
+    left: 1px;
+    right: 1px;
+    padding-left: 8px;
+    margin: 3px 0 3px 0;
+  }
+
+</style>
+
+<div id="window_console" class="abs window" style="width: 100vw; height: 66vh; bottom: 41px; left: 0vw;">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_console_64.png" style="width: 16px; height: 16px;">
+        Console
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="chat_area">
+      <div class="abs window_content" style="top: 33px;">
+        <div class="chat_area">
+          <div class="window_main console_message_main  message_main">
+            <div class="consoleMessagesHolder">
+              <div class="no_chat_messages">
+                The console is fresh. There are no messages yet. You can send a message to this console below.
+              </div>
+              <div class="console chat_messages">
+              <li>08:02:56: <span class="purple">Ready:</span> Buddy Pond v4.20.69 </li><li>08:02:56: <span class="purple">Now loading deferred apps</span> </li><li>08:02:56: <span class="purple">Loading App.login</span> </li><li>08:02:56: <span class="purple">Loading App.videochat</span> </li><li>08:02:57: <span class="purple">Ready: App.merlin</span> </li></div>
+              <hr>
+            </div>
+          </div>
+          <div class="window_bottom_console">
+            <div class="console_send_message_form">
+              <form method="POST" action="" align="right" class="console_send_message_form">
+              <textarea name="console_message_text" class="console_message_text console_message_text_0 ui-autocomplete-input" placeholder="" autocomplete="off"></textarea>
+                <button name="console_message_submit" class="consoleMessageSubmit console_message_submit">
+                  §~~~&gt; Evaluate
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+<style>
   #window_profile .publicProfilePreviewHolder {
     border: solid;
     background-color: #CCC;
@@ -2490,6 +2209,287 @@ window.top.location = 'ie.html';
 </div>
 
 <style>
+  :root {
+    --pond-border-radius: 10px;
+    --pond-input-background-colour: #ebebeb;
+  }
+
+  .positiveAffirmation {
+    font-style: italic;
+    padding-left: 16px;
+    text-align: center;
+    padding-right: 16px;
+    padding-top: 8px;
+    cursor: pointer;
+  }
+
+  .buddyProfilePanel {
+    height: 444px;
+    width: 444px;
+    border: solid;
+    position: absolute;
+    right: 15.2vw;
+    float: left;
+    top: 0px;
+    background-color: white;
+    display: none;
+  }
+
+  .chatMessagesHolder {
+    padding-top: 16px;
+  }
+
+  .buddyListHolder {
+    text-align: left;
+    width: 75%;
+  }
+
+  .startVideoCall {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    right: 32px;
+    top: 16px;
+    z-index: 10;
+    border-radius: 100%;
+  }
+
+  .endVideoCall {
+    opacity: 0.4;
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    right: 64px;
+    top: 16px;
+  }
+
+  .endVideoCall:hover {
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  .startVideoCall:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  .acceptVideoCall {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    right: 48px;
+    top: 16px;
+    border-radius: 100%;
+  }
+
+  .acceptVideoCall:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  div.buddy_message_main {
+    padding-top: 0px;
+    position: relative;
+    overflow-y: scroll;
+  }
+
+  .chat_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .buddy_send_message_form {
+    width: 100%;
+    display: flex;
+  }
+
+  .buddy_message_form>form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .buddy_emoji_picker {
+    position: relative;
+  }
+
+  .buddy_send_message_form>form .buddy_message_text {
+    width: 100%;
+    resize: none;
+    cursor: text;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    padding: 2px 10px;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--pond-border-radius);
+  }
+
+  .sendBuddyMessage {
+    margin: 5px;
+    padding: 5px;
+    width: 9vw;
+    border-radius: var(--pond-border-radius);
+    border: none;
+    background-color: var(--pond-input-background-colour);
+  }
+
+  .submit_svg_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .message_send_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ui-autocomplete {
+    position: absolute !important;
+    bottom: 600px !important;
+    overflow: auto !important;
+    max-height: 300px;
+    min-height: 300px;
+  }
+
+</style>
+
+<div id="window_buddylist" class="abs window" style="width: 15vw; height: 75vh; top: 9vh; left: 77vw;">
+  <div id="panel_buddy_profile" class="buddyProfilePanel"></div>
+  <div id="contextMenuBuddy" class="context-menu" style="display: none">
+    <ul id="contextListBuddy" class="context-list"></ul>
+  </div>
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_buddylist_64.png" style="width: 16px; height: 16px;">
+        Buddy List
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="window_main">
+        <div class="buddy_list_not_connected">
+          You'll need to login in order to access your Buddy List.
+        </div>
+        <div class="loggedIn" align="center">
+          <div class="positiveAffirmation">Hello. You look nice today!</div>
+          <br>
+          <div class="buddyListHolder" style="display: none;">
+            <h2>Buddies</h2>
+            <span class="you_have_no_buddies">
+              It's time to add buddies.<br><br>
+              Why not invite a friend?<br><br>
+              <a href="#/addbuddy/Marak" class="sendBuddyRequest">Marak</a> wants to be buddies!<br>
+              <a href="#/addbuddy/Marak" class="sendBuddyRequest">Marak</a>
+              &lt;- Click To Add <br>
+              <br>
+            </span>
+            <div class="pendingIncomingBuddyRequestsHolder">
+              <h3>New Buddy Requests</h3>
+              <div class="pendingIncomingBuddyRequests">
+              </div>
+              <br>
+            </div>
+            <ul class="buddylist">
+            </ul>
+            <br>
+            <div class="pendingOutgoingBuddyRequestsHolder">
+              <h3>Pending Buddy Requests</h3>
+              <div class="pendingOutgoingBuddyRequests">
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+          <div class="addBuddyForm">
+            <form method="POST" action="#">
+              <label for="buddy_request_name">Send Buddy Request:</label><br>
+              <input id="buddy_request_name" placeholder="enter buddy name..." value="" class="rainbow-border buddy_request_name desktopInput" name="buddy_request_name" type="text" size="16"><br>
+              <button class="sendBuddyRequest desktopButton" type="submit">Send Buddy Request</button>
+            </form>
+            <br>
+            <div class="inviteBuddyHolder">
+              <span>Don't know any Buddy Names?</span><br>
+              <span><a class="inviteBuddy" href="#invite-buddy">Invite a Buddy!</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+
+<div id="window_buddy_message_0" class="abs window buddy_message" data-app="buddylist">
+  <div class="abs window_inner">
+    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+      <span class="float_left">
+        <img src="desktop/assets/images/icons/icon_buddylist_64.png" style="width: 16px; height: 16px;">
+        <span class="window-context-title">Chat</span>
+      </span>
+      <span class="float_right trafficLight">
+        <a href="#min" class="minWindow" title="Min Window">🟠</a>
+        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
+        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
+      </span>
+    </div>
+    <div class="abs window_content" style="top: 33px;">
+      <div class="chat_area">
+        <!--
+        <img class="acceptVideoCall" title="Accept Video Call" src="desktop/assets/images/icons/phonebooth.png" />
+        -->
+        <!-- <span title="End Video Call" class="endVideoCall emojiIcon context">🚫</span> -->
+
+        <img title="Start Video Call" class="startVideoCall context" src="desktop/assets/images/icons/icon_phone.png">
+        <div class="window_main buddy_message_main  message_main">
+          <div class="chatMessagesHolder">
+            <div class="no_chat_messages">
+              Your conversation has just started. You can send a message using the form below.
+            </div>
+            <div class="chat_messages">
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div class="window_bottom_chat">
+            <div class="buddy_send_message_chatcontrols_form send_message_chatcontrols_form">
+              <img title="Insert Audio" class="insertBuddySound chatControl" src="desktop/assets/images/icons/icon_soundrecorder_64.png"><!-- "/desktop/assets/images/icons/svg/1f3a4.svg" -->
+              <img title="Insert Animation" class="insertBuddyGif chatControl" src="/desktop/assets/images/icons/icon_gifstudio_64.png"><!-- "/desktop/assets/images/icons/svg/1f39e.svg" -->
+              <img title="Insert Paint" class="insertBuddyPaint chatControl" src="desktop/assets/images/icons/icon_paint_64.png"><!-- "/desktop/assets/images/icons/svg/1f3a8.svg" -->
+              <img title="Insert Snap" class="insertBuddySnap chatControl" src="/desktop/assets/images/icons/svg/1f4f7.svg">
+              <img title="Insert Emoji" class="desktopOnly emoji_picker_0 emojiPicker chatControl" src="/desktop/assets/images/icons/svg/1f600.svg">
+              <img title="Get Help" class="desktopOnly getHelp chatControl" src="/desktop/assets/images/icons/svg/1f9ae.svg">
+            </div>
+          <div class="buddy_send_message_form" style="padding-bottom: 0px;">
+            <form method="POST" action="" align="right" class="buddy_send_message_form" style="padding-bottom: 0px;">
+              <textarea name="buddy_message_text" class="buddy_message_text buddy_message_text_0" placeholder="" style="margin-top: 6px; margin-bottom: 6px;"></textarea>
+                <button name="buddy_message_submit" class="sendBuddyMessage" style="width: 9vw;">SEND</button>
+              <input name="buddy_message_from" class="buddy_message_from" type="hidden">
+              <input name="buddy_message_to" class="buddy_message_to" type="hidden">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="abs window_bottom">
+      Build: v4.20.69
+    </div>
+  </div>
+  <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div><style>
   .wallpaperSettings {
     padding-top: 16px;
     padding-left: 16px;
@@ -3169,4 +3169,4 @@ Begin Wizard Training</a></h3>
   <div id="shadowRender">
   </div>
 
-</div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) 0px 0px no-repeat; top: 784.8px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 704.797px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 47px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
+</div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="clippy" style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -2432px -1280px no-repeat; top: 784.8px; left: 1433.6px; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) -2560px -1280px no-repeat; display: block;"><div style="width: 128px; height: 128px; background: url(&quot;desktop/assets/js/clippy/Merlin/map.png&quot;) no-repeat; display: none;"></div></div></div><div class="clippy-balloon clippy-top-left" style="top: 706.797px; left: 1343.59px; display: none;"><div class="clippy-tip"></div><div class="clippy-content" style="height: 45px; width: 200px;">Welcome to Buddy Pond! I am Merlin. Please click around and enjoy.</div></div></body></html>
