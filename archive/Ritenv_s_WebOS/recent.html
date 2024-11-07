@@ -1,0 +1,252 @@
+<html><head><title>WebOS - Web Desktop</title>
+    <base href="/retro-desktop/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/desktop.css">
+    <link rel="stylesheet" href="./css/grid-12.css">
+    <link rel="stylesheet" href="./css/typography.css">
+
+<!--    <link rel="stylesheet" href="./css/mobile.css" />-->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <link rel="stylesheet" href="./third-party/uniform/css/uniform.default.css">
+
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.event.drag-2.2.js"></script>
+    <script type="text/javascript" src="./js/jquery.event.drop-2.2.js"></script>
+    <script type="text/javascript" src="./js/jquery.notice.js"></script>
+    <script type="text/javascript" src="third-party/uniform/jquery.uniform.min.js"></script>
+    
+
+    <script type="text/javascript" src="./js/desktop/DesktopUtil.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXIcon.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXLoader.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXNotify.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXDialog.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXTaskbarIcon.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXTaskbutton.js"></script>
+    <script type="text/javascript" src="./js/desktop/UXWindow.js"></script>
+    <script type="text/javascript" src="./js/General.js"></script>
+    <script type="text/javascript" src="./js/App.js"></script>
+
+    </head><body>
+        <div id="ux-desktop-wrapper">
+            
+            <div id="wallpaper">
+                <img src="./images/wallpapers/blue.jpg">
+            </div>
+            
+            <div class="ux-icon-holder" style="height: 941px;">
+                    <!-- placed here-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-766958667603" style="top: 0px; left: 0px;">
+                    <div class="ux-icon-graphic icon-typography"></div>
+                    <p class="ux-icon-title">HTML Elements</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-929152534236" style="top: 109px; left: 0px;">
+                    <div class="ux-icon-graphic icon-widget"></div>
+                    <p class="ux-icon-title">Widgets</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-739049679100" style="top: 218px; left: 0px;">
+                    <div class="ux-icon-graphic icon-table"></div>
+                    <p class="ux-icon-title">Tables</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-668199938780" style="top: 327px; left: 0px;">
+                    <div class="ux-icon-graphic icon-forms"></div>
+                    <p class="ux-icon-title">Forms</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-587770651257" style="top: 436px; left: 0px;">
+                    <div class="ux-icon-graphic icon-charts"></div>
+                    <p class="ux-icon-title">Charts</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-721283559246" style="top: 545px; left: 0px;" ux-id="api-practice">
+                    <div class="ux-icon-graphic icon-api-practice"></div>
+                    <p class="ux-icon-title">API Practice</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-858958672597" style="top: 654px; left: 0px;">
+                    <div class="ux-icon-graphic icon-terminal"></div>
+                    <p class="ux-icon-title">Practice Area</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-604146320368" style="top: 763px; left: 0px;" ux-id="other-websites-folder">
+                    <div class="ux-icon-graphic folder"></div>
+                    <p class="ux-icon-title">Favorite Websites</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="ux-elem-857698280151" style="top: 0px; left: 78px;" ux-id="games-folder">
+                    <div class="ux-icon-graphic folder"></div>
+                    <p class="ux-icon-title">Games</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            </div>
+            
+            <div class="ux-body">
+                    <!-- placed here-->
+            </div>
+            
+            <div class="ux-taskbar">
+                <div class="ux-taskbar-menu">
+                    <div class="ux-taskbar-menu-popup">
+                        <div class="ux-taskbar-title">
+                            <p>Riten Vagadiya</p>
+                        </div>
+                        <div class="ux-taskbar-icons">
+                            <a class="ux-taskbar-scroll-down"></a>
+                            <a class="ux-taskbar-scroll-up"></a>
+                            <div class="ux-taskbar-icon-holder-wrapper">
+                                <div class="ux-taskbar-icon-holder">
+
+                                
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-282445120171">
+                    <div class="ux-taskbar-icon-title icon-typography-16">HTML Elements</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-359431263789">
+                    <div class="ux-taskbar-icon-title icon-widget-16">Widgets</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-297322949941">
+                    <div class="ux-taskbar-icon-title icon-table-16">Tables</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-668681657052">
+                    <div class="ux-taskbar-icon-title icon-forms-16">Forms</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-155575049352">
+                    <div class="ux-taskbar-icon-title icon-charts-16">Charts</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-956861069195">
+                    <div class="ux-taskbar-icon-title icon-api-practice-16">API Practice</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="ux-elem-901129101228">
+                    <div class="ux-taskbar-icon-title icon-terminal-16">Practice Area</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ux-taskbar-config-holder">
+                            <div class="ux-taskbar-icon">
+                                <div class="ux-taskbar-icon-title icon-settings-16 ux-icon-class-small-replace">Settings</div>
+                            </div>
+                            <div class="ux-taskbar-icon">
+                                <div class="ux-taskbar-icon-title icon-close-16 ux-icon-class-small-replace close-all-windows">Close All</div>
+                            </div>
+                            <div class="ux-taskbar-icon">
+                                <div class="ux-taskbar-icon-title icon-logout-16 ux-icon-class-small-replace">Log Out</div>
+                            </div>
+                            <div class="ux-separator"></div>
+                            <div class="ux-taskbar-icon">
+                                <div class="ux-taskbar-icon-title icon-close-16 ux-icon-class-small-replace  close-active-window">Close Active</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ux-taskbar-menu-button"></div>
+                </div>
+                
+                <div class="ux-taskbar-quick-launch" style="left: 65px;">
+                    <a title="Show Desktop" class="ux-show-desktop"></a>
+                </div>
+                <div class="ux-taskbar-buttons" style="left: 95px; width: 1697px;">
+                    <!-- placed here-->
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="ux-templates">
+            
+            <div id="ux-taskbar-icon-template" class="ux-template">
+<!--                    below is the template for creating icons-->
+                <div class="ux-taskbar-icon" id="{ID}">
+                    <div class="ux-taskbar-icon-title ux-icon-class-small-replace">{title}</div>
+                </div>
+<!--                    above is the template for creating icons-->
+            </div>
+            
+            <div id="ux-icon-template" class="ux-template">
+<!--                    below is the template for creating icons-->
+                <div class="ux-icon" id="{ID}" style="">
+                    <div class="ux-icon-graphic ux-icon-class-replace"></div>
+                    <p class="ux-icon-title">{title}</p>
+                </div>
+<!--                    above is the template for creating icons-->
+            </div>
+            
+            <div id="ux-window-template" class="ux-template">
+<!--                    below is the template for creating windows-->
+                <div class="ux-window" style="display: none;" id="{ID}">
+                    
+                    <div class="ux-window-header" style="">
+                        <div class="ux-window-header-title ux-icon-class-small-replace">
+                            <p>{title}</p>
+                        </div>
+                        <div class="ux-window-header-controls">
+                            <a class="ux-controls-min"></a>
+                            <a class="ux-controls-max"></a>
+                            <a class="ux-controls-close"></a>
+                        </div>
+                    </div>
+                    <div class="ux-window-content" style="height: 259px;">
+
+                    </div>
+                    <div class="ux-window-status" style=""><p>{status}</p></div>
+                    <div class="ux-window-resizer"></div>
+                </div>
+<!--                    above is the template for creating windows--> 
+            </div>
+            
+            <div id="ux-taskbutton-template" class="ux-template">
+<!--                    below is the template for creating windows-->
+                <div class="ux-taskbar-button" id="{ID}">
+                    <div class="ux-taskbar-button-title ux-icon-class-small-replace">{title}</div>
+                </div>
+<!--                    above is the template for creating windows-->
+            </div>
+        </div>
+    
+    
+<div class="notice-wrap"><div class="notice-item-wrapper"><div class="notice-item notice" style=""><div class="notice-item-close">x</div><p>For best user experience, view your browser in Full Screen. (F11 in Windows, CMD+SHIFT+F in OSX</p></div></div></div></body></html>
