@@ -1,0 +1,300 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="_Yn7gBHkVoj2_uQvOKq4pYwQBqxmhFSCsgpr1GerRSc">
+    <meta name="description" content="Just like Windows11, Winbows11 lets you experience Windows11 UI and animations on your web browser!">
+    <meta property="twitter:image" content="https://winbows11.vercel.app/banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Winbows11">
+    <meta property="twitter:description" content="Just like Windows11, Winbows11 lets you experience Windows11 UI and animations on your web browser!">
+    <meta property="description" content="Just like Windows11, Winbows11 lets you experience Windows11 UI and animations on your web browser!">
+    <meta property="og:image" content="https://winbows11.vercel.app/banner.png">
+    <meta property="og:site_name" content="Winbows11">
+    <meta property="og:title" content="Winbows11">
+    <meta property="og:description" content="Just like Windows11, Winbows11 lets you experience Windows11 UI and animations on your web browser!">
+    <meta property="og:url" content="https://winbows11.vercel.app">
+    <title>Winbows11</title>
+    <script src="./fs.js"></script>
+    <link rel="icon" href="./favicon.ico">
+    
+    <style>
+        .confirm {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #d5e3edc7;
+            backdrop-filter: blur(32px);
+            padding: 4rem;
+        }
+
+        .confirm * {
+            cursor: default;
+        }
+
+        .confirm-window {
+            background-color: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(24px) saturate(1.25);
+            padding: 3rem;
+            border-radius: .5rem;
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            display: flex;
+        }
+
+        .confirm-symbol {
+            width: -webkit-fill-available;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confirm-content {
+            width: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1.5rem 1rem;
+        }
+
+        .confirm-symbol-bg {
+            background: linear-gradient(135deg, #0f82f4, #5A3CDA);
+            border-radius: 50%;
+            position: relative;
+            aspect-ratio: 1 / 1;
+            max-width: 18rem;
+            max-height: 18rem;
+            width: 60%;
+        }
+
+        .confirm-symbol-arrow {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -55%);
+            position: absolute;
+            width: 45%;
+            height: 45%;
+            color: #fff;
+        }
+
+        .confirm-title {
+            font-weight: 600;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .confirm-buttons {
+            position: sticky;
+            bottom: 0;
+            display: flex;
+            gap: .5rem;
+            padding-top: 1.5rem;
+            color: rgb(132, 132, 132);
+            justify-content: flex-end;
+        }
+
+        .confirm-button {
+            font-family: var(--winbows-font-default);
+            background: #0067c0;
+            border: 0;
+            border-radius: .375rem;
+            padding: .75rem 1.25rem;
+            color: #fff;
+            flex: 1;
+            display: block;
+            font-size: .875rem;
+            transition: all .1s ease-in-out;
+            max-width: 180px;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .confirm-button.outline {
+            background: #fff;
+            color: #0067c0;
+            border: 1.25px solid #0067c0;
+        }
+
+        .confirm-button.outline:hover {
+            background: #efefef;
+        }
+
+        .confirm-button:hover {
+            background: #025ba8;
+        }
+
+        .confirm-description {
+            font-size: 1.075rem;
+            overflow: auto;
+        }
+
+        .confirm-tip {
+            margin-top: auto;
+            position: sticky;
+            bottom: 0;
+            padding-top: 2rem;
+            color: rgb(110 110 110);
+            font-size: .875rem;
+        }
+
+        .confirm-learn-link {
+            color: unset;
+            text-decoration: underline;
+            cursor: help;
+        }
+    </style>
+<link rel="stylesheet" href="./index.css?timestamp=1732181370169" type="text/css"></head>
+
+<body style="background-image: url(&quot;./Winbows/bg/img0.jpg&quot;); transition: background-image 0.2s ease-in-out; background-position: center center; background-size: cover; background-repeat: no-repeat;">
+    <script>
+        function getJsonFromURL(url) {
+            if (!url) url = location.search;
+            var query = url.substr(1);
+            var result = {};
+            query.split("&").forEach(function (part) {
+                var item = part.split("=");
+                result[item[0]] = decodeURIComponent(item[1]);
+            });
+            return result;
+        }
+
+        if (localStorage.getItem('WINBOWS_REQUIRED') == 'REPAIR' && !getJsonFromURL()['embed']) {
+            location.href = `./repair.html?timestamp=${new Date().getTime()}`;
+        }
+
+        ; (async () => {
+            var DIRECTORIES = localStorage.getItem('WINBOWS_DIRECTORIES') || true;
+            window.needsUpdate = false;
+            window.build_id = localStorage.getItem('WINBOWS_BUILD_ID');
+
+            var runWinbows = function () { };
+            var scriptURL = `./index.js?timestamp=${new Date().getTime()}`;
+
+            if (!navigator.onLine) {
+                scriptURL = './index.js';
+                runWinbows = function () {
+                    var script = document.createElement('script');
+                    script.src = scriptURL;
+                    document.body.appendChild(script);
+                }
+            } else {
+                try {
+                    await fetch(scriptURL).then(res => {
+                        return res.text();
+                    }).then(file => {
+                        runWinbows = function () {
+                            new Function(file)();
+                        }
+                    }).catch(err => {
+                        scriptURL = './index.js';
+                        runWinbows = function () {
+                            var script = document.createElement('script');
+                            script.src = scriptURL;
+                            document.body.appendChild(script);
+                        }
+                    })
+                } catch (e) { }
+
+                try {
+                    await fetch(`./build.json?timestamp=${new Date().getTime()}`).then(res => {
+                        return res.json();
+                    }).then(async data => {
+                        const build_id = data.build_id;
+                        if (build_id != window.build_id) {
+                            window.needsUpdate = true;
+                        }
+                    }).catch(err => {
+                        window.needsUpdate = false;
+                    })
+                } catch (e) { }
+            }
+
+            if (window.needsUpdate == true && !getJsonFromURL()['embed']) {
+                document.body.style.backgroundImage = 'linear-gradient(transparent, transparent)'
+                document.body.style.transition = 'background-image .2s ease-in-out';
+
+                var confirm = document.createElement('div');
+                var confirmWindow = document.createElement('div');
+                var confirmSymbol = document.createElement('div');
+                var confirmContent = document.createElement('div');
+                var confirmTitle = document.createElement('div');
+                var confirmDescription = document.createElement('div');
+                var confirmTip = document.createElement('div');
+                var confirmButtons = document.createElement('div');
+                var confirmCancel = document.createElement('button');
+                var confirmInstall = document.createElement('button');
+
+                confirm.className = 'confirm';
+                confirmWindow.className = 'confirm-window';
+                confirmSymbol.className = 'confirm-symbol';
+                confirmContent.className = 'confirm-content';
+                confirmTitle.className = 'confirm-title';
+                confirmDescription.className = 'confirm-description';
+                confirmTip.className = 'confirm-tip';
+                confirmButtons.className = 'confirm-buttons';
+                confirmCancel.className = 'confirm-button outline';
+                confirmInstall.className = 'confirm-button';
+
+                document.body.appendChild(confirm);
+                confirm.appendChild(confirmWindow);
+                confirmWindow.appendChild(confirmSymbol);
+                confirmWindow.appendChild(confirmContent);
+                confirmContent.appendChild(confirmTitle);
+                confirmContent.appendChild(confirmDescription);
+                confirmContent.appendChild(confirmTip);
+                confirmContent.appendChild(confirmButtons);
+                confirmButtons.appendChild(confirmCancel);
+                confirmButtons.appendChild(confirmInstall);
+
+                confirmTitle.innerHTML = 'Confirm to install Winbows11?';
+                confirmDescription.innerHTML = "<div>Installing Winbows11 on your device can make it run more smoothly than using the Internet. The size of Winbows11 is about 150MB, and the installation process takes about 2 minutes to complete. </div><br><div>If you don’t want to install it, you can also just use the Internet to experience Winbows11! </div>";
+                confirmTip.innerHTML = "<div>If you choose to install, we will save the necessary files for Winbows11 to <a href='https://developer.mozilla.org/zh-TW/docs/Web/API/IndexedDB_API/Using_IndexedDB' in the browser target='_blank' class='confirm-learn-link'>Indexed DB</a>. </div>";
+                confirmCancel.innerHTML = 'Refuse';
+                confirmInstall.innerHTML = 'Install';
+                confirmSymbol.innerHTML = '<div class="confirm-symbol-bg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirm-symbol-arrow"><path d="M15 6v10h4l-7 7-7-7h4V6h6z"/></svg></div>';
+
+                var bg = new Image();
+                bg.src = './Winbows/bg/img0.jpg';
+                bg.onload = () => {
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundRepeat = 'no-repeat';
+                    document.body.style.backgroundImage = 'url(./Winbows/bg/img0.jpg)';
+                }
+
+                confirmCancel.addEventListener('click', () => {
+                    runWinbows();
+                })
+                confirmInstall.addEventListener('click', () => {
+                    location.href = `./install.html?timestamp=${new Date().getTime()}`;
+                })
+            } else {
+                runWinbows();
+            }
+        })();
+
+        try {
+            var styleURL = `./index.css?timestamp=${new Date().getTime()}`;
+            var style = document.createElement('link');
+            style.rel = 'stylesheet';
+            style.href = styleURL;
+            style.type = 'text/css';
+            style.onload = () => {
+                document.head.querySelector('[data-tag="style-main"]').remove();
+            }
+            document.head.appendChild(style);
+        } catch (e) { };
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none', scope: './' }).then((register) => {
+                register.update();
+                console.log('register success')
+            }, (err) => console.log('register fail:', err));
+        }
+    </script>
+
+
+<div class="confirm"><div class="confirm-window"><div class="confirm-symbol"><div class="confirm-symbol-bg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirm-symbol-arrow"><path d="M15 6v10h4l-7 7-7-7h4V6h6z"></path></svg></div></div><div class="confirm-content"><div class="confirm-title">Confirm to install Winbows11?</div><div class="confirm-description"><div>Installing Winbows11 on your device can make it run more smoothly than using the Internet. The size of Winbows11 is about 150MB, and the installation process takes about 2 minutes to complete. </div><br><div>If you don’t want to install it, you can also just use the Internet to experience Winbows11! </div></div><div class="confirm-tip"><div>If you choose to install, we will save the necessary files for Winbows11 to <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/IndexedDB_API/Using_IndexedDB" in="" the="" browser="" target="_blank" class="confirm-learn-link">Indexed DB</a>. </div></div><div class="confirm-buttons"><button class="confirm-button outline">Refuse</button><button class="confirm-button">Install</button></div></div></div></div></body></html>

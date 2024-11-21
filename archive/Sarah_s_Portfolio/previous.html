@@ -12,16 +12,12 @@
           <img src="images/cutlery.svg" alt="fork" onclick="openWebsite('https://designkitchen.dev')">
           <span>Design<br>Kitchen</span>
         </div>
-        <!--
+
         <div class="icon">
-          <img
-            src="images/cook.svg"
-            alt="cook"
-            onclick="openWebsite('https://www.chefsarah.ca')"
-          />
-          <span>Food<br />Blog</span>
+          <img src="images/cook.svg" alt="cook" onclick="openWebsite('https://www.chefsarah.ca')">
+          <span>Food<br>Blog</span>
         </div>
--->
+
         <div class="icon">
           <img src="images/cb.svg" alt="cookbook" onclick="window.open('https://a.co/d/8ORyEI7', '_blank')">
           <span>Cookbook</span>
@@ -30,12 +26,16 @@
           <img src="images/java.svg" alt="buy me a coffee" onclick="window.open('https://www.buymeacoffee.com/chfsrh')">
           <span>Buy Me<br>A Tea</span>
         </div>
-
+        <!--
         <div class="icon">
-          <img src="images/shirt.svg" alt="buy some cool clothes" onclick="window.open('https://www.s4rah.com/')">
+          <img
+            src="images/shirt.svg"
+            alt="buy some cool clothes"
+            onclick="window.open('https://www.s4rah.com/')"
+          />
           <span>SWAG</span>
         </div>
-
+      -->
         <div class="special-div, icon">
           <img src="images/icon.svg" alt="icon maker" onclick="openWebsite('https://webchef.dev/icon')">
           <span>Icon Maker</span>
@@ -74,6 +74,11 @@
         <div class="icon">
           <img src="images/bomb.svg" alt="bomb" onclick="openWebsite('https://webchef.dev/emojis.html')">
           <span>Emoji<br>Sweep</span>
+        </div>
+
+        <div class="icon">
+          <img src="images/twitterBird.svg" alt="bird" onclick="openWebsite('https://webchef.dev/tweetyFlap.html')">
+          <span>Tweety<br>Flap</span>
         </div>
 
         <div class="icon">
@@ -135,9 +140,10 @@
           <img src="images/rockpaper.svg" alt="paper rock scissors" onclick="openWebsite('https://webchef.dev/rockpaper.html')">
           <span>Rock<br>Paper<br>Scissors</span>
         </div>
+
         <div class="icon">
-          <img src="images/resume.svg" alt="resume" onclick="openWebsite('https://webchef.dev/resume')">
-          <span>Resume</span>
+          <img src="images/suppporters.svg" alt="supporters" onclick="openWebsite('https://webchef.dev/supporters.html')">
+          <span>Supporters</span>
         </div>
 
         <div class="icon">
@@ -151,20 +157,36 @@
         </div>
 
         <div class="icon">
+          <img src="images/fire.svg" alt="fire water plant simulation" onclick="openWebsite('https://webchef.dev/fwpSim.html')">
+          <span>WFP<br>Sim</span>
+        </div>
+
+        <div class="icon">
           <img src="images/panel.svg" alt="control panel" onclick="openWebsite('https://webchef.dev/controlPanel.html')">
           <span>Control<br>Panel</span>
         </div>
+        <div class="icon">
+          <img src="images/resume.svg" alt="resume" onclick="openWebsite('https://webchef.dev/resume')">
+          <span>Resume</span>
+        </div>
 
+        <div class="icon">
+          <img src="images/ceo.svg" alt="ceo btw" onclick="openWebsite('https://webchef.dev/ceobtw.html')">
+          <span>CEO<br>BTW</span>
+        </div>
         <div class="icon">
           <img src="images/trash.svg" alt="trash" onclick="openWebsite('https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)')">
           <span>Trash</span>
         </div>
       </div>
-      <iframe id="websiteFrame" style="display: none" width="100%" height="600px" frameborder="0"></iframe>
+      <div class="iframe-container">
+        <div class="iframe-header">
+          <button onclick="closeWebsite()" id="closeButton">X</button>
+        </div>
+        <iframe id="websiteFrame" style="display: none" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
 
-      <button onclick="closeWebsite()" id="closeButton">Close</button>
-
-      <div class="clock" id="clock">10:05:33</div>
+      <div class="clock" id="clock">10:13:04</div>
     </main>
 
     <div class="windows-bar">
