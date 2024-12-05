@@ -3,43 +3,80 @@
     <meta name="description" content="GopalOS is a web-based operating system with a JSON-based filesystem and programs such as a File Manager, Text Editor, search engine, and more!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Emoji">
+    <link rel="stylesheet" href="/fonts/fonts.css">
     <style>
+    /* Material Symbols */
+    @font-face {
+      font-family: "Material Symbols Outlined";
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v220/kJF4BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZZLsYEpzC_1ver5Y0.woff2) format("woff2");
+    }
+
+    .matsymb,
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      /*font-size: 24px;
+      line-height: 1;*/
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .window-title .matsymb,
     .window-title .material-symbols-outlined {
-      line-height: 0px;
+      font-size: 24px;
+      line-height: 0;
       transform: translate(0, 7px);
     }
     
+    .taskbar-item .matsymb, .tray-item .matsymb,
     .taskbar-item .material-symbols-outlined, .tray-item .material-symbols-outlined {
       line-height: 50px;
       font-size: 34px;
     }
     </style>
+    <style>
+      :root {
+        --system-font-main: "Segoe UI", "Arial", sans-serif;
+        --system-font-mono: "Consolas", monospace;
+      }
+    </style>
     <title>GopalOS</title>
   </head>
   <body>
     <div id="logo">GopalOS™<br><div style="font-size: 16px; text-align: center;">a project by <img id="logo_cdb-img" src="data:image/png;base64,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"> cerebraldatabank</div></div>
-    <div id="desktop-notice"><span id="desktop-notice-version">GopalOS v0.31.0</span><br><span>You are using the latest version. Some features may be unstable.</span></div>
+    <div id="desktop-notice"><span id="desktop-notice-version">GopalOS v0.32.0</span><br><span>You are using the latest version. Some features may be unstable.</span></div>
     <div id="taskbar">
-      <div id="taskbar-start"><span class="material-symbols-outlined">radio_button_checked</span></div>
+      <div id="taskbar-start"><span class="matsymb">radio_button_checked</span></div>
       <div id="taskbar-items">
-        <div class="taskbar-item" data-path="/apps/file-manager/file-manager" data-winid="app_file-manager_window" data-pinned="true"><span class="material-symbols-outlined">folder</span></div>
-        <div class="taskbar-item" data-path="/apps/terminal/terminal" data-winid="app_terminal_window" data-pinned="true"><span class="material-symbols-outlined">attach_money</span></div>
-        <div class="taskbar-item" data-path="/apps/js-console/js-console" data-winid="app_js-console_window" data-pinned="true"><span class="material-symbols-outlined">terminal</span></div>
-        <div class="taskbar-item" data-path="/apps/bing/bing" data-winid="app_bing_window" data-pinned="true"><span class="material-symbols-outlined">search</span></div>
+        <div class="taskbar-item" data-path="/apps/file-manager/file-manager" data-winid="app_file-manager_window" data-pinned="true"><span class="matsymb">folder</span></div>
+        <div class="taskbar-item" data-path="/apps/terminal/terminal" data-winid="app_terminal_window" data-pinned="true"><span class="matsymb">attach_money</span></div>
+        <div class="taskbar-item" data-path="/apps/js-console/js-console" data-winid="app_js-console_window" data-pinned="true"><span class="matsymb">terminal</span></div>
+        <div class="taskbar-item" data-path="/apps/bing/bing" data-winid="app_bing_window" data-pinned="true"><span class="matsymb">search</span></div>
         <!--<div class="taskbar-item" data-path="/apps/jumper/jumper" data-winid="app_jumper_window" data-pinned="true">&#x1F3C3;&#xFE0E;</div>-->
-        <div class="taskbar-item" data-path="/apps/settings/settings" data-winid="app_settings_window" data-pinned="true"><span class="material-symbols-outlined">settings</span></div>
-        <div class="taskbar-item" data-path="/apps/app-center/app-center" data-winid="app_app-center_window" data-pinned="true"><span class="material-symbols-outlined">storefront</span></div>
-        <div class="taskbar-item" data-path="/apps/text-editor/text-editor" data-winid="app_text-editor_window" data-pinned="true"><span class="material-symbols-outlined">edit</span></div>
-        <div class="taskbar-item" data-path="/system/pkg-install/pkg-install" data-winid="app_pkg-install_window" data-pinned="true"><span class="material-symbols-outlined">download</span></div>
+        <div class="taskbar-item" data-path="/apps/settings/settings" data-winid="app_settings_window" data-pinned="true"><span class="matsymb">settings</span></div>
+        <div class="taskbar-item" data-path="/apps/app-center/app-center" data-winid="app_app-center_window" data-pinned="true"><span class="matsymb">storefront</span></div>
+        <div class="taskbar-item" data-path="/apps/text-editor/text-editor" data-winid="app_text-editor_window" data-pinned="true"><span class="matsymb">edit</span></div>
+        <div class="taskbar-item" data-path="/system/pkg-install/pkg-install" data-winid="app_pkg-install_window" data-pinned="true"><span class="matsymb">download</span></div>
       </div>
       <div id="taskbar-tray">
-        <div class="tray-item status-badge status-badge-error" id="lstor-mgr_trayicon"><span class="material-symbols-outlined">hard_drive</span></div>
-        <div class="tray-item" id="app_sys-perf_trayicon" onclick="getRef('/apps/sys-perf/sys-perf')();"><span class="material-symbols-outlined">speed</span></div>
+        <div class="tray-item status-badge status-badge-error" id="lstor-mgr_trayicon"><span class="matsymb">hard_drive</span></div>
+        <div class="tray-item" id="app_sys-perf_trayicon" onclick="getRef('/apps/sys-perf/sys-perf')();"><span class="matsymb">speed</span></div>
         <div class="tray-item" id="taskbar-datetime" style="text-align: center;">
-          <div style="font-size: 20px; line-height: 35px;" id="taskbar-clock-time">10:30:29</div>
-          <div style="font-size: 12px; line-height: 0;" id="taskbar-clock-date">Thu 2024-11-28</div>
+          <div style="font-size: 20px; line-height: 35px;" id="taskbar-clock-time">09:09:09</div>
+          <div style="font-size: 12px; line-height: 0;" id="taskbar-clock-date">Thu 2024-12-05</div>
         </div>
-        <div class="tray-item status-badge status-badge-good" id="network_status"><span class="material-symbols-outlined">language</span></div>
+        <div class="tray-item status-badge status-badge-good" id="network_status"><span class="matsymb">language</span></div>
       </div>
     </div>
     <div id="start-menu" style="display: none;">
@@ -59,7 +96,7 @@
     </div>
     <div id="windows"><div class="window" id="bootsetup_window" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border-radius: 0; z-index: 500;" data-win-immovable="">
         <div class="window-title">Setup GopalOS</div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif; padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px);">
+        <div class="window-content" style="font-family: var(--system-font-main); padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px);">
           <div style="font-size: 30px;">GopalOS Setup</div>
           <div>Boot options:</div>
           <hr>
@@ -70,7 +107,7 @@
           <div style="margin-top: 10px; margin-bottom: 10px;">Note: Only the contents of the /home folder are stored.</div>
           <div id="bootsetup_params_notice" style="margin-top: 10px; margin-bottom: 10px; display: none; background: #FFA500; border: 2px solid #9D6600; border-radius: 8px; padding: 10px; max-width: 450px;">
             <div>⚠︎ GopalOS was launched with the following boot parameters:</div>
-            <div id="bootsetup_params" style="font-family: 'Consolas', monospace; margin-left: 20px;"></div>
+            <div id="bootsetup_params" style="font-family: var(--system-font-mono); margin-left: 20px;"></div>
             <button onclick="location.search = '';" style="margin-top: 10px;">Relaunch without boot parameters</button>
           </div>
           <input type="password" style="width: 200px;" placeholder="Enter a password to use..." oninput="hash(this.value).then(p => {os.passwd = p; initCrypto(p);})">
@@ -105,7 +142,7 @@
       border-radius: 4px;
       padding: 5px 10px;
       min-width: 60px;
-      font: 12px "Segoe UI", "Arial", sans-serif;
+      font: 12px var(--system-font-main);
       text-align: center;
       text-decoration: none;
       cursor: default;
@@ -139,7 +176,7 @@
       background: #EEE;
       border: none;
       border-radius: 4px;
-      font: 20px "Segoe UI", "Arial", sans-serif !important;
+      font: 20px var(--system-font-main) !important;
       line-height: 28px;
       font-weight: bold;
       text-align: center;
@@ -168,7 +205,7 @@
       border-radius: 0;
     }
     select {
-      font: 16px "Segoe UI", "Arial", sans-serif;
+      font: 16px var(--system-font-main);
       background: #FFF;
       border: 2px solid #EEE;
       border-radius: 4px;
@@ -265,7 +302,7 @@
     .toggle::before, .toggle-switch::before {
       content: "ON OFF";
       text-transform: uppercase;
-      font: bold 10px Arial, sans-serif;
+      font: bold 10px var(--system-font-main);
       white-space: nowrap;
       display: block;
       position: absolute;
@@ -302,13 +339,13 @@
       color: #000;
       min-width: 200px;
       min-height: 10px;
-      font: 14px "Segoe UI", "Arial", sans-serif;
+      font: 14px var(--system-font-main);
       display: none;
       z-index: 200;
     }
     .popup-menu-item {
       background: #FFF;
-      font: 14px "Segoe UI", "Arial", sans-serif;
+      font: 14px var(--system-font-main);
       padding: 5px;
       user-select: none;
     }
@@ -344,11 +381,11 @@
     }
     .popup-menu-small {
       min-width: 130px;
-      font: 12px "Segoe UI", "Arial", sans-serif;
+      font: 12px var(--system-font-main);
     }
     .popup-menu-small .popup-menu-item {
       padding: 2px;
-      font: 12px "Segoe UI", "Arial", sans-serif;
+      font: 12px var(--system-font-main);
     }
     .menubar {
       display: flex;
@@ -357,7 +394,8 @@
       scrollbar-width: thin;
     }
     #start-menu {
-      background: #222;
+      background: #222D;
+      backdrop-filter: blur(4px);
       color: #FFF;
       border: none;
       border-radius: 0 4px 0 0;
@@ -369,7 +407,7 @@
       padding: 10px;
       box-shadow: 0 0 20px 0 #2228;
       z-index: 300;
-      font-family: "Segoe UI", "Arial", sans-serif;
+      font-family: var(--system-font-main);
     }
     #lstor-mgr_menu {
       background: #222;
@@ -384,7 +422,7 @@
       padding: 10px;
       box-shadow: 0 0 20px 0 #2228;
       z-index: 300;
-      font-family: "Segoe UI", "Arial", sans-serif;
+      font-family: var(--system-font-main);
     }
     #ctx-menu {
       z-index: 410;
@@ -398,7 +436,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font: 100px "Segoe UI", "Arial", sans-serif;
+      font: 100px var(--system-font-main);
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -416,7 +454,7 @@
       position: fixed;
       bottom: 60px;
       right: 10px;
-      font: 12px "Segoe UI", "Arial", sans-serif;
+      font: 12px var(--system-font-main);
       text-align: right;
       color: #000;
     }
@@ -436,7 +474,7 @@
       flex-wrap: nowrap;
     }
     #taskbar-datetime {
-      font-family: "Segoe UI", "Arial", sans-serif;
+      font-family: var(--system-font-main);
     }
     #taskbar-tray, #taskbar-items {
       display: flex;
@@ -450,7 +488,7 @@
       color: #FFF;
       min-width: 50px;
       height: 50px;
-      font: 30px "Segoe UI", "Arial", sans-serif;
+      font: 30px var(--system-font-main);
       text-align: center;
       line-height: 50px;
       display: inline-block;
@@ -474,7 +512,7 @@
       height: 50px;
       padding-left: 5px;
       padding-right: 5px;
-      font: 30px "Segoe UI", "Arial", sans-serif;
+      font: 30px var(--system-font-main);
       text-align: center;
       line-height: 50px;
       display: block;
@@ -490,7 +528,7 @@
       background: transparent;
       color: transparent;
       border-radius: 4px;
-      font: 12px "Segoe UI", "Arial", sans-serif;
+      font: 12px var(--system-font-main);
       text-align: center;
       width: 16px;
       height: 16px;
@@ -558,7 +596,8 @@
       background: #008CCC;
     }
     .window {
-      background: #555;
+      background: #555D;
+      backdrop-filter: blur(4px);
       color: #FFF;
       border: none;
       border-radius: 4px;
@@ -572,7 +611,7 @@
     .window-title {
       display: inline-block;
       color: #FFF;
-      font-family: "Segoe UI", "Arial", sans-serif;
+      font-family: var(--system-font-main);
       position: absolute;
       top: 3px;
       left: 5px;
@@ -587,7 +626,7 @@
     .window-controls {
       display: inline-block;
       color: #FFF;
-      font-family: "Consolas", monospace;
+      font-family: "Noto Sans Symbols 2", "Noto Emoji", "Segoe UI", sans-serif;
       position: absolute;
       top: 0;
       right: 0;
@@ -615,7 +654,7 @@
     }
     .window-control span {
       font-size: 14px;
-      line-height: 30px;
+      line-height: 35px;
     }
     .window-control-close {
       background: transparent;
@@ -691,28 +730,28 @@
       apps: {
         "file-manager": {
           name: "File Manager",
-          icon: `<span class="material-symbols-outlined">folder</span>`,
+          icon: `<span class="matsymb">folder</span>`,
           desc: "The GopalOS file manager. This application is usually included with GopalOS.",
           globalID: "GopalOS.System.FileManager",
           version: "v4.2.1"
         },
         "terminal": {
           name: "Terminal",
-          icon: `<span class="material-symbols-outlined">attach_money</span>`,
+          icon: `<span class="matsymb">attach_money</span>`,
           desc: "The GopalOS terminal. This application is usually included with GopalOS.",
           globalID: "GopalOS.System.Terminal",
           version: "v1.4.1"
         },
         "js-console": {
           name: "JS Console",
-          icon: `<span class="material-symbols-outlined">terminal</span>`,
+          icon: `<span class="matsymb">terminal</span>`,
           desc: "The GopalOS JavaScript console. This application is usually included with GopalOS.",
           globalID: "GopalOS.System.JSConsole",
           version: "v2.1.1"
         },
         "settings": {
           name: "Settings",
-          icon: `<span class="material-symbols-outlined">settings</span>`,
+          icon: `<span class="matsymb">settings</span>`,
           desc: "The GopalOS settings application. This application is usually included with GopalOS.",
           globalID: "GopalOS.System.Settings",
           version: "v1.2.1"
@@ -726,35 +765,35 @@
         },
         "sys-perf": {
           name: "System Performance",
-          icon: `<span class="material-symbols-outlined">speed</span>`,
+          icon: `<span class="matsymb">speed</span>`,
           desc: "A program for viewing and testing system performance. This application is usually included with GopalOS.",
           globalID: "GopalOS.SystemPerformance",
           version: "v1.0.0-beta.2"
         },
         "app-manager": {
           name: "App Manager",
-          icon: `<span class="material-symbols-outlined">apps</span>`,
+          icon: `<span class="matsymb">apps</span>`,
           desc: "A program for managing/uninstalling programs. This application is usually included with GopalOS.",
           globalID: "GopalOS.System.AppManager",
           version: "v2.0.1"
         },
         "app-center": {
           name: "App Center",
-          icon: `<span class="material-symbols-outlined">storefront</span>`,
+          icon: `<span class="matsymb">storefront</span>`,
           desc: "A program for managing/uninstalling programs. This application is usually included with GopalOS.",
           globalID: "GopalOS.AppCenter",
           version: "v1.0.3"
         },
         "text-editor": {
           name: "Text Editor",
-          icon: `<span class="material-symbols-outlined">edit</span>`,
+          icon: `<span class="matsymb">edit</span>`,
           desc: "A program that can edit text files. Supported filetypes: txt, css, cfg, json",
           globalID: "GopalOS.TextEditor",
-          version: "v1.4.1"
+          version: "v2.0.0-beta"
         },
         "bing": {
           name: "Microsoft\u00AE Bing\u00AE",
-          icon: `<span class="material-symbols-outlined">search</span>`,
+          icon: `<span class="matsymb">search</span>`,
           desc: "A GopalOS web app for Microsoft\u00AE Bing\u00AE",
           globalID: "GopalOS.WebApp.MicrosoftBing",
           version: "v1.1.2"
@@ -775,7 +814,7 @@
         },
         "web-app-creator": {
           name: "Web App Creator",
-          icon: `<span class="material-symbols-outlined">language</span>`,
+          icon: `<span class="matsymb">language</span>`,
           desc: "A utility for creating GopalOS web apps. This application is usually included with GopalOS.",
           globalID: "GopalOS.WebAppCreator",
           version: "v1.2.3"
@@ -812,7 +851,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">folder</span>`
+                  content: `<span class="matsymb">folder</span>`
                 },
                 "load": {
                   type: "js",
@@ -897,7 +936,7 @@
           height: 30px;
           border-radius: 0;
           padding: 5px;
-          font: 15px "Consolas", monospace;
+          font: 15px var(--system-font-mono);
         }
         #app_file-manager_content {
           width: calc(100% - 151px);
@@ -915,7 +954,7 @@
         #app_file-manager_sidebar div:not(.app_file-manager_sidebar-heading) {
           width: 140px;
           height: 30px;
-          font: 15px "Segoe UI", "Arial", sans-serif;
+          font: 15px var(--system-font-main);
           background: #FFF;
           line-height: 30px;
           padding-left: 10px;
@@ -929,7 +968,7 @@
         .app_file-manager_sidebar-heading {
           width: 140px;
           height: 30px;
-          font: bold 15px "Segoe UI", "Arial", sans-serif;
+          font: bold 15px var(--system-font-main);
           background: #FFF;
           line-height: 30px;
           padding-left: 10px;
@@ -939,7 +978,7 @@
           color: #000;
           border-bottom: 1px solid #EEE;
           padding: 10px;
-          font: 20px "Consolas", monospace;
+          font: 20px var(--system-font-mono);
           cursor: default;
         }
         .app_file-manager_item:hover {
@@ -957,7 +996,7 @@
           min-height: 100px;
           padding: 10px;
           margin: 10px;
-          font: 20px "Consolas", monospace;
+          font: 20px var(--system-font-mono);
           text-align: center;
           cursor: default;
         }
@@ -968,7 +1007,7 @@
           background: #CCC;
         }
         .app_file-manager_details {
-          font: 14px "Consolas", monospace;
+          font: 14px var(--system-font-mono);
           height: 30px;
           line-height: 30px;
           border-bottom: 1px solid #EEE;
@@ -1079,7 +1118,7 @@
                         getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`Value:<br><br><div style="font: 15px 'Consolas', monospace; white-space: pre;">${escapeHTML(JSON.stringify(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`), null, 2))}</div>`);
+                        msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(JSON.stringify(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`), null, 2))}</div>`);
                       }
                     }
                     else if (getRef("/system/text-filetypes").includes(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type)) {
@@ -1087,30 +1126,30 @@
                         getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`Value:<br><br><div style="font: 15px 'Consolas', monospace; white-space: pre-wrap;">${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
+                        msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
                       }
                     }
                     // TODO: can possibly remove below two cases
                     else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "css") {
-                      msgbox(`Value:<br><br><div style="font: 15px 'Consolas', monospace; white-space: pre-wrap;">${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
+                      msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
                     }
                     else if (["js", "ajs"].includes(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type)) {
                       if (getRef("/apps/text-editor/text-editor")) {
                         getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`JavaScript content:<br><br><div style="font: 15px 'Consolas', monospace; white-space: pre;">${escapeHTML(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
+                        msgbox(`JavaScript content:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
                       }
                     }
                     else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "bin") {
-                      msgbox(`Value (hexadecimal):<br><br><div style="font: 15px 'Consolas', monospace; white-space: pre-wrap;">${[...getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)].map(b => b.toString(16).padStart(2, "0").toUpperCase()).join(" ")}</div>`);
+                      msgbox(`Value (hexadecimal):<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${[...getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)].map(b => b.toString(16).padStart(2, "0").toUpperCase()).join(" ")}</div>`);
                     }
                     else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "html") {
                       if (getRef("/apps/text-editor/text-editor")) {
                         getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`HTML code:<br><br><div style="font: 15px 'Consolas', monospace; white-space: pre;">${escapeHTML(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
+                        msgbox(`HTML code:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
                       }
                     }
                     else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "pgm") {
@@ -1207,7 +1246,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">edit</span>`
+                  content: `<span class="matsymb">edit</span>`
                 },
                 "load": {
                   type: "js",
@@ -1217,15 +1256,15 @@
                         type: "json",
                         content: {
                           "allowPGMEditing": false,
-                          "checkSpelling": true
+                          "checkSpelling": true,
+                          "fontFamily": "Commit Mono Custom",
+                          "fontSize": "12pt",
+                          "pageMargin": "0.1in"
                         }
                       }
                     });
-                    if (getRef("/home/appdata/text-editor/options").checkSpelling == false) {
-                      document.getElementById("app_text-editor_editor").spellcheck = false;
-                      document.getElementById("app_text-editor_checkspelling").classList.remove("popup-menu-item-checked");
-                    }
-                    else {}
+                    getRef("/apps/text-editor/set-options")();
+                    const options = getRef("/home/appdata/text-editor/options");
                     document.getElementById("app_text-editor_editor").addEventListener("keydown", function(event) {
                         if (event.key != "Tab") {
                             return true;
@@ -1237,6 +1276,63 @@
                         this.value = this.value.slice(0, startPos) + tabSep + this.value.slice(endPos);
                         this.selectionStart = this.selectionEnd = startPos + tabSep.length;
                     });
+
+                    document.getElementById("app_text-editor_checkspelling").addEventListener("click", function() {
+                      const oldVal = options.checkSpelling;
+                      options.checkSpelling = !oldVal;
+                      getRef("/apps/text-editor/set-options")();
+                    });
+
+                    const fonts = Object.keys(getRef("/system/fonts"));
+                    let fontSelHTML = ``;
+                    for (let ff of fonts) {
+                      fontSelHTML += `<option value="${ff}" style="font-family: '${ff}';">${ff}</option>`;
+                    }
+                    document.getElementById("app_text-editor_settings-font-family").innerHTML = fontSelHTML;
+
+                    document.getElementById("app_text-editor_settings-font-family").value = options.fontFamily;
+                    document.getElementById("app_text-editor_settings-font-size").value = options.fontSize;
+                    document.getElementById("app_text-editor_settings-page-margin").value = options.pageMargin;
+
+                    document.getElementById("app_text-editor_settings-font-family").addEventListener("change", function() {
+                      options.fontFamily = this.value;
+                      getRef("/apps/text-editor/set-options")();
+                    });
+                    document.getElementById("app_text-editor_settings-font-size").addEventListener("change", function() {
+                      options.fontSize = this.value;
+                      getRef("/apps/text-editor/set-options")();
+                    });
+                    document.getElementById("app_text-editor_settings-page-margin").addEventListener("change", function() {
+                      options.pageMargin = this.value;
+                      getRef("/apps/text-editor/set-options")();
+                    });
+
+                    document.getElementById("app_text-editor_settings-btn").addEventListener("click", function() {
+                      document.getElementById("app_text-editor_settings-pane").style.display = "block";
+                    });
+                  }
+                },
+                "set-options": {
+                  type: "js",
+                  content: function() {
+                    const options = getRef("/home/appdata/text-editor/options");
+                    if (options.checkSpelling == false) {
+                      document.getElementById("app_text-editor_editor").spellcheck = false;
+                      document.getElementById("app_text-editor_checkspelling").classList.remove("popup-menu-item-checked");
+                    }
+                    else {
+                      document.getElementById("app_text-editor_editor").spellcheck = true;
+                      document.getElementById("app_text-editor_checkspelling").classList.add("popup-menu-item-checked");
+                    }
+                    if (options.fontFamily) {
+                      document.getElementById("app_text-editor_editor").style.setProperty("--font-family", `"${options.fontFamily.replace(/"/g, "")}", var(--system-font-mono)`);
+                    }
+                    if (options.fontSize) {
+                      document.getElementById("app_text-editor_editor").style.setProperty("--font-size", options.fontSize);
+                    }
+                    if (options.pageMargin) {
+                      document.getElementById("app_text-editor_editor").style.setProperty("--page-margin", options.pageMargin);
+                    }
                   }
                 },
                 "tabsep": {
@@ -1330,19 +1426,53 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif; overflow: hidden; float: left;">
-          <input type="text" id="app_text-editor_filepath" style="border: 1px solid #000; padding: 5px; font: 16px 'Segoe UI', 'Arial', sans-serif; width: calc(100% - 260px); border-radius: 0; display: inline-block;" value="" placeholder="Enter absolute path to file...">
+        <div class="window-content" style="font-family: var(--system-font-main); overflow: hidden; float: left;">
+          <input type="text" id="app_text-editor_filepath" style="border: 1px solid #000; padding: 5px; font: 16px var(--system-font-main); width: calc(100% - 260px); border-radius: 0; display: inline-block;" value="" placeholder="Enter absolute path to file...">
           <button style="width: 100px;" onclick="getRef('/apps/text-editor/open')(document.getElementById('app_text-editor_filepath').value);">Open</button>
           <button style="width: 100px;" onclick="getRef('/apps/text-editor/save')(document.getElementById('app_text-editor_filepath').value);">Save</button>
           <div id="app_text-editor_menu-btn" class="popup-btn square-btn" data-popup-id="app_text-editor_menu">&#x00B7;&#x00B7;&#x00B7;</div>
           <div id="app_text-editor_menu" class="popup-menu" data-popup-origin-id="app_text-editor_menu-btn" style="position: absolute; right: 7px; top: 33px;">
-            <div class="popup-menu-item popup-menu-item-checked" id="app_text-editor_checkspelling" onclick="if (getRef('/home/appdata/text-editor/options').checkSpelling == false) {getRef('/home/appdata/text-editor/options').checkSpelling = true; document.getElementById('app_text-editor_editor').spellcheck = true; this.classList.add('popup-menu-item-checked');} else {getRef('/home/appdata/text-editor/options').checkSpelling = false; document.getElementById('app_text-editor_editor').spellcheck = false; this.classList.remove('popup-menu-item-checked');}">Check Spelling</div>
+            <div class="popup-menu-item popup-menu-item-checked" id="app_text-editor_checkspelling">Check Spelling</div>
+            <div class="popup-menu-item" id="app_text-editor_settings-btn">More settings&hellip;</div>
           </div>
           <textarea id="app_text-editor_editor" style="width: calc(100% - 10px); height: calc(100% - 66px); border: none; resize: none;" oninput="writeRef('/apps/text-editor/unsaved-changes', true);"></textarea>
           <div id="app_text-editor_statbar">Ready</div>
+          <div id="app_text-editor_settings-pane">
+            <button onclick="this.parentElement.style.display = 'none';">&larr; Back</button>
+            <h1>Settings</h1>
+            <div>
+              <span>Font:</span>
+              <select id="app_text-editor_settings-font-family"></select>
+              <select id="app_text-editor_settings-font-size">
+                <option value="6pt">6 pt</option>
+                <option value="8pt">8 pt</option>
+                <option value="12pt">12 pt (Default)</option>
+                <option value="14pt">14 pt</option>
+                <option value="16pt">16 pt</option>
+                <option value="18pt">18 pt</option>
+                <option value="20pt">20 pt</option>
+                <option value="24pt">24 pt</option>
+                <option value="36pt">36 pt</option>
+                <option value="72pt">72 pt</option>
+              </select>
+            </div>
+            <div>
+              <span>Page Margin:</span>
+              <select id="app_text-editor_settings-page-margin">
+                <option value="0.05in">1/20 in</option>
+                <option value="0.1in">1/10 in</option>
+                <option value="0.25in">1/4 in</option>
+                <option value="0.5in">1/2 in</option>
+                <option value="1in">1 in</option>
+              </select>
+            </div>
+          </div>
           <style>
           #app_text-editor_editor {
-            font: 14px "Consolas", monospace;
+            font-family: var(--font-family);
+            font-size: var(--font-size);
+            padding: var(--page-margin);
+            box-sizing: border-box;
           }
           #app_text-editor_statbar {
             position: absolute;
@@ -1352,6 +1482,20 @@
             width: calc(100% - 4px);
             background: #EEE;
             font-size: 14px;
+          }
+          #app_text-editor_settings-pane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            padding: 20px;
+            display: none;
+
+            .dark-theme & {
+              background: #333;
+            }
           }
           .dark-theme #app_text-editor_statbar {
             background: #444;
@@ -1425,7 +1569,7 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="font-family: var(--system-font-main);">
           <table>
             <thead>
               <tr>
@@ -1470,7 +1614,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">speed</span>`
+                  content: `<span class="matsymb">speed</span>`
                 },
                 "load": {
                   type: "js",
@@ -1586,7 +1730,7 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif; padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px)">
+        <div class="window-content" style="font-family: var(--system-font-main); padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px)">
           <h1>System Performance</h1>
           <canvas id="app_sys-perf_meters" width="500" height="250"></canvas>
           <p>Unfinished; more details and performance tests coming soon!</p>
@@ -1636,7 +1780,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">apps</span>`
+                  content: `<span class="matsymb">apps</span>`
                 },
                 "load": {
                   type: "js",
@@ -1656,7 +1800,7 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif; padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); overflow: auto; scrollbar-color: #CCC8 transparent; scrollbar-width: thin;">
+        <div class="window-content" style="font-family: var(--system-font-main); padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); overflow: auto; scrollbar-color: #CCC8 transparent; scrollbar-width: thin;">
           <div style="font-size: 30px; font-weight: lighter;">Your apps</div>
           <div style="font-size: 14px; margin-bottom: 10px;">View and manage all installed apps.&nbsp;<span style="text-decoration: underline; cursor: pointer;" onclick="getRef('/apps/app-manager/load')();">Refresh</span></div>
           <div id="app_app-manager_applist"></div>
@@ -1716,7 +1860,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">attach_money</span>`
+                  content: `<span class="matsymb">attach_money</span>`
                 },
                 "load": {
                   type: "js",
@@ -1752,7 +1896,7 @@
           width: calc(100% - 40px);
           height: calc(100% - 60px);
           padding: 10px;
-          font: 14px "Consolas", monospace;
+          font: 14px var(--system-font-mono);
           scrollbar-color: #FFF #000;
           user-select: text;
         }
@@ -1772,7 +1916,7 @@
           color: #FFF;
           border: none;
           padding: 0;
-          font: 14px "Consolas", monospace;
+          font: 14px var(--system-font-mono);
           flex: 1;
         }
         </style>
@@ -2037,7 +2181,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">terminal</span>`
+                  content: `<span class="matsymb">terminal</span>`
                 },
                 "load": {
                   type: "js",
@@ -2205,7 +2349,7 @@
           border-right: 1px solid #CCC;
         }
         #app_js-console_history, #app_js-console_prompt, #app_js-console_input {
-          font: 14px "Consolas", monospace;
+          font: 14px var(--system-font-mono);
         }
         #app_js-console_quick-result {
           padding-left: 5px;
@@ -2394,7 +2538,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">search</span>`
+                  content: `<span class="matsymb">search</span>`
                 },
                 "load": {
                   type: "js",
@@ -2440,7 +2584,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">language</span>`
+                  content: `<span class="matsymb">language</span>`
                 },
                 "load": {
                   type: "js",
@@ -2455,7 +2599,7 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); font: 20px 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); font: 20px var(--system-font-main);">
           <div style="font-size: 30px; font-weight: bold;">Web App Creator</div>
           <div>Create GopalOS apps from websites!</div>
           <div style="font-size: 25px; font-weight: bold;">Webpage</div>
@@ -2544,7 +2688,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">storefront</span>`
+                  content: `<span class="matsymb">storefront</span>`
                 },
                 "load": {
                   type: "js",
@@ -2555,7 +2699,9 @@
                       "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_dev-manual.txt",
                       "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_graph-calc.txt",
                       "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_test-program.txt",
-                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_window-rollup.txt"
+                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_window-rollup.txt",
+                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_windows-font-pack.txt",
+                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_apple-font-pack.txt"
                     ].forEach(url => {
                       fetch(url).then(response => response.text()).then(text => {
                         let obj = eval(`(() => {return ${text}})();`);
@@ -2580,7 +2726,7 @@
                                 <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
                                 <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
                               </div>
-                              <div class="window-content" id="app_app-center_content" style="font-family: 'Segoe UI', 'Arial', sans-serif;"><h1>Official GopalOS Apps</h1></div>
+                              <div class="window-content" id="app_app-center_content" style="font-family: var(--system-font-main);"><h1>Official GopalOS Apps</h1></div>
                               <style>
                               .app_app-center_app {
                                 width: calc(100% - 80px);
@@ -2632,7 +2778,7 @@
                 },
                 "icon": {
                   type: "var",
-                  content: `<span class="material-symbols-outlined">settings</span>`
+                  content: `<span class="matsymb">settings</span>`
                 },
                 "load": {
                   type: "js",
@@ -2649,7 +2795,7 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); font: 20px 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); font: 20px var(--system-font-main);">
           <div style="font-size: 30px; font-weight: bold;">System Settings</div>
           <div>Control and customize GopalOS with ease.</div>
           <div style="font-size: 25px; font-weight: bold;">Appearance</div>
@@ -2761,14 +2907,14 @@
                       ctx.fillStyle = "#FFF";
                       ctx.fillRect(cWidth - 100, 0, 100, 20);
                       ctx.fillStyle = "#000";
-                      ctx.font = "20px 'Segoe UI', 'Arial', sans-serif";
+                      ctx.font = "20px var(--system-font-main)";
                       ctx.textAlign = "right";
                       ctx.fillText(state.score, cWidth - 10, 20, 100);
                       ctx.textAlign = "center";
                       ctx.fillStyle = "#C008";
                       ctx.fillRect(0, 0, cWidth, cHeight);
                       ctx.fillStyle = "#A00";
-                      ctx.font = "50px 'Segoe UI', 'Arial', sans-serif";
+                      ctx.font = "50px var(--system-font-main)";
                       ctx.fillText("You Died!", cWidth / 2, cHeight / 2);
                       return;
                     }
@@ -2779,12 +2925,12 @@
                     ctx.fillStyle = "#222";
                     ctx.fillRect(0, cHeight - 40, cWidth, 40);
                     ctx.textAlign = "start";
-                    ctx.font = "16px 'Consolas', monospace";
+                    ctx.font = "16px var(--system-font-mono)";
                     ctx.fillText("Under Development", 50, 50);
-                    ctx.font = "20px 'Segoe UI', 'Arial', sans-serif";
+                    ctx.font = "20px var(--system-font-main)";
                     ctx.textAlign = "right";
                     ctx.fillText(state.score, cWidth - 10, 20, 100);
-                    ctx.font = "15px 'Segoe UI', 'Arial', sans-serif";
+                    ctx.font = "15px var(--system-font-main)";
                     ctx.fillText(`HIGH ${getRef("/home/appdata/jumper/high-score")}`, cWidth - 10, 35, 100);
                     ctx.fillText(`LAST ${getRef("/home/appdata/jumper/last-score")}`, cWidth - 10, 50, 100);
                     for (let rock of state.rocks) {
@@ -2849,7 +2995,7 @@
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); font: 20px 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px); font: 20px var(--system-font-main);">
           <canvas id="app_jumper_canvas" style="border: 1px solid #000;" width="500" height="250"></canvas>
         </div>
       </div>`
@@ -2973,7 +3119,7 @@
                   content: function() {
   /*Use this file to run JavaScript code when GopalOS starts.*/
   
-  msgbox(`<h1>Changelog</h1>${getRef("/system/changelog").replace(/\n/g, "<br>")}`, "Changelog", "changelog", {width: "500px", height: "600px", topOffset: "20px", leftOffset: "20px", icon: `<span class="material-symbols-outlined">format_list_bulleted</span>`});
+  msgbox(`<h1>Changelog</h1>${getRef("/system/changelog").replace(/\n/g, "<br>")}`, "Changelog", "changelog", {width: "600px", height: "600px", topOffset: "20px", leftOffset: "20px", icon: `<span class="matsymb">format_list_bulleted</span>`});
 } /*Indented to left so it appears properly when stringified in the Text Editor*/
                 }
               }
@@ -3169,12 +3315,12 @@
                 else {
                   let randId = randInt(0, 0xFFFFFF).toString(16).toLowerCase();
                   document.getElementById("windows").insertAdjacentHTML("beforeend", `<div class="window" id="msgbox-${msg_id || randId}_window" style="top: ${options.topOffset || "200px"}; left: ${options.leftOffset || "calc(50% - 200px)"}; width: ${options.width || "400px"}; height: ${options.height || "200px"};">
-          <div class="window-title"><span class="window-icon">${options.icon || "<span class=\"material-symbols-outlined\">info</span>"}</span>${msg_title || "Message"}</div>
+          <div class="window-title"><span class="window-icon">${options.icon || "<span class=\"matsymb\">info</span>"}</span>${msg_title || "Message"}</div>
           <div class="window-controls">
             <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
             <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
           </div>
-          <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px 'Segoe UI', 'Arial', sans-serif;">
+          <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px var(--system-font-main);">
             <div style="height: calc(100% - 34px); overflow: auto; scrollbar-width: thin;">${msg_content}</div>
             <div style="height: 32px; border-top: 2px solid #EEE; padding: 5px;">
               <button onclick="this.parentNode.parentNode.parentNode.remove();">OK</button>
@@ -3432,33 +3578,76 @@
                 }
               }
             },
-            "temp-fullscreen": {
-              type: "pgm",
-              content: function() {
-                if (document.documentElement.requestFullScreen) document.documentElement.requestFullScreen();
-                if (document.documentElement.mozRequestFullScreen) document.documentElement.mozRequestFullScreen();
-                if (document.documentElement.webkitRequestFullScreen) document.documentElement.webkitRequestFullScreen();
-              }
-            },
-            "temp-trigger-stop-error": {
-              type: "pgm",
-              content: function() {
-                triggerStopError("USER_INITIATED");
-              }
-            },
-            "temp-titlebar-icons": {
-              type: "pgm",
-              content: () => {
-                newProcess("Titlebar Icons", () => {
-                  for (let elem of document.getElementsByClassName("window")) {
-                    let appId = elem.id.replace(/app_(.+?)_window/, "$1");
-                    if (os.apps[appId] && !elem.classList.contains("window-titlebar-icon-added")) {
-                      elem.querySelector(".window-title").insertAdjacentHTML("afterbegin", `<span class="window-icon">${os.apps[appId].icon}</span>`);
-                      elem.classList.add("window-titlebar-icon-added");
-                    }
+            "temp-tools": {
+              type: "dir",
+              content: {
+                "fullscreen": {
+                  type: "pgm",
+                  content: function() {
+                    if (document.documentElement.requestFullScreen) document.documentElement.requestFullScreen();
+                    if (document.documentElement.mozRequestFullScreen) document.documentElement.mozRequestFullScreen();
+                    if (document.documentElement.webkitRequestFullScreen) document.documentElement.webkitRequestFullScreen();
                   }
-                }, "Experimental", 100);
-              },
+                },
+                "trigger-stop-error": {
+                  type: "pgm",
+                  content: function() {
+                    triggerStopError("USER_INITIATED");
+                  }
+                },
+                "titlebar-icons": {
+                  type: "pgm",
+                  content: () => {
+                    newProcess("Titlebar Icons", () => {
+                      for (let elem of document.getElementsByClassName("window")) {
+                        let appId = elem.id.replace(/app_(.+?)_window/, "$1");
+                        if (os.apps[appId] && !elem.classList.contains("window-titlebar-icon-added")) {
+                          elem.querySelector(".window-title").insertAdjacentHTML("afterbegin", `<span class="window-icon">${os.apps[appId].icon}</span>`);
+                          elem.classList.add("window-titlebar-icon-added");
+                        }
+                      }
+                    }, "Experimental", 100);
+                  },
+                },
+                "system-font-changer": {
+                  type: "pgm",
+                  content: function() {
+                    if (document.getElementById("app_temp-sysfontchanger_window")) {
+                      document.getElementById("app_temp-sysfontchanger_window").style.display = "block";
+                    }
+                    else {
+                      document.getElementById("windows").insertAdjacentHTML("beforeend", `<div class="window" id="app_temp-sysfontchanger_window" style="top: 200px; left: calc(50% - 200px); width: 400px; height: 315px; z-index: 88;">
+                          <div class="window-title"><span class="window-icon"><span class="matsymb">match_case</span></span>System Font Changer</div>
+                          <div class="window-controls">
+                            <div class="window-control window-control-minimize"><span>&#x1F5D5;</span></div>
+                            <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
+                            <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
+                          </div>
+                          <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px var(--system-font-main);">
+                            <div style="font-weight: bold;">WARNING! Changing system fonts will most likely break UIs!</div>
+                            <div style="margin-top: 10px;">System Font: <select id="app_temp-sysfontchanger_sel1" onchange="document.documentElement.style.setProperty('--system-font-main', '&quot;' + this.value + '&quot;, sans-serif');" style="width: 100%;">
+                              <option value="Segoe UI" style="font-family: 'Segoe UI', sans-serif;">(system default)</option>
+                            </select></div>
+                            <div style="margin-top: 10px;">Monospace Font: <select id="app_temp-sysfontchanger_sel2" onchange="document.documentElement.style.setProperty('--system-font-mono', '&quot;' + this.value + '&quot;, monospace');" style="width: 100%;">
+                              <option value="Consolas" style="font-family: 'Consolas', monospace;">(system default)</option>
+                            </select></div>
+                            <p>This is a temporary tool until GopalOS UIs are hardened against font changes and the proper settings screens are made.</p>
+                          </div>
+                        </div>`);
+                        const fonts = Object.keys(getRef("/system/fonts"));
+                        let fontSelHTML = ``;
+                        for (let ff of fonts) {
+                          fontSelHTML += `<option value="${ff}" style="font-family: '${ff}';">${ff}</option>`;
+                        }
+                        document.getElementById("app_temp-sysfontchanger_sel1").insertAdjacentHTML("beforeend", fontSelHTML);
+                        document.getElementById("app_temp-sysfontchanger_sel2").insertAdjacentHTML("beforeend", fontSelHTML);
+                    }
+                    focusWin(document.getElementById("app_temp-sysfontchanger_window"));
+                    regTbarIcon("/system/temp-tools/system-font-changer", "app_temp-sysfontchanger_window", `<span class="matsymb">match_case</span>`);
+                    refreshWindows();
+                  }
+                },
+              }
             },
             "proc": {
               type: "var",
@@ -3531,9 +3720,9 @@
                 }
                 else {
                   document.getElementById("windows").insertAdjacentHTML("beforeend", `<div class="window" id="recapps_window" style="top: 30px; left: 50px;">
-        <div class="window-title"><span class="window-icon"><span class="material-symbols-outlined">install_desktop</span></span>Install Recommended Apps</div>
+        <div class="window-title"><span class="window-icon"><span class="matsymb">install_desktop</span></span>Install Recommended Apps</div>
         <div class="window-controls"></div>
-        <div class="window-content" style="font: 16px 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="font: 16px var(--system-font-main);">
           <h1>Welcome!</h1>
           <p>Do you want to install recommended apps for GopalOS (e.g. the Developer Manual)? It'll only take a few seconds. (All of these apps are made by the developer of GopalOS (me).)</p>
           <button onclick="this.disabled = true; this.parentElement.getElementsByTagName('button')[1].disabled = true; getRef('/system/recapps-install')(); document.getElementById('recapps_donemsg').style.display = 'block'; setTimeout(() => {if (document.getElementById('recapps_window')) {document.getElementById('recapps_window').getElementsByClassName('window-control-close')[0].click();}}, 1000);" style="font-weight: bold;">Sure!</button>
@@ -3562,7 +3751,7 @@
         </style>
         </div>`);
                   focusWin(document.getElementById("recapps_window"));
-                  regTbarIcon("/system/recommended-apps", "recapps_window", `<span class="material-symbols-outlined">install_desktop</span>`);
+                  regTbarIcon("/system/recommended-apps", "recapps_window", `<span class="matsymb">install_desktop</span>`);
                   refreshWindows();
                 }
               }
@@ -3573,7 +3762,7 @@
                 ["window-rollup", "dev-manual", "app-creator"].forEach(appname => {
                   getRef("/system/pkg-install/install-pkg")("https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_" + appname + ".txt", true);
                 });
-                getRef("/system/temp-titlebar-icons")();
+                getRef("/system/temp-tools/titlebar-icons")();
               }
             },
             "boot-params": {
@@ -3640,7 +3829,7 @@
                   type: "html",
                   content: `<div class="window" id="bootsetup_window" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border-radius: 0; z-index: 500;" data-win-immovable>
         <div class="window-title">Setup GopalOS</div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif; padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px);">
+        <div class="window-content" style="font-family: var(--system-font-main); padding: 10px; width: calc(100% - 40px); height: calc(100% - 60px);">
           <div style="font-size: 30px;">GopalOS Setup</div>
           <div>Boot options:</div>
           <hr>
@@ -3651,7 +3840,7 @@
           <div style="margin-top: 10px; margin-bottom: 10px;">Note: Only the contents of the /home folder are stored.</div>
           <div id="bootsetup_params_notice" style="margin-top: 10px; margin-bottom: 10px; display: none; background: #FFA500; border: 2px solid #9D6600; border-radius: 8px; padding: 10px; max-width: 450px;">
             <div>&#x26A0;&#xFE0E; GopalOS was launched with the following boot parameters:</div>
-            <div id="bootsetup_params" style="font-family: 'Consolas', monospace; margin-left: 20px;"></div>
+            <div id="bootsetup_params" style="font-family: var(--system-font-mono); margin-left: 20px;"></div>
             <button onclick="location.search = '';" style="margin-top: 10px;">Relaunch without boot parameters</button>
           </div>
           <input type="password" style="width: 200px;" placeholder="Enter a password to use..." oninput="hash(this.value).then(p => {os.passwd = p; initCrypto(p);})">
@@ -3695,6 +3884,7 @@
                       triggerStopError("NO_LOCAL_FS");
                     }
                     os.filesystem.home.content = stringToFs(localStorage.getItem("gopalOSFilesystem"));
+                    if (!os.filesystem.home.content) triggerStopError("FS_VERSION_NOT_COMPATIBLE");
                     document.getElementById("bootsetup_window").remove();
                     newProcess("Local Storage Sync", getRef("/system/fs-rw/lstor-sync"), false, 5000);
                     getRef("/system/process-boot-params")();
@@ -3709,14 +3899,14 @@
                 if (document.getElementById("cdb_tos_window")) {}
                 else {
                   document.getElementById("windows").insertAdjacentHTML("beforeend", `<div id="cdb_tos_window" class="window" style="top: 100px; left: calc(50% - 100px); width: 520px; height: 500px;">
-        <div class="window-title"><span class="window-icon"><span class="material-symbols-outlined">article</span></span>CDB Terms of Service</div>
+        <div class="window-title"><span class="window-icon"><span class="matsymb">article</span></span>CDB Terms of Service</div>
         <div class="window-controls">
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px var(--system-font-main);">
           <iframe src="https://cerebraldatabank.neocities.org/terms.html" style="width: 100%; height: calc(100% - 60px); overflow: auto;"></iframe>
           <div style="height: 32px; border-top: 2px solid #EEE; padding: 5px;">
-            <div style="font: 10px 'Segoe UI', 'Arial', sans-serif; color: #AAA; line-height: 10px;">By using GopalOS, you agree to the CerebralDatabank Terms of Service, embedded above.</div>
+            <div style="font: 10px var(--system-font-main); color: #AAA; line-height: 10px;">By using GopalOS, you agree to the CerebralDatabank Terms of Service, embedded above.</div>
             <button style="display: block;" onclick="this.parentNode.parentNode.parentNode.remove();">Close Window</button>
           </div>
         </div>
@@ -3808,6 +3998,7 @@
             "tbar-lstor-mgr-updt": {
               type: "pgm",
               content: function() {
+                if (os.storageUsage.quota == 0) return;
                 let classes = ["status-badge-good", "status-badge-warn", "status-badge-error"];
                 let lstorStatElem = document.getElementById("lstor-mgr_trayicon");
                 let usageRatio = os.storageUsage.usage / os.storageUsage.quota;
@@ -4041,7 +4232,7 @@
                 "lockscr-win": {
                   type: "html",
                   content: `<div class="window" id="window_lockscr" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border-radius: 0; background: #00519E; z-index: 600;" data-win-immovable>
-        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: 'Segoe UI', 'Arial', sans-serif;">
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: var(--system-font-main);">
           <div style="font-size: 100px; font-weight: bold;">GopalOS&trade;</div>
           <div style="margin-top: 10px;">
             <input id="lockscr_password" type="password" style="font-size: 20px;" onkeypress="if (event.key == 'Enter') {document.getElementById('lockscr_btn').click();} else {}">
@@ -4368,7 +4559,6 @@ a, .link {
                       else {
                         msgbox("ERROR: Input doesn't seem to be a JSON object or failed to meet the filtering rules. Installation aborted.", "Package Installer");
                       }
-                      console.info(obj);
                     });
                     xhr.addEventListener("error", event => {
                       console.error(event);
@@ -4421,7 +4611,7 @@ a, .link {
                       document.getElementById("app_pkg-install_title").innerHTML = `${getRef("/system/pkg-install/current-pkg").name}<span style="font-size: 14px; margin-left: 10px; border: 1px solid #CCC; border-radius: 4px; padding: 2px 4px;">${getRef("/system/pkg-install/current-pkg")["releases"][getRef("/system/pkg-install/current-release")].version}</span>`;
                       let notice = getRef("/system/pkg-install/current-pkg")["releases"][getRef("/system/pkg-install/current-release")].notice
                       if (notice) {
-                        document.getElementById("app_pkg-install_release-info").innerHTML = `<span class="material-symbols-outlined" style="font-size: 20px; line-height: 0; transform: translate(0, 4px);">info</span>&nbsp;${notice}`;
+                        document.getElementById("app_pkg-install_release-info").innerHTML = `<span class="matsymb" style="font-size: 20px; line-height: 0; transform: translate(0, 4px);">info</span>&nbsp;${notice}`;
                         document.getElementById("app_pkg-install_release-info").style.display = "block";
                       }
                       else {
@@ -4461,13 +4651,13 @@ a, .link {
                 "window": {
                   type: "html",
                   content: `<div class="window" id="app_pkg-install_window" style="top: 200px; left: 200px; width: 500px; height: 300px;">
-        <div class="window-title"><span class="window-icon"><span class="material-symbols-outlined">download</span></span>Package Installer</div>
+        <div class="window-title"><span class="window-icon"><span class="matsymb">download</span></span>Package Installer</div>
         <div class="window-controls">
           <div class="window-control window-control-minimize"><span>&#x1F5D5;</span></div>
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="font-family: 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="font-family: var(--system-font-main);">
           <div id="app_pkg-install_enter-url" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); overflow: auto; min-width: 300px;">
             <div style="font-weight: lighter; font-size: 30px; text-align: center;">Install a Package</div>
             <input type="text" id="app_pkg-install_url" style="width: 300px;" placeholder="Enter URL (click for suggestions)..." list="app_pkg-install_datalist">
@@ -4483,6 +4673,8 @@ a, .link {
               <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_powder-game-2.txt">Powder Game 2</option>
               <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_app-manager.txt">App Manager</option>
               <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_file-manager.txt">File Manager</option>
+              <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_windows-font-pack.txt">Windows Font Pack</option>
+              <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_apple-font-pack.txt">Apple Font Pack</option>
             </datalist>
             <button id="app_pkg-install_view-btn" style="width: 313.5px;" onclick="getRef('/system/pkg-install/view-pkg')(document.getElementById('app_pkg-install_url').value);">View</button>
           </div>
@@ -4616,9 +4808,66 @@ a, .link {
               type: "js",
               content: function() {}
             },
+            "fonts": {
+              type: "json",
+              content: {
+                "Inter Custom": {
+                  desc: "Custom version of Inter."
+                },
+                "JetBrainsMonoNL Nerd Font": {
+                  desc: "JetBrains Mono (no ligatures) patched with Nerd Fonts."
+                },
+                "Commit Mono": {
+                  desc: "A monospaced font made for programming."
+                },
+                "Commit Mono Custom": {
+                  desc: "Custom version of Commit Mono."
+                },
+                "Courier Prime": {
+                  desc: "A Courier-like font."
+                },
+                "DM Mono": {
+                  desc: "A monospaced font made for DeepMind."
+                },
+                "DM Sans": {
+                  desc: "A sans-serif font made for DeepMind."
+                },
+                "DM Serif Text": {
+                  desc: "A serif font made for DeepMind."
+                },
+                "Iosevka Custom Extended": {
+                  desc: "Custom version of Iosevka."
+                },
+                "Iosevka Custom Aile": {
+                  desc: "Custom version of Iosevka Aile."
+                },
+                "Perfect DOS VGA 437": {
+                  desc: "A font that mimics the DOS VGA font."
+                },
+                "VCR OSD Mono": {
+                  desc: "A monospace font that mimics a VCR On-Screen Display."
+                },
+              }
+            },
             "changelog": {
               type: "txt",
-              content: `2023-10-19
+              content: `2024-11-28
+  \u2022 Added several fonts
+  \u2022 Replaced "material-symbols-outlined" class with "matsymb"
+  \u2022 Fixed local storage checker console error
+  \u2022 Added Settings screen to Text Editor with font and page options
+  \u2022 Added Noto Sans Symbols 2 font to properly render window controls on mobile devices
+  \u2022 Changed line height of window controls to account for different positioning in Noto Sans Symbols 2
+  \u2022 Added Noto Emoji to support window close icon (may be removed later once window controls are improved)
+  \u2022 Fixed the size of the taskbar start button's icon
+  \u2022 Added new stop error code FS_VERSION_NOT_COMPATIBLE when trying to load a filesystem version that isn't supported
+  \u2022 Moved system main and monospace font to CSS variables (instead of being hardcoded everywhere)
+  \u2022 Added translucent background to window borders and start menu
+  \u2022 Moved temporary tool .PGMs to /system/temp-tools
+  \u2022 Added temp tool for changing system fonts at /system/temp-tools/system-font-changer.pgm
+  \u2022 Made Changelog message window wider
+  \u2022 Added Windows Font Pack and Apple Font Pack packages. These add local fonts found on those systems to the font list.
+2023-10-19
   \u2022 Added "New visitor" text to boot setup menu next to "Load live environment" option
   \u2022 Made Install Recommended Apps automatically install apps, unless the "show-recapps" boot parameter is "1"
   \u2022 Removed console error log from getRef()
@@ -4839,7 +5088,7 @@ a, .link {
           <div class="window-control window-control-maximize"><span>&#x1F5D6;</span></div>
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
-        <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px 'Segoe UI', 'Arial', sans-serif;">
+        <div class="window-content" style="overflow: hidden; width: calc(100% - 40px); height: calc(100% - 60px); padding: 10px; font: 16px var(--system-font-main);">
           <div style="height: calc(100% - 34px); overflow: auto; scrollbar-width: thin;">
             <input id="app_make-req_url" type="text" placeholder="Enter URL">
             <select id="app_make-req_method">
@@ -4999,7 +5248,7 @@ a, .link {
         },
         "version": {
           type: "var",
-          content: "v0.31.0"
+          content: "v0.32.0"
         }
       },
       storageUsage: {
@@ -5163,7 +5412,7 @@ a, .link {
     function triggerStopError(errorCode) {
       if (document.getElementById("stop-error")) {}
       else {
-        document.body.insertAdjacentHTML("beforeend", `<div id="stop-error" style="position: fixed !important; top: 0 !important; left: 0 !important; width: calc(100% - 60px) !important; height: calc(100% - 60px) !important; z-index: 1000 !important; background: #1E90FF !important; color: #FFF !important; font-family: 'Segoe UI', 'Arial', sans-serif !important; padding: 30px !important;">
+        document.body.insertAdjacentHTML("beforeend", `<div id="stop-error" style="position: fixed !important; top: 0 !important; left: 0 !important; width: calc(100% - 60px) !important; height: calc(100% - 60px) !important; z-index: 1000 !important; background: #1E90FF !important; color: #FFF !important; font-family: var(--system-font-main) !important; padding: 30px !important;">
 <div style="font-size: 50px !important; margin-bottom: 30px !important;">Stop error</div><div>GopalOS has encountered a critical error and had to stop. If you are seeing this screen, GopalOS is missing components required for functional operation.</div>
 <div style="margin-top: 30px !important; margin-bottom: 30px !important;">Error Code: <b>${escapeHTML(errorCode) || "UNKNOWN"}</b></div>
 <div>Things you can do:</div>
@@ -5257,11 +5506,17 @@ a, .link {
       dldElem.remove();
     }
     async function updateStorageUsage() {
+      const localFs = localStorage.getItem("gopalOSFilesystem");
+      if (localFs == null) {
+        os.storageUsage.usage = 0;
+        os.storageUsage.quota = 0;
+        return;
+      }
       /* Just calculating GopalOS usage and using hardcoded limit */
       /*let storageEstimate = await navigator.storage.estimate();
       os.storageUsage.usage = storageEstimate.usage;
       os.storageUsage.quota = storageEstimate.quota;*/
-      os.storageUsage.usage = localStorage.getItem("gopalOSFilesystem").length + 17;
+      os.storageUsage.usage = localFs.length + 17;
       os.storageUsage.quota = 1024 ** 2;
     }
     function startupFunc(...args) {
