@@ -71,10 +71,10 @@
       </div>
       <div id="taskbar-tray">
         <div class="tray-item status-badge status-badge-error" id="lstor-mgr_trayicon"><span class="matsymb">hard_drive</span></div>
-        <div class="tray-item" id="app_sys-perf_trayicon" onclick="getRef('/apps/sys-perf/sys-perf')();"><span class="matsymb">speed</span></div>
+        <div class="tray-item" id="app_sys-perf_trayicon" onclick="getFile('/apps/sys-perf/sys-perf')();"><span class="matsymb">speed</span></div>
         <div class="tray-item" id="taskbar-datetime" style="text-align: center;">
-          <div style="font-size: 20px; line-height: 35px;" id="taskbar-clock-time">09:09:09</div>
-          <div style="font-size: 12px; line-height: 0;" id="taskbar-clock-date">Thu 2024-12-05</div>
+          <div style="font-size: 20px; line-height: 35px;" id="taskbar-clock-time">10:35:25</div>
+          <div style="font-size: 12px; line-height: 0;" id="taskbar-clock-date">Wed 2024-12-11</div>
         </div>
         <div class="tray-item status-badge status-badge-good" id="network_status"><span class="matsymb">language</span></div>
       </div>
@@ -92,7 +92,7 @@
       <div style="font-size: 20px; margin-bottom: 4px;">Storage&nbsp;<span style="background: #CC0000; border: none; border-radius: 2px; color: #FFFFFF; font-weight: normal; font-size: 12px; padding: 2px;">BETA</span></div>
       <meter id="lstor-mgr_meter" min="0" max="1" value="0"></meter>
       <div id="lstor-mgr_used">-- / -- kB</div>
-      <div style="margin-top: 10px;"><button onclick="getRef('/system/lstor-mgr/lstor-mgr')();" disabled="">Open Storage Manager</button></div>
+      <div style="margin-top: 10px;"><button onclick="getFile('/system/lstor-mgr/lstor-mgr')();" disabled="">Open Storage Manager</button></div>
     </div>
     <div id="windows"><div class="window" id="bootsetup_window" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border-radius: 0; z-index: 500;" data-win-immovable="">
         <div class="window-title">Setup GopalOS</div>
@@ -496,6 +496,9 @@
       padding: 0 10px;
       box-sizing: border-box;
     }
+    .taskbar-item, #taskbar-start, .taskbar-item::after {
+      transition: all 100ms;
+    }
     .taskbar-item:hover {
       background: #222;
     }
@@ -733,7 +736,7 @@
           icon: `<span class="matsymb">folder</span>`,
           desc: "The GopalOS file manager. This application is usually included with GopalOS.",
           globalID: "GopalOS.System.FileManager",
-          version: "v4.2.1"
+          version: "v4.3.0"
         },
         "terminal": {
           name: "Terminal",
@@ -841,11 +844,11 @@
                       document.getElementById("app_file-manager_window").style.display = "block";
                     }
                     else {
-                      document.getElementById("windows").insertAdjacentHTML("beforeend", getRef("/apps/file-manager/window"));
-                      getRef("/apps/file-manager/load")();
+                      document.getElementById("windows").insertAdjacentHTML("beforeend", getFile("/apps/file-manager/window"));
+                      getFile("/apps/file-manager/load")();
                     }
                     focusWin(document.getElementById("app_file-manager_window"));
-                    regTbarIcon("/apps/file-manager/file-manager", "app_file-manager_window", getRef("/apps/file-manager/icon"));
+                    regTbarIcon("/apps/file-manager/file-manager", "app_file-manager_window", getFile("/apps/file-manager/icon"));
                     refreshWindows();
                   }
                 },
@@ -857,36 +860,38 @@
                   type: "js",
                   content: function() {
                     document.getElementById("app_file-manager_content").innerHTML = "";
-                    document.getElementById("app_file-manager_bar").value = getRef("/apps/file-manager/working-dir");
-                    if (!getRef("/home/appdata/file-manager")) {
+                    document.getElementById("app_file-manager_bar").value = getFile("/apps/file-manager/working-dir");
+                    if (!getDir("/home/appdata/file-manager")) {
                       createRef("/home/appdata/file-manager", "dir", {});
                       createRef("/home/appdata/file-manager/view", "var", "list");
                     }
                     else {}
-                    for (let i of Object.keys(getRef(getRef("/apps/file-manager/working-dir"))).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {
-                      if (getRef(getRef("/apps/file-manager/working-dir"))[i].type == "dir") {
-                        document.getElementById("app_file-manager_content").insertAdjacentHTML("beforeend", `<div class="${getRef("/home/appdata/file-manager/view") == "list" ? "app_file-manager_item" : `app_file-manager_${getRef("/home/appdata/file-manager/view")}`}" onclick="getRef('/apps/file-manager/handler')(this.getElementsByTagName('span')[0].innerHTML);"><img src="${getIcon("dir")}" class="app_file-manager_item-icon"><span>${i}</span>/${getRef("/home/appdata/file-manager/view") == "details" ? "<span style=\"float: right; color: #AAA; margin-right: 5px; \">Folder</span>" : ""}</div>`);
+                    const wdir = getDir(getFile("/apps/file-manager/working-dir"));
+                    const view = getFile("/home/appdata/file-manager/view");
+                    for (let i of Object.keys(wdir).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {
+                      if (wdir[i].type == "dir") {
+                        document.getElementById("app_file-manager_content").insertAdjacentHTML("beforeend", `<div class="${view == "list" ? "app_file-manager_item" : `app_file-manager_${view}`}" onclick="getFile('/apps/file-manager/handler')(this.getElementsByTagName('span')[0].innerHTML);"><img src="${getIcon("dir")}" class="app_file-manager_item-icon"><span>${i}</span>/${view == "details" ? "<span style=\"float: right; color: #AAA; margin-right: 5px; \">Folder</span>" : ""}</div>`);
                       }
                       else {}
                     }
-                    for (let i of Object.keys(getRef(getRef("/apps/file-manager/working-dir"))).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {
-                      if (getRef(getRef("/apps/file-manager/working-dir"))[i].type == "dir") {}
+                    for (let i of Object.keys(wdir).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {
+                      if (wdir[i].type == "dir") {}
                       else {
-                        document.getElementById("app_file-manager_content").insertAdjacentHTML("beforeend", `<div class="${getRef("/home/appdata/file-manager/view") == "list" ? "app_file-manager_item" : `app_file-manager_${getRef("/home/appdata/file-manager/view")}`}" onclick="getRef('/apps/file-manager/handler')(this.getElementsByTagName('span')[0].innerHTML);"><img src="${getIcon(getRef(getRef("/apps/file-manager/working-dir"))[i].type)}" class="app_file-manager_item-icon"><span>${i}.${getRef(getRef("/apps/file-manager/working-dir"))[i].type ? getRef(getRef("/apps/file-manager/working-dir"))[i].type : "file"}</span>${getRef("/home/appdata/file-manager/view") == "details" ? "<span style=\"float: right; color: #AAA; margin-right: 5px; \">" + getType(getRef(getRef("/apps/file-manager/working-dir"))[i].type) + (getRef(getRef("/apps/file-manager/working-dir"))[i].type == "var" ? ` (${getVarType(getRef(getRef("/apps/file-manager/working-dir"))[i].content)})` : "") + "</span>" : ""}</div>`);
+                        document.getElementById("app_file-manager_content").insertAdjacentHTML("beforeend", `<div class="${view == "list" ? "app_file-manager_item" : `app_file-manager_${view}`}" onclick="getFile('/apps/file-manager/handler')(this.getElementsByTagName('span')[0].innerHTML);"><img src="${getIcon(wdir[i].type)}" class="app_file-manager_item-icon"><span>${i}.${wdir[i].type ? wdir[i].type : "file"}</span>${view == "details" ? "<span style=\"float: right; color: #AAA; margin-right: 5px; \">" + getType(wdir[i].type) + (wdir[i].type == "var" ? ` (${getVarType(wdir[i].content)})` : "") + "</span>" : ""}</div>`);
                       }
                     }
-                    if (Object.keys(getRef(getRef("/apps/file-manager/working-dir"))).length == 0) {
-                      document.getElementById("app_file-manager_content").insertAdjacentHTML("beforeend", `<div class="${getRef("/home/appdata/file-manager/view") == "list" ? "app_file-manager_item" : `app_file-manager_${getRef("/home/appdata/file-manager/view")}`}" style="border: none; padding-left: 10px;"><span>(This folder is empty.)</span></div>`);
+                    if (Object.keys(wdir).length == 0) {
+                      document.getElementById("app_file-manager_content").insertAdjacentHTML("beforeend", `<div class="${view == "list" ? "app_file-manager_item" : `app_file-manager_${view}`}" style="border: none; padding-left: 10px;"><span>(This folder is empty.)</span></div>`);
                     }
                     else {}
-                    if (getRef("/apps/file-manager/working-dir") == "/") {}
+                    if (getFile("/apps/file-manager/working-dir") == "/") {}
                     else {
-                      document.getElementById("app_file-manager_content").insertAdjacentHTML("afterbegin", `<div class="${getRef("/home/appdata/file-manager/view") == "list" ? "app_file-manager_item" : `app_file-manager_${getRef("/home/appdata/file-manager/view")}`}" onclick="getRef('/apps/file-manager/parent-dir')();"><img src="${getIcon("parent-dir")}" class="app_file-manager_item-icon"><span>../</span>${getRef("/home/appdata/file-manager/view") == "details" ? "<span style=\"float: right; color: #AAA; margin-right: 5px; \">Up one level</span>" : ""}</div>`);
+                      document.getElementById("app_file-manager_content").insertAdjacentHTML("afterbegin", `<div class="${view == "list" ? "app_file-manager_item" : `app_file-manager_${view}`}" onclick="getFile('/apps/file-manager/parent-dir')();"><img src="${getIcon("parent-dir")}" class="app_file-manager_item-icon"><span>../</span>${view == "details" ? "<span style=\"float: right; color: #AAA; margin-right: 5px; \">Up one level</span>" : ""}</div>`);
                     }
                     document.getElementById("app_file-manager_listview").classList.remove("popup-menu-item-selected");
                     document.getElementById("app_file-manager_detailsview").classList.remove("popup-menu-item-selected");
                     document.getElementById("app_file-manager_tileview").classList.remove("popup-menu-item-selected");
-                    document.getElementById(`app_file-manager_${getRef("/home/appdata/file-manager/view")}view`).classList.add("popup-menu-item-selected");
+                    document.getElementById(`app_file-manager_${view}view`).classList.add("popup-menu-item-selected");
                     createRef("/home/appdata/file-manager", "dir", {
                       "view": {
                         type: "var",
@@ -905,28 +910,28 @@
           <div class="window-control window-control-close"><span>&#x274C;&#xFE0E;</span></div>
         </div>
         <div class="window-content">
-          <input type="text" id="app_file-manager_bar" onblur="this.value = getRef('/apps/file-manager/working-dir');" value="/" readonly>
+          <input type="text" id="app_file-manager_bar" onblur="this.value = getFile('/apps/file-manager/working-dir');" value="/" readonly>
           <div id="app_file-manager_addfile" class="popup-btn square-btn" data-popup-id="app_file-manager_newfile">&#x00B7;&#x00B7;&#x00B7;</div>
           <div id="app_file-manager_newfile" class="popup-menu" data-popup-origin-id="app_file-manager_addfile" style="position: absolute; right: 39px; top: 35px;">
-            <div class="popup-menu-item" onclick="getRef('/apps/file-manager/create-file')();">New File...</div>
-            <div class="popup-menu-item" onclick="getRef('/apps/file-manager/create-folder')();">New Folder...</div>
-            <div class="popup-menu-item" onclick="getRef('/apps/file-manager/load')();">Refresh</div>
+            <div class="popup-menu-item" onclick="getFile('/apps/file-manager/create-file')();">New File&hellip;</div>
+            <div class="popup-menu-item" onclick="getFile('/apps/file-manager/create-folder')();">New Folder&hellip;</div>
+            <div class="popup-menu-item" onclick="getFile('/apps/file-manager/load')();">Refresh</div>
             <hr>
-            <div class="popup-menu-item" id="app_file-manager_tileview" onclick="writeRef('/home/appdata/file-manager/view', 'tile'); document.getElementById('app_file-manager_listview').classList.remove('popup-menu-item-selected'); document.getElementById('app_file-manager_detailsview').classList.remove('popup-menu-item-selected'); this.classList.add('popup-menu-item-selected'); getRef('/apps/file-manager/load')();">Tile view</div>
-            <div class="popup-menu-item popup-menu-item-selected" id="app_file-manager_listview" onclick="writeRef('/home/appdata/file-manager/view', 'list'); document.getElementById('app_file-manager_detailsview').classList.remove('popup-menu-item-selected'); document.getElementById('app_file-manager_tileview').classList.remove('popup-menu-item-selected'); this.classList.add('popup-menu-item-selected'); getRef('/apps/file-manager/load')();">List view</div>
-            <div class="popup-menu-item" id="app_file-manager_detailsview" onclick="writeRef('/home/appdata/file-manager/view', 'details'); document.getElementById('app_file-manager_listview').classList.remove('popup-menu-item-selected'); document.getElementById('app_file-manager_tileview').classList.remove('popup-menu-item-selected'); this.classList.add('popup-menu-item-selected'); getRef('/apps/file-manager/load')();">Details view</div>
+            <div class="popup-menu-item" id="app_file-manager_tileview" onclick="writeRef('/home/appdata/file-manager/view', 'tile'); document.getElementById('app_file-manager_listview').classList.remove('popup-menu-item-selected'); document.getElementById('app_file-manager_detailsview').classList.remove('popup-menu-item-selected'); this.classList.add('popup-menu-item-selected'); getFile('/apps/file-manager/load')();">Tile view</div>
+            <div class="popup-menu-item popup-menu-item-selected" id="app_file-manager_listview" onclick="writeRef('/home/appdata/file-manager/view', 'list'); document.getElementById('app_file-manager_detailsview').classList.remove('popup-menu-item-selected'); document.getElementById('app_file-manager_tileview').classList.remove('popup-menu-item-selected'); this.classList.add('popup-menu-item-selected'); getFile('/apps/file-manager/load')();">List view</div>
+            <div class="popup-menu-item" id="app_file-manager_detailsview" onclick="writeRef('/home/appdata/file-manager/view', 'details'); document.getElementById('app_file-manager_listview').classList.remove('popup-menu-item-selected'); document.getElementById('app_file-manager_tileview').classList.remove('popup-menu-item-selected'); this.classList.add('popup-menu-item-selected'); getFile('/apps/file-manager/load')();">Details view</div>
             <hr>
-            <div class="popup-menu-item" onclick="getRef(prompt('Enter absolute path to program (e.g. /apps/settings/settings.pgm):'))();">Run program...</div>
-            <div class="popup-menu-item" onclick="getRef('/apps/settings/settings')();">Settings</div>
+            <div class="popup-menu-item" onclick="getFile(prompt('Enter absolute path to program (e.g. /apps/settings/settings.pgm):'))();">Run program...</div>
+            <div class="popup-menu-item" onclick="getFile('/apps/settings/settings')();">Settings</div>
           </div>
-          <div id="app_file-manager_reload" class="square-btn" onclick="getRef('/apps/file-manager/load')();">&#x21BB;</div>
+          <div id="app_file-manager_reload" class="square-btn" onclick="getFile('/apps/file-manager/load')();">&#x21BB;</div>
           <div id="app_file-manager_sidebar">
             <div class="app_file-manager_sidebar-heading">Personal Files</div>
-            <div onclick="writeRef('/apps/file-manager/working-dir', '/home/documents'); getRef('/apps/file-manager/load')();">&#x1F5CE;&nbsp;Documents</div>
-            <div onclick="writeRef('/apps/file-manager/working-dir', '/home/pictures'); getRef('/apps/file-manager/load')();">&#x1F5CE;&nbsp;Pictures</div>
+            <div onclick="writeRef('/apps/file-manager/working-dir', '/home/documents'); getFile('/apps/file-manager/load')();">&#x1F5CE;&nbsp;Documents</div>
+            <div onclick="writeRef('/apps/file-manager/working-dir', '/home/pictures'); getFile('/apps/file-manager/load')();">&#x1F5CE;&nbsp;Pictures</div>
             <div class="app_file-manager_sidebar-heading">System & App Files</div>
-            <div onclick="writeRef('/apps/file-manager/working-dir', '/system'); getRef('/apps/file-manager/load')();">&#x1F5CE;&nbsp;System Dir</div>
-            <div onclick="writeRef('/apps/file-manager/working-dir', '/home/appdata'); getRef('/apps/file-manager/load')();">&#x1F5CE;&nbsp;App Data</div>
+            <div onclick="writeRef('/apps/file-manager/working-dir', '/system'); getFile('/apps/file-manager/load')();">&#x1F5CE;&nbsp;System Dir</div>
+            <div onclick="writeRef('/apps/file-manager/working-dir', '/home/appdata'); getFile('/apps/file-manager/load')();">&#x1F5CE;&nbsp;App Data</div>
           </div>
           <div id="app_file-manager_content"></div>
         </div>
@@ -1087,96 +1092,89 @@
                 "handler": {
                   type: "js", 
                   content: function(file, absolute = false) {
-                    /*console.group("Handled file");
-                    console.info(file, absolute);
-                    console.info(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
-                    console.info(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true));
-                    console.info(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type);
-                    console.info(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "var");
-                    console.groupEnd();*/
-                    if (getRef("/apps/file-manager/working-dir") == "/") {
-                      if (getRef(`/${file.replace(/\//, "")}`, true) && getRef(`/${file.replace(/\//, "")}`, true).type == "dir") {
-                        writeRef("/apps/file-manager/working-dir", `${getRef("/apps/file-manager/working-dir")}${file.replace(/\//, "")}`);
-                        getRef("/apps/file-manager/load")();
+                    if (getFile("/apps/file-manager/working-dir") == "/") {
+                      if (getDir(`/${file.replace(/\//, "")}`)) {
+                        writeRef("/apps/file-manager/working-dir", `${getFile("/apps/file-manager/working-dir")}${file.replace(/\//, "")}`);
+                        getFile("/apps/file-manager/load")();
                       }
                       else {}
                     }
                     else {}
                     if (file == "/") {
                       writeRef("/apps/file-manager/working-dir", "/");
-                      getRef("/apps/file-manager/load")();
+                      getFile("/apps/file-manager/load")();
                     }
-                    else if (absolute == true && getRef(file, true) && getRef(file, true).type == "dir") {
+                    else if (absolute == true && g.fs.exists(file) && getDir(file)) {
                       writeRef("/apps/file-manager/working-dir", file);
-                      getRef("/apps/file-manager/load")();
+                      getFile("/apps/file-manager/load")();
                     }
-                    else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "var") {
-                      msgbox(`Value:<br><br>${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}`);
+                    else if (getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type == "var") {
+                      msgbox(`Value:<br><br>${getDir(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}`);
                     }
-                    else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "json") {
-                      if (getRef("/apps/text-editor/text-editor")) {
-                        getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
+                    else if (getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type == "json") {
+                      if (getFile("/apps/text-editor/text-editor")) {
+                        getFile("/apps/text-editor/open")(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(JSON.stringify(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`), null, 2))}</div>`);
+                        msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(JSON.stringify(getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`), null, 2))}</div>`);
                       }
                     }
-                    else if (getRef("/system/text-filetypes").includes(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type)) {
-                      if (getRef("/apps/text-editor/text-editor")) {
-                        getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
+                    else if (getFile("/system/text-filetypes").includes(getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type)) {
+                      if (getFile("/apps/text-editor/text-editor")) {
+                        getFile("/apps/text-editor/open")(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
+                        msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
                       }
                     }
                     // TODO: can possibly remove below two cases
-                    else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "css") {
-                      msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
+                    else if (getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type == "css") {
+                      msgbox(`Value:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)}</div>`);
                     }
-                    else if (["js", "ajs"].includes(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type)) {
-                      if (getRef("/apps/text-editor/text-editor")) {
-                        getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
+                    else if (["js", "ajs"].includes(getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type)) {
+                      if (getFile("/apps/text-editor/text-editor")) {
+                        getFile("/apps/text-editor/open")(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`JavaScript content:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
+                        msgbox(`JavaScript content:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
                       }
                     }
-                    else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "bin") {
-                      msgbox(`Value (hexadecimal):<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${[...getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)].map(b => b.toString(16).padStart(2, "0").toUpperCase()).join(" ")}</div>`);
+                    else if (getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type == "bin") {
+                      msgbox(`Value (hexadecimal):<br><br><div style="font: 15px var(--system-font-mono); white-space: pre-wrap;">${[...getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)].map(b => b.toString(16).padStart(2, "0").toUpperCase()).join(" ")}</div>`);
                     }
-                    else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "html") {
-                      if (getRef("/apps/text-editor/text-editor")) {
-                        getRef("/apps/text-editor/open")(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
+                    else if (getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type == "html") {
+                      if (getFile("/apps/text-editor/text-editor")) {
+                        getFile("/apps/text-editor/open")(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
                       }
                       else {
-                        msgbox(`HTML code:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
+                        msgbox(`HTML code:<br><br><div style="font: 15px var(--system-font-mono); white-space: pre;">${escapeHTML(getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`).toString())}</div>`);
                       }
                     }
-                    else if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "pgm") {
-                      getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)();
+                    else if (getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true)?.type == "pgm") {
+                      getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)();
                     }
-                    else if (getRef("/apps/file-manager/working-dir") != "/") {
-                      if (getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true) && getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type == "dir") {
-                        writeRef("/apps/file-manager/working-dir", `${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
-                        getRef("/apps/file-manager/load")();
+                    else if (getFile("/apps/file-manager/working-dir") != "/") {
+                      if (getDir(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`)) {
+                        writeRef("/apps/file-manager/working-dir", `${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`);
+                        getFile("/apps/file-manager/load")();
                       }
                       else {}
                     }
-                    /*if (!getRef("/apps/file-manager/supported-filetypes").includes(getRef(`${getRef("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type) && getRef("/apps/file-manager/working-dir") != "/") {
+                    /*if (!getFile("/apps/file-manager/supported-filetypes").includes(getFile(`${getFile("/apps/file-manager/working-dir")}/${file.replace(/\//, "")}`, true).type) && getFile("/apps/file-manager/working-dir") != "/") {
                       msgbox("<b>File type not supported</b><br>GopalOS cannot open this file.", "Error");
                     }
                     else {}*/
-                    document.getElementById("app_file-manager_bar").value = getRef("/apps/file-manager/working-dir");
+                    document.getElementById("app_file-manager_bar").value = getFile("/apps/file-manager/working-dir");
                   }
                 },
                 "parent-dir": {
                   type: "js",
                   content: function() {
-                    if (getRef("/apps/file-manager/working-dir").replace(/\/[^/]*$/, "") == "") {
-                      getRef("/apps/file-manager/handler")("/");
+                    if (getFile("/apps/file-manager/working-dir").replace(/\/[^/]*$/, "") == "") {
+                      getFile("/apps/file-manager/handler")("/");
                     }
                     else {
-                      getRef("/apps/file-manager/handler")(getRef("/apps/file-manager/working-dir").replace(/\/[^/]*$/, ""), true);
+                      getFile("/apps/file-manager/handler")(getFile("/apps/file-manager/working-dir").replace(/\/[^/]*$/, ""), true);
                     }
                   }
                 },
@@ -1206,9 +1204,8 @@
                     if (!name || name.trim() == "") {}
                     else if (["apps", "home", "system"].includes(name)) {msgbox("ERROR: Reserved name.", "File Manager");}
                     else {
-                      let nameArr = name.split(".");
-                      createRef(`${getRef("/apps/file-manager/working-dir")}/${nameArr[0]}`, nameArr[1]);
-                      getRef("/apps/file-manager/load")();
+                      g.fs.createFile(`${getFile("/apps/file-manager/working-dir")}/${name}`);
+                      getFile("/apps/file-manager/load")();
                     }
                   }
                 },
@@ -1219,8 +1216,8 @@
                     if (!name || name.trim() == "") {}
                     else if (["apps", "home", "system"].includes(name)) {msgbox("ERROR: Reserved name.", "File Manager");}
                     else {
-                      createRef(`${getRef("/apps/file-manager/working-dir")}/${name}`, "dir");
-                      getRef("/apps/file-manager/load")();
+                      g.fs.createDir(`${getFile("/apps/file-manager/working-dir")}/${name}`);
+                      getFile("/apps/file-manager/load")();
                     }
                   }
                 }
@@ -2147,11 +2144,11 @@
                 "parent-dir": {
                   type: "js",
                   content: function() {
-                    if (getRef("/apps/file-manager/working-dir").replace(/\/[^/]*$/, "") == "") {
+                    if (getFile("/apps/file-manager/working-dir").replace(/\/[^/]*$/, "") == "") {
                       getRef("/apps/file-manager/handler")("/");
                     }
                     else {
-                      getRef("/apps/file-manager/handler")(getRef("/apps/file-manager/working-dir").replace(/\/[^/]*$/, ""), true);
+                      getRef("/apps/file-manager/handler")(getFile("/apps/file-manager/working-dir").replace(/\/[^/]*$/, ""), true);
                     }
                   }
                 },
@@ -3508,7 +3505,7 @@
                 "get-file-size": {
                   type: "js",
                   content: function(path) {
-                    return (new Blob([getRef(path, true).type == "dir" ? fsToString(getRef(path)) : (typeof getRef(path) == "object" ? JSON.stringify(getRef(path)) : String(getRef(path)))])).size;
+                    return (new Blob([getDir(path) ? fsToString(getDir(path)) : (typeof getFile(path) == "object" ? JSON.stringify(getFile(path)) : String(getFile(path)))])).size;
                   }
                 }
               }
@@ -4716,6 +4713,9 @@ a, .link {
                 "jpeg": "JPEG Image",
                 "gif": "GIF Image",
                 "svg": "Vector Image",
+                "mp4": "MPEG-4 Video",
+                "srt": "SubRip Subtitles",
+                "vtt": "WebVTT Subtitles",
                 "jsonfs": "GopalOS Filesystem",
                 "var": "Variable",
                 "java": "Java Source File",
@@ -4732,7 +4732,7 @@ a, .link {
             },
             "text-filetypes": {
               type: "var",
-              content: ["txt", "cfg", "css", "html", "c", "cpp", "h", "java", "cfg", "asm", "md"]
+              content: ["txt", "cfg", "css", "html", "c", "cpp", "h", "java", "cfg", "asm", "md", "srt", "vtt"]
             },
             "get-type": {
               type: "js",
@@ -4851,7 +4851,13 @@ a, .link {
             },
             "changelog": {
               type: "txt",
-              content: `2024-11-28
+              content: `2024-12-08
+  \u2022 Added transition to taskbar items
+2024-12-05
+  \u2022 Added g API with getFile and getDir
+  \u2022 Changed File Manager to use getFile and getDir
+  \u2022 Added video and subtitle filetypes to filetype-names.json
+2024-11-28
   \u2022 Added several fonts
   \u2022 Replaced "material-symbols-outlined" class with "matsymb"
   \u2022 Fixed local storage checker console error
@@ -5533,7 +5539,7 @@ a, .link {
       }, 500);
     });
     // Once finished, planned for inclusion in the file system instead of here
-    const path = {
+    /*const path = {
       ref: function(path) {
         if (path == "/") {
           return os.filesystem;
@@ -5577,13 +5583,63 @@ a, .link {
       parent: function(path) {
         return path.replace(/\/[^/]+\/$/, "/");
       }
+    };*/
+    const g = {
+      fs: {
+        getFile: function(path, info = false) {
+          const file = getRef(path, true);
+          return (file !== null && file?.type !== "dir") ? (info ? file : file.content) : null;
+        },
+        getDir: function(path) {
+          if (path == "/") return getRef("/");
+          const dir = getRef(`${path.replace(/(?<=.)\/$/, "")}.dir`, true);
+          return (dir !== null && dir?.type === "dir") ? dir.content : null;
+        },
+        exists: function(path) {
+          return getFile(path) || getDir(path);
+        },
+        fixPath: function(path) {
+          if (!path.startsWith("/")) path = "/" + path;
+          path = path.replace(/\/\/+/g, "/");
+          return path;
+        },
+        getExt: function(path) {
+          return path.match(/\.([^./]+)$/)?.[1] ?? null;
+        },
+        removeExt: function(path) {
+          return path.replace(/\.[^./]+$/, "");
+        },
+        createFile: function(path, content = null) {
+          path = this.fixPath(path).replace(/\/$/, "");
+          const type = this.getExt(path);
+          if (content === null) {
+            if (type == "js" || type == "pgm") {
+              content = "function() {}";
+            }
+            else if (type == "var") {
+              content = null;
+            }
+            else if (type == "json" || type == "dir") {
+              content = {};
+            }
+            else {
+              content = "";
+            }
+          }
+          const parentPath = path.replace(/\/[^/]+$/, "");
+          const name = this.removeExt(path.match(/\/([^/]+)$/)?.[1]);
+          const parentDir = getDir(parentPath);
+          if (parentDir === null) return false;
+          parentDir[name] = {type, content};
+          return true;
+        },
+        createDir: function(path) {
+          return this.createFile(this.fixPath(path) + ".dir", {});
+        }
+      }
     };
-    const getFile = function(path) {
-      return;
-    };
-    const getDir = function(path) {
-      return;
-    }
+    const getFile = (...args) => g.fs.getFile(...args);
+    const getDir = (...args) => g.fs.getDir(...args);
     </script>
   
 </body></html>
