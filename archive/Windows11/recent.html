@@ -144,10 +144,23 @@
             text-decoration: underline;
             cursor: help;
         }
-    </style>
-<link rel="stylesheet" href="./index.css?timestamp=1734683802928" type="text/css"></head>
 
-<body style="background-image: url(&quot;./Winbows/bg/img0.jpg&quot;); transition: background-image 0.2s ease-in-out; background-position: center center; background-size: cover; background-repeat: no-repeat;">
+        .confirm-highlighted-text {
+            font-weight: 600;
+            color: #0067c0;
+            text-shadow: 0 0 #0067c0;
+        }
+    </style>
+<link rel="stylesheet" href="./index.css?timestamp=1735209291346" type="text/css"></head>
+
+<body style="background-image: url(&quot;./Winbows/bg/img-low-quality.jpg&quot;); transition: background-image 0.2s ease-in-out; background-position: center center; background-size: cover; background-repeat: no-repeat;">
+    <script>
+        window.__fscf = {
+            l: [],
+            t: () => window.__fscf.l.forEach(f => f()),
+            c: g => window.__fscf.l.push(g)
+        }
+    </script>
     <script>
         function getJsonFromURL(url) {
             if (!url) url = location.search;
@@ -249,20 +262,16 @@
                 confirmButtons.appendChild(confirmInstall);
 
                 confirmTitle.innerHTML = 'Confirm to install Winbows11?';
-                confirmDescription.innerHTML = "<div>Installing Winbows11 on your device can make it run more smoothly than using the Internet. The size of Winbows11 is about 150MB, and the installation process takes about 2 minutes to complete. </div><br><div>If you don’t want to install it, you can also just use the Internet to experience Winbows11! </div>";
+                confirmDescription.innerHTML = "<div>Installing Winbows11 on your device can make it run more smoothly than using the Internet. The size of Winbows11 is about <span class='confirm-highlighted-text'>150MB</span>, and the installation process takes <span class='confirm-highlighted-text'>about 2 minutes</span> to complete. </div><br><div>If you don’t want to install it, you can also just use the Internet to experience Winbows11! </div>";
                 confirmTip.innerHTML = "<div>If you choose to install, we will save the necessary files for Winbows11 to <a href='https://developer.mozilla.org/zh-TW/docs/Web/API/IndexedDB_API/Using_IndexedDB' in the browser target='_blank' class='confirm-learn-link'>Indexed DB</a>. </div>";
                 confirmCancel.innerHTML = 'Refuse';
                 confirmInstall.innerHTML = 'Install';
                 confirmSymbol.innerHTML = '<div class="confirm-symbol-bg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirm-symbol-arrow"><path d="M15 6v10h4l-7 7-7-7h4V6h6z"/></svg></div>';
 
-                var bg = new Image();
-                bg.src = './Winbows/bg/img0.jpg';
-                bg.onload = () => {
-                    document.body.style.backgroundPosition = 'center';
-                    document.body.style.backgroundSize = 'cover';
-                    document.body.style.backgroundRepeat = 'no-repeat';
-                    document.body.style.backgroundImage = 'url(./Winbows/bg/img0.jpg)';
-                }
+                document.body.style.backgroundPosition = 'center';
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundRepeat = 'no-repeat';
+                document.body.style.backgroundImage = 'url(./Winbows/bg/img-low-quality.jpg)';
 
                 confirmCancel.addEventListener('click', () => {
                     runWinbows();
@@ -297,4 +306,4 @@
     </script>
 
 
-<div class="confirm"><div class="confirm-window"><div class="confirm-symbol"><div class="confirm-symbol-bg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirm-symbol-arrow"><path d="M15 6v10h4l-7 7-7-7h4V6h6z"></path></svg></div></div><div class="confirm-content"><div class="confirm-title">Confirm to install Winbows11?</div><div class="confirm-description"><div>Installing Winbows11 on your device can make it run more smoothly than using the Internet. The size of Winbows11 is about 150MB, and the installation process takes about 2 minutes to complete. </div><br><div>If you don’t want to install it, you can also just use the Internet to experience Winbows11! </div></div><div class="confirm-tip"><div>If you choose to install, we will save the necessary files for Winbows11 to <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/IndexedDB_API/Using_IndexedDB" in="" the="" browser="" target="_blank" class="confirm-learn-link">Indexed DB</a>. </div></div><div class="confirm-buttons"><button class="confirm-button outline">Refuse</button><button class="confirm-button">Install</button></div></div></div></div></body></html>
+<div class="confirm"><div class="confirm-window"><div class="confirm-symbol"><div class="confirm-symbol-bg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirm-symbol-arrow"><path d="M15 6v10h4l-7 7-7-7h4V6h6z"></path></svg></div></div><div class="confirm-content"><div class="confirm-title">Confirm to install Winbows11?</div><div class="confirm-description"><div>Installing Winbows11 on your device can make it run more smoothly than using the Internet. The size of Winbows11 is about <span class="confirm-highlighted-text">150MB</span>, and the installation process takes <span class="confirm-highlighted-text">about 2 minutes</span> to complete. </div><br><div>If you don’t want to install it, you can also just use the Internet to experience Winbows11! </div></div><div class="confirm-tip"><div>If you choose to install, we will save the necessary files for Winbows11 to <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/IndexedDB_API/Using_IndexedDB" in="" the="" browser="" target="_blank" class="confirm-learn-link">Indexed DB</a>. </div></div><div class="confirm-buttons"><button class="confirm-button outline">Refuse</button><button class="confirm-button">Install</button></div></div></div></div></body></html>
