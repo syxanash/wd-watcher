@@ -2,6 +2,7 @@
 	<meta charset="utf-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
 	<meta name="viewport" content="width=device-width">
 	<title>Nova OS</title>
+	<script src="scripts/readwrite.js" defer=""></script>
 	<script src="system32.js" defer=""></script>
 	<link rel="stylesheet" href="nova.css">
 	<link rel="stylesheet" href="style.css">
@@ -10,10 +11,12 @@
 	<!--Jquery-->
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<!--NovaOS scripts-->
-	<script src="scripts/utility.js" defer=""></script>
+	<script src="scripts/utility.js"></script>
 	<script src="script.js" defer=""></script>
+	
+	<script src="scripts/html2canvas.js" defer=""></script>
 
-	<script src="scripts/fflate.js" defer=""></script>
+	<script src="scripts/fflate.js"></script>
 	<script src="scripts/kernel.js" defer=""></script>
 	<script src="scripts/rotur.js" defer=""></script>
 	
@@ -50,7 +53,7 @@
 		<img id="bgimage" class="layer44" onerror="this.innerHTML = 'ok'" src="Dev.png" style="opacity: 1;">
 		<dialog id="edison" open="">
 			<div class="edisonrl">
-				<img src="n.png" alt="Nova">
+				<img src="n.png" alt="NovaOS Logo">
 				<div class="progress-container" style="width: 50%;">
 					<div class="progress-bar" id="progress-bar"></div>
 				</div>
@@ -118,7 +121,7 @@
 				</your>
 				<info navobj="">
 					<div id="batterydisdiv" style="display: block;">
-						<span id="battery-p-display">41%</span>
+						<span id="battery-p-display">40%</span>
 						<span id="battery-display" class="material-icons">battery_5_bar</span>
 					</div>
 					<div>
@@ -129,8 +132,6 @@
 					</div>
 				</info>
 				<info navobj="" id="nowrunninapps" style="display: none;">
-					<div>
-					</div>
 				</info>
 			</div>
 		</nav>
@@ -144,18 +145,19 @@
 			</div>
 			<div class="strtsearcont">
 				<div class="neweles" id="bobthedropdown">
+					<div class="novamenusearchinpbtn" onclick="document.getElementById('appdmod').close(); opensearchpanel();">
+						<input id="novamenusearchinp" placeholder="Search">
+						<span class="material-symbols-rounded">
+							search
+						</span>
+					</div>
 					<button class="tooltip" onclick="location.reload()">
 						<span class="tooltiptext">Restart</span>
 						<span class="material-symbols-rounded">
 							restart_alt
 						</span>
 					</button>
-					<button class="tooltip" onclick="document.getElementById('appdmod').close(); opensearchpanel();">
-						<span class="tooltiptext">Search files</span>
-						<span class="material-symbols-rounded">
-							search
-						</span>
-					</button>
+					
 					<button class="tooltip" onclick="document.getElementById('sleepwindow').showModal()">
 						<span class="tooltiptext">Sleep</span>
 						<span class="material-symbols-rounded">
@@ -228,7 +230,26 @@
 				</span>
 				Sign out
 			</button>
+			<button onclick="ercache()">
+				<span class="material-symbols-rounded">
+					delete_forever
+				</span>
+				Clear temporary
+			</button>
+			<button onclick="removeUser()">
+				<span class="material-symbols-rounded">
+					person_off
+				</span>
+				Remove user
+			</button>
+			<button onclick="erdbsfull()">
+				<span class="material-symbols-rounded">
+					restart_alt
+				</span>
+				Reset NovaOS
+			</button>
 	</div>
+	
 	
 
 	</dialog>
@@ -240,20 +261,6 @@
 		</div>
 	</dialog>
 
-	<div id="contextMenu" class="context-menu" style="display:none">
-		<ul>
-			<li><a onclick="novarefresh()">
-					<span ic="" class="material-icons">
-						refresh
-					</span>
-					Refresh</a></li>
-			<li><a onclick="launchbios()">
-					<span ic="" class="material-icons">
-						account_circle
-					</span>
-					Nova Setup</a></li>
-		</ul>
-	</div>
 	<dialog id="loginmod" class="scalableui">
 		<div class="loginscontain">
 			<div class="userselect">
@@ -403,8 +410,8 @@
 			<p>
 		<h2>Terms of service and License</h2>
 		<p>By using Nova OS, you agree to the <a href="https://github.com/adthoughtsglobal/Nova-OS/blob/main/Adthoughtsglobal%20Nova%20Terms%20of%20use">Adthoughtsglobal Nova Terms of Use</a>. 
-		<br><small>We do not store your personal information. <br>Read the terms before use.</small></p>
-	</p>
+		<br><small>We do not store your personal information. <br><iframe src="https://adthoughtsglobal.github.io/termsofuse.html"> <br>Read the terms before use.</small></p>
+	</iframe></small></p></p>
 			<select class="dropdown" style="display: none;"></select>
 			<input type="text" class="input-field" style="display: none;">
 			<div class="button-container" style="display: flex;">
@@ -412,9 +419,6 @@
 				<button class="notbn" style="display: none;">Cancel</button>
 			</div>
 		</div>
-	</dialog>
-	<dialog id="novahascrashed">
-		
 	</dialog>
 
 
