@@ -17,7 +17,7 @@ window.top.location = 'ie.html';
 </script>
 <![endif]-->
 
-  <script src="desktop/based/desktop.wallpaper/wallpapers/ripples/ripples.js"></script><script src="desktop/based/desktop.wallpaper/wallpapers/ripples/vendor/jquery.ripples.js"></script><script src="desktop/assets/js/jquery.simple-color.js"></script><script src="desktop/based/desktop.profile/desktop.profile.js"></script><script src="desktop/based/desktop.spellbook/desktop.spellbook.js"></script><script src="desktop/based/desktop.messages/desktop.messages.js"></script><script src="desktop/based/desktop.notifications/desktop.notifications.js"></script><script src="desktop/based/desktop.tts/desktop.tts.js"></script><script src="desktop/based/desktop.appstore/desktop.appstore.js"></script><script src="desktop/based/desktop.audioplayer/desktop.audioplayer.js"></script><script src="desktop/based/desktop.themes/desktop.themes.js"></script><script src="desktop/based/desktop.wallpaper/desktop.wallpaper.js"></script><script src="desktop/based/desktop.clock/desktop.clock.js"></script><script src="desktop/based/desktop.settings/desktop.settings.js"></script><script src="desktop/based/desktop.localstorage/desktop.localstorage.js"></script><script type="text/javascript" src="/v4-to-v5-bridge.js"></script>
+  <script src="/desktop/based/desktop.wallpaper/wallpapers/ripples/ripples.js"></script><script src="/desktop/based/desktop.wallpaper/wallpapers/ripples/vendor/jquery.ripples.js"></script><script src="/desktop/assets/js/jquery.simple-color.js"></script><script src="desktop/based/desktop.appstore/desktop.appstore.js"></script><script src="desktop/based/desktop.wallpaper/desktop.wallpaper.js"></script><script src="desktop/based/desktop.settings/desktop.settings.js"></script><script src="desktop/based/desktop.localstorage/desktop.localstorage.js"></script><script type="text/javascript" src="/v4-to-v5-bridge.js"></script>
 
   <script type="text/javascript">
 
@@ -35,14 +35,17 @@ window.top.location = 'ie.html';
   <link rel="stylesheet" href="desktop/assets/css/reset.css">
   <link rel="stylesheet" href="desktop/assets/css/loader.css">
 
+
+
+
   <!--[if lt IE 9]>
 <link rel="stylesheet" href="desktop/assets/css/ie.css" />
 <![endif]-->
 
-<link rel="stylesheet" href="https://buddypond.com/v5/apps/based/desktop/desktop.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/console/console.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/ui.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/mobile.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/Window.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/TaskBar.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/fontawesome.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/all.min.css"><script src="https://buddypond.com/v5/vendor/DateFormat.js"></script><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/menubar/menubar.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/powerlevel/powerlevel.css"></head>
+<link rel="stylesheet" href="https://buddypond.com/v5/apps/based/desktop/desktop.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/console/console.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/ui.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/mobile.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/Window.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/TaskBar.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/fontawesome.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/all.min.css"><script src="https://buddypond.com/v5/vendor/DateFormat.js"></script><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/menubar/menubar.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/powerlevel/powerlevel.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/buddylist/buddylist.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-explorer/file-explorer.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-explorer/FileTree/FileTree.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-viewer/file-viewer.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-tree/file-tree.css"></head>
 
 <body class="jquery-ripples" style="">
-  <img id="wallpaper" class="abs wallpaper" src="desktop/assets/images/misc/wallpaper.jpg" style="display: none;">
+  <img id="wallpaper" class="abs wallpaper" src="/desktop/assets/images/misc/wallpaper.jpg" style="display: none;">
   <div id="loaderHolder" style="display: none;">
     <div id="loader"></div>
   </div>
@@ -59,137 +62,13 @@ window.top.location = 'ie.html';
 -->
   <!-- src="desktop/assets/images/gui/rainbow-hexagon-lattice.gif" -->
   <!-- TODO: remove? -->
-  <div id="mainOverlay" style="display: block;">
+  <div id="mainOverlay" class="has-droparea" style="display: block;">
     <img class="mobileLoadingOverlay">
     <div class="abs" id="wrapper">
       <div class="abs" id="desktop">
         <!-- default desktop icons are currently rendered in `app.settings.load()` -->
         <canvas class="canvasBackground" id="c" height="981" width="1792" style="display: none;"></canvas>
       <style>
-  #window_spellbook .window_content {
-    background-image: url("desktop/assets/images/misc/ivy-bg.png");
-    background-color: black;
-  }
-  #window_spellbook .window_main {
-    padding-left: 48px;
-    padding-right: 48px;
-    padding-top: 32px;
-    font-size: 32px;
-  }
-  #window_spellbook input,select {
-    font-size: 24px;
-  }
-  #window_spellbook label {
-    color: white;
-  }
-  .ponderSpellbook {
-    float: right;
-  }
-</style>
-
-<div id="window_spellbook" class="abs window" style="width: 662px; height: 533px; left: 50px; top: 50px;">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_spellbook_64.png" style="width: 16px; height: 16px;">
-        Spellbook
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 30px;">
-      <div class="window_main">
-        <form class="castSpellForm">
-          <a class="desktopButton ponderSpellbook orb" href="#">
-            <img src="desktop/assets/images/misc/orb.jpeg" width="100" height="100" title="Cast spell...">
-          </a>
-          <label for="omegaSpellTome">Spell</label>
-          <br>
-          <select class="omegaSpellTome">
-            <option>Choose your spell wisely...</option>
-          <option value="zalgo">zalgo</option><option value="babel.js">babel.js</option><option value="riddikulus">riddikulus</option><option value="ebublio">ebublio</option><option value="episkey">episkey</option><option value="rickroll">rickroll</option><option value="forbiddenRickRoll">forbiddenRickRoll</option><option value="passwordisusername">passwordisusername</option><option value="alert">alert</option><option value="logout">logout</option><option value="banhammer">banhammer</option></select>
-          <br>
-          <label for="castSpellBuddyName">Buddy Name</label>
-          <br>
-          <input type="text" id="castSpellBuddyName" placeholder="pick your target...">
-          <br>
-          <br>
-          <span class="warning"><strong>Warning:</strong> Casting spells is reserved only for Matrix Agents. If you are not a LVL 12 Grammaton Cleric or higher you might invoke the wrath of Merlin.</span>
-        </form>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs"></span>
-</div><style>
-  .wallpaperSettings {
-    padding-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .button_bar {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-</style>
-
-<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
-    <div class="abs window_inner">
-      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-        <span class="float_left">
-          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
-          Wallpaper
-        </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-      </div>
-      <div class="abs window_content" style="top: 30px;">
-        <div class="window_main">
-          <div class="wallpaperSettings">
-            <div>
-                <h2>Wallpaper Type</h2>
-                <!-- Wake up neo -->
-                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
-                <label for="wallPaperRadioMatrix">Matrix</label>
-                <br>
-                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
-                <label for="wallPaperRadioSolid">Solid</label>
-                <br>
-            </div>
-            <br>
-            <br>
-            <div>
-                <h2>Wallpaper Options</h2>
-                <div>
-                    <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
-                </div>
-                <br>
-                <br>
-                <div>
-                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="abs window_bottom">
-        Build: v4.20.69
-      </div>
-    </div>
-    <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-  <style>
   #window_appstore h1 {
     font-size: 48px;
   }
@@ -629,372 +508,175 @@ window.top.location = 'ie.html';
   </div>
   <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div><style>
-  #window_profile .publicProfilePreviewHolder {
-    border: solid;
-    background-color: #CCC;
-    text-align: left;
-    width: 280px;
+  .wallpaperSettings {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  #window_profile .publicProfilePreviewHolder:hover * {
-    cursor: pointer;
-  }
-
-  .updateProfileResponse {
-    font-size: 18px;
-    color: green;
-  }
-  .buddyGeoFlag {
-    width: 16px;
-    height: 16px;
+  .button_bar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 </style>
 
-<div id="window_profile" class="abs window">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img src="desktop/assets/images/icons/icon_profile_64.png" style="width: 16px; height: 16px;">
-        Profile
-      </span>
+<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
+    <div class="abs window_inner">
+      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
+        <span class="float_left">
+          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
+          Wallpaper
+        </span>
       <span class="float_right trafficLight">
         <a href="#min" class="minWindow" title="Min Window">🟠</a>
         <a href="#max" class="maxWindow" title="Max Window">🟢</a>
         <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
       </span>
-    </div>
-    <div class="abs window_content" style="top: 30px;">
-      <div class="window_main console_holder">
-        <div id="profileTabs" class="tabs-container">
-          <ul class="tab-list">
-            <li><a href="#tabs-1">Your Apps</a></li>
-            <li><a href="#tabs-2">Themes</a></li>
-            <li><a href="#tabs-3">Settings</a></li>
-            <li><a href="#tabs-4">Audio</a></li>
-            <li><a href="#tabs-5">Camera</a></li>
-            <!--
-            <li><a href="#tabs-2">App Store</a></li>
-            -->
-          </ul>
-          <div id="tabs-1" class="tab-content">
-            <table class="data table yourApps">
-              <!--
-              <tr>
-                <th>
-                  Installed
-                </th>
-                <th>
-                  App Name
-                </th>
-              </tr>
-              -->
-              <tbody>
-    <tr class="openApp" data-app="buddylist">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_buddylist_64.png">
-      </td>
-      <td>
-       Buddy List
-      </td>
-  </tr>
-    <tr class="openApp" data-app="pond">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_pond_64.png">
-      </td>
-      <td>
-       Ponds
-      </td>
-  </tr>
-    <tr class="openApp" data-app="paint">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_paint_64.png">
-      </td>
-      <td>
-       Paint
-      </td>
-  </tr>
-    <tr class="openApp" data-app="interdimensionalcable">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png">
-      </td>
-      <td>
-       IDC Cable
-      </td>
-  </tr>
-    <tr class="openApp" data-app="games">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_folder_64.png">
-      </td>
-      <td>
-       Games
-      </td>
-  </tr>
-    <tr class="openApp" data-app="soundrecorder">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_soundrecorder_64.png">
-      </td>
-      <td>
-       Sound Recorder
-      </td>
-  </tr>
-    <tr class="openApp" data-app="piano">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_piano_64.png">
-      </td>
-      <td>
-       Piano
-      </td>
-  </tr>
-    <tr class="openApp" data-app="mirror">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_mirror_64.png">
-      </td>
-      <td>
-       Mirror
-      </td>
-  </tr>
-    <tr class="openApp" data-app="midi">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_midi_64.png">
-      </td>
-      <td>
-       MIDI
-      </td>
-  </tr>
-    <tr class="openApp" data-app="appstore">
-      <td>
-        <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_appstore_64.png">
-      </td>
-      <td>
-       App Store
-      </td>
-  </tr></tbody>
-
-              <!-- TODO: hide if no midi support? 
-              <tr class="openApp" data-app="midi">
-                <td>
-                  <img class="emojiIcon float-left" src="desktop/assets/images/icons/icon_midi_64.png" />
-                </td>
-                <td>
-                  Audio MIDI Setup
-                </td>
-              </tr>
-              -->
-            </table>
+      </div>
+      <div class="abs window_content" style="top: 30px;">
+        <div class="window_main">
+          <div class="wallpaperSettings">
+            <div>
+                <h2>Wallpaper Type</h2>
+                <!-- Wake up neo -->
+                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
+                <label for="wallPaperRadioMatrix">Matrix</label>
+                <br>
+                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
+                <label for="wallPaperRadioSolid">Solid</label>
+                <br>
+            </div>
             <br>
-            <p align="left">
-              You can Install or Unstall Apps using <a href="#" class="openApp" data-app="appstore">The App Store</a><br><br>
-              <button class="openApp" data-app="appstore">Install / Uninstall Apps</button>
-              
-              <!-- TODO: list all available apps with checkboxes that persist to localstorage and toggle desktop.foo.load() triggers -->
-            
-              </p>
-            
             <br>
-            
-            <!--
-              <p>
-                Refresh entire page to for Buddy Apps to reload.
-              </p>
-            -->
-          </div>
-          <div id="tabs-2" class="tab-content">
-            <div class="wallpaperSettings">
-              <div class="wallpaperTypes">
-                  <h2>Wallpaper Type</h2>
-              
-    <input type="radio" id="wallPaperRadiosolid" name="wallpaper_opt" class="wallpaper_opt" value="solid">
-    <label for="wallPaperRadiosolid">Solid</label>
-    <br>
-    
-    <input type="radio" id="wallPaperRadiomatrix" name="wallpaper_opt" class="wallpaper_opt" value="matrix">
-    <label for="wallPaperRadiomatrix">Matrix</label>
-    <br>
-    
-    <input type="radio" id="wallPaperRadionyancat" name="wallpaper_opt" class="wallpaper_opt" value="nyancat">
-    <label for="wallPaperRadionyancat">Nyan Cat</label>
-    <br>
-    
-    <input type="radio" id="wallPaperRadioripples" name="wallpaper_opt" class="wallpaper_opt" value="ripples" checked="">
-    <label for="wallPaperRadioripples">Ripples</label>
-    <br>
-    </div>
-              <br>
-              <br>
-              <div>
+            <div>
                 <h2>Wallpaper Options</h2>
                 <div>
                     <label>Color</label>
-                    <div class="wallpaperOptionColor"></div>
+                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
                 </div>
-              </div>
+                <br>
+                <br>
+                <div>
+                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
+                </div>
             </div>
           </div>
-          <div id="tabs-3" align="left" class="tab-content">
-            <span class="updateProfileResponse"></span>
-            <form class="updateProfileForm">
-              <table class="profileTable table data">
-                <tbody><tr class="loggedIn">
-                  <td>Username</td>
-                  <td class="me">Marak</td>
-                </tr>
-                <!--
-                <tr>
-                  <td>Avatar</td>
-                  <td class="me">
-                    <input type="file"/>
-                  </td>
-                </tr>
-                -->
-                <tr class="loggedIn">
-                  <td>Email</td>
-                  <td>
-                    <input type="text" size="32" name="buddy_email" class="buddy_email" value="">
-                  </td>
-                </tr>
-                <tr class="loggedIn">
-                  <td>Password</td>
-                  <td>
-                    <input type="password" size="32" name="buddy_password" class="buddy_password">
-                  </td>
-                </tr>
-                <tr class="loggedIn">
-                  <td>Confirm Password</td>
-                  <td>
-                    <input type="password" size="32" name="confirm_buddy_password" class="confirm_buddy_password">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Text To Speech Voice</td>
-                  <td>
-                    <select name="ttsVoice" class="ttsVoice"><option value="Moira">Moira en-IE</option><option value="Aaron">Aaron en-US</option><option value="Albert">Albert en-US</option><option value="Alice">Alice it-IT</option><option value="Alva">Alva sv-SE</option><option value="Amélie">Amélie fr-CA</option><option value="Amira">Amira ms-MY</option><option value="Anna">Anna de-DE</option><option value="Arthur">Arthur en-GB</option><option value="Bad News">Bad News en-US</option><option value="Bahh">Bahh en-US</option><option value="Bells">Bells en-US</option><option value="Boing">Boing en-US</option><option value="Bubbles">Bubbles en-US</option><option value="Carmit">Carmit he-IL</option><option value="Catherine">Catherine en-AU</option><option value="Cellos">Cellos en-US</option><option value="Damayanti">Damayanti id-ID</option><option value="Daniel (English (United Kingdom))">Daniel (English (United Kingdom)) en-GB</option><option value="Daniel (French (France))">Daniel (French (France)) fr-FR</option><option value="Daria">Daria bg-BG</option><option value="Eddy (German (Germany))">Eddy (German (Germany)) de-DE</option><option value="Eddy (English (United Kingdom))">Eddy (English (United Kingdom)) en-GB</option><option value="Eddy (English (United States))">Eddy (English (United States)) en-US</option><option value="Eddy (Spanish (Spain))">Eddy (Spanish (Spain)) es-ES</option><option value="Eddy (Spanish (Mexico))">Eddy (Spanish (Mexico)) es-MX</option><option value="Eddy (Finnish (Finland))">Eddy (Finnish (Finland)) fi-FI</option><option value="Eddy (French (Canada))">Eddy (French (Canada)) fr-CA</option><option value="Eddy (French (France))">Eddy (French (France)) fr-FR</option><option value="Eddy (Italian (Italy))">Eddy (Italian (Italy)) it-IT</option><option value="Eddy (Japanese (Japan))">Eddy (Japanese (Japan)) ja-JP</option><option value="Eddy (Korean (South Korea))">Eddy (Korean (South Korea)) ko-KR</option><option value="Eddy (Portuguese (Brazil))">Eddy (Portuguese (Brazil)) pt-BR</option><option value="Eddy (Chinese (China mainland))">Eddy (Chinese (China mainland)) zh-CN</option><option value="Eddy (Chinese (Taiwan))">Eddy (Chinese (Taiwan)) zh-TW</option><option value="Ellen">Ellen nl-BE</option><option value="Flo (German (Germany))">Flo (German (Germany)) de-DE</option><option value="Flo (English (United Kingdom))">Flo (English (United Kingdom)) en-GB</option><option value="Flo (English (United States))">Flo (English (United States)) en-US</option><option value="Flo (Spanish (Spain))">Flo (Spanish (Spain)) es-ES</option><option value="Flo (Spanish (Mexico))">Flo (Spanish (Mexico)) es-MX</option><option value="Flo (Finnish (Finland))">Flo (Finnish (Finland)) fi-FI</option><option value="Flo (French (Canada))">Flo (French (Canada)) fr-CA</option><option value="Flo (French (France))">Flo (French (France)) fr-FR</option><option value="Flo (Italian (Italy))">Flo (Italian (Italy)) it-IT</option><option value="Flo (Japanese (Japan))">Flo (Japanese (Japan)) ja-JP</option><option value="Flo (Korean (South Korea))">Flo (Korean (South Korea)) ko-KR</option><option value="Flo (Portuguese (Brazil))">Flo (Portuguese (Brazil)) pt-BR</option><option value="Flo (Chinese (China mainland))">Flo (Chinese (China mainland)) zh-CN</option><option value="Flo (Chinese (Taiwan))">Flo (Chinese (Taiwan)) zh-TW</option><option value="Fred">Fred en-US</option><option value="Good News">Good News en-US</option><option value="Gordon">Gordon en-AU</option><option value="Grandma (German (Germany))">Grandma (German (Germany)) de-DE</option><option value="Grandma (English (United Kingdom))">Grandma (English (United Kingdom)) en-GB</option><option value="Grandma (English (United States))">Grandma (English (United States)) en-US</option><option value="Grandma (Spanish (Spain))">Grandma (Spanish (Spain)) es-ES</option><option value="Grandma (Spanish (Mexico))">Grandma (Spanish (Mexico)) es-MX</option><option value="Grandma (Finnish (Finland))">Grandma (Finnish (Finland)) fi-FI</option><option value="Grandma (French (Canada))">Grandma (French (Canada)) fr-CA</option><option value="Grandma (French (France))">Grandma (French (France)) fr-FR</option><option value="Grandma (Italian (Italy))">Grandma (Italian (Italy)) it-IT</option><option value="Grandma (Japanese (Japan))">Grandma (Japanese (Japan)) ja-JP</option><option value="Grandma (Korean (South Korea))">Grandma (Korean (South Korea)) ko-KR</option><option value="Grandma (Portuguese (Brazil))">Grandma (Portuguese (Brazil)) pt-BR</option><option value="Grandma (Chinese (China mainland))">Grandma (Chinese (China mainland)) zh-CN</option><option value="Grandma (Chinese (Taiwan))">Grandma (Chinese (Taiwan)) zh-TW</option><option value="Grandpa (German (Germany))">Grandpa (German (Germany)) de-DE</option><option value="Grandpa (English (United Kingdom))">Grandpa (English (United Kingdom)) en-GB</option><option value="Grandpa (English (United States))">Grandpa (English (United States)) en-US</option><option value="Grandpa (Spanish (Spain))">Grandpa (Spanish (Spain)) es-ES</option><option value="Grandpa (Spanish (Mexico))">Grandpa (Spanish (Mexico)) es-MX</option><option value="Grandpa (Finnish (Finland))">Grandpa (Finnish (Finland)) fi-FI</option><option value="Grandpa (French (Canada))">Grandpa (French (Canada)) fr-CA</option><option value="Grandpa (French (France))">Grandpa (French (France)) fr-FR</option><option value="Grandpa (Italian (Italy))">Grandpa (Italian (Italy)) it-IT</option><option value="Grandpa (Japanese (Japan))">Grandpa (Japanese (Japan)) ja-JP</option><option value="Grandpa (Korean (South Korea))">Grandpa (Korean (South Korea)) ko-KR</option><option value="Grandpa (Portuguese (Brazil))">Grandpa (Portuguese (Brazil)) pt-BR</option><option value="Grandpa (Chinese (China mainland))">Grandpa (Chinese (China mainland)) zh-CN</option><option value="Grandpa (Chinese (Taiwan))">Grandpa (Chinese (Taiwan)) zh-TW</option><option value="Hattori">Hattori ja-JP</option><option value="Helena">Helena de-DE</option><option value="Ioana">Ioana ro-RO</option><option value="Jacques">Jacques fr-FR</option><option value="Jester">Jester en-US</option><option value="Joana">Joana pt-PT</option><option value="Junior">Junior en-US</option><option value="Kanya">Kanya th-TH</option><option value="Karen">Karen en-AU</option><option value="Kathy">Kathy en-US</option><option value="Kyoko">Kyoko ja-JP</option><option value="Lana">Lana hr-HR</option><option value="Laura">Laura sk-SK</option><option value="Lekha">Lekha hi-IN</option><option value="Lesya">Lesya uk-UA</option><option value="Li-Mu">Li-Mu zh-CN</option><option value="Linh">Linh vi-VN</option><option value="Luciana">Luciana pt-BR</option><option value="Majed">Majed ar-001</option><option value="Marie">Marie fr-FR</option><option value="Martha">Martha en-GB</option><option value="Martin">Martin de-DE</option><option value="Meijia">Meijia zh-TW</option><option value="Melina">Melina el-GR</option><option value="Milena">Milena ru-RU</option><option value="Montse">Montse ca-ES</option><option value="Mónica">Mónica es-ES</option><option value="Nicky">Nicky en-US</option><option value="Nora">Nora nb-NO</option><option value="O-Ren">O-Ren ja-JP</option><option value="Organ">Organ en-US</option><option value="Paulina">Paulina es-MX</option><option value="Ralph">Ralph en-US</option><option value="Reed (German (Germany))">Reed (German (Germany)) de-DE</option><option value="Reed (English (United Kingdom))">Reed (English (United Kingdom)) en-GB</option><option value="Reed (English (United States))">Reed (English (United States)) en-US</option><option value="Reed (Spanish (Spain))">Reed (Spanish (Spain)) es-ES</option><option value="Reed (Spanish (Mexico))">Reed (Spanish (Mexico)) es-MX</option><option value="Reed (Finnish (Finland))">Reed (Finnish (Finland)) fi-FI</option><option value="Reed (French (Canada))">Reed (French (Canada)) fr-CA</option><option value="Reed (Italian (Italy))">Reed (Italian (Italy)) it-IT</option><option value="Reed (Japanese (Japan))">Reed (Japanese (Japan)) ja-JP</option><option value="Reed (Korean (South Korea))">Reed (Korean (South Korea)) ko-KR</option><option value="Reed (Portuguese (Brazil))">Reed (Portuguese (Brazil)) pt-BR</option><option value="Reed (Chinese (China mainland))">Reed (Chinese (China mainland)) zh-CN</option><option value="Reed (Chinese (Taiwan))">Reed (Chinese (Taiwan)) zh-TW</option><option value="Rishi">Rishi en-IN</option><option value="Rocko (German (Germany))">Rocko (German (Germany)) de-DE</option><option value="Rocko (English (United Kingdom))">Rocko (English (United Kingdom)) en-GB</option><option value="Rocko (English (United States))">Rocko (English (United States)) en-US</option><option value="Rocko (Spanish (Spain))">Rocko (Spanish (Spain)) es-ES</option><option value="Rocko (Spanish (Mexico))">Rocko (Spanish (Mexico)) es-MX</option><option value="Rocko (Finnish (Finland))">Rocko (Finnish (Finland)) fi-FI</option><option value="Rocko (French (Canada))">Rocko (French (Canada)) fr-CA</option><option value="Rocko (French (France))">Rocko (French (France)) fr-FR</option><option value="Rocko (Italian (Italy))">Rocko (Italian (Italy)) it-IT</option><option value="Rocko (Japanese (Japan))">Rocko (Japanese (Japan)) ja-JP</option><option value="Rocko (Korean (South Korea))">Rocko (Korean (South Korea)) ko-KR</option><option value="Rocko (Portuguese (Brazil))">Rocko (Portuguese (Brazil)) pt-BR</option><option value="Rocko (Chinese (China mainland))">Rocko (Chinese (China mainland)) zh-CN</option><option value="Rocko (Chinese (Taiwan))">Rocko (Chinese (Taiwan)) zh-TW</option><option value="Samantha">Samantha en-US</option><option value="Sandy (German (Germany))">Sandy (German (Germany)) de-DE</option><option value="Sandy (English (United Kingdom))">Sandy (English (United Kingdom)) en-GB</option><option value="Sandy (English (United States))">Sandy (English (United States)) en-US</option><option value="Sandy (Spanish (Spain))">Sandy (Spanish (Spain)) es-ES</option><option value="Sandy (Spanish (Mexico))">Sandy (Spanish (Mexico)) es-MX</option><option value="Sandy (Finnish (Finland))">Sandy (Finnish (Finland)) fi-FI</option><option value="Sandy (French (Canada))">Sandy (French (Canada)) fr-CA</option><option value="Sandy (French (France))">Sandy (French (France)) fr-FR</option><option value="Sandy (Italian (Italy))">Sandy (Italian (Italy)) it-IT</option><option value="Sandy (Japanese (Japan))">Sandy (Japanese (Japan)) ja-JP</option><option value="Sandy (Korean (South Korea))">Sandy (Korean (South Korea)) ko-KR</option><option value="Sandy (Portuguese (Brazil))">Sandy (Portuguese (Brazil)) pt-BR</option><option value="Sandy (Chinese (China mainland))">Sandy (Chinese (China mainland)) zh-CN</option><option value="Sandy (Chinese (Taiwan))">Sandy (Chinese (Taiwan)) zh-TW</option><option value="Sara">Sara da-DK</option><option value="Satu">Satu fi-FI</option><option value="Shelley (German (Germany))">Shelley (German (Germany)) de-DE</option><option value="Shelley (English (United Kingdom))">Shelley (English (United Kingdom)) en-GB</option><option value="Shelley (English (United States))">Shelley (English (United States)) en-US</option><option value="Shelley (Spanish (Spain))">Shelley (Spanish (Spain)) es-ES</option><option value="Shelley (Spanish (Mexico))">Shelley (Spanish (Mexico)) es-MX</option><option value="Shelley (Finnish (Finland))">Shelley (Finnish (Finland)) fi-FI</option><option value="Shelley (French (Canada))">Shelley (French (Canada)) fr-CA</option><option value="Shelley (French (France))">Shelley (French (France)) fr-FR</option><option value="Shelley (Italian (Italy))">Shelley (Italian (Italy)) it-IT</option><option value="Shelley (Japanese (Japan))">Shelley (Japanese (Japan)) ja-JP</option><option value="Shelley (Korean (South Korea))">Shelley (Korean (South Korea)) ko-KR</option><option value="Shelley (Portuguese (Brazil))">Shelley (Portuguese (Brazil)) pt-BR</option><option value="Shelley (Chinese (China mainland))">Shelley (Chinese (China mainland)) zh-CN</option><option value="Shelley (Chinese (Taiwan))">Shelley (Chinese (Taiwan)) zh-TW</option><option value="Sinji">Sinji zh-HK</option><option value="Superstar">Superstar en-US</option><option value="Tessa">Tessa en-ZA</option><option value="Thomas">Thomas fr-FR</option><option value="Tina">Tina sl-SI</option><option value="Tingting">Tingting zh-CN</option><option value="Trinoids">Trinoids en-US</option><option value="Tünde">Tünde hu-HU</option><option value="Whisper">Whisper en-US</option><option value="Wobble">Wobble en-US</option><option value="Xander">Xander nl-NL</option><option value="Yelda">Yelda tr-TR</option><option value="Yu-shu">Yu-shu zh-CN</option><option value="Yuna">Yuna ko-KR</option><option value="Zarvox">Zarvox en-US</option><option value="Zosia">Zosia pl-PL</option><option value="Zuzana">Zuzana cs-CZ</option></select>
-                  </td>
-                </tr>
-                <tr class="loggedIn">
-                  <td>Hide Geo Flag</td>
-                  <td>
-                    <input type="checkbox" name="hideFlag" class="hideFlag">
-                  </td>
-                </tr>
-                <!--
-                <tr>
-                  <td>Geo Flag Country Code</td>
-                  <td>
-                    <img class="buddyGeoFlag" src="desktop/assets/geo-flags/flags/4x3/${message.location}.svg"/>
-                    <select name="geoFlags" class="geoFlags">
-                      <option>Select Country Flag...</option>
-                    </select>
-                  </td>
-                </tr>
-                -->
-                <tr>
-                  <td>Enable Web Notifications</td>
-                  <td>
-                    <input type="checkbox" size="32" name="notifications_web_enabled" class="enableWebNotifications" title="This will enable the browser's Notification settings allow Buddy Pond to notify you have new buddy messages while the website tab is not visible.">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Enable Audio Notifications</td>
-                  <td>
-                    <input type="checkbox" size="32" name="notifications_audio_enabled" class="enableAudioNotifications" title="This will enable audio notifications in the browser window while the website tab is not visible.">
-                  </td>
-                </tr>
-
-              </tbody></table>
-              <button type="submit" class="desktopPanel updateProfileButton loggedIn">Save Profile</button>
-              <!-- TODO logoout button 
-              <button type="submit" class="desktopPanel updateProfileButton">Logout</button>
-                -->
-            </form>
-          </div>
-          <div id="tabs-4" class="tab-content">
-            <div id="tabs-2">
-              <div class="wallpaperSettings">
-                <table class="data table">
-                  <tbody><tr>
-                    <td>Enable Desktop Audio</td>
-                    <td>
-                      <input type="checkbox" size="32" name="audio_enabled" class="audioEnabled" title="This will enable or mute all Audio on the Desktop.">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Enable Text-To-Speech (TTS) Audio</td>
-                    <td>
-                      <input type="checkbox" size="32" name="audio_tts_enabled" class="audioTTSEnabled" title="This will enable or mute all Text-To-Speech Audio on the Desktop.">
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-            </div>
-          </div>
-          <div id="tabs-5" align="center" class="tab-content">
-            To Adjust Default Camera Settings <a href="#mirror" class="desktopLink openApp" data-app="mirror">Click Open Mirror App</a>
-            <br>
-            <br>
-            <br>
-             <a href="#mirror" class="desktopLink openApp" data-app="mirror">
-               <img src="desktop/assets/images/icons/icon_mirror_64.png">
-             </a>
-          </div>
-          <!-- BUDDY PROFILE
-          <div id="tabs-2">
-            <h2>Your current Buddy Profile:</h2>
-            <br/>
-            <div class="publicProfilePreviewHolder desktopButton">
-              <div class="border">
-                <p class="me">Marak</p>
-                <p><em>Last Seen: <span class="lastSeen">2/22/2022 14:40pm</span></em></p>
-              </div>
-              <br/>
-              <div class="publicProfilePreview"></div>
-            </div>
-            <br/>
-            <br/>
-            <div class="profileEditor">
-              <textarea name="profileMarkdown" class="profileMarkdown" cols="60" rows="15"></textarea>
-              <button class="desktopButton updateProfileMarkdown">Update Profile</button>
-            </div>
-          </div>
-          -->
         </div>
       </div>
+      <div class="abs window_bottom">
+        Build: v4.20.69
+      </div>
     </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
+    <span class="abs ui-resizable-handle ui-resizable-se"></span>
+</div>
+  <div id="desktop-container" class="desktop-container"><div id="desktop-shortcuts-container" class="desktop-shortcuts-container"><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 0px; font-size: 12px;"><a href="#icon_dock_profile"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_profile_64.png" style="height: 32px; width: 32px;"><span class="title">Profile</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 0px; font-size: 12px;"><a href="#icon_dock_buddylist"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_buddylist_64.png" style="height: 32px; width: 32px;"><span class="title">Buddy List</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 0px; font-size: 12px;"><a href="#icon_dock_pond"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pond_64.png" style="height: 32px; width: 32px;"><span class="title">Ponds</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 100px; font-size: 12px;"><a href="#icon_dock_paint"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_paint_64.png" style="height: 32px; width: 32px;"><span class="title">Paint</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 100px; font-size: 12px;"><a href="#icon_dock_interdimensionalcable"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png" style="height: 32px; width: 32px;"><span class="title">IDC Cable</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 100px; font-size: 12px;"><a href="#icon_dock_games"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_games_64.png" style="height: 32px; width: 32px;"><span class="title">Games</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 200px; font-size: 12px;"><a href="#icon_dock_soundrecorder"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_soundrecorder_64.png" style="height: 32px; width: 32px;"><span class="title">Sound Recorder</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 200px; font-size: 12px;"><a href="#icon_dock_piano"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_piano_64.png" style="height: 32px; width: 32px;"><span class="title">Piano</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 200px; font-size: 12px;"><a href="#icon_dock_mirror"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_mirror_64.png" style="height: 32px; width: 32px;"><span class="title">Mirror</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 300px; font-size: 12px;"><a href="#icon_dock_hex-editor"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_hex-editor_64.png" style="height: 32px; width: 32px;"><span class="title">Hex Editor</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 300px; font-size: 12px;"><a href="#icon_dock_file-explorer"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_file-explorer_64.png" style="height: 32px; width: 32px;"><span class="title">Cloud Files</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 300px; font-size: 12px;"><a href="#icon_dock_pad"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pond_64.png" style="height: 32px; width: 32px;"><span class="title">Pads</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 400px; font-size: 12px;"><a href="#icon_dock_sampler"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_midifighter_64.png" style="height: 32px; width: 32px;"><span class="title">Sampler</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 400px; font-size: 12px;"><a href="#icon_dock_audio-visual"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_visuals_64.png" style="height: 32px; width: 32px;"><span class="title">Audio Visuals</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 400px; font-size: 12px;"><a href="#icon_dock_Merlin"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_merlin_64.png" style="height: 32px; width: 32px;"><span class="title">Merlin Automated Assistant</span></a></div></div></div><div class="window-container" data-app="ui" data-type="singleton" data-context="default" id="motd" style="width: 400px; height: 300px; position: absolute; top: 75px; left: 250px; z-index: 999;"><div class="window-title-bar"><img src="desktop/assets/images/icons/icon_console_64.png" class="window-icon"><span class="window-title-text">Today: 01/09/25</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 20px;"><img src="v5/assets/guy-left.gif"><img src="v5/assets/construction.gif"><img src="v5/assets/guy-right.gif"></div><div style="text-align: center; font-size: 1.5em; font-weight: bold; padding: 20px;">Construction in progress.<br>New BuddyPond coming soon! <br><br>Level 2 users may join the chat.</div></div><div class="resize-handle"></div></div><div class="window-container" data-app="buddylist" data-type="buddylist-profile" data-context="default" id="buddyListWindow" style="width: 250px; height: 500px; position: absolute; top: 75px; left: 1442px; z-index: 1000;"><div class="window-title-bar"><img src="/desktop/assets/images/icons/icon_profile_64.png" class="window-icon"><span class="window-title-text">Buddy List</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div><div class="bp-window-content app-buddylist">
+  <div class="window-main">
+    <div class="buddy_list_not_connected loggedOut">
+      <p class="loginMessage">
+        Tell us your name to get started.
+      </p>
+      <div class="login-frog"><i class="fa-duotone fa-solid fa-frog"></i></div>
+      <form class="loginForm" method="POST" action="#">
+        <input type="text" name="username" placeholder="Name">
+        <input type="password" name="password" class="password" placeholder="Password">
+        <button type="submit" class="loginButton disabled" disabled="">Login</button>
+        <p class="loginStatus error"></p>
+      </form>
+      <div class="tos-checkbox">
+        <input type="checkbox" id="tosAgree" name="tosAgree">
+        <label for="tosAgree">I agree to the <a href="tos.html">Terms of Service</a>.</label>
+      </div>
+      <br>
+
+      <p class="loginMessage">If this is your first visit, password is username until you change it.</p>
+    </div>
+    <div class="buddylistContainer loggedIn" style="display: none;">
+      <div class="buddyListHolder">
+        <div class="onlineStatus">
+          <select class="onlineStatusSelect">
+            <option value="online">Online</option>
+            <option value="away">Away</option>
+            <!-- <option value="offline">Custom Message...</option> -->
+            <option value="offline">Hidden</option>
+            <option value="signout">Sign out</option>
+          </select>
+        </div>
+  
+        <h2>Buddies</h2>
+        <div class="you_have_no_buddies">
+          <p>It's time to add buddies.
+            Why not invite a friend?
+          </p>
+        </div>
+        <div class="pendingIncomingBuddyRequestsHolder">
+          <h3>New Buddy Requests</h3>
+          <div class="pendingIncomingBuddyRequests"></div>
+        </div>
+        <ul class="buddylist"></ul>
+        <div class="pendingOutgoingBuddyRequestsHolder">
+          <h3>Pending Buddy Requests</h3>
+          <div class="pendingOutgoingBuddyRequests"></div>
+        </div>
+      </div>
+      <div class="addBuddyForm">
+        <form method="POST" action="#">
+          <label for="buddy_request_name"><h4>Send Buddy Request:</h4></label>
+          <input id="buddy_request_name" placeholder="Enter buddy name..." class="rainbow-border buddy_request_name desktopInput" name="buddy_request_name" type="text" size="16"><br>
+          <button class="sendBuddyRequest desktopButton buddyListButton" type="submit">Send Buddy Request</button>
+        </form>
+        <div class="inviteBuddyHolder">
+          <h4>Don't know any Buddies?</h4>
+          <span><a class="inviteBuddy" href="#invite-buddy">Invite a Buddy!</a></span>
+        </div>
+      </div>
+      <p class="positiveAffirmation">Your positivity is uplifting.</p>
+
     </div>
   </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
 </div>
-
-<div id="desktop-container" class="desktop-container"><div id="desktop-shortcuts-container" class="desktop-shortcuts-container"></div></div></div>
+</div></div><div class="resize-handle"></div></div></div>
     </div>
 
     <!--    -->
 
     <link rel="stylesheet" href="desktop/assets/css/desktop.css">
     <!-- <link rel="stylesheet" href="desktop/assets/css/mobile.css" /> -->
-    <link rel="stylesheet" href="desktop/assets/css/jquery.ui.css">
 
-    <script src="desktop/assets/js/jquery.js"></script>
+    <script src="/desktop/assets/js/jquery.js"></script>
     <!-- ><script src="desktop/assets/js/jquery.ripples.js"></script> -->
-    <script src="desktop/assets/js/jquery.ui.js"></script><!--  -->
-    <script src="desktop/assets/js/jquery.dateformat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
-    <script src="desktop/assets/js/forbidden.notes.js"></script>
+    <!-- <script src="/v5/router.js"></script> -->
 
-    <script src="sdk/buddypond.js"></script>
-    <script src="desktop.js"></script>
 
-    <script src="desktop.load.js"></script>
-    <script src="desktop.ui.js"></script>
-    <script src="desktop.ui.events.js"></script>
+
+    <script src="/v5/flexHide.js"></script>
+
+    <!-- jQuery UI can be replaced when legacy autocomplete and Windows are fully replaced -->
+    <link rel="stylesheet" href="/desktop/assets/css/jquery.ui.css">
+    <script src="/desktop/assets/js/jquery.ui.js"></script><!--  -->
+    <script src="/desktop/assets/js/jquery.dateformat.js"></script>
+
+
+    <!-- TODO: remove all the below files with replaced v5 code-->
+    <script src="/desktop/assets/js/forbidden.notes.js"></script>
+    <!-- SDK should be able to be removed -->
+    <script src="/v5/apps/based/client/lib/api.js"></script>
+    <!-- desktop and desktop load will be removed when all legacy apps are replaced-->
+    <script src="/desktop.js"></script>
+    <script src="/desktop.load.js"></script>
+    <!-- ui and ui events will be removed when all legacy Windows are replaced -->
+    <script src="/desktop.ui.js"></script>
+    <script src="/desktop.ui.events.js"></script>
+    <!-- ^^^ remove all the above files -->
 
     <script>
-
 
       let _host = 'https://buddypond.com';
       let _api = 'https://api.buddypond.com';
       let _wsHost = 'wss://api.buddypond.com';
+      let _cdn = 'https://files.buddypond.com';
       //_host = 'https://192.168.200.59';
       //_api = 'https://192.168.200.59';
       //_wsHost = 'wss://192.168.200.59';
@@ -1002,124 +684,208 @@ window.top.location = 'ie.html';
       buddypond.host = _host;
       buddypond.endpoint = _api + '/api/v3';
 
-      // see: ReadMe.md for documentation on `desktop.use`
-      $(document).ready(function () {
-        $.fn.flexShow = function () {
-          return this.each(function () {
-            var $this = $(this);
-            // Store the current display value only if it's not 'none' and no previous storage exists
-            if (!$this.data('original-display') && $this.css('display') !== 'none') {
-              $this.data('original-display', $this.css('display'));
-            }
-            // Use the stored display value or default to 'block' if nothing stored
-            $this.show().css('display', $this.data('original-display') || 'block');
-          });
-        };
+      let renderBpApp = true;
 
-        $.fn.flexHide = function () {
-          return this.each(function () {
-            var $this = $(this);
-            // Ensure the original display is stored before hiding
-            if (!$this.data('original-display') && $this.css('display') !== 'none') {
-              $this.data('original-display', $this.css('display'));
-            }
-            $this.hide();
-          });
-        };
+      // route the SPA based on the current path
+      // any routes that land here outside of root will be proxied to files.buddypond.com ( user pads )
+      let currentPath = window.location.pathname;
+      // document.write currentPath
 
-        let documentReadyTime = new Date();
-        desktop.log('Buddy Pond Cloud OS Initialized');
-        desktop.log('Now loading apps');
-        desktop
-          // .use('console')
-          .use('localstorage')
-          .use('settings')
-          .use('clock')
-          .use('wallpaper')
-          .use('themes')
-          .use('audioplayer')
-          .use('appstore')
-          .use('tts')
-          .use('notifications')
-          .use('messages')
-          //.use('buddylist')
-          // .use('pond')
-          //.use('streamsquad')
-          .use('spellbook')
-          //.use('mantra')
-          .use('profile')
-          // .use('login', { defer: true })
-          // .use('videochat', { defer: true })
-          .ready(async function (err, apps) {
-            // desktop.log("Loaded", desktop.apps.loaded);
-            try {
-              desktop.ui.windowResizeEventHandler(null, true);
-            } catch (err) {
-              // alert(err.message)
-            }
-            desktop.log('Ready:', 'Buddy Pond', 'v4.20.69')
-            // Desktop is ready, start refreshing it's state immediately
-            desktop.refresh();
-            // desktop.ui.openWindow('mantra')
-            let now = new Date();
+      // alert(`currentPath: ${currentPath}`);
+      if (currentPath !== '/') {
+        renderBpApp = false;
 
-            // For Buddy Experience we'll add some fades and delays
-            let fadeInDelay = 555;
+        console.log('currentPath', currentPath);
 
-            // If the page has taken over 3.333 seconds to load...
-            // ...reduce the fade in delay ( since the Buddy has waited long enough )
-            if (now.getTime() - documentReadyTime.getTime() > 3333) {
-              fadeInDelay = 111;
-            }
-            $('#loaderHolder').fadeOut({
-              easing: 'linear',
-              duration: fadeInDelay,
-              complete: function () {
-                $('#mainOverlay').fadeIn({
-                  easing: 'linear',
-                  duration: 333
-                });
+      }
+
+      bindJqueryReady();
+      function bindJqueryReady() {
+        // see: ReadMe.md for documentation on `desktop.use`
+        $(document).ready(function () {
+          // alert(renderBpApp)
+          if (!renderBpApp) {
+            // render the app
+            // renderApp();
+            // empty the body
+            // now we need to fetch the pad and render it
+            $('body').empty();
+            // write the buddypad iframe
+            let buddypadIframe = document.createElement('iframe');
+            // set height and width
+            //buddypadIframe.style.width =  document.documentElement.clientWidth + 'px';
+            //buddypadIframe.style.height = document.documentElement.clientHeight + 'px';
+
+            buddypadIframe.style.width = '100%';
+            buddypadIframe.style.height = '800px';
+            // set the id
+            buddypadIframe.id = 'buddypad';
+            $('body').append(buddypadIframe);
+
+            // remove padding and margin from body
+            $('body').css('padding', '0');
+            $('body').css('margin', '0');
+            // remove border from iframe and body
+            $('#buddypad').css('border', 'none');
+            $('body').css('border', 'none');
+            
+            // set the src of the buddypad to the current path
+            let filesSrc = 'https://files.buddypond.com' + currentPath;
+            console.log('setting src to', filesSrc);
+            $('#buddypad').attr('src', filesSrc);
+
+
+            return;
+
+          }
+
+
+          let documentReadyTime = new Date();
+          desktop.log('Buddy Pond Cloud OS Initialized');
+          desktop.log('Now loading apps');
+          desktop
+            // Remark: Almost all apps are replaced now with v5 apps
+            // .use('console')
+            .use('localstorage')
+            .use('settings')
+            // .use('clock')
+            .use('wallpaper')
+            // .use('themes')
+            //.use('audioplayer')
+            .use('appstore')
+            //.use('tts')
+            // .use('notifications')
+            // .use('messages')
+            //.use('buddylist')
+            // .use('pond')
+            //.use('streamsquad')
+            //.use('spellbook')
+            //.use('mantra')
+            //.use('profile')
+            // .use('login', { defer: true })
+            // .use('videochat', { defer: true })
+            .ready(async function (err, apps) {
+              // desktop.log("Loaded", desktop.apps.loaded);
+              try {
+                desktop.ui.windowResizeEventHandler(null, true);
+              } catch (err) {
+                // alert(err.message)
               }
-            });
+              desktop.log('Ready:', 'Buddy Pond', 'v4.20.69')
+              // Desktop is ready, start refreshing it's state immediately
+              desktop.refresh();
+              // desktop.ui.openWindow('mantra')
+              let now = new Date();
 
-            desktop.on('desktop.settings.audio_enabled', 'update-nav-volume', function () {
-              if (!desktop.settings.audio_enabled) {
-                $('.volumeFull').hide();
-                $('.volumeMuted').show();
-              } else {
-                $('.volumeFull').show();
-                $('.volumeMuted').hide();
-                desktop.app.audioplayer.play('desktop/assets/audio/IM.wav');
+              // For Buddy Experience we'll add some fades and delays
+              let fadeInDelay = 555;
+
+              // If the page has taken over 3.333 seconds to load...
+              // ...reduce the fade in delay ( since the Buddy has waited long enough )
+              if (now.getTime() - documentReadyTime.getTime() > 3333) {
+                fadeInDelay = 111;
               }
+              $('#loaderHolder').fadeOut({
+                easing: 'linear',
+                duration: fadeInDelay,
+                complete: function () {
+                  $('#mainOverlay').fadeIn({
+                    easing: 'linear',
+                    duration: 333
+                  });
+                }
+              });
+
+              desktop.on('desktop.settings.audio_enabled', 'update-nav-volume', function () {
+                if (!desktop.settings.audio_enabled) {
+                  $('.volumeFull').hide();
+                  $('.volumeMuted').show();
+                } else {
+                  $('.volumeFull').show();
+                  $('.volumeMuted').hide();
+                  desktop.app.audioplayer.play('desktop/assets/audio/IM.wav');
+                }
+              });
+
+              //
+              // Remark: You can add JS code here to run after the desktop is ready
+              //
+              //
+              // `App.WebView` ? Perhaps not
+              // desktop.ui.openWindow('webview', { url: 'https://google.com', browser: 'chrome' });
+              // never gonna work due to:
+              // Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'.
+              // desktop.ui.openWindow('console');
+
+              // bridge to v5 ( all previous code in this file will be replaced with v5 code )
+              bp_v_5();
+              // bp.apps.buddyscript.addCommand()
+
             });
+        });
+      }
 
-            //
-            // Remark: You can add JS code here to run after the desktop is ready
-            //
-            //
-            // `App.WebView` ? Perhaps not
-            // desktop.ui.openWindow('webview', { url: 'https://google.com', browser: 'chrome' });
-            // never gonna work due to:
-            // Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'.
-            // desktop.ui.openWindow('console');
-
-            // bridge to v5 ( all previous code in this file will be replaced with v5 code )
-            bp_v_5();
-            // bp.apps.buddyscript.addCommand()
-
-          });
-      });
 
     </script>
     <div id="shadowRender">
     </div>
+    <iframe id="buddypad"></iframe>
     <script type="module" src="/v5/public/buddypond.umd.js"></script>
 
 
-
-    <script>
-
-    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8ff389d63f569554&quot;,&quot;version&quot;:&quot;2024.10.5&quot;,&quot;r&quot;:1,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;token&quot;:&quot;a34dc8c1b1574dff985e9274c2469241&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
 
 
-</div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="taskbar-container"><div class="taskbar-item"><div class="taskbar-item-text">Home</div><img src="desktop/assets/images/icons/icon_mantra_64.png" height="32" width="32" alt="Home"></div></div></body></html>
+</div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="taskbar-container"><div class="taskbar-item"><div class="taskbar-item-text">Home</div><img src="desktop/assets/images/icons/icon_mantra_64.png" height="32" width="32" alt="Home"></div><div class="taskbar-item"><div class="taskbar-item-text">Today: 01/09/25</div><img src="desktop/assets/images/icons/icon_console_64.png" height="32" width="32" alt="Today: 01/09/25"></div><div class="taskbar-item"><div class="taskbar-item-text">Buddy List</div><img src="/desktop/assets/images/icons/icon_profile_64.png" height="32" width="32" alt="Buddy List"></div></div><div id="customContextMenu" class="removeMessage" style="display: none; position: absolute; z-index: 1000; background: white; border: 1px solid #ccc; padding: 10px;">Remove Message</div><div class="menu-bar" id="menu-bar"><div class="menu-item"><span id="me_title" class="me_title">Welcome - You look nice today!</span><div class="submenu" style="left: 0%;"><div class="submenu-item">We are stoked to be your Buddy</div><div class="submenu-item">
+                <a class="editProfileLink" title="Login to Edit Profile" href="#">Edit Profile</a>
+
+            </div><div class="submenu-item">
+                  <li class="loggedOut">
+                    <span class="loginLink">Login</span>
+                  </li>
+                  <li class="loggedIn">
+                    <span class="logoutLink">Logout</span>
+                  </li>
+
+                
+                </div></div></div><div class="menu-item">Window<div class="submenu" style="left: 0%;"><div class="submenu-item">Full Screen</div><div class="submenu-item">Hide All Windows</div><div class="submenu-item disabled">Set Active Window to Wallpaper</div></div></div><div class="menu-item" style="flex: 1 1 0%;">
+    <select name="selectPlaylist" class="selectPlaylist float_right">
+    <option>Select music playlist...</option>
+    <option value="1427128612">Buddy House 2 ( 10 Tracks )</option>
+    <option value="1397493787">Buddy House 1 ( 10 Tracks )</option>
+    <option value="1397230333">Buddy House 0 ( 33 Tracks )</option>
+    <option value="942151069">Andrew Potthast: Bangas</option>
+    <option value="938848927">Andrew Potthast: Burning Man Set</option>
+    <option value="839091662">Featured Buddy: Andrew Potthast</option>
+    <option value="1427279635">Featured Buddy: ioqpvs</option>
+  </select>
+  </div><div class="menu-item">
+  <select name="selectTheme" class="selectTheme float_right">
+    <option value="Light">Light Theme</option>
+    <option value="Dark">Dark Theme</option>
+    <option value="Nyan">Nyan Theme</option>
+    <option value="Hacker">Hacker Theme</option>
+    <option value="Water">Water Theme</option>
+    <!-- <option value="Customize">Customize Theme</option> -->
+    <!--
+  <option value="Customize">EPIC MODE ( my poor browser ) </option>
+  <option value="Customize">Comic Theme</option> 
+-->
+  </select>
+
+  </div><div class="menu-item">
+      <span class="totalConnected loggedIn">
+        <span class="totalConnectedCount">0</span> Buddies Online</span>
+        <span class="totalOnlineCount">0</span><!--Buddies Online-->
+        <span class="desktopDisconnected loggedOut">Disconnected</span>
+            
+  </div><div class="menu-item">
+  <div class="volume">
+  <span class="volumeIcon volumeToggle volumeFull">🔊</span>
+  <span class="volumeIcon volumeToggle volumeMuted" style="display: none;">🔇</span>
+  
+  <!-- <input type="range" min="0" max="100" value="100" class="volumeSlider"> -->
+  </div>
+  </div><div class="menu-item">
+  <span class="" id="clock" title="January 9, 2025">Thursday 9:53 AM</span>
+</div></div><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 120px; background-color: rgba(0, 0, 0, 0.5); color: white; display: none; align-items: center; justify-content: center; z-index: 1000; padding: 10px;"></div></body></html>

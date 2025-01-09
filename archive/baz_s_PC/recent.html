@@ -2,9 +2,9 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <title>baz's PC</title>
-    <link rel="stylesheet" type="text/css" href="default.css">
+    <!-- <link rel="stylesheet" type="text/css" href="default.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="default.js"></script>
-    <script type="text/javascript" src="ajax_bs.js"></script>
   </head>
   <body>
     
@@ -24,9 +24,13 @@
         <img src="ico/joys.png" class="ico"><br>
         <span class="menu">bitsies</span>
       </div>
+      <div class="dsktp" onclick="opnLf()">
+        <img src="ico/ie.png" class="ico"><br>
+        <span class="menu">links</span>
+      </div>
       <div class="dsktp" onclick="vis('butn')">
         <img src="ico/webw.png" class="ico"><br>
-        <span class="menu">links</span>
+        <span class="menu">find me</span>
       </div>
     </div>
     
@@ -52,19 +56,13 @@
             <td><span onclick="vis('updates')" class="file"><img src="ico/text.png" class="ico"></span></td>
             <td><span onclick="vis('pronouns')" class="file"><img src="ico/text.png" class="ico"></span></td>
             <td><span onclick="vis('twiary')" class="file"><img src="ico/help.png" class="ico"></span></td>
-            <td><span onclick="opnSplat()" class="file"><img src="ico/img1.png" class="ico"></span></td>
+            <td><span onclick="opnAqua()" class="file"><img src="ico/aqua.png" class="ico"></span></td>
           </tr>
           <tr>
             <th><span onclick="vis('fzines')" class="file">zines</span></th>
             <th><span onclick="vis('updates')" class="file">updates</span></th>
             <th><span onclick="vis('pronouns')" class="file">pronouns</span></th>
             <th><span onclick="vis('twiary')" class="file">twiary</span></th>
-            <th><span onclick="opnSplat()" class="file">splats</span></th>
-          </tr>
-          <tr>
-            <td><span onclick="opnAqua()" class="file"><img src="ico/aqua.png" class="ico"></span></td>
-          </tr>
-          <tr>
             <th><span onclick="opnAqua()" class="file">NOTVRS</span></th>
           </tr>
         </tbody></table>
@@ -87,14 +85,15 @@
         <div class="ex" onclick="vis('bitsy')" aria-hidden="true">✕</div>
       </div>
       <div class="content">
-        <span style="font-size: 12px;">note: if you see <img src="warning.gif" class="warn" title="warning symbol!" alt="warning symbol!">, hover over it to check for content warnings for that bitsy</span>
+        note: if you see <img src="warning.gif" class="warn" title="warning symbol!" alt="warning symbol!">, hover over it to check for warnings for that bitsy
         <ul>
           <li><span class="fakeA" id="award" onclick="opnBit(this.id, 'award')">award</span>: the only bitsy award that should exist - 1 room</li>
           <li><span class="fakeA" id="the_flower_forest" onclick="opnBit(this.id, 'the flower forest')">the flower forest</span>: pick some flowers for your friend - 4 rooms</li>
           <li><span class="fakeA" id="summoned" onclick="opnBit(this.id, 'summoned')">summoned</span> <img src="warning.gif" class="warn" title="warning for animal death, regular death" alt="warning for animal death, regular death">: didn't expect to find anyone down here... - 2 rooms</li>
           <li><span class="fakeA" id="hotel_n" onclick="opnBit(this.id, 'hotel ℕ')">hotel ℕ</span>: gotta get to your hotel room for the night - 1 room(!)</li>
           <li><span class="fakeA" id="cat_noir" onclick="opnBit(this.id, 'cat noir')">cat noir</span>: made for a secret-santa type bitsy jam. you're a catboy spy, and must pick an outfit to go to a party undercover in - 2 rooms</li>
-          <li><span class="fakeA" id="leap_day__x__" onclick="opnBit(this.id, 'leap day 2x24')">leap day 2x24</span>: wanted to make something on a leap day to say that I did. basically just testing out bitsy3D. [esc] to release your cursor - 1 room</li>
+          <li><span class="fakeA" id="leap_day__x__" onclick="opnBit(this.id, 'leap day 2x24')">leap day 2x24</span>: wanted to make something on a leap day to say that I did. basically just testing out <a href="https://aurysystem.github.io/bitsy-forks/bitsy-color-3d/index.html" target="_blank">bitsy3D</a>. [esc] to release your cursor - 1 room</li>
+          <li><span class="fakeA" id="randoRoomsDemo" onclick="opnBit(this.id, 'dungeon generator demo')">dungeon generator demo</span> <img src="warning.gif" class="warn" title="unfinished experiment. more likely than not you'll reach a point where you get stuck" alt="unfinished experiment. more likely than not you'll reach a point where you get stuck">: well, technically a <a href="https://kool.tools/bipsi/" target="_blank">bipsi</a> game instead of a original-engine bitsy game. bipsi has easier in-engine scripting tools, so I used them to make a dungeon that randomly generates floors based a selection of premade rooms - 11 rooms</li>
         </ul>
       </div>
     </div>
@@ -135,18 +134,6 @@
       </div>
       <div class="content hasFrame" id="bxgmr">
         <iframe id="gameFrame"></iframe>
-      </div>
-    </div>
-    
-    <div class="box closed" id="splat">
-      <div class="top" id="splath">
-        <div class="toptxt">keep track of my sick splats</div>
-        <div class="popper" onmouseenter="popout('splat')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('splat')" aria-hidden="true">✕</div>
-      </div>
-      <div class="content hasFrame" id="bxspl">
-        add me! ~ <b>SW-2999-4414-7390</b>
-        <iframe id="splFrame" allowfullscreen="" sandbox="allow-top-navigation allow-scripts"></iframe>
       </div>
     </div>
     
@@ -213,6 +200,17 @@
         <iframe id="aquaFrame"></iframe>
       </div>
     </div>
+
+    <div class="box closed" id="linkfarm">
+      <div class="top" id="linkfarmh">
+        <div class="toptxt">my website garden - Internet Eater</div>
+        <div class="popper" onmouseenter="popout('linkfarm')" aria-hidden="true">↗</div>
+        <div class="ex" onclick="vis('linkfarm')" aria-hidden="true">✕</div>
+      </div>
+      <div class="content hasFrame" id="bxgmr">
+        <iframe id="lfFrame"></iframe>
+      </div>
+    </div>
     
     <div class="box text" id="updates">
       <div class="top" id="updatesh">
@@ -221,10 +219,7 @@
         <div class="ex" onclick="vis('updates')" aria-hidden="true">✕</div>
       </div>
       <div class="content">
-        <div id="updFill" class="bulleted">
-          loading... (if this page does not load, click <span class="fakeA" onclick="agex(&quot;updates&quot;, &quot;updFill&quot;, 6)">here</span>.)
-          <!-- <p class="bullet"></p> -->
-        </div>
+        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet"> jan 8th - spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"> jan 6th - actually integrated the new webpage, sloppily. also fixed how my page loads these .txt files so it's less clunky. visual update will come another time, because I basically have to rewrite all the CSS.</p><p class="bullet"> jan 5th - new year, new update. I made a webpage to collect links to websites that I like. I'll be integrating it into the full site soon, but I kinda wanna refresh the whole thing while I'm in there adding it. there's a lot to redo, considering I've had this website for over six years now (and a neocities account for over a decade! yikes!). don't worry, it won't be too different... probably.</p><p class="bullet">2024</p><p class="bullet">sep 18th - just uploading a demo for something I'm trying to make in bipsi, a bitsy-clone-engine. makes weird custom scripting a lot easier, and cuts out a lot of the newer bitsy features I don't want. not directly linking to it anywhere for now, just check my neocities profile updates. will probably refresh it a few times over the next however long, so I won't update this with additional entries just for that.</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
       </div>
     </div>
 
@@ -256,6 +251,7 @@
     <!-- yeah this looks ugly as sin putting this here. but otherwise the script runs before the divs exist -->
     <script>
       window.onload = function() {
+        setup();
         checkVis();
         checkPos();
         if (!localStorage.getItem("about")) setDefaultLocal();
