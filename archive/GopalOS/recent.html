@@ -73,8 +73,8 @@
         <div class="tray-item status-badge status-badge-error" id="lstor-mgr_trayicon"><span class="matsymb">hard_drive</span></div>
         <div class="tray-item" id="app_sys-perf_trayicon" onclick="getFile('/apps/sys-perf/sys-perf')();"><span class="matsymb">speed</span></div>
         <div class="tray-item" id="taskbar-datetime" style="text-align: center;">
-          <div style="font-size: 20px; line-height: 35px;" id="taskbar-clock-time">10:04:07</div>
-          <div style="font-size: 12px; line-height: 0;" id="taskbar-clock-date">Thu 2025-01-09</div>
+          <div style="font-size: 20px; line-height: 35px;" id="taskbar-clock-time">09:24:05</div>
+          <div style="font-size: 12px; line-height: 0;" id="taskbar-clock-date">Thu 2025-01-16</div>
         </div>
         <div class="tray-item status-badge status-badge-good" id="network_status"><span class="matsymb">language</span></div>
       </div>
@@ -2698,7 +2698,8 @@
                       "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_test-program.txt",
                       "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_window-rollup.txt",
                       "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_windows-font-pack.txt",
-                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_apple-font-pack.txt"
+                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_apple-font-pack.txt",
+                      "https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_accessible-font-pack.txt"
                     ].forEach(url => {
                       fetch(url).then(response => response.text()).then(text => {
                         let obj = eval(`(() => {return ${text}})();`);
@@ -4672,6 +4673,7 @@ a, .link {
               <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_file-manager.txt">File Manager</option>
               <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_windows-font-pack.txt">Windows Font Pack</option>
               <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_apple-font-pack.txt">Apple Font Pack</option>
+              <option value="https://cerebraldatabank.neocities.org/gopalos-packages/gopalos-pkg_accessible-font-pack.txt">Accessible Font Pack</option>
             </datalist>
             <button id="app_pkg-install_view-btn" style="width: 313.5px;" onclick="getRef('/system/pkg-install/view-pkg')(document.getElementById('app_pkg-install_url').value);">View</button>
           </div>
@@ -4851,7 +4853,9 @@ a, .link {
             },
             "changelog": {
               type: "txt",
-              content: `2024-12-08
+              content: `2025-01-10
+  \u2022 Added Accessible Font Pack package.
+2024-12-08
   \u2022 Added transition to taskbar items
 2024-12-05
   \u2022 Added g API with getFile and getDir

@@ -1,4 +1,4 @@
-<html lang="en"><head><style>.jquery-ripples { position: relative; z-index: 0; }</style>
+<html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="description" content="Buddy Pond - Cloud OS and Instant Messenger all wrapped up in one delightfully fun to use App. We are making the Internet Fun Again.">
@@ -17,7 +17,8 @@ window.top.location = 'ie.html';
 </script>
 <![endif]-->
 
-  <script src="/desktop/based/desktop.wallpaper/wallpapers/ripples/ripples.js"></script><script src="/desktop/based/desktop.wallpaper/wallpapers/ripples/vendor/jquery.ripples.js"></script><script src="/desktop/assets/js/jquery.simple-color.js"></script><script src="desktop/based/desktop.appstore/desktop.appstore.js"></script><script src="desktop/based/desktop.wallpaper/desktop.wallpaper.js"></script><script src="desktop/based/desktop.settings/desktop.settings.js"></script><script src="desktop/based/desktop.localstorage/desktop.localstorage.js"></script><script type="text/javascript" src="/v4-to-v5-bridge.js"></script>
+  <!-- <script type="text/javascript" src="/v4-to-v5-bridge.js"></script> -->
+  <script type="text/javascript" src="/v5.js"></script>
 
   <script type="text/javascript">
 
@@ -36,16 +37,14 @@ window.top.location = 'ie.html';
   <link rel="stylesheet" href="desktop/assets/css/loader.css">
 
 
-
-
   <!--[if lt IE 9]>
 <link rel="stylesheet" href="desktop/assets/css/ie.css" />
 <![endif]-->
 
-<link rel="stylesheet" href="https://buddypond.com/v5/apps/based/desktop/desktop.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/console/console.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/ui.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/mobile.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/Window.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/TaskBar.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/fontawesome.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/all.min.css"><script src="https://buddypond.com/v5/vendor/DateFormat.js"></script><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/menubar/menubar.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/powerlevel/powerlevel.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/buddylist/buddylist.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-explorer/file-explorer.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-explorer/FileTree/FileTree.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-viewer/file-viewer.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/file-tree/file-tree.css"></head>
+<link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/ui.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/mobile.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/Window.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/ui/Window/TaskBar.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/fontawesome.css"><link rel="stylesheet" href="https://buddypond.com/v5/vendor/font-awesome/css/all.min.css"><script src="https://buddypond.com/v5/vendor/DateFormat.js"></script><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/desktop/desktop.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/menubar/menubar.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/buddylist/buddylist.css"><link rel="stylesheet" href="https://buddypond.com/v5/apps/based/console/console.css"></head>
 
-<body class="jquery-ripples" style="">
-  <img id="wallpaper" class="abs wallpaper" src="/desktop/assets/images/misc/wallpaper.jpg" style="display: none;">
+<body>
+  <img id="wallpaper" class="abs wallpaper" src="/desktop/assets/images/misc/wallpaper.jpg">
   <div id="loaderHolder" style="display: none;">
     <div id="loader"></div>
   </div>
@@ -67,510 +66,8 @@ window.top.location = 'ie.html';
     <div class="abs" id="wrapper">
       <div class="abs" id="desktop">
         <!-- default desktop icons are currently rendered in `app.settings.load()` -->
-        <canvas class="canvasBackground" id="c" height="981" width="1792" style="display: none;"></canvas>
-      <style>
-  #window_appstore h1 {
-    font-size: 48px;
-  }
-  #window_appstore h2 {
-    padding-top: 0px;
-    font-size: 36px;
-  }
-  #window_appstore h3 {
-    font-size: 32px;
-  }
-
-  #window_appstore button.addApp {
-    width: 10vw;
-    cursor: pointer;
-    border: solid;
-    border-width: 1px;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    border-radius: 4px;
-  }
-
-  #window_appstore button.openApp {
-    width: 10vw;
-    cursor: pointer;
-    border: solid;
-    border-width: 1px;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    border-radius: 4px;
-  }
-
-  
-  .appstoreHolder {
-    width: 96%;
-    text-align: left;
-  }
-  .faqHolder {
-    width: 96%;
-    padding: 16px;
-  }
-  .appstoreHolder {
-    text-align: center;
-  }
-  .appstoreHolder .downloads {
-    font-size: 22px;
-  }
-  .appstoreHolder .cost {
-    font-size: 22px;
-  }
-  
-  div.appPreview {
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 280px;
-    min-width: 320px;
-  }
-
-  div.appPreview:hover {
-    border: 1px solid #777;
-  }
-
-  .appstoreHolder .appPreview {
-    border-radius: 25px;
-    border: 2px solid #CCC;
-    padding-top: 16px;
-    text-align: center;
-    width: 44%;
-    min-height: 369px;
-  }
-  
-  .appstoreHolder .appPreview:hover {
-    border-radius: 25px;
-    border: 2px solid #CCC;
-    padding-top: 16px;
-    text-align: center;
-    width: 44%;
-  }
-
-  .appPreview .title {
-    font-size: 32px;
-    min-height: 77px;
-  }
-  .appPreview .desc {
-    height: 55px;
-    padding: 15px;
-    text-align: center;
-    font-size: 16px;
-  }
-  .appPreview .cost {
-    text-align: right;
-    font-size: 12px;
-    padding-right: 6px;
-  }
-  .appPreview .downloads {
-    font-size: 12px;
-  }
-  .appicon {
-    height: 130px;
-  }
-  .appIcon img {
-  }
-  
-</style>
-
-<div id="window_appstore" class="abs window" align="center">
-  <div class="abs window_inner">
-    <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-      <span class="float_left">
-        <img loading="lazy" src="desktop/assets/images/icons/icon_appstore_64.png" style="width: 16px; height: 16px;">
-        App Store
-      </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-    </div>
-    <div class="abs window_content" style="top: 30px;">
-      <h1>App Store</h1>
-      <h2>Featured</h2>
-      <div class="appstoreHolder Featured">
-        <div class="appPreview ">
-          <div class="title">Paint</div>
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_paint_64.png"></div>
-          <div class="desc">A Retro Paint and Image Editor. Create awesome paintings</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="paint">Remove</button>
-            <button class="openApp" data-app="paint">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="title">Piano</div>
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_piano_64.png"></div>
-          <div class="desc">A Simple MIDI Piano. Play with Keyboard, Mouse, or MIDI Controller</div>
-          <div class="downloads">Downloads: 18,222</div>
-          <div class="install">
-            <button class="addApp" data-app="piano">Remove</button>
-            <button class="openApp" data-app="piano">Open</button>
-          </div>
-        </div>
-      </div>
-      <div style="clear:both;"></div>
-
-      <br>
-      <br>
-      <a href="#" class="openApp" data-app="paint">
-        <img loading="lazy" src="desktop/assets/images/misc/paint-app-preview-0.png">
-      </a>
-      <br>
-      <br>
-      <a href="#" class="openApp" data-app="piano">
-        <img loading="lazy" src="desktop/assets/images/misc/piano-app-preview-0.png">
-      </a>
-      <br>
-      <br>
-
-      <h3>Arcade</h3>
-      <div class="appstoreHolder arcade">
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_mantra_64.png"></div>
-          <div class="title">Mantra</div>
-          <div class="desc">Manra.js Worlds</div>
-          <div class="downloads">Downloads: 13,394</div>
-          <div class="install">
-            <button class="addApp" data-app="mantra">Add</button>
-            <button class="openApp" data-app="mantra">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_ayyowars_64.png"></div>
-          <div class="title">Ayyo Wars</div>
-          <div class="desc">Alien Wars 2D Spaceship Game</div>
-          <div class="downloads">Downloads: 41,344</div>
-          <div class="install">
-            <button class="addApp" data-app="ayyowars">Add</button>
-            <button class="openApp" data-app="ayyowars">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_solitaire_64.png"></div>
-          <div class="title">Solitaire</div>
-          <div class="desc">Classic single-player card game</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="solitaire">Add</button>
-            <button class="openApp" data-app="solitaire">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_minesweeper_64.png"></div>
-          <div class="title">Minesweeper</div>
-          <div class="desc">Clear the board with setting off any of the mines.</div>
-          <div class="downloads">Downloads: 18,222</div>
-          <div class="install">
-            <button class="addApp" data-app="minesweeper">Add</button>
-            <button class="openApp" data-app="minesweeper">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_nes_64.png"></div>
-          <div class="title">NES ( Alpha )</div>
-          <div class="desc">NES Emulator with Homebrew games. Very Alpha.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="nes">Add</button>
-            <button class="openApp" data-app="nes">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_n64_64.png"></div>
-          <div class="title">n64 ( Alpha )</div>
-          <div class="desc">Nintendo 64 Emulator with Homebrew games. Very Alpha.</div>
-          <div class="downloads">Downloads: 18,222</div>
-          <div class="install">
-            <button class="addApp" data-app="n64">Add</button>
-            <button class="openApp" data-app="n64">Open</button>
-          </div>
-        </div>
-      </div>
-
-      <div style="clear:both;"></div>
-      <h3>Create</h3>
-
-      <div class="appstoreHolder">
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_soundrecorder_64.png"></div>
-          <div class="title">Sound Recorder</div>
-          <div class="desc">Record and Play Audio Files.<br>Super fun!</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="soundrecorder">Remove</button>
-            <button class="openApp" data-app="soundrecorder">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_mirror_64.png"></div>
-          <div class="title">Mirror</div>
-          <div class="desc">Take Selfies, Snaps, and short Movies. Includes Visual Effects.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="mirror">Remove</button>
-            <button class="openApp" data-app="mirror">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_gifstudio_64.png"></div>
-          <div class="title">GIF Studio</div>
-          <div class="desc">Create, Import, and Edit animated GIFs.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="gifstudio">Add</button>
-            <button class="openApp" data-app="gifstudio">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_midifighter_64.png"></div>
-          <div class="title">Music Pad</div>
-          <div class="desc">MIDI Style Music Pad. Play music samples, make beats.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="midifighter">Add</button>
-            <button class="openApp" data-app="midifighter">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="title">Paint</div>
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_paint_64.png"></div>
-          <div class="desc">A Retro Paint and Image Editor. Create awesome paintings</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="paint">Remove</button>
-            <button class="openApp" data-app="paint">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="title">Piano</div>
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_piano_64.png"></div>
-          <div class="desc">A Simple MIDI Piano. Play with Keyboard, Mouse, or MIDI Controller</div>
-          <div class="downloads">Downloads: 18,222</div>
-          <div class="install">
-            <button class="addApp" data-app="piano">Remove</button>
-            <button class="openApp" data-app="piano">Open</button>
-          </div>
-        </div>
-      </div>
-      <div style="clear:both;"></div>
-
-      <h3>Work</h3>
-      
-      <div class="appstoreHolder">
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_maps_64.png"></div>
-          <div class="title">World Maps</div>
-          <div class="desc">Making your plans for world domination one map at a time.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="maps">Add</button>
-            <button class="openApp" data-app="maps">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_globe_64.png"></div>
-          <div class="title">World Globe</div>
-          <div class="desc">3D Rotating World Globe of connected Buddies</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="globe">Add</button>
-            <button class="openApp" data-app="globe">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_hackertyper_64.png"></div>
-          <div class="title">Hacker Typer</div>
-          <div class="desc">Auto Hacker Typing Terminal. Just open and press any key.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="hackertyper">Add</button>
-            <button class="openApp" data-app="hackertyper">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_spellbook_64.png"></div>
-          <div class="title">Spellbook</div>
-          <div class="desc">Matrix Agents Only</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="spellbook">Add</button>
-            <button class="openApp" data-app="spellbook">Open</button>
-          </div>
-        </div>
-      </div>
-
-      <div style="clear:both;"></div>
-      <h3>Play</h3>
-      <div class="appstoreHolder">
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_memepool_64.png"></div>
-          <div class="title">Meme Pool</div>
-          <div class="desc">Mnemosyne A.I. Powered Meme Search and Query.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="memepool">Add</button>
-            <button class="openApp" data-app="memepool">Open</button>
-          </div>
-        </div>
-        
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png"></div>
-          <div class="title">IDC Cable</div>
-          <div class="desc">Interdimensional Cable. Playlists of curated videos from multiple dimensions.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="interdimensionalcable">Remove</button>
-            <button class="openApp" data-app="interdimensionalcable">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_mtv_64.png"></div>
-          <div class="title">MTV</div>
-          <div class="desc">Music Television. Playlists of curated Music Videos.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="mtv">Add</button>
-            <button class="openApp" data-app="mtv">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_lofi_64.png"></div>
-          <div class="title">Lofi Room</div>
-          <div class="desc">Lofi chill vibes. Relaxing music with calm visuals.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="lofi">Add</button>
-            <button class="openApp" data-app="lofi">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_soundcloud_64.png"></div>
-          <div class="title">Sound Cloud</div>
-          <div class="desc">Curated Music playlists of Featured Buddies and Buddy Sets.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="soundcloud">Add</button>
-            <button class="openApp" data-app="soundcloud">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_streamsquad_64.png"></div>
-          <div class="title">Stream Squad</div>
-          <div class="desc">Live Streaming and Streamers. Connects Youtube Live broadcasts directly to Buddy Pond</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="streamsquad">Add</button>
-            <button class="openApp" data-app="streamsquad">Open</button>
-          </div>
-        </div>
-      </div>
-
-      <div style="clear:both;"></div>
-      <h3>Develop</h3>
-      <div class="appstoreHolder">
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_console_64.png"></div>
-          <div class="title">Console</div>
-          <div class="desc">Show additional Desktop logging information in real-time.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="console">Add</button>
-            <button class="openApp" data-app="console">Open</button>
-          </div>
-        </div>
-        <div class="appPreview">
-          <div class="appicon"><img loading="lazy" src="desktop/assets/images/icons/icon_gbp_64.png"></div>
-          <div class="title">Good Buddy Points</div>
-          <div class="desc">Buddy Pond points system for Buddies. Give points. Get points.</div>
-          <div class="downloads">Downloads: 21,333</div>
-          <div class="install">
-            <button class="addApp" data-app="gbp">Add</button>
-            <button class="openApp" data-app="gbp">Open</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="abs window_bottom">
-      Build: v4.20.69
-    </div>
-  </div>
-  <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div><style>
-  .wallpaperSettings {
-    padding-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .button_bar {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-</style>
-
-<div id="window_wallpaper" class="abs window" style="width: 366px; height: 444px;">
-    <div class="abs window_inner">
-      <div class="window_top" style="padding-bottom: 0px; height: 30px; padding-top: 0px;">
-        <span class="float_left">
-          <img src="desktop/assets/images/icons/icon_wallpaper_64.png" style="width: 16px; height: 16px;">
-          Wallpaper
-        </span>
-      <span class="float_right trafficLight">
-        <a href="#min" class="minWindow" title="Min Window">🟠</a>
-        <a href="#max" class="maxWindow" title="Max Window">🟢</a>
-        <a href="#exit" class="exitWindow" title="Exit Window">🔴</a>
-      </span>
-      </div>
-      <div class="abs window_content" style="top: 30px;">
-        <div class="window_main">
-          <div class="wallpaperSettings">
-            <div>
-                <h2>Wallpaper Type</h2>
-                <!-- Wake up neo -->
-                <input type="radio" id="wallPaperRadioMatrix" name="wallpaper_opt" value="matrix">
-                <label for="wallPaperRadioMatrix">Matrix</label>
-                <br>
-                <input type="radio" id="wallPaperRadioSolid" name="wallpaper_opt" value="solid">
-                <label for="wallPaperRadioSolid">Solid</label>
-                <br>
-            </div>
-            <br>
-            <br>
-            <div>
-                <h2>Wallpaper Options</h2>
-                <div>
-                    <label>Color</label>
-                    <div class="wallpaperOptionColor" style="display: none;"></div><div class="simpleColorContainer" style="position: relative;"><div class="simpleColorDisplay" style="background-color: rgb(0, 143, 17); border: 1px solid rgb(0, 0, 0); width: 115px; height: 20px; line-height: 20px; cursor: pointer; color: rgb(255, 255, 255); text-align: center;">#008F11</div></div>
-                </div>
-                <br>
-                <br>
-                <div>
-                  <button class="desktopButton pauseWallpaper">Pause Wallpaper</button>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="abs window_bottom">
-        Build: v4.20.69
-      </div>
-    </div>
-    <span class="abs ui-resizable-handle ui-resizable-se"></span>
-</div>
-  <div id="desktop-container" class="desktop-container"><div id="desktop-shortcuts-container" class="desktop-shortcuts-container"><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 0px; font-size: 12px;"><a href="#icon_dock_profile"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_profile_64.png" style="height: 32px; width: 32px;"><span class="title">Profile</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 0px; font-size: 12px;"><a href="#icon_dock_buddylist"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_buddylist_64.png" style="height: 32px; width: 32px;"><span class="title">Buddy List</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 0px; font-size: 12px;"><a href="#icon_dock_pond"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pond_64.png" style="height: 32px; width: 32px;"><span class="title">Ponds</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 100px; font-size: 12px;"><a href="#icon_dock_paint"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_paint_64.png" style="height: 32px; width: 32px;"><span class="title">Paint</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 100px; font-size: 12px;"><a href="#icon_dock_interdimensionalcable"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png" style="height: 32px; width: 32px;"><span class="title">IDC Cable</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 100px; font-size: 12px;"><a href="#icon_dock_games"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_games_64.png" style="height: 32px; width: 32px;"><span class="title">Games</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 200px; font-size: 12px;"><a href="#icon_dock_soundrecorder"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_soundrecorder_64.png" style="height: 32px; width: 32px;"><span class="title">Sound Recorder</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 200px; font-size: 12px;"><a href="#icon_dock_piano"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_piano_64.png" style="height: 32px; width: 32px;"><span class="title">Piano</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 200px; font-size: 12px;"><a href="#icon_dock_mirror"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_mirror_64.png" style="height: 32px; width: 32px;"><span class="title">Mirror</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 300px; font-size: 12px;"><a href="#icon_dock_hex-editor"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_hex-editor_64.png" style="height: 32px; width: 32px;"><span class="title">Hex Editor</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 300px; font-size: 12px;"><a href="#icon_dock_file-explorer"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_file-explorer_64.png" style="height: 32px; width: 32px;"><span class="title">Cloud Files</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 300px; font-size: 12px;"><a href="#icon_dock_pad"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pond_64.png" style="height: 32px; width: 32px;"><span class="title">Pads</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 400px; font-size: 12px;"><a href="#icon_dock_sampler"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_midifighter_64.png" style="height: 32px; width: 32px;"><span class="title">Sampler</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 400px; font-size: 12px;"><a href="#icon_dock_audio-visual"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_visuals_64.png" style="height: 32px; width: 32px;"><span class="title">Audio Visuals</span></a></div><div class="icon shortcut  ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 400px; font-size: 12px;"><a href="#icon_dock_Merlin"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_merlin_64.png" style="height: 32px; width: 32px;"><span class="title">Merlin Automated Assistant</span></a></div></div></div><div class="window-container" data-app="ui" data-type="singleton" data-context="default" id="motd" style="width: 400px; height: 300px; position: absolute; top: 75px; left: 250px; z-index: 999;"><div class="window-title-bar"><img src="desktop/assets/images/icons/icon_console_64.png" class="window-icon"><span class="window-title-text">Today: 01/09/25</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 20px;"><img src="v5/assets/guy-left.gif"><img src="v5/assets/construction.gif"><img src="v5/assets/guy-right.gif"></div><div style="text-align: center; font-size: 1.5em; font-weight: bold; padding: 20px;">Construction in progress.<br>New BuddyPond coming soon! <br><br>Level 2 users may join the chat.</div></div><div class="resize-handle"></div></div><div class="window-container" data-app="buddylist" data-type="buddylist-profile" data-context="default" id="buddyListWindow" style="width: 250px; height: 500px; position: absolute; top: 75px; left: 1442px; z-index: 1000;"><div class="window-title-bar"><img src="/desktop/assets/images/icons/icon_profile_64.png" class="window-icon"><span class="window-title-text">Buddy List</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div><div class="bp-window-content app-buddylist">
+        <canvas class="canvasBackground" id="c" height="981" width="1792"></canvas>
+      <div id="desktop-container" class="desktop-container"><div id="desktop-shortcuts-container" class="desktop-shortcuts-container"><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 0px;"><a href="#icon_dock_profile"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_profile_64.png"><span class="title">My Profile</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 0px;"><a href="#icon_dock_pad"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pad_64.png"><span class="title">Pads</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 0px;"><a href="#icon_dock_pond"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pond_64.png"><span class="title">Ponds</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 100px;"><a href="#icon_dock_file-explorer"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_file-explorer_64.png"><span class="title">Cloud Files</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 100px;"><a href="#icon_dock_paint"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_paint_64.png"><span class="title">Paint</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 100px;"><a href="#icon_dock_sound-recorder"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_soundrecorder_64.png"><span class="title">Sound Recorder</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 200px;"><a href="#icon_dock_youtube"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png"><span class="title">Youtube</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 200px;"><a href="#icon_dock_camera"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_camera_64.png"><span class="title">Camera</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 200px;"><a href="#icon_dock_piano"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_piano_64.png"><span class="title">Piano</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 300px;"><a href="#icon_dock_fluid-simulation"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_fluidsimulation_64.png"><span class="title">Fluid Simulation</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 300px;"><a href="#icon_dock_sampler"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_midifighter_64.png"><span class="title">Sampler</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 300px;"><a href="#icon_dock_audio-visual"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_visuals_64.png"><span class="title">Audio Visuals</span></a></div><div class="folder icon shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 400px;"><a href="#icon_dock_Games"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_folder_64.png"><span class="title">Games</span></a></div><div class="folder icon shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 400px;"><a href="#icon_dock_Hacking Tools"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_folder_64.png"><span class="title">Hacking Tools</span></a></div></div></div><div class="window-container" data-app="buddylist" data-type="buddylist-profile" data-context="default" id="buddyListWindow" style="width: 250px; height: 500px; position: absolute; top: 75px; left: 1442px; z-index: 999;"><div class="window-title-bar"><img src="/desktop/assets/images/icons/icon_profile_64.png" class="window-icon"><span class="window-title-text">Buddy List</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div><div class="bp-window-content app-buddylist">
   <div class="window-main">
     <div class="buddy_list_not_connected loggedOut">
       <p class="loginMessage">
@@ -630,12 +127,12 @@ window.top.location = 'ie.html';
           <span><a class="inviteBuddy" href="#invite-buddy">Invite a Buddy!</a></span>
         </div>
       </div>
-      <p class="positiveAffirmation">Your positivity is uplifting.</p>
+      <p class="positiveAffirmation">You have an infectious enthusiasm!</p>
 
     </div>
   </div>
 </div>
-</div></div><div class="resize-handle"></div></div></div>
+</div></div><div class="resize-handle"></div></div><div class="window-container" data-app="ui" data-type="singleton" data-context="default" id="motd" style="width: 400px; height: 300px; position: absolute; top: 75px; left: 250px; z-index: 1000;"><div class="window-title-bar"><img src="desktop/assets/images/icons/icon_console_64.png" class="window-icon"><span class="window-title-text">Today: 01/16/25</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 20px;"><img src="v5/assets/guy-left.gif"><img src="v5/assets/construction.gif"><img src="v5/assets/guy-right.gif"></div><div style="text-align: center; font-size: 1.5em; font-weight: bold; padding: 20px;">New v5 almost ready!<br>Buddy Pads are Online! <br><br>All users may join the chat.</div></div><div class="resize-handle"></div></div></div>
     </div>
 
     <!--    -->
@@ -649,9 +146,7 @@ window.top.location = 'ie.html';
 
     <!-- <script src="/v5/router.js"></script> -->
 
-
-
-    <script src="/v5/flexHide.js"></script>
+    <script src="/v5/vendor/flexHide.js"></script>
 
     <!-- jQuery UI can be replaced when legacy autocomplete and Windows are fully replaced -->
     <link rel="stylesheet" href="/desktop/assets/css/jquery.ui.css">
@@ -663,13 +158,6 @@ window.top.location = 'ie.html';
     <script src="/desktop/assets/js/forbidden.notes.js"></script>
     <!-- SDK should be able to be removed -->
     <script src="/v5/apps/based/client/lib/api.js"></script>
-    <!-- desktop and desktop load will be removed when all legacy apps are replaced-->
-    <script src="/desktop.js"></script>
-    <script src="/desktop.load.js"></script>
-    <!-- ui and ui events will be removed when all legacy Windows are replaced -->
-    <script src="/desktop.ui.js"></script>
-    <script src="/desktop.ui.events.js"></script>
-    <!-- ^^^ remove all the above files -->
 
     <script>
 
@@ -677,7 +165,7 @@ window.top.location = 'ie.html';
       let _api = 'https://api.buddypond.com';
       let _wsHost = 'wss://api.buddypond.com';
       let _cdn = 'https://files.buddypond.com';
-      //_host = 'https://192.168.200.59';
+      // _host = 'https://192.168.200.59';
       //_api = 'https://192.168.200.59';
       //_wsHost = 'wss://192.168.200.59';
 
@@ -728,7 +216,7 @@ window.top.location = 'ie.html';
             // remove border from iframe and body
             $('#buddypad').css('border', 'none');
             $('body').css('border', 'none');
-            
+
             // set the src of the buddypad to the current path
             let filesSrc = 'https://files.buddypond.com' + currentPath;
             console.log('setting src to', filesSrc);
@@ -739,89 +227,35 @@ window.top.location = 'ie.html';
 
           }
 
+          bp_v_5();
+
 
           let documentReadyTime = new Date();
-          desktop.log('Buddy Pond Cloud OS Initialized');
-          desktop.log('Now loading apps');
-          desktop
-            // Remark: Almost all apps are replaced now with v5 apps
-            // .use('console')
-            .use('localstorage')
-            .use('settings')
-            // .use('clock')
-            .use('wallpaper')
-            // .use('themes')
-            //.use('audioplayer')
-            .use('appstore')
-            //.use('tts')
-            // .use('notifications')
-            // .use('messages')
-            //.use('buddylist')
-            // .use('pond')
-            //.use('streamsquad')
-            //.use('spellbook')
-            //.use('mantra')
-            //.use('profile')
-            // .use('login', { defer: true })
-            // .use('videochat', { defer: true })
-            .ready(async function (err, apps) {
-              // desktop.log("Loaded", desktop.apps.loaded);
-              try {
-                desktop.ui.windowResizeEventHandler(null, true);
-              } catch (err) {
-                // alert(err.message)
-              }
-              desktop.log('Ready:', 'Buddy Pond', 'v4.20.69')
-              // Desktop is ready, start refreshing it's state immediately
-              desktop.refresh();
-              // desktop.ui.openWindow('mantra')
-              let now = new Date();
+          // desktop.log('Buddy Pond Cloud OS Initialized');
+          // desktop.log('Now loading apps');
 
-              // For Buddy Experience we'll add some fades and delays
-              let fadeInDelay = 555;
+          let now = new Date();
 
-              // If the page has taken over 3.333 seconds to load...
-              // ...reduce the fade in delay ( since the Buddy has waited long enough )
-              if (now.getTime() - documentReadyTime.getTime() > 3333) {
-                fadeInDelay = 111;
-              }
-              $('#loaderHolder').fadeOut({
+          // For Buddy Experience we'll add some fades and delays
+          let fadeInDelay = 555;
+
+          // If the page has taken over 3.333 seconds to load...
+          // ...reduce the fade in delay ( since the Buddy has waited long enough )
+          if (now.getTime() - documentReadyTime.getTime() > 3333) {
+            fadeInDelay = 111;
+          }
+          $('#loaderHolder').fadeOut({
+            easing: 'linear',
+            duration: fadeInDelay,
+            complete: function () {
+              $('#mainOverlay').fadeIn({
                 easing: 'linear',
-                duration: fadeInDelay,
-                complete: function () {
-                  $('#mainOverlay').fadeIn({
-                    easing: 'linear',
-                    duration: 333
-                  });
-                }
+                duration: 333
               });
+            }
+          });
 
-              desktop.on('desktop.settings.audio_enabled', 'update-nav-volume', function () {
-                if (!desktop.settings.audio_enabled) {
-                  $('.volumeFull').hide();
-                  $('.volumeMuted').show();
-                } else {
-                  $('.volumeFull').show();
-                  $('.volumeMuted').hide();
-                  desktop.app.audioplayer.play('desktop/assets/audio/IM.wav');
-                }
-              });
 
-              //
-              // Remark: You can add JS code here to run after the desktop is ready
-              //
-              //
-              // `App.WebView` ? Perhaps not
-              // desktop.ui.openWindow('webview', { url: 'https://google.com', browser: 'chrome' });
-              // never gonna work due to:
-              // Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'.
-              // desktop.ui.openWindow('console');
-
-              // bridge to v5 ( all previous code in this file will be replaced with v5 code )
-              bp_v_5();
-              // bp.apps.buddyscript.addCommand()
-
-            });
         });
       }
 
@@ -833,12 +267,12 @@ window.top.location = 'ie.html';
     <script type="module" src="/v5/public/buddypond.umd.js"></script>
 
 
-<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8ff389d63f569554&quot;,&quot;version&quot;:&quot;2024.10.5&quot;,&quot;r&quot;:1,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;token&quot;:&quot;a34dc8c1b1574dff985e9274c2469241&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;902cfcc02eebb3c0&quot;,&quot;version&quot;:&quot;2025.1.0&quot;,&quot;r&quot;:1,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;token&quot;:&quot;a34dc8c1b1574dff985e9274c2469241&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
 
 
-</div><canvas width="1792" height="981" style="position: absolute; inset: 0px; z-index: -1;"></canvas><div class="taskbar-container"><div class="taskbar-item"><div class="taskbar-item-text">Home</div><img src="desktop/assets/images/icons/icon_mantra_64.png" height="32" width="32" alt="Home"></div><div class="taskbar-item"><div class="taskbar-item-text">Today: 01/09/25</div><img src="desktop/assets/images/icons/icon_console_64.png" height="32" width="32" alt="Today: 01/09/25"></div><div class="taskbar-item"><div class="taskbar-item-text">Buddy List</div><img src="/desktop/assets/images/icons/icon_profile_64.png" height="32" width="32" alt="Buddy List"></div></div><div id="customContextMenu" class="removeMessage" style="display: none; position: absolute; z-index: 1000; background: white; border: 1px solid #ccc; padding: 10px;">Remove Message</div><div class="menu-bar" id="menu-bar"><div class="menu-item"><span id="me_title" class="me_title">Welcome - You look nice today!</span><div class="submenu" style="left: 0%;"><div class="submenu-item">We are stoked to be your Buddy</div><div class="submenu-item">
+</div><div class="taskbar-container"><div class="taskbar-item"><div class="taskbar-item-text">Home</div><img src="desktop/assets/images/icons/icon_mantra_64.png" height="32" width="32" alt="Home"></div><div class="taskbar-item"><div class="taskbar-item-text">Buddy List</div><img src="/desktop/assets/images/icons/icon_profile_64.png" height="32" width="32" alt="Buddy List"></div><div class="taskbar-item"><div class="taskbar-item-text">Today: 01/16/25</div><img src="desktop/assets/images/icons/icon_console_64.png" height="32" width="32" alt="Today: 01/16/25"></div></div><div class="menu-bar" id="menu-bar"><div class="menu-item"><span id="me_title" class="me_title">Welcome - You look nice today!</span><div class="submenu" style="left: 0%;"><div class="submenu-item">We are stoked to be your Buddy</div><div class="submenu-item">
                 <a class="editProfileLink" title="Login to Edit Profile" href="#">Edit Profile</a>
-
+    
             </div><div class="submenu-item">
                   <li class="loggedOut">
                     <span class="loginLink">Login</span>
@@ -846,7 +280,7 @@ window.top.location = 'ie.html';
                   <li class="loggedIn">
                     <span class="logoutLink">Logout</span>
                   </li>
-
+    
                 
                 </div></div></div><div class="menu-item">Window<div class="submenu" style="left: 0%;"><div class="submenu-item">Full Screen</div><div class="submenu-item">Hide All Windows</div><div class="submenu-item disabled">Set Active Window to Wallpaper</div></div></div><div class="menu-item" style="flex: 1 1 0%;">
     <select name="selectPlaylist" class="selectPlaylist float_right">
@@ -858,34 +292,34 @@ window.top.location = 'ie.html';
     <option value="938848927">Andrew Potthast: Burning Man Set</option>
     <option value="839091662">Featured Buddy: Andrew Potthast</option>
     <option value="1427279635">Featured Buddy: ioqpvs</option>
-  </select>
-  </div><div class="menu-item">
-  <select name="selectTheme" class="selectTheme float_right">
+    </select>
+    </div><div class="menu-item">
+    <select name="selectTheme" class="selectTheme float_right">
     <option value="Light">Light Theme</option>
     <option value="Dark">Dark Theme</option>
     <option value="Nyan">Nyan Theme</option>
     <option value="Hacker">Hacker Theme</option>
     <option value="Water">Water Theme</option>
-    <!-- <option value="Customize">Customize Theme</option> -->
+    <option value="Customize">Customize Theme</option>
     <!--
-  <option value="Customize">EPIC MODE ( my poor browser ) </option>
-  <option value="Customize">Comic Theme</option> 
--->
-  </select>
-
-  </div><div class="menu-item">
+    <option value="Customize">EPIC MODE ( my poor browser ) </option>
+    <option value="Customize">Comic Theme</option> 
+    -->
+    </select>
+    
+    </div><div class="menu-item">
       <span class="totalConnected loggedIn">
         <span class="totalConnectedCount">0</span> Buddies Online</span>
         <span class="totalOnlineCount">0</span><!--Buddies Online-->
         <span class="desktopDisconnected loggedOut">Disconnected</span>
             
-  </div><div class="menu-item">
-  <div class="volume">
-  <span class="volumeIcon volumeToggle volumeFull">🔊</span>
-  <span class="volumeIcon volumeToggle volumeMuted" style="display: none;">🔇</span>
-  
-  <!-- <input type="range" min="0" max="100" value="100" class="volumeSlider"> -->
-  </div>
-  </div><div class="menu-item">
-  <span class="" id="clock" title="January 9, 2025">Thursday 9:53 AM</span>
-</div></div><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 120px; background-color: rgba(0, 0, 0, 0.5); color: white; display: none; align-items: center; justify-content: center; z-index: 1000; padding: 10px;"></div></body></html>
+    </div><div class="menu-item">
+    <div class="volume">
+    <span class="volumeIcon volumeToggle volumeFull">🔊</span>
+    <span class="volumeIcon volumeToggle volumeMuted">🔇</span>
+    
+    <!-- <input type="range" min="0" max="100" value="100" class="volumeSlider"> -->
+    </div>
+    </div><div class="menu-item">
+    <span class="" id="clock" title="January 16, 2025">Thursday 9:13 AM</span>
+    </div></div><div id="customContextMenu" class="removeMessage" style="display: none; position: absolute; z-index: 1000; background: white; border: 1px solid #ccc; padding: 10px;">Remove Message</div></body></html>

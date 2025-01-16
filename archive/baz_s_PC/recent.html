@@ -2,19 +2,18 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <title>baz's PC</title>
-    <!-- <link rel="stylesheet" type="text/css" href="default.css"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="default.js"></script>
   </head>
   <body>
     
     <img src="urhc2.png" id="urhc">
-    <img src="glitchy.gif" id="nwlogo">
+    <img src="under_construct.gif" id="nwlogo">
     
     <div id="dskcnt">
       <div class="dsktp" onclick="vis('main')">
-        <img src="ico/fcom.png" class="ico"><br>
-        <span class="menu">main</span>
+        <img src="ico/comp.png" class="ico"><br>
+        <span class="menu">home</span>
       </div>
       <div class="dsktp" onclick="vis('about')">
         <img src="ico/text.png" class="ico"><br>
@@ -24,10 +23,10 @@
         <img src="ico/joys.png" class="ico"><br>
         <span class="menu">bitsies</span>
       </div>
-      <div class="dsktp" onclick="opnLf()">
+      <!-- <div class="dsktp" onclick="opnLf()">
         <img src="ico/ie.png" class="ico"><br>
         <span class="menu">links</span>
-      </div>
+      </div> -->
       <div class="dsktp" onclick="vis('butn')">
         <img src="ico/webw.png" class="ico"><br>
         <span class="menu">find me</span>
@@ -35,33 +34,44 @@
     </div>
     
     <div id="clipBox">
-      <img id="clipBubble" src="clip bubble.png">
-      <img id="clipPy" src="clippy.gif">
+      <img id="clipBubble" src="clippy/bubble.png">
+      <img id="clipPy" src="clippy/pointing.gif">
       <div id="clipText">Have you tried clicking on those icons up there? They open new windows!<br>
-        <span onclick="vis('clipBox')"><img class="clipButts" src="clip button.png"></span> yes, I have<br>
-        <span id="clipVisBox" onclick="setVis('clipBox')"><img class="clipButts" src="clip uncheck.png"></span> please stay away
+        <span onclick="vis('clipBox', false)"><img class="clipButts" src="clippy/button.png"></span> yes, I have<br>
+        <span id="clipVisBox" onclick="setVis('clipBox')"><img class="clipButts" src="clippy/uncheck.png"></span> please stay away
       </div>
       
     </div>
     
-    <div class="box closed" id="main">
+    <div class="box closed folder" id="main">
       <div class="top" id="mainh">
-        <div class="toptxt">main - File Explorer</div>
-        <div class="ex" onclick="vis('main')" aria-hidden="true">✕</div>
+        <div class="toptxt">home - File Exploder</div>
+        <button class="ex windowButton" onclick="vis('main')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
         <table class="folder">
           <tbody><tr>
-            <td><span onclick="vis('fzines')" class="file"><img src="ico/fopn.png" class="ico"></span></td>
+            <td><span onclick="vis('fzines')" class="file"><img src="ico/fdoc.png" class="ico"></span></td>
+            <td><span onclick="vis('fpics')" class="file"><img src="ico/fimg.png" class="ico"></span></td>
             <td><span onclick="vis('updates')" class="file"><img src="ico/text.png" class="ico"></span></td>
             <td><span onclick="vis('pronouns')" class="file"><img src="ico/text.png" class="ico"></span></td>
+            
+            <td><span onclick="opnLf()" class="file"><img src="ico/ie.png" class="ico"></span></td>
+          </tr>
+          <tr>
+            <th><span onclick="vis('fzines')" class="file">zines</span></th>
+            <th><span onclick="vis('fpics')" class="file">backgrounds</span></th>
+
+            <th><span onclick="vis('updates')" class="file">updates</span></th>
+            <th><span onclick="vis('pronouns')" class="file">pronouns</span></th>
+            
+            <th><span onclick="opnLf()" class="file">links</span></th>
+          </tr>
+          <tr>
             <td><span onclick="vis('twiary')" class="file"><img src="ico/help.png" class="ico"></span></td>
             <td><span onclick="opnAqua()" class="file"><img src="ico/aqua.png" class="ico"></span></td>
           </tr>
           <tr>
-            <th><span onclick="vis('fzines')" class="file">zines</span></th>
-            <th><span onclick="vis('updates')" class="file">updates</span></th>
-            <th><span onclick="vis('pronouns')" class="file">pronouns</span></th>
             <th><span onclick="vis('twiary')" class="file">twiary</span></th>
             <th><span onclick="opnAqua()" class="file">NOTVRS</span></th>
           </tr>
@@ -71,8 +81,8 @@
     
     <div class="box" id="about">
       <div class="top" id="abouth">
-        <div class="toptxt">about - Notepad</div>
-        <div class="ex" onclick="vis('about')" aria-hidden="true">✕</div>
+        <div class="toptxt">about - Notepad--</div>
+        <button class="ex windowButton" onclick="vis('about')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
         hey! it's basile, baz, toroid/al, woomy, etc. my pronouns are *e/h*. I have a section on here explaining them <span onclick="vis('pronouns')" class="fakeA">here</span>. if that's a bit too much, then just refer to me by my name, or other non-professional nouns. do not use they, he, or she.<br>welcome to my little neocities website! this is where I keep my old bitsy games and various little web-based experiments. feel free to look around.
@@ -82,7 +92,7 @@
     <div class="box closed" id="bitsy">
       <div class="top" id="bitsyh">  
         <div class="toptxt">BitsyBrowse</div>
-        <div class="ex" onclick="vis('bitsy')" aria-hidden="true">✕</div>
+        <button class="ex windowButton" onclick="vis('bitsy')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
         note: if you see <img src="warning.gif" class="warn" title="warning symbol!" alt="warning symbol!">, hover over it to check for warnings for that bitsy
@@ -101,16 +111,15 @@
     <div class="box closed" id="butn">
       <div class="top flashy" id="butnh">
         <div class="toptxt "><div class="marquee">ADVERTISEMENT - Win FREE Access To ALL These GREAT Websites!! Click Here!</div></div>
-        <div class="ex" onclick="vis('butn')" aria-hidden="true">✕</div>
+        <button class="ex windowButton" onclick="vis('butn')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
         <a href="https://goto.sirenabea.ch/@toroid" target="_blank" title="fedi main 1" rel="me">goto.sirenabea.ch</a><br>
         <a href="https://monads.online/@toroidal" target="_blank" title="fedi main 2" rel="me">monads.online</a><br>
-        <a href="https://toroid-jpg.tumblr.com/" target="_blank" title="🔨 photomatt 🔨 lmao">tumblr</a><br>
-        <a href="https://open.spotify.com/user/piiiiiii?si=coJwdoPIQxqOMCJ_udAQdw" target="_blank" title="I have a couple of playlists for things...">spotify</a><br>
-        <a href="https://ko-fi.com/toroidal" target="_blank" title="please don't pay me I don't need money atm"><strike>kofi</strike></a><br><br>
+        <a href="https://toroid-jpg.tumblr.com/" target="_blank" title="🔨 photomatt 🔨 lmao">tumblr</a><br><br>
         <!-- buttons -->
-        <a href="https://goto.sirenabea.ch/@toroid" target="_blank"><img src="butt/nf.gif" title="I'm back again, and about time too" alt="I'm back again, and about time too"></a><a href="https://neocities.org" target="_blank"><img src="butt/nc.png" title="hosted by Neocities!" alt="hosted by Neocities!"></a>
+        current mood:<a href="https://www.imood.com/users/toroid" title=":D"><img src="https://moods.imood.com/display/uname-toroid/trans-1/imood.gif" alt="The current mood of toroid at www.imood.com" border="0"></a><br>
+        <a href="https://goto.sirenabea.ch/@toroid" target="_blank"><img src="butt/nf.gif" title="I'm back again, and about time too" alt="I'm back again, and about time too"></a><a href="https://neocities.org/site/niceware" target="_blank"><img src="butt/nc.png" title="hosted by Neocities!" alt="hosted by Neocities!"></a>
         <a href="http://users3.smartgb.com/g/g.php?a=s&amp;i=g36-23442-d5" target="_blank"><img src="butt/gb.gif" title="sign my guestbook from 2014, lol" alt="sign my guestbook from 2014, lol"></a><img src="butt/wb.png" title="new laptop, still don't like windows" alt="new laptop, still don't like windows">
         <img src="butt/dm.gif" title="You were diagnosed with GAY" alt="You were diagnosed with GAY"><img src="butt/sn.gif" title="apocalypse posadist accelerationism to reach inkopolis in 10 years" alt="apocalypse posadist accelerationism to reach inkopolis in 10 years"><br>
         <div style="width: 185px; height: 60px" align="center">
@@ -129,8 +138,8 @@
     <div class="box closed" id="gamer">
       <div class="top" id="gamerh">
         <div class="toptxt" id="gmrhd">BitsyBrowse</div>
-        <div class="popper" onmouseenter="popout('gamer')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('gamer')" aria-hidden="true">✕</div>
+        <button class="popper windowButton" onmouseenter="popout('gamer')" aria-hidden="true">↗
+        </button><button class="ex windowButton" onclick="vis('gamer')" aria-hidden="true">✕</button>
       </div>
       <div class="content hasFrame" id="bxgmr">
         <iframe id="gameFrame"></iframe>
@@ -140,7 +149,7 @@
     <div class="box closed" id="twiary">
       <div class="top" id="twiaryh">
         <div class="toptxt">Twine Diary</div>
-        <div class="ex" onclick="vis('twiary')" aria-hidden="true">✕</div>
+        <button class="ex windowButton" onclick="vis('twiary')" aria-hidden="true">✕</button>
       </div>
       <div class="content" id="fT">
       2019<br>
@@ -165,18 +174,18 @@
     <div class="box closed" id="twiney">
       <div class="top" id="twineyh">
         <div class="toptxt" id="twihd">Twine Diary</div>
-        <div class="popper" onmouseenter="popout('twiney')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('twiney')" aria-hidden="true">✕</div>
+        <button class="popper windowButton" onmouseenter="popout('twiney')" aria-hidden="true">↗</button>
+        <button class="ex windowButton" onclick="vis('twiney')" aria-hidden="true">✕</button>
       </div>
       <div class="content hasFrame" id="bxtwi">
         <iframe id="twiFrame"></iframe>
       </div>
     </div>
     
-    <div class="box closed" id="fzines">
+    <div class="box closed folder" id="fzines">
       <div class="top" id="fzinesh">
-        <div class="toptxt">zines - File Explorer</div>
-        <div class="ex" onclick="vis('fzines')" aria-hidden="true">✕</div>
+        <div class="toptxt">zines - File Exploder</div>
+        <button class="ex windowButton" onclick="vis('fzines')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
         <table class="folder">
@@ -189,12 +198,41 @@
         </tbody></table>
       </div>
     </div>
+
+    <div class="box closed folder" id="fpics">
+      <div class="top" id="fpicsh">
+        <div class="toptxt">backgrounds - File Exploder</div>
+        <button class="ex windowButton" onclick="vis('fpics')" aria-hidden="true">✕</button>
+      </div>
+      <div class="content">
+        <table class="folder">
+          <tbody><tr>
+            <td><a href="/backgrounds/hotdog.gif" target="_blank"><span onclick="" class="file"><img src="backgrounds/hotdog.gif" class="ico"></span></a></td>
+            <td><a href="/backgrounds/poolside.png" target="_blank"><span onclick="" class="file"><img src="backgrounds/poolside.png" class="ico"></span></a></td>
+            <td><a href="/backgrounds/RAINBOW.gif" target="_blank"><span onclick="" class="file"><img src="backgrounds/RAINBOW.gif" class="ico"></span></a></td>
+            </tr>
+          <tr>
+            <th><a href="/backgrounds/hotdog.gif" target="_blank"><span onclick="" class="file">hotdog.gif</span></a></th>
+            <th><a href="/backgrounds/poolside.png" target="_blank"><span onclick="" class="file">poolside.png</span></a></th>
+            <th><a href="/backgrounds/RAINBOW.gif" target="_blank"><span onclick="" class="file">RAINBOW.gif</span></a></th>
+            </tr>
+          <tr>
+            <td><a href="/backgrounds/stars.gif" target="_blank"><span onclick="" class="file"><img src="backgrounds/stars.gif" class="ico"></span></a></td>
+            <td><a href="/backgrounds/wizard.png" target="_blank"><span onclick="" class="file"><img src="backgrounds/wizard.png" class="ico"></span></a></td>
+          </tr>
+          <tr>
+            <th><a href="/backgrounds/stars.gif" target="_blank"><span onclick="" class="file">stars.gif</span></a></th>
+            <th><a href="/backgrounds/wizard.png" target="_blank"><span onclick="" class="file">wizard.png</span></a></th>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
     
     <div class="box closed" id="aqua">
       <div class="top" id="aquah">
         <div class="toptxt">AquariumFREE.exe</div>
-        <div class="popper" onmouseenter="popout('aqua')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('aqua')" aria-hidden="true">✕</div>
+        <button class="popper windowButton" onmouseenter="popout('aqua')" aria-hidden="true">↗</button>
+        <button class="ex windowButton" onclick="vis('aqua')" aria-hidden="true">✕</button>
       </div>
       <div class="content hasFrame" id="bxgmr">
         <iframe id="aquaFrame"></iframe>
@@ -204,8 +242,8 @@
     <div class="box closed" id="linkfarm">
       <div class="top" id="linkfarmh">
         <div class="toptxt">my website garden - Internet Eater</div>
-        <div class="popper" onmouseenter="popout('linkfarm')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('linkfarm')" aria-hidden="true">✕</div>
+        <button class="popper windowButton" onmouseenter="popout('linkfarm')" aria-hidden="true">↗</button>
+        <button class="ex windowButton" onclick="vis('linkfarm')" aria-hidden="true">✕</button>
       </div>
       <div class="content hasFrame" id="bxgmr">
         <iframe id="lfFrame"></iframe>
@@ -214,34 +252,71 @@
     
     <div class="box text" id="updates">
       <div class="top" id="updatesh">
-        <div class="toptxt">updates - Notepad</div>
-        <div class="popper" onmouseenter="popout('updates')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('updates')" aria-hidden="true">✕</div>
+        <div class="toptxt">updates - Notepad--</div>
+        <button class="popper windowButton" onmouseenter="popout('updates')" aria-hidden="true">↗</button>
+        <button class="ex windowButton" onclick="vis('updates')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
-        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet"> jan 8th - spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"> jan 6th - actually integrated the new webpage, sloppily. also fixed how my page loads these .txt files so it's less clunky. visual update will come another time, because I basically have to rewrite all the CSS.</p><p class="bullet"> jan 5th - new year, new update. I made a webpage to collect links to websites that I like. I'll be integrating it into the full site soon, but I kinda wanna refresh the whole thing while I'm in there adding it. there's a lot to redo, considering I've had this website for over six years now (and a neocities account for over a decade! yikes!). don't worry, it won't be too different... probably.</p><p class="bullet">2024</p><p class="bullet">sep 18th - just uploading a demo for something I'm trying to make in bipsi, a bitsy-clone-engine. makes weird custom scripting a lot easier, and cuts out a lot of the newer bitsy features I don't want. not directly linking to it anywhere for now, just check my neocities profile updates. will probably refresh it a few times over the next however long, so I won't update this with additional entries just for that.</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
+        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet"> jan 11th - working on a pretty thorough reskinning! dunno if any of this will look "nicer" by the end of it, but I'll at least be enjoying it more. dunno if neocities will let me change this site's username, but I'm moving away from the "niceware" theming... end of an era... but also! added imood to my "find me" page because it's cute.</p><p class="bullet"> jan 8th - spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"> jan 6th - actually integrated the new webpage, sloppily. also fixed how my page loads these .txt files so it's less clunky. visual update will come another time, because I basically have to rewrite all the CSS.</p><p class="bullet"> jan 5th - new year, new update. I made a webpage to collect links to websites that I like. I'll be integrating it into the full site soon, but I kinda wanna refresh the whole thing while I'm in there adding it. there's a lot to redo, considering I've had this website for over six years now (and a neocities account for over a decade! yikes!). don't worry, it won't be too different... probably.</p><p class="bullet">2024</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
       </div>
     </div>
 
     <div class="box text closed" id="pronouns">
       <div class="top" id="pronounsh">
-        <div class="toptxt">pronouns - Notepad</div>
-        <div class="popper" onmouseenter="popout('pronouns')" aria-hidden="true">↗</div>
-        <div class="ex" onclick="vis('pronouns')" aria-hidden="true">✕</div>
+        <div class="toptxt">pronouns - Notepad--</div>
+        <button class="popper windowButton" onmouseenter="popout('pronouns')" aria-hidden="true">↗</button>
+        <button class="ex windowButton" onclick="vis('pronouns')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
         <div id="proFill">my primary set of pronouns are *e/h*/h*/h*s/h*self. they really only work when used in text-based communication. I found them online, they were made as a half-joke for some 90s chat software. they're also called splat pronouns, a name much easier to look up. feel free to replace the asterisks with whatever other unicode symbols work for the platform/you think are cool, although try to avoid emoji or anything else that would be rendered in color. a few that I think would be cool include ꙮ, ‽, or ⌂. get creative!</div>
       </div>
     </div>
     
+    <div id="settings" class="box closed">
+      <div class="content">
+        <button class="invert" onclick="setDefaultLocal(); location.reload();">reset windows</button><br><br>
+        <button class="invert" onclick="localStorage.setItem('is_clipBox', 'open'); location.reload();">return clippy</button><br><br>
+        <button class="invert themeButton" style="background-color: blue" onclick="setTheme('classic')">&nbsp;</button>​
+        <button class="invert themeButton" style="background-color: aquamarine" onclick="setTheme('pastel')">&nbsp;</button>​
+        <button class="invert themeButton" style="background-color: lime" onclick="setTheme('eyestrain')">&nbsp;</button>​
+        <button class="invert themeButton" style="background-color: red" onclick="setTheme('hotdog')">&nbsp;</button>​
+        <button class="invert themeButton" style="background-color: black" onclick="setTheme('hicontrast')">&nbsp;</button>
+      </div>
+    </div>
+
+    <div id="apps" class="box closed">
+      <div class="top" id="appshh">
+        baz's PC&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="restartButton" class="popper rotate" onclick="location.reload()" title="restart">❊</button> 
+        <button id="shutdownButton" class="ex rotate" onclick="window.close()" title="shut down">⊝</button>
+      </div>
+      <div class="content" onclick="vis('apps', false)">
+        <span class="appLauncher" onclick="opnAqua()">AquariumFREE.exe</span><br>
+        <span class="appLauncher" onclick="vis('bitsy')">BitsyBrowse</span><br>
+        <span class="appLauncher" onclick="vis('main')">File Exploder</span><br>
+        <span class="appLauncher" onclick="opnLf()">Internet Eater</span><br>
+        <span class="appLauncher" onclick="vis('about')">Notepad--</span><br>
+        <span class="appLauncher" onclick="" style="cursor: not-allowed" title="Admin Permissions Required (coming someday)">Terminal</span><br>
+        <span class="appLauncher" onclick="vis('twiary')">Twine Diary</span><br>
+        <span class="appLauncher" onclick="vis('settings')">Settings</span><br>
+
+      </div>
+    </div>
+
+    <div id="taskbar">
+      <button id="appsButton" onclick="vis('apps', false)">start...</button>
+      <span id="clock" class=""><a title="thurs jan 16th">8:42am</a></span>
+      <button id="settingButton" onclick="vis('settings', false)">⚙</button>
+    </div>
+
     <!-- 
     box template
     
     <div class="box" id="_">
       <div class="top" id="_h">
         <div class="toptxt"></div>
-        if contain iframe: <div class="popper" onmouseenter="popout('_')" aria-hidden="true">&#8599;</div>
-        <div class="ex" onclick="vis('_')" aria-hidden="true">&#x2715;</div>
+        if contain iframe: <button class="popper windowButton" onmouseenter="popout('_')" aria-hidden="true">&#8599;</button>
+        <button class="ex windowButton" onclick="vis('_')" aria-hidden="true">&#x2715;</button>
       </div>
       <div class="content">
       </div>
@@ -252,9 +327,8 @@
     <script>
       window.onload = function() {
         setup();
-        checkVis();
-        checkPos();
-        if (!localStorage.getItem("about")) setDefaultLocal();
+        if (!localStorage.hasOwnProperty("is_about")) setDefaultLocal();
+        setInterval(setTime, 15000);
       }
       var boxes = document.getElementsByClassName("box");
       for (i in boxes) dragElement(boxes[i]);
