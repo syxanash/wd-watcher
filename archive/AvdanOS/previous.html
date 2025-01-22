@@ -1,0 +1,120 @@
+<html><head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			AvdanOS - It's not only a desktop environment; It's a new OS.
+		</title>
+		<meta name="author" content="Dustyn">
+		<meta name="description" content="AvdanOS - The desktop you know and love.">
+		
+		<meta name="robots" content="index, follow">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://Avdan.com/">
+		
+		<meta name="twitter:description" content="AvdanOS - The desktop you know and love. Read more...">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="AvdanOS - The desktop you know and love.">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="src/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon-16x16.png">
+		
+		<!-- preloading -->
+		<link rel="preload" href="src/fonts/inter.ttf" as="font" crossorigin="anonymous">
+		<link rel="preload" href="src/css/intro.css" as="style">
+		<link rel="preload" href="src/css/context_menu.css" as="style">
+		<link rel="preload" href="src/css/demo.css" as="style">
+		<link rel="preload" href="src/css/window.css" as="style">
+		<link rel="preload" href="src/css/dock.css" as="style">
+		<link rel="preload" href="src/css/filemanager.css" as="style">
+		<link rel="preload" href="src/css/lale.css" as="style">
+		<link rel="preload" href="src/css/messages.css" as="style">
+		<link rel="preload" href="src/css/music.css" as="style">
+		<link rel="preload" href="src/css/menu.css" as="style">
+		<link rel="preload" href="src/css/placeholders.css" as="style">
+		<link rel="preload" href="src/images/demo/backgrounds/avdan_vert.png" as="image">
+
+		<!-- main CSS -->
+		<link rel="stylesheet" href="src/css/intro.css">
+		<link rel="stylesheet" href="src/css/context_menu.css">
+		<link rel="stylesheet" href="src/css/demo.css">
+		<link rel="stylesheet" href="src/css/window.css">
+		<link rel="stylesheet" href="src/css/dock.css">
+		
+		<!-- CSS for apps -->
+		<link rel="stylesheet" href="src/css/filemanager.css">
+		<link rel="stylesheet" href="src/css/lale.css">
+		<link rel="stylesheet" href="src/css/messages.css">
+		<link rel="stylesheet" href="src/css/music.css">
+		<link rel="stylesheet" href="src/css/menu.css">
+		<link rel="stylesheet" href="src/css/placeholders.css">
+
+		<!-- base libraries -->
+		<script src="src/js/cookies.js" defer=""></script>
+		<script src="src/js/intro.js" defer=""></script>
+		<script src="src/js/context_menu_icons.js" defer=""></script>
+		<script src="src/js/drag_and_drop.js" defer=""></script>
+		<script src="src/js/windows.js" defer=""></script>
+
+		<!-- apps -->
+		<script src="src/js/placeholder.js" defer=""></script>
+		<script src="src/js/filemanager.js" defer=""></script>
+		<script src="src/js/lale.js" defer=""></script>
+		<script src="src/js/messages.js" defer=""></script>
+		<script src="src/js/music.js" defer=""></script>
+
+		<!-- dock & elements -->
+		<script src="src/js/menu.js" defer=""></script>
+		<script src="src/js/scrollbar_widget.js" defer=""></script>
+
+		<!-- general -->
+		<script src="src/js/demo.js" defer=""></script>
+		<script src="src/js/key_actions.js" defer=""></script>
+	</head>
+	<body ondragstart="return false;" ondrop="return false;">
+		<div class="demo-body"><div class="workspace" id="workspace1"></div>
+			<div class="dock">
+				<div class="app-bar"><div class="img-container" id="img-container0"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Files.png" id="app-icon0"></div><div class="underlines"></div></div><div class="img-container" id="img-container1"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Mail.png" id="app-icon1"></div><div class="underlines"></div></div><div class="img-container" id="img-container2"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Lale.png" id="app-icon2"></div><div class="underlines"></div></div><div class="img-container" id="img-container3"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Gallery.png" id="app-icon3"></div><div class="underlines"></div></div><div class="img-container" id="img-container4"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Calendar.png" id="app-icon4"></div><div class="underlines"></div></div><div class="img-container" id="img-container5"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Notes.png" id="app-icon5"></div><div class="underlines"></div></div><hr class="app-split"><div class="img-container" id="img-container6"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Settings.png" id="app-icon6"></div><div class="underlines"></div></div><div class="img-container" id="img-container7"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Music.png" id="app-icon7"></div><div class="underlines"></div></div><div class="img-container" id="img-container8"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Messages.png" id="app-icon8"></div><div class="underlines"></div></div><div class="img-container" id="img-container9"><div class="img-wrapper"><img class="noselect" src="src/images/demo/icons/Apps/Settings.png" id="app-icon9"></div><div class="underlines"></div></div><div class="hider-holder"><img class="noselect" src="src/images/demo/icons/Back.png"></div></div>
+				<div class="menu-bar">
+					<img class="menu-icon noselect" src="src/images/demo/icons/Search.png">
+					<svg id="avdan-menu" class="menu-icon noselect" viewBox="0 0 1125 938">
+							<defs>
+								<linearGradient id="grad1" x1="0%" y1="50%" x2="100%" y2="0%">
+									<stop offset="0%"></stop>
+									<stop offset="100%"></stop>
+								</linearGradient>
+							</defs>
+						<path d="M 328 334 L 169 73 C 174 83 142 7 227 0 L 1073 0 C 1073 0 1140 9 1119 80 L 795 605 L 524 166 C 524 166 486 116 432 166 z M 328 334 L 6 857 C 6 857 -25 908 48 938 L 904 938 C 904 938 974 924 950 855 L 795 605 L 697 762 C 697 762 650 835 594 762 z"></path>
+					</svg>
+					<img class="menu-icon noselect" src="src/images/demo/icons/Dock/RecentApps.png">
+				</div>
+				<div class="scroll-bar">
+				<div class="weather-time noselect scroll-item"><div class="time-panel"><div class="curr-time">9:34</div><div class="curr-date">Thursday, Jan 16</div></div><div class="weather-panel"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><div class="weather-grad">24°</div></div></div></div>
+				<div class="info-bar">
+					<img class="info-icon noselect" src="src/images/demo/icons/Dock/WiFi.png">
+					<img class="info-icon noselect" src="src/images/demo/icons/Dock/Bluetooth.png">
+					<img class="info-icon noselect" src="src/images/demo/icons/Dock/Sound.png">
+					<img class="info-icon noselect" src="src/images/demo/icons/Dock/Battery.png">
+					<svg class="info-icon noselect" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<title>Chevron Up</title>
+						<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 328l144-144 144 144" class="ionicon-fill-none"></path>
+					</svg>
+				</div>
+			</div>
+			<div class="intro" style="animation-name: make-visible; visibility: hidden; opacity: 0;">
+				<svg class="intro-title" viewBox="0 0 105 16">
+					<g transform="translate(-18.844785,-30.077762)">
+						<path class="intro-letter" id="a1" d="M 20,45 l 7,-13.5 7,13.5" style="animation-name: outer-animate;"></path>
+						<path class="intro-letter" id="v" d="M 32,31.5 l 7,13.5 7,-13.5" style="animation-name: outer-animate;"></path>
+						<path class="intro-letter" id="d" d="M 49.6,31.5 l 4,0  c 8.6,0 8.6,13.5 0,13.5  l -4,0 z" style="animation-name: outer-animate;"></path>
+						<path class="intro-letter" id="a2" d="M 62,45 l 7,-13.5 7,13.5" style="animation-name: outer-animate;"></path>
+						<path class="intro-letter" id="n" d="M 79.2,45  l 0,-8  c 0,-7.4 10.6,-7.4 10.2,0  l 0,8" style="animation-name: outer-animate;"></path>
+						<path class="intro-letter" id="o" d="M 97.6,38.2  c 0,-9.1 12.8,-9.1 12.8,0  0,9.1 -12.8,9.1 -12.8,0 z" style="animation-name: outer-animate;"></path>
+						<path class="intro-letter" id="s" d="M 113.4,42 c 1.2,4.1 9,4.1 9.4,-0.6  0,-5.2 -8.6,-2.2 -8.6,-6.6  0.2,-4.4 6.4,-4.4 7.9,-0.8" style="animation-name: outer-animate;"></path>
+					</g>
+				</svg>
+			</div>
+		</div>
+	
+
+</body></html>

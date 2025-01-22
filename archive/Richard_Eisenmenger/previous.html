@@ -1,14 +1,71 @@
 <html><head>
-	<title>TAWS - The Amiga Workbench Simulation</title>
+	<title>Richard Eisenmenger - The Amiga Workbench is loading...</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="description" content="Autoren-Website Richard Eisenmenger - Amiga Version based on TAWS by Michael Rupp">
+	<meta name="robots" content="index, nofollow">
+	<meta name="expires" content="0">
+	<!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width" /> -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" async="" defer="" src="https://matomo.eisenmenger.nl/matomo.js"></script><script type="text/javascript">
+  var _paq = window._paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.eisenmenger.nl/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0055AA">
+	<meta name="msapplication-TileColor" content="#0055AA">
+	<meta name="theme-color" content="#0055AA">
+	<link rel="stylesheet" href="Styles.css" charset="UTF-8">
+	<link rel="stylesheet" href="/amiga-re.css" charset="UTF-8">
+	<script language="javascript" src="JS/Dev.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Config.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Init.js" type="text/javascript" charset="UTF-8"></script>
 	<script language="javascript" src="JS/Helper.js" type="text/javascript" charset="UTF-8"></script>
-	<script language="javascript">m_JSversion = 1.0;</script>
+	<script language="javascript" src="JS/Catalogs/english.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Catalogs/deutsch.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Catalogs/italiano.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Catalogs/russian.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Catalogs/espanol.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Catalogs/polski.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Catalogs/francais.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Gadget.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Fenster.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Icon.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Wb.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Menu.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Prefs.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/PrefsPalette.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/PrefsFont.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/PrefsMagicMenu.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/PrefsWorkbench.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Clock.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/MultiView.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/AmigaGuide.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Presets.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/EarlyStartupControl.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/PayPal.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/System.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Shell.js" type="text/javascript" charset="UTF-8"></script>
+	<script language="javascript" src="JS/Ajax.js" type="text/javascript" charset="UTF-8"></script>
 	<script language="javascript1.5">m_JSversion = 1.5;</script>
 	<script language="javascript1.6">m_JSversion = 1.6;</script>
 	<script language="javascript" type="text/javascript">
 		var onmousedownSupported = 'onmousedown' in window || IsFirefox();
 		if (IsIE()) {
 			m_JSversion = 1.6; // Versionsermittlung funktioniert dort nicht
-			onmousedownSupported = true; // wäre für IE8 sonst false (sagt zumindest IE11 im 8er-Modus)
+			onmousedownSupported = true; // w�re f�r IE8 sonst false (sagt zumindest IE11 im 8er-Modus)
 		}
 		else if (m_JSversion == 1.5 && (IsOpera() || IsFirefox())) {
 			m_JSversion = 1.6; // Opera und Firefox 21 geben nur 1.5 an (ebenso Mozilla 1.6 und Netscape 7.2)
@@ -16,29 +73,76 @@
 		if (m_JSversion < 1.6
 			|| IsNetSurf()
 			|| !document.firstChild
-			|| !('ontouchstart' in window || onmousedownSupported)) { // z.B. für OperaMini
+			|| !('ontouchstart' in window || onmousedownSupported)) { // z.B. f�r OperaMini
 			m_InvalidBrowser = true;
-			// document.write() verwenden statt document.writeln(), da dies von NetSafe nicht unterstützt wird
+			// document.write() verwenden statt document.writeln(), da dies von NetSafe nicht unterst�tzt wird
 			document.write('<body bgcolor=#111111 topmargin=35>\n');
 			document.write('<table width=100%><tr><td height=10000 align=center valign=top>\n');
 			document.write('<img src="Images/GuruInvalidJs.gif" alt="" />\n');
 			document.write('</td></tr></table>\n');
 			document.write('</body>');
 		}
-		else {
-			location = "WB.html";
-		}
-	</script></head><body bgcolor="#111111" topmargin="35">
+	</script></head><body bgcolor="#111111" topmargin="35" class="screenBackground" onload="Init()" onmousedown="BodyOnmousedown(event)" onmousemove="BodyOnmousemove(event)" onmouseup="BodyOnmouseup(event)" onmouseout="BodyOnmouseout(event)" ontouchstart="BodyOnmousedown(event)" ontouchmove="BodyOntouchmove(event)" ontouchend="BodyOnmouseup(event)" oncontextmenu="return false" onselectstart="return m_enableselection">
 <table width="100%"><tbody><tr><td height="10000" align="center" valign="top">
 <img src="Images/GuruInvalidJs.gif" alt="">
 </td></tr></tbody></table>
 
 
 
-	<noscript>
-		<div style="text-align: center; margin: 35px">
-			<img src="Images/GuruNoJs.gif" alt="" />
-		</div>
-	</noscript>
+
+
+  <div id="Dragger" class="dragger"></div>
+
+  <div id="Workbench" class="workbench" ontouchstart="event.preventDefault()">
+    <img src="Images/Spacer.gif" width="100%" height="100%" onmousedown="WbOnmousedown(event)" ontouchstart="WbOntouchstart(event)" alt="" ondrag="return false;">
+    <div id="DefaultIconDrawer" class="icon"></div>
+  </div>
+
+  <div id="Rahmen" class="rahmen"></div>
+
+  <table id="Lasso" class="lasso" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td colspan="3" class="lassoTop"></td>
+    </tr>
+    <tr>
+      <td class="lassoLeft"></td>
+      <td></td>
+      <td class="lassoRight"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="lassoBottom"></td>
+    </tr>
+  </tbody></table>
+
+  <div id="DefaultDrawer" class="fenster" onmousedown="FensterOnmousedown(this,event)" ontouchstart="FensterOntouchstart(this,event)" ondblclick="FensterOndblclick(this)"></div>
+
+  <table id="Standardmenu" class="backgroundColor standardmenu menuFont" cellpadding="0" cellspacing="0" width="100%" border="0" style="left: 0px; top: 0px; visibility: hidden">
+    <tbody><tr>
+      <td class="standardmenutitle" style="padding: 0px"><img id="SBarLogo" alt="" ondrag="return false;"></td>
+      <td id="StandardmenuTitle" width="100%" class="standardmenutitle" onmousedown="MenubarOnmousedown(this,event)" ontouchstart="MenubarOnmousedown(this,event)"></td>
+      <td align="right"><img id="Standardmenu_SizeChanger" onmousedown="GadgetOnmousedown(this,event,'SizeChanger');" ontouchstart="GadgetOnmousedown(this,event,'SizeChanger');" onmouseup="GadgetOnmouseup(this,event,'SizeChanger')" ontouchend="GadgetOnmouseup(this,event,'SizeChanger')" onmouseout="GadgetOnmouseout(this,'SizeChanger')" onmouseover="GadgetOnmouseover(this,'SizeChanger')" alt="" ondrag="return false;"></td>
+      <td align="right"><img id="Standardmenu_ZIndexer" onmousedown="GadgetOnmousedown(this,event,'ZIndexerMenu');" ontouchstart="GadgetOnmousedown(this,event,'ZIndexerMenu');" onmouseup="GadgetOnmouseup(this,event,'ZIndexerMenu')" ontouchend="GadgetOnmouseup(this,event,'ZIndexerMenu')" onmouseout="GadgetOnmouseout(this,'ZIndexerMenu')" onmouseover="GadgetOnmouseover(this,'ZIndexerMenu')" alt="" ondrag="return false;"></td>
+      <td align="right" id="Standardmenu_FrameTopRightTD" onmousedown="MenubarOnmousedown(this,event)" ontouchstart="MenubarOnmousedown(this,event)"><img width="3" src="Images/Spacer.gif" alt="" ondrag="return false;"></td>
+    </tr>
+  </tbody></table>
+
+  <div id="CycleContent" title="" onmouseout="CycleContentOnmouseout()"></div>
+
+  <span id="MeasureString" class="hidden"></span>
+  <span id="PreloadFonts" class="hidden">
+    <span style="font-family: Topaz1">Preload</span>
+    <span style="font-family: Topaz2">Preload</span>
+  </span>
+  <input id="FocusEnsure" type="text" style="position: absolute; top: -100000px;">
+  <iframe id="iframeMultView" frameborder="0" class="hidden" width="100%" onload="iFrameOnLoad(this)"></iframe>
+  <input id="FileInput" type="file" class="hidden">
+
+  <noscript>
+    <div style="text-align: center; margin: 35px">
+      <img src="Images/GuruNoJs.gif" alt="" />
+    </div>
+  </noscript>
+
+
 
 </body></html>
