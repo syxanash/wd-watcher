@@ -1,6 +1,7 @@
 <html><head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <title>baz's PC</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="default.js"></script>
@@ -23,11 +24,7 @@
         <img src="ico/joys.png" class="ico"><br>
         <span class="menu">bitsies</span>
       </div>
-      <!-- <div class="dsktp" onclick="opnLf()">
-        <img src="ico/ie.png" class="ico"><br>
-        <span class="menu">links</span>
-      </div> -->
-      <div class="dsktp" onclick="vis('butn')">
+      <div class="dsktp" onclick="vis('butn'); setTimeout(vis, 2345, 'butn2');">
         <img src="ico/webw.png" class="ico"><br>
         <span class="menu">find me</span>
       </div>
@@ -55,16 +52,13 @@
             <td><span onclick="vis('fpics')" class="file"><img src="ico/fimg.png" class="ico"></span></td>
             <td><span onclick="vis('updates')" class="file"><img src="ico/text.png" class="ico"></span></td>
             <td><span onclick="vis('pronouns')" class="file"><img src="ico/text.png" class="ico"></span></td>
-            
             <td><span onclick="opnLf()" class="file"><img src="ico/ie.png" class="ico"></span></td>
           </tr>
           <tr>
             <th><span onclick="vis('fzines')" class="file">zines</span></th>
             <th><span onclick="vis('fpics')" class="file">backgrounds</span></th>
-
             <th><span onclick="vis('updates')" class="file">updates</span></th>
             <th><span onclick="vis('pronouns')" class="file">pronouns</span></th>
-            
             <th><span onclick="opnLf()" class="file">links</span></th>
           </tr>
           <tr>
@@ -85,7 +79,8 @@
         <button class="ex windowButton" onclick="vis('about')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
-        hey! it's basile, baz, toroid/al, woomy, etc. my pronouns are *e/h*. I have a section on here explaining them <span onclick="vis('pronouns')" class="fakeA">here</span>. if that's a bit too much, then just refer to me by my name, or other non-professional nouns. do not use they, he, or she.<br>welcome to my little neocities website! this is where I keep my old bitsy games and various little web-based experiments. feel free to look around.
+        hey! I'm basilisk asterisk zone. you may know me as basile, <span class="shortname">B*Z</span>, toroid/al, woomy, etc. my pronouns are <span onclick="vis('pronouns')" class="fakeA">*e/h*</span>. if that's a bit too much, then just refer to me by my name, or other non-professional nouns.<br>
+        welcome to my little neocities website! this is where I keep my old bitsy games and various little web-based experiments. feel free to look around. if you wanna add my 88x31 button to your site, just open <span onclick="vis('butn');setTimeout(vis, 2345, 'butn2')" class="fakeA">this</span> up and click on the first one.
       </div>
     </div>
     
@@ -116,12 +111,16 @@
       <div class="content">
         <a href="https://goto.sirenabea.ch/@toroid" target="_blank" title="fedi main 1" rel="me">goto.sirenabea.ch</a><br>
         <a href="https://monads.online/@toroidal" target="_blank" title="fedi main 2" rel="me">monads.online</a><br>
-        <a href="https://toroid-jpg.tumblr.com/" target="_blank" title="🔨 photomatt 🔨 lmao">tumblr</a><br><br>
+        <a href="https://toroid-jpg.tumblr.com/" target="_blank" title="🔨 photomatt 🔨 lmao">reblogs tumblr</a><br>
+        <a href="https://fishpaper.tumblr.com/" target="_blank" title="when I think to post the things I make, I post them here">art tumblr</a><br>
+        current mood:<a href="https://www.imood.com/users/toroid" target="_blank" title=":D"><img src="https://moods.imood.com/display/uname-toroid/trans-1/imood.gif" alt="The current mood of toroid at www.imood.com" border="0"></a><br><br>
         <!-- buttons -->
-        current mood:<a href="https://www.imood.com/users/toroid" title=":D"><img src="https://moods.imood.com/display/uname-toroid/trans-1/imood.gif" alt="The current mood of toroid at www.imood.com" border="0"></a><br>
-        <a href="https://goto.sirenabea.ch/@toroid" target="_blank"><img src="butt/nf.gif" title="I'm back again, and about time too" alt="I'm back again, and about time too"></a><a href="https://neocities.org/site/niceware" target="_blank"><img src="butt/nc.png" title="hosted by Neocities!" alt="hosted by Neocities!"></a>
-        <a href="http://users3.smartgb.com/g/g.php?a=s&amp;i=g36-23442-d5" target="_blank"><img src="butt/gb.gif" title="sign my guestbook from 2014, lol" alt="sign my guestbook from 2014, lol"></a><img src="butt/wb.png" title="new laptop, still don't like windows" alt="new laptop, still don't like windows">
-        <img src="butt/dm.gif" title="You were diagnosed with GAY" alt="You were diagnosed with GAY"><img src="butt/sn.gif" title="apocalypse posadist accelerationism to reach inkopolis in 10 years" alt="apocalypse posadist accelerationism to reach inkopolis in 10 years"><br>
+        <img src="butt/BAZ.gif" class="button8831" title="this one's mine. feel free to add it to your site too" alt="this one's mine. feel free to add it to your site too" onclick="copyButton()">​
+        <a href="https://neocities.org/site/niceware" target="_blank"><img src="butt/nc.png" class="button8831" title="hosted by Neocities!" alt="hosted by Neocities!"></a>
+        <a href="http://users3.smartgb.com/g/g.php?a=s&amp;i=g36-23442-d5" target="_blank"><img src="butt/gb.gif" class="button8831" title="sign my guestbook from 2014, lol" alt="sign my guestbook from 2014, lol"></a>​
+        <img src="butt/wb.png" class="button8831" title="new laptop, still don't like windows" alt="new laptop, still don't like windows">
+        <img src="butt/dm.gif" class="button8831" title="You were diagnosed with GAY" alt="You were diagnosed with GAY">​
+        <img src="butt/sn.gif" class="button8831" title="apocalypse posadist accelerationism to reach inkopolis in 10 years" alt="apocalypse posadist accelerationism to reach inkopolis in 10 years"><br>
         <div style="width: 185px; height: 60px" align="center">
           <a href="https://emreed.net/LowTech_Directory.html"><img src="https://emreed.net/LTW.bmp" style="width:125px;"></a>
           <table style="padding:0; margin:0;font-size:10px;position: relative; top:-60px; font-weight: bold; ">
@@ -132,6 +131,25 @@
             </tr>
           </tbody></table>
         </div>
+      </div>
+    </div>
+
+    <div class="box closed" id="butn2">
+      <div class="top flashy" id="butn2h">
+        <div class="toptxt "><div class="marquee">ADVERTISEMENT - Win FREE Access To ALL These GREAT Websites!! Click Here!</div></div>
+        <button class="ex windowButton" onclick="vis('butn2')" aria-hidden="true">✕</button>
+      </div>
+      <div class="content">
+        if we know each other and you want me to include yours, lemme know!<br>
+        <a href="https://tulips.gay/" target="_blank"><img src="butt/tulips.png" class="button8831"></a>​
+        <a href="https://princess.software/" target="_blank"><img src="butt/grace.png" class="button8831"></a>​
+        <a href="http://transferns.neocities.org" target="_blank"><img src="http://transferns.neocities.org/gifs/transfernbutton.gif" class="button8831"></a>​
+        <a href="http://vaerael.neocities.org/"><img src="https://64.media.tumblr.com/fb603cee5834488971d74d7f66cdf99d/6c005a58dfcc6d02-12/s540x810/e2aaabc47e427d4f1af027a67dd03a5306ccb88f.png" class="button8831"></a>​
+        <a href="https://cageygames.neocities.org/"><img src="https://cageygames.neocities.org/ButtonCollection/CageyGamesIcon.png" width="88" height="31" alt="CageyGames"></a>​
+        <iframe src="https://incr.easrng.net/badge?key=changeme" style="margin-left: 4px;background: url(https://incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>​
+        <a href="https://smokeyjoint.neocities.org/" target="_blank"><img src="butt/smokey.png" class="button8831"></a>​
+        <a href="https://meyyebs.neocities.org/"><img src="https://meyyebs.neocities.org/img/STICKYHANDS-88x31-1.gif" class="button8831"></a>​
+
       </div>
     </div>
     
@@ -257,7 +275,7 @@
         <button class="ex windowButton" onclick="vis('updates')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
-        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet"> jan 11th - working on a pretty thorough reskinning! dunno if any of this will look "nicer" by the end of it, but I'll at least be enjoying it more. dunno if neocities will let me change this site's username, but I'm moving away from the "niceware" theming... end of an era... but also! added imood to my "find me" page because it's cute.</p><p class="bullet"> jan 8th - spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"> jan 6th - actually integrated the new webpage, sloppily. also fixed how my page loads these .txt files so it's less clunky. visual update will come another time, because I basically have to rewrite all the CSS.</p><p class="bullet"> jan 5th - new year, new update. I made a webpage to collect links to websites that I like. I'll be integrating it into the full site soon, but I kinda wanna refresh the whole thing while I'm in there adding it. there's a lot to redo, considering I've had this website for over six years now (and a neocities account for over a decade! yikes!). don't worry, it won't be too different... probably.</p><p class="bullet">2024</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
+        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet"> jan 20th - clicking my 88x31 button now copies a bit of HTML to your clipboard so you can put it on your website! and a new favicon, finally...</p><p class="bullet"> jan 16th - finally made myself a 88x31 button! it's with the rest of my social media links, which you can find by clicking "find me". I've also added a second window of buttons, so I have a better place to put ones made by other people. even more places for me to put links! yay!</p><p class="bullet"> jan 11th - working on a pretty thorough reskinning! dunno if any of this will look "nicer" by the end of it, but I'll at least be enjoying it more. dunno if neocities will let me change this site's username, but I'm moving away from the "niceware" theming... end of an era... but also! added imood to my "find me" page because it's cute.</p><p class="bullet"> jan 8th - spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"> jan 6th - actually integrated the new webpage, sloppily. also fixed how my page loads these .txt files so it's less clunky. visual update will come another time, because I basically have to rewrite all the CSS.</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
       </div>
     </div>
 
@@ -268,7 +286,7 @@
         <button class="ex windowButton" onclick="vis('pronouns')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
-        <div id="proFill">my primary set of pronouns are *e/h*/h*/h*s/h*self. they really only work when used in text-based communication. I found them online, they were made as a half-joke for some 90s chat software. they're also called splat pronouns, a name much easier to look up. feel free to replace the asterisks with whatever other unicode symbols work for the platform/you think are cool, although try to avoid emoji or anything else that would be rendered in color. a few that I think would be cool include ꙮ, ‽, or ⌂. get creative!</div>
+        <div id="proFill"><p class="bullet">my primary set of pronouns are *e/h*/h*/h*s/h*self. they really only work when used in text-based communication. I found them online, they were made as a half-joke for some 90s chat software. they're also called splat pronouns, a name much easier to look up. feel free to replace the asterisks with whatever other unicode symbols work for the platform/you think are cool, although try to avoid emoji or anything else that would be rendered in color. a few that I think would be cool include ꙮ, ‽, or ⌂. get creative!</p></div>
       </div>
     </div>
     
@@ -291,7 +309,7 @@
         <button id="shutdownButton" class="ex rotate" onclick="window.close()" title="shut down">⊝</button>
       </div>
       <div class="content" onclick="vis('apps', false)">
-        <span class="appLauncher" onclick="opnAqua()">AquariumFREE.exe</span><br>
+        <span class="appLauncher" onclick="opnAqua(); setTimeout(vis, 2345, 'butn');setTimeout(vis, 4567, 'butn2');">AquariumFREE.exe</span><br>
         <span class="appLauncher" onclick="vis('bitsy')">BitsyBrowse</span><br>
         <span class="appLauncher" onclick="vis('main')">File Exploder</span><br>
         <span class="appLauncher" onclick="opnLf()">Internet Eater</span><br>
@@ -305,7 +323,7 @@
 
     <div id="taskbar">
       <button id="appsButton" onclick="vis('apps', false)">start...</button>
-      <span id="clock" class=""><a title="thurs jan 16th">8:42am</a></span>
+      <span id="clock" class=""><a title="wed jan 22nd">3:09pm</a></span>
       <button id="settingButton" onclick="vis('settings', false)">⚙</button>
     </div>
 
@@ -329,6 +347,7 @@
         setup();
         if (!localStorage.hasOwnProperty("is_about")) setDefaultLocal();
         setInterval(setTime, 15000);
+        setInterval(nameFlicker, 1000);
       }
       var boxes = document.getElementsByClassName("box");
       for (i in boxes) dragElement(boxes[i]);
