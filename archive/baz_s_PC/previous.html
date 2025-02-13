@@ -31,9 +31,9 @@
     </div>
     
     <div id="clipBox">
-      <img id="clipBubble" src="clippy/bubble.png">
+      <!-- <img id="clipBubble" src="clippy/bubble.png"> -->
       <img id="clipPy" src="clippy/pointing.gif">
-      <div id="clipText">Have you tried clicking on those icons up there? They open new windows!<br>
+      <div class="clipText">Have you tried clicking on those icons up there? They open new windows!<br>
         <span onclick="vis('clipBox', false)"><img class="clipButts" src="clippy/button.png"></span> yes, I have<br>
         <span id="clipVisBox" onclick="setVis('clipBox')"><img class="clipButts" src="clippy/uncheck.png"></span> please stay away
       </div>
@@ -275,7 +275,7 @@
         <button class="ex windowButton" onclick="vis('updates')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
-        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet"> jan 20th - clicking my 88x31 button now copies a bit of HTML to your clipboard so you can put it on your website! and a new favicon, finally...</p><p class="bullet"> jan 16th - finally made myself a 88x31 button! it's with the rest of my social media links, which you can find by clicking "find me". I've also added a second window of buttons, so I have a better place to put ones made by other people. even more places for me to put links! yay!</p><p class="bullet"> jan 11th - working on a pretty thorough reskinning! dunno if any of this will look "nicer" by the end of it, but I'll at least be enjoying it more. dunno if neocities will let me change this site's username, but I'm moving away from the "niceware" theming... end of an era... but also! added imood to my "find me" page because it's cute.</p><p class="bullet"> jan 8th - spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"> jan 6th - actually integrated the new webpage, sloppily. also fixed how my page loads these .txt files so it's less clunky. visual update will come another time, because I basically have to rewrite all the CSS.</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
+        <div id="updFill" class="bulleted"><p class="bullet">2025</p><p class="bullet">feb 4th * changed how .txt files get processed slightly. no more tildes in the raw file. working on adjustments to clippy--unfortunately I'm preparing to replace him, but I want to make it easier for me to make more than just the one pop-up. gotta come up with a new annoying mascot...</p><p class="bullet">jan 20th * clicking my 88x31 button now copies a bit of HTML to your clipboard so you can put it on your website! and a new favicon, finally...</p><p class="bullet">jan 16th * finally made myself a 88x31 button! it's with the rest of my social media links, which you can find by clicking "find me". I've also added a second window of buttons, so I have a better place to put ones made by other people. even more places for me to put links! yay!</p><p class="bullet">jan 11th * working on a pretty thorough reskinning! dunno if any of this will look "nicer" by the end of it, but I'll at least be enjoying it more. dunno if neocities will let me change this site's username, but I'm moving away from the "niceware" theming... end of an era... but also! added imood to my "find me" page because it's cute.</p><p class="bullet">jan 8th * spent too long completely recreating this site's CSS in Sass so it's easier for me to mess with in the future. some things might be borked that weren't before. oops! additional additions, and tweaking some numbers.</p><p class="bullet"><a href="/updates.txt">earlier updates...</a></p></div>
       </div>
     </div>
 
@@ -286,7 +286,7 @@
         <button class="ex windowButton" onclick="vis('pronouns')" aria-hidden="true">✕</button>
       </div>
       <div class="content">
-        <div id="proFill"><p class="bullet">my primary set of pronouns are *e/h*/h*/h*s/h*self. they really only work when used in text-based communication. I found them online, they were made as a half-joke for some 90s chat software. they're also called splat pronouns, a name much easier to look up. feel free to replace the asterisks with whatever other unicode symbols work for the platform/you think are cool, although try to avoid emoji or anything else that would be rendered in color. a few that I think would be cool include ꙮ, ‽, or ⌂. get creative!</p></div>
+        <div id="proFill"><p class="bullet">my pronouns are *e/h*/h*/h*s/h*self. they really only work when used in text-based communication, and that's intentional--in spoken conversation, I don't like going by any pronouns at all. if you respect me even slightly, either use these pronouns or refer to me by name. surely "baz" isn't that hard to use, if nothing else, yeah?</p><p class="bullet">potential questions you may have:</p><p class="bullet">"how did you come up with this shit?" * I found them online. they were made as a joke for some 90s chat software that I've never used. they're also called "splat pronouns", a name much easier to look up. feel free to replace the asterisks with whatever other unicode symbols work for the platform/you think are cool--but try to avoid emoji or anything else that would be rendered in full-color. </p><p class="bullet">"how do you use them in context?" * that's baz. *e is trying to work on something. it seems like *e's having trouble with h* website. something about it is giving h* problems. sucks for h*, those burdens are h*s to bear. *e'll probably figure out what's wrong with it by h*self.</p><p class="bullet">"why do you have to be an annoying queer?" * it's not like I was given a lot of options otherwise.</p></div>
       </div>
     </div>
     
@@ -323,7 +323,7 @@
 
     <div id="taskbar">
       <button id="appsButton" onclick="vis('apps', false)">start...</button>
-      <span id="clock" class=""><a title="thurs jan 30th">9:09am</a></span>
+      <span id="clock" class=""><a title="thurs feb 6th">9:18am</a></span>
       <button id="settingButton" onclick="vis('settings', false)">⚙</button>
     </div>
 
