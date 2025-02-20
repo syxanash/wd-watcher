@@ -1,0 +1,298 @@
+<html style="image-rendering: pixelated;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Needy Streamer Overload</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://lilithdev.neocities.org/shrine/vg/nso/sprites/icon_game.png">
+    <link href="./nso/style.css" rel="stylesheet" type="text/css" media="all">
+    <!--<script id="DragDropTouch" src="https://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"></script>-->
+    <link rel="preload" href="https://lilithdev.neocities.org/fonts/DinkieBitmap-7px.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="https://lilithdev.neocities.org/fonts/Zpix.woff2" as="font" type="font/woff2" crossorigin="">
+  </head>
+  <body style="display:flex; flex-direction:row;">
+    <!--<img class="sidebar-img hide-mobile" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/bg/day.png" style="transform: scaleX(1);">-->
+    <div class="hide-mobile" style="aspect-ratio: 242 / 1080; height: 100%; transform: scaleX(1); overflow: clip; display: initial;">
+      <img class="sidebar-img" style="position:absolute;left:0;height:100%;" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/bg/day.png">
+      <img class="sidebar-img sidebar-bloom" style="position:absolute;left:0;height:100%;filter:blur(8px);opacity:0;/*mix-blend-mode:lighten;*/" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/bg/day.png">
+    </div>
+    <div id="main-screen" style="display: flex; flex-direction: column; flex-grow: 1; overflow: hidden; transition: filter 5s;">
+      <div id="desktop" style="overflow:clip; flex-grow:1; position: relative;">
+        <div id="file-area" style="position: absolute; width:100%; height:100%; z-index: 5;">
+          <div id="file-grid" style="display:flex; padding: 52px 72px; gap: 32px; column-gap: 48px; flex-direction: column; flex-wrap: wrap; height: calc(100% - 72px); width: 0;">
+            <div class="file-item" onclick="closeApp(getFirstAppFromID('webcam'));openApp('transform', {volume:getVolume()});">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_youtube.png">
+              <span>Stream</span>
+            </div>
+            <div class="file-item" onclick="openApp('hang-out')">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_asobu.png">
+              <span>Hang Out</span>
+            </div>
+            <div class="file-item" onclick="openApp('sleep')">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_neru.png">
+              <span>Sleep</span>
+            </div>
+            <div class="file-item">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_medication.png">
+              <span>Medication</span>
+            </div>
+            <div class="file-item" onclick="openApp('internet')">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_internet.png">
+              <span>Internet</span>
+            </div>
+            <div class="file-item" onclick="touchGrass()">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_odekake.png">
+              <span>Go out</span>
+            </div>
+            <div class="file-item" onclick="openApp('music', {list:'PLgPuDHHS4YTbYoMLqxYpqch9mgHduIaau'})">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_music.png">
+              <span>Music</span>
+            </div>
+            <div class="file-item" onclick="openApp('jine')">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_jine2.png">
+              <span>JINE</span>
+            </div>
+            <div class="file-item" onclick="openApp('fileexplorer')">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/folder_open.png">
+              <span>Info</span>
+            </div>
+            <div class="file-item secret" onclick="openApp('txt', {path:'secretdiary'})">
+              <img src="https://lilithdev.neocities.org/shrine/vg/nso/icons/icon_desktop_text.png">
+              <span>secret.txt</span>
+            </div>
+          </div>
+        </div>
+        <div id="window-area" style="position: absolute; width:100%; height:100%;">
+          
+        <div class="window" style="display: flex; left: 952.375px; top: 20px; width: 384px; height: 352px; z-index: 10;" data-app="task-manager">
+            <div class="title ico-link handle-bar">
+              <span class="window-name">
+                <div class="window-icon"></div>
+                <div class="window-title">Task Manager</div>
+              </span>
+              <div class="window-button">
+                <img class="window-minimize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_minimize.png">
+                <img class="window-maximize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_maximize.png">
+                <img class="window-close" src="https://lilithdev.neocities.org/shrine/vg/nso/button_close.png">
+              </div>
+            </div>
+            <iframe class="content" src="./nso/apps/taskmanager.html" title="Window Content"></iframe>
+            <!--<div class="content">
+              <iframe src="/nso/apps/demo.html" style="height:100%;width:100%;" title="Iframe Example"></iframe> 
+            </div>-->
+            <div class="bottom">
+              <img src="https://lilithdev.neocities.org/index/window_bottom.png">
+            </div>
+            <div class="resize resize-horizontal"></div>
+            <div class="resize resize-vertical"></div>
+            <div class="resize resize-diagonal"></div>
+          </div><div class="window" style="display: flex; left: 816.375px; top: 202px; width: 484px; height: 692px; z-index: 11;" data-app="txt">
+            <div class="title ico-link handle-bar">
+              <span class="window-name">
+                <div class="window-icon"></div>
+                <div class="window-title">presentation.txt</div>
+              </span>
+              <div class="window-button">
+                <img class="window-minimize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_minimize.png">
+                <img class="window-maximize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_maximize.png">
+                <img class="window-close" src="https://lilithdev.neocities.org/shrine/vg/nso/button_close.png">
+              </div>
+            </div>
+            <iframe class="content" src="./nso/apps/txt.html?path=presentation" title="Window Content"></iframe>
+            <!--<div class="content">
+              <iframe src="/nso/apps/demo.html" style="height:100%;width:100%;" title="Iframe Example"></iframe> 
+            </div>-->
+            <div class="bottom">
+              <img src="https://lilithdev.neocities.org/index/window_bottom.png">
+            </div>
+            <div class="resize resize-horizontal"></div>
+            <div class="resize resize-vertical"></div>
+            <div class="resize resize-diagonal"></div>
+          </div><div class="window" style="display: flex; left: 16px; top: 750px; width: 504px; height: 160px; z-index: 12;" data-app="music">
+            <div class="title ico-link handle-bar">
+              <span class="window-name">
+                <div class="window-icon"></div>
+                <div class="window-title">Music</div>
+              </span>
+              <div class="window-button">
+                <img class="window-minimize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_minimize.png">
+                <img class="window-maximize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_maximize.png">
+                <img class="window-close" src="https://lilithdev.neocities.org/shrine/vg/nso/button_close.png">
+              </div>
+            </div>
+            <iframe class="content" src="./nso/apps/music.html?list=PLXeqOX4jBooy_OV6DDXNgCC8bbcWV85Ls&amp;index=4" title="Window Content"></iframe>
+            <!--<div class="content">
+              <iframe src="/nso/apps/demo.html" style="height:100%;width:100%;" title="Iframe Example"></iframe> 
+            </div>-->
+            <div class="bottom">
+              <img src="https://lilithdev.neocities.org/index/window_bottom.png">
+            </div>
+            <div class="resize resize-horizontal"></div>
+            <div class="resize resize-vertical"></div>
+            <div class="resize resize-diagonal"></div>
+          </div><div class="window active" style="display: flex; left: 173px; top: 60px; width: 700px; height: 506px; z-index: 13;" data-app="webcam">
+            <div class="title ico-link handle-bar">
+              <span class="window-name">
+                <div class="window-icon"></div>
+                <div class="window-title">webcam</div>
+              </span>
+              <div class="window-button">
+                <img class="window-minimize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_minimize.png">
+                <img class="window-maximize" src="https://lilithdev.neocities.org/shrine/vg/nso/button_maximize.png">
+                <img class="window-close" src="https://lilithdev.neocities.org/shrine/vg/nso/button_close.png">
+              </div>
+            </div>
+            <iframe class="content" src="./nso/apps/webcam.html?volume=20" title="Window Content"></iframe>
+            <!--<div class="content">
+              <iframe src="/nso/apps/demo.html" style="height:100%;width:100%;" title="Iframe Example"></iframe> 
+            </div>-->
+            <div class="bottom">
+              <img src="https://lilithdev.neocities.org/index/window_bottom.png">
+            </div>
+            <div class="resize resize-horizontal"></div>
+            <div class="resize resize-vertical"></div>
+            <div class="resize resize-diagonal"></div>
+          </div></div>
+        <div id="start-menu">
+          <div style="margin:2px;margin-right:0;flex:0 0 auto;">
+            <img src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/sidebar.png">
+          </div>
+          <div style="flex:1 0 auto;">
+            <a href="https://store.steampowered.com/app/1451940/NEEDY_STREAMER_OVERLOAD/" target="_blank" style="text-decoration: none;"><div class="start-menu-button">Get the game!</div></a>
+            <div class="start-menu-button">System Settings</div>
+            <div class="start-menu-button" onclick="openApp('control-panel', getPanelValues())">Control Panel</div>
+            <div class="start-menu-button" onclick="openApp('txt',{path:'credits'})">Credits</div>
+            <div class="start-menu-button" onclick="window.location.reload();">Restart</div>
+            <a href="https://lilithdev.neocities.org/" style="text-decoration: none;"><div class="start-menu-button">Shutdown</div></a>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div id="taskbar">
+          <div id="start" class="app-button">
+            <img src="https://lilithdev.neocities.org/index/binbows.png" style="vertical-align: middle;"> START<div></div>
+          </div>
+          <div class="separator"></div>
+          <div class="taskbar-middle hide-mobile">
+            <a href="https://twitter.com/x_angelkawaii_x" target="_blank"><img src="https://lilithdev.neocities.org/shrine/vg/nso/twitter_small_ico.png"></a>
+            <img src="https://lilithdev.neocities.org/shrine/vg/nso/jine_small_ico.png" onclick="openApp('jine')">
+            <img src="https://lilithdev.neocities.org/shrine/vg/nso/monitor_small_ico.png" onclick="openApp('task-manager')">
+          </div>
+          <div class="separator hide-mobile"></div>
+          <div id="apps-area">
+            
+          <span class="app" app="status" style="display: flex;">
+              <div class="app-icon"></div>
+              <div class="app-title">Task Manager</div>
+            </span><span class="app" app="status" style="display: flex;">
+              <div class="app-icon"></div>
+              <div class="app-title">presentation.txt</div>
+            </span><span class="app" app="status" style="display: flex;">
+              <div class="app-icon"></div>
+              <div class="app-title">Music</div>
+            </span><span class="app active" app="status" style="display: flex;">
+              <div class="app-icon"></div>
+              <div class="app-title">webcam</div>
+            </span></div>
+          <div id="date-area">
+            <div id="date-container">
+              <img id="date-icon" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/icon_watch_noon.png">
+              <span id="date-time">NOON</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="hide-mobile" style="aspect-ratio: 242 / 1080; height: 100%; transform: scaleX(-1); overflow: clip; display: initial;">
+      <img class="sidebar-img" style="position:absolute;left:0;height:100%;" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/bg/day.png">
+      <img class="sidebar-img sidebar-bloom" style="position:absolute;left:0;height:100%;filter:blur(8px);opacity:0;/*mix-blend-mode:lighten;*/" src="https://lilithdev.neocities.org/shrine/vg/nso/sprites/bg/day.png">
+    </div>
+    <!--<div id="blue" style="position: absolute;width: 100vw;height: 100vh;background: rgb(32, 32, 255);z-index: 1000;opacity: 0;display: none;mix-blend-mode: lighten;pointer-events: none;"></div>-->
+    <div id="blue" class="full-page" style="background: rgb(0, 0, 32);z-index: 1000;opacity: 0;display: none;mix-blend-mode:hard-light;filter: brightness(500%);pointer-events: none;"></div>
+    <div id="transition" class="full-page" style="background: black;z-index: 1000;opacity: 0;display: none;"></div>
+    <div id="no-click" class="full-page" style="background: black;z-index: 1000;opacity: 0;display: none;"></div>
+    <div id="pien-cutscene-battle" style="
+        width: 100%;
+        height: 200%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 800;
+        /*display: none;*/
+        opacity: 0;
+        transition: transform 0.4s;
+        transform: translateY(100%);
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        z-index: 4000;
+        transition-timing-function: linear;
+        min-height: calc(864px * 2);
+    ">
+      <div style="
+        width: 100%;
+        height: 864px;
+        background: url(./omori/battle/sprites/transition/bt_general.png);
+        background-repeat: repeat-x;
+      "></div>
+      <div style="
+        background: black;
+        flex-grow:1;
+      "></div>
+    </div>
+    <div id="pien-cutscene-buffer" style="
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 800;
+    /*display: none;*/
+    opacity: 0;
+    transition: opacity 3s;
+    pointer-events: none;
+"></div>
+    <div id="pien-cutscene-screen" style="
+          background: rgb(0, 120, 215);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: 1000;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 24px;
+          padding: 100px;
+          box-sizing: border-box;
+          display: none;
+      ">
+        <div style="color: white; font-size: 160px; font-family: var(--lilith-small-text); margin-bottom: calc(-8px * 3);">:3</div>
+        <div style="color: white; font-size: 40px; font-family: var(--lilith-small-text); box-sizing: content-box;">
+            Your PC did a little fucky-wucky, it's never gonna boot again, my bad! Tee-hee, just collecting some info now lmao
+        </div>
+        <div style="color: white; font-size: 40px; font-family: var(--lilith-small-text); white-space: nowrap;">
+            <span id="pien-cutscene-percentage">0%</span> complete
+        </div>
+        <div style="display: flex; flex-direction: row; width: 100%;">
+            <img src="./nso/img/qr_boyfriend.png" style="height: calc(15 * 8px); margin-right: 16px;">
+            <div style="flex-grow: 1; justify-content: space-between; padding: 8px; display: flex; flex-direction: column;">
+                <div style="color: white; font-size: 24px; font-family: var(--lilith-small-text);">
+                    For more information about this issue and potential fixes, please don't contact me, I don't know why this or anything happens.
+                </div>
+                <div style="color: white; font-size: 16px; font-family: var(--lilith-small-text);">Please search error code: 09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0</div>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="https://lilithdev.neocities.org/shrine/vg/nso/controller.js"></script>-->
+    <script src="https://lilithdev.neocities.org/util/achievements.js"></script>
+    <script type="module" src="./nso/controller.js"></script>
+    <script src="./nso/pien_fight.js"></script>
+  
+
+</body></html>

@@ -1,0 +1,261 @@
+<html><head>
+        <meta name="viewport"> <!-- What is this shit -->
+        <meta name="description" content="The homepage of Cereza 'CerryTsuki' and her strange machinations.">
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js" integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+
+        <script type="text/javascript" src=" https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js "></script>
+
+        <title>CEREZA'S PALACE</title>
+
+
+        <link rel="stylesheet" href="/style-new.css">
+        
+    </head>
+    <body class="">
+        <div id="tooltip">the God Damn tooltip</div>
+    <div id="maincontainer">
+		
+		<!--
+		==============================
+		BG LAYER
+		==============================
+		-->
+		<div id="background" class="bg-def1 animated">
+            <div id="bg-layer"></div>
+        </div>
+		<!--
+		==============================
+		DESKTOP 
+		==============================
+		-->
+		<div id="desktop" class="">
+			<div id="desk-grid">
+				<div class="desk-item tt" id="desk-impnet" onclick="loadWindow('navigator')">
+					<span class="d-icon"></span>
+					<div>ImpNet<br>Navigator</div>
+				</div>
+				<div class="desk-item tt" id="desk-heckwire" onclick="loadWindow('heckwire')">
+					<span class="d-icon"></span>
+					<div>HeckWire</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--
+		==============================
+		WINDOW LAYER
+		==============================
+		-->
+		<div id="win-layer">
+			<!--
+			==============================
+			IMPNET NAVIGATOR
+			==============================
+			-->
+			<div id="navigator" class="resizable ui-draggable ui-resizable" style="left: calc(296px); top: calc(22px);">
+				<div class="win-header ui-draggable-handle"><span class="win-htext"><img src="/res/img/os/i_impnet.webp">ImpNet Navigator</span><div class="win-close"></div></div>
+				<div id="nav-topbar">
+					<span id="nav-l"></span><span id="nav-r"></span><span id="nav-home"></span><div id="nav-bar">imp://cereza.zone</div>
+				</div>
+				<div id="nav-main">
+					<div id="nav-side">
+						<a href="#" id="nav-logo" class="tt"></a>
+						<a href="#about" id="b-about" aria-label="Cerry's Corner" class="tt side-button">
+							<span id="b-about" class="side-pageicon"></span><span class="side-blabel">CERRY'S CORNER</span>
+						</a>
+						<a href="#blog" id="b-blog" aria-label="Blog" class="tt side-button">
+							<span class="side-pageicon"></span><span class="side-blabel">BLOG</span>
+						</a>
+						<a href="#projects" id="b-works" aria-label="Projects" class="tt side-button">
+							<span class="side-pageicon"></span><span class="side-blabel">PROJECTS</span>
+						</a>
+						<a aria-label="Gallery" id="b-gallery" class="disabled tt side-button">
+							<span class="side-pageicon"></span><span class="side-blabel">GALLERY</span>
+						</a>
+						<a href="#links" aria-label="Links" id="b-links" class="tt side-button">
+							<span class="side-pageicon"></span><span class="side-blabel">LINKS</span>
+						</a>
+			
+						<div id="nav-socials">
+							<a href="https://bsky.app/profile/cereza.zone" id="social-bsky1" aria-label="Bluesky" class="tt" target="_blank"></a>
+							<a href="https://bsky.app/profile/art.cereza.zone" id="social-bsky2" aria-label="Bluesky (art)" class="tt" target="_blank"></a>
+							<a href="https://github.com/CerryTsuki" id="social-github" aria-label="GitHub" class="tt" target="_blank"></a>
+						</div>
+
+						<iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28" style="margin:auto;"></iframe>
+						<div id="nav-footer">(C) CEREZA "CERRYTSUKI" AUCLAIR</div>
+					</div>
+					<div id="main"><div class="textcontent nofooter nopad">
+	<div style="border-image:url('/res/img/home_border_3x.webp') 48 92 / 48px 92px / 0 stretch; width:100%; display:block; height:auto;">
+		<div style="width:calc(100% - 2*92px); padding:24px;  margin:auto; height:auto;">
+		<img src="/res/img/cracktro.webp" style="width:100%; border-image: var(--border-img); margin:32px 0 16px;">
+		<!--
+		<div class="warning" style="text-align: center; width:70%; font-size: 22px; line-height:1.2em; margin:10px auto 20px; padding:4px; border:2px dashed var(--color-main)">
+			PLEASE BE WARNED THAT THIS WEBSITE <b>WILL</b> HAVE NSFW CONTENT.<br>IF YOU'RE UNDER 18 LOOK ELSEWHERE
+		</div>
+		-->
+		<div style="float:left; width:round(up, 50%, 2px);">
+			<h1>hallo welcome 2 my web zone Smile :)</h1>
+			<p>welcome to my website! this is where i'll showcase my personal work, host articles i wrote and a list of free goodies you can download. this website is semi-frequently updated, so look around!</p>
+			<br>
+			<p><b>Cerry's Corner</b> is where personal stuff goes</p>
+			<p><b>Blog</b> is where i will occasionally post longer form thoughts about anything</p>
+			<p><b>Projects</b> is i show off things i've made and published publicly. it doesn't necessarily represent all of my work.</p>
+			<p><b>Gallery</b> is currently inaccessible. i do have art i could show, but i'm a little bit of a perfectionist about my own art and i unfortunately rarely tend to show or finish art.</p>
+			<p>more sections of the website will come soon! in the meantime, check the <b>Menu on the Top Right</b> to access fun little stuff I made.</p>
+			<br>
+		</div>
+		
+	<!-- <button>follow on nekoweb</button> -->
+
+
+		<div style="float:right; width:round(down, 49.5%, 2px);">
+			<h1>TODO LIST</h1>
+
+			here's a list of things i plan on making<br><br>
+			<div class="checklist">
+				<li class="cl-notdone">Add to "Cerry's Corner"</li>
+					<li class="cl-1 cl-notdone">Add Media list</li>
+					<li class="cl-1 cl-notdone">Add Shrines?</li>  
+				<li class="cl-notdone">Add Gallery</li>
+					<li class="cl-1  cl-notdone">draw more first lol</li>
+				<li class="cl-notdone">"ImpSweeper"</li>
+				<li class="cl-notdone">fake ass 3d pinball game</li>
+			</div>
+
+		</div>
+		<div style="clear: both;"></div>
+	</div></div>
+</div>
+
+<script>setAnims(); //for some reason it doesn't initiate on this page? dumb ass shit tbh</script></div>
+				</div>
+			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+
+			<!--
+			==============================
+			SETTINGS MENU
+			==============================
+			-->
+			<div id="cz-settings" class="window themed ui-draggable" style="display:none;">
+				<div class="win-header ui-draggable-handle"><span class="win-htext"><img src="/res/img/os/i_img.webp">Settings</span> <div class="win-close"></div></div>
+				<div class="win-content">
+					<h4>Background</h4>
+					<div id="settings-bgpicker" class="settings-scroll-wrap">
+						<div class="s-scroll-l"></div>
+						<div id="s-bg-scroll" class="settings-scroller">
+							<div id="bg-def1" class="s-bg-pick tt selected"></div>
+							<div id="bg-def2" class="s-bg-pick tt"></div>
+							<div id="bg-def3" class="s-bg-pick tt"></div>
+							<div id="bg-imp" class="s-bg-pick tt"></div>
+							<div id="bg-imp2" class="s-bg-pick tt"></div>
+							<div id="bg-mountain" class="s-bg-pick tt"></div>
+						</div>
+						<div class="s-scroll-r"></div>
+					</div>
+					<label><input type="checkbox" id="s-bg-anim" name="s-bg-anim" checked="false">Animate background</label>
+					
+					<h4>Theme (temporarily disabled)</h4>
+					<div id="settings-themepicker" class="settings-scroll-wrap disabled">
+						<div id="s-theme-scroll" class="settings-scroller">
+							<div id="th-default" class="s-th-pick tt"></div>
+							<div id="th-indigo" class="s-th-pick tt"></div>
+							<div id="th-golden" class="s-th-pick tt"></div>
+						</div>
+					</div>
+					
+					<h4>Tooltip</h4>
+					<label><input type="checkbox" id="s-tt-mode" name="s-tt-mode">Enable Tooltip</label>
+					<script>
+
+						
+						
+					</script>
+					<!-- END OF SETTINGS -->
+				</div>
+			</div>
+			<!--
+			==============================
+			START MENU
+			==============================
+			-->
+			<div id="s-menu" style="display:none;">
+				<!-- START MENU -->
+				<div id="sm-about" class="tt"></div>
+				<div id="sm-settings" class="tt"></div>
+				<div id="sm-list">
+					<div class="sm-item tt" id="sm-cerisep" onclick="loadWindow('ceriseplayer')"><img src="/res/img/os/i_cherry.webp"><span>CerisePlayer</span></div>
+					<details class="sm-folder">
+						<summary class="tt" id="sm-f-games"><img src="/res/img/os/i_folder_open.webp"><span>Games</span></summary>
+			
+						<div class="sm-item tt" id="sm-bonk3" onclick="loadWindow('bonk3')"><img src="/res/img/os/i_bonk3.webp"><span>Bonk III : Bonk's Big Adventure</span></div>
+			
+					</details>
+					<div class="sm-item sm-disabled" id="start-settings"><img src="/res/img/os/i_cherry.webp"><span>More to come soon...</span></div>
+			
+				</div>
+			</div>
+			<!--
+			==============================
+			IMAGE ZOOM THING
+			==============================
+			-->
+			<div id="imagezoom" class="window ui-draggable" style="display:none;">
+				<div class="win-header ui-draggable-handle"><span class="win-htext"><img src="/res/img/os/i_img.webp">Image</span><div class="win-close"></div></div>
+				<div id="iz-content" class="win-content">
+					<img src="" id="iz-img">
+				</div>
+				<script src="/script/window.js" type="text/javascript"></script>
+			</div>
+			
+			
+    	<div id="updates" class="window themed ui-draggable" style="top: 64px; right: 64px;">
+	<div class="win-header ui-draggable-handle"><span>CEREZA.ZONE UPDATES</span><a class="win-h-btn tt" id="updates-rss" href="/feeds/updates.xml" target="_blank"></a><div class="win-close"></div></div>
+	<div class="win-content">
+		
+	<div class="su-div"><b>2025-02-06</b> <span>HAPPY NEW YEA-- oh wow time flies.<br>took too long to make, but it's here! CEREZA.ZONE REVAMPED! but now it's an actual computer :) check it out! most things are interactable<br><br>for RSS users : in the future, the cereza.zone update feed will update whenever i add a single page, like a game or a page. sorry if i end up spamming your RSS reader!</span></div><div class="su-div"><b>2024-11-02</b> <span>pack it up freaks halloween is over... or is it?!?!?!?!?1?! you can now switch themes in the settings, located in the top-right menus.<br>once i make the media tab, i'll slow down work on this website to focus on other ventures like art, gamedev and finishing that TF2 map</span></div><div class="su-div"><b>2024-10-27</b> <span>there once was a website called cereza.zone... it was red and purple... but as halloween came... suddenly the red was gone.. SUDDENLY IT TURNED BLUE AND ORANGE... OOOoooo OOOOooo FUCKEN SCAREY..... haha gotcha... also a new layout</span></div><div class="su-div"><b>2024-10-14</b> <span>ohhh that's a BIG ASS update! includes a few bonus settings, a new background, a custom tooltip, new music and a brand new app for CerryOS! (settings can be found in the start menu)</span></div><div class="su-div"><b>2024-09-30</b> <span>rss feed added for the website!</span></div></div>
+
+	<script src="/script/updates.js" type="text/javascript"></script>
+	<!-- general scripts -->
+	<script src="/script/window.js" type="text/javascript"></script>
+</div></div>
+		<!--
+		==============================
+		TASKBAR
+		==============================
+		-->
+		<div id="taskbar">
+			<div id="start" class="tt" tt="START MENU"></div>
+			<div id="tb-right"><span id="tb-time">09:48</span></div>
+		</div>
+		<!--
+		==============================
+		ALERT
+		==============================
+		-->
+		<div id="alert-overlay" class="active">
+			<div class="window nodrag" id="alert-window">
+				<div class="win-header nodrag"><span class="win-htext"><img src="/res/img/os/i_img.webp">Alert</span></div>
+				<div class="win-content">
+					<img id="alert-img" src="/res/img/al_warning.webp"><p id="alert-text"><center>Welcome to <b>CEREZA.ZONE!</b></center><br>This website uses cookies in order to function. Cereza does not save any cookie you create, for her fat ass can go to the store and get some herself.</p><div id="alert-buttons"><button id="alert-button-i" style="display:none;" onclick="">I understand</button><button id="alert-button-o" onclick="hideBigAlert()">I Understand</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+        
+    
+		<script src="/script/window.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/script/tooltip.js"></script>
+		<script type="text/javascript" src="/script/main.js"></script>
+		<script type="text/javascript" src="/script/window-manager.js"></script>
+		<!--<script type="text/javascript" src="/script/nekoweb.js"></script>-->
+       
+
+
+	
+        
+    
+</body></html>

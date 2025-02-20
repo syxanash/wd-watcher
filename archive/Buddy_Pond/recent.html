@@ -66,7 +66,7 @@ window.top.location = 'ie.html';
     <div class="abs" id="wrapper">
       <div class="abs" id="desktop">
         <!-- default desktop icons are currently rendered in `app.settings.load()` -->
-        <canvas class="canvasBackground" id="c" height="981" width="1792"></canvas>
+        <canvas class="canvasBackground" id="c"></canvas>
       <div id="desktop-container" class="desktop-container"><div id="desktop-shortcuts-container" class="desktop-shortcuts-container" style="display: flex;"><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 0px;"><a href="#icon_dock_profile"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_profile_64.png"><span class="title">My Profile</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 0px;"><a href="#icon_dock_buddylist"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_profile_64.png"><span class="title">BuddyList</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 0px;"><a href="#icon_dock_pad"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pad_64.png"><span class="title">Pads</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 100px;"><a href="#icon_dock_pond"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_pond_64.png"><span class="title">Ponds</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 100px;"><a href="#icon_dock_file-explorer"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_file-explorer_64.png"><span class="title">Buddy Files</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 100px;"><a href="#icon_dock_paint"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_paint_64.png"><span class="title">Paint</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 200px;"><a href="#icon_dock_sound-recorder"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_soundrecorder_64.png"><span class="title">Sound Recorder</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 200px;"><a href="#icon_dock_youtube"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_interdimensionalcable_64.png"><span class="title">Youtube</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 200px;"><a href="#icon_dock_camera"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_camera_64.png"><span class="title">Camera</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 300px;"><a href="#icon_dock_piano"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_piano_64.png"><span class="title">Piano</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 300px;"><a href="#icon_dock_fluid-simulation"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_fluidsimulation_64.png"><span class="title">Fluid Simulation</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 300px;"><a href="#icon_dock_sampler"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_midifighter_64.png"><span class="title">Sampler</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 400px;"><a href="#icon_dock_audio-visual"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_visuals_64.png"><span class="title">Audio Visuals</span></a></div><div class="folder icon shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 89px; top: 400px;"><a><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_folder_64.png"><span class="title">Games</span></a></div><div class="folder icon shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 163px; top: 400px;"><a><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_folder_64.png"><span class="title">Hacking Tools</span></a></div><div class="icon shortcut  bp-desktop-shortcut ui-draggable ui-draggable-handle" style="position: absolute; left: 15px; top: 500px;"><a href="#icon_dock_audio-player"><img class="bp-desktop-icon" loading="lazy" src="desktop/assets/images/icons/icon_audio-player_64.png"><span class="title">Audio Player</span></a></div></div></div><div class="window-container" data-app="buddylist" data-type="buddylist-profile" data-context="default" id="buddyListWindow" style="width: 250px; height: 500px; position: absolute; top: 75px; left: 1442px; z-index: 999;"><div class="window-title-bar"><img src="/desktop/assets/images/icons/icon_profile_64.png" class="window-icon"><span class="window-title-text">Buddy List</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div><div class="bp-window-content app-buddylist">
   <div class="window-main">
     <div class="buddy_list_not_connected loggedOut">
@@ -127,12 +127,12 @@ window.top.location = 'ie.html';
           <span><a class="inviteBuddy" href="#invite-buddy">Invite a Buddy!</a></span>
         </div>
       </div>
-      <p class="positiveAffirmation">You are wise beyond your years.</p>
+      <p class="positiveAffirmation">You are a breath of fresh air.</p>
 
     </div>
   </div>
 </div>
-</div></div><div class="resize-handle"></div></div><div class="window-container" data-app="ui" data-type="singleton" data-context="default" id="motd" style="width: 400px; height: 300px; position: absolute; top: 75px; left: 250px; z-index: 1000;"><div class="window-title-bar"><img src="desktop/assets/images/icons/icon_console_64.png" class="window-icon"><span class="window-title-text">Today: 02/13/25</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 20px;"><img src="v5/assets/guy-left.gif"><img src="v5/assets/construction.gif"><img src="v5/assets/guy-right.gif"></div><div style="text-align: center; font-size: 1.5em; font-weight: bold; padding: 20px;">Cloud Edge v6 is Online!<br>All chat features have been reset. <br><br><em>Expect some breaking changes.</em></div></div><div class="resize-handle"></div></div></div>
+</div></div><div class="resize-handle"></div></div><div class="window-container" data-app="ui" data-type="singleton" data-context="default" id="motd" style="width: 400px; height: 300px; position: absolute; top: 75px; left: 250px; z-index: 1000;"><div class="window-title-bar"><img src="desktop/assets/images/icons/icon_console_64.png" class="window-icon"><span class="window-title-text">Today: 02/20/25</span><div class="window-controls"><button class="minimize-button" title="Minimize">🟡</button><button class="maximize-button" title="Maximize">🟢</button><button class="close-button" title="Close">🔴</button></div></div><div class="bp-window-content"><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 20px;"><img src="v5/assets/guy-left.gif"><img src="v5/assets/construction.gif"><img src="v5/assets/guy-right.gif"></div><div style="text-align: center; font-size: 1.5em; font-weight: bold; padding: 20px;">Cloud Edge v6 is Online!<br>All chat features have been reset. <br><br><em>Expect some breaking changes.</em></div></div><div class="resize-handle"></div></div></div>
     </div>
 
     <!--    -->
@@ -161,16 +161,20 @@ window.top.location = 'ie.html';
     <script>
 
       let _host = 'https://buddypond.com';
-      let _api = 'https://api.buddypond.com';
+      let _api = 'https://a.buddypond.com';
       let _wsHost = 'wss://api.buddypond.com';
       let _cdn = 'https://files.buddypond.com';
-      //_host = 'https://192.168.200.59';
+      let _portfolioEndpoint = 'https://portfolio.buddypond.com';
+      let _orderbookEndpoint = 'https://orderbook.buddypond.com';
+      let _coinEndpoint = 'https://coin.buddypond.com';
+      // _host = 'https://192.168.200.59';
       // _api = 'https://192.168.200.59';
       // _wsHost = 'wss://192.168.200.59';
-      // _host = 'https://localhost'
+      //_host = 'https://localhost'
       // _api = 'https://buddylist.buddypond.com';
-      _api = 'https://a.buddypond.com';
-      //_api = 'https://192.168.200.59:8787';
+      // _api = 'https://192.168.200.59:8787';
+      //_api = 'https://192.168.64.1:8787';
+      //_api = 'https://localhost:8787';
 
       buddypond.host = _host;
       buddypond.endpoint = _api + '/api/v6';
@@ -179,6 +183,16 @@ window.top.location = 'ie.html';
       // route the SPA based on the current path
       // any routes that land here outside of root will be proxied to files.buddypond.com ( user pads )
       let currentPath = window.location.pathname;
+
+      // get the current subdomain
+      // if not empty or www, assume its the currentPath
+      let subdomain = window.location.hostname.split('.')[0];
+
+      if (subdomain !== '' && subdomain !== 'www') {
+        // TODO: will need better check for _host.startsWith('https://subdomain')
+        // currentPath = '/' + subdomain; // TODO: all buddynames will need to be lowercased for subdomains to work for everyone
+      }
+      // alert(`currentPath: ${currentPath}`);
       // document.write currentPath
 
       // alert(`currentPath: ${currentPath}`);
@@ -267,11 +281,13 @@ window.top.location = 'ie.html';
     <iframe id="buddypad"></iframe>
     <script type="module" src="/v5/public/buddypond.umd.js"></script>
 
+    <!-- <bp-minesweeper open></bp-minesweeper> -->
+    <!-- <bp-youtube open context="G50eivcSvuQ"></bp-youtube> -->
+   
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;914d722eef691b8a&quot;,&quot;version&quot;:&quot;2025.1.0&quot;,&quot;r&quot;:1,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;token&quot;:&quot;a34dc8c1b1574dff985e9274c2469241&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
 
-<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9113c71eba5f2218&quot;,&quot;version&quot;:&quot;2025.1.0&quot;,&quot;r&quot;:1,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;token&quot;:&quot;a34dc8c1b1574dff985e9274c2469241&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
 
-
-</div><div class="taskbar-container"><div class="taskbar-item"><div class="taskbar-item-text">Home</div><img src="desktop/assets/images/icons/icon_mantra_64.png" height="32" width="32" alt="Home"></div><div class="taskbar-item"><div class="taskbar-item-text">Buddy List</div><img src="/desktop/assets/images/icons/icon_profile_64.png" height="32" width="32" alt="Buddy List"></div><div class="taskbar-item"><div class="taskbar-item-text">Today: 02/13/25</div><img src="desktop/assets/images/icons/icon_console_64.png" height="32" width="32" alt="Today: 02/13/25"></div></div><div class="menu-bar" id="menu-bar"><div class="menu-item"><span id="me_title" class="me_title">Welcome - You look nice today!</span><div class="submenu"><div class="submenu-item">We are stoked to be your Buddy</div><div class="submenu-item">Edit Profile</div><div class="submenu-item"><span class="loggedOut">Login</span></div><div class="submenu-item"><span class="loggedIn">Logout</span></div></div></div><div class="menu-item">Window<div class="submenu"><div class="submenu-item">Full Screen</div><div class="submenu-item">Hide All Windows</div></div></div><div class="menu-item" style="flex: 1 1 0%;">
+</div><div class="taskbar-container"><div class="taskbar-item"><div class="taskbar-item-text">Home</div><img src="desktop/assets/images/icons/icon_mantra_64.png" height="32" width="32" alt="Home"></div><div class="taskbar-item"><div class="taskbar-item-text">Buddy List</div><img src="/desktop/assets/images/icons/icon_profile_64.png" height="32" width="32" alt="Buddy List"></div><div class="taskbar-item"><div class="taskbar-item-text">Today: 02/20/25</div><img src="desktop/assets/images/icons/icon_console_64.png" height="32" width="32" alt="Today: 02/20/25"></div></div><div class="menu-bar" id="menu-bar"><div class="menu-item"><span id="me_title" class="me_title">Welcome - You look nice today!</span><div class="submenu"><div class="submenu-item">We are stoked to be your Buddy</div><div class="submenu-item">Edit Profile</div><div class="submenu-item"><span class="loggedOut">Login</span></div><div class="submenu-item"><span class="loggedIn">Logout</span></div></div></div><div class="menu-item">Window<div class="submenu"><div class="submenu-item">Full Screen</div><div class="submenu-item">Hide All Windows</div></div></div><div class="menu-item" style="flex: 1 1 0%;">
     <select name="selectPlaylist" class="selectPlaylist float_right">
     <option>Select music playlist...</option>
     <option value="1397230333">Buddy House 0 ( 33 Tracks )</option>
@@ -305,5 +321,5 @@ window.top.location = 'ie.html';
     <!-- <input type="range" min="0" max="100" value="100" class="volumeSlider"> -->
     </div>
     </div><div class="menu-item">
-    <span class="" id="clock" title="February 13, 2025">Thursday 9:26 AM</span>
+    <span class="" id="clock" title="February 20, 2025">Thursday 9:25 AM</span>
     </div></div><div id="customContextMenu" class="removeMessage" style="display: none; position: absolute; z-index: 1000; background: white; border: 1px solid #ccc; padding: 10px;">Remove Message</div><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 120px; background-color: rgba(0, 0, 0, 0.5); color: white; display: none; align-items: center; justify-content: center; z-index: 1000; padding: 10px;"></div></body></html>
