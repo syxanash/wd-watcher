@@ -1,11 +1,11 @@
 <html><head>
+      <!-- CEREZA STRIKES BACK -->
         <meta name="viewport"> <!-- What is this shit -->
         <meta name="description" content="The homepage of Cereza 'CerryTsuki' and her strange machinations.">
-
+        <meta charset="UTF-8">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js" integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
-
         <script type="text/javascript" src=" https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js "></script>
 
         <title>CEREZA'S PALACE</title>
@@ -55,7 +55,7 @@
 			IMPNET NAVIGATOR
 			==============================
 			-->
-			<div id="navigator" class="resizable ui-draggable ui-resizable" style="left: calc(296px); top: calc(22px);">
+			<div id="navigator" class="resizable window ui-draggable ui-resizable" style="z-index: 1; left: calc(296px); top: calc(22px);">
 				<div class="win-header ui-draggable-handle"><span class="win-htext"><img src="/res/img/os/i_impnet.webp">ImpNet Navigator</span><div class="win-close"></div></div>
 				<div id="nav-topbar">
 					<span id="nav-l"></span><span id="nav-r"></span><span id="nav-home"></span><div id="nav-bar">imp://cereza.zone</div>
@@ -85,7 +85,7 @@
 							<a href="https://github.com/CerryTsuki" id="social-github" aria-label="GitHub" class="tt" target="_blank"></a>
 						</div>
 
-						<iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28" style="margin:auto;"></iframe>
+						<!-- LOL FUCK THIS SITE <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28" style="margin:auto;"></iframe> -->
 						<div id="nav-footer">(C) CEREZA "CERRYTSUKI" AUCLAIR</div>
 					</div>
 					<div id="main"><div class="textcontent nofooter nopad">
@@ -135,6 +135,8 @@
 				</div>
 			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
 
+			
+
 			<!--
 			==============================
 			SETTINGS MENU
@@ -158,12 +160,12 @@
 					</div>
 					<label><input type="checkbox" id="s-bg-anim" name="s-bg-anim" checked="false">Animate background</label>
 					
-					<h4>Theme (temporarily disabled)</h4>
-					<div id="settings-themepicker" class="settings-scroll-wrap disabled">
+					<h4>Theme</h4>
+					<div id="settings-themepicker" class="settings-scroll-wrap">
 						<div id="s-theme-scroll" class="settings-scroller">
 							<div id="th-default" class="s-th-pick tt"></div>
 							<div id="th-indigo" class="s-th-pick tt"></div>
-							<div id="th-golden" class="s-th-pick tt"></div>
+							<!--<div id="th-golden"         class="s-th-pick tt"></div>-->
 						</div>
 					</div>
 					
@@ -212,7 +214,7 @@
 			</div>
 			
 			
-    	<div id="updates" class="window themed ui-draggable" style="top: 64px; right: 64px;">
+    	<div id="updates" class="window themed ui-draggable" style="top: 64px; right: 64px; z-index: 2;">
 	<div class="win-header ui-draggable-handle"><span>CEREZA.ZONE UPDATES</span><a class="win-h-btn tt" id="updates-rss" href="/feeds/updates.xml" target="_blank"></a><div class="win-close"></div></div>
 	<div class="win-content">
 		
@@ -251,6 +253,9 @@
 		<script type="text/javascript" src="/script/tooltip.js"></script>
 		<script type="text/javascript" src="/script/main.js"></script>
 		<script type="text/javascript" src="/script/window-manager.js"></script>
+		<script type="text/javascript">
+			
+		</script>
 		<!--<script type="text/javascript" src="/script/nekoweb.js"></script>-->
        
 

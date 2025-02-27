@@ -1,0 +1,69 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kuroiOS Desktop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>kuroiOS </h1>
+            <h3>
+                Insert floppy to start...
+            </h3>
+            <div class="interactables">
+                <img id="devlog" src="img/g46.png" alt="">
+                <div class="computer">
+                    <img src="img/g2.png" alt="">
+                    <div id="computer-area" class="ui-droppable"></div>
+                    <div class="dropped-floppy">
+                        <img src="img/g30.png" alt="">
+                    </div>
+                    <img class="computer-mask" src="img/mask.png" alt="">
+                    <div class="transition"></div>
+                </div>
+                <img id="floppy" src="img/g30.png" alt="" class="ui-draggable ui-draggable-handle" style="position: relative;">
+            </div>
+        </div>
+    </div>
+
+    <div class="devlog-container">
+        <div class="devlog-content round-border">
+            <button class="devlog-close round-border"><i class="fas fa-times"></i></button>
+            <h1>kuroiOS Devlog</h1>
+            <div class="devlog-list">
+                <div class="devlog-item">
+                    <h3>Feb 19, 2025</h3>
+                    <p>Added new Windows XP Theme - Fixed Audio Player error when playlist ends</p>
+                </div>
+                <div class="devlog-item">
+                    <h3>Feb 13, 2025</h3>
+                    <p>Added Devlog to landing page</p>
+                </div>
+                <div class="devlog-item">
+                    <h3>Feb 7, 2025</h3>
+                    <p>Created landing page for the neocities and nekoweb URLs</p>
+                </div>
+                <div class="devlog-item">
+                    <h3>Feb 3, 2025</h3>
+                    <p>Added kuroiOS Button in the About component</p>
+                </div>
+                <div class="devlog-item">
+                    <h3>Jan 31, 2025</h3>
+                    <p>Created README and Todo notepad files on the Root Folder</p>
+                </div>
+                <div class="devlog-item">
+                    <h3>Jan 28, 2025</h3>
+                    <p>Created Notepad app with temporary About content</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <script src="touch-punch.js"></script>
+    <script src="script.js"></script>
+
+</body></html>
