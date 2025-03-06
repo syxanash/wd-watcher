@@ -1,192 +1,233 @@
-<html lang="en" class="hotpink"><head>
+<html lang="en"><head>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <link href="test.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="styles.css">
   
-  <script defer="" src="scripts/applytheme.js"></script>
   <script defer="" src="scripts/movingTitle.js"></script>
-  <script defer="" src="scripts/window.js"></script>
-  <script defer="" src="scripts/timer.js"></script>
+  <script defer="" src="scripts/draggableIcons.js"></script>
+  <script defer="" src="scripts/realTimeClock.js"></script>
+  <script defer="" src="scripts/toggleElements.js"></script>
   <script defer="" src="scripts/randomPhrase.js"></script>
-  <script defer="" src="scripts/showHide.js"></script>
-  <script defer="" src="scripts/draggable.js"></script>
+  <script defer="" src="scripts/notepadWindow.js"></script>
   
-  <link rel="shortcut icon" type="image/x-icon" href="arts/UI/strawberries.png">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Balsamiq+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
-  <title>‧★Strawbeb</title>
+  <link rel="shortcut icon" type="image/x-icon" href="arts/UI/strawberries.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&amp;display=swap" rel="stylesheet">
+  <title>°‧★Strawbe</title>
 </head>
 
 <body>
-  <script>
-		var win;
-		var win1;
-		window.onload = function(){
-			
-			win = new Window("Readme.txt", {
-				state: WindowState.NORMAL,
-				size: {
-					width: 640,
-					height: 480
-				},
-				selected: true,
-			});
-
-			win.content.id = "mycontent";
-			win.content.innerHTML = '<textarea class="textarea">Hiiiiii~ ♬ Welcome to my little desktop^^ This window is draggable and resizable so u can play around if u want :3 \n\nU can also close it if it bothers you and then open it again by clicking on the notepad icon. Write any text you want here. Let your imagination run wild!!</textarea>';
-		};
-	</script>
-	
-	<div id="show_hide_3" style="display: none;">
-	  <div id="draggable">
-      <div id="draggable-header"><span style="padding:10px;">Gifypet.exe</span><div id="window_buttons"><span class="window_button" onclick="showHideDiv(3)">_</span><span class="window_button" id="close_button" onclick="showHideDiv(3)">  ✖</span></div></div>
-      <iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Bebby&amp;dob=1004117358&amp;gender=f&amp;element=Earth&amp;pet=https%3A%2F%2Fstrawbebby228.neocities.org%2Farts%2Ftamagotchi%2FBebbyBig.png&amp;map=https%3A%2F%2Fstrawbebby228.neocities.org%2Farts%2Ftamagotchi%2FBgWinter.png&amp;background=&amp;tablecolor=black&amp;textcolor=black" frameborder="0"></iframe>
-    </div>
-  </div>
-  
-  
-	<div id="icons">
-	   
-	   <div class="icon">
-	     <div onclick="win.show();"><img src="arts/UI/notepad.png" width="64" height="64"></div>
-	     <p>Notepad</p>
-	   </div>
-	   <div class="icon">
-	     <div onclick="showHideDiv(1)"><img src="arts/UI/Bebby.png" width="64" height="64"></div>
-	     <p>Bebby</p>
-	   </div>
-	   <div class="icon">
-	     <div><a href="website.html"><img src="arts/UI/explorer.png" width="64" height="64"></a></div>
-	     <p>Explorer</p>
-	   </div>
-	   <div class="icon">
-	     <div><a href="garden.html" target="content_box"><img src="arts/UI/strawberries.png" width="64" height="64"></a></div>
-	     <p>Web Garden</p>
-	   </div>
-	   <div class="icon">
-	     <a href="arts/Cool_Pic.jpg"><img src="arts/UI/photos.png" width="64" height="64"></a>
-	     <p>Cool_Pic.jpg</p>
-	   </div>
-	   <div class="icon">
-	     <div><a href="artsnew.html"><img src="arts/UI/folder.png" width="64" height="64"></a></div>
-	     <p>2D Art</p>
-	   </div>
-	   <div class="icon">
-	     <div><a href="3dart.html"><img src="arts/UI/blender.png" width="64" height="64"></a></div>
-	     <p>3D Art</p>
-	   </div>
-	   <div class="icon">
-	     <div onclick="showHideDiv(3)"><img src="arts/UI/tamagotchi.png" width="64" height="64"></div>
-	     <p>GIFYPET</p>
-	   </div>
-	   <div class="icon">
-	     <div><a href="cbox.html"><img src="arts/UI/chat.png" width="64" height="64"></a></div>
-	     <p>Chatbox</p>
-	   </div>
-	   <div class="icon">
-	     <div><a href="terminal.html"><img src="arts/UI/terminal.png" width="64" height="64"></a></div>
-	     <p>Terminal</p>
-	   </div>
-	   
-	   <div class="icon">
-	     <a href="paint.html"><img src="arts/UI/paint.png" width="64" height="64"></a>
-	     <p>Paint</p>
-	   </div>
-	   <!--
-	   <div class="icon">
-	     <a href="https://strawbebby228.itch.io/bus-seat-pattern-generator" target="blank"><img class="square_icon" src="https://img.itch.zone/aW1nLzU1NzgzODgucG5n/315x250%23c/OYYGyP.png" width="64" height="64"></a>
-	     <p>Bus Seat<br>Pattern<br>Generator™</p>
-	   </div>
-	   <div class="icon">
-	     <a href="https://strawbebby228.itch.io/alzuxartreasure" target="blank"><img class="square_icon" src="https://img.itch.zone/aW1nLzY5NjUxOTIucG5n/315x250%23c/Bz8X8V.png" width="64" height="64"></a>
-	     <p>Alzuxar<br>Treasure</p>
-	   </div>
-	   -->
-	   <div class="icon">
-	     <a href="https://strawbebby228.itch.io/bake-a-pie" target="blank"><img class="square_icon" src="https://img.itch.zone/aW1nLzEwMjQyODg2LnBuZw==/315x250%23c/Ma2tlD.png" width="64" height="64"></a>
-	     <p>Bake A Pie</p>
-	   </div>
-	   <div class="icon">
-	     <a href="https://strawbebby228.itch.io/psx-character-creator" target="blank"><img class="square_icon" src="https://img.itch.zone/aW1nLzEzMDk0MDA0LnBuZw==/315x250%23c/woMJsi.png" width="64" height="64"></a>
-	     <p>PSX<br>Character<br>Creator</p>
-	   </div>
-	   <div class="icon">
-	     <a href="https://strawbebby228.itch.io/freezerunner" target="blank"><img class="square_icon" src="https://img.itch.zone/aW1nLzE1MTQ0ODQ4LnBuZw==/315x250%23c/KgoE2%2B.png" width="64" height="64"></a>
-	     <p>Freeze Runner</p>
-	   </div>
-	   <div class="icon">
-	     <a href="https://strawbebby228.itch.io/littlegarden" target="blank"><img class="square_icon" src="https://img.itch.zone/aW1nLzE1MTQ2MDkzLnBuZw==/315x250%23c/ns5e%2Bg.png" width="64" height="64"></a>
-	     <p>Little Garden</p>
-	   </div>
-	 </div>
-	  
-	  
-	<div class="layout-container">
-
-	  <div id="show_hide_2" class="start_panel" style="display: none;">
-	    <div id="start_panel_header">
-	      <div id="user_icon"></div>
-	      <span style="vertical-align: middle;">User</span>
-	    </div>
-	    <table>
-        <tbody><tr>
-          <td>
-            <ul class="start_panel_button">
-	            <li onclick="win.show();"><img src="arts/UI/notepad.png" width="20" height="20">Notepad</li>
-	             <li onclick="showHideDiv(1)"><img src="arts/UI/Bebby.png" width="20" height="20">Bebby</li>
-	             <a href="website.html"><li><img src="arts/UI/explorer.png" width="20" height="20">Explorer</li></a>
-	             <a href="artsnew.html"><li><img src="arts/UI/folder.png" widht="20" height="20"><span>2D Art</span></li></a>
-	             <a href="3dart.html"><li><img src="arts/UI/blender.png" widht="20" height="20"><span>3D Art</span></li></a>
-	             <a href="games.html"><li><img src="arts/UI/joystick.png" widht="20" height="20"><span>Games</span></li></a>
-	             <a href="cbox.html"><li><img src="arts/UI/chat.png" widht="20" height="20"><span>Chatbox</span></li></a>
-	             <a href="paint.html"><li><img src="arts/UI/paint.png" widht="20" height="20"><span>Paint</span></li></a>
-	             <a href="terminal.html"><li><img src="arts/UI/terminal.png" widht="20" height="20"><span>Terminal</span></li></a>
-	           </ul>
-	           <div style="cursor: var(--cursor_pointer);"><script type="text/javascript" src="https://cdn.livetrafficfeed.com/static/online/live.v2.js?text=13092d&amp;bg=ffffff&amp;ro=0&amp;tz=Europe%2FMoscow"></script><div id="LTF_onl_GuRgZZb00Fguit2QEfibeugnXNq1W7sopg8JnF9B7YfjbcYPoh" title="Free Online Counter" style="position: relative; display: inline-block; width: 80px; height: 21px; overflow: hidden; cursor: pointer; background-image: url(&quot;//livetrafficfeed.com/static/online/images.png?bg=ffffff&quot;); background-repeat: no-repeat; background-position: 0px 0px;"><div id="LTF_onlcount_GuRgZZb00Fguit2QEfibeugnXNq1W7sopg8JnF9B7YfjbcYPoh" style="display: inline-block; font-family: Arial; font-size: 11px; color: rgb(19, 9, 45); position: absolute; font-weight: normal; width: 80px; height: 15px; top: 0px; left: 0px; overflow: hidden; font-style: normal; text-transform: none; text-decoration: none; letter-spacing: 0px; word-spacing: 0px; padding: 0px; margin: 4px 0px 0px; text-align: center; line-height: normal; text-size-adjust: none; direction: ltr; text-shadow: none; vertical-align: baseline;">1 ONLINE</div></div></div>
-          </td>
-          <td style="background: var(--transparent);">
-            <ul class="start_panel_button">
-	             <a href="https://neocities.org/site/strawbebby228" target="blank"><li><img src="arts/UI/neocities.png" width="20" height="20"><span>Neocities</span></li></a>
-	             <a href="https://www.tumblr.com/kseniakulich" target="blank"><li><img src="https://cdn2.iconfinder.com/data/icons/social-networks-7/128/Social_networks_Tumblr-1024.png" width="20" height="20"><span>Tumblr</span></li></a>
-	             <a href="https://vk.com/draw_with_cupcake_bitch" target="blank"><li><img src="https://deskmed.ru/wp-content/files/photo-1-1536x1536.png" width="20" height="20"><span>VK</span></li></a>
-	             <a href="https://strawbebby228.itch.io/" target="blank"><li><img src="https://samirgeorgy.files.wordpress.com/2020/01/itchio-textless-icon.png" width="20" height="20"><span>Itch</span></li></a>
-	             <a href="https://sketchfab.com/strawbebby228" target="blank"><li><img src="https://rebeccaknotebook.files.wordpress.com/2018/12/sktchfab.png" width="20" height="20"><span>Sketchfab</span></li></a>
-	           </ul>
-	           <hr>
-              color themes
-              <div id="theme-buttons"> <button id="hotpink" title="pink" class="theme-button" onclick="handleThemeButtonClick('hotpink', this)"></button> <button id="red" title="red" class="theme-button" onclick="handleThemeButtonClick('red', this)"></button> <button id="orange" title="orange" class="theme-button" onclick="handleThemeButtonClick('orange', this)"></button> <button id="yellow" title="yellow" class="theme-button" onclick="handleThemeButtonClick('yellow', this)"></button> <button id="green" title="green" class="theme-button" onclick="handleThemeButtonClick('green', this)"></button> <button id="turquoise" title="turquoise" class="theme-button" onclick="handleThemeButtonClick('turquoise', this)"></button> <button id="indigo" title="indigo" class="theme-button" onclick="handleThemeButtonClick('indigo', this)"></button> <button id="violet" title="violet" class="theme-button" onclick="handleThemeButtonClick('violet', this)"></button></div>
-            
-          </td>
-        </tr>
-      </tbody></table>
-	  </div>
-
-    <div id="show_hide_1" class="ukagaka">
-      <div id="dialogue">
-	      <div id="random-phrase">
-          <div id="phrase">HAPPY NEW YEAR!!! YAYY^^<br>Also check my <a href="https://berryfriends.neocities.org/">new website</a> about me and my friends!!</div>
+    <!-- Окно с индивидуальными размерами -->
+    <div class="window hidden" id="gifypet-window" data-window-type="gifypet" data-width="332" data-height="365" data-initial-x="60" data-initial-y="120" style="width: 332px; height: 365px;">
+        <div class="window-header">
+            <span class="window-title">GIFYPET.exe</span>
+            <div class="window-buttons">
+                <button class="window-button minimize">-</button>
+                <button class="window-button restore">□</button>
+                <button class="window-button close">×</button>
+            </div>
         </div>
-	    </div>
-	    <span class="gentle-hover-shake"><img id="bebby" src="arts/Strawbebby.png" width="256" height="256" oncontextmenu="return false;"></span>
+        <div class="window-content">
+            <iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Bebby&amp;dob=1004117358&amp;gender=f&amp;element=Earth&amp;pet=https%3A%2F%2Fstrawbebby228.neocities.org%2Farts%2Ftamagotchi%2FPixelBebbyBig.png&amp;map=https%3A%2F%2Fstrawbebby228.neocities.org%2Farts%2Ftamagotchi%2FBgSummer.png&amp;background=&amp;tablecolor=black&amp;textcolor=black" frameborder="0"></iframe>
+        </div>
     </div>
-  </div>
 
-	<div id="footer">
-	  <div id="bar"></div>
-	  <div class="buttons_row">
-	    <button id="start_button" class="button" onclick="showHideDiv(2)"><img src="arts/UI/WindowsIcon.png" widht="32" height="32"><span>Start</span></button>
-	    <button class="button" onclick="win.show();"><img src="arts/UI/notepad.png" widht="32" height="32"></button>
-	    <button class="button" onclick="showHideDiv(1)"><img src="arts/UI/Bebby.png" width="32" height="32"></button>
-	    <button class="button"><a href="website.html"><img src="arts/UI/explorer.png" widht="32" height="32"></a></button>
-	  </div>
-	  <div id="timer">09:33:55</div>
-  </div>
-  
-  
+    <!-- Другое окно с другими размерами -->
+    <div class="window" id="notepad-window" data-window-type="notepad" data-width="580" data-height="400" style="position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 580px; height: 400px;">
+        <div class="window-header">
+            <span class="window-title">Readme.txt</span>
+            <div class="window-buttons">
+                <button class="window-button minimize">-</button>
+                <button class="window-button restore">□</button>
+                <button class="window-button close">×</button>
+            </div>
+        </div>
+        <div class="window-content" style="width: 567px; height: 355px;">
+            <textarea placeholder="Введите текст здесь...">Hiiiiii~ ♬ Welcome to my little desktop^^ This window is draggable and resizable so u can play around if u want :3
 
-<div id="LTF_GDPR_Compliant" style="max-width: 24em; flex-flow: column; color: rgb(255, 255, 255); background-color: rgb(37, 46, 57); bottom: 1em; right: 1em; position: fixed; overflow: hidden; box-sizing: border-box; font-family: Helvetica, Calibri, Arial, sans-serif; font-size: 16px; line-height: 1.5em; z-index: 9999; opacity: 1; transition: opacity 1s; padding: 0px !important;"><span style="margin:2em 2em 1.5em;display:block;margin-bottom:1em;">This website use different technologies such as cookies, IP, geo location and device information to deliver its services and analyze traffic. Infomation about your use of this site is shared public. By using our site, you acknowledge that you have read and understand our Cookie Policy, Privacy Policy, and our Terms of Service.<a style="color:#FFFFFF !important;opacity:.8;display:inline-block;padding:.2em;cursor:pointer;text-decoration:underline;" href="http://livetrafficfeed.com/gdpr" target="_blank">Learn more</a></span><div style="flex:1;display:flex;align-items:center;align-content:space-between;color:#FFFFFF;"><input type="hidden" id="LTF_GDPR" value="0"><a onclick="document.getElementById('LTF_GDPR').value=1;this.parentNode.parentNode.style.display='none';document.cookie='LTF_approve=1; expires=Fri, 27 Feb 2026 09:33:25 GMT; path=/;SameSite=None; Secure';" style="width:100%;color:#FFFFFF;background-color:#14A7CD;border-color:transparent;display:block;padding:.4em .8em;font-size:.9em;font-weight:700;border-width:2px;border-style:solid;text-align:center;white-space:nowrap;cursor:pointer;">Got it!</a></div></div><div class="window window_selected" id="window_0" style="width: 640px; height: 480px; left: 568px; top: 250.5px;"><div class="window_bar"><span class="window_icon"></span><span class="window_title">Readme.txt</span><div class="window_toggle_buttons"><span class="window_button_minimize">_</span><span class="window_button_toggle_maximize">☐</span><span class="window_button_close">✖</span></div></div><div class="window_resize_handle window_resize_handle_n" data-resize="n" style="cursor: ns-resize;"></div><div class="window_resize_handle window_resize_handle_ne" data-resize="ne" style="cursor: nesw-resize;"></div><div class="window_resize_handle window_resize_handle_e" data-resize="e" style="cursor: ew-resize;"></div><div class="window_resize_handle window_resize_handle_se" data-resize="se" style="cursor: nwse-resize;"></div><div class="window_resize_handle window_resize_handle_s" data-resize="s" style="cursor: ns-resize;"></div><div class="window_resize_handle window_resize_handle_sw" data-resize="sw" style="cursor: nesw-resize;"></div><div class="window_resize_handle window_resize_handle_w" data-resize="w" style="cursor: ew-resize;"></div><div class="window_resize_handle window_resize_handle_nw" data-resize="nw" style="cursor: nwse-resize;"></div><div class="window_content" id="mycontent"><textarea class="textarea">Hiiiiii~ ♬ Welcome to my little desktop^^ This window is draggable and resizable so u can play around if u want :3 
+U can also close it if it bothers you and then open it again by clicking on the notepad icon. Write any text you want here. Let your imagination run wild!!
 
-U can also close it if it bothers you and then open it again by clicking on the notepad icon. Write any text you want here. Let your imagination run wild!!</textarea></div></div></body></html>
+I'm currently redesigning the site, so some things may not work. A more stable version is available at: https://strawbebby228.neocities.org/old</textarea>
+        </div>
+    </div>
+
+    <div class="desktop">
+        <div id="icon-area" class="icon-area">
+            <div class="icon notepad-toggle" data-id="icon-0">
+                <a href="#"><img src="arts/UI/notepad.svg" alt="Notepad" class="icon-img"></a>
+                <span class="icon-text">Notepad</span>
+            </div>
+            <div class="icon bebby-toggle" data-id="icon-1">
+                <a href="#"><img src="arts/UI/Bebby.svg" alt="Bebby" class="icon-img"></a>
+                <span class="icon-text">Bebby</span>
+            </div>
+            <!-- Остальные иконки остаются без изменений -->
+            <div class="icon" data-id="icon-2">
+                <a href="website.html"><img src="arts/UI/explorer.svg" alt="Explorer" class="icon-img"></a>
+                <span class="icon-text">Explorer</span>
+            </div>
+            <div class="icon" data-id="icon-3">
+                <a href="garden.html"><img src="arts/UI/strawberries.svg" alt="Web Garden" class="icon-img"></a>
+                <span class="icon-text">Web Garden</span>
+            </div>
+            <div class="icon" data-id="icon-4">
+                <a href="arts/Cool_Pic.jpg"><img src="arts/UI/photos.svg" alt="Cool_pic.jpg" class="icon-img"></a>
+                <span class="icon-text">Cool_pic.jpg</span>
+            </div>
+            <div class="icon" data-id="icon-5">
+                <a href="artsnew.html"><img src="arts/UI/folder.svg" alt="2D Art" class="icon-img"></a>
+                <span class="icon-text">2D Art</span>
+            </div>
+            <div class="icon" data-id="icon-6">
+                <a href="3dart.html"><img src="arts/UI/blender.svg" alt="3D Art" class="icon-img"></a>
+                <span class="icon-text">3D Art</span>
+            </div>
+            <div class="icon gifypet-toggle" data-id="icon-7">
+                <a href="#"><img src="arts/UI/tamagotchi.svg" alt="GIFYPET" class="icon-img"></a>
+                <span class="icon-text">GIFYPET</span>
+            </div>
+            <div class="icon" data-id="icon-8">
+                <a href="cbox.html"><img src="arts/UI/chat.svg" alt="Chatbox" class="icon-img"></a>
+                <span class="icon-text">Chatbox</span>
+            </div>
+            <div class="icon" data-id="icon-9">
+                <a href="terminal.html"><img src="arts/UI/terminal.svg" alt="Terminal" class="icon-img"></a>
+                <span class="icon-text">Terminal</span>
+            </div>
+            <div class="icon" data-id="icon-10">
+                <a href="paint.html"><img src="arts/UI/paint.svg" alt="Paint" class="icon-img"></a>
+                <span class="icon-text">Paint</span>
+            </div>
+            <div class="icon" data-id="icon-11">
+                <a href="https://strawbebby228.itch.io/bake-a-pie"><img src="https://img.itch.zone/aW1nLzEwMjQyODg2LnBuZw==/315x250%23c/Ma2tlD.png" alt="Bake A Pie" class="icon-img" id="square_icon"></a>
+                <span class="icon-text">Bake A Pie</span>
+            </div>
+            <div class="icon" data-id="icon-12">
+                <a href="https://strawbebby228.itch.io/psx-character-creator"><img src="https://img.itch.zone/aW1nLzEzMDk0MDA0LnBuZw==/315x250%23c/woMJsi.png" alt="PSX Character Creator" class="icon-img" id="square_icon"></a>
+                <span class="icon-text">PSX Character...</span>
+            </div>
+            <div class="icon" data-id="icon-13">
+                <a href="https://strawbebby228.itch.io/alzuxartreasure"><img src="https://img.itch.zone/aW1nLzY5NjUxOTIucG5n/315x250%23c/Bz8X8V.png" alt="Alzuxar Treasure" class="icon-img" id="square_icon"></a>
+                <span class="icon-text">Alzuxar Treas...</span>
+            </div>
+            <div class="icon" data-id="icon-14">
+                <a href="https://strawbebby228.itch.io/bus-seat-pattern-generator"><img src="https://img.itch.zone/aW1nLzU1NzgzODgucG5n/315x250%23c/OYYGyP.png" alt="Bus Seat Pattern Generator" class="icon-img" id="square_icon"></a>
+                <span class="icon-text">Bus Seat Patt...</span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Контейнеры для динамической загрузки -->
+    <div id="start-menu-container"><div class="start-panel" id="start-panel" style="display: none;">
+    <div class="start-header">
+        <img src="https://static.miraheze.org/windowswallpaperwiki/1/12/Pink_flower.png" alt="User Avatar" class="user-avatar">
+        <span class="username">User</span>
+    </div>
+    <div class="start-content">
+        <div class="app-list">
+            <div class="app">
+                <a href="index.html">
+                    <img src="arts/UI/notepad.png" alt="Notepad" class="app-icon">
+                    <span>Notepad</span>
+                </a>
+            </div>
+            <div class="app bebby-toggle">
+                <a href="#">
+                    <img src="arts/UI/Bebby.png" alt="Bebby" class="app-icon">
+                    <span>Bebby</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="website.html">
+                    <img src="arts/UI/explorer.png" alt="Explorer" class="app-icon">
+                    <span>Explorer</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="artsnew.html">
+                    <img src="arts/UI/folder.png" alt="2D Art" class="app-icon">
+                    <span>2D Art</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="3dart.html">
+                    <img src="arts/UI/blender.png" alt="3D Art" class="app-icon">
+                    <span>3D Art</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="games.html">
+                    <img src="arts/UI/joystick.png" alt="Games" class="app-icon">
+                    <span>Games</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="cbox.html">
+                    <img src="arts/UI/chat.png" alt="Chatbox" class="app-icon">
+                    <span>Chatbox</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="paint.html">
+                    <img src="arts/UI/paint.png" alt="Paint" class="app-icon">
+                    <span>Paint</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="terminal.html">
+                    <img src="arts/UI/terminal.png" alt="Terminal" class="app-icon">
+                    <span>Terminal</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="app-list pink-bg">
+            <div class="app">
+                <a href="https://neocities.org/site/strawbebby228" target="_blank">
+                    <img src="arts/UI/neocities.png" alt="Neocities" class="app-icon">
+                    <span>Neocities</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="https://www.tumblr.com/kseniakulich" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670265.png" alt="Tumblr" class="app-icon">
+                    <span>Tumblr</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="https://vk.com/draw_with_cupcake_bitch" target="_blank">
+                    <img src="https://deskmed.ru/wp-content/files/photo-1-1536x1536.png" alt="VK" class="app-icon">
+                    <span>VK</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="https://strawbebby228.itch.io/" target="_blank">
+                    <img src="https://samirgeorgy.files.wordpress.com/2020/01/itchio-textless-icon.png" alt="Itch" class="app-icon">
+                    <span>Itch</span>
+                </a>
+            </div>
+            <div class="app">
+                <a href="https://sketchfab.com/strawbebby228" target="_blank">
+                    <img src="https://rebeccaknotebook.files.wordpress.com/2018/12/sktchfab.png" alt="Sketchfab" class="app-icon">
+                    <span>Sketchfab</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div></div>
+    <div id="bebby-container"><div class="bebby-panel" id="bebby-panel">
+    <div class="bebby-dialog">
+        <div id="random-phrase">
+            <div id="phrase">ITS ALREADY SPRING!!! YAYY^^<br>Also check my <a href="https://berryfriends.neocities.org/">new website</a> about me and my friends!!</div>
+        </div>
+    </div>
+    <img src="arts/Strawbebby.png" alt="Bebby" class="bebby-img" id="bebby">
+</div></div>
+
+    <!-- Футер -->
+    <iframe src="footer.html" frameborder="0" class="footer-iframe" id="footer-iframe"></iframe>
+    
+
+
+</body></html>
