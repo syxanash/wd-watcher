@@ -1,3 +1,3 @@
-# Web Desktops Watcher
+# Web Desktops Tools
 
-Tool used to monitor content changes in [Awesome Web Desktops](https://github.com/syxanash/awesome-web-desktops) links
+This repo contains various tools to manage links and monitor content changes in [Awesome Web Desktops](https://github.com/syxanash/awesome-web-desktops) list.
