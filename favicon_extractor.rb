@@ -1,3 +1,5 @@
+# this script is a WIP...
+
 require 'selenium-webdriver'
 require 'selenium/devtools'
 require 'json'
